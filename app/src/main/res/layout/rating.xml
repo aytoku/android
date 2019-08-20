@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/AppTheme"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="170dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="15dp"
+            android:text="90Р"
+            android:textColor="@color/my_black"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="125dp"
+            android:text="Как вам поездка?"
+            android:textColor="@color/my_black"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:scaleX="1.4"
+                android:scaleY="1.3"
+                android:src="@drawable/icon_star_red" />
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:scaleX="1.4"
+                android:scaleY="1.3"
+                android:src="@drawable/icon_star_red" />
+
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:scaleX="1.4"
+                android:scaleY="1.3"
+                android:src="@drawable/icon_star_red" />
+
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:scaleX="1.4"
+                android:scaleY="1.3"
+                android:src="@drawable/icon_star_grey" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="105dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="15dp"
+            android:text="Чаявые водителю"
+            android:textColor="@color/my_black"
+            android:textSize="20sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/my_gray"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+
+                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingLeft="20dp"
+                                    android:paddingRight="20dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="10dp"
+
+                                    android:text="О Р"
+                                    android:textColor="@color/my_black"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:cardBackgroundColor="@color/my_gray"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="true">
+
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+
+                            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/title1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="20dp"
+                                        android:paddingTop="10dp"
+                                        android:paddingBottom="10dp"
+                                        android:text="2О Р"
+                                        android:textColor="@color/my_black"
+                                        android:textStyle="bold" />
+
+
+                                </LinearLayout>
+                            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/my_gray"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:cardUseCompatPadding="true">
+
+                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+
+                                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/title2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:paddingLeft="20dp"
+                                            android:paddingRight="20dp"
+                                            android:paddingTop="10dp"
+                                            android:paddingBottom="10dp"
+                                            android:text="4О Р"
+                                            android:textColor="@color/my_black"
+                                            android:textStyle="bold" />
+
+
+                                    </LinearLayout>
+                                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+                            </LinearLayout>
+
+                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:cardBackgroundColor="@color/my_gray"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:cardUseCompatPadding="true">
+
+                            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+
+
+                                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:gravity="center_horizontal|center_vertical"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/title3"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:paddingLeft="20dp"
+                                                android:paddingRight="20dp"
+                                                android:paddingTop="10dp"
+                                                android:paddingBottom="10dp"
+                                                android:text="6О Р"
+                                                android:textColor="@color/my_black"
+                                                android:textStyle="bold" />
+
+
+                                        </LinearLayout>
+                                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+                                </LinearLayout>
+
+                            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="60dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="30dp"
+            android:text="За что похвалить водителя?"
+            android:textColor="@color/my_black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:text="👍"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Интересная беседа"
+                android:paddingBottom="180dp"/>
+
+
+
+
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:text="👏"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:paddingLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Вежливость"
+                    android:paddingBottom="180dp"/>
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="60dp"
+                    android:text="😎"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="хорошее настроение"
+                    android:paddingBottom="180dp"/>
+
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Готово"
+            android:paddingLeft="175dp"
+            android:paddingRight="175dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
+</RelativeLayout>

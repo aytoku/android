@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="50dp"
+            android:text="Выберите причину отмены"
+            android:textSize="27sp"
+            android:textColor="@color/my_black"
+            android:paddingLeft="35dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="40dp"
+                    android:text="😊"
+                    android:textSize="30sp"
+                    android:textColor="@color/my_black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Заказал по ошибке"
+                    android:textSize="20sp"
+                    android:textColor="@color/my_black"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="40dp"
+                    android:text="🤦‍♂‍"
+                    android:textSize="30sp"
+                    android:textColor="@color/my_black"/>
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Водитель попросил отменить"
+                    android:textSize="20sp"
+                    android:textColor="@color/my_black"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="40dp"
+                    android:text="👎"
+                    android:textSize="30sp"
+                    android:textColor="@color/my_black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Большое ожидание"
+                    android:textSize="20sp"
+                    android:textColor="@color/my_black"/>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="40dp"
+                    android:text="🤷‍♂"
+                    android:textSize="30sp"
+                    android:textColor="@color/my_black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Уехал на другом такси"
+                    android:textSize="20sp"
+                    android:textColor="@color/my_black"/>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="40dp"
+                    android:text="😡"
+                    android:textSize="30sp"
+                    android:textColor="@color/my_black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Водитель уехал в другую сторону"
+                    android:textSize="20sp"
+                    android:textColor="@color/my_black"/>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Также вы можете написать комментарий или сообщить какую-либо информацию о водителе"
+                    android:textSize="20sp"
+                    android:textColor="@color/my_B4B4B4"/>
+
+
+
+            </LinearLayout>
+
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="20dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_margin="16dp"
+                    app:srcCompat="@drawable/icon_vector"
+                    android:contentDescription="@string/submit"
+                    android:background="@color/my_FC5C58"
+                    />
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
