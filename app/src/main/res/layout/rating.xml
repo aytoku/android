@@ -37,13 +37,55 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="90dp"
-                android:layout_height="match_parent"
-                android:scaleType="center"
-                android:scaleX="1.4"
-                android:scaleY="1.3"
-                android:src="@drawable/icon_star_red" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/my_white"
+                app:cardCornerRadius="1dp"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:background="@drawable/myrect"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="90dp"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="center"
+                                    android:scaleX="1.4"
+                                    android:scaleY="1.3"
+                                    android:src="@drawable/icon_star_red"/>
+
+
+                            </LinearLayout>
+                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
 
             <ImageView
                 android:layout_width="90dp"
@@ -94,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:cardBackgroundColor="@color/my_gray"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="50dp"
                 app:cardElevation="0dp"
                 app:cardUseCompatPadding="true">
 
@@ -116,7 +158,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:gravity="center_horizontal|center_vertical"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+
+                                android:background="@drawable/background_with_shadow">
 
                                 <TextView
                                     android:id="@+id/title"
@@ -151,7 +195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     app:cardBackgroundColor="@color/my_gray"
-                    app:cardCornerRadius="10dp"
+                    app:cardCornerRadius="50dp"
                     app:cardElevation="0dp"
                     app:cardUseCompatPadding="true">
 
@@ -173,7 +217,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
                                     android:gravity="center_horizontal|center_vertical"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:background="@drawable/background_with_shadow">
 
                                     <TextView
                                         android:id="@+id/title1"
@@ -207,7 +252,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         app:cardBackgroundColor="@color/my_gray"
-                        app:cardCornerRadius="10dp"
+                        app:cardCornerRadius="50dp"
                         app:cardElevation="0dp"
                         app:cardUseCompatPadding="true">
 
@@ -229,7 +274,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
                                         android:gravity="center_horizontal|center_vertical"
-                                        android:orientation="horizontal">
+                                        android:orientation="horizontal"
+
+                                        android:background="@drawable/background_with_shadow">
 
                                         <TextView
                                             android:id="@+id/title2"
@@ -263,7 +310,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             app:cardBackgroundColor="@color/my_gray"
-                            app:cardCornerRadius="10dp"
+                            app:cardCornerRadius="50dp"
                             app:cardElevation="0dp"
                             app:cardUseCompatPadding="true">
 
@@ -285,6 +332,8 @@
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="center_vertical"
                                             android:gravity="center_horizontal|center_vertical"
+
+                                            android:background="@drawable/background_with_shadow"
                                             android:orientation="horizontal">
 
                                             <TextView
@@ -326,7 +375,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="60dp"
+            android:paddingLeft="75dp"
             android:paddingTop="40dp"
             android:paddingBottom="30dp"
             android:text="За что похвалить водителя?"
@@ -346,15 +395,32 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="50dp"
+                android:paddingLeft="20dp"
                 android:text="👍"
                 android:textSize="30dp" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Интересная беседа"
-                android:paddingBottom="180dp"/>
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:paddingLeft="5dp"
+                    android:text="Интересная"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:paddingLeft="20dp"
+                    android:text="беседа"/>
+
+            </LinearLayout>
+
+
 
 
 
@@ -368,16 +434,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
+                    android:paddingLeft="100dp"
                     android:text="👏"
                     android:textSize="30dp" />
 
                 <TextView
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="80dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Вежливость"
-                    android:paddingBottom="180dp"/>
+                    android:paddingBottom="120dp"/>
 
 
 
@@ -391,16 +457,32 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="60dp"
+                    android:paddingLeft="85dp"
                     android:text="😎"
                     android:textSize="30dp" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:text="хорошее настроение"
-                    android:paddingBottom="180dp"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="75dp"
+                        android:text="хорошее"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="65dp"
+                        android:text="настроение"/>
+
+
+                </LinearLayout>
+
+
 
 
 
@@ -411,10 +493,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Готово"
+            android:textSize="15dp"
             android:paddingLeft="175dp"
             android:paddingRight="175dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"/>
+            android:paddingTop="25sp"
+            android:paddingBottom="25sp"/>
 
 
     </LinearLayout>

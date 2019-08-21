@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Коста Хетагурова, 123"
+            android:layout_gravity=""
             android:paddingTop="20dp"
             android:textColor="@color/my_black"
             android:textSize="20dp"/>

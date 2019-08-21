@@ -25,6 +25,7 @@
             />
 
         <androidx.cardview.widget.CardView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
@@ -33,6 +34,7 @@
             app:cardBackgroundColor="@color/my_gray">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@drawable/background_with_shadow"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 >
@@ -41,10 +43,11 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
                     android:text="в413ну"
                     android:textColor="@color/my_black"
                     android:textSize="15sp"
-                    android:gravity="bottom" />
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -84,6 +87,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:background="@drawable/background_with_shadow"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -147,6 +151,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:background="@drawable/background_with_shadow"
                         android:orientation="horizontal">
 
                         <ImageView
