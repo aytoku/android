@@ -18,6 +18,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import ru.osety.amironlibrary.DrawableUtils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,7 +30,7 @@ import androidx.appcompat.app.AppCompatActivity;
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.main_recycler);
 
             rv = (RecyclerView) findViewById(R.id.recycler);
 
@@ -52,7 +53,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
             try {
 
-            //    RecyclerView recyclerViewMenu = (RecyclerView) getView().findViewById(R.id.gridViewMenu);
 
                 AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
 
@@ -73,7 +73,7 @@ import androidx.appcompat.app.AppCompatActivity;
             AdapterGridViewMenu.ItemsMenu []_arr = new AdapterGridViewMenu.ItemsMenu{
 
             new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                    R.drawable.icon_group_7,
+                    R.mipmap.icon_car,
                         getResources().getString(R.
                             string.options), new AdapterGridViewMenu.ItemsMenu.CallBack() {
                 @Override
@@ -82,17 +82,14 @@ import androidx.appcompat.app.AppCompatActivity;
                     try {
 
                         Bundle _args = new Bundle();
-                        _args .putString(FragWebView.KEY_HREF, URLHelper.WVOptions);
-                        FragWebView _f = FragWebView.getInstance( _args );
-
-                        recoveryFragment( _f );
 
                     } catch (NullPointerException e) {
                         e.printStackTrace();
                     }
 
                 }
-            })}
+            });
+            }
             return _arr;
 
         }
@@ -115,7 +112,7 @@ import androidx.appcompat.app.AppCompatActivity;
             @Override
             public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-                ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.content_menu_item, viewGroup, false);
+                ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.activity_main, viewGroup, false);
                 return new ViewHolder(v);
 
             }
@@ -123,17 +120,16 @@ import androidx.appcompat.app.AppCompatActivity;
             @Override
             public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-                ItemsMenu _item = itemsMenu[i];
+                final ItemsMenu _item = itemsMenu[i];
 
-                Drawable ic_background_xml = context.getResources().getDrawable(R.drawable.icon_group_7);
+                Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
                 float _dens = context.getResources().getDisplayMetrics().density;
 
-                Drawable ic_rout_color =
-                        MyDrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
+                Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
                 int _size = Math.round(_dens * 40);
                 Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
-                Bitmap _bitmap = MyDrawableUtils.convertToBitmap(_def_draw, _size, _size);
+                Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
                 viewHolder.img.setBackground( ic_rout_color );
                 viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
@@ -209,7 +205,7 @@ import androidx.appcompat.app.AppCompatActivity;
                     cv_item = itemView.findViewById(R.id.cv_item);
                     img = itemView.findViewById(R.id.img);
                     title = itemView.findViewById(R.id.title);
-                    time = itemView.findViewById(R.id.time)
+                    time = itemView.findViewById(R.id.time);
 
                 }
             }
