@@ -10,7 +10,7 @@
 
 
         <ImageView
-            android:paddingTop="15dp"
+            android:paddingTop="25dp"
             android:paddingBottom="35dp"
             android:paddingLeft="15dp"
             android:layout_width="wrap_content"
@@ -24,6 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="15dp"
             android:text="Пожелания"
             android:textStyle="bold"
             android:textSize="20sp"
@@ -40,6 +41,7 @@
             android:id="@+id/desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:text="Детское кресло"
             android:textColor="@color/my_black"
             android:textSize="20sp"

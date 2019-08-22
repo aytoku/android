@@ -28,10 +28,11 @@
             android:orientation="horizontal">
 
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/img_cross_grey"
                 android:layout_width="wrap_content"
                 android:paddingLeft="15dp"
+                android:background="@color/my_white"
                 android:layout_height="match_parent"
                 android:src="@drawable/icon_group_cross_grey"
                 android:layout_gravity="left"
@@ -53,8 +54,9 @@
                 android:paddingLeft="35dp"/>
 
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/img_three_lines"
+                android:background="@color/my_white"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingLeft="70dp"

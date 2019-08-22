@@ -8,8 +8,10 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
@@ -24,11 +26,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
     public class MainActivity extends AppCompatActivity {
 
+        ImageButton androidImageButton;
+
         RecyclerView rv;
 
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+
             super.onCreate(savedInstanceState);
+             androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
+
+             androidImageButton.setOnClickListener(new View.OnClickListener(){
+                 public void onClick(View v){
+                     Toast.makeText(MainActivity.this,"", Toast.LENGTH_LONG).show();
+                 }
+             });
 
             setContentView(R.layout.main_recycler);
 
