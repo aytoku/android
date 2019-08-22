@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
         <TextView
+            android:id="@+id/desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Детское кресло"
@@ -49,6 +50,7 @@
 
 
             <TextView
+                android:id="@+id/cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="30 Р"

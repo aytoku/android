@@ -17,9 +17,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="50dp"
+            android:paddingBottom="65dp"
             android:text="Выберите причину отмены"
-            android:textSize="27sp"
+            android:textStyle="bold"
+            android:paddingTop="55dp"
+            android:textSize="21dp"
             android:textColor="@color/my_black"
             android:paddingLeft="20dp"/>
 
@@ -42,8 +44,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
                     android:text="Заказал по ошибке"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="@color/my_black"/>
 
 
@@ -64,8 +67,9 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
                     android:text="Водитель попросил отменить"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="@color/my_black"/>
 
 
@@ -88,8 +92,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
                     android:text="Большое ожидание"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="@color/my_black"/>
 
 
@@ -113,8 +118,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
                     android:text="Уехал на другом такси"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="@color/my_black"/>
 
 
@@ -138,8 +144,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
                     android:text="Водитель уехал в другую сторону"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textColor="@color/my_black"/>
 
 
@@ -159,7 +166,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="10dp"
                     android:text="Также вы можете написать комментарий или сообщить какую-либо информацию о водителе"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     android:textColor="@color/my_B4B4B4"/>
 
 

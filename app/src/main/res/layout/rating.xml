@@ -22,15 +22,15 @@
             android:paddingBottom="15dp"
             android:text="90Р"
             android:textColor="@color/my_black"
-            android:textSize="35sp" />
+            android:textSize="32sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="125dp"
+            android:paddingLeft="145dp"
             android:text="Как вам поездка?"
             android:textColor="@color/my_black"
-            android:textSize="17sp" />
+            android:textSize="13sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -118,12 +118,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="105dp"
+            android:paddingLeft="120dp"
             android:paddingTop="20dp"
             android:paddingBottom="15dp"
             android:text="Чаявые водителю"
             android:textColor="@color/my_black"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
 
 
         <LinearLayout
@@ -287,7 +287,7 @@
                                             android:paddingBottom="10dp"
                                             android:text="4О Р"
                                             android:textColor="@color/my_black"
-                                            android:textStyle="bold" />
+                                            android:textStyle="bold"/>
 
 
                                     </LinearLayout>
@@ -303,6 +303,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingBottom=""
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
@@ -331,6 +332,7 @@
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="center_vertical"
                                             android:gravity="center_horizontal|center_vertical"
+
 
                                             android:background="@drawable/background_with_shadow"
                                             android:orientation="horizontal">
@@ -374,12 +376,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="75dp"
+            android:paddingLeft="90dp"
             android:paddingTop="40dp"
             android:paddingBottom="30dp"
             android:text="За что похвалить водителя?"
             android:textColor="@color/my_black"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -408,12 +410,14 @@
                     android:layout_height="wrap_content"
                     android:maxLines="2"
                     android:paddingLeft="5dp"
+                    android:textSize="12sp"
                     android:text="Интересная"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="2"
+                    android:textSize="12sp"
                     android:paddingLeft="20dp"
                     android:text="беседа"/>
 
@@ -441,8 +445,9 @@
                     android:paddingLeft="80dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="12sp"
                     android:text="Вежливость"
-                    android:paddingBottom="120dp"/>
+                    android:paddingBottom="50dp"/>
 
 
 
@@ -469,13 +474,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="75dp"
-                        android:text="хорошее"/>
+                        android:textSize="12sp"
+                        android:text="Хорошее"/>
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="65dp"
+                        android:textSize="12sp"
                         android:text="настроение"/>
 
 
@@ -488,16 +495,22 @@
 
             </LinearLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Готово"
-            android:textSize="15dp"
-            android:paddingLeft="175dp"
-            android:paddingRight="175dp"
-            android:paddingTop="25sp"
-            android:paddingBottom="25sp"/>
-
+            android:textSize="17sp"
+            android:background="@drawable/mybuttongrey"
+            android:paddingLeft="170dp"
+            android:paddingRight="170dp"
+            android:textAllCaps="false"
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 

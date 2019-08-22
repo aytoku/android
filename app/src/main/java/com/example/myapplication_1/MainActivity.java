@@ -34,6 +34,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
             rv = (RecyclerView) findViewById(R.id.recycler);
 
+
+
         }
 
         @Override
@@ -54,12 +56,12 @@ import androidx.appcompat.app.AppCompatActivity;
             try {
 
 
-                AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+                AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
                 AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
                 recyclerViewMenu.setAdapter( adapterGridViewMenu );
                 recyclerViewMenu.setLayoutManager(
-                        new GridLayoutManager( getBaseContext(),3, RecyclerView.VERTICAL, false ) );
+                        new GridLayoutManager( getBaseContext(),2, RecyclerView.HORIZONTAL, false ) );
                 recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
             } catch ( NullPointerException e) {
@@ -68,14 +70,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
         }
 
+
+
         private AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
-            AdapterGridViewMenu.ItemsMenu []_arr = new AdapterGridViewMenu.ItemsMenu{
+            AdapterGridViewMenu.ItemsMenu []_arr = new AdapterGridViewMenu.ItemsMenu[]{
 
             new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                     R.mipmap.icon_car,
                         getResources().getString(R.
-                            string.options), new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            string.options),
+                    new AdapterGridViewMenu.ItemsMenu.CallBack() {
                 @Override
                 public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
 
@@ -88,11 +93,15 @@ import androidx.appcompat.app.AppCompatActivity;
                     }
 
                 }
-            });
-            }
+            }, "5 мин")
+            };
             return _arr;
 
         }
+
+
+
+
 
 
         public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
@@ -135,6 +144,7 @@ import androidx.appcompat.app.AppCompatActivity;
                 viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
                 viewHolder.img.setImageBitmap( _bitmap );
                 viewHolder.title.setText( _item.getStr() );
+                viewHolder.time.setText( _item.getStr() );
                 viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -167,11 +177,13 @@ import androidx.appcompat.app.AppCompatActivity;
                 private int imgResId;
                 private String str;
                 private CallBack callBack;
+                private String time;
 
-                public ItemsMenu(int colorBackgroundRes, int imgResId, String str, CallBack callBack) {
+                public ItemsMenu(int colorBackgroundRes, int imgResId, String str, CallBack callBack,String time) {
                     this.colorBackgroundInt = colorBackgroundRes;
                     this.imgResId = imgResId;
                     this.str = str;
+                    this.time = time;
                     this.callBack = callBack;
                 }
 
@@ -185,6 +197,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
                 public String getStr() {
                     return str;
+                }
+
+                public String getTime() {
+                    return time;
                 }
 
                 public int getColorBackground() {
