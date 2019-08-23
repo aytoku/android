@@ -33,19 +33,30 @@
 
 
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/scroll"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:paddingRight="3dp"
+            android:scrollbarThumbVertical="@drawable/vertical_scrollview_thumb"
+            android:scrollbarTrackVertical="@drawable/vertical_scrollview_track"
+            tools:context=".MainActivity">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
 
                 <TextView
-                    android:id="@+id/textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="40dp"
-                    android:paddingLeft="40dp"
-                    android:textColor="@color/my_black"
-                    android:isScrollContainer="true"/>
+                    android:text="Lorem Ip " />
 
+            </LinearLayout>
         </ScrollView>
 
 
@@ -80,7 +91,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="90 Р"
+                android:text="90 ₽"
                 android:textColor="#424242"
                 android:textSize="22dp"/>
 
@@ -107,7 +118,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30 Р"
+                android:text="30 ₽"
                 android:paddingLeft="15dp"
                 android:textColor="#424242"
                 android:textSize="22dp"/>
@@ -115,17 +126,17 @@
 
 
         </LinearLayout>
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="20dp"
-            android:layout_margin="16dp"
-            app:srcCompat="@drawable/icon_vector"
-            android:contentDescription="@string/submit"
-            android:background="@color/my_FC5C58"
-
-            />
-
+        <ImageButton
+            android:id="@+id/img_cross_grey"
+            android:layout_width="match_parent"
+            android:paddingLeft="150dp"
+            android:background="@color/my_white"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_group_10_red_button"
+            android:layout_gravity="left"
+            android:scaleType="center"
+            android:scaleX="1"
+            android:scaleY="1"/>
 
     </LinearLayout>
 

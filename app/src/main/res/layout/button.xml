@@ -40,7 +40,7 @@
             android:id="@+id/trip_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Поездка 87Р, 12 мин"
+            android:text="Поездка 87₽, 12 мин"
             android:paddingTop="5dp"
             android:textSize="14sp"
             android:paddingBottom="30dp"

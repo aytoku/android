@@ -59,7 +59,7 @@
                 android:id="@+id/cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30 Р"
+                android:text="30 ₽"
                 android:textSize="20dp"
                 android:paddingRight="18dp"
                 android:paddingLeft="35dp"/>

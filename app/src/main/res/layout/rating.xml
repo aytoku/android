@@ -22,7 +22,7 @@
             android:paddingLeft="170dp"
             android:paddingTop="20dp"
             android:paddingBottom="15dp"
-            android:text="90Р"
+            android:text="90₽"
             android:textColor="@color/my_black"
             android:textSize="32sp" />
 
@@ -150,7 +150,7 @@
                                     android:paddingRight="20dp"
                                     android:paddingTop="10dp"
                                     android:paddingBottom="10dp"
-                                    android:text="О Р"
+                                    android:text="О ₽"
                                     android:textColor="@color/my_black"
                                     android:textStyle="bold" />
 
@@ -207,7 +207,7 @@
                                         android:paddingRight="20dp"
                                         android:paddingTop="10dp"
                                         android:paddingBottom="10dp"
-                                        android:text="2О Р"
+                                        android:text="2О ₽"
                                         android:textColor="@color/my_black"
                                         android:textStyle="bold" />
 
@@ -265,7 +265,7 @@
                                             android:paddingRight="20dp"
                                             android:paddingTop="10dp"
                                             android:paddingBottom="10dp"
-                                            android:text="4О Р"
+                                            android:text="4О ₽"
                                             android:textColor="@color/my_black"
                                             android:textStyle="bold"/>
 
@@ -318,11 +318,11 @@
                                                 android:id="@+id/title3"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
-                                                android:paddingLeft="20dp"
+                                                android:paddingLeft="15dp"
                                                 android:paddingRight="20dp"
                                                 android:paddingTop="10dp"
                                                 android:paddingBottom="10dp"
-                                                android:text="6О Р"
+                                                android:text="6О ₽"
                                                 android:textColor="@color/my_black"
                                                 android:textStyle="bold" />
 
