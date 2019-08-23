@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -10,6 +12,7 @@
 
 
         <ImageView
+            android:id="@+id/img_cross_grey"
             android:paddingTop="25dp"
             android:paddingBottom="35dp"
             android:paddingLeft="15dp"
@@ -22,6 +25,7 @@
 
 
         <TextView
+            android:id="@+id/title_wish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
@@ -60,11 +64,12 @@
                 android:paddingRight="18dp"
                 android:paddingLeft="35dp"/>
 
-            <Switch
-                android:id="@+id/monitored_switch"
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/my_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dip"
+                app:checkedState="@{my_data.checked}"
                 android:scaleY="1.2"
                 android:scaleX="1.2"
                  />

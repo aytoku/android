@@ -33,42 +33,17 @@
                 android:textColor="@color/my_black"
                 android:textSize="20dp" />
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="0dp"
-                app:cardBackgroundColor="@color/my_gray">
-                <androidx.coordinatorlayout.widget.CoordinatorLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        >
-
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:paddingLeft="20dp"
-                               android:paddingRight="20dp"
-                               android:paddingTop="20dp"
-                               android:text="Уточнить"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-            </androidx.cardview.widget.CardView>
+                android:text="Уточнить"
+                android:textAllCaps="false"/>
+            </LinearLayout>
 
         </LinearLayout>
 

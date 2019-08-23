@@ -61,9 +61,8 @@
                 android:layout_height="match_parent"
                 android:paddingLeft="70dp"
                 android:src="@drawable/icon_three_lines"
-                android:scaleType="center"
                 android:layout_gravity="right"
-                android:scaleX="1.4"
+                android:scaleX="1"
                 android:scaleY="1.3"/>
 
 
@@ -84,6 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="60dp"
+                android:textColor="#AAAAAA"
                 android:textSize="17sp"
                 android:text="Добавить остановку"
                 android:paddingTop="40dp"
