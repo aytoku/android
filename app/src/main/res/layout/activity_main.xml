@@ -21,7 +21,7 @@
         android:layout_height="match_parent"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
-        app:cardElevation="4dp"
+        app:cardElevation="0dp"
         app:cardBackgroundColor="@color/my_gray">
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
