@@ -63,12 +63,12 @@
                 android:text="30 ₽"
                 android:textColor="#424242"
                 android:textSize="15sp"
-                android:paddingRight="18dp"
-                android:paddingLeft="35dp"/>
+                android:paddingLeft="60dp"/>
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/my_switch"
                 android:layout_width="wrap_content"
+                android:paddingLeft="20dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dip"
                 android:scaleY="1.3"
@@ -210,16 +210,18 @@
 
         </LinearLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="20dp"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
-            app:srcCompat="@drawable/icon_vector"
-            android:contentDescription="@string/submit"
-            android:background="@color/my_FC5C58"
-            tools:ignore="VectorDrawableCompat" />
+        <ImageButton
+            android:id="@+id/img_cross_grey1"
+            android:layout_width="match_parent"
+            android:paddingLeft="150dp"
+            android:background="@color/my_white"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_group_10_red_button"
+            android:layout_gravity="left"
+            android:scaleType="center"
+            android:scaleX="1"
+            android:scaleY="1"
+            tools:ignore="DuplicateIds" />
 
 
     </LinearLayout>

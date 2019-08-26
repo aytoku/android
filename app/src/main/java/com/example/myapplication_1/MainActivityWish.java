@@ -14,13 +14,12 @@ import android.widget.TextView;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import ru.osety.amironlibrary.DrawableUtils;
 
-import androidx.appcompat.app.AppCompatActivity;
+import ru.osety.amironlibrary.DrawableUtils;
 
 public class MainActivityWish extends AppCompatActivity {
 
@@ -32,9 +31,7 @@ public class MainActivityWish extends AppCompatActivity {
 
         setContentView(R.layout.main_recycler);
 
-        rv = (RecyclerView) findViewById(R.id.recycler);
-
-
+        rv = findViewById(R.id.recycler);
 
     }
 
@@ -101,9 +98,6 @@ public class MainActivityWish extends AppCompatActivity {
 
 
 
-
-
-
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
         private final ItemsMenu[] itemsMenu;
@@ -144,7 +138,7 @@ public class MainActivityWish extends AppCompatActivity {
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
-           viewHolder.cost.setText(_item.getCost());
+            viewHolder.cost.setText(_item.getCost());
 
         }
 
@@ -156,7 +150,7 @@ public class MainActivityWish extends AppCompatActivity {
         public static class ItemsMenu {
 
             public interface CallBack {
-                public void call( ItemsMenu itemsMenu );
+                void call(ItemsMenu itemsMenu);
             }
 
             private @ColorInt int colorBackgroundInt;
@@ -212,4 +206,3 @@ public class MainActivityWish extends AppCompatActivity {
 
     }
 }
-

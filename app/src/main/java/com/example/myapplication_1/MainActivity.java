@@ -47,8 +47,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
             rv = (RecyclerView) findViewById(R.id.recycler);
 
-
-
         }
 
         @Override
@@ -68,7 +66,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
             try {
 
-
                 AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
                 AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
@@ -82,8 +79,6 @@ import androidx.appcompat.app.AppCompatActivity;
             }
 
         }
-
-
 
         private AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
@@ -111,10 +106,6 @@ import androidx.appcompat.app.AppCompatActivity;
             return _arr;
 
         }
-
-
-
-
 
 
         public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
@@ -183,7 +174,7 @@ import androidx.appcompat.app.AppCompatActivity;
             public static class ItemsMenu {
 
                 public interface CallBack {
-                    public void call( ItemsMenu itemsMenu );
+                    void call(ItemsMenu itemsMenu);
                 }
 
                 private @ColorInt int colorBackgroundInt;
