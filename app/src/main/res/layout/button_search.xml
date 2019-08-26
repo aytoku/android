@@ -32,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Куда?"
+        android:textColor="#9B9B9B"
         android:textAllCaps="false"
         android:paddingLeft="150dp"
         android:paddingRight="150dp"

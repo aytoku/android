@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:theme="@style/AppTheme"
     android:layout_width="wrap_content" android:layout_height="120dp">
 
@@ -23,8 +24,8 @@
                 android:paddingRight="20dp"
                 android:paddingBottom="10dp"
                 android:text="желтая LADA 2115"
-                android:textColor="@color/my_black"
-                android:textSize="15sp" />
+                android:textColor="#424242"
+                android:textSize="17sp" />
 
             <androidx.cardview.widget.CardView
 
@@ -48,8 +49,10 @@
                         android:gravity="center"
                         android:paddingLeft="20dp"
                         android:text="в413ну"
-                        android:textColor="@color/my_black"
-                        android:textSize="15sp" />
+                        android:textStyle="bold"
+                        android:textColor="#424242"
+                        android:textSize="17sp"
+                        tools:ignore="MissingConstraints" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -122,7 +125,8 @@
                                     android:paddingEnd="8dp"
                                     android:paddingRight="8dp"
                                     android:text="Позвонить"
-                                    android:textColor="@color/my_black"
+                                    android:textSize="14sp"
+                                    android:textColor="#424242"
                                     android:textStyle="bold" />
 
 
@@ -188,7 +192,8 @@
                                         android:paddingEnd="8dp"
                                         android:paddingRight="8dp"
                                         android:text="Написать"
-                                        android:textColor="@color/my_black"
+                                        android:textSize="14sp"
+                                        android:textColor="#424242"
                                         android:textStyle="bold" />
 
 
