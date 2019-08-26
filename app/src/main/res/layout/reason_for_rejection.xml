@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -21,8 +22,8 @@
             android:text="Выберите причину отмены"
             android:textStyle="bold"
             android:paddingTop="55dp"
-            android:textSize="21dp"
-            android:textColor="@color/my_black"
+            android:textSize="21sp"
+            android:textColor="#424242"
             android:paddingLeft="20dp"/>
 
         <LinearLayout
@@ -47,7 +48,7 @@
                     android:paddingLeft="10dp"
                     android:text="Заказал по ошибке"
                     android:textSize="17sp"
-                    android:textColor="@color/my_black"/>
+                    android:textColor="#424242"/>
 
 
             </LinearLayout>
@@ -70,7 +71,7 @@
                     android:paddingLeft="10dp"
                     android:text="Водитель попросил отменить"
                     android:textSize="17sp"
-                    android:textColor="@color/my_black"/>
+                    android:textColor="#424242"/>
 
 
             </LinearLayout>
@@ -95,7 +96,7 @@
                     android:paddingLeft="10dp"
                     android:text="Большое ожидание"
                     android:textSize="17sp"
-                    android:textColor="@color/my_black"/>
+                    android:textColor="#424242"/>
 
 
 
@@ -121,7 +122,7 @@
                     android:paddingLeft="10dp"
                     android:text="Уехал на другом такси"
                     android:textSize="17sp"
-                    android:textColor="@color/my_black"/>
+                    android:textColor="#424242"/>
 
 
 
@@ -147,7 +148,7 @@
                     android:paddingLeft="10dp"
                     android:text="Водитель уехал в другую сторону"
                     android:textSize="17sp"
-                    android:textColor="@color/my_black"/>
+                    android:textColor="#424242"/>
 
 
 
@@ -167,7 +168,7 @@
                     android:paddingBottom="10dp"
                     android:text="Также вы можете написать комментарий или сообщить какую-либо информацию о водителе"
                     android:textSize="14sp"
-                    android:textColor="@color/my_B4B4B4"/>
+                    android:textColor="#B4B4B4"/>
 
 
 
@@ -184,8 +185,7 @@
                     app:srcCompat="@drawable/icon_vector"
                     android:contentDescription="@string/submit"
                     android:background="@color/my_FC5C58"
-
-                    />
+                    tools:ignore="VectorDrawableCompat" />
 
 
 
