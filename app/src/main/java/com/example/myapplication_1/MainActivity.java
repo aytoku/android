@@ -157,7 +157,7 @@ import androidx.appcompat.app.AppCompatActivity;
                 viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
                 viewHolder.img.setImageBitmap( _bitmap );
                 viewHolder.title.setText( _item.getStr() );
-                viewHolder.time.setText( _item.getStr() );
+                viewHolder.time.setText( _item.getTime() );
                 viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
