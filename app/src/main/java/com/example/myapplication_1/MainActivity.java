@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import ru.osety.amironlibrary.DrawableUtils;
 
@@ -37,11 +38,11 @@ import androidx.appcompat.app.AppCompatActivity;
             super.onCreate(savedInstanceState);
              androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
 
-             androidImageButton.setOnClickListener(new View.OnClickListener(){
+             /*androidImageButton.setOnClickListener(new View.OnClickListener(){
                  public void onClick(View v){
                      Toast.makeText(MainActivity.this,"", Toast.LENGTH_LONG).show();
                  }
-             });
+             });*/
 
             setContentView(R.layout.main_recycler);
 
@@ -64,6 +65,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
             RecyclerView recyclerViewMenu = rv;
 
+
+
+
             try {
 
                 AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
@@ -71,7 +75,7 @@ import androidx.appcompat.app.AppCompatActivity;
                 AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
                 recyclerViewMenu.setAdapter( adapterGridViewMenu );
                 recyclerViewMenu.setLayoutManager(
-                        new GridLayoutManager( getBaseContext(),2, RecyclerView.HORIZONTAL, false ) );
+                        new LinearLayoutManager( getBaseContext(), RecyclerView.HORIZONTAL, false ) );
                 recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
             } catch ( NullPointerException e) {
@@ -84,10 +88,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
             AdapterGridViewMenu.ItemsMenu []_arr = new AdapterGridViewMenu.ItemsMenu[]{
 
-            new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                    R.mipmap.icon_car,
-                        getResources().getString(R.
-                            string.options),
+            new AdapterGridViewMenu.ItemsMenu(
+                    getResources().getColor(R.color.my_gray),
+                    R.mipmap.icon_light_car,
+                        "Эконом",
                     new AdapterGridViewMenu.ItemsMenu.CallBack() {
                 @Override
                 public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
@@ -101,7 +105,61 @@ import androidx.appcompat.app.AppCompatActivity;
                     }
 
                 }
-            }, "5 мин")
+            }, "5 мин"),
+                    new AdapterGridViewMenu.ItemsMenu(
+                            getResources().getColor(R.color.my_gray),
+                            R.mipmap.icon_car_1,
+                            "Стандарт",
+                            new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                                @Override
+                                public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                    try {
+
+                                        Bundle _args = new Bundle();
+
+                                    } catch (NullPointerException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+                            }, "2 мин"),
+                    new AdapterGridViewMenu.ItemsMenu(
+                            getResources().getColor(R.color.my_gray),
+                            R.mipmap.icon_gray_car,
+                            "Комфорт",
+                            new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                                @Override
+                                public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                    try {
+
+                                        Bundle _args = new Bundle();
+
+                                    } catch (NullPointerException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+                            }, "8 мин"),
+                    new AdapterGridViewMenu.ItemsMenu(
+                            getResources().getColor(R.color.my_gray),
+                            R.mipmap.icon_miniven,
+                            "Минивен",
+                            new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                                @Override
+                                public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                    try {
+
+                                        Bundle _args = new Bundle();
+
+                                    } catch (NullPointerException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+                            }, "15 мин")
             };
             return _arr;
 
@@ -187,8 +245,8 @@ import androidx.appcompat.app.AppCompatActivity;
                     this.colorBackgroundInt = colorBackgroundRes;
                     this.imgResId = imgResId;
                     this.str = str;
-                    this.time = time;
                     this.callBack = callBack;
+                    this.time = time;
                 }
 
                 public CallBack getCallBack() {

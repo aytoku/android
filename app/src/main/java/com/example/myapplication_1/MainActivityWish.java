@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import ru.osety.amironlibrary.DrawableUtils;
@@ -58,7 +59,7 @@ public class MainActivityWish extends AppCompatActivity {
             AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
-                    new GridLayoutManager( getBaseContext(),2, RecyclerView.VERTICAL, false ) );
+                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
@@ -75,8 +76,7 @@ public class MainActivityWish extends AppCompatActivity {
 
                 new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
-                        getResources().getString(R.
-                                string.options),
+                        "Детское кресло",
                         new AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
@@ -90,7 +90,75 @@ public class MainActivityWish extends AppCompatActivity {
                                 }
 
                             }
-                        }, "")
+                        }, "30 \u20BD"),
+                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                        R.mipmap.ic_launcher_round,
+                        "Детское кресло",
+                        new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                try {
+
+                                    Bundle _args = new Bundle();
+
+                                } catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        }, "30 \u20BD"),
+                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                        R.mipmap.ic_launcher_round,
+                        "Детское кресло",
+                        new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                try {
+
+                                    Bundle _args = new Bundle();
+
+                                } catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        }, "30 \u20BD"),
+                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                        R.mipmap.ic_launcher_round,
+                        "Детское кресло",
+                        new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                try {
+
+                                    Bundle _args = new Bundle();
+
+                                } catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        }, "30 \u20BD"),
+                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                        R.mipmap.ic_launcher_round,
+                        "Детское кресло",
+                        new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                try {
+
+                                    Bundle _args = new Bundle();
+
+                                } catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        }, "30 \u20BD")
         };
         return _arr;
 
