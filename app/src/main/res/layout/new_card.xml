@@ -18,7 +18,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#424242"
-                android:layout_gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:paddingLeft="140dp"
                 android:text="Новая карта"
                 android:textStyle="bold"
                 android:textSize="19sp"/>
@@ -27,6 +28,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
                 android:text="Номер карты"
                 android:textSize="13sp"
                 android:textColor="#8A8A8A"/>
@@ -35,28 +39,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Номер карты"
-                android:textSize="13sp"
-                android:textColor="#8A8A8A"/>
+                android:text="1234 5678 9101112"
+                android:paddingLeft="15dp"
+                android:textSize="17sp"
+                android:textColor="#515151"/>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:textAlignment="center"
+                android:background="@drawable/line_grey"
+                android:textColorHint="#C0BFC6"
+                android:maxLength="1"
+                android:inputType="number"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Номер карты"
-                    android:textSize="13sp"
-                    android:textColor="#8A8A8A"/>
-
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -67,42 +69,104 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Номер карты"
+                    android:paddingLeft="15dp"
+                    android:text="Срок действия"
+                    android:paddingTop="5dp"
                     android:textSize="13sp"
                     android:textColor="#8A8A8A"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:text="12/12"
+                        android:textColor="#515151"
+                        android:textSize="17sp"/>
+
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="8"
+                        android:textAlignment="center"
+                        android:background="@drawable/line_grey"
+                        android:textColorHint="#C0BFC6"
+                        android:maxLength="1"
+                        android:inputType="number"/>
+
 
                 </LinearLayout>
 
 
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:text="CVV"
+                        android:paddingTop="5dp"
+                        android:textSize="13sp"
+                        android:textColor="#8A8A8A"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:inputType="numberPassword"
+                        android:text="1212"
+                        android:textColor="#515151"
+                        android:textSize="17sp"/>
+
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="8"
+                        android:textAlignment="center"
+                        android:background="@drawable/line"
+                        android:textColorHint="#C0BFC6"
+                        android:maxLength="1"
+                        android:inputType="number"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="15dp"
+                        android:text="Трехзначный код на обороте карты"
+                        android:paddingTop="5dp"
+                        android:textSize="13sp"
+                        android:paddingBottom="40dp"
+                        android:textColor="#8A8A8A"/>
+
+                </LinearLayout>
+
+
             </LinearLayout>
 
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Номер карты"
-                android:textSize="13sp"
-                android:textColor="#8A8A8A"/>
-
-
-
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_grey_story"
+                            android:textAllCaps="false"
+                            android:paddingLeft="140dp"
+                            android:paddingRight="140dp"
+                            android:paddingTop="20dp"
+                            android:paddingBottom="20dp"
+                            android:text="Привязать карту"/>
+                </LinearLayout>
         </LinearLayout>
-
-
-
-
-
-
-
-
-
 
 
 

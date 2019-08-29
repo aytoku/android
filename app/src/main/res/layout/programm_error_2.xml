@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Ошибка программы"
+                android:paddingLeft="22dp"
+                android:paddingBottom="20dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="#424242"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="Вы можете написать подрробный комментарий  \n о поездке или сообщить какую-либо \n информацию о водителе"
+                android:textSize="14sp"
+                android:textColor="#B4B4B4"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:text="Комментарий"
+                android:textSize="14sp"
+                android:textColor="#B4B4B4"/>
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="16"
+                />
+
+
+
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/button_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="90dp"
+                android:paddingRight="90dp"
+                android:paddingTop="20dp"
+                android:textSize="17sp"
+                android:paddingBottom="20dp"
+                android:textColor="#ffffff"
+                android:background="@drawable/mybutton"
+                android:textAllCaps="false"
+                android:text="Отправить" />
+
+
+
+
+
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+
+        <TextView
+            android:id="@+id/title_wish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="Настройки"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:textColor="@color/my_black"
+            android:paddingLeft="20dp"
+            android:paddingBottom="20sp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Не звонить"
+                android:textColor="#424242"
+                android:paddingBottom="15dp"
+                android:textSize="17sp"
+                android:paddingRight="90dp"
+                android:paddingLeft="20dp"/>
+
+
+
+
+
+            <TextView
+                android:id="@+id/cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 ₽"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:paddingLeft="60dp"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/my_switch"
+                android:layout_width="wrap_content"
+                android:paddingLeft="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dip"
+                android:scaleY="1.3"
+                android:scaleX="1.3"
+                />
+
+
+        </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/desc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Язык голосового ввода"
+                    android:textColor="#424242"
+                    android:textSize="17sp"
+                    android:paddingRight="90dp"
+                    android:paddingLeft="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Русский"
+                    android:paddingLeft="20dp"
+                    android:textSize="13sp"
+                    android:paddingBottom="15dp"
+                    android:textColor="#C6C6C6"/>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#EDEDED"/>
+
+
+            </LinearLayout>
+            </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+    <!--app:checkedState="@{my_data.checked}"-->
