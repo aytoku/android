@@ -227,7 +227,7 @@ public class MainActivityWish extends AppCompatActivity {
             private CallBack callBack;
             private String desc;
 
-            public ItemsMenu(int colorBackgroundRes, int imgResId, String str, CallBack callBack,String time) {
+            public ItemsMenu(int colorBackgroundRes, int imgResId, String cost, CallBack callBack,String desc) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.imgResId = imgResId;
                 this.cost = cost;
