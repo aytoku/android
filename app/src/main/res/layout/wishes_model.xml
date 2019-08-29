@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linear_wish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Детское кресло"
+            android:textColor="@color/my_black"
+            android:textSize="17sp"
+            android:paddingRight="75dp"
+            android:paddingLeft="15dp"/>
+
+
+        <TextView
+            android:id="@+id/cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 ₽"
+            android:textColor="#424242"
+            android:textSize="15sp"
+            android:paddingLeft="57dp"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/my_switch"
+            android:layout_width="wrap_content"
+            android:paddingLeft="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dip"
+            android:scaleY="1.3"
+            android:scaleX="1.3"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
