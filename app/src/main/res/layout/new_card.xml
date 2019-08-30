@@ -36,11 +36,14 @@
                 android:textColor="#8A8A8A"/>
 
 
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1234 5678 9101112"
                 android:paddingLeft="15dp"
+                android:inputType=""
                 android:textSize="17sp"
                 android:textColor="#515151"/>
 
@@ -48,11 +51,11 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="12"
+                android:ems="20"
                 android:textAlignment="center"
                 android:background="@drawable/line_grey"
                 android:textColorHint="#C0BFC6"
-                android:maxLength="1"
+                android:maxLength="12"
                 android:inputType="number"/>
 
             <LinearLayout
@@ -87,11 +90,11 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ems="8"
+                        android:ems="10"
                         android:textAlignment="center"
                         android:background="@drawable/line_grey"
                         android:textColorHint="#C0BFC6"
-                        android:maxLength="1"
+                        android:maxLength="5"
                         android:inputType="number"/>
 
 
@@ -127,11 +130,11 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ems="8"
+                        android:ems="10"
                         android:textAlignment="center"
                         android:background="@drawable/line"
                         android:textColorHint="#C0BFC6"
-                        android:maxLength="1"
+                        android:maxLength="4"
                         android:inputType="number"/>
 
 
@@ -139,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:paddingLeft="15dp"
-                        android:text="Трехзначный код на обороте карты"
+                        android:text="Трехзначный код  на \n обороте карты"
                         android:paddingTop="5dp"
                         android:textSize="13sp"
                         android:paddingBottom="40dp"

@@ -8,30 +8,39 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class MainActivityWish extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivityPaymentMethod extends AppCompatActivity {
+
+    ImageButton androidImageButton;
 
     RecyclerView rv;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
+        androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
 
-        setContentView(R.layout.wishes);
+        setContentView(R.layout.payment_method);
 
-        rv = findViewById(R.id.recycler_wishes);
 
     }
 
@@ -50,44 +59,50 @@ public class MainActivityWish extends AppCompatActivity {
 
         RecyclerView recyclerViewMenu = rv;
 
+
+
+
         try {
+
             AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
             AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
+                    new LinearLayoutManager( getBaseContext(), RecyclerView.HORIZONTAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
-            } catch ( NullPointerException e) {
-                e.printStackTrace();
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
         }
+
     }
-
-
 
     private AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
         AdapterGridViewMenu.ItemsMenu []_arr = new AdapterGridViewMenu.ItemsMenu[]{
 
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
-                        "30 \u20BD",
-                         "Детское кресло"),
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
-                        "0 \u20BD",
-                         "Курящий салон"),
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
-                        "10 \u20BD",
-                        "Некурящий салон"),
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
-                        "10 \u20BD",
-                        "Пустой багажник")
+                new AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        R.mipmap.icon_light_car,
+                        "Эконом",
+                        new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                try {
+
+                                    Bundle _args = new Bundle();
+
+                                } catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        }, "5 мин")
         };
         return _arr;
+
     }
 
 
@@ -108,7 +123,7 @@ public class MainActivityWish extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_wishes_model, viewGroup, false);
+            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.payment_method, viewGroup, false);
             return new ViewHolder(v);
 
         }
@@ -127,11 +142,26 @@ public class MainActivityWish extends AppCompatActivity {
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
-          //  viewHolder.img.setBackground( ic_rout_color );
-            //viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
-            //viewHolder.img.setImageBitmap( _bitmap );
-            viewHolder.desc.setText( _item.getStr() );
-            viewHolder.cost.setText(_item.getCost());
+            viewHolder.img.setBackground( ic_rout_color );
+            viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
+            viewHolder.img.setImageBitmap( _bitmap );
+            viewHolder.title.setText( _item.getStr() );
+            viewHolder.time.setText( _item.getTime() );
+            viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    try {
+
+                        _item.getCallBack().call(_item);
+
+                    } catch ( NullPointerException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
+
         }
 
         @Override
@@ -141,17 +171,26 @@ public class MainActivityWish extends AppCompatActivity {
 
         public static class ItemsMenu {
 
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+            }
 
             private @ColorInt int colorBackgroundInt;
             private int imgResId;
-            private String cost;
-            private String desc;
+            private String str;
+            private CallBack callBack;
+            private String time;
 
-            public ItemsMenu(int colorBackgroundRes, int imgResId, String cost,String desc) {
+            public ItemsMenu(int colorBackgroundRes, int imgResId, String str, CallBack callBack,String time) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.imgResId = imgResId;
-                this.cost = cost;
-                this.desc = desc;
+                this.str = str;
+                this.callBack = callBack;
+                this.time = time;
+            }
+
+            public CallBack getCallBack() {
+                return callBack;
             }
 
             public int getImgResId() {
@@ -159,31 +198,36 @@ public class MainActivityWish extends AppCompatActivity {
             }
 
             public String getStr() {
-                return desc;
+                return str;
             }
 
-            public String getCost() {
-                return cost;
+            public String getTime() {
+                return time;
             }
 
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
-        }
 
+        }
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
             private final ImageView img;
-            private final TextView desc;
-            private final TextView cost;
+            private final TextView title;
+            private final CardView cv_item;
+            private final TextView time;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
+                cv_item = itemView.findViewById(R.id.cv_item);
                 img = itemView.findViewById(R.id.img);
-                desc = itemView.findViewById(R.id.desc);
-                cost = itemView.findViewById(R.id.cost);
+                title = itemView.findViewById(R.id.title);
+                time = itemView.findViewById(R.id.time);
+
             }
         }
+
     }
 }
+

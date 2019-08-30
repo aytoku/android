@@ -17,7 +17,7 @@
             android:textStyle="bold"
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
-            android:paddingBottom="25dp"
+            android:paddingBottom="40dp"
             android:textColor="#424242"/>
 
         <LinearLayout
@@ -27,9 +27,12 @@
             android:orientation="horizontal">
 
 
-            <ImageButton
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@mipmap/icon_button_plus"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
                 />
 
 
@@ -37,7 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Добавить адрес дома"
-                android:paddingBottom="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
                 android:textSize="17sp"
                 android:paddingLeft="10dp"
                 android:textColor="#424242"/>
@@ -60,18 +64,21 @@
             android:orientation="horizontal">
 
 
-            <ImageButton
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@mipmap/icon_button_plus"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
                 />
-
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Добавить адрес работы"
+                android:paddingTop="10dp"
                 android:paddingLeft="10dp"
-                android:paddingBottom="15dp"
+                android:paddingBottom="20dp"
                 android:textSize="17sp"
                 android:textColor="#424242"/>
 

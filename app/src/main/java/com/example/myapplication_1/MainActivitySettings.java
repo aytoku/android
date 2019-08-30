@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class MainActivityWish extends AppCompatActivity {
+public class MainActivitySettings extends AppCompatActivity {
 
     RecyclerView rv;
 
@@ -29,9 +29,9 @@ public class MainActivityWish extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.wishes);
+        setContentView(R.layout.settings);
 
-        rv = findViewById(R.id.recycler_wishes);
+        rv = findViewById(R.id.recycler_settings);
 
     }
 
@@ -59,8 +59,8 @@ public class MainActivityWish extends AppCompatActivity {
                     new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
-            } catch ( NullPointerException e) {
-                e.printStackTrace();
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
         }
     }
 
@@ -72,20 +72,10 @@ public class MainActivityWish extends AppCompatActivity {
 
                 new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
-                        "30 \u20BD",
-                         "Детское кресло"),
+                        "Не звонить"),
                 new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
-                        "0 \u20BD",
-                         "Курящий салон"),
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
-                        "10 \u20BD",
-                        "Некурящий салон"),
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
-                        "10 \u20BD",
-                        "Пустой багажник")
+                        "Не предлагать сообщения о \n снижении цены")
         };
         return _arr;
     }
@@ -108,7 +98,7 @@ public class MainActivityWish extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_wishes_model, viewGroup, false);
+            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_settings, viewGroup, false);
             return new ViewHolder(v);
 
         }
@@ -127,11 +117,10 @@ public class MainActivityWish extends AppCompatActivity {
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
-          //  viewHolder.img.setBackground( ic_rout_color );
+            //  viewHolder.img.setBackground( ic_rout_color );
             //viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             //viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
-            viewHolder.cost.setText(_item.getCost());
         }
 
         @Override
@@ -144,13 +133,11 @@ public class MainActivityWish extends AppCompatActivity {
 
             private @ColorInt int colorBackgroundInt;
             private int imgResId;
-            private String cost;
             private String desc;
 
-            public ItemsMenu(int colorBackgroundRes, int imgResId, String cost,String desc) {
+            public ItemsMenu(int colorBackgroundRes, int imgResId,String desc) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.imgResId = imgResId;
-                this.cost = cost;
                 this.desc = desc;
             }
 
@@ -162,9 +149,7 @@ public class MainActivityWish extends AppCompatActivity {
                 return desc;
             }
 
-            public String getCost() {
-                return cost;
-            }
+
 
             public int getColorBackground() {
                 return colorBackgroundInt;
@@ -176,13 +161,11 @@ public class MainActivityWish extends AppCompatActivity {
 
             private final ImageView img;
             private final TextView desc;
-            private final TextView cost;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 img = itemView.findViewById(R.id.img);
                 desc = itemView.findViewById(R.id.desc);
-                cost = itemView.findViewById(R.id.cost);
             }
         }
     }

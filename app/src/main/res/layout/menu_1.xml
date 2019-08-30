@@ -9,6 +9,7 @@
         android:layout_height="match_parent"
         android:paddingTop="40dp"
         android:paddingBottom="20dp"
+        android:background="@drawable/angle_radius"
         android:orientation="vertical">
 
 
