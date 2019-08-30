@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сегодня 10:10"
+                android:paddingTop="15dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="15dp"
+                android:textStyle="bold"
+                android:textColor="#424242"
+                android:textSize="17sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/elisple_red"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_ellipse_red"
+                android:scaleType="center"
+                android:paddingTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/street_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Максима Горького, 23"
+                android:textSize="17sp"
+                android:textColor="#424242"
+                android:paddingTop="15dp"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/elisple_blue"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_circle"
+                android:scaleType="center"
+                android:paddingTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/street_name_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Коста Хетагурова, 123"
+                android:textSize="17sp"
+                android:textColor="#424242"
+                android:paddingTop="15dp"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:paddingRight="10dp"
+                android:paddingTop="20dp"
+                android:paddingLeft="15dp">
+
+                <Button
+                    android:id="@+id/button_write"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_sms"
+                    android:text="Помощь"
+                    android:paddingLeft="122dp"
+                    android:paddingRight="122dp"
+                    android:background="@drawable/button_grey_story"
+                    android:textAllCaps="false"
+                    android:textColor="#424242"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ожидание"
+            android:textSize="17sp"
+            android:paddingLeft="15dp"
+            android:textColor="#424242"
+            android:paddingTop="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 мин*3 ₽"
+            android:textSize="13sp"
+            android:paddingLeft="15dp"
+            android:textColor="#C6C6C6"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15 ₽"
+        android:textSize="17sp"
+        android:paddingLeft="205dp"
+        android:textColor="#424242"
+        android:paddingTop="15dp"
+        />
+</LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Дополнительные услуги"
+                        android:textSize="17sp"
+                        android:paddingLeft="15dp"
+                        android:textColor="#424242"
+                        android:paddingTop="15dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Детское кресло"
+                        android:textSize="13sp"
+                        android:paddingLeft="15dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="#C6C6C6"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15 ₽"
+                    android:textSize="17sp"
+                    android:paddingLeft="92dp"
+                    android:textColor="#424242"
+                    android:paddingTop="15dp"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#EDEDED"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Дополнительные услуги"
+                        android:textSize="17sp"
+                        android:paddingLeft="15dp"
+                        android:textColor="#424242"
+                        android:paddingTop="15dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VISA 9966"
+                        android:textSize="13sp"
+                        android:paddingLeft="15dp"
+                        android:textColor="#C6C6C6"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="90 ₽"
+                        android:textSize="17sp"
+                        android:paddingLeft="92dp"
+                        android:textColor="#424242"
+                        android:paddingTop="15dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Чек"
+                        android:textSize="13sp"
+                        android:paddingLeft="100dp"
+                        android:textColor="#C6C6C6"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivitySearch">
+        <activity android:name=".MainActivityTravelStoryOne">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
