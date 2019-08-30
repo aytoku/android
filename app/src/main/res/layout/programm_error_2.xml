@@ -11,6 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
 
@@ -20,7 +21,6 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
                 android:text="Ошибка программы"
-                android:paddingLeft="22dp"
                 android:paddingBottom="20dp"
                 android:textStyle="bold"
                 android:textSize="17sp"
@@ -46,16 +46,20 @@
                 android:text="Комментарий"
                 android:textSize="14sp"
                 android:textColor="#B4B4B4"/>
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:layout_gravity="center_horizontal">
             <EditText
                 android:id="@+id/editText1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:ems="16"
+                android:paddingBottom="15dp"
+                android:inputType="text|textMultiLine"
+                android:ems="18"
                 />
-
-
+</LinearLayout>
 
             <Button
                 android:layout_gravity="center_horizontal"

@@ -243,7 +243,7 @@
                         android:layout_height="wrap_content"
                         android:text="Чек"
                         android:textSize="13sp"
-                        android:paddingLeft="100dp"
+                        android:paddingLeft="100dp  "
                         android:textColor="#C6C6C6"
                         />
                 </LinearLayout>
