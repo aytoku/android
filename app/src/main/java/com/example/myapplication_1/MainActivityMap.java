@@ -39,11 +39,6 @@ public class MainActivityMap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
 
-             /*androidImageButton.setOnClickListener(new View.OnClickListener(){
-                 public void onClick(View v){
-                     Toast.makeText(MainActivity.this,"", Toast.LENGTH_LONG).show();
-                 }
-             });*/
 
         setContentView(R.layout.main_recycler);
 

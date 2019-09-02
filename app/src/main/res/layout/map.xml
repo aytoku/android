@@ -53,8 +53,27 @@
 
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:src="@drawable/ico_ellipse_grey_little"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:src="@drawable/ico_ellipse_grey_little"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:src="@drawable/ico_ellipse_grey_little"/>
+
             <View
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
                 android:layout_height="1dp"
                 android:background="#EDEDED"/>
 
@@ -110,12 +129,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_red_circle"
-                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -160,13 +175,11 @@
                 android:layout_height="1dp"
                 android:background="#EDEDED"/>
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
             </androidx.recyclerview.widget.RecyclerView>
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
