@@ -39,10 +39,15 @@ public class MainActivityMap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
 
+             /*androidImageButton.setOnClickListener(new View.OnClickListener(){
+                 public void onClick(View v){
+                     Toast.makeText(MainActivity.this,"", Toast.LENGTH_LONG).show();
+                 }
+             });*/
 
-        setContentView(R.layout.main_recycler);
+        setContentView(R.layout.map);
 
-        rv = (RecyclerView) findViewById(R.id.recycler);
+        rv = (RecyclerView) findViewById(R.id.recycler_map);
 
     }
 
@@ -179,7 +184,7 @@ public class MainActivityMap extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.map, viewGroup, false);
+            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.activity_main, viewGroup, false);
             return new ViewHolder(v);
 
         }
@@ -286,3 +291,4 @@ public class MainActivityMap extends AppCompatActivity {
 
     }
 }
+

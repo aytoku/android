@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#424242"
                 android:paddingTop="15dp"
-                android:paddingLeft="140dp"
+                android:layout_gravity="center_horizontal"
                 android:text="Новая карта"
                 android:textStyle="bold"
                 android:textSize="19sp"/>
@@ -38,20 +38,14 @@
 
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1234 5678 9101112"
-                android:paddingLeft="15dp"
-                android:inputType=""
-                android:textSize="17sp"
-                android:textColor="#515151"/>
 
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="20"
+                android:paddingTop="15dp"
+                android:paddingBottom="38dp"
                 android:textAlignment="center"
                 android:background="@drawable/line_grey"
                 android:textColorHint="#C0BFC6"
@@ -78,13 +72,6 @@
                     android:textSize="13sp"
                     android:textColor="#8A8A8A"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="15dp"
-                        android:text="12/12"
-                        android:textColor="#515151"
-                        android:textSize="17sp"/>
 
 
                     <EditText
@@ -92,6 +79,8 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:textAlignment="center"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="38dp"
                         android:background="@drawable/line_grey"
                         android:textColorHint="#C0BFC6"
                         android:maxLength="5"
@@ -117,14 +106,6 @@
                         android:textSize="13sp"
                         android:textColor="#8A8A8A"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="15dp"
-                        android:inputType="numberPassword"
-                        android:text="1212"
-                        android:textColor="#515151"
-                        android:textSize="17sp"/>
 
 
                     <EditText
@@ -132,10 +113,12 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:textAlignment="center"
+                        android:paddingBottom="38dp"
                         android:background="@drawable/line"
+                        android:paddingTop="15dp"
                         android:textColorHint="#C0BFC6"
                         android:maxLength="4"
-                        android:inputType="number"/>
+                        android:inputType="numberPassword"/>
 
 
                     <TextView
@@ -157,14 +140,15 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingTop="160dp"
                     android:layout_gravity="center_horizontal">
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/button_grey_story"
                             android:textAllCaps="false"
-                            android:paddingLeft="140dp"
-                            android:paddingRight="140dp"
+                            android:paddingLeft="110dp"
+                            android:paddingRight="110dp"
                             android:paddingTop="20dp"
                             android:paddingBottom="20dp"
                             android:text="Привязать карту"/>

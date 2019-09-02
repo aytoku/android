@@ -12,10 +12,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="left"
             android:background="@drawable/angle_search_radius"
             android:orientation="vertical">
-
 
 
             <LinearLayout
@@ -24,63 +22,72 @@
                 android:orientation="vertical">
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/line_search"
-                    android:inputType="none"
-                    android:ems="3"/>
+                    android:ems="3"
+                    android:inputType="none" />
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="5dp">
 
 
                     <ImageView
                         android:id="@+id/circle_img"
-                        android:layout_width="90dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/icon_elips_grey"
-                        android:scaleType="centerInside"
+                        android:layout_width="50dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
                         android:paddingBottom="7dp"
-                        />
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_elips_grey" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/address_title"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Адресс места назначения"
-                        android:textSize="17sp"
-                        android:textColor="#D4D4D4"
+                        android:layout_weight="10"
+                        android:background="#FFF"
+                        android:paddingLeft="6dp"
+                        android:inputType="text"
                         android:paddingTop="10dp"
                         android:paddingBottom="20dp"
-                        />
-                    <View android:layout_width="35dp" android:layout_height="1dp" android:layout_marginTop="7dp" android:rotation="90" android:background="#EDEDED"/>
+                        android:hint="Адресс места назначения"
+                        android:textColor="#D4D4D4"
+                        android:textSize="17sp" />
+
+
+                    <View
+                        android:layout_width="25dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="0"
+                        android:background="#EDEDED"
+                        android:rotation="90" />
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="2"
                         android:text="Карта"
-                        android:layout_gravity="center_horizontal"
+                        android:paddingRight="20dp"
                         android:textColor="#424242"
-                        android:textSize="15sp"/>
+                        android:textSize="13sp" />
 
 
                 </LinearLayout>
             </LinearLayout>
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#EDEDED"/>
+                android:background="#EDEDED" />
 
 
             <LinearLayout
@@ -91,14 +98,13 @@
 
                 <ImageView
                     android:id="@+id/img_two_lines"
-                    android:paddingTop="10dp"
                     android:layout_width="90dp"
-                    android:paddingLeft="11dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_work"
+                    android:paddingTop="10dp"
                     android:scaleType="center"
                     android:scaleX="1.4"
-                    android:scaleY="1.2"/>
+                    android:scaleY="1.2"
+                    android:src="@drawable/ic_work" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -107,21 +113,21 @@
 
                     <TextView
                         android:id="@+id/dont_show1"
-                        android:paddingTop="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
                         android:text="Работа"
-                        android:textSize="17sp"
-                        android:textColor="#424242"/>
+                        android:textColor="#424242"
+                        android:textSize="17sp" />
 
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingBottom="15dp"
                         android:text="Галковского, 223"
-                        android:textSize="11sp"
                         android:textColor="#9B9B9B"
-                        android:paddingBottom="15dp"/>
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
@@ -130,7 +136,8 @@
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#EDEDED"/>
+                android:background="#EDEDED" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,36 +146,36 @@
 
                 <ImageView
                     android:id="@+id/arrow_img"
-                    android:paddingTop="5dp"
                     android:layout_width="90dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/icon_home"
+                    android:paddingTop="5dp"
                     android:scaleType="center"
-                    android:paddingLeft="11dp"
                     android:scaleX="1.4"
-                    android:scaleY="1.3"/>
+                    android:scaleY="1.3"
+                    android:src="@drawable/icon_home" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/dont_show"
-                    android:paddingTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Домой"
-                    android:textSize="17sp"
-                    android:textColor="#424242"/>
+                    <TextView
+                        android:id="@+id/dont_show"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:text="Домой"
+                        android:textColor="#424242"
+                        android:textSize="17sp" />
 
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
                         android:text="Некрасова, 22"
-                        android:textSize="11sp"
                         android:textColor="#9B9B9B"
-                        android:paddingBottom="15dp"/>
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
@@ -177,18 +184,18 @@
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#EDEDED"/>
+                android:background="#EDEDED" />
 
 
             <TextView
                 android:id="@+id/address_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingTop="10dp"
                 android:text="Коста Хетагурова, 123"
-                android:textSize="17sp"
                 android:textColor="#424242"
-                android:paddingTop="20sp"
-                android:paddingLeft="40dp"/>
+                android:textSize="17sp" />
 
 
             <TextView
@@ -196,101 +203,95 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:textColor="#9B9B9B"
-                android:textSize="11sp"
-                android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
                 android:paddingLeft="40dp"
-                android:paddingTop="10dp"
+                android:paddingTop="5dp"
                 android:paddingBottom="10dp"
-                />
+                android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
+                android:textColor="#9B9B9B"
+                android:textSize="11sp" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingTop="5dp"
                 android:text="Анечка"
-                android:textSize="17sp"
                 android:textColor="#424242"
-                android:paddingTop="20sp"
-                android:paddingLeft="40dp"/>
+                android:textSize="17sp" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:textSize="11sp"
+                android:paddingLeft="40dp"
+                android:paddingTop="5dp"
+
                 android:text="Августовских событий, 94"
-
                 android:textColor="#9B9B9B"
-                android:paddingLeft="40dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="11sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingTop="10dp"
                 android:text="Августовских событий, 79"
-                android:textSize="17sp"
                 android:textColor="#424242"
-                android:paddingTop="20sp"
-                android:paddingLeft="40dp"/>
+                android:textSize="17sp" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:textSize="11sp"
-                android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
-
-                android:textColor="#9B9B9B"
                 android:paddingLeft="40dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:paddingTop="5dp"
+
+                android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
+                android:textColor="#9B9B9B"
+                android:textSize="11sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingTop="10dp"
                 android:text="Мамсурова, 3"
-                android:textSize="17sp"
                 android:textColor="#424242"
-                android:paddingTop="20sp"
-                android:paddingLeft="40dp"/>
+                android:textSize="17sp" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:textSize="11sp"
-                android:textColor="#9B9B9B"
-                android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
                 android:paddingLeft="40dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:paddingTop="5dp"
+                android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
+                android:textColor="#9B9B9B"
+                android:textSize="11sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingTop="10dp"
                 android:text="Леваневского, 3"
-                android:textSize="17sp"
                 android:textColor="#424242"
-                android:paddingTop="20sp"
-                android:paddingLeft="40dp"/>
+                android:textSize="17sp" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:textSize="11sp"
-                android:textColor="#9B9B9B"
-                android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
                 android:paddingLeft="40dp"
                 android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
-
+                android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
+                android:textColor="#9B9B9B"
+                android:textSize="11sp" />
 
 
         </LinearLayout>
