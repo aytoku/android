@@ -4,8 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:theme="@style/AppTheme"
     android:layout_width="wrap_content" android:layout_height="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/ll_button_red"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
         android:gravity="center_horizontal">
@@ -13,7 +15,7 @@
 
 
         <Button
-            android:id="@+id/button_red"
+            android:id="@+id/ll_button_red.button_red"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="90dp"

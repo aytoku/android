@@ -10,13 +10,14 @@
     tools:overrideLibrary="ru.osety.amironlibrary">
 
     <LinearLayout
+        android:id="@+id/ll_activity"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_item"
+        android:id="@+id/ll_activity.cv_item"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:cardCornerRadius="10dp"
@@ -26,92 +27,75 @@
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_with_shadow"
-    >
 
-    <!--androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerVertical="true"
-        android:paddingStart="20dp"
-        android:paddingLeft="20dp"
-        android:paddingEnd="28dp"
-        android:paddingRight="30dp"
-        app:backgroundTint="@color/my_black"
-        app:cardBackgroundColor="@color/my_gray"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
-        app:cardUseCompatPadding="true"-->
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="90dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@mipmap/icon_light_car"
-                android:scaleType="center"
-                android:scaleX="1.4"
-                android:scaleY="1.4"/>
+                android:background="@drawable/background_with_shadow"
+                >
 
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-        <LinearLayout
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="90dp"
-                android:textSize="14sp"
-                android:layout_height="match_parent"
-                android:textStyle="bold"
-                android:paddingStart="8dp"
-                android:paddingLeft="8dp"
-                android:paddingEnd="8dp"
-                android:paddingRight="8dp"
-                android:text="Эконом"
-                android:textColor="#000000" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
+                        <ImageView
+                            android:id="@+id/img"
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/icon_light_car"
+                            android:scaleType="center"
+                            android:scaleX="1.4"
+                            android:scaleY="1.4"/>
 
-                <TextView
-                    android:id="@+id/time"
-                    android:layout_width="90dp"
-                    android:layout_height="match_parent"
-                    android:paddingStart="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingEnd="8dp"
-                    android:textSize="14sp"
-                    android:paddingRight="8dp"
-                    android:text="5 мин"
-                    android:textColor="#000000" />
-
-        </LinearLayout>
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:gravity="center_horizontal|center_vertical"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                >
+                                <TextView
+                                    android:id="@+id/title"
+                                    android:layout_width="90dp"
+                                    android:textSize="14sp"
+                                    android:layout_height="match_parent"
+                                    android:textStyle="bold"
+                                    android:paddingStart="8dp"
+                                    android:paddingLeft="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingRight="8dp"
+                                    android:text="Эконом"
+                                    android:textColor="#000000" />
 
 
+                                    <TextView
+                                        android:id="@+id/time"
+                                        android:layout_width="90dp"
+                                        android:layout_height="match_parent"
+                                        android:paddingStart="8dp"
+                                        android:paddingLeft="8dp"
+                                        android:paddingEnd="8dp"
+                                        android:textSize="14sp"
+                                        android:paddingRight="8dp"
+                                        android:text="5 мин"
+                                        android:textColor="#000000" />
 
+                            </LinearLayout>
+                 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-</LinearLayout>
-
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+      </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </androidx.cardview.widget.CardView>
 
-
-    </LinearLayout>
+  </LinearLayout>
 
 </RelativeLayout>
 
