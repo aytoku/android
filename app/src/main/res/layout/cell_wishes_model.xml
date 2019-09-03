@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linear_wish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,6 +11,8 @@
         <TextView
             android:id="@+id/desc"
             android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="Детское кресло"
@@ -22,30 +21,28 @@
             android:paddingRight="75dp"
             android:paddingLeft="15dp"/>
 
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="10dp"
-    android:layout_gravity="right">
+    android:paddingBottom="10dp">
         <TextView
             android:id="@+id/cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:text="30 ₽"
+            android:layout_centerInParent="true"
+            android:paddingLeft="160dp"
             android:textColor="#424242"
-            android:textSize="15sp"
-            android:paddingLeft="57dp"/>
+            android:textSize="15sp"/>
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/my_switch"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:paddingLeft="20dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
         android:paddingTop="5dp"
         android:scaleX="1.2"
         android:scaleY="1.2" />
-</LinearLayout>
-    </LinearLayout>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</LinearLayout>
+</RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
