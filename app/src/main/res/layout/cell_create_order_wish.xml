@@ -6,7 +6,7 @@
     <RelativeLayout
         android:id="@+id/rl_create_order_wish"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:paddingTop="10dp"
         android:paddingLeft="5dp"
@@ -28,6 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="45dp"
+            android:paddingTop="5dp"
+            android:textAlignment="center"
+            android:gravity="center"
             android:text="Пожелания"
             android:textSize="17sp"
             android:textColor="#424242"/>
@@ -36,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
+            android:paddingTop="5dp"
             android:layout_alignParentRight="true"
             android:orientation="vertical">
 
