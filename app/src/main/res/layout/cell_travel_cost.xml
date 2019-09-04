@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="15dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+    <LinearLayout
+        android:id="@+id/ll_cell_travel_cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/ll_cell_travel_cost.title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Стоимость поездки"
+        android:textAlignment="gravity"
+        android:textColor="#AFAFAF"
+        android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/ll_cell_travel_cost.description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="90 ₽"
+            android:textAlignment="gravity"
+            android:textColor="#424242"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/ll_cell_travel_cost.button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="0"
+        android:background="@drawable/ic_group_10_red_button"
+        android:textAllCaps="false"
+        android:textColor="#AAAAAA"
+        android:textSize="13sp" />
+
+</LinearLayout>
+
+

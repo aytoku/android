@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -23,6 +24,9 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class MainActivityWish extends AppCompatActivity {
 
+    TextView textView;
+    SeekBar seekBar;
+
     RecyclerView rv;
 
     @Override
@@ -32,6 +36,25 @@ public class MainActivityWish extends AppCompatActivity {
         setContentView(R.layout.wishes);
 
         rv = findViewById(R.id.recycler_wishes);
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        textView = (TextView) findViewById(R.id.txtView);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                textView.setText(String.valueOf(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
     }
 

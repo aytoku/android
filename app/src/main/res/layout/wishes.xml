@@ -6,174 +6,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-        <ImageView
-            android:id="@+id/img_cross_grey"
-            android:paddingTop="25dp"
-            android:paddingBottom="25dp"
-            android:paddingLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_cross_black"
-            android:scaleType="center"
-            android:scaleX="1.4"
-            android:scaleY="1.3"/>
-
-
-        <TextView
-            android:id="@+id/title_wish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="Пожелания"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:textColor="@color/my_black"
-            android:paddingLeft="15dp"
-            android:paddingBottom="20sp"/>
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_wishes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </androidx.recyclerview.widget.RecyclerView>
-
-
-    </LinearLayout>
-
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Изменить стоимость поездки"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:textColor="#424242"
-            android:textSize="17sp"/>
-
-
-        <TextView
-            android:paddingTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:text="Вы можете самостоятельно отрегулировать стоимость вашей поездки"
-            android:textColor="#D4D7DC"
-            android:textSize="15dp"/>
-
-
-
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="bottom"
-                >
-                <HorizontalScrollView
+                android:id="@+id/ll_wishes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:orientation="vertical">
+
+
+                <ImageButton
+                    android:id="@+id/ll_wishes.img_cross_grey"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:layout_width="60dp"
+                    android:background="#CDFCFAFA"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_cross_black"
+                    android:scaleType="center"
+                    android:scaleX="1.4"
+                    android:scaleY="1.3"/>
+
+
+                <TextView
+                    android:id="@+id/ll_wishes.title_wish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Пожелания"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/my_black"
+                    android:paddingLeft="15dp"
+                    android:paddingBottom="15dp"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_wishes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-                    <ScrollView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:src="@drawable/icon_scroll"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:scaleType="center"/>
-
-                    </ScrollView>
-                </HorizontalScrollView>
+                </androidx.recyclerview.widget.RecyclerView>
 
 
             </LinearLayout>
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
 
-    </LinearLayout>
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Стоимость"
-            android:paddingLeft="15dp"
-            android:textSize="15sp"
-            android:textColor="#DCDFE4"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:text="90 ₽"
-                android:textSize="22sp"
-                android:textColor="#424242"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
+            <include
+            android:id="@+id/ll_wishes.include_change_cost"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="200dp"
-            android:paddingTop="10dp"
-            >
-
-        <ImageButton
-
-            android:id="@+id/img_cross_grey1"
-            android:layout_width="match_parent"
-            android:background="@color/my_white"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_group_10_red_button"
-            android:scaleType="center"
-            android:scaleX="1"
-            android:scaleY="1"
-            tools:ignore="DuplicateIds" />
-        </LinearLayout>
+            android:layout_weight="0.9"
+            layout="@layout/cell_travels_cost_change"/>
 
-    </LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+             <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#EDEDED"/>
+
+            <include
+                android:id="@+id/ll_wishes.include_ost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.1"
+                layout="@layout/cell_travel_cost"/>
 
 
 </LinearLayout>
-
-    <!--app:checkedState="@{my_data.checked}"-->
