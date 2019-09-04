@@ -24,7 +24,7 @@
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
         app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/my_gray">
+        app:cardBackgroundColor="@drawable/shadow_cv">
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -32,8 +32,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@drawable/shadow_cv"
-                >
+                android:background="@drawable/shadow_cv">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
