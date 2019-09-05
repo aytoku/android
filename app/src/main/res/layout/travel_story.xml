@@ -8,26 +8,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal">
-
-
 
         <LinearLayout
+            android:id="@+id/ll_travel_story"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:layout_gravity="center">
+            android:paddingBottom="5dp">
 
 
 
             <TextView
+                android:id="@+id/ll_travel_story.title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="История поездок"
                 android:textColor="#424242"
                 android:textSize="17sp"
@@ -36,7 +32,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
 
 
 

@@ -11,42 +11,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingTop="10dp"
             android:orientation="vertical">
-
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Служба поддержки"
+                    android:layout_gravity="center_horizontal"
                     android:paddingBottom="10dp"
                     android:textColor="#424242"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
 
 
-            </LinearLayout>
-
-            <TextView
-                android:paddingLeft="40dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Последняя поездка"
-                android:paddingBottom="5dp"
-                android:textColor="#B9B9B9"
-                android:textSize="14sp"/>
+                    <TextView
+                        android:paddingLeft="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Последняя поездка"
+                        android:paddingBottom="5dp"
+                        android:textColor="#B9B9B9"
+                        android:textSize="14sp"/>
 
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_item"
+                android:layout_weight="0"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -156,7 +149,7 @@
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:drawableStart="@drawable/icon_sms"
+                                android:drawableStart="@drawable/icon_details"
                                 android:text="Детали \n поездки"
                                 android:paddingLeft="30dp"
                                 android:paddingRight="30dp"
@@ -211,14 +204,16 @@
                 android:layout_height="wrap_content"
                 android:text="Ваши вопросы"
                 android:paddingTop="15dp"
+                android:layout_weight="0"
                 android:paddingBottom="10dp"
                 android:textColor="#B9B9B9"
                 android:textSize="14sp"/>
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
                 android:orientation="horizontal">
@@ -232,12 +227,25 @@
                     android:text="Другая поездка"
                     android:paddingLeft="22dp"
                     android:paddingBottom="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
 
 
+                <ImageButton
+                    android:id="@+id/ll_information_field.button_arrow_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="#FFF"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_arrow_right"/>
 
-            </LinearLayout>
+
+
+            </RelativeLayout>
 
             <View
                 android:layout_width="fill_parent"
@@ -245,9 +253,10 @@
                 android:background="#EDEDED"/>
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
                 android:orientation="horizontal">
@@ -261,12 +270,25 @@
                     android:text="Неаккуратное вождение"
                     android:paddingLeft="22dp"
                     android:paddingBottom="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
 
 
+                <ImageButton
+                    android:id="@+id/ll_information_field.button_arrow_right2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="#FFF"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_arrow_right"/>
 
-            </LinearLayout>
+
+
+            </RelativeLayout>
 
             <View
                 android:layout_width="fill_parent"
@@ -274,9 +296,10 @@
                 android:background="#EDEDED"/>
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
                 android:orientation="horizontal">
@@ -288,14 +311,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ошибка программы"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:paddingLeft="22dp"
                     android:paddingBottom="15dp"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
 
 
+                <ImageButton
+                    android:id="@+id/ll_information_field.button_arrow_right3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="#FFF"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_arrow_right"/>
 
-            </LinearLayout>
+
+
+            </RelativeLayout>
 
             <View
                 android:layout_width="fill_parent"

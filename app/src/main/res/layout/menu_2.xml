@@ -9,6 +9,7 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_menu_2"
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:paddingTop="15dp"
@@ -19,10 +20,12 @@
 
 
         <TextView
+            android:id="@+id/ll_menu_2.title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingBottom="5dp"
+            android:layout_weight="0"
             android:paddingLeft="20dp"
             android:text="+7 963 377 88 44"
             android:textStyle="bold"
@@ -30,19 +33,23 @@
             android:textSize="17sp"/>
 
         <TextView
+            android:id="@+id/ll_menu_2.title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
+            android:layout_weight="0"
             android:paddingLeft="20dp"
             android:text="Способ оплаты"
             android:textColor="#424242"
             android:textSize="17sp"/>
 
         <TextView
+            android:id="@+id/ll_menu_2.title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingLeft="20dp"
+            android:layout_weight="0"
             android:text="Бонусы"
             android:textColor="#424242"
             android:textSize="17sp"/>
@@ -50,9 +57,11 @@
 
 
         <TextView
+            android:id="@+id/ll_menu_2.title3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
+            android:layout_weight="0"
             android:paddingLeft="20dp"
             android:text="История поездок"
             android:textColor="#424242"
@@ -60,9 +69,11 @@
 
 
         <TextView
+            android:id="@+id/ll_menu_2.title4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
+            android:layout_weight="0"
             android:paddingLeft="20dp"
             android:text="Мои адреса"
             android:textColor="#424242"
@@ -70,27 +81,33 @@
 
 
         <TextView
+            android:id="@+id/ll_menu_2.title5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingLeft="20dp"
+            android:layout_weight="0"
             android:text="Настройки"
             android:textColor="#424242"
             android:textSize="17sp"/>
 
         <TextView
+            android:id="@+id/ll_menu_2.title6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:paddingLeft="20dp"
+            android:layout_weight="0"
             android:text="Информация"
             android:textColor="#424242"
             android:textSize="17sp"/>
 
         <TextView
+            android:id="@+id/ll_menu_2.title7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
+            android:layout_weight="0"
             android:paddingLeft="20dp"
             android:text="Служба поддержки"
             android:textColor="#424242"

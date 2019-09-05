@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 
     <LinearLayout
+        android:id="@+id/ll_programm_error1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
@@ -15,12 +13,12 @@
 
 
         <TextView
+            android:id="@+id/ll_programm_error1.title"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="Ошибка программы"
-            android:paddingLeft="22dp"
             android:paddingBottom="20dp"
             android:textStyle="bold"
             android:textSize="17sp"
@@ -28,6 +26,7 @@
 
 
         <TextView
+            android:id="@+id/ll_programm_error1.desc1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Большая стоимость"
@@ -42,6 +41,7 @@
             android:background="#EDEDED"/>
 
         <TextView
+            android:id="@+id/ll_programm_error1.desc2"
             android:paddingTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,6 +58,7 @@
 
 
         <TextView
+            android:id="@+id/ll_programm_error1.desc3"
             android:paddingTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -73,8 +74,6 @@
             android:background="#EDEDED"/>
 
 
-
     </LinearLayout>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-</LinearLayout>
+</RelativeLayout>

@@ -40,9 +40,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
+            android:background="#FCFCFC"
+            android:splitTrack="false"
             android:progress="0"
             android:progressDrawable="@drawable/seekbar_style"
-            android:thumb="@drawable/custom_thumb"/>
+            android:thumb="@drawable/custom_thumb"
+            />
+
+
 
         <TextView
             android:id="@+id/txtView"
@@ -53,7 +58,7 @@
             android:layout_centerHorizontal="true"
             android:text="0 ₽"
             android:gravity="center_horizontal"
-            android:textSize="30sp" />
+            android:textSize="17sp" />
 
     </LinearLayout>
 

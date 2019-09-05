@@ -9,4 +9,6 @@
     <color name="my_FC5C58">#FC5C58</color>
     <color name="my_B4B4B4">#B4B4B4</color>
     <color name="my_white">#FFF</color>
+    <color name="switch_selector">#FFFFFF</color>
+    <color name="switch_selector_false">#D6D6D6</color>
 </resources>

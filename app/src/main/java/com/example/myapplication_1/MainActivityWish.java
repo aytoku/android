@@ -104,11 +104,7 @@ public class MainActivityWish extends AppCompatActivity {
                 new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
                         "10 \u20BD",
-                        "Некурящий салон"),
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
-                        "10 \u20BD",
-                        "Пустой багажник")
+                        "Некурящий салон")
         };
         return _arr;
     }

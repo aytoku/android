@@ -28,30 +28,21 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_with_shadow"
+                android:background="@drawable/cv"
                 android:orientation="vertical">
 
 
                 <TextView
+                    android:id="@+id/ll_alert.question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"
                     android:paddingLeft="30dp"
+                    android:paddingBottom="10dp"
                     android:paddingRight="60dp"
                     android:layout_gravity="left"
-                    android:text="Вы действительно хотите "
+                    android:text="Вы действительно хотите \nотменить поездку?"
                     android:textColor="#424242"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
-                    android:layout_gravity="left"
-                    android:text="отменить поездку?"
-                    android:textColor="#424242"
-                    android:paddingBottom="15dp"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
@@ -63,6 +54,7 @@
 
 
                 <TextView
+                    android:id="@+id/ll_alert.refuse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -80,6 +72,7 @@
 
 
                 <TextView
+                    android:id="@+id/ll_alert.no_refuse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"

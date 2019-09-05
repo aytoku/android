@@ -5,22 +5,24 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_menu1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:paddingTop="40dp"
-        android:paddingBottom="20dp"
         android:background="@drawable/angle_radius"
         android:orientation="vertical">
 
 
 
         <TextView
+            android:id="@+id/ll_menu1.title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Введите номер телефона"
             android:textSize="17sp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
+            android:layout_weight="0"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
             android:paddingRight="60dp"
             android:paddingLeft="20dp"
             android:textColor="#FFFFFF"
@@ -28,9 +30,11 @@
 
 
         <TextView
+            android:id="@+id/ll_menu1.title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
+            android:layout_weight="0"
             android:paddingLeft="20dp"
             android:text="Способ оплаты"
             android:textColor="#424242"
@@ -38,28 +42,34 @@
 
 
         <TextView
+            android:id="@+id/ll_menu1.titl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="30dp"
+            android:layout_weight="0"
             android:paddingLeft="20dp"
             android:text="Настройки"
             android:textColor="#424242"
             android:textSize="17sp"/>
 
         <TextView
+            android:id="@+id/ll_menu1.title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="30dp"
             android:paddingLeft="20dp"
+            android:layout_weight="0"
             android:text="Информация"
             android:textColor="#424242"
             android:textSize="17sp"/>
 
         <TextView
+            android:id="@+id/ll_menu1.title3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="30dp"
             android:paddingLeft="20dp"
+            android:layout_weight="0"
             android:text="Служба поддержки"
             android:textColor="#424242"
             android:textSize="17sp"/>
