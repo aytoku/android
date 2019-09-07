@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Детали заявки"
+            android:textSize="17sp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#424242"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#FFF"
+            android:paddingRight="15dp"
+            android:src="@drawable/icon_refuse_button"/>
+
+
+    </RelativeLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="15sp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Водитель"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#424242"
+            android:background="#F9F9F9"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Гаглоев Игорь Борисович"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#424242"
+            android:textSize="17sp"/>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Серый LADA 2114, A944 PK 15"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#424242"
+            android:textSize="17sp"/>
+
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" +7 (988) 839 57 11"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#424242"
+            android:textSize="17sp"/>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Поездка"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="#424242"
+                android:background="#F9F9F9"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="улица Базарова, 27/2"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#424242"
+                android:textSize="17sp"/>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="улица Налалихина, 47"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#424242"
+                android:textSize="17sp"/>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Время"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#424242"
+        android:background="#F9F9F9"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сегодня в 22:26"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#424242"
+        android:textSize="17sp"/>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Стоимость"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#424242"
+        android:background="#F9F9F9"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Эконом"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#424242"
+        android:textSize="17sp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="121 ₽"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#424242"
+        android:textSize="17sp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Оплата"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#424242"
+        android:background="#F9F9F9"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VISA 0729"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#424242"
+        android:textSize="17sp"/>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+
+        android:background="#EDEDED"/>
+</LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_refuse_payment_method"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/change_payemtn_metod"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/ll_refuse_payment_method.title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:paddingTop="15dp"
+                android:textAlignment="center"
+                android:paddingBottom="15dp"
+                android:textSize="21sp"
+                android:layout_gravity="center"
+                android:background="#F5F5F5"
+                android:text="Сменить способ оплаты"
+                android:textColor="#424242"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/ll_refuse_payment_method.visa"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:src="@mipmap/icon_credit_card"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:paddingLeft="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/ll_refuse_payment_method.visa_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#424242"
+                            android:text="VISA 9966"
+                            android:paddingRight="142dp"
+                            android:textStyle="bold"
+                            android:textSize="17sp"/>
+
+                        <TextView
+                            android:id="@+id/ll_refuse_payment_method.visa_numbers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#C6C6C6"
+                            android:text="03/22"
+                            android:paddingBottom="5dp"
+                            android:textSize="13sp"/>
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="#EDEDED"/>
+
+                    </LinearLayout>
+                    <CheckBox
+                        android:id="@+id/ll_refuse_payment_method.checkBoxBold"
+                        android:button="@drawable/toggle_checked"
+                        android:paddingTop="25dp"
+                        android:layout_weight="0"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/ll_refuse_payment_method.sberbank"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_sber"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:paddingLeft="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/ll_refuse_payment_method.sber_online"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#424242"
+                            android:text="Sberbank Online"
+                            android:paddingTop="10dp"
+                            android:paddingRight="100dp"
+                            android:paddingBottom="15dp"
+                            android:textSize="17sp"/>
+
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="#EDEDED"/>
+
+                    </LinearLayout>
+                    <CheckBox
+                        android:id="@+id/ll_refuse_payment_method.checkBoxBold1"
+                        android:button="@drawable/togle_uncheked"
+                        android:paddingTop="25dp"
+                        android:layout_weight="0"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="17sp"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:id="@+id/ll_information_field.title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Тарифы"
+                    android:textSize="17sp"
+                    android:textColor="#424242"/>
+
+                <ImageButton
+                    android:id="@+id/ll_information_field.button_arrow_right1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="#FFF"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_arrow_right"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
+
+            <Button
+                android:layout_width="380dp"
+                android:layout_height="60dp"
+                android:background="@drawable/button_grey_story"
+                android:text="Выбрать"
+                android:layout_gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textColor="#33353E"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

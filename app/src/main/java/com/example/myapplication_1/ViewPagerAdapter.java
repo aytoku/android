@@ -3,7 +3,6 @@ package com.example.myapplication_1;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.text.style.BackgroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,8 +75,8 @@ public class ViewPagerAdapter extends PagerAdapter {
             view.setBackground(context.getResources().getDrawable(R.drawable.gradient_red));
         }
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        TextView textView_title = (TextView) view.findViewById(R.id.title);
-        TextView textView_desc = (TextView) view.findViewById(R.id.description);
+        TextView textView_title = (TextView) view.findViewById(R.id.title_slider);
+        TextView textView_desc = (TextView) view.findViewById(R.id.description_slider);
         Button button = (Button) view.findViewById(R.id.slider_button);
         if(position == 2){
             button.setVisibility(view.VISIBLE);
