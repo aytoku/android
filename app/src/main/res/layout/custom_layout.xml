@@ -12,11 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="360dp"
         android:layout_weight="0"
-        android:scaleX="0.8"
+        android:scaleX="0.9"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:scaleY="0.8"
+        android:scaleY="0.9"
         android:id="@+id/imageView"/>
 
     <TextView
