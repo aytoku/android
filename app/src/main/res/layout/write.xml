@@ -4,26 +4,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:theme="@style/AppTheme"
-    android:layout_width="wrap_content" android:layout_height="120dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="10dp"
         android:orientation="vertical">
 
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/line_search" />
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:orientation="horizontal">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:orientation="horizontal">
+            android:text="До конца поездки"
+            android:paddingTop="30dp"
+            android:textColor="#424242"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="25dp">
 
             <TextView
                 android:id="@+id/lada"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingTop="10dp"
                 android:paddingRight="20dp"
-                android:paddingBottom="10dp"
                 android:text="желтая LADA 2115"
                 android:textColor="#424242"
                 android:textSize="17sp" />
@@ -35,12 +69,11 @@
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/my_gray"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="0dp"
-                app:cardUseCompatPadding="true">
+                app:cardElevation="0dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="30dp"
                     android:background="@drawable/background_with_shadow">
 
                     <TextView
@@ -49,22 +82,23 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingLeft="20dp"
+                        android:paddingTop="2dp"
                         android:text="в413ну"
-                        android:textStyle="bold"
                         android:textColor="#424242"
                         android:textSize="17sp"
+                        android:textStyle="bold"
                         tools:ignore="MissingConstraints" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:text="12"
+                        android:text="15"
                         android:textColor="@color/my_black"
-                        android:textSize="15sp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView"
-                        app:layout_constraintStart_toEndOf="@+id/textView" />
+                        android:paddingTop="4dp"
+                        android:paddingRight="15dp"
+                        android:textSize="11sp"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -73,22 +107,26 @@
 
         </LinearLayout>
 
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED" />
+
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/call"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="70dp"
                 app:cardBackgroundColor="@color/my_gray"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                app:cardUseCompatPadding="true">
-
-                <androidx.coordinatorlayout.widget.CoordinatorLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                app:cardCornerRadius="11dp"
+                app:cardElevation="2dp">
 
 
                     <LinearLayout
@@ -106,62 +144,47 @@
                             android:scaleY="1.3"
                             android:src="@drawable/icon_phone" />
 
-                        <androidx.coordinatorlayout.widget.CoordinatorLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:orientation="vertical">
 
                                 <TextView
                                     android:id="@+id/title_call"
                                     android:layout_width="90dp"
                                     android:layout_height="match_parent"
-                                    android:paddingStart="8dp"
-                                    android:paddingLeft="8dp"
+                                    android:gravity="center_vertical"
                                     android:paddingEnd="8dp"
                                     android:paddingRight="8dp"
                                     android:text="Позвонить"
-                                    android:textSize="14sp"
                                     android:textColor="#424242"
+                                    android:textSize="14sp"
                                     android:textStyle="bold" />
 
 
-                            </LinearLayout>
-                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
                     </LinearLayout>
 
-                </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/write"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="70dp"
                     app:cardBackgroundColor="@color/my_gray"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:cardUseCompatPadding="true">
+                    app:cardElevation="2dp">
 
-                    <androidx.coordinatorlayout.widget.CoordinatorLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
 
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@drawable/background_with_shadow"
+                            android:paddingLeft="10dp"
                             android:orientation="horizontal">
 
                             <ImageView
@@ -173,39 +196,24 @@
                                 android:scaleY="1.3"
                                 android:src="@drawable/icon_sms" />
 
-                            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:gravity="center_horizontal|center_vertical"
-                                    android:orientation="vertical">
 
                                     <TextView
                                         android:id="@+id/title_write"
                                         android:layout_width="90dp"
                                         android:layout_height="match_parent"
-                                        android:paddingStart="8dp"
-                                        android:paddingLeft="8dp"
+                                        android:gravity="center_vertical"
                                         android:paddingEnd="8dp"
                                         android:paddingRight="8dp"
                                         android:text="Написать"
-                                        android:textSize="14sp"
                                         android:textColor="#424242"
+                                        android:textSize="14sp"
                                         android:textStyle="bold" />
 
 
-                                </LinearLayout>
-                            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
                         </LinearLayout>
 
-
-                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
                 </androidx.cardview.widget.CardView>
 

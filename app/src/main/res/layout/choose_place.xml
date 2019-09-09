@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_choose_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/rl_choose_place.button_strelka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_strelka"/>
+
+
+
+        <TextView
+            android:id="@+id/rl_choose_place.delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Удалить"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#424242"
+            android:background="#FFF"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/rl_choose_place.title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Название"
+            android:textSize="14sp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:textColor="#9B9B9B"/>
+
+
+        <TextView
+            android:id="@+id/rl_choose_place.home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Дом"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:paddingLeft="15dp"
+            android:paddingBottom="20dp"
+            android:textColor="#424242"/>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED" />
+
+
+        <TextView
+            android:id="@+id/rl_choose_place.address_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Коста Хетагуров, 123"
+            android:paddingTop="10dp"
+            android:textSize="17sp"
+            android:paddingLeft="15dp"
+            android:textColor="#424242"/>
+
+
+        <TextView
+            android:id="@+id/rl_choose_place.address_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="г. Владикавказ, руспублика Северная Осетия-Алания,\nРоссия"
+            android:textSize="11sp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="15sp"
+            android:textColor="#9B9B9B"/>
+
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
+
+
+            <TextView
+                android:id="@+id/rl_choose_place.hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Подскажите водителю, как лучше к вам \nподъехать "
+                android:textSize="14sp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:textColor="#9B9B9B"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp">
+
+                <Button
+                    android:id="@+id/rl_choose_place.button"
+                    android:layout_width="390dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/button_grey_story"
+                    android:text="Выбрать местом назначения"
+                    android:layout_alignParentBottom="true"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#4B4D55" />
+
+            </RelativeLayout>
+</LinearLayout>
+

@@ -50,7 +50,7 @@
                 android:scaleType="center"
                 android:scaleX="1.2"
                 android:scaleY="1.2"
-                android:src="@drawable/icon_star_red" />
+                android:src="@drawable/icon_star_red"/>
 
 
             <ImageView
@@ -485,7 +485,7 @@
             android:layout_height="wrap_content"
             android:text="Готово"
             android:textSize="17sp"
-            android:background="#F3F3F3"
+            android:background="@drawable/button_grey_story"
             android:paddingLeft="170dp"
             android:paddingRight="170dp"
             android:textAllCaps="false"
