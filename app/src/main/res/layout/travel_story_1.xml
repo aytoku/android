@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFF"
         android:orientation="vertical"
         >
 
@@ -100,12 +101,12 @@
 
                 <Button
                     android:id="@+id/button_write"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/icon_sms"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:drawableStart="@drawable/icon_yellow_help"
                     android:text="Помощь"
-                    android:paddingLeft="122dp"
-                    android:paddingRight="122dp"
+                    android:paddingLeft="120dp"
+                    android:paddingRight="110dp"
                     android:background="@drawable/button_grey_story"
                     android:textAllCaps="false"
                     android:textColor="#424242"
@@ -120,7 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-<LinearLayout
+<RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -151,13 +152,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="15 ₽"
+        android:layout_alignParentRight="true"
+        android:paddingRight="30dp"
         android:textSize="17sp"
         android:paddingLeft="205dp"
         android:textColor="#424242"
         android:paddingTop="15dp"
         />
-</LinearLayout>
-            <LinearLayout
+</RelativeLayout>
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -188,18 +191,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="15 ₽"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="30dp"
                     android:textSize="17sp"
                     android:paddingLeft="92dp"
                     android:textColor="#424242"
                     android:paddingTop="15dp"
                     />
-            </LinearLayout>
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:background="#EDEDED"/>
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -228,6 +233,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="30dp"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
@@ -243,12 +250,20 @@
                         android:layout_height="wrap_content"
                         android:text="Чек"
                         android:textSize="13sp"
-                        android:paddingLeft="100dp  "
+                        android:paddingLeft="100dp"
                         android:textColor="#C6C6C6"
                         />
                 </LinearLayout>
 
-            </LinearLayout>
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="#FFF"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_vector_grey"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
     </LinearLayout>

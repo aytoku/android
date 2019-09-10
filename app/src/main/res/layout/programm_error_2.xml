@@ -46,37 +46,33 @@
                 android:text="Комментарий"
                 android:textSize="14sp"
                 android:textColor="#B4B4B4"/>
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingBottom="10dp"
-    android:layout_gravity="center_horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:layout_gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/textArea_information"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:gravity="top|left"
-        android:inputType="textMultiLine"
-        android:overScrollMode="always"
-        android:scrollbarStyle="insideInset"
-        android:scrollbars="vertical"
-        android:lines="6"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:scrollHorizontally="false" />
-</LinearLayout>
+                <EditText
+                    android:id="@+id/textArea_information"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine"
+                    android:overScrollMode="always"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:lines="6"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:scrollHorizontally="false" />
+            </LinearLayout>
 
             <Button
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/button_red"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="90dp"
-                android:paddingRight="90dp"
-                android:paddingTop="20dp"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
                 android:textSize="17sp"
-                android:paddingBottom="20dp"
                 android:textColor="#ffffff"
                 android:background="@drawable/mybutton"
                 android:textAllCaps="false"

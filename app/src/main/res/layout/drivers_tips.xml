@@ -78,7 +78,7 @@
                         android:layout_gravity="center_vertical"
                         android:gravity="center_horizontal|center_vertical"
                         android:orientation="horizontal"
-                        android:background="@drawable/background_with_shadow">
+                        android:background="@drawable/shadow">
 
                         <TextView
                             android:id="@+id/title1"
@@ -116,8 +116,7 @@
                             android:layout_gravity="center_vertical"
                             android:gravity="center_horizontal|center_vertical"
                             android:orientation="horizontal"
-
-                            android:background="@drawable/background_with_shadow">
+                            android:background="@drawable/shadow">
 
                             <TextView
                                 android:id="@+id/title2"
@@ -149,7 +148,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:gravity="center_horizontal|center_vertical"
-                            android:background="@drawable/background_with_shadow"
+                            android:background="@drawable/shadow"
                             android:orientation="horizontal">
 
                             <TextView

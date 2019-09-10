@@ -7,10 +7,10 @@
         android:id="@+id/rl_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:paddingTop="35dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="36.82dp"
+        android:paddingRight="20dp"
         android:orientation="horizontal">
 
         <ImageButton
@@ -45,16 +45,15 @@
             android:layout_height="wrap_content"
             android:text="Мои адреса"
             android:textSize="21sp"
+            android:paddingLeft="35dp"
             android:textStyle="bold"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
             android:paddingBottom="40dp"
             android:textColor="#424242"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
+            android:paddingLeft="30dp"
             android:orientation="horizontal">
 
 
@@ -81,7 +80,6 @@
 
 
 
-
         </LinearLayout>
 
         <View
@@ -89,11 +87,12 @@
             android:layout_height="1dp"
             android:background="#EDEDED"/>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
             android:paddingTop="10dp"
+            android:paddingLeft="30dp"
             android:orientation="horizontal">
 
 

@@ -12,17 +12,36 @@
         android:orientation="vertical">
 
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp">
+
+        <ImageButton
+            android:id="@+id/rl_choose_place.button_strelka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_strelka"/>
+
+
         <TextView
             android:id="@+id/ll_programm_error1.title"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:layout_centerInParent="true"
             android:text="Ошибка программы"
             android:paddingBottom="20dp"
             android:textStyle="bold"
             android:textSize="17sp"
             android:textColor="#424242"/>
+
+        </RelativeLayout>
 
 
         <TextView
