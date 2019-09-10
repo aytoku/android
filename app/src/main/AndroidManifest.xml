@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityCodeScreen">
+        <activity android:name=".MainActivityPartners">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
