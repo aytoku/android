@@ -36,14 +36,15 @@ public class MainActivityBlacklistPartners extends AppCompatActivity {
 
     }
    /* public void onCheckboxClicked(View view) {
-
+        // Получаем флажок
         CheckBox checkBox = (CheckBox) view;
+        // Получаем, отмечен ли данный флажок
         boolean checked = checkBox.isChecked();
 
         if(checked){
-            checkBox.setChecked(false);
+            checkBox.setBackgroundColor(getDrawable());
         }else {
-            checkBox.setChecked(true);
+            checkBox
         }
     }*/
 
