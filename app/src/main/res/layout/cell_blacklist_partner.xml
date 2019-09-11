@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/img_checkbox"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:paddingTop="5dp"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/icon_checkbox"
+            android:background="#FFF"/>
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Партнер 1"
+            android:textColor="#424242"
+            android:paddingBottom="15dp"
+            android:textSize="17sp"
+            android:paddingLeft="20dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
+</LinearLayout>
+
+<!--
+        <CheckBox
+            android:id="@+id/ll_blacklist_partner_checkbox"
+            android:button="@drawable/checkbox"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:scaleY="1"
+            android:scaleX="1"/-->

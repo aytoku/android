@@ -6,6 +6,7 @@
         android:width="40dp"
         android:color="#FFFFFF">
     </stroke>
+
     <gradient
 
         android:type="radial"

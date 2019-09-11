@@ -132,7 +132,7 @@
                     </LinearLayout>
                     <CheckBox
                         android:id="@+id/ll_refuse_payment_method.checkBoxBold1"
-                        android:button="@drawable/togle_uncheked"
+                        android:button="@drawable/checkbox"
                         android:paddingTop="25dp"
                         android:layout_weight="0"
                         android:layout_width="30dp"
