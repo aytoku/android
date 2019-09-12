@@ -44,8 +44,8 @@ public class SplashActivity extends Activity {
                     startTime = System.currentTimeMillis();
                     white = black;
                     handler.postDelayed(this, 0);
-
-                } else {
+                }
+                else {
                     endTime = (int) (finishedTime / 250);
                     Spannable spannableString = new SpannableString(textView
                             .getText());

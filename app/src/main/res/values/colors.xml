@@ -11,4 +11,11 @@
     <color name="my_white">#FFF</color>
     <color name="switch_selector">#FFFFFF</color>
     <color name="switch_selector_false">#D6D6D6</color>
+    <color name="switchTrack">#8E8E98</color>
+    <color name="switchTrackDisable">#8E8E98</color>
+    <color name="switchTrackActive">#2FBF52</color>
+    <color name="switchTrackNormal">#8E8E98</color>
+    <color name="switchThumbBgActive">#FFFFFF</color>
+    <color name="switchThumbActive">#FFFFFF</color>
+    <color name="switchThumbkNormal">#FFFFFF</color>
 </resources>
