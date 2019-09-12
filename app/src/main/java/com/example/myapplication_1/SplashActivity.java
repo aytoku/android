@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.transition.ChangeBounds;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -15,12 +14,10 @@ public class SplashActivity extends Activity {
 
     private TextView textView;
     private Handler handler;
-    private long startTime, currentTime, finishedTime = 600L;
+    private long startTime, currentTime, finishedTime = 0L;
     int black = Color.BLACK;
     int white = Color.WHITE;
-    private int duration = 7000 / 4;// 1 character is equal to 1 second. if want to
-    // reduce. can use as divide
-    // by 2,4,8
+    private int duration = 7000 / 4;
     private int endTime = 0;
 
     @Override
@@ -30,7 +27,7 @@ public class SplashActivity extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.test);
         textView = (TextView) findViewById(R.id.textView1);
-        textView.setText("Loading");// length of string is 22
+        textView.setText("Loading");
         handler = new Handler();
         startTime = System.currentTimeMillis();
         currentTime = startTime;
@@ -49,14 +46,12 @@ public class SplashActivity extends Activity {
                     handler.postDelayed(this, 0);
 
                 } else {
-                    endTime = (int) (finishedTime / 250);// divide this by
-                    // 1000,500,250,125
+                    endTime = (int) (finishedTime / 250);
                     Spannable spannableString = new SpannableString(textView
                             .getText());
                     spannableString.setSpan(new ForegroundColorSpan(
                                     white), 0, endTime,
                             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
 
                     textView.setText(spannableString);
                     handler.postDelayed(this, 0);
