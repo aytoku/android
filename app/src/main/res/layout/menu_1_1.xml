@@ -7,9 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
     <LinearLayout
-        android:id="@+id/ll_menu_2"
+        android:id="@+id/ll_menu_1_1"
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:paddingTop="15dp"
@@ -18,9 +17,8 @@
         android:paddingBottom="20dp"
         android:orientation="vertical">
 
-
         <TextView
-            android:id="@+id/ll_menu_2.title"
+            android:id="@+id/ll_menu_1_1.title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -33,7 +31,7 @@
             android:textSize="17sp"/>
 
         <TextView
-            android:id="@+id/ll_menu_2.title1"
+            android:id="@+id/ll_menu_1_1.title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -44,7 +42,7 @@
             android:textSize="17sp"/>
 
         <TextView
-            android:id="@+id/ll_menu_2.title2"
+            android:id="@+id/ll_menu_1_1.title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -54,10 +52,8 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
-
         <TextView
-            android:id="@+id/ll_menu_2.title3"
+            android:id="@+id/ll_menu_1_1.title3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -67,9 +63,8 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
         <TextView
-            android:id="@+id/ll_menu_2.title4"
+            android:id="@+id/ll_menu_1_1.title4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -79,9 +74,8 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
         <TextView
-            android:id="@+id/ll_menu_2.title5"
+            android:id="@+id/ll_menu_1_1.title5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -92,7 +86,7 @@
             android:textSize="17sp"/>
 
         <TextView
-            android:id="@+id/ll_menu_2.title6"
+            android:id="@+id/ll_menu_1_1.title6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -103,7 +97,7 @@
             android:textSize="17sp"/>
 
         <TextView
-            android:id="@+id/ll_menu_2.title7"
+            android:id="@+id/ll_menu_1_1.title7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -112,8 +106,6 @@
             android:text="Служба поддержки"
             android:textColor="#424242"
             android:textSize="17sp"/>
-
-
 
     </LinearLayout>
 

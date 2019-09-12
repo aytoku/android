@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/rl_choose_place"
+        android:id="@+id/rl_edit_my_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/rl_choose_place.button_strelka"
+            android:id="@+id/rl_edit_my_address.button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
@@ -24,7 +24,7 @@
 
 
         <TextView
-            android:id="@+id/rl_choose_place.delete"
+            android:id="@+id/rl_edit_my_address.delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Удалить"
@@ -38,7 +38,7 @@
 
 
         <TextView
-            android:id="@+id/rl_choose_place.title"
+            android:id="@+id/rl_edit_my_address.title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Название"
@@ -49,7 +49,7 @@
 
 
         <TextView
-            android:id="@+id/rl_choose_place.home"
+            android:id="@+id/rl_edit_my_address.home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Дом"
@@ -67,7 +67,7 @@
 
 
         <TextView
-            android:id="@+id/rl_choose_place.address_title"
+            android:id="@+id/rl_edit_my_address.address_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Коста Хетагуров, 123"
@@ -78,7 +78,7 @@
 
 
         <TextView
-            android:id="@+id/rl_choose_place.address_description"
+            android:id="@+id/rl_edit_my_address.address_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="г. Владикавказ, руспублика Северная Осетия-Алания,\nРоссия"
@@ -96,7 +96,7 @@
 
 
             <TextView
-                android:id="@+id/rl_choose_place.hint"
+                android:id="@+id/rl_edit_my_address.hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Подскажите водителю, как лучше к вам \nподъехать "
@@ -112,7 +112,7 @@
                 android:paddingBottom="10dp">
 
                 <Button
-                    android:id="@+id/rl_choose_place.button"
+                    android:id="@+id/rl_edit_my_address.button_choose"
                     android:layout_width="390dp"
                     android:layout_height="60dp"
                     android:background="@drawable/button_grey_story"

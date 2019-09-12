@@ -4,14 +4,14 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/ll_information_field"
+        android:id="@+id/ll_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="20dp">
 
         <TextView
-            android:id="@+id/ll_information_field.information"
+            android:id="@+id/ll_info.info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Информация"
@@ -28,10 +28,8 @@
             android:paddingBottom="17sp"
             android:orientation="horizontal">
 
-
-
             <TextView
-                android:id="@+id/ll_information_field.title1"
+                android:id="@+id/ll_info.title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Тарифы"
@@ -39,7 +37,7 @@
                 android:textColor="#424242"/>
 
             <ImageButton
-                android:id="@+id/ll_information_field.button_arrow_right1"
+                android:id="@+id/ll_info.img_arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
@@ -50,8 +48,6 @@
             
         </RelativeLayout>
 
-
-
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
@@ -64,9 +60,8 @@
             android:paddingBottom="17sp"
             android:orientation="horizontal">
 
-
             <TextView
-                android:id="@+id/ll_information_field.title2"
+                android:id="@+id/ll_info.title1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Партнеры"
@@ -74,7 +69,7 @@
                 android:textColor="#424242"/>
 
             <ImageButton
-                android:id="@+id/ll_information_field.button_arrow_right2"
+                android:id="@+id/ll_info.img_arrow2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
@@ -97,10 +92,8 @@
             android:paddingBottom="17sp"
             android:orientation="horizontal">
 
-
-
             <TextView
-                android:id="@+id/ll_information_field.title3"
+                android:id="@+id/ll_info.title2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="О приложении"
@@ -108,7 +101,7 @@
                 android:textColor="#424242"/>
 
             <ImageButton
-                android:id="@+id/ll_information_field.button_arrow_right3"
+                android:id="@+id/ll_info.img_arrow3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
@@ -119,13 +112,10 @@
 
         </RelativeLayout>
 
-
         <View
             android:layout_width="wrap_content"
             android:layout_height="1dp"
             android:background="#EDEDED"/>
-
-
 
     </LinearLayout>
 

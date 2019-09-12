@@ -3,13 +3,13 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:id="@+id/ll_create_order_but"
+        android:id="@+id/ll_create_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/ll_create_order_but.circle_blue"
+            android:id="@+id/ll_create_order.circle_blue"
             android:layout_width="90dp"
             android:layout_height="match_parent"
             android:src="@drawable/icon_circle"
@@ -18,7 +18,7 @@
             android:scaleX="1.4"
             android:scaleY="1.3"/>
         <TextView
-            android:id="@+id/ll_create_order_but.address_name"
+            android:id="@+id/ll_create_order.address_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Коста Хетагурова, 123"
@@ -28,9 +28,8 @@
             android:textSize="17sp"/>
     </LinearLayout>
 
-
         <TextView
-            android:id="@+id/ll_create_order_but.trip_cost"
+            android:id="@+id/ll_create_order.trip_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Поездка 87₽, 12 мин"
@@ -40,10 +39,8 @@
             android:paddingBottom="30dp"
             android:paddingLeft="90dp"/>
 
-
-
         <Button
-            android:id="@+id/ll_create_order_but.ready_button"
+            android:id="@+id/ll_create_order.ready_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Готово"
@@ -56,8 +53,5 @@
             android:paddingRight="170dp"
             android:paddingTop="20dp"
             android:paddingBottom="20dp"/>
-
-
-
 
 </LinearLayout>

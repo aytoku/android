@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/rl_order_details"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="15dp"
@@ -11,6 +12,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/rl_order_details.title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Детали заявки"
@@ -20,13 +22,13 @@
             android:textStyle="bold"/>
 
         <ImageButton
+            android:id="@+id/rl_order_details.button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:background="#FFF"
             android:paddingRight="15dp"
             android:src="@drawable/icon_refuse_button"/>
-
 
     </RelativeLayout>
 
@@ -36,6 +38,7 @@
     android:layout_weight="0.1"
     android:orientation="vertical">
         <TextView
+            android:id="@+id/rl_order_details.driver"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Водитель"
@@ -47,14 +50,13 @@
             android:textStyle="bold"
             android:textSize="15sp"/>
 
-
-
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="#EDEDED"/>
 
         <TextView
+            android:id="@+id/rl_order_details.drivers_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Гаглоев Игорь Борисович"
@@ -64,13 +66,13 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="#EDEDED"/>
 
         <TextView
+            android:id="@+id/rl_order_details.drivers_car"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Серый LADA 2114, A944 PK 15"
@@ -80,15 +82,13 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
-
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="#EDEDED"/>
 
-
         <TextView
+            android:id="@+id/rl_order_details.drivers_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=" +7 (988) 839 57 11"
@@ -98,14 +98,13 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="#EDEDED"/>
 
-
             <TextView
+                android:id="@+id/rl_order_details.trip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Поездка"
@@ -117,14 +116,13 @@
                 android:textStyle="bold"
                 android:textSize="15sp"/>
 
-
-
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:background="#EDEDED"/>
 
             <TextView
+                android:id="@+id/rl_order_details.address1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="улица Базарова, 27/2"
@@ -134,13 +132,13 @@
                 android:paddingLeft="15dp"
                 android:textSize="17sp"/>
 
-
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:background="#EDEDED"/>
 
             <TextView
+                android:id="@+id/rl_order_details.address2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="улица Налалихина, 47"
@@ -150,14 +148,13 @@
                 android:textColor="#424242"
                 android:textSize="17sp"/>
 
-
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
-
     <TextView
+        android:id="@+id/rl_order_details.time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Время"
@@ -175,6 +172,7 @@
         android:background="#EDEDED"/>
 
     <TextView
+        android:id="@+id/rl_order_details.times_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Сегодня в 22:26"
@@ -184,14 +182,13 @@
         android:textColor="#424242"
         android:textSize="17sp"/>
 
-
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
-
     <TextView
+        android:id="@+id/rl_order_details.cost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Стоимость"
@@ -208,8 +205,8 @@
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
-
     <TextView
+        android:id="@+id/rl_order_details.cost_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Эконом"
@@ -224,8 +221,8 @@
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
-
     <TextView
+        android:id="@+id/rl_order_details.price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="121 ₽"
@@ -240,8 +237,8 @@
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
-
     <TextView
+        android:id="@+id/rl_order_details.payment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Оплата"
@@ -253,14 +250,13 @@
         android:textStyle="bold"
         android:textSize="15sp"/>
 
-
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
-
     <TextView
+        android:id="@+id/rl_order_details.payment_way"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="VISA 0729"
@@ -270,13 +266,11 @@
         android:textColor="#424242"
         android:textSize="17sp"/>
 
-
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-
         android:background="#EDEDED"/>
-</LinearLayout>
 
+    </LinearLayout>
 
 </LinearLayout>

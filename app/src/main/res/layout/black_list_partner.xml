@@ -7,12 +7,13 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_blackList_partner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="15dp">
 
         <ImageButton
-            android:id="@+id/rl_choose_place.button_strelka"
+            android:id="@+id/rl_blackList_partner.img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
@@ -22,7 +23,7 @@
 
 
         <TextView
-            android:id="@+id/ll_programm_error1.title"
+            android:id="@+id/rl_blackList_partner.title"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,6 +37,7 @@
 
 
         <TextView
+            android:id="@+id/rl_blackList_partner.ready"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

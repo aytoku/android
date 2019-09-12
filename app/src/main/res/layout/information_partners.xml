@@ -3,15 +3,14 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <RelativeLayout
+        android:id="@+id/rl_information_partners"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="15dp">
 
         <ImageButton
-            android:id="@+id/rl_choose_place.button_strelka"
+            android:id="@+id/rl_information_partners.button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
@@ -21,7 +20,7 @@
 
 
         <TextView
-            android:id="@+id/ll_programm_error1.title"
+            android:id="@+id/rl_information_partners.title"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,6 +43,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/rl_information_partners.star_red"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
@@ -52,6 +52,7 @@
             android:src="@drawable/icon_little_red_star" />
 
         <ImageView
+            android:id="@+id/rl_information_partners.star_red1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
@@ -60,6 +61,7 @@
             android:src="@drawable/icon_little_red_star" />
 
         <ImageView
+            android:id="@+id/rl_information_partners.star_red2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
@@ -68,6 +70,7 @@
             android:src="@drawable/icon_little_red_star" />
 
         <ImageView
+            android:id="@+id/rl_information_partners.star_red3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
@@ -76,6 +79,7 @@
             android:src="@drawable/icon_little_red_star" />
 
         <ImageView
+            android:id="@+id/rl_information_partners.star_grey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
@@ -86,6 +90,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/rl_information_partners.number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
@@ -96,6 +101,7 @@
 
 
     <TextView
+        android:id="@+id/rl_information_partners.desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="17sp"
@@ -103,7 +109,6 @@
         android:paddingLeft="15dp"
         android:text="ООО Партнер 1, 362040, Северная\nОсетия-Алания Респ., г. Владикавказ\nпросп.Мира, д. 31, ORGN:111111939"
         android:textColor="#424242"/>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -117,7 +122,6 @@
 
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -130,9 +134,8 @@
 
     </LinearLayout>
 
-
-
     <TextView
+        android:id="@+id/rl_information_partners.cost"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:textSize="15sp"
@@ -142,13 +145,13 @@
         android:text="Стоимость расчета"
         android:textColor="#424242"/>
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding = "10dp">
 
         <TextView
+            android:id="@+id/rl_information_partners.price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -164,14 +167,13 @@
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding = "15dp">
 
-
         <TextView
+            android:id="@+id/rl_information_partners.free_wait"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -181,6 +183,7 @@
             android:textColor="#424242"/>
 
         <TextView
+            android:id="@+id/rl_information_partners.min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -202,6 +205,7 @@
         android:padding = "15dp">
 
         <TextView
+            android:id="@+id/rl_information_partners.no_free_wait"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -211,6 +215,7 @@
             android:textColor="#424242"/>
 
         <TextView
+            android:id="@+id/rl_information_partners.min1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -232,6 +237,7 @@
         android:padding = "15dp">
 
         <TextView
+            android:id="@+id/rl_information_partners.town_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -241,6 +247,7 @@
             android:textColor="#424242"/>
 
         <TextView
+            android:id="@+id/rl_information_partners.min2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -262,6 +269,7 @@
         android:padding = "15dp">
 
         <TextView
+            android:id="@+id/rl_information_partners.countryside_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -271,6 +279,7 @@
             android:textColor="#424242"/>
 
         <TextView
+            android:id="@+id/rl_information_partners.min3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -285,7 +294,5 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#EDEDED"/>
-
-
 
 </LinearLayout>

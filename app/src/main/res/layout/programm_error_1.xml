@@ -3,15 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <LinearLayout
-        android:id="@+id/ll_programm_error1"
+        android:id="@+id/ll_program_error1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:orientation="vertical">
-
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,9 +24,8 @@
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
 
-
         <TextView
-            android:id="@+id/ll_programm_error1.title"
+            android:id="@+id/ll_program_error1.title"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,9 +39,8 @@
 
         </RelativeLayout>
 
-
         <TextView
-            android:id="@+id/ll_programm_error1.desc1"
+            android:id="@+id/ll_program_error1.desc1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Большая стоимость"
@@ -60,7 +55,7 @@
             android:background="#EDEDED"/>
 
         <TextView
-            android:id="@+id/ll_programm_error1.desc2"
+            android:id="@+id/ll_program_error1.desc2"
             android:paddingTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,9 +70,8 @@
             android:layout_height="1dp"
             android:background="#EDEDED"/>
 
-
         <TextView
-            android:id="@+id/ll_programm_error1.desc3"
+            android:id="@+id/ll_program_error1.desc3"
             android:paddingTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,7 +85,6 @@
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="#EDEDED"/>
-
 
     </LinearLayout>
 

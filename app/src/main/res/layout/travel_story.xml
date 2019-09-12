@@ -4,10 +4,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
 
         <LinearLayout
             android:id="@+id/ll_travel_story"
@@ -16,8 +16,6 @@
             android:layout_gravity="center_horizontal"
             android:paddingTop="5dp"
             android:paddingBottom="5dp">
-
-
 
             <TextView
                 android:id="@+id/ll_travel_story.title"
@@ -29,11 +27,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold"/>
 
-
         </LinearLayout>
-
-
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -42,6 +36,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.recyclerview.widget.RecyclerView>
-
 
 </LinearLayout>

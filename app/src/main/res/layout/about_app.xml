@@ -5,12 +5,13 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="15dp">
 
         <ImageButton
-            android:id="@+id/rl_choose_place.button_strelka"
+            android:id="@+id/rl_about_app.button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
@@ -21,7 +22,7 @@
 
 
         <TextView
-            android:id="@+id/ll_programm_error1.title"
+            android:id="@+id/rl_about_app.title"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,6 +38,7 @@
     </RelativeLayout>
 
     <ImageView
+        android:id="@+id/rl_about_app.img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleY="2"
@@ -46,6 +48,7 @@
 
 
     <TextView
+        android:id="@+id/rl_about_app.version"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,7 +70,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:id="@+id/desc"
+            android:id="@+id/rl_about_app.licence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -80,7 +83,7 @@
 
 
         <ImageButton
-            android:id="@+id/img"
+            android:id="@+id/rl_about_app.img_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
@@ -104,6 +107,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
+            android:id="@+id/rl_about_app.policy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -116,6 +120,7 @@
 
 
         <ImageButton
+            android:id="@+id/rl_about_app.img_arrow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
@@ -136,6 +141,7 @@
 
 
     <TextView
+        android:id="@+id/rl_about_app.desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
@@ -146,6 +152,7 @@
 
 
     <TextView
+        android:id="@+id/rl_about_app.desc1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"

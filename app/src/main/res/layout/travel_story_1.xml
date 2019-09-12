@@ -7,20 +7,20 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/ll_travel_story_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFF"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
+                android:id="@+id/ll_travel_story_1.date"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Сегодня 10:10"
                 android:paddingTop="15dp"
@@ -29,6 +29,7 @@
                 android:textStyle="bold"
                 android:textColor="#424242"
                 android:textSize="17sp"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -37,53 +38,47 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/elisple_red"
+                android:id="@+id/ll_travel_story_1.img_red_circle"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/icon_ellipse_red"
                 android:scaleType="center"
-                android:paddingTop="10dp"
-                />
+                android:paddingTop="10dp" />
 
             <TextView
-                android:id="@+id/street_name_1"
+                android:id="@+id/ll_travel_story_1.address_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Максима Горького, 23"
                 android:textSize="17sp"
                 android:textColor="#424242"
-                android:paddingTop="15dp"
-                />
-
+                android:paddingTop="15dp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/elisple_blue"
+                android:id="@+id/ll_travel_story_1.img_blue_circle"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/icon_circle"
                 android:scaleType="center"
-                android:paddingTop="10dp"
-                />
+                android:paddingTop="10dp" />
 
             <TextView
-                android:id="@+id/street_name_2"
+                android:id="@+id/ll_travel_story_1.address_title2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Коста Хетагурова, 123"
                 android:textSize="17sp"
                 android:textColor="#424242"
-                android:paddingTop="15dp"
-                />
-
+                android:paddingTop="15dp" />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -100,7 +95,7 @@
                 android:paddingLeft="15dp">
 
                 <Button
-                    android:id="@+id/button_write"
+                    android:id="@+id/ll_travel_story_1.button"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
                     android:drawableStart="@drawable/icon_yellow_help"
@@ -111,16 +106,17 @@
                     android:textAllCaps="false"
                     android:textColor="#424242"
                     android:textStyle="bold"
-                    android:textSize="14sp"
-                    />
+                    android:textSize="14sp" />
+
             </LinearLayout>
 
-
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -130,25 +126,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/wait"
+            android:id="@+id/ll_travel_story_1.expectation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ожидание"
             android:textSize="17sp"
             android:paddingLeft="15dp"
             android:textColor="#424242"
-            android:paddingTop="15dp"
-            />
+            android:paddingTop="15dp" />
+
         <TextView
+            android:id="@+id/ll_travel_story_1.expectation_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5 мин*3 ₽"
             android:textSize="13sp"
             android:paddingLeft="15dp"
-            android:textColor="#C6C6C6"
-            />
+            android:textColor="#C6C6C6" />
+
     </LinearLayout>
+
     <TextView
+        android:id="@+id/ll_travel_story_1.expectation_cost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="15 ₽"
@@ -160,34 +159,41 @@
         android:paddingTop="15dp"
         />
 </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
+                        android:id="@+id/ll_travel_story_1.extra"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Дополнительные услуги"
                         android:textSize="17sp"
                         android:paddingLeft="15dp"
                         android:textColor="#424242"
-                        android:paddingTop="15dp"
-                        />
+                        android:paddingTop="15dp" />
+
                     <TextView
+                        android:id="@+id/ll_travel_story_1.extra_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Детское кресло"
                         android:textSize="13sp"
                         android:paddingLeft="15dp"
                         android:paddingBottom="5dp"
-                        android:textColor="#C6C6C6"
-                        />
+                        android:textColor="#C6C6C6" />
+
                 </LinearLayout>
+
                 <TextView
+                    android:id="@+id/ll_travel_story_1.extra_cost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="15 ₽"
@@ -196,66 +202,76 @@
                     android:textSize="17sp"
                     android:paddingLeft="92dp"
                     android:textColor="#424242"
-                    android:paddingTop="15dp"
-                    />
+                    android:paddingTop="15dp" />
+
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:background="#EDEDED"/>
+
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
+                        android:id="@+id/ll_travel_story_1.extra1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Дополнительные услуги"
                         android:textSize="17sp"
                         android:paddingLeft="15dp"
                         android:textColor="#424242"
-                        android:paddingTop="15dp"
-                        />
+                        android:paddingTop="15dp" />
+
                     <TextView
+                        android:id="@+id/ll_travel_story_1.extra_desc1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="VISA 9966"
                         android:textSize="13sp"
                         android:paddingLeft="15dp"
-                        android:textColor="#C6C6C6"
-                        />
+                        android:textColor="#C6C6C6" />
+
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:paddingRight="30dp"
                     android:orientation="vertical">
+
                     <TextView
+                        android:id="@+id/ll_travel_story_1.extra_cost1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="90 ₽"
                         android:textSize="17sp"
                         android:paddingLeft="92dp"
                         android:textColor="#424242"
-                        android:paddingTop="15dp"
-                        />
+                        android:paddingTop="15dp" />
+
                     <TextView
+                        android:id="@+id/ll_travel_story_1.extra_receipt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Чек"
                         android:textSize="13sp"
                         android:paddingLeft="100dp"
-                        android:textColor="#C6C6C6"
-                        />
+                        android:textColor="#C6C6C6" />
+
                 </LinearLayout>
 
                 <ImageButton
+                    android:id="@+id/ll_travel_story_1.button_arrow"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:background="#FFF"
@@ -266,6 +282,9 @@
             </RelativeLayout>
 
         </LinearLayout>
+
     </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </LinearLayout>

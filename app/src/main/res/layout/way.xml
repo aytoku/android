@@ -3,22 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
     <RelativeLayout
+        android:id="@+id/rl_way"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        >
+        android:paddingBottom="10dp">
 
         <TextView
+            android:id="@+id/rl_way_wishes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Пожелания"
@@ -27,8 +26,6 @@
             android:textColor="#AAAAAA"
             android:textSize="17sp"/>
 
-
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,36 +33,29 @@
             android:layout_alignParentRight="true"
             android:orientation="vertical">
 
-
-
             <TextView
+                android:id="@+id/rl_way.payment_method"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Способ оплаты"
                 android:textColor="#424242"
                 android:textSize="17sp"/>
 
-
-
             <TextView
+                android:id="@+id/rl_way.cash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#AFAFAF"
                 android:textSize="14sp"
                 android:text="Наличные"/>
 
-
-
         </LinearLayout>
 
-
     </RelativeLayout>
-
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#EDEDED"/>
-
 
 </LinearLayout>

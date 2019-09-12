@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/rl_country_code_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFF"
@@ -13,6 +14,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/rl_country_code_selection.button"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="#FFF"
@@ -20,6 +22,7 @@
             android:src="@drawable/icon_cross_black"/>
 
         <TextView
+            android:id="@+id/rl_country_code_selection.title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Выберите страну"
@@ -37,6 +40,7 @@
             android:background="#EDEDED" />
 
     <LinearLayout
+        android:id="@+id/ll_country_code_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F9F9F9"
@@ -45,6 +49,7 @@
 
 
         <TextView
+            android:id="@+id/ll_country_code_selection.letter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Г"
@@ -60,11 +65,13 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/ll_country_code_selection.img_georgia"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@mipmap/georgia"/>
 
             <TextView
+                android:id="@+id/ll_country_code_selection.country_georgia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Грузия"
@@ -73,6 +80,7 @@
                 android:textSize="17sp"/>
 
             <TextView
+                android:id="@+id/ll_country_code_selection.georgia_number_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+995"
@@ -85,6 +93,7 @@
 
 
         <TextView
+            android:id="@+id/ll_country_code_selection.letter1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Р"
@@ -101,11 +110,13 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/ll_country_code_selection.img_russia"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@mipmap/russia"/>
 
             <TextView
+                android:id="@+id/ll_country_code_selection.country_russia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Россия"
@@ -114,6 +125,7 @@
                 android:textSize="17sp"/>
 
             <TextView
+                android:id="@+id/ll_country_code_selection.russia_number_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+7"

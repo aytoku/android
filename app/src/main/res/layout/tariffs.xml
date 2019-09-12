@@ -4,12 +4,13 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/rl_tariffs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="15dp">
 
         <ImageButton
-            android:id="@+id/rl_choose_place.button_strelka"
+            android:id="@+id/rl_tariffs.button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
@@ -17,9 +18,8 @@
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
 
-
         <TextView
-            android:id="@+id/ll_programm_error1.title"
+            android:id="@+id/rl_tariffs.title"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,9 +51,8 @@
 
     </LinearLayout>
 
-
-
     <TextView
+        android:id="@+id/rl_tariffs.cost"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:textSize="15sp"
@@ -64,13 +63,13 @@
         android:text="Стоимость расчета"
         android:textColor="#424242"/>
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding = "10dp">
 
         <TextView
+            android:id="@+id/rl_tariffs.price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -86,7 +85,6 @@
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,8 +93,8 @@
         android:paddingTop="10dp"
         android:paddingRight="15dp">
 
-
         <TextView
+            android:id="@+id/rl_tariffs.free_expectation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -106,6 +104,7 @@
             android:textColor="#424242"/>
 
         <TextView
+            android:id="@+id/rl_tariffs.expectation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -130,6 +129,7 @@
         android:paddingRight="15dp">
 
         <TextView
+            android:id="@+id/rl_tariff.no_free_expectation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -139,6 +139,7 @@
             android:textColor="#424242"/>
 
         <TextView
+            android:id="@+id/rl_tariffs.expectation1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -163,6 +164,7 @@
         android:paddingRight="15dp">
 
         <TextView
+            android:id="@+id/rl_tariffs.town_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -172,6 +174,7 @@
             android:textColor="#424242"/>
 
         <TextView
+            android:id="@+id/rl_tariffs.expectation2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -196,6 +199,7 @@
         android:paddingRight="15dp">
 
         <TextView
+            android:id="@+id/rl_tariffs.expectation.countryside_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -205,6 +209,7 @@
             android:textColor="#424242"/>
 
         <TextView
+            android:id="@+id/rl_tariffs.expectation3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
@@ -219,6 +224,5 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#EDEDED"/>
-
 
 </LinearLayout>
