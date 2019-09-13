@@ -22,12 +22,10 @@
 
         <ImageButton
             android:id="@+id/img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:background="#FFF"
             android:layout_centerInParent="true"
-            android:scaleX="1"
-            android:scaleY="1"
             android:paddingRight="15dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_vector_grey"/>

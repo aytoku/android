@@ -20,7 +20,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/cv_cell__empty_chat_with_driver.title"
+                android:id="@+id/cv_cell__empty_chat_with_driver_title"
                 android:layout_width="90dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"

@@ -14,6 +14,7 @@
     <color name="switchTrack">#8E8E98</color>
     <color name="switchTrackDisable">#8E8E98</color>
     <color name="switchTrackActive">#2FBF52</color>
+    <color name="switchTrackActive1">#FD6F6D</color>
     <color name="switchTrackNormal">#8E8E98</color>
     <color name="switchThumbBgActive">#FFFFFF</color>
     <color name="switchThumbActive">#FFFFFF</color>

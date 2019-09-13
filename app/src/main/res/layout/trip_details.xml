@@ -32,6 +32,11 @@
 
     </RelativeLayout>
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,9 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Водитель"
-            android:paddingTop="10dp"
+            android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:paddingBottom="10dp"
+            android:layout_weight="0.5"
             android:textColor="#424242"
             android:background="#F9F9F9"
             android:textStyle="bold"
@@ -60,9 +65,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Гаглоев Игорь Борисович"
-            android:paddingTop="5dp"
+            android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:paddingBottom="5dp"
+            android:layout_weight="0.5"
             android:textColor="#424242"
             android:textSize="17sp"/>
 
@@ -76,8 +81,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Серый LADA 2114, A944 PK 15"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
+            android:gravity="center_vertical"
+            android:layout_weight="0.5"
             android:paddingLeft="15dp"
             android:textColor="#424242"
             android:textSize="17sp"/>
@@ -92,8 +97,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=" +7 (988) 839 57 11"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
+            android:gravity="center_vertical"
+            android:layout_weight="0.5"
             android:paddingLeft="15dp"
             android:textColor="#424242"
             android:textSize="17sp"/>
@@ -108,8 +113,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Поездка"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
+                android:gravity="center_vertical"
+                android:layout_weight="0.5"
                 android:paddingLeft="15dp"
                 android:textColor="#424242"
                 android:background="#F9F9F9"
@@ -126,8 +131,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="улица Базарова, 27/2"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:gravity="center_vertical"
+                android:layout_weight="0.5"
                 android:textColor="#424242"
                 android:paddingLeft="15dp"
                 android:textSize="17sp"/>
@@ -142,135 +147,141 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="улица Налалихина, 47"
-                android:paddingTop="5dp"
+                android:gravity="center_vertical"
                 android:paddingLeft="15dp"
-                android:paddingBottom="5dp"
+                android:layout_weight="0.5"
                 android:textColor="#424242"
                 android:textSize="17sp"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
-    <TextView
-        android:id="@+id/rl_order_details.time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Время"
-        android:paddingTop="10dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="10dp"
-        android:textColor="#424242"
-        android:background="#F9F9F9"
-        android:textStyle="bold"
-        android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/rl_order_details.time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Время"
+                android:paddingLeft="15dp"
+                android:layout_weight="0.5"
+                android:textColor="#424242"
+                android:gravity="center_vertical"
+                android:background="#F9F9F9"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
-    <TextView
-        android:id="@+id/rl_order_details.times_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Сегодня в 22:26"
-        android:paddingTop="5dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="5dp"
-        android:textColor="#424242"
-        android:textSize="17sp"/>
+            <TextView
+                android:id="@+id/rl_order_details.times_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Сегодня в 22:26"
+                android:layout_weight="0.5"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:textColor="#424242"
+                android:textSize="17sp"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
-    <TextView
-        android:id="@+id/rl_order_details.cost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Стоимость"
-        android:paddingTop="10dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="10dp"
-        android:textColor="#424242"
-        android:background="#F9F9F9"
-        android:textStyle="bold"
-        android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/rl_order_details.cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Стоимость"
+                android:paddingLeft="15dp"
+                android:layout_weight="0.5"
+                android:textColor="#424242"
+                android:background="#F9F9F9"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
-    <TextView
-        android:id="@+id/rl_order_details.cost_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Эконом"
-        android:paddingLeft="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:textColor="#424242"
-        android:textSize="17sp"/>
+            <TextView
+                android:id="@+id/rl_order_details.cost_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Эконом"
+                android:layout_weight="0.5"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:textColor="#424242"
+                android:textSize="17sp"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
-    <TextView
-        android:id="@+id/rl_order_details.price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="121 ₽"
-        android:paddingTop="5dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="5dp"
-        android:textColor="#424242"
-        android:textSize="17sp"/>
+            <TextView
+                android:id="@+id/rl_order_details.price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="121 ₽"
+                android:gravity="center_vertical"
+                android:layout_weight="0.5"
+                android:paddingLeft="15dp"
+                android:textColor="#424242"
+                android:textSize="17sp"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
-    <TextView
-        android:id="@+id/rl_order_details.payment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Оплата"
-        android:paddingTop="10dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="10dp"
-        android:textColor="#424242"
-        android:background="#F9F9F9"
-        android:textStyle="bold"
-        android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/rl_order_details.payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Оплата"
+                android:layout_weight="0.5"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:textColor="#424242"
+                android:background="#F9F9F9"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
-    <TextView
-        android:id="@+id/rl_order_details.payment_way"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="VISA 0729"
-        android:paddingTop="5dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="5dp"
-        android:textColor="#424242"
-        android:textSize="17sp"/>
+            <TextView
+                android:id="@+id/rl_order_details.payment_way"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VISA 0729"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:layout_weight="0.5"
+                android:textColor="#424242"
+                android:textSize="17sp"/>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:background="#F9F9F9"/>
+
+        </LinearLayout>
 
 </LinearLayout>

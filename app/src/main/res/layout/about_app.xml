@@ -8,6 +8,7 @@
         android:id="@+id/rl_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
         android:paddingLeft="15dp">
 
         <ImageButton
@@ -15,7 +16,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
-            android:paddingBottom="50dp"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
@@ -29,7 +29,6 @@
             android:paddingTop="10dp"
             android:layout_centerInParent="true"
             android:text="О приложении"
-            android:paddingBottom="60dp"
             android:textStyle="bold"
             android:textSize="17sp"
             android:textColor="#424242"/>
@@ -41,6 +40,7 @@
         android:id="@+id/rl_about_app.img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
         android:scaleY="2"
         android:scaleX="2"
         android:layout_gravity="center_horizontal"
@@ -53,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="40dp"
+        android:layout_weight="0"
         android:paddingBottom="20dp"
         android:text="Версия 4.95 от 25 авг.2019г.\n              сборка 34234"
         android:textSize="15dp"
@@ -68,6 +69,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0"
         android:orientation="horizontal">
         <TextView
             android:id="@+id/rl_about_app.licence"
@@ -95,17 +97,26 @@
 
     </RelativeLayout>
 
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#EDEDED"/>
 
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/rl_about_app.policy"
             android:layout_width="wrap_content"
@@ -124,26 +135,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"
-            android:layout_centerInParent="true"
+            android:paddingTop="15dp"
             android:paddingRight="15dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_vector_grey"/>
 
-
     </RelativeLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED"/>
 
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+    </LinearLayout>
 
 
     <TextView
         android:id="@+id/rl_about_app.desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="0"
         android:paddingTop="10dp"
         android:paddingLeft="15dp"
         android:text="Таким образом новая модель организационной\nдеятельности представляет собой интересный\nэксперимент проверки"
@@ -156,6 +167,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
+        android:layout_weight="0.2"
         android:paddingLeft="15dp"
         android:text="2011-2019 ООО Faem Taxi"
         android:textSize="15dp"

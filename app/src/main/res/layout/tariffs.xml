@@ -7,6 +7,7 @@
         android:id="@+id/rl_tariffs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0"
         android:paddingLeft="15dp">
 
         <ImageButton
@@ -36,6 +37,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_weight="1"
         android:background="#F3F3F3"/>
 
     <LinearLayout
@@ -43,6 +45,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="15dp"
         android:paddingTop="10dp"
+        android:layout_weight="0"
         android:paddingLeft="10dp">
         <Spinner
             android:id="@+id/choose"
@@ -56,6 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:textSize="15sp"
+        android:layout_weight="0.2"
         android:paddingLeft="15dp"
         android:textStyle="bold"
         android:gravity="center_vertical"
@@ -66,7 +70,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding = "10dp">
+        android:layout_weight="0.5"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp">
 
         <TextView
             android:id="@+id/rl_tariffs.price"
@@ -88,8 +95,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
         android:paddingLeft="15dp"
-        android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:paddingRight="15dp">
 
@@ -123,8 +130,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
         android:paddingLeft="15dp"
-        android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:paddingRight="15dp">
 
@@ -158,8 +165,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
         android:paddingLeft="15dp"
-        android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:paddingRight="15dp">
 
@@ -193,7 +200,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
+        android:layout_weight="0.5"
         android:paddingLeft="15dp"
         android:paddingTop="10dp"
         android:paddingRight="15dp">

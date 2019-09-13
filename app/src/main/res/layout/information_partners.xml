@@ -7,6 +7,7 @@
         android:id="@+id/rl_information_partners"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.4"
         android:paddingLeft="15dp">
 
         <ImageButton
@@ -40,6 +41,7 @@
         android:paddingLeft="15dp"
         android:paddingTop="20dp"
         android:paddingBottom="10dp"
+        android:layout_weight="0.5"
         android:orientation="horizontal">
 
         <ImageView
@@ -95,6 +97,7 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:paddingLeft="15dp"
+        android:layout_weight="0"
         android:paddingBottom="10dp"
         android:text="№ 1987456"
         android:textColor="#979797"/>
@@ -106,6 +109,7 @@
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:paddingBottom="10dp"
+        android:layout_weight="0.5"
         android:paddingLeft="15dp"
         android:text="ООО Партнер 1, 362040, Северная\nОсетия-Алания Респ., г. Владикавказ\nпросп.Мира, д. 31, ORGN:111111939"
         android:textColor="#424242"/>
@@ -114,6 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
+        android:layout_weight="0.6"
         android:paddingLeft="10dp">
         <Spinner
             android:id="@+id/choose"
@@ -126,6 +131,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
+        android:layout_weight="0.6"
         android:paddingBottom="15dp">
         <Spinner
             android:id="@+id/choose_cities"
@@ -140,6 +146,7 @@
         android:layout_height="40dp"
         android:textSize="15sp"
         android:paddingLeft="15dp"
+        android:layout_weight="0.5"
         android:gravity="center_vertical"
         android:background="#F3F3F3"
         android:text="Стоимость расчета"
@@ -148,7 +155,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding = "10dp">
+        android:layout_weight="0.5"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/rl_information_partners.price"
@@ -170,7 +181,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding = "15dp">
+        android:layout_weight="0.5"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/rl_information_partners.free_wait"
@@ -202,7 +217,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding = "15dp">
+        android:layout_weight="0.5"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/rl_information_partners.no_free_wait"
@@ -234,7 +253,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding = "15dp">
+        android:layout_weight="0.5"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/rl_information_partners.town_price"
@@ -266,7 +289,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding = "15dp">
+        android:layout_weight="0.8"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/rl_information_partners.countryside_price"
