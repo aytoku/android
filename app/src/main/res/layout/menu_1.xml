@@ -3,7 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <LinearLayout
         android:id="@+id/ll_menu1"
         android:layout_width="wrap_content"
@@ -11,8 +10,6 @@
         android:paddingTop="40dp"
         android:background="@drawable/angle_radius"
         android:orientation="vertical">
-
-
 
         <TextView
             android:id="@+id/ll_menu1.title"
@@ -28,25 +25,23 @@
             android:textColor="#FFFFFF"
             android:background="#FD6F6D"/>
 
-
         <TextView
             android:id="@+id/ll_menu1.title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
-            android:layout_weight="0"
+            android:layout_weight="0.1"
             android:paddingLeft="20dp"
             android:text="Способ оплаты"
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
         <TextView
             android:id="@+id/ll_menu1.titl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="30dp"
-            android:layout_weight="0"
+            android:paddingTop="5dp"
+            android:layout_weight="0.1"
             android:paddingLeft="20dp"
             android:text="Настройки"
             android:textColor="#424242"
@@ -56,9 +51,9 @@
             android:id="@+id/ll_menu1.title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="30dp"
+            android:paddingTop="5dp"
             android:paddingLeft="20dp"
-            android:layout_weight="0"
+            android:layout_weight="0.1"
             android:text="Информация"
             android:textColor="#424242"
             android:textSize="17sp"/>
@@ -67,14 +62,12 @@
             android:id="@+id/ll_menu1.title3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="30dp"
+            android:paddingTop="5dp"
             android:paddingLeft="20dp"
-            android:layout_weight="0"
+            android:layout_weight="2"
             android:text="Служба поддержки"
             android:textColor="#424242"
             android:textSize="17sp"/>
-
-
 
     </LinearLayout>
 

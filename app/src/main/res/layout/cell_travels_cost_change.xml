@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingLeft="15dp"
         android:paddingBottom="15dp"
         android:paddingTop="15dp">
 
@@ -19,17 +20,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Изменить стоимость поездки"
-            android:paddingLeft="15dp"
             android:textColor="#424242"
             android:textSize="17sp"/>
-
 
         <TextView
             android:id="@+id/ll_travel_cost_change.description"
             android:paddingTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
             android:paddingBottom="10dp"
             android:text="Вы можете самостоятельно отрегулировать стоимость вашей поездки"
             android:textColor="#D4D7DC"
@@ -39,28 +37,23 @@
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
             android:background="#FCFCFC"
             android:splitTrack="false"
             android:progress="0"
             android:progressDrawable="@drawable/seekbar_style"
-            android:thumb="@drawable/custom_thumb"
-            />
-
-
+            android:thumb="@drawable/custom_thumb" />
 
         <TextView
             android:id="@+id/txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:paddingLeft="10dp"
+            android:paddingLeft="5dp"
             android:layout_centerHorizontal="true"
             android:text="0 ₽"
             android:gravity="center_horizontal"
             android:textSize="17sp" />
 
     </LinearLayout>
-
 
 </LinearLayout>

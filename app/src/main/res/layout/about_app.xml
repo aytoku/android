@@ -8,7 +8,7 @@
         android:id="@+id/rl_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
+        android:layout_weight="0.3"
         android:paddingLeft="15dp">
 
         <ImageButton
@@ -26,7 +26,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
             android:layout_centerInParent="true"
             android:text="О приложении"
             android:textStyle="bold"

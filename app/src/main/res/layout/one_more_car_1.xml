@@ -4,9 +4,11 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -39,9 +41,11 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -76,8 +80,11 @@
 
     <RelativeLayout
         android:id="@+id/ll_create_order_but"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -111,7 +118,7 @@
 
 
     <View
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:background="#EDEDED"/>
 

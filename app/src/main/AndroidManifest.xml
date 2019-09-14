@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityEmptyChatWithDriver">
+        <activity android:name=".MainActivityChatWithDriver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

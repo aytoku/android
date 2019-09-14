@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 <LinearLayout
     android:id="@+id/readon_for_rejection"
     android:orientation="vertical"
@@ -20,10 +21,11 @@
             android:id="@+id/readon_for_rejection.title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="65dp"
+            android:paddingBottom="30dp"
+            android:layout_weight="1"
             android:text="Выберите причину отмены"
             android:textStyle="bold"
-            android:paddingTop="55dp"
+            android:paddingTop="30dp"
             android:textSize="21sp"
             android:textColor="#424242"
             android:paddingLeft="20dp"/>
@@ -36,6 +38,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingBottom="25sp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -43,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:paddingBottom="40dp"
+                    android:layout_gravity="center_horizontal"
                     android:text="😊"
                     android:textSize="30sp"
                     android:textColor="@color/my_black"/>
@@ -53,6 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
+                    android:layout_gravity="center_vertical"
                     android:text="Заказал по ошибке"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
@@ -62,6 +67,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingBottom="25dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -69,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:paddingBottom="40dp"
+                    android:layout_gravity="center_vertical"
                     android:text="🤦‍♂‍"
                     android:textSize="30sp"
                     android:textColor="@color/my_black"/>
@@ -79,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
+                    android:layout_gravity="center_vertical"
                     android:text="Водитель попросил отменить"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
@@ -88,6 +96,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingBottom="25dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -95,7 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:paddingBottom="40dp"
+                    android:layout_gravity="center_vertical"
                     android:text="👎"
                     android:textSize="30sp"
                     android:textColor="@color/my_black"/>
@@ -104,6 +114,7 @@
                     android:id="@+id/readon_for_rejection.title3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:paddingLeft="10dp"
                     android:text="Большое ожидание"
                     android:textSize="17sp"
@@ -114,6 +125,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingBottom="25dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -121,8 +134,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:paddingBottom="40dp"
                     android:text="🤷‍♂"
+                    android:layout_gravity="center_vertical"
                     android:textSize="30sp"
                     android:textColor="@color/my_black"/>
 
@@ -131,6 +144,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
+                    android:layout_gravity="center_vertical"
                     android:text="Уехал на другом такси"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
@@ -140,6 +154,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingBottom="25dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -147,8 +163,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:paddingBottom="40dp"
                     android:text="😡"
+                    android:layout_gravity="center_vertical"
                     android:textSize="30sp"
                     android:textColor="@color/my_black"/>
 
@@ -157,6 +173,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
+                    android:layout_gravity="center_vertical"
                     android:text="Водитель уехал в другую сторону"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
@@ -166,6 +183,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.5"
                 android:orientation="horizontal">
 
                 <TextView
@@ -173,25 +191,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:paddingTop="20dp"
+                    android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Также вы можете написать комментарий или сообщить какую-либо информацию о водителе"
+                    android:text="Также вы можете написать комментарий или сообщить\nкакую-либо информацию о водителе"
                     android:textSize="14sp"
                     android:textColor="#B4B4B4"/>
 
             </LinearLayout>
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/readon_for_rejection.button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:elevation="20dp"
-                    android:layout_gravity="end|bottom"
-                    android:layout_margin="16dp"
-                    app:srcCompat="@drawable/icon_vector"
-                    android:contentDescription="@string/submit"
-                    android:background="@color/my_FC5C58"
-                    tools:ignore="VectorDrawableCompat" />
+
+            <ImageButton
+                android:id="@+id/ll_cell_travel_cost.button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="0.5"
+                android:layout_gravity="end"
+                android:background="@drawable/ic_group_10_red_button"
+                android:textAllCaps="false"
+                android:textColor="#AAAAAA"
+                android:textSize="13sp" />
 
         </LinearLayout>
 

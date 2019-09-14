@@ -32,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
+                android:paddingLeft="15dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -77,6 +78,7 @@
                             android:background="#EDEDED"/>
 
                     </LinearLayout>
+
                     <CheckBox
                         android:id="@+id/ll_refuse_payment_method.checkBoxBold"
                         android:button="@drawable/toggle_checked"
@@ -92,6 +94,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -130,6 +133,7 @@
                             android:background="#EDEDED"/>
 
                     </LinearLayout>
+
                     <CheckBox
                         android:id="@+id/ll_refuse_payment_method.checkBoxBold1"
                         android:button="@drawable/checkbox"
@@ -152,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
-                android:paddingLeft="10dp"
+                android:paddingLeft="25sp"
                 android:paddingRight="15dp"
                 android:paddingBottom="20dp"
                 android:orientation="horizontal">

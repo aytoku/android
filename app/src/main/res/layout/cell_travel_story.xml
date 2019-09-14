@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -28,8 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/background_with_shadow"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -61,7 +60,6 @@
                             android:textColor="#424242"
                             android:textSize="17sp"/>
 
-
                     </RelativeLayout>
 
                     <LinearLayout
@@ -75,8 +73,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/icon_ellipse_red"
                             android:scaleType="center"
-                            android:paddingTop="10dp"
-                            />
+                            android:paddingTop="10dp" />
 
                         <TextView
                             android:id="@+id/street_name_1"
@@ -85,11 +82,10 @@
                             android:text="Максима Горького, 23"
                             android:textSize="17sp"
                             android:textColor="#424242"
-                            android:paddingTop="15dp"
-                            />
-
+                            android:paddingTop="15dp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -101,8 +97,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/icon_circle"
                             android:scaleType="center"
-                            android:paddingTop="10dp"
-                            />
+                            android:paddingTop="10dp" />
 
                         <TextView
                             android:id="@+id/street_name_2"
@@ -111,12 +106,9 @@
                             android:text="Коста Хетагурова, 123"
                             android:textSize="17sp"
                             android:textColor="#424242"
-                            android:paddingTop="15dp"
-                            />
-
+                            android:paddingTop="15dp" />
 
                     </LinearLayout>
-
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -143,8 +135,8 @@
                                 android:background="@drawable/button_grey_story"
                                 android:textAllCaps="false"
                                 android:textColor="#424242"
-                                android:textSize="14sp"
-                                />
+                                android:textSize="14sp" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -165,8 +157,8 @@
                                 android:background="@drawable/button_grey_story"
                                 android:textAllCaps="false"
                                 android:textColor="#424242"
-                                android:textSize="14sp"
-                                />
+                                android:textSize="14sp" />
+
                         </LinearLayout>
 
                     </LinearLayout>

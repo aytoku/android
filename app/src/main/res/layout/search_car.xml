@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/ll_search_car"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:paddingLeft="15dp"
         android:orientation="vertical">
@@ -33,7 +33,7 @@
                 android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -151,7 +151,7 @@
                         android:layout_width="30dp"
                         android:layout_height="wrap_content"
                         android:paddingTop="28dp"
-                        android:paddingLeft="10dp"
+                        android:paddingLeft="15dp"
                         android:scaleType="center"
                         android:scaleX="1"
                         android:scaleY="1"
@@ -159,10 +159,10 @@
 
                     <TextView
                         android:id="@+id/ll_search_car.title_call"
-                        android:layout_width="90dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:paddingLeft="5dp"
+                        android:paddingLeft="35dp"
                         android:text="Отменить"
                         android:textColor="#424242"
                         android:textSize="14sp"

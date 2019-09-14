@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/ll_write"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:orientation="vertical">
 
@@ -21,7 +21,7 @@
             android:background="@drawable/line_search" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="15dp"
             android:paddingLeft="15dp"
@@ -45,7 +45,7 @@
             android:background="#EDEDED" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="15dp"
@@ -110,7 +110,7 @@
             android:background="#EDEDED" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
