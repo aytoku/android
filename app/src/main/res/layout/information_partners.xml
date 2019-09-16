@@ -118,6 +118,7 @@
         android:paddingBottom="10dp"
         android:layout_weight="0.6"
         android:paddingLeft="10dp">
+
         <Spinner
             android:id="@+id/choose"
             android:layout_width="match_parent"

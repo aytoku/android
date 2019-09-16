@@ -10,8 +10,6 @@ import android.text.style.ForegroundColorSpan;
 import android.view.Window;
 import android.widget.TextView;
 
-import java.util.AbstractCollection;
-
 public class SplashActivity extends Activity {
 
     private TextView textView;
