@@ -14,7 +14,6 @@
         android:textColor="#424242"
         android:textSize="17sp" />
 
-
     <TextView
         android:id="@+id/place_name"
         android:layout_width="match_parent"
@@ -26,7 +25,5 @@
         android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия "
         android:textColor="#9B9B9B"
         android:textSize="11sp" />
-
-
 
 </LinearLayout>

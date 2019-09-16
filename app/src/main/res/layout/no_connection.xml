@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:theme="@style/AppTheme"
     android:layout_width="wrap_content" android:layout_height="match_parent">
+
     <LinearLayout
         android:id="@+id/ll_no_connection"
         android:orientation="vertical"
@@ -11,8 +12,6 @@
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
         android:gravity="center_horizontal">
-
-
 
         <Button
             android:id="@+id/ll_no_connection.button"
@@ -28,7 +27,6 @@
             android:textAllCaps="false"
             android:text="Вызвать по телефону" />
 
-
-
     </LinearLayout>
+
 </RelativeLayout>

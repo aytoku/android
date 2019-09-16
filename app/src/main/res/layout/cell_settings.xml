@@ -19,19 +19,19 @@
             android:paddingBottom="15dp"
             android:textSize="17sp"/>
 
-
-
-        <androidx.appcompat.widget.SwitchCompat
+        <Switch
             android:id="@+id/my_switch"
-            android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
+            android:track="@drawable/switch_track_custom"
+            android:thumb="@drawable/switch_thumb"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:theme="@style/MySwitch"
+            android:layout_width="wrap_content"
+            android:switchMinWidth="30dp"
+            android:checked="false"
             android:layout_alignParentRight="true"
-            android:scaleY="1.3"
-            android:scaleX="1.3"
-            />
-
+            android:paddingTop="15dp"
+            android:scaleX="1"
+            android:scaleY="1"/>
 
     </RelativeLayout>
 

@@ -17,7 +17,6 @@ public class SplashActivity extends Activity {
     private TextView textView;
     private Handler handler;
     private long startTime, currentTime, finishedTime = 0L;
-    //int black = Color.BLACK;
     int dColor = Color.rgb(192, 192, 192);
     private int duration = 8000 / 4;
     private int endTime = 1000;
@@ -60,7 +59,6 @@ public class SplashActivity extends Activity {
                     spannableString.setSpan(new ForegroundColorSpan(
                                     dColor), 0, endTime,
                             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
                     textView.setText(spannableString);
                     handler.postDelayed(this, 0);
                 }

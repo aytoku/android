@@ -142,7 +142,6 @@
                         android:layout_width="30dp"
                         android:layout_height="wrap_content" />
 
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -179,7 +178,6 @@
                     android:layout_alignParentRight="true"
                     android:src="@drawable/icon_arrow_right"/>
 
-
             </RelativeLayout>
 
             <View
@@ -192,6 +190,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:paddingTop="15dp">
+
                 <Button
                     android:layout_width="390dp"
                     android:layout_height="60dp"

@@ -44,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/ll_settings.title"
                     android:layout_width="wrap_content"
@@ -54,6 +55,7 @@
                     android:textSize="17sp"
                     android:paddingRight="90dp"
                     android:paddingLeft="20dp"/>
+
                 <TextView
                     android:id="@+id/ll_settings.description"
                     android:layout_width="wrap_content"

@@ -39,7 +39,7 @@
                     android:text="Стоимость изменится"
                     android:textColor="#424242"
                     android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/ll_price_will_change.description"
@@ -48,9 +48,9 @@
                     android:layout_gravity="center"
                     android:paddingBottom="20dp"
                     android:paddingTop="15dp"
-                    android:text="Если поменять маршрут, стоимость \nпересчитается. Вы узнаете ее в\nконце поездки"
+                    android:text="Если поменять маршрут, стоимость\nпересчитается. Вы узнаете ее в\nконце поездки"
                     android:textColor="#424242"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"

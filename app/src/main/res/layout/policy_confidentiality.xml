@@ -3,8 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,13 +30,10 @@
 
     </RelativeLayout>
 
-
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="#EDEDED"/>
-
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,7 +45,6 @@
         android:textSize="27sp"
         android:textColor="#000000"/>
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +53,6 @@
         android:text="Дата публикации 10 сентября 2019 г."
         android:textSize="15sp"
         android:textColor="#424242"/>
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -107,6 +100,7 @@
                 android:textSize="17sp"
                 android:text="Начало"/>
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

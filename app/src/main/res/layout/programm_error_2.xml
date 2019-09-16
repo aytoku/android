@@ -47,6 +47,7 @@
                 android:text="Комментарий"
                 android:textSize="14sp"
                 android:textColor="#B4B4B4"/>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

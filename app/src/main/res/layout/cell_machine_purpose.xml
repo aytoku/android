@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/rl_machine_purpose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
@@ -12,6 +13,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/rl_machine_purpose.img"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/icon_ellipse_red"
@@ -20,7 +22,9 @@
             android:scaleType="center"
             android:scaleX="1.4"
             android:scaleY="1.3"/>
+
         <TextView
+            android:id="@+id/rl_machine_purpose.title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Максима Горького, 23"
@@ -29,8 +33,8 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
         <ImageButton
+            android:id="@+id/rl_machine_purpose.img_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
@@ -38,6 +42,7 @@
             android:background="#FFF"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_arrow_right"/>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -49,6 +54,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/rl_machine_purpose.img1"
             android:layout_width="30dp"
             android:layout_height="40dp"
             android:src="@drawable/icon_grey_plus"
@@ -57,7 +63,9 @@
             android:scaleType="center"
             android:scaleX="1"
             android:scaleY="1"/>
+
         <TextView
+            android:id="@+id/rl_machine_purpose.title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Добавить остановку"
@@ -66,8 +74,8 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
         <ImageButton
+            android:id="@+id/rl_machine_purpose.img_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
@@ -75,11 +83,11 @@
             android:background="#FFF"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_arrow_right"/>
+
     </RelativeLayout>
 
 
     <RelativeLayout
-        android:id="@+id/ll_create_order_but"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="15dp"
@@ -88,6 +96,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/rl_machine_purpose.img2"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/icon_circle"
@@ -96,7 +105,9 @@
             android:scaleType="center"
             android:scaleX="1.4"
             android:scaleY="1.3"/>
+
         <TextView
+            android:id="@+id/rl_machine_purpose.title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Коста Хетагурова, 123"
@@ -105,8 +116,8 @@
             android:textColor="#424242"
             android:textSize="17sp"/>
 
-
         <ImageButton
+            android:id="@+id/rl_machine_purpose.img_button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
@@ -114,8 +125,8 @@
             android:background="#FFF"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_arrow_right"/>
-    </RelativeLayout>
 
+    </RelativeLayout>
 
     <View
         android:layout_width="wrap_content"

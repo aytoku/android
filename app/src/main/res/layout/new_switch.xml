@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <Switch
-        android:id="@+id/switch_oneone"
+        android:id="@+id/switch_one"
         android:track="@drawable/switch_track_custom"
         android:thumb="@drawable/switch_thumb"
         android:layout_gravity="center"

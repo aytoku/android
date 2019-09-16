@@ -33,6 +33,7 @@
             android:textSize="22sp" />
 
     </LinearLayout>
+
     <ImageButton
         android:id="@+id/ll_cell_travel_cost.button"
         android:layout_width="60dp"

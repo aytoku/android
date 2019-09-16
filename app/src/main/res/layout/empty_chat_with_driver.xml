@@ -37,7 +37,6 @@
 
     </RelativeLayout>
 
-
             <View
                 android:id="@+id/view"
                 android:layout_width="fill_parent"

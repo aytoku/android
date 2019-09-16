@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,12 +34,16 @@ public class MainActivityPartners extends AppCompatActivity {
 
         rv = findViewById(R.id.recycler_partners);
 
+        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox);
+        if (checkBox.isChecked()) {
+            checkBox.setChecked(false);
+        }else{
+            checkBox.setChecked(true);
+        }
     }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -46,7 +51,6 @@ public class MainActivityPartners extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
 
         RecyclerView recyclerViewMenu = rv;
 
@@ -64,8 +68,6 @@ public class MainActivityPartners extends AppCompatActivity {
         }
     }
 
-
-
     private AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
         AdapterGridViewMenu.ItemsMenu []_arr = new AdapterGridViewMenu.ItemsMenu[]{
@@ -79,7 +81,6 @@ public class MainActivityPartners extends AppCompatActivity {
         };
         return _arr;
     }
-
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
@@ -100,7 +101,6 @@ public class MainActivityPartners extends AppCompatActivity {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_partners, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -130,7 +130,6 @@ public class MainActivityPartners extends AppCompatActivity {
 
         public static class ItemsMenu {
 
-
             private @ColorInt int colorBackgroundInt;
             private int imgResId;
             private String desc;
@@ -150,13 +149,10 @@ public class MainActivityPartners extends AppCompatActivity {
                 return desc;
             }
 
-
-
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
         }
-
 
         class ViewHolder extends RecyclerView.ViewHolder {
 

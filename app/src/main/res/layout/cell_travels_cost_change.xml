@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
-            android:text="Вы можете самостоятельно отрегулировать стоимость вашей поездки"
+            android:text="Вы можете самостоятельно отрегулировать стоимость\nвашей поездки"
             android:textColor="#D4D7DC"
             android:textSize="15dp"/>
 

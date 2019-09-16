@@ -26,6 +26,7 @@
             android:paddingTop="20dp"
             android:textColor="#424242"
             android:textSize="17sp"/>
+
     </LinearLayout>
 
         <TextView

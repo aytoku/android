@@ -98,7 +98,7 @@
                 android:paddingLeft="40dp">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/ll_search_car.cv2"
+                    android:id="@+id/ll_search_car.cv3"
                     android:layout_width="wrap_content"
                     android:layout_height="140dp"
                     app:cardBackgroundColor="@color/my_gray"

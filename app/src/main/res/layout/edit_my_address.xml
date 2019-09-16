@@ -21,8 +21,6 @@
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
 
-
-
         <TextView
             android:id="@+id/rl_edit_my_address.delete"
             android:layout_width="wrap_content"
@@ -33,9 +31,8 @@
             android:textColor="#424242"
             android:background="#FFF"
             android:layout_alignParentRight="true"/>
+
     </RelativeLayout>
-
-
 
         <TextView
             android:id="@+id/rl_edit_my_address.title"
@@ -46,7 +43,6 @@
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
             android:textColor="#9B9B9B"/>
-
 
         <TextView
             android:id="@+id/rl_edit_my_address.home"
@@ -59,12 +55,10 @@
             android:paddingBottom="20dp"
             android:textColor="#424242"/>
 
-
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="#EDEDED" />
-
 
         <TextView
             android:id="@+id/rl_edit_my_address.address_title"
@@ -76,7 +70,6 @@
             android:paddingLeft="15dp"
             android:textColor="#424242"/>
 
-
         <TextView
             android:id="@+id/rl_edit_my_address.address_desc"
             android:layout_width="match_parent"
@@ -87,13 +80,10 @@
             android:paddingBottom="15sp"
             android:textColor="#9B9B9B"/>
 
-
-
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:background="#EDEDED"/>
-
 
             <TextView
                 android:id="@+id/rl_edit_my_address.hint"
@@ -124,5 +114,6 @@
                     android:textColor="#4B4D55" />
 
             </RelativeLayout>
+
 </LinearLayout>
 

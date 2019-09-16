@@ -34,7 +34,7 @@
                 android:textColor="#8A8A8A"/>
 
             <EditText
-                android:id="@+id/LL_new_card.card_number_fieild"
+                android:id="@+id/LL_new_card.card_number_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="20"
