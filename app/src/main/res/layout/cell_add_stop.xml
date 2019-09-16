@@ -24,14 +24,12 @@
             android:textColor="#424242"
             android:paddingBottom="20dp"/>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="17dp"
             android:paddingRight="15dp"
             android:orientation="horizontal">
-
 
             <ImageButton
                 android:id="@+id/cl_add_stop.img_cross_grey"
@@ -44,9 +42,6 @@
                 android:scaleX="1.4"
                 android:scaleY="1.3"/>
 
-
-
-
             <TextView
                 android:id="@+id/cl_add_stop.address"
                 android:layout_width="match_parent"
@@ -56,7 +51,6 @@
                 android:text="Максима Горького, 23"
                 android:textSize="17sp"
                 android:layout_weight="1"/>
-
 
             <ImageButton
                 android:id="@+id/cl_add_stop.img_three_lines"
@@ -68,7 +62,6 @@
                 android:layout_weight="0.4"
                 android:scaleX="1"
                 android:scaleY="1.3"/>
-
 
         </LinearLayout>
 
@@ -82,7 +75,7 @@
                 android:id="@+id/cl_add_stop.add_stop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FDFAFA"
+                android:background="#FFFFFF"
                 android:textColor="#AAAAAA"
                 android:paddingLeft="60dp"
                 android:textSize="17sp"
