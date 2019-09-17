@@ -35,11 +35,7 @@ public class MainActivityPartners extends AppCompatActivity {
         rv = findViewById(R.id.recycler_partners);
 
         final CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox);
-        if (checkBox.isChecked()) {
-            checkBox.setChecked(false);
-        }else{
-            checkBox.setChecked(true);
-        }
+
     }
 
     @Override

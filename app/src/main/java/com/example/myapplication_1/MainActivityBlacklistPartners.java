@@ -214,7 +214,7 @@ public class MainActivityBlacklistPartners extends AppCompatActivity {
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                img = itemView.findViewById(R.id.img_checkbox);
+                img = itemView.findViewById(R.id.ll_payment_ready_checkBoxBold);
                 desc = itemView.findViewById(R.id.desc);
             }
         }

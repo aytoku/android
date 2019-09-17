@@ -17,7 +17,7 @@ public class SplashActivity extends Activity {
     private long startTime, currentTime, finishedTime = 0L;
     int dColor = Color.rgb(192, 192, 192);
     private int duration = 8000 / 4;
-    private int endTime = 1000;
+    private int endTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class SplashActivity extends Activity {
 
                 }
                 else {
-                    endTime = (int) (finishedTime / 250);
+                    endTime = (int) (finishedTime / 225);
                     Spannable spannableString = new SpannableString(textView.getText());
                     spannableString.setSpan(new ForegroundColorSpan(
                                     dColor), 0, endTime,
