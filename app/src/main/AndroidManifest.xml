@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".SplashActivity">
+        <activity android:name=".MainActivityEarnings">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

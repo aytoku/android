@@ -1,124 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:theme="@style/AppTheme"
-    android:layout_width="wrap_content"
-    android:layout_height="100dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:versionCode="1"
+    android:versionName="0.0.1"
+    tools:overrideLibrary="ru.osety.amironlibrary">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ll_earnings_page_card.cv"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:cardCornerRadius="15dp"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="10dp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/earnings_page_card_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:scrollbarThumbVertical="@drawable/yoursdrawablefile"/>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp"
-                            android:paddingLeft="18dp"
-                            android:paddingRight="5dp"
-                            android:paddingBottom="5dp"
-                            android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/ll_earnings_page_card.cost"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="152₽"
-                            android:textColor="#424242"
-                            android:paddingTop="5dp"
-                            android:textSize="15sp"
-                            android:textStyle="bold"/>
-
-                        <Button
-                            android:id="@+id/ll_earnings_page_card.button"
-                            android:layout_width="58dp"
-                            android:layout_height="16dp"
-                            android:layout_marginLeft="15dp"
-                            android:background="@drawable/yellow_button"
-                            android:text="Загород"
-                            android:textSize="9sp"
-                            android:textColor="#FFF" />
-
-                            <RelativeLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:id="@+id/ll_earnings_page_card.img_road"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_road"
-                                    android:layout_alignParentRight="true"
-                                    android:paddingRight="55dp"
-                                    android:paddingTop="7dp"
-                                    android:layout_marginLeft="42dp"
-                                    android:scaleY="1"
-                                    android:scaleX="1"/>
-
-                                <TextView
-                                    android:id="@+id/ll_earnings_page_card.distance"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="1 км"
-                                    android:layout_alignParentRight="true"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="5dp"
-                                    android:paddingRight="15dp"
-                                    android:textColor=" #D3D2D2"
-                                    android:textSize="15sp"/>
-
-                                    </RelativeLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="18dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/ll_earnings_page_card.address_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Коста, 223/1"
-                                android:textColor="#424242"
-                                android:textSize="15sp"/>
-
-                            <ImageView
-                                android:id="@+id/ll_earnings_page_card.img_arrow"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_grey_arrow"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="5dp"
-                                android:scaleY="1"
-                                android:scaleX="1"/>
-
-                            <TextView
-                                android:id="@+id/ll_earnings_page_card.place"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Заводсокй"
-                                android:paddingLeft="12dp"
-                                android:textColor="#424242"
-                                android:textSize="15sp"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-</RelativeLayout>
-
+</LinearLayout>
