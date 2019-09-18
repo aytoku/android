@@ -9,17 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import ru.osety.amironlibrary.DrawableUtils;
 
 public class EarningsPageAdapter {
-
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
@@ -43,8 +41,6 @@ public class EarningsPageAdapter {
             Drawable background_button2 = context.getResources().getDrawable(R.drawable.yellow_button);
             draw2 = DrawableUtils.setTintDrawable(background_button2, Color.parseColor("#F3B742"));
 
-
-
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
@@ -54,7 +50,6 @@ public class EarningsPageAdapter {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_earnings_page_card, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -64,19 +59,25 @@ public class EarningsPageAdapter {
 
             float _dens = context.getResources().getDisplayMetrics().density;
 
-
             int _size = Math.round(_dens * 12);
+
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Drawable _def_draw1 = context.getResources().getDrawable(_item.getImgArrow());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
             Bitmap _bitmap1 = DrawableUtils.convertToBitmap(_def_draw1, _size, _size);
 
+            for(int j = 0; j < _item.str_features.length - 1; j++) {
+                Button instance_button = (Button) layoutInflater.inflate(R.layout.ll_button, viewHolder.ll_features, false);
+               // Button instance_button = (Button) instance_layout.findViewById(R.id.ll_button);
+                instance_button.setText(_item.str_features[j]);
+                instance_button.setBackground(getCurrentColorButton(_item.str_features[j]));
+                instance_button.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                viewHolder.ll_features.addView(instance_button, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            }
 
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap);
             viewHolder.cost.setText( _item.getStr());
-            viewHolder.button.setText( _item.getButton());
-            viewHolder.button.setBackground(getCurrentColorButton(_item.getButton()));
             viewHolder.img.setImageBitmap(_bitmap);
             viewHolder.distance.setText( _item.getDistance());
             viewHolder.address_title.setText(_item.getAddress_title());
@@ -87,16 +88,13 @@ public class EarningsPageAdapter {
                 public void onClick(View v) {
 
                     try {
-
                         _item.getCallBack().call(_item);
 
-                    } catch ( NullPointerException e) {
+                    } catch ( NullPointerException e){
                         e.printStackTrace();
                     }
-
                 }
             });
-
         }
 
         public Drawable getCurrentColorButton(String str){
@@ -127,18 +125,18 @@ public class EarningsPageAdapter {
             int colorBackgroundInt;
             private String cost;
             private CallBack callBack;
-            private String button;
+            private String[] str_features;
             private int imgResId;
             private String distance;
             private String address_title;
             private int img_arrow;
             private String place;
 
-            public ItemsMenu(int colorBackgroundRes, String cost, String button, CallBack callBack, int imgResId, String distance, String address_title, int img_arrow, String place) {
+            public ItemsMenu(int colorBackgroundRes, String cost, String[] str_features, CallBack callBack, int imgResId, String distance, String address_title, int img_arrow, String place) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.cost = cost;
                 this.callBack = callBack;
-                this.button = button;
+                this.str_features = str_features;
                 this.imgResId = imgResId;
                 this.distance = distance;
                 this.address_title = address_title;
@@ -162,10 +160,7 @@ public class EarningsPageAdapter {
                 return cost;
             }
 
-            public String getButton() {
-                return button;
-            }
-
+            public String[] getStr_features(){return str_features;}
 
             public String getDistance() {
                 return distance;
@@ -179,20 +174,16 @@ public class EarningsPageAdapter {
                 return place;
             }
 
-
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
-
-
-
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
             private final CardView cv_item;
             private final TextView cost;
-            private final Button button;
+            private final LinearLayout ll_features;
             private final ImageView img;
             private final TextView distance;
             private final TextView address_title;
@@ -203,16 +194,13 @@ public class EarningsPageAdapter {
                 super(itemView);
                 cv_item = itemView.findViewById(R.id.ll_earnings_page_card_cv);
                 cost = itemView.findViewById(R.id.ll_earnings_page_card_cost);
-                button = itemView.findViewById(R.id.ll_earnings_page_card_button);
+                ll_features = itemView.findViewById(R.id.ll_earnings_page_card_linear);
                 distance = itemView.findViewById(R.id.ll_earnings_page_card_distance);
                 img = itemView.findViewById(R.id.ll_earnings_page_card_img_road);
                 address_title = itemView.findViewById(R.id.ll_earnings_page_card_address_title);
                 img_arrow = itemView.findViewById(R.id.ll_earnings_page_card_img_arrow);
                 place = itemView.findViewById(R.id.ll_earnings_page_card_place);
-
-
             }
         }
-
     }
 }

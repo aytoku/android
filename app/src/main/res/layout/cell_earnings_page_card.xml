@@ -12,7 +12,7 @@
             android:layout_height="90dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true"
-            app:cardElevation="5dp">
+            app:cardElevation="1.8dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -38,18 +38,13 @@
                             android:textSize="15sp"
                             android:textStyle="bold"/>
 
-                        <Button
-                            android:id="@+id/ll_earnings_page_card_button"
-                            android:layout_width="75dp"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:layout_height="16dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="2dp"
-                            android:background="@drawable/yellow_button"
-                            android:text="Загород"
-                            android:textSize="9sp"
-                            android:textColor="#FFF" />
+                         <LinearLayout
+                             android:id="@+id/ll_earnings_page_card_linear"
+                             android:layout_width="wrap_content"
+                             android:layout_height="20dp"
+                             android:orientation="horizontal">
+
+                         </LinearLayout>
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
@@ -61,11 +56,11 @@
                                     android:layout_height="wrap_content"
                                     android:src="@drawable/ic_road"
                                     android:layout_alignParentRight="true"
-                                    android:paddingRight="55dp"
+                                    android:paddingRight="50dp"
                                     android:paddingTop="7dp"
                                     android:layout_marginLeft="42dp"
-                                    android:scaleY="1"
-                                    android:scaleX="1"/>
+                                    android:scaleY="1.1"
+                                    android:scaleX="1.1"/>
 
                                 <TextView
                                     android:id="@+id/ll_earnings_page_card_distance"
@@ -78,9 +73,9 @@
                                     android:textColor=" #D3D2D2"
                                     android:textSize="15sp"/>
 
-                                    </RelativeLayout>
+                            </RelativeLayout>
 
-                        </LinearLayout>
+                    </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -94,6 +89,9 @@
                                 android:layout_height="wrap_content"
                                 android:text="Коста, 223/1"
                                 android:textColor="#424242"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:singleLine="true"
                                 android:textSize="15sp"/>
 
                             <ImageView
@@ -103,8 +101,8 @@
                                 android:src="@drawable/ic_grey_arrow"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="5dp"
-                                android:scaleY="1"
-                                android:scaleX="1"/>
+                                android:scaleY="1.1"
+                                android:scaleX="1.1"/>
 
                             <TextView
                                 android:id="@+id/ll_earnings_page_card_place"
@@ -112,6 +110,9 @@
                                 android:layout_height="wrap_content"
                                 android:text="Заводсокй"
                                 android:paddingLeft="12dp"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:singleLine="true"
                                 android:textColor="#424242"
                                 android:textSize="15sp"/>
 

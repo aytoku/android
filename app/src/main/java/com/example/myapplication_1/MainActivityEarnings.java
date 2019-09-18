@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -23,13 +22,10 @@ public class MainActivityEarnings extends AppCompatActivity {
         setContentView(R.layout.earnings_page_card);
 
         rv = (RecyclerView) findViewById(R.id.earnings_page_card_recycler);
-
     }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -38,11 +34,7 @@ public class MainActivityEarnings extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
         RecyclerView recyclerViewMenu = rv;
-
-
-
 
         try {
 
@@ -57,7 +49,6 @@ public class MainActivityEarnings extends AppCompatActivity {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
     }
 
     private EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
@@ -65,7 +56,7 @@ public class MainActivityEarnings extends AppCompatActivity {
         EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu[]{
 
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"152\u20BD",  "Загород",  new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"152\u20BD",   new String[] {"Загород","Загород","Загород"},   new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 
@@ -81,7 +72,7 @@ public class MainActivityEarnings extends AppCompatActivity {
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Заводской"),
 
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", "Час-пик", new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Загород","Час-пик","Повышенный","Загород"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 
@@ -97,7 +88,7 @@ public class MainActivityEarnings extends AppCompatActivity {
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
 
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", "Повышенный", new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Загород","Загород"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 
@@ -108,16 +99,10 @@ public class MainActivityEarnings extends AppCompatActivity {
                         } catch (NullPointerException e) {
                             e.printStackTrace();
                         }
-
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22")
-
-
         };
         return _arr;
-
     }
-
-
 }
 
