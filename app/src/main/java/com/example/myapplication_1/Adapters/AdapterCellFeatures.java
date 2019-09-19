@@ -97,5 +97,5 @@ public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatur
                 rl_features = itemView.findViewById(R.id.ll_earnings_page_card_recycler);
             }
         }
-    }
+}
 
