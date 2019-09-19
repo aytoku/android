@@ -35,6 +35,7 @@
                             android:text="152₽"
                             android:textColor="#424242"
                             android:paddingTop="5dp"
+                            android:paddingRight="10dp"
                             android:textSize="15sp"
                             android:textStyle="bold"/>
 
@@ -42,6 +43,7 @@
                              android:id="@+id/ll_earnings_page_card_linear"
                              android:layout_width="wrap_content"
                              android:layout_height="20dp"
+                             android:paddingLeft="10dp"
                              android:orientation="horizontal">
 
                          </LinearLayout>
