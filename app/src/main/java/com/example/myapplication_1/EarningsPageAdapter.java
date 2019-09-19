@@ -11,10 +11,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+
 import ru.osety.amironlibrary.DrawableUtils;
 
 public class EarningsPageAdapter {
@@ -27,6 +30,7 @@ public class EarningsPageAdapter {
         private final Drawable draw;
         private final Drawable draw1;
         private final Drawable draw2;
+        private final Drawable draw3;
 
         public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
@@ -40,6 +44,9 @@ public class EarningsPageAdapter {
 
             Drawable background_button2 = context.getResources().getDrawable(R.drawable.yellow_button);
             draw2 = DrawableUtils.setTintDrawable(background_button2, Color.parseColor("#F3B742"));
+
+            Drawable background_button3 = context.getResources().getDrawable(R.drawable.yellow_button);
+            draw3 = DrawableUtils.setTintDrawable(background_button3, Color.parseColor("#F3F3F3"));
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
@@ -66,7 +73,7 @@ public class EarningsPageAdapter {
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
             Bitmap _bitmap1 = DrawableUtils.convertToBitmap(_def_draw1, _size, _size);
 
-            for(int j = 0; j < _item.str_features.length - 1; j++) {
+            for(int j = 0; j < _item.str_features.length; j++) {
                 Button instance_button = (Button) layoutInflater.inflate(R.layout.ll_button, viewHolder.ll_features, false);
                // Button instance_button = (Button) instance_layout.findViewById(R.id.ll_button);
                 instance_button.setText(_item.str_features[j]);
@@ -106,6 +113,8 @@ public class EarningsPageAdapter {
                 d_draw = draw;
             }else if(str.equals("Повышенный")){
                 d_draw = draw1;
+            } else if (str.equals("Детское кресло")){
+                d_draw = draw3;
             }
             return d_draw;
         }

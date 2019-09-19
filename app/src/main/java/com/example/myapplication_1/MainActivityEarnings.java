@@ -56,7 +56,7 @@ public class MainActivityEarnings extends AppCompatActivity {
         EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu[]{
 
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"152\u20BD",   new String[] {"Загород","Загород","Загород"},   new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"152\u20BD",   new String[] {"Загород",},   new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 
@@ -72,7 +72,7 @@ public class MainActivityEarnings extends AppCompatActivity {
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Заводской"),
 
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Загород","Час-пик","Повышенный","Загород"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный","Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 
@@ -88,7 +88,7 @@ public class MainActivityEarnings extends AppCompatActivity {
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
 
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Загород","Загород"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 

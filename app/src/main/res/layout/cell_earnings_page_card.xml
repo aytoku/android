@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,7 +23,7 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingTop="5dp"
+                            android:paddingTop="10dp"
                             android:paddingLeft="18dp"
                             android:paddingRight="5dp"
                             android:paddingBottom="5dp"
@@ -34,16 +35,14 @@
                             android:layout_height="wrap_content"
                             android:text="152₽"
                             android:textColor="#424242"
-                            android:paddingTop="5dp"
-                            android:paddingRight="10dp"
                             android:textSize="15sp"
+                            android:paddingRight="10dp"
                             android:textStyle="bold"/>
 
                          <LinearLayout
                              android:id="@+id/ll_earnings_page_card_linear"
                              android:layout_width="wrap_content"
-                             android:layout_height="20dp"
-                             android:paddingLeft="10dp"
+                             android:layout_height="18dp"
                              android:orientation="horizontal">
 
                          </LinearLayout>
@@ -59,8 +58,6 @@
                                     android:src="@drawable/ic_road"
                                     android:layout_alignParentRight="true"
                                     android:paddingRight="50dp"
-                                    android:paddingTop="7dp"
-                                    android:layout_marginLeft="42dp"
                                     android:scaleY="1.1"
                                     android:scaleX="1.1"/>
 
@@ -70,7 +67,6 @@
                                     android:layout_height="wrap_content"
                                     android:text="1 км"
                                     android:layout_alignParentRight="true"
-                                    android:paddingTop="5dp"
                                     android:paddingRight="15dp"
                                     android:textColor=" #D3D2D2"
                                     android:textSize="15sp"/>
