@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:theme="@style/AppTheme"
     android:layout_width="wrap_content"
-    android:layout_height="90dp">
+    android:layout_height="100dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/ll_earnings_page_card_cv"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="100dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true"
             app:cardElevation="1.8dp">
@@ -39,13 +38,6 @@
                             android:paddingRight="10dp"
                             android:textStyle="bold"/>
 
-                         <LinearLayout
-                             android:id="@+id/ll_earnings_page_card_linear"
-                             android:layout_width="wrap_content"
-                             android:layout_height="18dp"
-                             android:orientation="horizontal">
-
-                         </LinearLayout>
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
@@ -74,6 +66,16 @@
                             </RelativeLayout>
 
                     </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/ll_earnings_page_card_recycler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:paddingRight="15dp"
+                            android:paddingLeft="15dp"
+                            android:orientation="horizontal">
+
+                        </androidx.recyclerview.widget.RecyclerView>
 
                         <LinearLayout
                             android:layout_width="wrap_content"

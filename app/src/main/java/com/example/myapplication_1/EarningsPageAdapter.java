@@ -188,7 +188,7 @@ public class EarningsPageAdapter {
             }
         }
 
-        class ViewHolder extends RecyclerView.ViewHolder {
+        public class ViewHolder extends RecyclerView.ViewHolder {
 
             private final CardView cv_item;
             private final TextView cost;
@@ -203,7 +203,7 @@ public class EarningsPageAdapter {
                 super(itemView);
                 cv_item = itemView.findViewById(R.id.ll_earnings_page_card_cv);
                 cost = itemView.findViewById(R.id.ll_earnings_page_card_cost);
-                ll_features = itemView.findViewById(R.id.ll_earnings_page_card_linear);
+                ll_features = itemView.findViewById(R.id.ll_earnings_page_card_recycler);
                 distance = itemView.findViewById(R.id.ll_earnings_page_card_distance);
                 img = itemView.findViewById(R.id.ll_earnings_page_card_img_road);
                 address_title = itemView.findViewById(R.id.ll_earnings_page_card_address_title);
