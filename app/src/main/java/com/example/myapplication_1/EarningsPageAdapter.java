@@ -2,12 +2,10 @@ package com.example.myapplication_1;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,7 +14,6 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import ru.osety.amironlibrary.DrawableUtils;
 
@@ -27,26 +24,10 @@ public class EarningsPageAdapter {
         private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
-        private final Drawable draw;
-        private final Drawable draw1;
-        private final Drawable draw2;
-        private final Drawable draw3;
 
         public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
-
-            Drawable background_button = context.getResources().getDrawable(R.drawable.yellow_button);
-            draw = DrawableUtils.setTintDrawable(background_button, Color.parseColor("#409AFF"));
-
-            Drawable background_button1 = context.getResources().getDrawable(R.drawable.yellow_button);
-            draw1 = DrawableUtils.setTintDrawable(background_button1, Color.parseColor("#2FBF52"));
-
-            Drawable background_button2 = context.getResources().getDrawable(R.drawable.yellow_button);
-            draw2 = DrawableUtils.setTintDrawable(background_button2, Color.parseColor("#F3B742"));
-
-            Drawable background_button3 = context.getResources().getDrawable(R.drawable.yellow_button);
-            draw3 = DrawableUtils.setTintDrawable(background_button3, Color.parseColor("#F3F3F3"));
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
@@ -73,15 +54,6 @@ public class EarningsPageAdapter {
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
             Bitmap _bitmap1 = DrawableUtils.convertToBitmap(_def_draw1, _size, _size);
 
-            for(int j = 0; j < _item.str_features.length; j++) {
-                Button instance_button = (Button) layoutInflater.inflate(R.layout.ll_button, viewHolder.ll_features, false);
-               // Button instance_button = (Button) instance_layout.findViewById(R.id.ll_button);
-                instance_button.setText(_item.str_features[j]);
-                instance_button.setBackground(getCurrentColorButton(_item.str_features[j]));
-                instance_button.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                viewHolder.ll_features.addView(instance_button, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-            }
-
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap);
             viewHolder.cost.setText( _item.getStr());
@@ -102,21 +74,6 @@ public class EarningsPageAdapter {
                     }
                 }
             });
-        }
-
-        public Drawable getCurrentColorButton(String str){
-            Drawable d_draw = null;
-            if(str.equals("Загород")){
-                d_draw = draw2;
-            }
-            else if(str.equals("Час-пик")){
-                d_draw = draw;
-            }else if(str.equals("Повышенный")){
-                d_draw = draw1;
-            } else if (str.equals("Детское кресло")){
-                d_draw = draw3;
-            }
-            return d_draw;
         }
 
         @Override
@@ -168,8 +125,6 @@ public class EarningsPageAdapter {
             public String getStr() {
                 return cost;
             }
-
-            public String[] getStr_features(){return str_features;}
 
             public String getDistance() {
                 return distance;
