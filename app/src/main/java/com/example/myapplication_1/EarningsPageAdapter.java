@@ -7,12 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication_1.Adapters.AdapterCellFeatures;
+
 import ru.osety.amironlibrary.DrawableUtils;
 
 public class EarningsPageAdapter {
@@ -22,6 +27,7 @@ public class EarningsPageAdapter {
         private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
+        RecyclerView rv;
 
         public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
@@ -45,12 +51,26 @@ public class EarningsPageAdapter {
 
             float _dens = context.getResources().getDisplayMetrics().density;
 
+            RecyclerView recyclerViewMenu = rv;
+
+            try {
+                AdapterCellFeatures adapterCellFeatures = new AdapterCellFeatures(_item.str_features, context);
+                viewHolder.rv_features.setAdapter(adapterCellFeatures);
+                recyclerViewMenu.setLayoutManager(
+                        new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+                recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
+
+            } catch (NullPointerException e){
+                e.printStackTrace();
+            }
+
             int _size = Math.round(_dens * 12);
 
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Drawable _def_draw1 = context.getResources().getDrawable(_item.getImgArrow());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
             Bitmap _bitmap1 = DrawableUtils.convertToBitmap(_def_draw1, _size, _size);
+
 
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap);
@@ -145,7 +165,7 @@ public class EarningsPageAdapter {
 
             private final CardView cv_item;
             private final TextView cost;
-            private final LinearLayout ll_features;
+            private final RecyclerView rv_features;
             private final ImageView img;
             private final TextView distance;
             private final TextView address_title;
@@ -156,7 +176,7 @@ public class EarningsPageAdapter {
                 super(itemView);
                 cv_item = itemView.findViewById(R.id.ll_earnings_page_card_cv);
                 cost = itemView.findViewById(R.id.ll_earnings_page_card_cost);
-                ll_features = itemView.findViewById(R.id.ll_earnings_page_card_recycler);
+                rv_features = itemView.findViewById(R.id.ll_earnings_page_card_recycler);
                 distance = itemView.findViewById(R.id.ll_earnings_page_card_distance);
                 img = itemView.findViewById(R.id.ll_earnings_page_card_img_road);
                 address_title = itemView.findViewById(R.id.ll_earnings_page_card_address_title);

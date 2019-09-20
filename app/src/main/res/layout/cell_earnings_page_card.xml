@@ -94,15 +94,21 @@
                                 android:singleLine="true"
                                 android:textSize="15sp"/>
 
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
                             <ImageView
                                 android:id="@+id/ll_earnings_page_card_img_arrow"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:paddingTop="5dp"
+                                android:paddingLeft="10dp"
                                 android:src="@drawable/ic_grey_arrow"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="5dp"
                                 android:scaleY="1.1"
                                 android:scaleX="1.1"/>
+
+                            </LinearLayout>
 
                             <TextView
                                 android:id="@+id/ll_earnings_page_card_place"

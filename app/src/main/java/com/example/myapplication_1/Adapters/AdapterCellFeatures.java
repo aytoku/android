@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.myapplication_1.R;
+
 import ru.osety.amironlibrary.DrawableUtils;
 
 public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatures.ViewHolder>{
@@ -46,27 +48,18 @@ public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatur
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_earnings_page_card, viewGroup, false);
+            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.ll_button, viewGroup, false);
             return new AdapterCellFeatures.ViewHolder(v);
         }
 
         @Override
         public void onBindViewHolder(@NonNull AdapterCellFeatures.ViewHolder viewHolder, int i) {
 
-            final String[] str_rray = new String[i];
-
             float _dens = context.getResources().getDisplayMetrics().density;
 
             int _size = Math.round(_dens * 12);
 
-
-            for(int j = 0; j < str_rray.length; j++) {
-                Button instance_button = (Button) layoutInflater.inflate(R.layout.ll_button, viewHolder.rl_features, false);
-                instance_button.setText(str_rray[j]);
-                instance_button.setBackground(getCurrentColorButton(str_rray[j]));
-                instance_button.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                viewHolder.rl_features.addView(instance_button, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-            }
+                viewHolder.button.setText(array[i]);
         }
 
         public Drawable getCurrentColorButton(String str){
@@ -91,10 +84,10 @@ public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatur
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
-            private final RecyclerView rl_features;
+            private final Button button;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                rl_features = itemView.findViewById(R.id.ll_earnings_page_card_recycler);
+                button = itemView.findViewById(R.id.ll_button);
             }
         }
 }
