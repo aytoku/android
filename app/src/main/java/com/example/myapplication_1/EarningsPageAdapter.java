@@ -54,11 +54,12 @@ public class EarningsPageAdapter {
             RecyclerView recyclerViewMenu = rv;
 
             try {
+
                 AdapterCellFeatures adapterCellFeatures = new AdapterCellFeatures(_item.str_features, context);
                 viewHolder.rv_features.setAdapter(adapterCellFeatures);
-                recyclerViewMenu.setLayoutManager(
+                viewHolder.rv_features.setLayoutManager(
                         new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
-                recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
+                viewHolder.rv_features.setItemAnimator(new DefaultItemAnimator());
 
             } catch (NullPointerException e){
                 e.printStackTrace();
