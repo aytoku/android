@@ -133,6 +133,6 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
-        
+
     }
 }
