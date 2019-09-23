@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityEarnings">
+        <activity android:name=".MainActivitySeekbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

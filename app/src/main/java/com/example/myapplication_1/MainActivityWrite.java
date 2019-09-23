@@ -1,11 +1,9 @@
 package com.example.myapplication_1;
 
 import android.os.Bundle;
-import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivityWrite extends AppCompatActivity {
 
@@ -16,7 +14,7 @@ public class MainActivityWrite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.write);
+        setContentView(R.layout.machine_purpose1);
 
     }
 

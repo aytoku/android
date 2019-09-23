@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/ll_write"
+        android:id="@+id/ll_machine_purpose1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
@@ -28,7 +28,7 @@
             android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/ll_write.until_end"
+            android:id="@+id/ll_machine_purpose1.title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="До конца поездки"
@@ -45,7 +45,7 @@
             android:background="#EDEDED" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="15dp"
@@ -53,29 +53,29 @@
             android:paddingTop="25dp">
 
             <TextView
-                android:id="@+id/ll_write.car_title"
+                android:id="@+id/ll_machine_purpose1.car_name"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:paddingRight="20dp"
                 android:text="желтая LADA 2115"
                 android:textColor="#424242"
                 android:textSize="17sp" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/ll_write.cv_car_number"
+                android:id="@+id/ll_machine_purpose1.cv_car_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/my_gray"
+                android:background="@drawable/shadow"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:background="@drawable/background_with_shadow">
+                    android:background="@drawable/shadow">
 
                     <TextView
-                        android:id="@+id/ll_write.car_number"
+                        android:id="@+id/ll_machine_purpose1.car_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -95,7 +95,7 @@
                         android:paddingTop="4dp"
                         android:paddingRight="15dp"
                         android:textSize="11sp"
-                        app:layout_constraintStart_toEndOf="@+id/ll_write.car_number"
+                        app:layout_constraintStart_toEndOf="@+id/ll_machine_purpose1.car_number"
                         tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -117,12 +117,12 @@
             android:paddingTop="15dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/ll_write.cv_call"
+                android:id="@+id/ll_machine_purpose1.cv_call"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 app:cardBackgroundColor="@color/my_gray"
                 app:cardCornerRadius="11dp"
-                app:cardElevation="2dp">
+                app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -131,7 +131,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/ll_write.img_call"
+                            android:id="@+id/ll_machine_purpose1.img_call"
                             android:layout_width="90dp"
                             android:layout_height="match_parent"
                             android:scaleType="center"
@@ -140,7 +140,7 @@
                             android:src="@drawable/icon_phone" />
 
                                 <TextView
-                                    android:id="@+id/ll_write.call"
+                                    android:id="@+id/ll_machine_purpose1.call"
                                     android:layout_width="90dp"
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
@@ -161,12 +161,12 @@
                 android:paddingLeft="7dp">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/ll_write.cv_write"
+                    android:id="@+id/ll_machine_purpose1.cv_write"
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     app:cardBackgroundColor="@color/my_gray"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="0dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -176,16 +176,16 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/ll_write.img_write"
+                                android:id="@+id/ll_machine_purpose1.img_write"
                                 android:layout_width="90dp"
                                 android:layout_height="match_parent"
                                 android:scaleType="center"
                                 android:scaleX="1.4"
                                 android:scaleY="1.3"
-                                android:src="@drawable/icon_sms" />
+                                android:src="@drawable/ic_sms_driver" />
 
                                     <TextView
-                                        android:id="@+id/ll_write.write"
+                                        android:id="@+id/ll_machine_purpose1.write"
                                         android:layout_width="90dp"
                                         android:layout_height="match_parent"
                                         android:gravity="center_vertical"
@@ -206,5 +206,5 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
 

@@ -100,7 +100,74 @@ public class MainActivityEarnings extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22")
+                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
+
+
+                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                    @Override
+                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                        try {
+
+                            Bundle _args = new Bundle();
+
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
+
+
+                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                    @Override
+                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                        try {
+
+                            Bundle _args = new Bundle();
+
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
+
+
+                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                    @Override
+                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                        try {
+
+                            Bundle _args = new Bundle();
+
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
+
+                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный","Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                    @Override
+                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                        try {
+
+                            Bundle _args = new Bundle();
+
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
         };
         return _arr;
     }

@@ -11,19 +11,17 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import ru.osety.amironlibrary.DrawableUtils;
 
-import androidx.appcompat.app.AppCompatActivity;
+import ru.osety.amironlibrary.DrawableUtils;
 
     public class MainActivity extends AppCompatActivity {
 
@@ -91,7 +89,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
             new AdapterGridViewMenu.ItemsMenu(
                     getResources().getColor(R.color.my_gray),
-                    R.mipmap.icon_light_car,
+                    R.mipmap.red_car,
                         "Эконом",
                     new AdapterGridViewMenu.ItemsMenu.CallBack() {
                 @Override
@@ -109,7 +107,7 @@ import androidx.appcompat.app.AppCompatActivity;
             }, "5 мин"),
                     new AdapterGridViewMenu.ItemsMenu(
                             getResources().getColor(R.color.my_gray),
-                            R.mipmap.icon_car_1,
+                            R.mipmap.yellow_car,
                             "Стандарт",
                             new AdapterGridViewMenu.ItemsMenu.CallBack() {
                                 @Override
@@ -127,7 +125,7 @@ import androidx.appcompat.app.AppCompatActivity;
                             }, "2 мин"),
                     new AdapterGridViewMenu.ItemsMenu(
                             getResources().getColor(R.color.my_gray),
-                            R.mipmap.icon_gray_car,
+                            R.mipmap.grey_car,
                             "Комфорт",
                             new AdapterGridViewMenu.ItemsMenu.CallBack() {
                                 @Override
