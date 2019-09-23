@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivitySeekbar">
+        <activity android:name=".MainActivityWish">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

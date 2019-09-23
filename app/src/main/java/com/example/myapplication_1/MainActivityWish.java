@@ -1,28 +1,21 @@
 package com.example.myapplication_1;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import ru.osety.amironlibrary.DrawableUtils;
+import com.example.myapplication_1.Adapters.AdapterWish;
 
-public class MainActivityWish extends AppCompatActivity {
+public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
     TextView textView;
     SeekBar seekBar;
@@ -36,31 +29,61 @@ public class MainActivityWish extends AppCompatActivity {
         setContentView(R.layout.wishes);
 
         rv = findViewById(R.id.recycler_wishes);
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
-        textView = (TextView) findViewById(R.id.txtView);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-                textView.setText(String.valueOf(progress));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
+        textView = (TextView) findViewById(R.id.ll_travel_cost_change_txtView);
+        final SeekBar see = (SeekBar) findViewById(R.id.ll_travel_cost_change_seekBar);
+        int b = 0;
+        see.setOnSeekBarChangeListener(this);
+        textView.setText("0");
     }
+            @Override
+            public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar arg0) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar see) {
+                see.setMax(200);
+
+                int[] arr = new int[]{0, 50, 75, 100, 150};
+                int b = 0;
+                int a = see.getProgress();
+                if (a == arr[0]) {
+                    b = 0;
+                }
+                {
+                    if (a > arr[0] & a < arr[1]) {
+                        b = 50;
+                    }
+                    {
+                        if (a > arr[1] & a < arr[2]) {
+                            b = 75;
+                        }
+                        {
+                            if (a > arr[2] & a < arr[3]) {
+                                b = 100;
+                            }
+                            {
+                                if (a > arr[3] & a < arr[4]) {
+                                    b = 150;
+                                }
+
+                            }
+                        }
+                    }
+                }
+                see.setProgress(b);
+                textView.setText(String.valueOf(see.getProgress()));
+
+            }
+
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
 
 
         return super.onCreateView(parent, name, context, attrs);
@@ -74,34 +97,33 @@ public class MainActivityWish extends AppCompatActivity {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            AdapterWish.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            AdapterWish.AdapterGridViewMenu adapterGridViewMenu = new AdapterWish.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+                    new LinearLayoutManager(getBaseContext(), RecyclerView.VERTICAL, false));
+            recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
 
-            } catch ( NullPointerException e) {
-                e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
     }
 
 
+    private AdapterWish.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
-    private AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+        AdapterWish.AdapterGridViewMenu.ItemsMenu[] _arr = new AdapterWish.AdapterGridViewMenu.ItemsMenu[]{
 
-        AdapterGridViewMenu.ItemsMenu []_arr = new AdapterGridViewMenu.ItemsMenu[]{
-
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
                         "30 \u20BD",
-                         "Детское кресло"),
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                        "Детское кресло"),
+                new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
                         "0 \u20BD",
-                         "Курящий салон"),
-                new AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                        "Курящий салон"),
+                new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
                         "10 \u20BD",
                         "Некурящий салон")
@@ -109,100 +131,8 @@ public class MainActivityWish extends AppCompatActivity {
         return _arr;
     }
 
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
-
-        private final ItemsMenu[] itemsMenu;
-        private final LayoutInflater layoutInflater;
-        private final Context context;
-
-        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
-            this.itemsMenu = itemsMenu;
-            this.context = context;
-
-            layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        }
-
-        @NonNull
-        @Override
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
-            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_wishes_model, viewGroup, false);
-            return new ViewHolder(v);
-
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
-            final ItemsMenu _item = itemsMenu[i];
-
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
-            float _dens = context.getResources().getDisplayMetrics().density;
-
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
-            int _size = Math.round(_dens * 40);
-            Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
-            Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
-          //  viewHolder.img.setBackground( ic_rout_color );
-            //viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
-            //viewHolder.img.setImageBitmap( _bitmap );
-            viewHolder.desc.setText( _item.getStr() );
-            viewHolder.cost.setText(_item.getCost());
-        }
-
-        @Override
-        public int getItemCount() {
-            return itemsMenu.length;
-        }
-
-        public static class ItemsMenu {
-
-
-            private @ColorInt int colorBackgroundInt;
-            private int imgResId;
-            private String cost;
-            private String desc;
-
-            public ItemsMenu(int colorBackgroundRes, int imgResId, String cost,String desc) {
-                this.colorBackgroundInt = colorBackgroundRes;
-                this.imgResId = imgResId;
-                this.cost = cost;
-                this.desc = desc;
-            }
-
-            public int getImgResId() {
-                return imgResId;
-            }
-
-            public String getStr() {
-                return desc;
-            }
-
-            public String getCost() {
-                return cost;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
-            }
-        }
-
-
-        class ViewHolder extends RecyclerView.ViewHolder {
-
-            private final ImageView img;
-            private final TextView desc;
-            private final TextView cost;
-
-            public ViewHolder(@NonNull View itemView) {
-                super(itemView);
-                img = itemView.findViewById(R.id.img);
-                desc = itemView.findViewById(R.id.desc);
-                cost = itemView.findViewById(R.id.cost);
-            }
-        }
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        
     }
 }

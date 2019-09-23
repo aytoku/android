@@ -14,11 +14,11 @@ public class MainActivitySeekbar extends Activity implements SeekBar.OnSeekBarCh
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.seek);
+        setContentView(R.layout.cell_travels_cost_change);
 
-        final SeekBar see = (SeekBar)findViewById(R.id.seekBar);
+        final SeekBar see = (SeekBar)findViewById(R.id.ll_travel_cost_change_seekBar);
         see.setOnSeekBarChangeListener(this);
-        m = (TextView)findViewById(R.id.txtView);
+        m = (TextView)findViewById(R.id.ll_travel_cost_change_txtView);
         m.setText("0");
 
     }
