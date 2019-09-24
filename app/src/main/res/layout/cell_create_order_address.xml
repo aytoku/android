@@ -24,7 +24,8 @@
                 android:paddingTop="5dp"
                 android:layout_weight="3.5"
                 android:layout_gravity="center_horizontal"
-                app:srcCompat="@drawable/icon_ellipse_red"/>
+                app:srcCompat="@drawable/icon_ellipse_red"
+                tools:ignore="VectorDrawableCompat" />
 
             <LinearLayout
                 android:layout_width="match_parent" android:layout_height="wrap_content"

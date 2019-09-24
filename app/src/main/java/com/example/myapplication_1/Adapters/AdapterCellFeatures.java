@@ -57,7 +57,6 @@ public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatur
 
         viewHolder.button.setText(array[i]);
         viewHolder.button.setBackground(getCurrentColorButton(array[i]));
-
     }
 
     public Drawable getCurrentColorButton(String str){

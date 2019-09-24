@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:theme="@style/AppTheme"
@@ -7,110 +7,175 @@
     android:layout_height="match_parent"
     android:background="#FFF">
 
-    <LinearLayout
-        android:id="@+id/ll_rating"
+    <TextView
+        android:id="@+id/ll_rating.cost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:text="90₽"
+        android:textColor="@color/my_black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ll_rating.like" />
+
+    <TextView
+        android:id="@+id/ll_rating.like"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center_horizontal"
+        android:text="Как вам поездка?"
+        android:textColor="@color/my_black"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ll_rating.tips">
+
+        <ImageView
+            android:id="@+id/ll_rating.red_star"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/myrect"
+            android:scaleType="center"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/icon_star_red" />
+
+        <ImageView
+            android:id="@+id/ll_rating.red_star1"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/myrect"
+            android:scaleType="center"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/icon_star_red" />
+
+        <ImageView
+            android:id="@+id/ll_rating.red_star2"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/myrect"
+            android:scaleType="center"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/icon_star_red" />
+
+        <ImageView
+            android:id="@+id/ll_ratin3"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/myrect"
+            android:scaleType="center"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/icon_star_red" />
+
+        <ImageView
+            android:id="@+id/ll_rating.red_star3"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/icon_star_grey" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ll_rating.tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="15dp"
+        android:text="Чаявые водителю"
+        android:textColor="@color/my_black"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout9" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ll_rating.cheer_for_what">
 
-        <TextView
-            android:id="@+id/ll_rating.cost"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingTop="15dp"
-            android:layout_weight="0"
-            android:paddingBottom="15dp"
-            android:text="90₽"
-            android:textColor="@color/my_black"
-            android:textSize="32sp" />
-
-        <TextView
-            android:id="@+id/ll_rating.like"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_weight="0"
-            android:text="Как вам поездка?"
-            android:textColor="@color/my_black"
-            android:textSize="13sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_weight="0"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/ll_rating.red_star"
-                android:background="@drawable/myrect"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:scaleType="center"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:src="@drawable/icon_star_red"/>
-
-            <ImageView
-                android:id="@+id/ll_rating.red_star1"
-                android:background="@drawable/myrect"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:scaleType="center"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:src="@drawable/icon_star_red" />
-
-            <ImageView
-                android:id="@+id/ll_rating.red_star2"
-                android:background="@drawable/myrect"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:scaleType="center"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:src="@drawable/icon_star_red" />
-
-            <ImageView
-                android:id="@+id/ll_ratin3"
-                android:background="@drawable/myrect"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:scaleType="center"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:src="@drawable/icon_star_red" />
-
-            <ImageView
-                android:id="@+id/ll_rating.red_star3"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:scaleType="center"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:src="@drawable/icon_star_grey" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/ll_rating.tips"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingTop="20dp"
-            android:paddingBottom="15dp"
-            android:layout_weight="0"
-            android:text="Чаявые водителю"
-            android:textColor="@color/my_black"
-            android:textSize="17sp" />
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/my_gray"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/shadow"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/ll_rating.price1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="20dp"
+                                android:paddingTop="10dp"
+                                android:paddingRight="20dp"
+                                android:paddingBottom="10dp"
+                                android:text="О ₽"
+                                android:textColor="@color/my_black"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                </LinearLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
@@ -137,19 +202,19 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:background="@drawable/shadow"
                                 android:gravity="center_horizontal|center_vertical"
-                                android:orientation="horizontal"
-                                android:background="@drawable/shadow">
+                                android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/ll_rating.price1"
+                                    android:id="@+id/ll_rating.price2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:paddingLeft="20dp"
-                                    android:paddingRight="20dp"
                                     android:paddingTop="10dp"
+                                    android:paddingRight="20dp"
                                     android:paddingBottom="10dp"
-                                    android:text="О ₽"
+                                    android:text="2О ₽"
                                     android:textColor="@color/my_black"
                                     android:textStyle="bold" />
 
@@ -192,19 +257,19 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
+                                    android:background="@drawable/shadow"
                                     android:gravity="center_horizontal|center_vertical"
-                                    android:orientation="horizontal"
-                                    android:background="@drawable/shadow">
+                                    android:orientation="horizontal">
 
                                     <TextView
-                                        android:id="@+id/ll_rating.price2"
+                                        android:id="@+id/ll_rating.price3"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:paddingLeft="20dp"
-                                        android:paddingRight="20dp"
                                         android:paddingTop="10dp"
+                                        android:paddingRight="20dp"
                                         android:paddingBottom="10dp"
-                                        android:text="2О ₽"
+                                        android:text="4О ₽"
                                         android:textColor="@color/my_black"
                                         android:textStyle="bold" />
 
@@ -219,16 +284,15 @@
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        app:cardBackgroundColor="@color/my_gray"
                         app:cardCornerRadius="50dp"
-                        app:cardElevation="0dp"
+                        app:cardElevation="-3dp"
                         app:cardUseCompatPadding="true">
 
                         <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -239,6 +303,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent">
 
+
                                 <androidx.coordinatorlayout.widget.CoordinatorLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
@@ -247,21 +312,21 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
+                                        android:background="@drawable/shadow"
                                         android:gravity="center_horizontal|center_vertical"
-                                        android:orientation="horizontal"
-                                        android:background="@drawable/shadow">
+                                        android:orientation="horizontal">
 
                                         <TextView
-                                            android:id="@+id/ll_rating.price3"
+                                            android:id="@+id/ll_rating.price4"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:paddingLeft="20dp"
-                                            android:paddingRight="20dp"
+                                            android:paddingLeft="15dp"
                                             android:paddingTop="10dp"
+                                            android:paddingRight="15dp"
                                             android:paddingBottom="10dp"
-                                            android:text="4О ₽"
+                                            android:text="6О ₽"
                                             android:textColor="@color/my_black"
-                                            android:textStyle="bold"/>
+                                            android:textStyle="bold" />
 
                                     </LinearLayout>
 
@@ -273,87 +338,39 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            app:cardCornerRadius="50dp"
-                            app:cardElevation="-3dp"
-                            app:cardUseCompatPadding="true">
-
-                            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent">
-
-
-                                    <androidx.coordinatorlayout.widget.CoordinatorLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <LinearLayout
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:gravity="center_horizontal|center_vertical"
-                                            android:orientation="horizontal"
-                                            android:background="@drawable/shadow">
-
-                                            <TextView
-                                                android:id="@+id/ll_rating.price4"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="match_parent"
-                                                android:paddingLeft="15dp"
-                                                android:paddingRight="15dp"
-                                                android:paddingTop="10dp"
-                                                android:paddingBottom="10dp"
-                                                android:text="6О ₽"
-                                                android:textColor="@color/my_black"
-                                                android:textStyle="bold"/>
-
-                                        </LinearLayout>
-
-                                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                                </LinearLayout>
-
-                            </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                    </LinearLayout>
-
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/ll_rating.cheer_for_what"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingTop="30dp"
-            android:layout_weight="0.1"
-            android:paddingBottom="30dp"
-            android:text="За что похвалить водителя?"
-            android:textColor="@color/my_black"
-            android:textSize="17sp" />
+    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/ll_rating.cheer_for_what"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:gravity="center_horizontal"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:text="За что похвалить водителя?"
+        android:textColor="@color/my_black"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -379,80 +396,90 @@
                     android:layout_height="wrap_content"
                     android:maxLines="2"
                     android:paddingLeft="8dp"
-                    android:textSize="12sp"
-                    android:text="Интересная\nбеседа"/>
+                    android:text="Интересная\nбеседа"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ll_rating.emoji_clap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="110dp"
+                android:text="👏"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/ll_rating.emoji_desc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="100dp"
+                android:paddingBottom="50dp"
+                android:text="Вежливость"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:id="@+id/ll_rating.emoji_face"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="100dp"
+                android:text="😎"
+                android:textSize="30dp" />
+
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/ll_rating.emoji_clap"
+                    android:id="@+id/ll_rating.emoji_desc2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="110dp"
-                    android:text="👏"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:id="@+id/ll_rating.emoji_desc1"
-                    android:paddingLeft="100dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="Вежливость"
-                    android:paddingBottom="50dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/ll_rating.emoji_face"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="100dp"
-                    android:text="😎"
-                    android:textSize="30dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/ll_rating.emoji_desc2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="95dp"
-                        android:textSize="12sp"
-                        android:text="Хорошее\nнастроение"/>
-
-                </LinearLayout>
+                    android:paddingLeft="95dp"
+                    android:text="Хорошее\nнастроение"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/ll_rating.button"
             android:layout_width="400dp"
             android:layout_height="60dp"
-            android:text="Готово"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0"
-            android:textSize="17sp"
             android:background="@drawable/button_grey_story"
-            android:textAllCaps="false"/>
+            android:text="Готово"
+            android:textAllCaps="false"
+            android:textSize="17sp" />
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

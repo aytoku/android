@@ -62,7 +62,7 @@ public class AdapterWish {
         }
 
         public static class ItemsMenu {
-            
+
             private @ColorInt
             int colorBackgroundInt;
             private int imgResId;
@@ -92,7 +92,6 @@ public class AdapterWish {
                 return colorBackgroundInt;
             }
         }
-
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
