@@ -45,6 +45,7 @@
                         android:layout_width="wrap_content"
                         android:switchMinWidth="30dp"
                         android:checked="false"
+                        android:paddingLeft="20dp"
                         android:paddingRight="15dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"

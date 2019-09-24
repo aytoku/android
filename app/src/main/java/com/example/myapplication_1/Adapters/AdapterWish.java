@@ -9,13 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.myapplication_1.R;
-
 import ru.osety.amironlibrary.DrawableUtils;
 
 public class AdapterWish {
@@ -39,7 +36,6 @@ public class AdapterWish {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_wishes_model, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -56,9 +52,6 @@ public class AdapterWish {
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
-            //  viewHolder.img.setBackground( ic_rout_color );
-            //viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
-            //viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText(_item.getStr());
             viewHolder.cost.setText(_item.getCost());
         }

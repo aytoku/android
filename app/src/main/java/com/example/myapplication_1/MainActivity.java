@@ -143,7 +143,7 @@ import ru.osety.amironlibrary.DrawableUtils;
                             }, "8 мин"),
                     new AdapterGridViewMenu.ItemsMenu(
                             getResources().getColor(R.color.my_gray),
-                            R.mipmap.icon_miniven,
+                            R.mipmap.minivan,
                             "Минивен",
                             new AdapterGridViewMenu.ItemsMenu.CallBack() {
                                 @Override

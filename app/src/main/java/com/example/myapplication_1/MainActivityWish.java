@@ -18,7 +18,6 @@ import com.example.myapplication_1.Adapters.AdapterWish;
 public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
     TextView textView;
-    SeekBar seekBar;
 
     RecyclerView rv;
 
@@ -37,18 +36,16 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
     }
             @Override
             public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar arg0) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar see) {
-                see.setMax(200);
 
+                see.setMax(200);
                 int[] arr = new int[]{0, 50, 75, 100, 150};
                 int b = 0;
                 int a = see.getProgress();
@@ -71,16 +68,13 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
                                 if (a > arr[3] & a < arr[4]) {
                                     b = 150;
                                 }
-
                             }
                         }
                     }
                 }
                 see.setProgress(b);
                 textView.setText(String.valueOf(see.getProgress()));
-
             }
-
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
