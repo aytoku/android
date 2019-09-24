@@ -62,8 +62,7 @@ public class AdapterWish {
         }
 
         public static class ItemsMenu {
-
-
+            
             private @ColorInt
             int colorBackgroundInt;
             private int imgResId;
