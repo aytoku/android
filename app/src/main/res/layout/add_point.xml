@@ -58,7 +58,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:text="Отменить"
-                        android:visibility="gone"
                         android:layout_weight="1"
                         android:textColor="#424242"
                         android:background="@drawable/for_button"
