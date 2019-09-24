@@ -37,7 +37,7 @@
                         android:textSize="15sp"/>
 
                     <Switch
-                        android:id="@+id/my_switch"
+                        android:id="@+id/cell_wishes_model_my_switch"
                         android:track="@drawable/switch_track_custom"
                         android:thumb="@drawable/switch_thumb"
                         android:layout_gravity="center"

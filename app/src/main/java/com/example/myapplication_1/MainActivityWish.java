@@ -18,6 +18,8 @@ import com.example.myapplication_1.Adapters.AdapterWish;
 public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
     TextView textView;
+    TextView cost_desc;
+    TextView desc;
     RecyclerView rv;
 
     @Override
@@ -28,10 +30,15 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
 
         rv = findViewById(R.id.recycler_wishes);
         textView = (TextView) findViewById(R.id.ll_travel_cost_change_txtView);
+        cost_desc = (TextView) findViewById(R.id.ll_cell_travel_cost_description);
+        desc = (TextView) findViewById(R.id.desc);
         final SeekBar see = (SeekBar) findViewById(R.id.ll_travel_cost_change_seekBar);
         int b = 0;
+        String str="";
         see.setOnSeekBarChangeListener(this);
-        textView.setText("0");
+        textView.setText("0 \u20BD");
+        cost_desc.setText("0 \u20BD");
+
     }
             @Override
             public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {}
@@ -42,28 +49,33 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
             @Override
             public void onStopTrackingTouch(SeekBar see) {
 
-                see.setMax(200);
+                see.setMax(150);
                 int[] arr = new int[]{0, 50, 75, 100, 150};
                 int b = 0;
                 int a = see.getProgress();
                 if (a == arr[0]) {
                     b = 0;
+                    cost_desc.setText("0 \u20BD");
                 }
                 {
                     if (a > arr[0] & a < arr[1]) {
                         b = 50;
+                        cost_desc.setText("50 \u20BD");
                     }
                     {
                         if (a > arr[1] & a < arr[2]) {
                             b = 75;
+                            cost_desc.setText("75 \u20BD");
                         }
                         {
                             if (a > arr[2] & a < arr[3]) {
                                 b = 100;
+                                cost_desc.setText("100 \u20BD");
                             }
                             {
                                 if (a > arr[3] & a < arr[4]) {
                                     b = 150;
+                                    cost_desc.setText("150 \u20BD");
                                 }
                             }
                         }
@@ -102,20 +114,23 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
 
     private AdapterWish.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
+        String[] cost_arr = new String[]{"30 \u20BD","0 \u20BD","10 \u20BD"};
+        String[] desc_arr = new String[]{"Детское кресло", "Курящий салон", "Некурящий салон"};
+
         AdapterWish.AdapterGridViewMenu.ItemsMenu[] _arr = new AdapterWish.AdapterGridViewMenu.ItemsMenu[]{
 
                 new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
-                        "30 \u20BD",
-                        "Детское кресло"),
+                        cost_arr[0],
+                        desc_arr[0]),
                 new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
-                        "0 \u20BD",
-                        "Курящий салон"),
+                        cost_arr[1],
+                        desc_arr[1]),
                 new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
-                        "10 \u20BD",
-                        "Некурящий салон")
+                        cost_arr[2],
+                        desc_arr[2])
         };
         return _arr;
     }

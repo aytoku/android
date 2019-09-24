@@ -1,40 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_add_point"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="15dp"
-    android:paddingLeft="12sp"
     android:background="@color/my_gray">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_item"
+        android:id="@+id/ll_add_point.cv_item"
         android:layout_width="wrap_content"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         app:cardBackgroundColor="@color/my_gray"
         android:background="@drawable/cv"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="15dp"
         app:cardElevation="0dp"
         app:cardUseCompatPadding="true">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
             <LinearLayout
-                android:id="@+id/ll_price_will_change"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/cv"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/ll_price_will_change.title"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/ll_add_point.title"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="25dp"
+                    android:gravity="center_horizontal"
                     android:paddingTop="15dp"
                     android:text="Стоимость изменится"
                     android:textColor="#424242"
@@ -42,47 +37,43 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/ll_price_will_change.description"
+                    android:id="@+id/ll_add_point.description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:paddingLeft="15dp"
                     android:paddingBottom="20dp"
                     android:paddingTop="15dp"
-                    android:text="Если поменять маршрут, стоимость\nпересчитается. Вы узнаете ее в\nконце поездки"
+                    android:text="Если поменять маршрут, стоимость\nпересчитается. Вы узнаете ее в\nконце поездки."
                     android:textColor="#424242"
                     android:textSize="17sp"/>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/ll_price_will_change.refuse_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/ll_add_point.refuse_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
                         android:text="Отменить"
+                        android:visibility="gone"
+                        android:layout_weight="1"
                         android:textColor="#424242"
                         android:background="@drawable/for_button"
                         android:textSize="17sp"
-                        android:paddingTop="20dp"
-                        android:paddingBottom="20dp"
-                        android:paddingLeft="50dp"
-                        android:paddingRight="50dp"
                         android:textStyle="bold"
                         android:textAllCaps="false"/>
 
                     <Button
-                        android:id="@+id/ll_price_will_change.accept_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/ll_add_point.accept_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
                         android:text="Хорошо"
                         android:textColor="#FFFFFF"
                         android:textSize="17sp"
-                        android:paddingTop="20dp"
-                        android:paddingBottom="20dp"
-                        android:paddingLeft="50dp"
-                        android:paddingRight="50dp"
+                        android:layout_weight="1"
                         android:background="@drawable/for_button_red"
                         android:textStyle="bold"
                         android:textAllCaps="false"/>
@@ -90,8 +81,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </androidx.cardview.widget.CardView>
 
