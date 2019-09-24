@@ -56,7 +56,7 @@ public class MainActivityEarnings extends AppCompatActivity {
         EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu[]{
 
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"152\u20BD",   new String[] {"Загород",},   new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"152\u20BD",   new String[] {"Загород"},   new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 

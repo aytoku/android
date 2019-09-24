@@ -29,30 +29,19 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         RecyclerView rv;
 
-
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
-
 
             super.onCreate(savedInstanceState);
              androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
 
-             /*androidImageButton.setOnClickListener(new View.OnClickListener(){
-                 public void onClick(View v){
-                     Toast.makeText(MainActivity.this,"", Toast.LENGTH_LONG).show();
-                 }
-             });*/
+                setContentView(R.layout.main_recycler);
 
-            setContentView(R.layout.main_recycler);
-
-            rv = (RecyclerView) findViewById(R.id.recycler);
-
+                rv = (RecyclerView) findViewById(R.id.recycler);
         }
 
         @Override
         public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
             return super.onCreateView(parent, name, context, attrs);
         }
@@ -61,11 +50,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         protected void onStart() {
             super.onStart();
 
-
             RecyclerView recyclerViewMenu = rv;
-
-
-
 
             try {
 
@@ -80,7 +65,6 @@ import ru.osety.amironlibrary.DrawableUtils;
             } catch ( NullPointerException e) {
                 e.printStackTrace();
             }
-
         }
 
         private AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
@@ -102,7 +86,6 @@ import ru.osety.amironlibrary.DrawableUtils;
                     } catch (NullPointerException e) {
                         e.printStackTrace();
                     }
-
                 }
             }, "5 мин"),
                     new AdapterGridViewMenu.ItemsMenu(
@@ -120,7 +103,6 @@ import ru.osety.amironlibrary.DrawableUtils;
                                     } catch (NullPointerException e) {
                                         e.printStackTrace();
                                     }
-
                                 }
                             }, "2 мин"),
                     new AdapterGridViewMenu.ItemsMenu(
@@ -138,7 +120,6 @@ import ru.osety.amironlibrary.DrawableUtils;
                                     } catch (NullPointerException e) {
                                         e.printStackTrace();
                                     }
-
                                 }
                             }, "8 мин"),
                     new AdapterGridViewMenu.ItemsMenu(
@@ -156,14 +137,11 @@ import ru.osety.amironlibrary.DrawableUtils;
                                     } catch (NullPointerException e) {
                                         e.printStackTrace();
                                     }
-
                                 }
                             }, "15 мин")
             };
             return _arr;
-
         }
-
 
         public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
@@ -184,7 +162,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
                 ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.activity_main, viewGroup, false);
                 return new ViewHolder(v);
-
             }
 
             @Override
@@ -220,7 +197,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
                     }
                 });
-
             }
 
             @Override
@@ -267,7 +243,6 @@ import ru.osety.amironlibrary.DrawableUtils;
                 public int getColorBackground() {
                     return colorBackgroundInt;
                 }
-
             }
 
             class ViewHolder extends RecyclerView.ViewHolder {
@@ -286,7 +261,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
                 }
             }
-
         }
 }
 
