@@ -60,22 +60,22 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
                 {
                     if (a > arr[0] & a < arr[1]) {
                         b = 50;
-                        cost_desc.setText("50 \u20BD");
+                        cost_desc.setText(arr[1] + "\u20BD");
                     }
                     {
                         if (a > arr[1] & a < arr[2]) {
                             b = 75;
-                            cost_desc.setText("75 \u20BD");
+                            cost_desc.setText(arr[2] + "\u20BD");
                         }
                         {
                             if (a > arr[2] & a < arr[3]) {
                                 b = 100;
-                                cost_desc.setText("100 \u20BD");
+                                cost_desc.setText(arr[3] + "\u20BD");
                             }
                             {
                                 if (a > arr[3] & a < arr[4]) {
                                     b = 150;
-                                    cost_desc.setText("150 \u20BD");
+                                    cost_desc.setText(arr[4] + "\u20BD");
                                 }
                             }
                         }

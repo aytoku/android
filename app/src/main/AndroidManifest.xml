@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityAddPoint">
+        <activity android:name=".MainActivityWish">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
