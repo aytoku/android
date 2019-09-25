@@ -26,14 +26,14 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:id="@+id/ll_code.screen"
+            android:id="@+id/ll_code_screen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/ll_code.screen1"
+                android:id="@+id/ll_code_screen1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/line"
@@ -47,7 +47,7 @@
                 android:textSize="28sp" />
 
             <EditText
-                android:id="@+id/ll_code.screen2"
+                android:id="@+id/ll_code_screen2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/line"
@@ -61,7 +61,7 @@
                 android:textSize="28sp" />
 
             <EditText
-                android:id="@+id/ll_code.screen3"
+                android:id="@+id/ll_code_screen3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/line"
@@ -75,7 +75,7 @@
                 android:textSize="28sp" />
 
             <EditText
-                android:id="@+id/ll_code.screen4"
+                android:id="@+id/ll_code_screen4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/line"

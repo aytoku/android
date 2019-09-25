@@ -4,15 +4,16 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivityCodeScreen extends AppCompatActivity {
+
+    EditText code_field1;
+    EditText code_field2;
+    EditText code_field3;
+    EditText code_field4;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,37 +21,33 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.code);
 
-    }
-    public void onFocus(){
+        code_field1 = (EditText)findViewById(R.id.ll_code_screen1);
+        code_field2 = (EditText)findViewById(R.id.ll_code_screen2);
+        code_field3 = (EditText)findViewById(R.id.ll_code_screen3);
+        code_field4 = (EditText)findViewById(R.id.ll_code_screen4);
 
-        final List<EditText> listEditText = new ArrayList<>();
-        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.ll_code_screen);
-        linearLayout.getChildCount();
-        for (int i = 0; i < linearLayout.getChildCount(); i++) {
-            if (linearLayout.getChildAt(i) instanceof EditText) {
-                EditText editText = (EditText) linearLayout.getChildAt(i);
-                listEditText.add(editText);
+        code_field1.addTextChangedListener(new TextWatcher() {
+
+            public void onTextChanged(CharSequence s, int start,int before, int count)
+            {
+                if(code_field1.getText().toString().length()==1)
+                {
+                    code_field2.requestFocus();
+
+                }else if(code_field2.getText().toString().length()==1)
+                {
+                    code_field3.requestFocus();
+
+                }else{
+                    code_field4.requestFocus();
+                }
             }
-        }
-        for (int j = 0; j < linearLayout.getChildCount(); j++) {
-                listEditText.get(j).addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable editable) {
-                        if (editable.length() > 0) {
-                            listEditText.get(1).setFocusable(true);
-                        }
-                    }
-                } );
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
-        }
+
+            public void afterTextChanged(Editable s) {
+            }
+        });
     }
+}

@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityWish">
+        <activity android:name=".MainActivityCodeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
