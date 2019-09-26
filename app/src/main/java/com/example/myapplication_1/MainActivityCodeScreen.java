@@ -1,12 +1,10 @@
 package com.example.myapplication_1;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,7 +29,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
 
         code_field1.addTextChangedListener(new TextWatcher() {
 
-            @SuppressLint("WrongConstant")
             public void onTextChanged(CharSequence s, int start, int before, int count)
             {
                 if(code_field1.getText().toString().length()==1)
@@ -58,7 +55,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                 });
             }
         });
-        
 
         code_field2.addTextChangedListener(new TextWatcher() {
 
@@ -71,11 +67,9 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             public void afterTextChanged(Editable s) {
-
             }
         });
 
@@ -99,7 +93,7 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         code_field4.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start,int before, int count)
-            {
+                {
                         code_field4.requestFocus();
                 }
 
@@ -108,8 +102,7 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         });
-
-
+        
         code_field2.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start,int before, int count)
@@ -118,7 +111,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                 {
                     code_field2.focusSearch(View.FOCUS_LEFT).requestFocus();
                 }
-
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
