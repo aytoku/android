@@ -73,7 +73,7 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             new AdapterGridViewMenu.ItemsMenu(
                     getResources().getColor(R.color.my_gray),
-                    R.mipmap.red_car,
+                    R.mipmap.yellow_car,
                         "Эконом",
                     new AdapterGridViewMenu.ItemsMenu.CallBack() {
                 @Override
@@ -90,7 +90,7 @@ import ru.osety.amironlibrary.DrawableUtils;
             }, "5 мин"),
                     new AdapterGridViewMenu.ItemsMenu(
                             getResources().getColor(R.color.my_gray),
-                            R.mipmap.yellow_car,
+                            R.mipmap.red_car,
                             "Стандарт",
                             new AdapterGridViewMenu.ItemsMenu.CallBack() {
                                 @Override
@@ -125,7 +125,7 @@ import ru.osety.amironlibrary.DrawableUtils;
                     new AdapterGridViewMenu.ItemsMenu(
                             getResources().getColor(R.color.my_gray),
                             R.mipmap.minivan,
-                            "Минивен",
+                            "Грузовое",
                             new AdapterGridViewMenu.ItemsMenu.CallBack() {
                                 @Override
                                 public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {

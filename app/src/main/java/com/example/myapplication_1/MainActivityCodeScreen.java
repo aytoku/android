@@ -1,5 +1,6 @@
 package com.example.myapplication_1;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -27,9 +28,11 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         code_field3 = (EditText)findViewById(R.id.ll_code_screen3);
         code_field4 = (EditText)findViewById(R.id.ll_code_screen4);
 
+
         code_field1.addTextChangedListener(new TextWatcher() {
 
-            public void onTextChanged(CharSequence s, int start,int before, int count)
+            @SuppressLint("WrongConstant")
+            public void onTextChanged(CharSequence s, int start, int before, int count)
             {
                 if(code_field1.getText().toString().length()==1)
                 {
@@ -38,9 +41,22 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
 
             public void afterTextChanged(Editable s) {
+                code_field1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View view, boolean b) {
+                            code_field1.setText("");
+                    }
+                });
+                code_field1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View view, boolean b) {
+                        code_field1.getText();
+                    }
+                });
             }
         });
 
@@ -51,22 +67,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                 if(code_field2.getText().toString().length()==1)
                 {
                     code_field3.requestFocus();
-                }
-            }
-
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            public void afterTextChanged(Editable s) {
-            }
-        });
-        code_field2.addTextChangedListener(new TextWatcher() {
-
-            public void onTextChanged(CharSequence s, int start,int before, int count)
-            {
-                if(code_field2.getText().toString().length()==0)
-                {
-                    code_field2.focusSearch(View.FOCUS_LEFT).requestFocus();
                 }
             }
 
@@ -93,6 +93,40 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         });
+
+        code_field4.addTextChangedListener(new TextWatcher() {
+
+            public void onTextChanged(CharSequence s, int start,int before, int count)
+            {
+                    code_field4.requestFocus();
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+
+        code_field2.addTextChangedListener(new TextWatcher() {
+
+            public void onTextChanged(CharSequence s, int start,int before, int count)
+            {
+                if(code_field2.getText().toString().length()==0)
+                {
+                    code_field2.focusSearch(View.FOCUS_LEFT).requestFocus();
+                }
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
         code_field3.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start,int before, int count)
