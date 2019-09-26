@@ -41,16 +41,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            public void afterTextChanged(Editable s) {
-                code_field1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                    @Override
-                    public void onFocusChange(View view, boolean b) {
-                            code_field1.setText("");
-                    }
-                });
                 code_field1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                     @Override
                     public void onFocusChange(View view, boolean b) {
@@ -58,7 +48,17 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                     }
                 });
             }
+
+            public void afterTextChanged(Editable s) {
+                code_field1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View view, boolean b) {
+                        code_field1.setText("");
+                    }
+                });
+            }
         });
+        
 
         code_field2.addTextChangedListener(new TextWatcher() {
 
@@ -71,9 +71,11 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
 
             public void afterTextChanged(Editable s) {
+
             }
         });
 
@@ -98,12 +100,11 @@ public class MainActivityCodeScreen extends AppCompatActivity {
 
             public void onTextChanged(CharSequence s, int start,int before, int count)
             {
-                    code_field4.requestFocus();
-            }
+                        code_field4.requestFocus();
+                }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
-
             public void afterTextChanged(Editable s) {
             }
         });
