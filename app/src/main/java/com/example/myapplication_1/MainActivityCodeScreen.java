@@ -28,6 +28,12 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         code_field3 = (EditText)findViewById(R.id.ll_code_screen3);
         code_field4 = (EditText)findViewById(R.id.ll_code_screen4);
 
+        code_field1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                code_field1.setText("");
+            }
+        });
 
 
         code_field1.addTextChangedListener(new TextWatcher() {
@@ -40,16 +46,19 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
 
             public void afterTextChanged(Editable s) {
+
             }
         });
-        
-        code_field1.setOnClickListener(new View.OnClickListener() {
+
+
+        code_field2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                code_field1.setText(code_field1.getText());
+                code_field2.setText("");
             }
         });
 
@@ -71,7 +80,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
         });
 
-
         code_field2.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -84,6 +92,13 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
         });
 
+
+        code_field3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                code_field3.setText("");
+            }
+        });
 
         code_field3.addTextChangedListener(new TextWatcher() {
 
@@ -115,6 +130,14 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
         });
 
+
+        code_field4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                code_field4.setText("");
+            }
+
+        });
 
         code_field4.setOnKeyListener(new View.OnKeyListener() {
             @Override
