@@ -23,10 +23,10 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.code);
 
-        code_field1 = (EditText)findViewById(R.id.ll_code_screen1);
-        code_field2 = (EditText)findViewById(R.id.ll_code_screen2);
-        code_field3 = (EditText)findViewById(R.id.ll_code_screen3);
-        code_field4 = (EditText)findViewById(R.id.ll_code_screen4);
+        code_field1 = findViewById(R.id.ll_code_screen1);
+        code_field2 = findViewById(R.id.ll_code_screen2);
+        code_field3 = findViewById(R.id.ll_code_screen3);
+        code_field4 = findViewById(R.id.ll_code_screen4);
 
         code_field1.addTextChangedListener(new TextWatcher() {
 
