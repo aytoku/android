@@ -53,7 +53,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
 
                     code_field1.requestFocus();
                 }
-
                 return false;
             }
         });
@@ -70,7 +69,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             public void afterTextChanged(Editable s) {
@@ -103,7 +101,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void afterTextChanged(Editable s) {
-
             }
         });
 
@@ -133,9 +130,7 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void afterTextChanged(Editable s) {
-
             }
         });
-
     }
 }
