@@ -32,17 +32,16 @@ public class MainActivityCodeScreen extends AppCompatActivity {
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if( s.length() > 1) {
-                    code_field1.setText( s.subSequence(s.length()-1,s.length()));
-                }else {
+                    code_field1.setText( s.subSequence(before+1,before+2));
+                }else{
                     code_field2.requestFocus();
                 }
-            }
+           }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
             public void afterTextChanged(final Editable s) {
-                
             }
         });
 
@@ -62,8 +61,9 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         code_field2.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start,int before, int count) {
+
                 if( s.length() > 1) {
-                    code_field2.setText( s.subSequence(s.length()-1,s.length()) );
+                    code_field2.setText( s.subSequence(before+1,before+2));
                 } else {
                     code_field3.requestFocus();
                 }
@@ -74,7 +74,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void afterTextChanged(Editable s) {
-
             }
         });
 
@@ -94,7 +93,7 @@ public class MainActivityCodeScreen extends AppCompatActivity {
 
             public void onTextChanged(CharSequence s, int start,int before, int count) {
                 if( s.length() > 1) {
-                    code_field3.setText( s.subSequence(s.length()-1,s.length()) );
+                    code_field3.setText( s.subSequence(before+1,before+2) );
                 } else {
                     code_field4.requestFocus();
                 }
@@ -124,7 +123,7 @@ public class MainActivityCodeScreen extends AppCompatActivity {
 
             public void onTextChanged(CharSequence s, int start,int before, int count) {
                 if( s.length() > 1) {
-                    code_field4.setText( s.subSequence(s.length()-1,s.length()) );
+                    code_field4.setText( s.subSequence(before+1,before+2) );
                 }else{
                     code_field4.requestFocus();
                 }
