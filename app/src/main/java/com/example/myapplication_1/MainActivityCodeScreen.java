@@ -6,7 +6,6 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,9 +30,13 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         code_field1.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if( s.length() > 1) {
-                    code_field1.setText( s.subSequence(before+1,before+2));
-                }else{
+                if(s.length()>1 &&  start==0){
+                    code_field1.setText(s.subSequence(before, before+1));
+                }
+                if(s.length()>1 && start == 1){
+                    code_field1.setText(s.subSequence(before+1,before+2));
+                }
+                else{
                     code_field2.requestFocus();
                 }
            }
@@ -61,8 +64,12 @@ public class MainActivityCodeScreen extends AppCompatActivity {
 
             public void onTextChanged(CharSequence s, int start,int before, int count) {
 
-                if( s.length() > 1) {
-                    code_field2.setText( s.subSequence(before+1,before+2));
+                if(s.length()>1 &&  start==0){
+                    code_field2.setText(s.subSequence(before, before+1));
+                }
+
+                else if(s.length()>1 && start == 1){
+                    code_field2.setText(s.subSequence(before+1,before+2));
                 } else {
                     code_field3.requestFocus();
                 }
@@ -90,9 +97,14 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         code_field3.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start,int before, int count) {
-                if( s.length() > 1) {
-                    code_field3.setText( s.subSequence(before+1,before+2) );
-                } else {
+                if(s.length()>1 &&  start==0){
+                    code_field3.setText(s.subSequence(before, before+1));
+                }
+
+               else if(s.length()>1 && start == 1){
+                    code_field3.setText(s.subSequence(before+1,before+2));
+                }
+               else {
                     code_field4.requestFocus();
                 }
             }
@@ -119,8 +131,12 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         code_field4.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start,int before, int count) {
-                if( s.length() > 1) {
-                    code_field4.setText( s.subSequence(before+1,before+2) );
+                if(s.length()>1 &&  start==0){
+                    code_field4.setText(s.subSequence(before, before+1));
+                }
+
+                else if(s.length()>1 && start == 1){
+                    code_field4.setText(s.subSequence(before+1,before+2));
                 }else{
                     code_field4.requestFocus();
                 }
