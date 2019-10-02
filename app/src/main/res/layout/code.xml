@@ -98,7 +98,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/ll_code.get_code"
+            android:id="@+id/cl_code.get_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
@@ -109,7 +109,7 @@
             app:layout_constraintBottom_toTopOf="@+id/ll_code.button" />
 
         <Button
-            android:id="@+id/ll_code.button"
+            android:id="@+id/cl_code.button"
             android:layout_width="380dp"
             android:layout_height="70dp"
             android:background="@drawable/mybuttongrey"

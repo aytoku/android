@@ -67,7 +67,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                 if(s.length()>1 &&  start==0){
                     code_field2.setText(s.subSequence(before, before+1));
                 }
-
                 else if(s.length()>1 && start == 1){
                     code_field2.setText(s.subSequence(before+1,before+2));
                 } else {
@@ -100,7 +99,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                 if(s.length()>1 &&  start==0){
                     code_field3.setText(s.subSequence(before, before+1));
                 }
-
                else if(s.length()>1 && start == 1){
                     code_field3.setText(s.subSequence(before+1,before+2));
                 }
@@ -134,7 +132,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                 if(s.length()>1 &&  start==0){
                     code_field4.setText(s.subSequence(before, before+1));
                 }
-
                 else if(s.length()>1 && start == 1){
                     code_field4.setText(s.subSequence(before+1,before+2));
                 }else{
