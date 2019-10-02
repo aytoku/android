@@ -48,17 +48,6 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
         });
 
-        code_field2.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                if(keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_UP) {
-
-                    code_field1.requestFocus();
-                }
-                return false;
-            }
-        });
 
         code_field2.addTextChangedListener(new TextWatcher() {
 
@@ -81,13 +70,13 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
         });
 
-        code_field3.setOnKeyListener(new View.OnKeyListener() {
+        code_field2.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
                 if(keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_UP) {
 
-                    code_field2.requestFocus();
+                    code_field1.requestFocus();
                 }
                 return false;
             }
@@ -114,13 +103,13 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
         });
 
-        code_field4.setOnKeyListener(new View.OnKeyListener() {
+        code_field3.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
                 if(keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_UP) {
 
-                    code_field3.requestFocus();
+                    code_field2.requestFocus();
                 }
                 return false;
             }
@@ -143,6 +132,18 @@ public class MainActivityCodeScreen extends AppCompatActivity {
             }
 
             public void afterTextChanged(Editable s) {
+            }
+        });
+
+        code_field4.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if(keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_UP) {
+
+                    code_field3.requestFocus();
+                }
+                return false;
             }
         });
     }
