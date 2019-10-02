@@ -49,6 +49,7 @@ public class MainActivityCodeScreen extends AppCompatActivity {
         });
 
 
+
         code_field2.addTextChangedListener(new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start,int before, int count) {
@@ -81,6 +82,7 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                 return false;
             }
         });
+
 
         code_field3.addTextChangedListener(new TextWatcher() {
 
