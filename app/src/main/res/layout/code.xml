@@ -106,7 +106,7 @@
             android:textAlignment="center"
             android:textColor="#979797"
             android:textSize="13sp"
-            app:layout_constraintBottom_toTopOf="@+id/ll_code.button" />
+            app:layout_constraintBottom_toTopOf="@+id/cl_code.button" />
 
         <Button
             android:id="@+id/cl_code.button"
