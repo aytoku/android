@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:id="@+id/ll_create_order_1_1_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ll_create_order_1_1_5.ready"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Готово"
+            android:gravity="right"
+            android:paddingRight="15dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#424242"
+            android:paddingBottom="20dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ll_create_order_1_1_5_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+            <EditText
+                android:id="@+id/ll_create_order_1_1_5_add_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:textColor="#AAAAAA"
+                android:paddingLeft="60dp"
+                android:textSize="17sp"
+                android:hint="Добавить остановку"
+                android:inputType="text" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
