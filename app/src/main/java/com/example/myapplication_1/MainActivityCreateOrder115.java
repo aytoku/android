@@ -37,8 +37,8 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
         rv = (RecyclerView) findViewById(R.id.ll_create_order_1_1_5_recycler);
 
-        for (int i=0;i<20;i++){
-            
+        for (int i = 0; i < 20; i++){
+
         }
 
         ItemTouchHelper.SimpleCallback helper = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,0) {
