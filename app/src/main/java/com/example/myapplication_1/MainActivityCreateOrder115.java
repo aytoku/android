@@ -25,7 +25,6 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
     RecyclerView rv;
     RecyclerView.Adapter mAdapter;
-
     List<String> myDataset = new ArrayList<>();
 
     @Override
@@ -37,9 +36,6 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
         rv = (RecyclerView) findViewById(R.id.ll_create_order_1_1_5_recycler);
 
-        for (int i = 0; i < 20; i++){
-
-        }
 
         ItemTouchHelper.SimpleCallback helper = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,0) {
 
@@ -85,7 +81,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
             AdapterCreateOrder115.AdapterGridViewMenu adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
+                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
@@ -104,13 +100,11 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
                         "Максима Горького, 123",
                          R.drawable.icon_three_lines),
 
-
                 new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.drawable.ic_cross,
                         "Коста, 222",
                         R.drawable.icon_three_lines),
-
 
                 new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
