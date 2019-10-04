@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.AdapterCreateOrder115;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,9 +25,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
     RecyclerView rv;
     RecyclerView.Adapter mAdapter;
-    List<String> myDataset = new ArrayList<>();
-
-
+    private List<AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,7 +36,6 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
         rv = (RecyclerView) findViewById(R.id.ll_create_order_1_1_5_recycler);
 
-
         ItemTouchHelper.SimpleCallback helper = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,0) {
 
             @Override
@@ -47,7 +44,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
                 int position_dragged = dragged.getAdapterPosition();
                 int position_target = target.getAdapterPosition();
 
-                Collections.swap(myDataset, position_dragged, position_target);
+                Collections.swap(itemsMenuList, position_dragged, position_target);
                 mAdapter.notifyItemMoved(position_dragged, position_target);
 
                 return false;
@@ -62,7 +59,6 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(helper);
         itemTouchHelper.attachToRecyclerView(rv);
     }
-
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
@@ -79,6 +75,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
         try {
 
             AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+           itemsMenuList = Arrays.asList(itemsMenu);
             AdapterCreateOrder115.AdapterGridViewMenu adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenu, getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
@@ -90,11 +87,9 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
         }
     }
 
-
     private AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
-        AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] arr = new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[]
-        {
+       AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] arr = new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[]{
 
                 new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),

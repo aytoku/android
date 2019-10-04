@@ -34,10 +34,6 @@
 
     </RelativeLayout>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <LinearLayout
             android:id="@+id/ll_refuse_payment_method"
             android:layout_width="match_parent"
@@ -173,7 +169,5 @@
             </LinearLayout>
 
         </LinearLayout>
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </LinearLayout>
