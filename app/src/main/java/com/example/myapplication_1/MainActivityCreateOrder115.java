@@ -27,6 +27,8 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
     RecyclerView.Adapter mAdapter;
     List<String> myDataset = new ArrayList<>();
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -76,9 +78,8 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
         try {
 
-            AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
-
-            AdapterCreateOrder115.AdapterGridViewMenu adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            AdapterCreateOrder115.AdapterGridViewMenu adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenu, getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -92,7 +93,8 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
     private AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
-        AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu []_arr = new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[]{
+        AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] arr = new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[]
+        {
 
                 new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
@@ -112,7 +114,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
                         "Максима Горького, 23",
                         R.drawable.icon_three_lines)
         };
-        return _arr;
+        return arr;
     }
 }
 
