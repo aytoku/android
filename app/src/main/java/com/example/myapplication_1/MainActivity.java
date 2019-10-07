@@ -138,6 +138,23 @@ import ru.osety.amironlibrary.DrawableUtils;
                                         e.printStackTrace();
                                     }
                                 }
+                            }, "15 мин"),
+                    new AdapterGridViewMenu.ItemsMenu(
+                            getResources().getColor(R.color.my_gray),
+                            R.mipmap.receive,
+                            "Доставка",
+                            new AdapterGridViewMenu.ItemsMenu.CallBack() {
+                                @Override
+                                public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
+
+                                    try {
+
+                                        Bundle _args = new Bundle();
+
+                                    } catch (NullPointerException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
                             }, "15 мин")
             };
             return _arr;

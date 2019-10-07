@@ -16,6 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
 
+import java.util.Arrays;
+import java.util.List;
+
 import ru.osety.amironlibrary.DrawableUtils;
 
 public class AdapterCreateOrder115 {
@@ -26,29 +29,14 @@ public class AdapterCreateOrder115 {
         private final LayoutInflater layoutInflater;
         private final Context context;
 
+        private List<ItemsMenu> itemsMenuList;
+
         public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
-
-//        public interface OnStartDragListener {
-//
-//            /**
-//             * Called when a view is requesting a start of a drag.
-//             *
-//             * @param viewHolder The holder of the view to drag.
-//             */
-//            void onStartDrag(RecyclerView.ViewHolder viewHolder);
-//        }
-//
-//        public final ImageView handleView;
-//        public ItemViewHolder(View itemView) {
-//            super(itemView);
-//            // ...
-//            handleView = (ImageView) itemView.findViewById(R.id.rl_cell_create_order_1_1_5_button_line);
-//        }
 
         @NonNull
         @Override
@@ -61,7 +49,7 @@ public class AdapterCreateOrder115 {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
             final ItemsMenu _item = itemsMenu[i];
 
@@ -75,6 +63,18 @@ public class AdapterCreateOrder115 {
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
             viewHolder.title.setText(_item.getStr());
+
+
+            final int currentPosition = i;
+            itemsMenuList = Arrays.asList(itemsMenu);
+
+            viewHolder.img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    notifyItemRemoved(i);
+                    notifyItemRangeChanged(currentPosition, 1);
+                }
+            });
         }
 
         @Override
@@ -104,7 +104,6 @@ public class AdapterCreateOrder115 {
             public String getStr() {
                 return title;
             }
-
 
             public int getImgResId1() {
                 return imgResId1;
