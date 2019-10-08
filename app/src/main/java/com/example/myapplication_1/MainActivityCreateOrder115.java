@@ -51,15 +51,16 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
             e.printStackTrace();
         }
 
-//        recyclerViewMenu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
+        recyclerViewMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 //                RecyclerView.Adapter adapter;
 //                adapter = adapterGridViewMenu;
 //                adapter.notifyItemRangeRemoved();
-//            }
-//        });
-        
+            //    adapterGridViewMenu.notifyDataSetChanged();
+            }
+        });
+
 //            itemsMenuList.clear();
 //
 //            itemsMenuList.add(new ItemsMenu(context.getResources().getColor(R.color.my_gray),
