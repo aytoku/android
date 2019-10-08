@@ -35,7 +35,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
         rv = findViewById(R.id.ll_create_order_1_1_5_recycler);
 
-        RecyclerView recyclerViewMenu = rv;
+        final RecyclerView recyclerViewMenu = rv;
 
         try {
 
@@ -51,12 +51,22 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        recyclerViewMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                
-            }
-        });
+//        recyclerViewMenu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                RecyclerView.Adapter adapter;
+//                adapter = adapterGridViewMenu;
+//                adapter.notifyItemRangeRemoved();
+//            }
+//        });
+
+
+//            itemsMenuList.clear();
+//
+//            itemsMenuList.add(new ItemsMenu(context.getResources().getColor(R.color.my_gray),
+//                    R.drawable.ic_cross,
+//                    "Максима Горького, 123",
+//                    R.drawable.icon_three_lines));
 
         ItemTouchHelper.SimpleCallback helper = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,0) {
 
@@ -80,13 +90,29 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(helper);
         itemTouchHelper.attachToRecyclerView(rv);
+
+        //update(itemsMenuList);
+
+
+       //  recyclerViewMenu.invalidate();
+       //adapterGridViewMenu.notifyDataSetChanged();
+       //  recyclerViewMenu.getAdapter().notifyDataSetChanged();
+       //  adapterGridViewMenu.notifyItemRangeRemoved(0, itemsMenuList.size());
     }
+//    public void update(ArrayList<AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu> itemsMenu){
+//        itemsMenuList.clear();
+//        itemsMenuList.addAll(itemsMenu);
+//        adapterGridViewMenu.notifyDataSetChanged();
+//    }
+
+
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
 
         return super.onCreateView(parent, name, context, attrs);
     }
+
 
     @Override
     protected void onStart() {

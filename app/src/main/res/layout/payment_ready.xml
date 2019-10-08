@@ -52,13 +52,6 @@
                     android:paddingRight="15dp"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:paddingLeft="15dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
                         <TextView
                             android:id="@+id/ll_payment_ready.visa_number"
                             android:layout_width="wrap_content"
@@ -80,8 +73,6 @@
                         android:layout_width="30dp"
                         android:layout_height="wrap_content" />
 
-                </LinearLayout>
-
             </LinearLayout>
 
             <LinearLayout
@@ -97,18 +88,11 @@
                     android:layout_weight="0"
                     android:src="@mipmap/icon_rub"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
                     android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:paddingLeft="15dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/ll_payment_ready.cash"
@@ -121,17 +105,16 @@
                             android:paddingBottom="15dp"
                             android:textSize="17sp"/>
 
-                    </LinearLayout>
-
                     <CheckBox
                         android:id="@+id/ll_payment_ready.checkBoxBold2"
                         android:button="@drawable/togle_uncheked"
                         android:paddingTop="25dp"
                         android:layout_weight="0"
+                        android:layout_alignParentRight="true"
                         android:layout_width="30dp"
                         android:layout_height="wrap_content" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
             </LinearLayout>
 

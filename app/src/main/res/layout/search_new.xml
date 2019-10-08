@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="#FFF"
+    android:background="@drawable/angle_search_radius"
     android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/ll_search_new"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/angle_search_radius"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/ll_search_new.line"
@@ -75,8 +63,6 @@
                         android:paddingRight="20dp"
                         android:textColor="#424242"
                         android:textSize="13sp"/>
-
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -215,28 +201,28 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/ll_search_new.address_title1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:text="Коста Хетагурова, 123"
-                android:textColor="#424242"
-                android:textSize="17sp"/>
+                <TextView
+                    android:id="@+id/ll_search_new.address_title1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Коста Хетагурова, 123"
+                    android:textColor="#424242"
+                    android:textSize="17sp"/>
 
-            <TextView
-                android:id="@+id/ll_search_new.address_desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:maxLines="2"
-                android:ellipsize="end"
-                android:text="г. Владикавказ, республика Северная Осетия-Алания,\nРоссия"
-                android:textColor="#9B9B9B"
-                android:textSize="11sp"/>
+                <TextView
+                    android:id="@+id/ll_search_new.address_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:text="г. Владикавказ, республика Северная Осетия-Алания,\nРоссия"
+                    android:textColor="#9B9B9B"
+                    android:textSize="11sp"/>
 
             </LinearLayout>
 
@@ -375,7 +361,5 @@
                 android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
                 android:textColor="#9B9B9B"
                 android:textSize="11sp"/>
-
-        </LinearLayout>
 
 </LinearLayout>

@@ -8,7 +8,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
@@ -46,24 +45,18 @@
                 android:textSize="14sp"
                 android:textColor="#B4B4B4"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp"
-                android:layout_gravity="center_horizontal">
-
                 <EditText
                     android:id="@+id/ll_program_error1.textarea"
                     android:layout_centerVertical="true"
                     android:layout_width="380dp"
                     android:layout_height="250dp"
                     android:ellipsize="start"
+                    android:layout_weight="1"
+                    android:paddingBottom="10dp"
+                    android:layout_gravity="center_horizontal"
                     android:gravity="center"
                     android:inputType="text"
                     android:background="@drawable/textarea"/>
-
-            </LinearLayout>
 
             <Button
                 android:id="@+id/ll_program_error1.button"

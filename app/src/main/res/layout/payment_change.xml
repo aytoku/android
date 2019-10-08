@@ -191,6 +191,7 @@
                     android:textAllCaps="false"
                     android:textSize="17sp"
                     android:textColor="#33353E"/>
+
             </LinearLayout>
 
 </LinearLayout>

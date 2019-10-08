@@ -3,13 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/LL_new_card"
-            android:layout_width="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content">
-
             <TextView
                 android:id="@+id/LL_new_card.title"
                 android:layout_width="wrap_content"
@@ -132,7 +125,5 @@
                 android:layout_gravity="center_horizontal"
                 android:text="Привязать карту"
                 android:textAllCaps="false" />
-
-        </LinearLayout>
 
 </LinearLayout>

@@ -5,10 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <LinearLayout
             android:id="@+id/ll_travel_story"
             android:layout_width="wrap_content"
@@ -28,8 +24,6 @@
                 android:textStyle="bold"/>
 
         </LinearLayout>
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_travel_story"

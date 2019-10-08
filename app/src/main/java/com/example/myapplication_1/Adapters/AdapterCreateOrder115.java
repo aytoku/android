@@ -48,6 +48,12 @@ public class AdapterCreateOrder115 {
             return itemViewHolder;
         }
 
+//        public void update(List<ItemsMenu> itemsMenu){
+//            itemsMenuList.clear();
+//            itemsMenuList.addAll(itemsMenu);
+//            notifyDataSetChanged();
+//        }
+
         @Override
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
@@ -72,10 +78,14 @@ public class AdapterCreateOrder115 {
                 @Override
                 public void onClick(View view) {
                     notifyItemRemoved(i);
-                    notifyItemRangeChanged(currentPosition, 1);
+                    notifyItemRangeChanged(currentPosition, itemsMenuList.size());
+                    //update(itemsMenuList);
                 }
             });
+            //notifyDataSetChanged();
         }
+
+
 
         @Override
         public int getItemCount() {

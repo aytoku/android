@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -23,11 +23,6 @@
             android:textSize="21sp"
             android:textColor="#424242"
             android:paddingLeft="20dp"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -174,24 +169,17 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/readon_for_rejection.desc"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
+                    android:layout_weight="0.5"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
                     android:text="Также вы можете написать комментарий или сообщить\nкакую-либо информацию о водителе"
                     android:textSize="14sp"
                     android:textColor="#B4B4B4"/>
-
-            </LinearLayout>
 
             <ImageButton
                 android:id="@+id/ll_cell_travel_cost.button"
@@ -205,7 +193,5 @@
                 android:textSize="13sp" />
 
         </LinearLayout>
-
-    </LinearLayout>
 
 </LinearLayout>
