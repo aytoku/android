@@ -59,8 +59,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 //                adapter.notifyItemRangeRemoved();
 //            }
 //        });
-
-
+        
 //            itemsMenuList.clear();
 //
 //            itemsMenuList.add(new ItemsMenu(context.getResources().getColor(R.color.my_gray),
@@ -91,11 +90,10 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(helper);
         itemTouchHelper.attachToRecyclerView(rv);
 
-        //update(itemsMenuList);
-
+       //  update(itemsMenuList);
 
        //  recyclerViewMenu.invalidate();
-       //adapterGridViewMenu.notifyDataSetChanged();
+       //  adapterGridViewMenu.notifyDataSetChanged();
        //  recyclerViewMenu.getAdapter().notifyDataSetChanged();
        //  adapterGridViewMenu.notifyItemRangeRemoved(0, itemsMenuList.size());
     }
@@ -105,14 +103,11 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 //        adapterGridViewMenu.notifyDataSetChanged();
 //    }
 
-
-
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
 
         return super.onCreateView(parent, name, context, attrs);
     }
-
 
     @Override
     protected void onStart() {
