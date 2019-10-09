@@ -1,6 +1,5 @@
 package com.example.myapplication_1.Adapters;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -12,27 +11,25 @@ import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
 
-import java.util.List;
-
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class AdapterCreateOrder115 {
+public class TravelStoryAdapter {
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
+        private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        private List<ItemsMenu> itemsMenuList;
-
-
-        public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
-            this.itemsMenuList = itemsMenuList;
+        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
+            this.itemsMenu = itemsMenu;
             this.context = context;
+
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
@@ -40,90 +37,107 @@ public class AdapterCreateOrder115 {
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
+            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_travel_story, viewGroup, false);
+            return new ViewHolder(v);
 
-            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_create_order_1_1_5, viewGroup, false);
-            ViewHolder itemViewHolder = new ViewHolder(view);
-            return itemViewHolder;
         }
 
         @Override
-        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final ItemsMenu _item = itemsMenuList.get(i);
+            final ItemsMenu _item = itemsMenu[i];
 
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
             float _dens = context.getResources().getDisplayMetrics().density;
 
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
             int _size = Math.round(_dens * 40);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
-            viewHolder.title.setText(_item.getStr());
-
-
-            final int currentPosition = i;
-
-            viewHolder.img.setOnClickListener(new View.OnClickListener() {
+            viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
+            viewHolder.date.setText( _item.getDate() );
+            viewHolder.cost.setText( _item.getCost() );
+            viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    itemsMenuList.remove(i);
-                    notifyItemRemoved(i);
-                    notifyItemRangeChanged(i, 1);
+                public void onClick(View v) {
+
+                    try {
+
+                        _item.getCallBack().call(_item);
+
+                    } catch ( NullPointerException e) {
+                        e.printStackTrace();
+                    }
+
                 }
             });
+
         }
 
         @Override
         public int getItemCount() {
-            return itemsMenuList.size();
+            return itemsMenu.length;
         }
 
         public static class ItemsMenu {
 
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+            }
+
             private @ColorInt
             int colorBackgroundInt;
             private int imgResId;
-            private String title;
-            private int imgResId1;
+            private String date;
+            private CallBack callBack;
+            private String cost;
 
-            public ItemsMenu(int colorBackgroundRes, int imgResId, String title, int imgResId1) {
+            public ItemsMenu(int colorBackgroundRes, int imgResId, String date, CallBack callBack,String cost) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.imgResId = imgResId;
-                this.title = title;
-                this.imgResId1 = imgResId1;
+                this.date = date;
+                this.callBack = callBack;
+                this.cost = cost;
+            }
+
+            public CallBack getCallBack() {
+                return callBack;
             }
 
             public int getImgResId() {
                 return imgResId;
             }
 
-            public String getStr() {
-                return title;
+            public String getDate() {
+                return date;
             }
 
-            public int getImgResId1() {
-                return imgResId1;
+            public String getCost() {
+                return cost;
             }
 
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
+
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
             private final ImageView img;
-            private final TextView title;
-            private final ImageView img1;
+            private final TextView date;
+            private final CardView cv_item;
+            private final TextView cost;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                img = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_button_cross);
-                title = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_title);
-                img1 = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_button_line);
+                cv_item = itemView.findViewById(R.id.cv_item);
+                img = itemView.findViewById(R.id.elisple_red);
+                date = itemView.findViewById(R.id.date);
+                cost = itemView.findViewById(R.id.cost);
+
             }
         }
+
     }
 }

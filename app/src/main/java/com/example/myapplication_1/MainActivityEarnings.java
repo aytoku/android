@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication_1.Adapters.EarningsPageAdapter;
+
 public class MainActivityEarnings extends AppCompatActivity {
 
     RecyclerView rv;

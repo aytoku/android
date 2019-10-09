@@ -16,6 +16,7 @@ import com.example.myapplication_1.Adapters.AdapterCreateOrder115;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -40,8 +41,8 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
         try {
 
             AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList = Arrays.asList(itemsMenu);
-            adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenu, getBaseContext());
+            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenuList, getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -50,23 +51,6 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
-        recyclerViewMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                RecyclerView.Adapter adapter;
-//                adapter = adapterGridViewMenu;
-//                adapter.notifyItemRangeRemoved();
-            //    adapterGridViewMenu.notifyDataSetChanged();
-            }
-        });
-
-//            itemsMenuList.clear();
-//
-//            itemsMenuList.add(new ItemsMenu(context.getResources().getColor(R.color.my_gray),
-//                    R.drawable.ic_cross,
-//                    "Максима Горького, 123",
-//                    R.drawable.icon_three_lines));
 
         ItemTouchHelper.SimpleCallback helper = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,0) {
 
@@ -91,18 +75,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(helper);
         itemTouchHelper.attachToRecyclerView(rv);
 
-       //  update(itemsMenuList);
-
-       //  recyclerViewMenu.invalidate();
-       //  adapterGridViewMenu.notifyDataSetChanged();
-       //  recyclerViewMenu.getAdapter().notifyDataSetChanged();
-       //  adapterGridViewMenu.notifyItemRangeRemoved(0, itemsMenuList.size());
     }
-//    public void update(ArrayList<AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu> itemsMenu){
-//        itemsMenuList.clear();
-//        itemsMenuList.addAll(itemsMenu);
-//        adapterGridViewMenu.notifyDataSetChanged();
-//    }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
@@ -117,13 +90,13 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
     private AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
-       AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] arr = new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[]{
+        AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] arr = new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[]{
 
                 new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.drawable.ic_cross,
                         "Максима Горького, 123",
-                         R.drawable.icon_three_lines),
+                        R.drawable.icon_three_lines),
 
                 new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),

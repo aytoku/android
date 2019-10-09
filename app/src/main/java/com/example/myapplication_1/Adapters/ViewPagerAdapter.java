@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import com.example.myapplication_1.R;
 
 import java.io.IOException;
 import java.io.InputStream;

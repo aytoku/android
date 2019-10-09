@@ -1,11 +1,11 @@
 package com.example.myapplication_1;
 
 import android.os.Bundle;
-import android.widget.TableLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.myapplication_1.Adapters.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;
