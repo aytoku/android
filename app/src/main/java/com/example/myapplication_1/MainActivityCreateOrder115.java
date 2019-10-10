@@ -92,7 +92,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
     public void onAddButtonClicked(View view) {
 
         try {
-            itemsMenuList.add(itemsMenuList.size()-1, new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+            itemsMenuList.add(itemsMenuList.size(), new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                     R.drawable.ic_cross,
                     "Максима Горького, 123",
                     R.drawable.icon_three_lines));
