@@ -30,6 +30,7 @@ public class AdapterCreateOrder115 {
         private List<ItemsMenu> itemsMenuList;
 
 
+
         public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
@@ -64,6 +65,7 @@ public class AdapterCreateOrder115 {
 
 
             final int currentPosition = i;
+            final ItemsMenu itemsMenu = itemsMenuList.get(i);
 
             viewHolder.img.setOnClickListener(new View.OnClickListener() {
                 @Override

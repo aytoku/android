@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,7 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    Button button;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +38,16 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
         setContentView(R.layout.create_order_1_1_5);
 
         rv = findViewById(R.id.ll_create_order_1_1_5_recycler);
+
+        button = findViewById(R.id.ll_create_order_1_1_5_add_stop);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                onAddButtonClicked(view);
+            }
+        });
 
         final RecyclerView recyclerViewMenu = rv;
 
@@ -74,7 +87,22 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(helper);
         itemTouchHelper.attachToRecyclerView(rv);
+    }
 
+    public void onAddButtonClicked(View view) {
+
+        try {
+            itemsMenuList.add(itemsMenuList.size()-1, new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                    R.drawable.ic_cross,
+                    "Максима Горького, 123",
+                    R.drawable.icon_three_lines));
+            adapterGridViewMenu.notifyItemInserted(itemsMenuList.size()-1);
+            adapterGridViewMenu.notifyDataSetChanged();
+
+        } catch(NumberFormatException e) {
+            Toast.makeText(getApplicationContext(), "The field is empty",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
