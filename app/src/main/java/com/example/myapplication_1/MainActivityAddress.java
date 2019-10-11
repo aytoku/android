@@ -1,6 +1,7 @@
 package com.example.myapplication_1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
@@ -25,6 +26,8 @@ public class MainActivityAddress extends AppCompatActivity {
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AddressAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
     ImageButton button;
+    ImageButton button1;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class MainActivityAddress extends AppCompatActivity {
         rv = findViewById(R.id.address_recycler);
 
         button = findViewById(R.id.rl_address_button_plusik);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +64,21 @@ public class MainActivityAddress extends AppCompatActivity {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
+
+        addListener();
+    }
+
+    public void addListener(){
+
+        button1 = findViewById(R.id.rl_address_button_strelka);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent("com.example.myapplication_1.MainActivityEditMyAddress");
+                startActivity(intent);
+            }
+        });
     }
 
     public void onAddButtonClicked(View view) {

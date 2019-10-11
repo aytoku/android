@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/rl_address.button_strelka"
+            android:id="@+id/rl_address_button_strelka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"

@@ -62,6 +62,7 @@ public class AddressAdapter {
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
             viewHolder.title.setText(_item.getStr());
+
         }
 
         @Override
