@@ -37,7 +37,7 @@ public class MainActivityAdapter {
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.car_card, viewGroup, false);
+            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.activity_main, viewGroup, false);
             return new ViewHolder(v);
 
         }
