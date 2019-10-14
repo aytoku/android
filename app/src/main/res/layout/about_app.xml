@@ -14,21 +14,23 @@
             android:id="@+id/rl_about_app.button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@null"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
 
         <TextView
             android:id="@+id/rl_about_app.title"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="123dp"
+            android:layout_toEndOf="@+id/rl_about_app.button"
             android:text="О приложении"
-            android:textStyle="bold"
+            android:textColor="#424242"
             android:textSize="17sp"
-            android:textColor="#424242"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -45,12 +47,13 @@
     <TextView
         android:id="@+id/rl_about_app.version"
         android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:paddingTop="40dp"
         android:layout_weight="0"
         android:paddingBottom="20dp"
-        android:text="Версия 4.95 от 25 авг.2019г.\n              сборка 34234"
+        android:text="Версия 4.95 от 25 авг.2019г.\nсборка 34234"
         android:textSize="15dp"
         android:textColor="#979797"/>
 
@@ -60,12 +63,14 @@
         android:background="#EDEDED"/>
 
     <RelativeLayout
+        android:id="@+id/rl_about_app1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/grey_line">
         <TextView
-            android:id="@+id/rl_about_app.licence"
+            android:id="@+id/rl_about_app1.licence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -76,10 +81,10 @@
             android:paddingLeft="20dp"/>
 
         <ImageButton
-            android:id="@+id/rl_about_app.img_arrow"
+            android:id="@+id/rl_about_app1.img_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@null"
             android:layout_centerInParent="true"
             android:paddingRight="15dp"
             android:layout_alignParentRight="true"
@@ -87,55 +92,49 @@
 
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
-
     <LinearLayout
+        android:id="@+id/ll_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/ll_about_app.rl_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/grey_line">
 
         <TextView
-            android:id="@+id/rl_about_app.policy"
+            android:id="@+id/ll_about_app.rl_about_app.policy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="123dp"
+            android:paddingLeft="20dp"
             android:paddingTop="10dp"
+            android:paddingBottom="15dp"
             android:text="Политика конфиденцальности"
             android:textColor="#424242"
-            android:paddingBottom="15dp"
-            android:textSize="17sp"
-            android:paddingLeft="20dp"/>
+            android:textSize="17sp" />
 
         <ImageButton
-            android:id="@+id/rl_about_app.img_arrow1"
+            android:id="@+id/ll_about_app.rl_about_app.img_arrow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:paddingTop="15dp"
+            android:background="@null"
+            android:layout_centerInParent="true"
             android:paddingRight="15dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_vector_grey"/>
 
     </RelativeLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#EDEDED"/>
-
     </LinearLayout>
 
     <TextView
         android:id="@+id/rl_about_app.desc"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:paddingTop="10dp"
@@ -146,7 +145,7 @@
 
     <TextView
         android:id="@+id/rl_about_app.desc1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:layout_weight="0.1"

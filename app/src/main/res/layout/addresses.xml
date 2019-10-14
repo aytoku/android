@@ -18,7 +18,8 @@
             android:id="@+id/rl_address_button_strelka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@null"
+            android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
 
@@ -26,7 +27,8 @@
             android:id="@+id/rl_address_button_plusik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@null"
+            android:layout_centerInParent="true"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_plusik"/>
 
@@ -53,7 +55,6 @@
             android:id="@+id/address_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
 
     </LinearLayout>
 

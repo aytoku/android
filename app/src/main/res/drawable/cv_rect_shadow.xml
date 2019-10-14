@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:width="200dp"
-        android:height="75dp">
-        <shape
-            android:shape="rectangle">
+    <item android:width="200dp" android:height="75dp">
+
+        <shape android:shape="rectangle">
 
             <gradient
                 android:centerColor="#08000000"
@@ -15,13 +14,13 @@
             </gradient>
 
         </shape>
+
     </item>
 
 
-    <item android:width="200dp"
-        android:height="75dp">
-        <shape
-            android:shape="rectangle">
+    <item android:width="200dp" android:height="75dp">
+
+        <shape android:shape="rectangle">
 
             <gradient
                 android:centerColor="#40000000"
@@ -31,6 +30,7 @@
             </gradient>
 
         </shape>
+
     </item>
 
 </layer-list>
