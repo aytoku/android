@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityMachinePurpose">
+        <activity android:name=".MainActivityAddress">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
