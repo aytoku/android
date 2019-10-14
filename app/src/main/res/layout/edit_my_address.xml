@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication_1.MainActivityEditMyAddress">
+    tools:context="com.example.myapplication_1.MainActivityEditMyAddress"
+    android:background="#FFFFFF">
 
     <RelativeLayout
         android:id="@+id/rl_edit_my_address"
@@ -17,7 +18,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/rl_edit_my_address.button"
+            android:id="@+id/rl_edit_my_address_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"

@@ -40,14 +40,14 @@ public class MainActivityAddress extends AppCompatActivity {
 
         button = findViewById(R.id.rl_address_button_plusik);
 
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                onAddButtonClicked(view);
-            }
-        });
+//
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                onAddButtonClicked(view);
+//            }
+//        });
 
         final RecyclerView recyclerViewMenu = rv;
 
@@ -70,12 +70,12 @@ public class MainActivityAddress extends AppCompatActivity {
 
     public void addListener(){
 
-        button1 = findViewById(R.id.rl_address_button_strelka);
+       // button1 = findViewById(R.id.rl_address_button_strelka);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent("com.example.myapplication_1.MainActivityEditMyAddress");
+                Intent intent = new Intent(MainActivityAddress.this, MainActivityEditMyAddress.class );
                 startActivity(intent);
             }
         });

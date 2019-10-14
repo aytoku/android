@@ -52,16 +52,13 @@ public class MachinePurposeAdapter {
 
             final ItemsMenu _item = itemsMenuList.get(i);
 
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
             float _dens = context.getResources().getDisplayMetrics().density;
 
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
             int _size = Math.round(_dens * 12);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
-            viewHolder.img.setBackground( ic_rout_color );
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.title.setText(_item.getStr());

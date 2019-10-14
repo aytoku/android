@@ -64,23 +64,10 @@ public class MainActivityMachinePurpose extends AppCompatActivity {
 
         MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu[] arr = new MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu[]{
 
-
-                new MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-
-                        R.drawable.icon_ellipse_red,
-                        "Максима Горького, 23",
-                        R.drawable.icon_arrow_right),
-
                 new MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
 
                         R.drawable.icon_grey_plus,
                         "Добавить остановку",
-                        R.drawable.icon_arrow_right),
-
-                new MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-
-                        R.drawable.icon_circle,
-                        "Коста Хетагурова, 123",
                         R.drawable.icon_arrow_right)
         };
         return arr;

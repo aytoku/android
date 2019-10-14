@@ -63,6 +63,15 @@ public class AddressAdapter {
 
             viewHolder.title.setText(_item.getStr());
 
+            viewHolder.img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    itemsMenuList.add(i, _item);
+                    notifyItemInserted(i);
+                    notifyDataSetChanged();
+                }
+            });
+
         }
 
         @Override
