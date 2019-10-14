@@ -50,7 +50,7 @@
             </LinearLayout>
 
         <ImageButton
-            android:id="@+id/ll_machine_purpose2.img_button"
+            android:id="@+id/ll_machine_purpose2_img_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
@@ -152,7 +152,7 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/ll_machine_purpose2.img_button2"
+            android:id="@+id/ll_machine_purpose2_img_button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"

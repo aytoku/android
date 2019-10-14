@@ -184,6 +184,7 @@
                 android:paddingTop="15dp">
 
                 <Button
+                    android:id="@+id/ll_payment_change_button"
                     android:layout_width="390dp"
                     android:layout_height="60dp"
                     android:background="@drawable/button_grey_story"

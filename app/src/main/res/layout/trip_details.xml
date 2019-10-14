@@ -23,7 +23,7 @@
             android:textStyle="bold"/>
 
         <ImageButton
-            android:id="@+id/rl_order_details.button"
+            android:id="@+id/rl_order_details_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
