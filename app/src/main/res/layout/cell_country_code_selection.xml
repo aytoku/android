@@ -31,6 +31,7 @@
                 android:id="@+id/ll_cell_country_code_selection_img_georgia"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:background="@null"
                 android:src="@mipmap/georgia"/>
 
             <TextView
@@ -52,7 +53,6 @@
                 android:textSize="17sp"/>
 
         </LinearLayout>
-
 
     </LinearLayout>
 

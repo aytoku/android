@@ -8,8 +8,6 @@
         android:id="@+id/rl_payment_method"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="20dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:orientation="horizontal">
@@ -18,8 +16,9 @@
             android:id="@+id/rl_payment_method.button_strelka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@null"
             android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
             android:src="@drawable/icon_strelka"/>
 
         <TextView
@@ -29,6 +28,7 @@
             android:text="Изменить"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:layout_centerInParent="true"
             android:layout_alignParentRight="true"
             android:textColor="#424242"/>
 
@@ -43,7 +43,7 @@
 
         <TextView
             android:id="@+id/ll_payment_method.title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:paddingBottom="30dp"
@@ -64,6 +64,7 @@
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
+            android:background="@null"
             android:src="@mipmap/icon_credit_card"/>
 
             <LinearLayout
@@ -71,11 +72,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/grey_line"
                 android:orientation="vertical">
 
             <TextView
                 android:id="@+id/ll_payment_method.visa_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#424242"
                 android:text="VISA 9966"
@@ -85,16 +87,12 @@
 
                 <TextView
                     android:id="@+id/ll_payment_method.visa_numbers"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#C6C6C6"
                     android:text="03/22"
                     android:paddingBottom="5dp"
                     android:textSize="13sp"/>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:background="#EDEDED"/>
 
             </LinearLayout>
 
@@ -118,6 +116,7 @@
                 android:id="@+id/ll_payment_method.sberbank"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:background="@null"
                 android:src="@mipmap/icon_sber"/>
 
             <LinearLayout
@@ -131,11 +130,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/grey_line"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/ll_payment_method.sber_online"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="#424242"
                         android:text="Sberbank Online"
@@ -143,11 +143,6 @@
                         android:paddingRight="100dp"
                         android:paddingBottom="15dp"
                         android:textSize="17sp"/>
-
-                    <View
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:background="#EDEDED"/>
 
                 </LinearLayout>
 
@@ -174,6 +169,7 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
+                android:background="@null"
                 android:src="@mipmap/icon_rub"/>
 
             <LinearLayout
@@ -191,7 +187,7 @@
 
                     <TextView
                         android:id="@+id/ll_payment_method.cash"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="#424242"
                         android:text="Наличные"
@@ -222,7 +218,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -231,18 +226,18 @@
                 android:layout_height="wrap_content"
                 android:text="Добавить карту"
                 android:paddingBottom="10dp"
+                android:background="@drawable/grey_line"
                 android:paddingTop="10dp"
+                android:paddingLeft="20dp"
                 android:textSize="17sp"
                 android:textColor="#424242"/>
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
+                android:background="@drawable/grey_line"
+                android:paddingLeft="20dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -277,22 +272,19 @@
                     <ImageButton
                         android:layout_width="10dp"
                         android:layout_height="10dp"
+                        android:background="@null"
                         android:src="@drawable/ic_arrow_up"/>
 
                     <ImageButton
                         android:layout_width="10dp"
                         android:layout_height="10dp"
+                        android:background="@null"
                         android:src="@drawable/ic_arrow_down"/>
 
 
                 </LinearLayout>
 
             </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
 
           </LinearLayout>
 

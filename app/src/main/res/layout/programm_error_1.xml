@@ -19,7 +19,7 @@
             android:id="@+id/rl_choose_place.button_strelka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@null"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
@@ -41,50 +41,38 @@
 
         <TextView
             android:id="@+id/ll_program_error1.desc1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Большая стоимость"
             android:paddingLeft="22dp"
             android:paddingBottom="15dp"
             android:textSize="17sp"
+            android:background="@drawable/grey_line"
             android:textColor="#424242"/>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#EDEDED"/>
 
         <TextView
             android:id="@+id/ll_program_error1.desc2"
             android:paddingTop="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Не дали сдачи"
             android:paddingLeft="22dp"
             android:paddingBottom="15dp"
             android:textSize="17sp"
+            android:background="@drawable/grey_line"
             android:textColor="#424242"/>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#EDEDED"/>
 
         <TextView
             android:id="@+id/ll_program_error1.desc3"
             android:paddingTop="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ошибка программы"
             android:paddingLeft="22dp"
+            android:background="@drawable/grey_line"
             android:paddingBottom="15dp"
             android:textSize="17sp"
             android:textColor="#424242"/>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#EDEDED"/>
 
     </LinearLayout>
 

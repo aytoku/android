@@ -20,7 +20,7 @@
             android:src="@drawable/icon_ellipse_red"
             android:paddingTop="20dp"
             android:layout_alignParentLeft="true"
-            android:background="#FFFFFF"
+            android:background="@null"
             android:scaleType="center"
             android:scaleX="1.1"
             android:scaleY="1.1"/>
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
             android:paddingTop="20dp"
-            android:background="#FFF"
+            android:background="@null"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_arrow_right"/>
 

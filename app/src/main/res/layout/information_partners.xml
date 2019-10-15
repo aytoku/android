@@ -14,7 +14,7 @@
             android:id="@+id/rl_information_partners.button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@null"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
@@ -48,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
+            android:background="@null"
             android:scaleX="1"
             android:scaleY="1"
             android:src="@drawable/icon_little_red_star" />
@@ -57,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
+            android:background="@null"
             android:scaleX="1"
             android:scaleY="1"
             android:src="@drawable/icon_little_red_star" />
@@ -66,6 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
+            android:background="@null"
             android:scaleX="1"
             android:scaleY="1"
             android:src="@drawable/icon_little_red_star" />
@@ -75,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
+            android:background="@null"
             android:scaleX="1"
             android:scaleY="1"
             android:src="@drawable/icon_little_red_star" />
@@ -84,246 +88,228 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
+            android:background="@null"
             android:scaleX="1"
             android:scaleY="1"
             android:src="@drawable/icon_little_grey_star" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/rl_information_partners.number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:paddingLeft="15dp"
-        android:layout_weight="0"
-        android:paddingBottom="10dp"
-        android:text="№ 1987456"
-        android:textColor="#979797"/>
-
-    <TextView
-        android:id="@+id/rl_information_partners.desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:paddingBottom="10dp"
-        android:layout_weight="0.5"
-        android:paddingLeft="15dp"
-        android:text="ООО Партнер 1, 362040, Северная\nОсетия-Алания Респ., г. Владикавказ\nпросп.Мира, д. 31, ORGN:111111939"
-        android:textColor="#424242"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:layout_weight="0.6"
-        android:paddingLeft="15dp">
-
-        <Spinner
-            android:id="@+id/choose"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:background="@drawable/spinnerr"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:layout_weight="0.6"
-        android:paddingBottom="15dp">
-        <Spinner
-            android:id="@+id/choose_cities"
-            android:layout_width="250dp"
-            android:layout_height="30dp"
-            android:background="@drawable/spinnerr"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/rl_information_partners.cost"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textSize="15sp"
-        android:paddingLeft="15dp"
-        android:layout_weight="0.5"
-        android:gravity="center_vertical"
-        android:background="#F3F3F3"
-        android:text="Стоимость расчета"
-        android:textColor="#424242"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:gravity="center_vertical">
-
         <TextView
-            android:id="@+id/rl_information_partners.price"
-            android:layout_width="wrap_content"
+            android:id="@+id/rl_information_partners.number"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:text="39 руб."
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:paddingRight="15dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="15dp">
+            android:paddingLeft="15dp"
+            android:layout_weight="0"
+            android:paddingBottom="10dp"
+            android:text="№ 1987456"
+            android:textColor="#979797"/>
 
         <TextView
-            android:id="@+id/rl_information_partners.free_wait"
-            android:layout_width="wrap_content"
+            android:id="@+id/rl_information_partners.desc"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Бесплатное ожидание"
-            android:layout_alignParentLeft="true"
-            android:textStyle="bold"
+            android:textSize="17sp"
+            android:paddingBottom="10dp"
+            android:layout_weight="0.5"
+            android:paddingLeft="15dp"
+            android:text="ООО Партнер 1, 362040, Северная\nОсетия-Алания Респ., г. Владикавказ\nпросп.Мира, д. 31, ORGN:111111939"
             android:textColor="#424242"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:layout_weight="0.6"
+            android:paddingLeft="15dp">
+
+            <Spinner
+                android:id="@+id/choose"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:background="@drawable/spinnerr"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:layout_weight="0.6"
+            android:paddingBottom="15dp">
+            <Spinner
+                android:id="@+id/choose_cities"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:background="@drawable/spinnerr"/>
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/rl_information_partners.min"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/rl_information_partners.cost"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:textSize="15sp"
-            android:text="3 мин"
-            android:layout_alignParentRight="true"
+            android:paddingLeft="15dp"
+            android:layout_weight="0.5"
             android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:background="#F3F3F3"
+            android:text="Стоимость расчета"
             android:textColor="#424242"/>
 
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:paddingRight="15dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="15dp">
-
-        <TextView
-            android:id="@+id/rl_information_partners.no_free_wait"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Платное ожидание"
-            android:layout_alignParentLeft="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
+            android:layout_weight="0.5"
+            android:background="@drawable/grey_line"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/rl_information_partners.min1"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/rl_information_partners.price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="39 руб."
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="4 руб/мин"
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
+            android:layout_weight="0.5"
+            android:paddingRight="15dp"
+            android:background="@drawable/grey_line"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/rl_information_partners.free_wait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Бесплатное ожидание"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <TextView
+                android:id="@+id/rl_information_partners.min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="3 мин"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:gravity="center_vertical">
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/rl_information_partners.town_price"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Стоимость по городу"
-            android:layout_alignParentLeft="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
+            android:layout_weight="0.5"
+            android:paddingRight="15dp"
+            android:background="@drawable/grey_line"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp">
 
-        <TextView
-            android:id="@+id/rl_information_partners.min2"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/rl_information_partners.no_free_wait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Платное ожидание"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
+
+            <TextView
+                android:id="@+id/rl_information_partners.min1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="4 руб/мин"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="4 руб/мин"
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
+            android:layout_weight="0.5"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:background="@drawable/grey_line"
+            android:gravity="center_vertical">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/rl_information_partners.town_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Стоимость по городу"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <TextView
+                android:id="@+id/rl_information_partners.min2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="4 руб/мин"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.8"
-        android:orientation="vertical">
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="10dp"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:id="@+id/rl_information_partners.countryside_price"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Стоимость загород"
-            android:layout_alignParentLeft="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
+            android:layout_weight="0.8"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/rl_information_partners.min3"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="4 руб/мин"
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
+            android:paddingBottom="10dp"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:gravity="center_vertical">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/rl_information_partners.countryside_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:background="@drawable/grey_line"
+                android:text="Стоимость загород"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
+            <TextView
+                android:id="@+id/rl_information_partners.min3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="4 руб/мин"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="#424242"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 

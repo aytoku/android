@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@drawable/grey_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -48,15 +49,6 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/ll_driver_chat" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/ll_driver_chat_cv_item"

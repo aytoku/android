@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="15dp"
+        android:background="@drawable/grey_line"
         android:orientation="horizontal">
 
         <CheckBox
@@ -28,10 +29,5 @@
             android:paddingLeft="20dp"/>
 
     </LinearLayout>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED"/>
 
 </LinearLayout>

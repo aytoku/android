@@ -26,11 +26,12 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/icon_ellipse_red"
                 android:scaleType="center"
+                android:background="@null"
                 android:paddingTop="10dp" />
 
             <TextView
                 android:id="@+id/ll_travel_story_1.address_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Максима Горького, 23"
                 android:textSize="17sp"
@@ -49,12 +50,13 @@
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/icon_circle"
+                android:background="@null"
                 android:scaleType="center"
                 android:paddingTop="10dp" />
 
             <TextView
                 android:id="@+id/ll_travel_story_1.address_title2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Коста Хетагурова, 123"
                 android:textSize="17sp"
@@ -251,7 +253,7 @@
                     android:id="@+id/ll_travel_story_1.button_arrow"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:background="#FFF"
+                    android:background="@null"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:src="@drawable/ic_vector_grey"/>

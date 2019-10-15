@@ -6,6 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/grey_line"
         android:orientation="horizontal">
 
         <ImageView
@@ -14,6 +15,7 @@
             android:layout_height="match_parent"
             android:paddingTop="10dp"
             android:scaleType="center"
+            android:background="@null"
             android:scaleX="1.4"
             android:scaleY="1.2"
             android:src="@drawable/ic_work" />
@@ -46,11 +48,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED" />
 
 </LinearLayout>

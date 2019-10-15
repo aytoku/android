@@ -18,6 +18,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingLeft="20dp"
+                    android:background="@drawable/grey_line"
                     android:paddingTop="5dp">
 
                     <ImageView
@@ -25,6 +26,7 @@
                         android:layout_width="50dp"
                         android:layout_height="55dp"
                         android:layout_weight="1"
+                        android:background="@null"
                         android:paddingBottom="7dp"
                         android:scaleType="centerInside"
                         android:src="@drawable/icon_elips_grey"/>
@@ -66,15 +68,11 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:background="@drawable/grey_line"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -120,15 +118,11 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:background="@drawable/grey_line"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -174,16 +168,11 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
+            android:background="@drawable/grey_line"
             android:orientation="horizontal">
 
             <ImageView
@@ -228,15 +217,11 @@
 
         </LinearLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:background="@drawable/grey_line"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -281,11 +266,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
 
             <TextView
                 android:id="@+id/ll_search_new.address_title3"

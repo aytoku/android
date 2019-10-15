@@ -26,7 +26,6 @@ public class MainActivityAddress extends AppCompatActivity {
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AddressAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
     ImageButton button;
-    ImageButton button1;
 
 
     @Override
@@ -39,15 +38,6 @@ public class MainActivityAddress extends AppCompatActivity {
         rv = findViewById(R.id.address_recycler);
 
         button = findViewById(R.id.rl_address_button_plusik);
-
-//
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                onAddButtonClicked(view);
-//            }
-//        });
 
         final RecyclerView recyclerViewMenu = rv;
 
@@ -69,8 +59,6 @@ public class MainActivityAddress extends AppCompatActivity {
     }
 
     public void addListener(){
-
-       // button1 = findViewById(R.id.rl_address_button_strelka);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

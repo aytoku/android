@@ -18,22 +18,22 @@
             android:textColor="#424242"
             android:paddingBottom="20dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ll_create_order_1_1_5_recycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="15dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ll_create_order_1_1_5_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"/>
 
-    <Button
-        android:id="@+id/ll_create_order_1_1_5_add_stop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Добавить остановку"
-        android:textAllCaps="false"
-        android:background="?android:attr/selectableItemBackground"
-        android:textColor="#AAAAAA"
-        android:textAlignment="textStart"
-        android:paddingLeft="15dp"
-        android:textSize="17sp"/>
+        <Button
+            android:id="@+id/ll_create_order_1_1_5_add_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Добавить остановку"
+            android:textAllCaps="false"
+            android:background="?android:attr/selectableItemBackground"
+            android:textColor="#AAAAAA"
+            android:textAlignment="textStart"
+            android:paddingLeft="15dp"
+            android:textSize="17sp"/>
 
 </LinearLayout>

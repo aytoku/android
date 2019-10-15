@@ -4,14 +4,12 @@
     android:shape="rectangle">
     <stroke
         android:width="40dp"
-        android:color="#FFFFFF">
-    </stroke>
+        android:color="#FFFFFF"/>
 
     <gradient
-
         android:type="radial"
-        android:gradientRadius="400dp"
-        android:startColor="#EB726E6E"
-        android:endColor="#FFFFFF">
-    </gradient>
+        android:gradientRadius="500dp"
+        android:startColor="#EB0E0D0D"
+        android:endColor="#FFFFFF"/>
+
 </shape>

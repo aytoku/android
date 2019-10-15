@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
             <LinearLayout
                 android:id="@+id/ll_wishes"
@@ -18,7 +17,7 @@
                     android:paddingTop="25dp"
                     android:paddingBottom="25dp"
                     android:layout_width="60dp"
-                    android:background="#CDFCFAFA"
+                    android:background="@null"
                     android:layout_height="wrap_content"
                     android:src="@drawable/icon_cross_black"
                     android:scaleType="center"
@@ -40,8 +39,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_wishes"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
@@ -57,10 +55,11 @@
                 android:layout_weight="0.9"
                 layout="@layout/cell_travels_cost_change"/>
 
-                 <View
+                    <View
                         android:layout_width="fill_parent"
                         android:layout_height="1dp"
                         android:background="#EDEDED"/>
+
                 <include
                     android:id="@+id/ll_wishes.include_ost"
                     android:layout_width="match_parent"

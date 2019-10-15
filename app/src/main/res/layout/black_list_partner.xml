@@ -8,40 +8,39 @@
         android:id="@+id/rl_blackList_partner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="15dp">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
         <ImageButton
             android:id="@+id/rl_blackList_partner.img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFF"
+            android:background="@null"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
 
         <TextView
             android:id="@+id/rl_blackList_partner.title"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_toStartOf="@+id/rl_blackList_partner.ready"
+            android:layout_toEndOf="@+id/rl_blackList_partner.img"
             android:text="Партнеры"
-            android:paddingBottom="20dp"
-            android:textStyle="bold"
+            android:textColor="#424242"
             android:textSize="17sp"
-            android:textColor="#424242"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/rl_blackList_partner.ready"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
             android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
             android:text="Готово"
-            android:paddingRight="15dp"
-            android:paddingBottom="20dp"
             android:textSize="17sp"
             android:textColor="#424242"/>
 

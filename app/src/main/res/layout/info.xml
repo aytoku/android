@@ -7,117 +7,108 @@
         android:id="@+id/ll_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="20dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/ll_info.info"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Информация"
             android:textSize="21sp"
             android:textStyle="bold"
+            android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="30dp"
             android:textColor="#424242"/>
         
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="17sp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/ll_info.title"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Тарифы"
-                android:textSize="17sp"
-                android:textColor="#424242"/>
+                android:paddingTop="15dp"
+                android:paddingLeft="20dp"
+                android:background="@drawable/grey_line"
+                android:paddingBottom="17sp"
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/ll_info.img_arrow"
+                <TextView
+                    android:id="@+id/ll_info.title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Тарифы"
+                    android:textSize="17sp"
+                    android:textColor="#424242"/>
+
+                <ImageButton
+                    android:id="@+id/ll_info.img_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_arrow_right"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="17sp"
+                android:background="@drawable/grey_line"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ll_info.title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Партнеры"
+                    android:paddingLeft="20dp"
+                    android:textSize="17sp"
+                    android:textColor="#424242"/>
+
+                <ImageButton
+                    android:id="@+id/ll_info.img_arrow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_arrow_right"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingRight="15dp"
-                android:layout_centerInParent="true"
-                android:background="#FFF"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/icon_arrow_right"/>
-            
-        </RelativeLayout>
+                android:paddingTop="15dp"
+                android:paddingLeft="20dp"
+                android:background="@drawable/grey_line"
+                android:paddingBottom="17sp"
+                android:orientation="horizontal">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#EDEDED"/>
+                <TextView
+                    android:id="@+id/ll_info.title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="О приложении"
+                    android:textSize="17sp"
+                    android:textColor="#424242"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="17sp"
-            android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/ll_info.img_arrow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_arrow_right"/>
 
-            <TextView
-                android:id="@+id/ll_info.title1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Партнеры"
-                android:textSize="17sp"
-                android:textColor="#424242"/>
+            </RelativeLayout>
 
-            <ImageButton
-                android:id="@+id/ll_info.img_arrow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingRight="15dp"
-                android:layout_centerInParent="true"
-                android:background="#FFF"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/icon_arrow_right"/>
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#EDEDED"/>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="17sp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/ll_info.title2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="О приложении"
-                android:textSize="17sp"
-                android:textColor="#424242"/>
-
-            <ImageButton
-                android:id="@+id/ll_info.img_arrow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingRight="15dp"
-                android:layout_centerInParent="true"
-                android:background="#FFF"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/icon_arrow_right"/>
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:background="#EDEDED"/>
-
-    </LinearLayout>
+        </LinearLayout>
 
 </RelativeLayout>
 

@@ -16,7 +16,7 @@
                     android:id="@+id/ll_service.button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#FFF"
+                    android:background="@null"
                     android:layout_centerInParent="true"
                     android:layout_alignParentLeft="true"
                     android:src="@drawable/icon_strelka"/>
@@ -37,7 +37,7 @@
                     <TextView
                         android:id="@+id/ll_service.last_trip"
                         android:paddingLeft="15dp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Последняя поездка"
                         android:layout_weight="0"
@@ -200,7 +200,7 @@
             <TextView
                 android:id="@+id/ll_service.questions"
                 android:paddingLeft="35dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ваши вопросы"
                 android:paddingTop="15dp"
@@ -215,6 +215,7 @@
                 android:layout_weight="0"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
+                android:background="@drawable/grey_line"
                 android:orientation="horizontal">
 
                 <TextView
@@ -235,16 +236,11 @@
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
                     android:layout_centerInParent="true"
-                    android:background="#FFF"
+                    android:background="@null"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/icon_arrow_right"/>
 
             </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -252,6 +248,7 @@
                 android:layout_weight="0"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
+                android:background="@drawable/grey_line"
                 android:orientation="horizontal">
 
                 <TextView
@@ -272,22 +269,18 @@
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
                     android:layout_centerInParent="true"
-                    android:background="#FFF"
+                    android:background="@null"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/icon_arrow_right"/>
 
             </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:paddingLeft="15dp"
+                android:background="@drawable/grey_line"
                 android:paddingTop="10dp"
                 android:orientation="horizontal">
 
@@ -309,15 +302,10 @@
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"
                     android:layout_centerInParent="true"
-                    android:background="#FFF"
+                    android:background="@null"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/icon_arrow_right"/>
 
             </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
 
 </LinearLayout>

@@ -7,7 +7,7 @@
         android:id="@+id/rl_cell_country_code_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFF"
+        android:background="@null"
         android:paddingTop="9dp"
         android:paddingRight="14dp"
         android:paddingBottom="14dp"
@@ -17,26 +17,24 @@
             android:id="@+id/rl_cell_country_code_selection.button"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="#FFF"
+            android:background="@null"
+            android:layout_centerInParent="true"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_cross_black"/>
 
         <TextView
             android:id="@+id/rl_cell_country_code_selection.title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Выберите страну"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
             android:textColor="#424242"
             android:textSize="19sp"
             android:textStyle="bold"/>
 
     </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rl_country_code_selection_recycler"

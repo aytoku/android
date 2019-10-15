@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/title_wish"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             android:text="Настройки"
@@ -21,8 +19,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_settings"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="wrap_content"/>
+
 
             <View
                 android:layout_width="fill_parent"
@@ -31,7 +29,7 @@
 
                 <TextView
                     android:id="@+id/ll_settings.title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:text="Язык голосового ввода"
@@ -42,17 +40,13 @@
 
                 <TextView
                     android:id="@+id/ll_settings.description"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Русский"
                     android:paddingLeft="20dp"
                     android:textSize="13sp"
                     android:paddingBottom="15dp"
+                    android:background="@drawable/grey_line"
                     android:textColor="#C6C6C6"/>
-
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:background="#EDEDED"/>
 
 </LinearLayout>
