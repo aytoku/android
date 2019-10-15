@@ -47,6 +47,26 @@
 
         </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp">
+        <Button
+            android:id="@+id/ll_button_red.button_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="90dp"
+            android:paddingRight="90dp"
+            android:paddingTop="20dp"
+            android:textSize="17sp"
+            android:paddingBottom="20dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/green_button"
+            android:textAllCaps="false"
+            android:text="Вызвать такси" />
+
+    </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

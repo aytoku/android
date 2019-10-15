@@ -113,13 +113,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
                     android:layout_weight="1"
+                    android:background="@drawable/cv_rect_shadow"
                     android:gravity="center_horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/ll_machine_purpose1.cv_call"
+                        android:id="@+id/ll_machine_purpose1_cv_call"
                         android:layout_width="wrap_content"
                         android:layout_height="70dp"
-                        app:cardElevation="5dp"
                         app:cardCornerRadius="11dp">
 
                         <LinearLayout
@@ -159,13 +159,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
                     android:layout_weight="1"
+                    android:background="@drawable/cv_rect_shadow"
                     android:gravity="center_horizontal">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/ll_machine_purpose1.cv_write"
                         android:layout_width="wrap_content"
                         android:layout_height="70dp"
-                        app:cardElevation="5dp"
                         app:cardCornerRadius="11dp">
 
                             <LinearLayout
