@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:width="200dp" android:height="75dp">
+    <item>
         <shape android:shape="rectangle">
+
+            <corners android:radius="11dp"/>
+
             <gradient
-                android:centerColor="#08000000"
+                android:centerColor="@android:color/transparent"
                 android:endColor="#FFFCFC"
                 android:startColor="#FFFCFC"
                 android:angle="180"
@@ -14,12 +17,14 @@
     </item>
 
 
-    <item android:width="200dp" android:height="75dp">
+    <item>
         <shape android:shape="rectangle">
+
+            <corners android:radius="11dp"/>
+
             <gradient
-                android:centerColor="#40979595"
-                android:endColor="#FFFCFC"
-                android:type="linear"
+                android:centerColor="@android:color/transparent"
+                android:endColor="#F1F0F0"
                 android:startColor="#FFFCFC"
                 android:angle="90"/>
         </shape>
