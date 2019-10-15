@@ -13,5 +13,19 @@
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:background="#EDEDED" />
+
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        layout="@layout/machine_purpose_recycler"/>
+
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        layout="@layout/cell_machine_purpose2"/>
     
 </LinearLayout>
