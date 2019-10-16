@@ -9,8 +9,10 @@
     <gradient
 
         android:type="radial"
-        android:gradientRadius="30dp"
-        android:startColor="#EBF3B3B1"
+        android:gradientRadius="25dp"
+        android:startColor="#F3B3B1"
         android:endColor="#FFFFFF">
     </gradient>
+
+
 </shape>

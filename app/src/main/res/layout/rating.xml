@@ -5,13 +5,13 @@
     android:theme="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF">
+    android:background="#FFFFFF">
 
     <TextView
-        android:id="@+id/ll_rating.cost"
+        android:id="@+id/cl_rating.cost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
+        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
@@ -20,461 +20,150 @@
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/ll_rating.like" />
+        app:layout_constraintBottom_toTopOf="@+id/cl_rating.question1" />
 
     <TextView
-        android:id="@+id/ll_rating.like"
+        android:id="@+id/cl_rating.question1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
+        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:text="Как вам поездка?"
         android:textColor="@color/my_black"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5" />
+        app:layout_constraintBottom_toTopOf="@+id/cl_rating.ll_rating" />
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
+        android:id="@+id/cl_rating.ll_rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
+        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/ll_rating.tips">
+        app:layout_constraintBottom_toTopOf="@+id/cl_rating.tips">
 
         <ImageView
-            android:id="@+id/ll_rating.red_star"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/myrect"
-            android:scaleType="center"
-            android:scaleX="1.2"
-            android:scaleY="1.2"
-            android:src="@drawable/icon_star_red" />
-
-        <ImageView
-            android:id="@+id/ll_rating.red_star1"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/myrect"
-            android:scaleType="center"
-            android:scaleX="1.2"
-            android:scaleY="1.2"
-            android:src="@drawable/icon_star_red" />
-
-        <ImageView
-            android:id="@+id/ll_rating.red_star2"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/myrect"
-            android:scaleType="center"
-            android:scaleX="1.2"
-            android:scaleY="1.2"
-            android:src="@drawable/icon_star_red" />
-
-        <ImageView
-            android:id="@+id/ll_ratin3"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/myrect"
-            android:scaleType="center"
-            android:scaleX="1.2"
-            android:scaleY="1.2"
-            android:src="@drawable/icon_star_red" />
-
-        <ImageView
-            android:id="@+id/ll_rating.red_star3"
+            android:id="@+id/cl_rating_ll_rating_red_star1"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:scaleType="center"
-            android:scaleX="1.2"
-            android:scaleY="1.2"
+            android:layout_weight="1"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/icon_star_grey"/>
+
+        <ImageView
+            android:id="@+id/cl_rating_ll_rating_red_star2"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_weight="1"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/icon_star_grey" />
+
+        <ImageView
+            android:id="@+id/cl_rating_ll_rating_red_star3"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_weight="1"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/icon_star_grey"/>
+
+        <ImageView
+            android:id="@+id/cl_rating_ll_rating_red_star4"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_weight="1"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:src="@drawable/icon_star_grey" />
+
+        <ImageView
+            android:id="@+id/cl_rating_ll_rating_red_star5"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_weight="1"
+            android:scaleX="1"
+            android:scaleY="1"
             android:src="@drawable/icon_star_grey" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/ll_rating.tips"
+        android:id="@+id/cl_rating.tips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
+        android:layout_weight="1"
         android:gravity="center_horizontal"
-        android:paddingTop="20dp"
-        android:paddingBottom="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:text="Чаявые водителю"
         android:textColor="@color/my_black"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout9" />
+        app:layout_constraintBottom_toTopOf="@+id/cl_rating_rl_rating_recycler" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/ll_rating.cheer_for_what">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/my_gray"
-            app:cardCornerRadius="50dp"
-            app:cardElevation="0dp"
-            app:cardUseCompatPadding="true">
-
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cl_rating_rl_rating_recycler"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
-                    <androidx.coordinatorlayout.widget.CoordinatorLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:background="@drawable/shadow"
-                            android:gravity="center_horizontal|center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/ll_rating.price1"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:paddingLeft="20dp"
-                                android:paddingTop="10dp"
-                                android:paddingRight="20dp"
-                                android:paddingBottom="10dp"
-                                android:text="О ₽"
-                                android:textColor="@color/my_black"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                </LinearLayout>
-
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:cardBackgroundColor="@color/my_gray"
-                app:cardCornerRadius="50dp"
-                app:cardElevation="0dp"
-                app:cardUseCompatPadding="true">
-
-                <androidx.coordinatorlayout.widget.CoordinatorLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
-
-                        <androidx.coordinatorlayout.widget.CoordinatorLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:background="@drawable/shadow"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/ll_rating.price2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:paddingLeft="20dp"
-                                    android:paddingTop="10dp"
-                                    android:paddingRight="20dp"
-                                    android:paddingBottom="10dp"
-                                    android:text="2О ₽"
-                                    android:textColor="@color/my_black"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                    </LinearLayout>
-
-                </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    app:cardBackgroundColor="@color/my_gray"
-                    app:cardCornerRadius="50dp"
-                    app:cardElevation="0dp"
-                    app:cardUseCompatPadding="true">
-
-                    <androidx.coordinatorlayout.widget.CoordinatorLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-
-                            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:background="@drawable/shadow"
-                                    android:gravity="center_horizontal|center_vertical"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:id="@+id/ll_rating.price3"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:paddingLeft="20dp"
-                                        android:paddingTop="10dp"
-                                        android:paddingRight="20dp"
-                                        android:paddingBottom="10dp"
-                                        android:text="4О ₽"
-                                        android:textColor="@color/my_black"
-                                        android:textStyle="bold" />
-
-                                </LinearLayout>
-
-                            </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                        </LinearLayout>
-
-                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        app:cardCornerRadius="50dp"
-                        app:cardElevation="-3dp"
-                        app:cardUseCompatPadding="true">
-
-                        <androidx.coordinatorlayout.widget.CoordinatorLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent">
-
-
-                                <androidx.coordinatorlayout.widget.CoordinatorLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:background="@drawable/shadow"
-                                        android:gravity="center_horizontal|center_vertical"
-                                        android:orientation="horizontal">
-
-                                        <TextView
-                                            android:id="@+id/ll_rating.price4"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:paddingLeft="15dp"
-                                            android:paddingTop="10dp"
-                                            android:paddingRight="15dp"
-                                            android:paddingBottom="10dp"
-                                            android:text="6О ₽"
-                                            android:textColor="@color/my_black"
-                                            android:textStyle="bold" />
-
-                                    </LinearLayout>
-
-                                </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                            </LinearLayout>
-
-                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/cl_rating.question2"/>
 
     <TextView
-        android:id="@+id/ll_rating.cheer_for_what"
+        android:id="@+id/cl_rating.question2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.1"
+        android:layout_weight="1"
         android:gravity="center_horizontal"
-        android:paddingTop="30dp"
+        android:paddingTop="15dp"
         android:paddingBottom="30dp"
         android:text="За что похвалить водителя?"
         android:textColor="@color/my_black"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout7" />
+        app:layout_constraintBottom_toTopOf="@+id/cl_rating_rl_rating_recycler1" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout7"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cl_rating_rl_rating_recycler1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.1"
+        android:layout_weight="1"
+        android:paddingLeft="10dp"
+        android:paddingBottom="20dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout10">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/ll_rating.emoji_finger"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="👍"
-                android:textSize="30dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/ll_rating.emoji_desc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLines="2"
-                        android:paddingLeft="8dp"
-                        android:text="Интересная\nбеседа"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/ll_rating.emoji_clap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="110dp"
-                android:text="👏"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/ll_rating.emoji_desc1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="100dp"
-                android:paddingBottom="50dp"
-                android:text="Вежливость"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingRight="5dp">
-
-            <TextView
-                android:id="@+id/ll_rating.emoji_face"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="100dp"
-                android:text="😎"
-                android:textSize="30dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/ll_rating.emoji_desc2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="95dp"
-                        android:text="Хорошее\nнастроение"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        app:layout_constraintBottom_toTopOf="@+id/cl_rating.ll_rating3"/>
 
     <LinearLayout
-        android:id="@+id/linearLayout10"
-        android:layout_width="wrap_content"
+        android:id="@+id/cl_rating.ll_rating3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:paddingBottom="10dp"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/ll_rating.button"
+            android:id="@+id/cl_rating.ll_rating3.button"
             android:layout_width="400dp"
             android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0"
             android:background="@drawable/button_grey_story"
             android:text="Готово"
             android:textAllCaps="false"
