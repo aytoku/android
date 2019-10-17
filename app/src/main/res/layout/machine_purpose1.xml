@@ -61,7 +61,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/ll_machine_purpose1.cv_car_number"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shadow"
                     app:cardCornerRadius="20dp"
@@ -104,9 +104,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="140dp"
             android:gravity="center_horizontal"
-            android:paddingTop="15dp"
+            android:paddingTop="30dp"
             android:orientation="horizontal">
 
                 <RelativeLayout

@@ -19,6 +19,7 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class BlacklistPartnersAdapter {
 
+
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
         private final ItemsMenu[] itemsMenu;
@@ -31,7 +32,6 @@ public class BlacklistPartnersAdapter {
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
-
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -46,16 +46,13 @@ public class BlacklistPartnersAdapter {
 
             final ItemsMenu _item = itemsMenu[i];
 
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
             float _dens = context.getResources().getDisplayMetrics().density;
 
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
-            int _size = Math.round(_dens * 40);
+            int _size = Math.round(_dens * 30);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
-            viewHolder.img.setBackground( ic_rout_color );
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
@@ -104,8 +101,8 @@ public class BlacklistPartnersAdapter {
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                img = itemView.findViewById(R.id.ll_payment_ready_checkBoxBold);
-                desc = itemView.findViewById(R.id.desc);
+                img = itemView.findViewById(R.id.ll_cell_blacklist_partner_checkbox);
+                desc = itemView.findViewById(R.id.ll_cell_blacklist_partner_desc);
             }
         }
     }

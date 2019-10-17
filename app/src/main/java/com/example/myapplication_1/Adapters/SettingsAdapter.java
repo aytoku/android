@@ -55,9 +55,6 @@ public class SettingsAdapter {
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
-            //  viewHolder.img.setBackground( ic_rout_color );
-            //viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
-            //viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
         }
 

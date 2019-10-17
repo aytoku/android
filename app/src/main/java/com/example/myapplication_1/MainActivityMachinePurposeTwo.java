@@ -22,9 +22,9 @@ public class MainActivityMachinePurposeTwo extends AppCompatActivity {
 
         setContentView(R.layout.cell_machine_purpose2);
 
-        button = findViewById(R.id.ll_machine_purpose2_img_button);
+        button = findViewById(R.id.ll_machine_purpose2_imgButton);
 
-        button1 = findViewById(R.id.ll_machine_purpose2_img_button2);
+        button1 = findViewById(R.id.ll_machine_purpose2_rl_cell_machine_purpose2_1_imgButton);
 
         addListener();
         addListener2();

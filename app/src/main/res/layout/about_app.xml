@@ -63,14 +63,15 @@
         android:background="#EDEDED"/>
 
     <RelativeLayout
-        android:id="@+id/rl_about_app1"
+        android:id="@+id/rl_about_app.rl_about_app1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:orientation="horizontal"
         android:background="@drawable/grey_line">
+
         <TextView
-            android:id="@+id/rl_about_app1.licence"
+            android:id="@+id/rl_about_app.rl_about_app1.licence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -81,7 +82,7 @@
             android:paddingLeft="20dp"/>
 
         <ImageButton
-            android:id="@+id/rl_about_app1.img_arrow"
+            android:id="@+id/rl_about_app.rl_about_app1.img_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -93,21 +94,22 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/ll_about_app"
+        android:id="@+id/rl_about_app.ll_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/ll_about_app.rl_about_app"
+        android:id="@+id/rl_about_app.ll_about_app.rl_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="horizontal"
         android:background="@drawable/grey_line">
 
         <TextView
-            android:id="@+id/ll_about_app.rl_about_app.policy"
+            android:id="@+id/rl_about_app.ll_about_app.rl_about_app.policy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="123dp"
@@ -119,7 +121,7 @@
             android:textSize="17sp" />
 
         <ImageButton
-            android:id="@+id/ll_about_app.rl_about_app.img_arrow1"
+            android:id="@+id/rl_about_app.ll_about_app.rl_about_app.img_arrow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"

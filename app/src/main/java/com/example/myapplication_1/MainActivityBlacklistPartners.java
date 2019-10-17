@@ -23,7 +23,7 @@ public class MainActivityBlacklistPartners extends AppCompatActivity {
 
         setContentView(R.layout.black_list_partner);
 
-        rv = findViewById(R.id.recycler_partners);
+        rv = findViewById(R.id.ll_blackList_partner_recycler_partners);
 
     }
 
@@ -62,7 +62,7 @@ public class MainActivityBlacklistPartners extends AppCompatActivity {
         BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu[]{
 
                 new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.drawable.icon_checkbox,
+                        R.drawable.checkbox,
                         "Партнер 1"),
                 new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.icon_accept_checkbox,
@@ -77,16 +77,16 @@ public class MainActivityBlacklistPartners extends AppCompatActivity {
                         R.drawable.icon_accept_checkbox,
                         "Партнер 2"),
                 new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.drawable.icon_checkbox,
+                        R.drawable.checkbox,
                         "Партнер 1"),
                 new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.drawable.icon_checkbox,
+                        R.drawable.checkbox,
                         "Партнер 1"),
                 new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.drawable.icon_checkbox,
+                        R.drawable.checkbox,
                         "Партнер 1"),
                 new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.drawable.icon_checkbox,
+                        R.drawable.checkbox,
                         "Партнер 1")
         };
         return _arr;

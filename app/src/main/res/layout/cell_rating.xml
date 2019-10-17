@@ -8,6 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:focusable="true"
+        android:clickable="true"
         android:paddingRight="40dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">

@@ -35,9 +35,9 @@ public class MainActivityAddress extends AppCompatActivity {
 
         setContentView(R.layout.addresses);
 
-        rv = findViewById(R.id.address_recycler);
+        rv = findViewById(R.id.ll_address_rl_address_ll_address_address_recycler);
 
-        button = findViewById(R.id.rl_address_button_plusik);
+        button = findViewById(R.id.ll_address_rl_address_button_plusik);
 
         final RecyclerView recyclerViewMenu = rv;
 

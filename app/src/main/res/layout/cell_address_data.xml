@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/address_name"
+        android:id="@+id/ll_cell_address_data.address_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="40dp"
@@ -15,7 +15,7 @@
         android:textSize="17sp" />
 
     <TextView
-        android:id="@+id/place_name"
+        android:id="@+id/ll_cell_address_data.place_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="2"

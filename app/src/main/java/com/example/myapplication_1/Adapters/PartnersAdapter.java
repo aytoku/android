@@ -99,8 +99,8 @@ public class PartnersAdapter {
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                img = itemView.findViewById(R.id.img);
-                desc = itemView.findViewById(R.id.desc);
+                img = itemView.findViewById(R.id.ll_cell_partners_rl_cell_partners_img);
+                desc = itemView.findViewById(R.id.ll_cell_partners_rl_cell_partners_title);
             }
         }
     }

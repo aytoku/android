@@ -112,8 +112,8 @@ public class AddressAdapter {
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                img = itemView.findViewById(R.id.ll_address_button_plus1);
-                title = itemView.findViewById(R.id.ll_address_add_address_home);
+                img = itemView.findViewById(R.id.ll_cell_address_button_plus1);
+                title = itemView.findViewById(R.id.ll_cell_address_add_address_home);
             }
         }
     }

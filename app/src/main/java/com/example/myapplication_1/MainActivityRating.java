@@ -33,7 +33,9 @@ public class MainActivityRating extends AppCompatActivity {
     private ImageView star3;
     private ImageView star4;
     private ImageView star5;
-    private boolean isRed = true;
+    private ImageView[] starArr;
+    private Drawable imgStarGrey;
+    private Drawable imgStarRed;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,18 +44,21 @@ public class MainActivityRating extends AppCompatActivity {
 
         setContentView(R.layout.rating);
 
-        final Drawable imgStarGrey = getResources().getDrawable(R.drawable.icon_star_grey);
-        final Drawable imgStarRed = getResources().getDrawable(R.drawable.red_star_shadow);
+        imgStarGrey = getResources().getDrawable(R.drawable.icon_star_grey);
+        imgStarRed = getResources().getDrawable(R.drawable.red_star_shadow);
 
         rv = findViewById(R.id.cl_rating_rl_rating_recycler1);
 
         rv1 = findViewById(R.id.cl_rating_rl_rating_recycler);
 
-        star1 = findViewById(R.id.cl_rating_ll_rating_red_star1);
-        star2 = findViewById(R.id.cl_rating_ll_rating_red_star2);
-        star3 = findViewById(R.id.cl_rating_ll_rating_red_star3);
-        star4 = findViewById(R.id.cl_rating_ll_rating_red_star4);
-        star5 = findViewById(R.id.cl_rating_ll_rating_red_star5);
+        starArr = new ImageView[]{
+                star1 = findViewById(R.id.cl_rating_ll_rating_red_star1),
+                star2 = findViewById(R.id.cl_rating_ll_rating_red_star2),
+                star3 = findViewById(R.id.cl_rating_ll_rating_red_star3),
+                star4 = findViewById(R.id.cl_rating_ll_rating_red_star4),
+                star5 = findViewById(R.id.cl_rating_ll_rating_red_star5)
+        };
+
 
         final RecyclerView recyclerViewMenu = rv;
 
@@ -91,11 +96,9 @@ public class MainActivityRating extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(isRed = !isRed){
-
+                allStarsGrey();
+                if(view.getId()==R.id.cl_rating_ll_rating_red_star1){
                     star1.setImageDrawable(imgStarRed);
-                }else{
-                    star1.setImageDrawable(imgStarGrey);
                 }
 
             }
@@ -105,14 +108,12 @@ public class MainActivityRating extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(isRed =! isRed){
+                allStarsGrey();
+                if(view.getId()==R.id.cl_rating_ll_rating_red_star2){
 
                 star1.setImageDrawable(imgStarRed);
                 star2.setImageDrawable(imgStarRed);
 
-                }else{
-
-                    star2.setImageDrawable(imgStarGrey);
                 }
             }
         });
@@ -121,15 +122,13 @@ public class MainActivityRating extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(isRed =! isRed) {
+                allStarsGrey();
+                if(view.getId()==R.id.cl_rating_ll_rating_red_star3) {
 
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
 
-                }else{
-
-                    star3.setImageDrawable(imgStarGrey);
                 }
             }
         });
@@ -138,15 +137,13 @@ public class MainActivityRating extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(isRed =! isRed) {
+                allStarsGrey();
+                if(view.getId()==R.id.cl_rating_ll_rating_red_star4) {
 
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
                     star4.setImageDrawable(imgStarRed);
-                }else{
-
-                    star4.setImageDrawable(imgStarGrey);
                 }
             }
         });
@@ -155,19 +152,24 @@ public class MainActivityRating extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(isRed =! isRed) {
+                allStarsGrey();
+                if(view.getId()==R.id.cl_rating_ll_rating_red_star5) {
 
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
                     star4.setImageDrawable(imgStarRed);
                     star5.setImageDrawable(imgStarRed);
-                }else{
-
-                    star5.setImageDrawable(imgStarGrey);
                 }
             }
         });
+    }
+
+    public void allStarsGrey(){
+
+        for (int i = 0; i <= starArr.length-1; i++){
+            starArr[i].setImageDrawable(imgStarGrey);
+        }
     }
 
     @Override

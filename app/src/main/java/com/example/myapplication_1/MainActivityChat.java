@@ -55,7 +55,7 @@ public class MainActivityChat extends AppCompatActivity {
             ChatAdapter.AdapterGridViewMenu adapterGridViewMenu = new ChatAdapter.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
+                    new LinearLayoutManager( getBaseContext(), RecyclerView.HORIZONTAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {

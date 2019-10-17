@@ -5,13 +5,14 @@
     android:background="#FFFFFF">
 
     <LinearLayout
+        android:id="@+id/ll_cell_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:orientation="horizontal">
 
     <ImageButton
-        android:id="@+id/ll_address_button_plus1"
+        android:id="@+id/ll_cell_address_button_plus1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -20,7 +21,7 @@
         android:scaleY="0.7" />
 
     <TextView
-        android:id="@+id/ll_address_add_address_home"
+        android:id="@+id/ll_cell_address_add_address_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Добавить адрес дома"

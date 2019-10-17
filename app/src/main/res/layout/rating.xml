@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:theme="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -113,16 +114,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/cl_rating_rl_rating_recycler" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/cl_rating_rl_rating_recycler"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/cl_rating.question2"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cl_rating_rl_rating_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cl_rating.question2"/>
 
     <TextView
         android:id="@+id/cl_rating.question2"
@@ -147,27 +148,46 @@
         android:paddingLeft="10dp"
         android:paddingBottom="20dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/cl_rating.ll_rating3"/>
+        app:layout_constraintBottom_toTopOf="@+id/cl_rating.ll_rating1"/>
 
     <LinearLayout
-        android:id="@+id/cl_rating.ll_rating3"
+        android:id="@+id/cl_rating.ll_rating1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="74dp"
         android:layout_weight="1"
-        android:paddingBottom="10dp"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Orientation">
 
-        <Button
-            android:id="@+id/cl_rating.ll_rating3.button"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:background="@drawable/button_grey_story"
-            android:text="Готово"
-            android:textAllCaps="false"
-            android:textSize="17sp" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cl_rating.ll_rating1.cardButton"
+            android:layout_width="350dp"
+            android:layout_height="61dp"
+            android:focusable="true"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:clickable="true"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#F3F3F3"
+            app:cardCornerRadius="11dp">
+
+            <TextView
+                android:id="@+id/cl_rating.ll_rating3.cardButton.text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Готово"
+                android:focusable="true"
+                android:clickable="true"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textAllCaps="false"
+                android:textColor="#33353E"
+                android:textSize="17sp"/>
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 

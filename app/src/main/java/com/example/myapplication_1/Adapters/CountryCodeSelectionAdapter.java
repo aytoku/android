@@ -126,9 +126,9 @@ public class CountryCodeSelectionAdapter {
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 letter = itemView.findViewById(R.id.ll_cell_country_code_selection_letter);
-                img = itemView.findViewById(R.id.ll_cell_country_code_selection_img_georgia);
-                title = itemView.findViewById(R.id.ll_cell_country_code_selection_country_georgia);
-                time = itemView.findViewById(R.id.ll_cell_country_code_selection_georgia_number_code);
+                img = itemView.findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_img_georgia);
+                title = itemView.findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_country_georgia);
+                time = itemView.findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_georgia_number_code);
 
             }
         }

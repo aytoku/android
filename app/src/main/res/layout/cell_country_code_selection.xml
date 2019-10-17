@@ -22,20 +22,21 @@
             android:textStyle="bold"/>
 
         <LinearLayout
+            android:id="@+id/ll_cell_country_code_selection_ll_cell_country_code_selection1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/ll_cell_country_code_selection_img_georgia"
+                android:id="@+id/ll_cell_country_code_selection_ll_cell_country_code_selection1_img_georgia"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@null"
                 android:src="@mipmap/georgia"/>
 
             <TextView
-                android:id="@+id/ll_cell_country_code_selection_country_georgia"
+                android:id="@+id/ll_cell_country_code_selection_ll_cell_country_code_selection1_country_georgia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Грузия"
@@ -44,7 +45,7 @@
                 android:textSize="17sp"/>
 
             <TextView
-                android:id="@+id/ll_cell_country_code_selection_georgia_number_code"
+                android:id="@+id/ll_cell_country_code_selection_ll_cell_country_code_selection1_georgia_number_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+995"
