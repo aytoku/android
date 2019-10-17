@@ -14,7 +14,8 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityBlacklistPartners">
+        <activity android:name=".MainActivityProgramErrorTwo"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

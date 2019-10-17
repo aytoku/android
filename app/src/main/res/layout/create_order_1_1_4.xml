@@ -22,7 +22,7 @@
 
         <TextView
             android:id="@+id/ll_create_order.address_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Коста Хетагурова, 123"
             android:layout_gravity=""
@@ -36,7 +36,7 @@
             android:id="@+id/ll_create_order.trip_cost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Поездка 87₽, 12 мин"
+            android:text="Поездка 87₽, ~12 мин"
             android:paddingTop="5dp"
             android:textColor="#AAAAAA"
             android:textSize="14sp"

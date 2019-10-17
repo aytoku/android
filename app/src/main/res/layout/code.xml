@@ -110,8 +110,8 @@
 
         <Button
             android:id="@+id/cl_code.button"
-            android:layout_width="380dp"
-            android:layout_height="70dp"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
             android:background="@drawable/mybuttongrey"
             android:text="Готово"
             android:textAllCaps="false"

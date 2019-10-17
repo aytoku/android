@@ -1,74 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
-        <LinearLayout
-            android:id="@+id/ll_program_error1"
-            android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/ll_program_error1.title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="0.5"
+            android:gravity="center_horizontal"
             android:paddingTop="10dp"
-            android:orientation="vertical">
+            android:paddingBottom="20dp"
+            android:text="Ошибка программы"
+            android:textColor="#424242"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/ll_program_error1.title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:paddingTop="10dp"
-                android:gravity="center_horizontal"
-                android:text="Ошибка программы"
-                android:paddingBottom="20dp"
-                android:textStyle="bold"
-                android:textSize="17sp"
-                android:textColor="#424242"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:paddingLeft="15dp"
+            android:src="@drawable/ic_arrow_left" />
 
-            <TextView
-                android:id="@+id/ll_program_error1.desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:layout_weight="1"
-                android:text="Вы можете написать подрробный комментарий\nо поездке или сообщить какую-либо\nинформацию о водителе"
-                android:textSize="14sp"
-                android:textColor="#B4B4B4"/>
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/ll_program_error1.desc1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="15dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="5dp"
-                android:layout_weight="1"
-                android:text="Комментарий"
-                android:textSize="14sp"
-                android:textColor="#B4B4B4"/>
+    <TextView
+        android:id="@+id/ll_program_error1.desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="15dp"
+        android:text="Вы можете написать подрробный комментарий\nо поездке или сообщить какую-либо\nинформацию о водителе"
+        android:textColor="#B4B4B4"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
-                <EditText
-                    android:id="@+id/ll_program_error1.textarea"
-                    android:layout_centerVertical="true"
-                    android:layout_width="380dp"
-                    android:layout_height="250dp"
-                    android:ellipsize="start"
-                    android:layout_weight="1"
-                    android:paddingBottom="10dp"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center"
-                    android:inputType="text"
-                    android:background="@drawable/textarea"/>
+    <TextView
+        android:id="@+id/ll_program_error1.desc1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="5dp"
+        android:text="Комментарий"
+        android:textColor="#B4B4B4"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/ll_program_error1.desc" />
 
-                <Button
-                    android:id="@+id/ll_program_error1.button"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="320dp"
-                    android:layout_height="60dp"
-                    android:textSize="17sp"
-                    android:textColor="#ffffff"
-                    android:background="@drawable/mybutton"
-                    android:textAllCaps="false"
-                    android:text="Отправить" />
+    <EditText
+        android:id="@+id/ll_program_error1.textarea"
+        android:layout_width="345dp"
+        android:layout_height="210dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:background="@drawable/textarea"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:inputType="text"
+        android:paddingBottom="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_program_error1.desc1" />
 
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_program_error1.textarea" >
 
-</LinearLayout>
+    <Button
+        android:id="@+id/ll_program_error1.button"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/mybutton"
+        android:text="Отправить"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="17sp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

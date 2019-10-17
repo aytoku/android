@@ -71,7 +71,6 @@ public class AddressAdapter {
                     notifyDataSetChanged();
                 }
             });
-
         }
 
         @Override
