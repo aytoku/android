@@ -1,11 +1,9 @@
 package com.example.myapplication_1;
 
 import android.os.Bundle;
-import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivityReasonForRejection extends AppCompatActivity {
 
@@ -16,7 +14,7 @@ public class MainActivityReasonForRejection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.reason_for_rejection);
+        setContentView(R.layout.order_1_1_5);
 
     }
 

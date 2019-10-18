@@ -28,17 +28,14 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
 
         setContentView(R.layout.wishes);
 
-        rv = findViewById(R.id.recycler_wishes);
-        textView = (TextView) findViewById(R.id.ll_travel_cost_change_txtView);
-        cost_desc = (TextView) findViewById(R.id.ll_cell_travel_cost_description);
-        desc = (TextView) findViewById(R.id.desc);
-        final SeekBar see = (SeekBar) findViewById(R.id.ll_travel_cost_change_seekBar);
-        int b = 0;
-        String str="";
+        rv = findViewById(R.id.ll_recycler_wishes);
+        textView = findViewById(R.id.ll_travel_cost_change_txtView);
+        cost_desc = findViewById(R.id.ll_cell_travel_cost_description);
+        desc = findViewById(R.id.desc);
+        final SeekBar see = findViewById(R.id.ll_travel_cost_change_seekBar);
         see.setOnSeekBarChangeListener(this);
         textView.setText("0 \u20BD");
         cost_desc.setText("0 \u20BD");
-
     }
             @Override
             public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {}
@@ -98,9 +95,9 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            AdapterWish.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            AdapterWish.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
 
-            AdapterWish.AdapterGridViewMenu adapterGridViewMenu = new AdapterWish.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            AdapterWish.AdapterGridViewMenu adapterGridViewMenu = new AdapterWish.AdapterGridViewMenu(itemsMenu, getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager(getBaseContext(), RecyclerView.VERTICAL, false));
@@ -120,15 +117,12 @@ public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSee
         AdapterWish.AdapterGridViewMenu.ItemsMenu[] _arr = new AdapterWish.AdapterGridViewMenu.ItemsMenu[]{
 
                 new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
                         cost_arr[0],
                         desc_arr[0]),
                 new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
                         cost_arr[1],
                         desc_arr[1]),
                 new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
                         cost_arr[2],
                         desc_arr[2])
         };

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/ll_cell_order_1_1_5_emoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:text="😊"
+        android:paddingLeft="30dp"
+        android:paddingBottom="20dp"
+        android:textSize="30sp"
+        android:textColor="@color/my_black"/>
+
+    <TextView
+        android:id="@+id/ll_cell_order_1_1_5_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingBottom="20dp"
+        android:layout_toEndOf="@+id/ll_cell_order_1_1_5_emoji"
+        android:text="Заказал по ошибке"
+        android:textColor="#424242"
+        android:textSize="17sp" />
+
+</RelativeLayout>

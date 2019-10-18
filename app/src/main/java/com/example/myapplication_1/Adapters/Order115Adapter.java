@@ -13,18 +13,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
 
-public class AdapterWish {
+import java.util.List;
+
+public class Order115Adapter {
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
-        private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
-            this.itemsMenu = itemsMenu;
-            this.context = context;
+        private List<ItemsMenu> itemsMenuList;
 
+
+
+        public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
+            this.itemsMenuList = itemsMenuList;
+            this.context = context;
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
@@ -32,44 +36,49 @@ public class AdapterWish {
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-            ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_wishes_model, viewGroup, false);
-            return new ViewHolder(v);
+
+            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_order_1_1_5, viewGroup, false);
+            ViewHolder itemViewHolder = new ViewHolder(view);
+            return itemViewHolder;
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final ItemsMenu _item = itemsMenuList.get(i);
+
+            viewHolder.emoji.setText(_item.getEmoji());
 
             viewHolder.desc.setText(_item.getStr());
-            viewHolder.cost.setText(_item.getCost());
         }
 
         @Override
         public int getItemCount() {
-            return itemsMenu.length;
+            return itemsMenuList.size();
         }
 
         public static class ItemsMenu {
 
             private @ColorInt
             int colorBackgroundInt;
-            private String cost;
+            private String emoji;
             private String desc;
 
-            public ItemsMenu(int colorBackgroundRes, String cost, String desc) {
+            public ItemsMenu(int colorBackgroundRes, String emoji, String desc) {
                 this.colorBackgroundInt = colorBackgroundRes;
-                this.cost = cost;
+                this.emoji = emoji;
                 this.desc = desc;
+            }
+
+
+            public String getEmoji() {
+                return emoji;
             }
 
             public String getStr() {
                 return desc;
             }
 
-            public String getCost() {
-                return cost;
-            }
 
             public int getColorBackground() {
                 return colorBackgroundInt;
@@ -78,14 +87,13 @@ public class AdapterWish {
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
+            private final TextView emoji;
             private final TextView desc;
-            private final TextView cost;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-
-                desc = itemView.findViewById(R.id.desc);
-                cost = itemView.findViewById(R.id.cost);
+                emoji = itemView.findViewById(R.id.ll_cell_order_1_1_5_emoji);
+                desc = itemView.findViewById(R.id.ll_cell_order_1_1_5_desc);
             }
         }
     }
