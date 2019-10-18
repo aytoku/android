@@ -11,14 +11,15 @@
         android:paddingTop="40dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/ll_menu1.title"
+        <Button
+            android:id="@+id/ll_menu1.button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Введите номер телефона"
             android:textSize="17sp"
             android:layout_weight="0"
             android:paddingBottom="20dp"
+            android:textAllCaps="false"
             android:paddingTop="20dp"
             android:paddingRight="60dp"
             android:paddingLeft="20dp"

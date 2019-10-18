@@ -1,11 +1,9 @@
 package com.example.myapplication_1;
 
 import android.os.Bundle;
-import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivityErrorOne extends AppCompatActivity {
 
@@ -16,7 +14,7 @@ public class MainActivityErrorOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.programm_error_1);
+        setContentView(R.layout.menu_1_6_2);
 
     }
 

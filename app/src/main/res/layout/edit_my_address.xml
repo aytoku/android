@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -11,107 +12,127 @@
         android:id="@+id/rl_edit_my_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="15dp"
+        android:orientation="horizontal"
         android:paddingLeft="15dp"
+        android:paddingTop="15dp"
         android:paddingRight="15dp"
-        android:orientation="horizontal">
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/rl_edit_my_address_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/icon_strelka"/>
+            android:background="@null"
+            android:src="@drawable/icon_strelka" />
 
         <TextView
             android:id="@+id/rl_edit_my_address.delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Удалить"
-            android:textStyle="bold"
-            android:textSize="15sp"
+            android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:textColor="#424242"
             android:background="@null"
-            android:layout_alignParentRight="true"/>
+            android:text="Удалить"
+            android:textColor="#424242"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
         <TextView
-            android:id="@+id/rl_edit_my_address.title"
+            android:id="@+id/cl_edit_my_address.title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Название"
-            android:textSize="14sp"
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
-            android:textColor="#9B9B9B"/>
+            android:text="Название"
+            android:textColor="#9B9B9B"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_edit_my_address" />
 
         <TextView
-            android:id="@+id/rl_edit_my_address.home"
+            android:id="@+id/cl_edit_my_address.home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Дом"
-            android:textSize="17sp"
-            android:textStyle="bold"
             android:background="@drawable/grey_line"
             android:paddingLeft="15dp"
             android:paddingBottom="20dp"
-            android:textColor="#424242"/>
-
-        <TextView
-            android:id="@+id/rl_edit_my_address.address_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Коста Хетагуров, 123"
-            android:paddingTop="10dp"
+            android:text="Дом"
+            android:textColor="#424242"
             android:textSize="17sp"
-            android:paddingLeft="15dp"
-            android:textColor="#424242"/>
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.title" />
 
         <TextView
-            android:id="@+id/rl_edit_my_address.address_desc"
+            android:id="@+id/cl_edit_my_address.address_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="г. Владикавказ, руспублика Северная Осетия-Алания,\nРоссия"
-            android:textSize="11sp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="Коста Хетагуров, 123"
+            android:textColor="#424242"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.home" />
+
+        <TextView
+            android:id="@+id/cl_edit_my_address.address_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grey_line"
             android:paddingLeft="15dp"
             android:paddingBottom="15sp"
-            android:background="@drawable/grey_line"
-            android:textColor="#9B9B9B"/>
+            android:text="г. Владикавказ, руспублика Северная Осетия-Алания,\nРоссия"
+            android:textColor="#9B9B9B"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.address_title" />
 
-            <TextView
-                android:id="@+id/rl_edit_my_address.hint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Подскажите водителю, как лучше к вам \nподъехать "
-                android:textSize="14sp"
-                android:paddingLeft="15dp"
-                android:paddingTop="10dp"
-                android:textColor="#9B9B9B"/>
+        <TextView
+            android:id="@+id/cl_edit_my_address.hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="Подскажите водителю, как лучше к вам \nподъехать "
+            android:textColor="#9B9B9B"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.address_desc" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:paddingBottom="10dp">
+    <LinearLayout
+        android:id="@+id/ll_edit_my_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-                <Button
-                    android:id="@+id/rl_edit_my_address.button_choose"
-                    android:layout_width="390dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/button_grey_story"
-                    android:text="Выбрать местом назначения"
-                    android:layout_alignParentBottom="true"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="#4B4D55" />
+        <Button
+            android:id="@+id/ll_edit_my_address.button_choose"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/button_grey_story"
+            android:text="Выбрать местом назначения"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#4B4D55"/>
 
-            </RelativeLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

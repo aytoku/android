@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/rl_cell_menu_1_6_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/grey_line">
+
+        <TextView
+            android:id="@+id/rl_cell_menu_1_6_2_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/rl_cell_menu_1_6_2_img_arrow"
+            android:paddingLeft="22dp"
+            android:text="Большая стоимость"
+            android:textColor="#424242"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/rl_cell_menu_1_6_2_img_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_arrow_right"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

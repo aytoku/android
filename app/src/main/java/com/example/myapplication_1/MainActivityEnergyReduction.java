@@ -1,13 +1,11 @@
 package com.example.myapplication_1;
 
 import android.os.Bundle;
-import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivityMenuOne extends AppCompatActivity {
+public class MainActivityEnergyReduction extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -16,8 +14,6 @@ public class MainActivityMenuOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.menu_1);
-
+        setContentView(R.layout.energy_reduction);
     }
-
 }
