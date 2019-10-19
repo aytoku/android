@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="Поиск машины"
                 android:paddingTop="30dp"
-                android:paddingLeft="22dp"
+                android:paddingLeft="20dp"
                 android:textColor="#424242"
                 android:textSize="17sp"
                 android:paddingBottom="20dp"
@@ -34,7 +34,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="22dp"
+            android:paddingLeft="18dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -50,10 +50,6 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
                     <ImageView
                         android:id="@+id/ll_search_car.img"
                         android:layout_width="100dp"
@@ -61,8 +57,6 @@
                         android:elevation="0dp"
                         android:layout_height="match_parent"
                         android:scaleType="center" />
-
-                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -81,10 +75,6 @@
                         app:cardCornerRadius="10dp"
                         app:cardElevation="0dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-
                             <ImageView
                                 android:id="@+id/ll_search_car.img1"
                                 android:layout_width="100dp"
@@ -92,8 +82,6 @@
                                 android:elevation="0dp"
                                 android:layout_height="match_parent"
                                 android:scaleType="center" />
-
-                        </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
 
@@ -112,10 +100,6 @@
                         app:cardCornerRadius="10dp"
                         app:cardElevation="0dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-
                             <ImageView
                                 android:id="@+id/ll_search_car.img2"
                                 android:layout_width="100dp"
@@ -123,8 +107,6 @@
                                 android:elevation="0dp"
                                 android:layout_height="match_parent"
                                 android:scaleType="center" />
-
-                        </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
 
@@ -134,12 +116,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingRight="15dp"
-            android:paddingLeft="10dp"
+            android:layout_height="100dp"
+            android:gravity="center_horizontal"
             android:paddingTop="15dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_weight="1"
@@ -183,9 +164,9 @@
 
                 </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
+            </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_weight="1"
@@ -229,7 +210,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
+            </LinearLayout>
 
 
         </LinearLayout>

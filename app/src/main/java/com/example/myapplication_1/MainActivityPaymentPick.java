@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivityPaymentPick extends AppCompatActivity {
 
-    private RelativeLayout toggleChecked;
-    private RelativeLayout toggleUnchecked;
     private ImageView imgChecked;
     private ImageView imgUnchecked;
     private Drawable imgToggleGrey;
@@ -29,8 +27,8 @@ public class MainActivityPaymentPick extends AppCompatActivity {
         imgToggleGrey = getResources().getDrawable(R.drawable.togle_uncheked);
         imgToggleRed = getResources().getDrawable(R.drawable.toggle_checked);
 
-        toggleChecked = findViewById(R.id.rl_payment_pick_rl_visa);
-        toggleUnchecked = findViewById(R.id.rl_payment_pick_rl_ruble);
+        RelativeLayout toggleChecked = findViewById(R.id.rl_payment_pick_rl_visa);
+        RelativeLayout toggleUnchecked = findViewById(R.id.rl_payment_pick_rl_ruble);
 
         imgChecked = findViewById(R.id.rl_payment_ready_toggleChecked);
         imgUnchecked = findViewById(R.id.rl_payment_ready_toggleUnchecked);
