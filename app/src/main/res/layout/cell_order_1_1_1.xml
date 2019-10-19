@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_cell_order_1_1_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/grey_line"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ll_cell_order_1_1_1.title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 км"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/ll_cell_order_1_1_1.desc1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="До точки"
+                android:textColor="#C3C3C3"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ll_cell_order_1_1_1.title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2 мин"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/ll_cell_order_1_1_1.desc2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Время подачи"
+                android:textColor="#C3C3C3"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ll_cell_order_1_1_1.title3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 км"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/ll_cell_order_1_1_1.desc3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Весь маршрут"
+                android:textColor="#C3C3C3"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

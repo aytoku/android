@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/rl_payment_ready.ready"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Готово"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="20dp"
+            android:gravity="end"
+            android:layout_alignParentRight="true"
+            android:textColor="#424242"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_payment_ready.ready"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_payment_pick_rl_visa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <ImageView
+                android:id="@+id/rl_payment_ready.visa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:paddingTop="15dp"
+                android:src="@mipmap/visa" />
+
+            <TextView
+                android:id="@+id/rl_payment_ready.visa_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/rl_payment_ready.visa"
+                android:paddingTop="12sp"
+                android:paddingLeft="20dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="15dp"
+                android:text="VISA 9966"
+                android:textColor="#424242"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/rl_payment_ready_toggleChecked"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_weight="0"
+                android:paddingTop="10dp"
+                android:src="@drawable/togle_uncheked" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_payment_pick_rl_ruble"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <ImageView
+                android:id="@+id/rl_payment_ready.rubble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="15dp"
+                android:src="@mipmap/rubble" />
+
+            <TextView
+                android:id="@+id/rl_payment_ready.cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/rl_payment_ready.rubble"
+                android:paddingTop="12sp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="15dp"
+                android:text="Наличные"
+                android:textColor="#424242"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/rl_payment_ready_toggleUnchecked"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingTop="10dp"
+                android:src="@drawable/togle_uncheked" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
