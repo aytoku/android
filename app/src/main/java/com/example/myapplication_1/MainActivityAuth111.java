@@ -19,6 +19,7 @@ public class MainActivityAuth111 extends AppCompatActivity {
     TextView textView;
     EditText editText;
     Button button;
+    //private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -89,9 +90,34 @@ public class MainActivityAuth111 extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivityAuth111.this, MainActivityCountryCodeSelection.class );
+
+                Intent intent = new Intent(MainActivityAuth111.this, MainActivityCountryCodeSelection.class);
                 startActivity(intent);
             }
         });
     }
+//
+//    public void onButtonClick() {
+//
+//        // Start the SecondActivity
+//        Intent intent = new Intent(MainActivityAuth111.this, CountryCodeSelectionExample.class);
+//        startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
+//    }
+//
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        // check that it is the SecondActivity with an OK result
+//        if (requestCode == SECOND_ACTIVITY_REQUEST_CODE) {
+//            if (resultCode == RESULT_OK) { // Activity.RESULT_OK
+//
+//                // get String data from Intent
+//                String returnString = data.getStringExtra("keyName");
+//
+//                // set text view with string
+//                TextView textView = (TextView) findViewById(R.id.cl_auth_1_1_1_button);
+//                textView.setText(returnString);
+//            }
+//        }
+//    }
 }
