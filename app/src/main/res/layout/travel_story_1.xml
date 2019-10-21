@@ -69,9 +69,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="20dp"
-                android:paddingRight="10dp"
-                android:paddingTop="20dp"
-                android:paddingLeft="15dp">
+                android:gravity="center_horizontal"
+                android:paddingTop="20dp">
 
                 <Button
                     android:id="@+id/ll_travel_story_1.button"

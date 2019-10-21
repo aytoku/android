@@ -51,8 +51,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ll_machine_purpose_recycler_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"/>
 
     <View
         android:layout_width="wrap_content"

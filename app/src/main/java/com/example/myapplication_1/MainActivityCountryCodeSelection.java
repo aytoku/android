@@ -1,6 +1,7 @@
 package com.example.myapplication_1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
@@ -20,25 +21,33 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
 
     RecyclerView rv;
 
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
-        androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
 
+        androidImageButton = findViewById(R.id.img_cross_grey);
 
         setContentView(R.layout.country_code_selection);
 
-        rv = (RecyclerView) findViewById(R.id.rl_country_code_selection_recycler);
+        rv = findViewById(R.id.rl_country_code_selection_recycler);
 
+        imageButton = findViewById(R.id.rl_cell_country_code_selection_button);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivityCountryCodeSelection.this, MainActivityAuth111.class );
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -47,17 +56,13 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
         RecyclerView recyclerViewMenu = rv;
-
-
-
 
         try {
 
-            CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
 
-            CountryCodeSelectionAdapter.AdapterGridViewMenu adapterGridViewMenu = new CountryCodeSelectionAdapter.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            CountryCodeSelectionAdapter.AdapterGridViewMenu adapterGridViewMenu = new CountryCodeSelectionAdapter.AdapterGridViewMenu(itemsMenu, getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -66,7 +71,6 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
     }
 
     private CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
@@ -82,16 +86,16 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
                             @Override
                             public void call(CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 
-                                try {
+                                try{
 
                                     Bundle _args = new Bundle();
 
-                                } catch (NullPointerException e) {
+                                }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
-
                             }
                         }, "+995"),
+
                 new CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),"Р",
                         R.mipmap.russia,
@@ -100,23 +104,16 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
                             @Override
                             public void call(CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
 
-                                try {
+                                try{
 
                                     Bundle _args = new Bundle();
 
-                                } catch (NullPointerException e) {
+                                }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
-
                             }
                         }, "+7")
-
         };
         return _arr;
-
     }
-
-
-
 }
-

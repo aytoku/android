@@ -38,7 +38,6 @@ public class CountryCodeSelectionAdapter {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_country_code_selection, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -51,7 +50,7 @@ public class CountryCodeSelectionAdapter {
 
             Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
-            int _size = Math.round(_dens * 40);
+            int _size = Math.round(_dens * 22);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
@@ -60,8 +59,7 @@ public class CountryCodeSelectionAdapter {
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.letter.setText( _item.getLetter() );
             viewHolder.title.setText( _item.getStr() );
-            viewHolder.time.setText( _item.getTime() );
-
+            viewHolder.code.setText( _item.getTime() );
         }
 
         @Override
@@ -81,15 +79,15 @@ public class CountryCodeSelectionAdapter {
             private int imgResId;
             private String str;
             private CallBack callBack;
-            private String time;
+            private String code;
 
-            public ItemsMenu(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack,String time) {
+            public ItemsMenu(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack,String code) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.letter = letter;
                 this.imgResId = imgResId;
                 this.str = str;
                 this.callBack = callBack;
-                this.time = time;
+                this.code = code;
             }
 
             public CallBack getCallBack() {
@@ -107,13 +105,12 @@ public class CountryCodeSelectionAdapter {
             }
 
             public String getTime() {
-                return time;
+                return code;
             }
 
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
-
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -121,17 +118,15 @@ public class CountryCodeSelectionAdapter {
             private final TextView letter;
             private final ImageView img;
             private final TextView title;
-            private final TextView time;
+            private final TextView code;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 letter = itemView.findViewById(R.id.ll_cell_country_code_selection_letter);
                 img = itemView.findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_img_georgia);
                 title = itemView.findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_country_georgia);
-                time = itemView.findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_georgia_number_code);
-
+                code = itemView.findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_georgia_number_code);
             }
         }
-
     }
 }

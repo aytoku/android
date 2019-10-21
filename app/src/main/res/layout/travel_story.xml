@@ -4,17 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/ll_travel_story.title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="История поездок"
-                android:textColor="#424242"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:textSize="17sp"
-                android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/ll_travel_story.title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="История поездок"
+        android:textColor="#424242"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_travel_story"

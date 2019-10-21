@@ -14,8 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivitySearchCar"
-            android:windowSoftInputMode="adjustResize">
+        <activity android:name=".MainActivityAuth111">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,6 +32,18 @@
 
             </intent-filter>
 
+
+        </activity>
+
+        <activity android:name=".MainActivityCountryCodeSelection">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
 
         </activity>
 

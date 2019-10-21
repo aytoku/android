@@ -75,15 +75,15 @@
                 android:background="@drawable/grey_line"
                 android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/ll_payment_method.visa_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#424242"
-                android:text="VISA 9966"
-                android:paddingRight="142dp"
-                android:textStyle="bold"
-                android:textSize="17sp"/>
+                <TextView
+                    android:id="@+id/ll_payment_method.visa_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#424242"
+                    android:text="VISA 9966"
+                    android:paddingRight="142dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"/>
 
                 <TextView
                     android:id="@+id/ll_payment_method.visa_numbers"
@@ -210,10 +210,10 @@
 
         </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:background="#EDEDED" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#EDEDED" />
 
         <LinearLayout
             android:layout_width="wrap_content"

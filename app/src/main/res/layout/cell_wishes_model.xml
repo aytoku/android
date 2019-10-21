@@ -26,32 +26,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
-                    <TextView
-                        android:id="@+id/cost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:paddingLeft="195dp"
-                        android:textColor="#424242"
-                        android:paddingTop="15dp"
-                        android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="195dp"
+                    android:textColor="#424242"
+                    android:paddingTop="15dp"
+                    android:textSize="15sp"/>
 
-                    <Switch
-                        android:id="@+id/cell_wishes_model_my_switch"
-                        android:track="@drawable/switch_track_custom"
-                        android:thumb="@drawable/switch_thumb"
-                        android:layout_gravity="center"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:switchMinWidth="30dp"
-                        android:checked="false"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="15dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:paddingTop="15dp"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"/>
+                <Switch
+                    android:id="@+id/cell_wishes_model_my_switch"
+                    android:track="@drawable/switch_track_custom"
+                    android:thumb="@drawable/switch_thumb"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:switchMinWidth="30dp"
+                    android:checked="false"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="15dp"
+                    android:scaleX="1.2"
+                    android:scaleY="1.2"/>
 
             </RelativeLayout>
 

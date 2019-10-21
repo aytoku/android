@@ -41,7 +41,7 @@
                     android:textColor="#313131"
                     android:textSize="17sp" />
 
-        </LinearLayout>
+            </LinearLayout>
 
                 <Button
                     android:id="@+id/ll_earnings_page_empty.button"

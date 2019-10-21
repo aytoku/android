@@ -19,18 +19,18 @@
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
 
-        <TextView
-            android:id="@+id/rl_information_partners.title"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:layout_centerInParent="true"
-            android:text="Партнер 1"
-            android:paddingBottom="20dp"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:textColor="#424242"/>
+            <TextView
+                android:id="@+id/rl_information_partners.title"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:layout_centerInParent="true"
+                android:text="Партнер 1"
+                android:paddingBottom="20dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="#424242"/>
 
     </RelativeLayout>
 
@@ -138,6 +138,7 @@
             android:paddingLeft="15dp"
             android:layout_weight="0.6"
             android:paddingBottom="15dp">
+
             <Spinner
                 android:id="@+id/choose_cities"
                 android:layout_width="250dp"
@@ -199,15 +200,15 @@
                 android:textStyle="bold"
                 android:textColor="#424242"/>
 
-            <TextView
-                android:id="@+id/rl_information_partners.min"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="3 мин"
-                android:layout_alignParentRight="true"
-                android:textStyle="bold"
-                android:textColor="#424242"/>
+                <TextView
+                    android:id="@+id/rl_information_partners.min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="3 мин"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="bold"
+                    android:textColor="#424242"/>
 
         </RelativeLayout>
 
@@ -279,37 +280,37 @@
             android:layout_weight="0.8"
             android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingRight="15dp"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/rl_information_partners.countryside_price"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:background="@drawable/grey_line"
-                android:text="Стоимость загород"
-                android:layout_alignParentLeft="true"
-                android:textStyle="bold"
-                android:textColor="#424242"/>
+                android:paddingBottom="10dp"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:gravity="center_vertical">
 
-            <TextView
-                android:id="@+id/rl_information_partners.min3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="4 руб/мин"
-                android:layout_alignParentRight="true"
-                android:textStyle="bold"
-                android:textColor="#424242"/>
+                <TextView
+                    android:id="@+id/rl_information_partners.countryside_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="@drawable/grey_line"
+                    android:text="Стоимость загород"
+                    android:layout_alignParentLeft="true"
+                    android:textStyle="bold"
+                    android:textColor="#424242"/>
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/rl_information_partners.min3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="4 руб/мин"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="bold"
+                    android:textColor="#424242"/>
+
+            </RelativeLayout>
 
     </LinearLayout>
 

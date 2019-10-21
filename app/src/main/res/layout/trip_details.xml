@@ -93,7 +93,6 @@
             android:paddingLeft="15dp"
             android:textColor="#424242"
             android:textSize="17sp"/>
-            android:background="#EDEDED"/>
 
             <TextView
                 android:id="@+id/rl_order_details.trip"

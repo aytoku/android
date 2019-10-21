@@ -22,4 +22,5 @@
         android:layout_gravity="center_vertical|right"
         android:scaleType="center"
         android:src="@drawable/icon_three_lines" />
+
 </FrameLayout>

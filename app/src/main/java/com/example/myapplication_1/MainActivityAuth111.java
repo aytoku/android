@@ -1,0 +1,97 @@
+package com.example.myapplication_1;
+
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivityAuth111 extends AppCompatActivity {
+
+    TextView textView;
+    EditText editText;
+    Button button;
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.auth_1_1_1);
+
+        button = findViewById(R.id.cl_auth_1_1_1_button1);
+
+        textView = findViewById(R.id.cl_auth_1_1_1_button);
+
+        editText = findViewById(R.id.cl_auth_1_1_1_editTextNumber);
+
+        final int[] len = {0};
+        final int[] len1 = {0};
+        final int[] len2 = {0};
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                int i = editText.getText().toString().length();
+                if(i<4)
+                    len[0]=0;
+                if(i==4 && len[0]<5){
+                    len[0] = 5;
+                    String ss = s.toString();
+                    String first = ss.substring(0, ss.length() - 1);
+                    String last = ss.substring(ss.length() - 1);
+                    editText.setText(first + " " + last);
+                    editText.setSelection(editText.getText().length());
+                }
+
+                if (i < 8)
+                    len1[0] = 0;
+                if (i == 8 && len1[0] < 9) {
+                    len1[0] = 9;
+                    String ss = s.toString();
+                    String first = ss.substring(0, ss.length() - 1);
+                    String last = ss.substring(ss.length() - 1);
+                    editText.setText(first + "-" + last);
+                    editText.setSelection(editText.getText().length());
+                }
+
+                if (i < 11)
+                    len2[0] = 0;
+                if (i == 11 && len2[0] < 12) {
+                    len2[0] = 12;
+                    String ss = s.toString();
+                    String first = ss.substring(0, ss.length() - 1);
+                    String last = ss.substring(ss.length() - 1);
+                    editText.setText(first + "-" + last);
+                    editText.setSelection(editText.getText().length());
+                }
+            }
+        });
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivityAuth111.this, MainActivityCountryCodeSelection.class );
+                startActivity(intent);
+            }
+        });
+    }
+}

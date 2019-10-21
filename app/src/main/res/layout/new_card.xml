@@ -48,16 +48,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/LL_new_card.term"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="15dp"
-                    android:text="Срок действия"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="20dp"
-                    android:textSize="13sp"
-                    android:textColor="#8A8A8A"/>
+                    <TextView
+                        android:id="@+id/LL_new_card.term"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:text="Срок действия"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="20dp"
+                        android:textSize="13sp"
+                        android:textColor="#8A8A8A"/>
 
                     <EditText
                         android:id="@+id/LL_new_card.term_field"
