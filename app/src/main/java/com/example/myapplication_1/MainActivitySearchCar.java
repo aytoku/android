@@ -7,14 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivitySearchCar extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.search_car);
-
 
     }
 }

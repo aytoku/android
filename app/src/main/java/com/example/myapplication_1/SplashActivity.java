@@ -25,7 +25,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.test);
-        textView = (TextView) findViewById(R.id.textView1);
+        textView = findViewById(R.id.textView1);
         textView.setText("Загрузка");
         handler = new Handler();
         startTime = System.currentTimeMillis();

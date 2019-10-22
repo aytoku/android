@@ -26,7 +26,6 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
 
         androidImageButton = findViewById(R.id.img_cross_grey);

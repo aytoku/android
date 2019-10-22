@@ -10,9 +10,7 @@ public class MainActivityEnergyReduction extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.energy_reduction);
     }

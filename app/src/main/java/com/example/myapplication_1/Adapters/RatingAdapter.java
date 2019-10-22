@@ -2,7 +2,6 @@ package com.example.myapplication_1.Adapters;
 
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,18 +15,13 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-import ru.osety.amironlibrary.DrawableUtils;
-
 public class RatingAdapter{
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private final Context context;
-
         private List<ItemsMenu> itemsMenuList;
-
-
 
         public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
@@ -39,7 +33,6 @@ public class RatingAdapter{
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_rating, viewGroup, false);
             ViewHolder itemViewHolder = new ViewHolder(view);
             return itemViewHolder;
@@ -49,13 +42,6 @@ public class RatingAdapter{
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
             final ItemsMenu _item = itemsMenuList.get(i);
-
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
-            float _dens = context.getResources().getDisplayMetrics().density;
-
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
-            int _size = Math.round(_dens * 40);
 
             viewHolder.emoji1.setText(_item.getStr());
 

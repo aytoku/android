@@ -4,9 +4,6 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.Editable;
 
-/* Example:
-  mEmailView.addTextChangedListener(new MaskWatcher("###-##"));
-*/
 public class MaskWatcher implements TextWatcher {
     private boolean isRunning = false;
     private boolean isDeleting = false;
@@ -62,6 +59,5 @@ public class MaskWatcher implements TextWatcher {
     public static String normalText(String txt) {
         String[] arr = txt.split("-");
         return TextUtils.join("", arr);
-//        return TextUtils.replace(txt, new String[] {"-"}, new String[] {""}).toString();
     }
 }

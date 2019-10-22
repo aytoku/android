@@ -81,7 +81,6 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
             @Override
             public void onSwiped(@NotNull RecyclerView.ViewHolder viewHolder, int swipeDir) {
-
             }
         };
 

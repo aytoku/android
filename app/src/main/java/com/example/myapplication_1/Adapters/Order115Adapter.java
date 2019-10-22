@@ -21,10 +21,7 @@ public class Order115Adapter {
 
         private final LayoutInflater layoutInflater;
         private final Context context;
-
         private List<ItemsMenu> itemsMenuList;
-
-
 
         public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
@@ -70,7 +67,6 @@ public class Order115Adapter {
                 this.desc = desc;
             }
 
-
             public String getEmoji() {
                 return emoji;
             }
@@ -78,7 +74,6 @@ public class Order115Adapter {
             public String getStr() {
                 return desc;
             }
-
 
             public int getColorBackground() {
                 return colorBackgroundInt;

@@ -26,18 +26,16 @@ public class MainActivityChat extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
+        androidImageButton = findViewById(R.id.img_cross_grey);
 
         setContentView(R.layout.empty_chat_with_driver);
 
-        rv = (RecyclerView) findViewById(R.id.rl_empty_chat_with_driver_recycler);
+        rv = findViewById(R.id.rl_empty_chat_with_driver_recycler);
 
     }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -61,7 +59,6 @@ public class MainActivityChat extends AppCompatActivity {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
     }
 
     private ChatAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
@@ -80,10 +77,8 @@ public class MainActivityChat extends AppCompatActivity {
                         } catch (NullPointerException e) {
                             e.printStackTrace();
                         }
-
                     }
-                },
-                        "Уже выхожу"),
+                }, "Уже выхожу"),
 
                 new ChatAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),new ChatAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
@@ -99,11 +94,9 @@ public class MainActivityChat extends AppCompatActivity {
                         }
 
                     }
-                },
-                        "Не вижу вас"),
+                }, "Не вижу вас"),
         };
         return _arr;
-
     }
 }
 

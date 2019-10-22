@@ -13,16 +13,13 @@ public class MainActivityPaymentMethod extends AppCompatActivity {
 
     RecyclerView rv;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-        androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
+        androidImageButton = findViewById(R.id.img_cross_grey);
 
         setContentView(R.layout.payment_method);
-
 
     }
 }

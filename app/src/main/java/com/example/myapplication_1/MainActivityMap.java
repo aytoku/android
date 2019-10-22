@@ -15,13 +15,13 @@ import android.widget.TextView;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import ru.osety.amironlibrary.DrawableUtils;
 
-import androidx.appcompat.app.AppCompatActivity;
+import ru.osety.amironlibrary.DrawableUtils;
 
 public class MainActivityMap extends AppCompatActivity {
 
@@ -35,24 +35,15 @@ public class MainActivityMap extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
-
-             /*androidImageButton.setOnClickListener(new View.OnClickListener(){
-                 public void onClick(View v){
-                     Toast.makeText(MainActivity.this,"", Toast.LENGTH_LONG).show();
-                 }
-             });*/
+        androidImageButton = findViewById(R.id.img_cross_grey);
 
         setContentView(R.layout.map);
 
-        rv = (RecyclerView) findViewById(R.id.recycler_map);
-
+        rv = findViewById(R.id.recycler_map);
     }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -61,11 +52,7 @@ public class MainActivityMap extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
         RecyclerView recyclerViewMenu = rv;
-
-
-
 
         try {
 
@@ -80,7 +67,6 @@ public class MainActivityMap extends AppCompatActivity {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
     }
 
     private AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
@@ -105,6 +91,7 @@ public class MainActivityMap extends AppCompatActivity {
 
                             }
                         }, "5 мин"),
+
                 new AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_car_1,
@@ -123,6 +110,7 @@ public class MainActivityMap extends AppCompatActivity {
 
                             }
                         }, "2 мин"),
+
                 new AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_gray_car,
@@ -141,6 +129,7 @@ public class MainActivityMap extends AppCompatActivity {
 
                             }
                         }, "8 мин"),
+
                 new AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_miniven,
@@ -161,9 +150,7 @@ public class MainActivityMap extends AppCompatActivity {
                         }, "15 мин")
         };
         return _arr;
-
     }
-
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
@@ -184,7 +171,6 @@ public class MainActivityMap extends AppCompatActivity {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.car_card, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -217,10 +203,8 @@ public class MainActivityMap extends AppCompatActivity {
                     } catch ( NullPointerException e) {
                         e.printStackTrace();
                     }
-
                 }
             });
-
         }
 
         @Override
@@ -286,7 +270,6 @@ public class MainActivityMap extends AppCompatActivity {
 
             }
         }
-
     }
 }
 

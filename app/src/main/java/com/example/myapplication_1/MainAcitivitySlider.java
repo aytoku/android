@@ -20,12 +20,9 @@ public class MainAcitivitySlider extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slider_main);
 
-
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager, true);
-
-
 
         ViewPagerAdapter viewPagerAdapter = null;
         try {
@@ -34,8 +31,6 @@ public class MainAcitivitySlider extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
         viewPager.setAdapter(viewPagerAdapter);
-
     }
 }

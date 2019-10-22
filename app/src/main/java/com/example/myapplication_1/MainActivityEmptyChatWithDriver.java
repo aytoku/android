@@ -20,30 +20,20 @@ public class MainActivityEmptyChatWithDriver extends AppCompatActivity {
 
     RecyclerView rv;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-        androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
-
-             /*androidImageButton.setOnClickListener(new View.OnClickListener(){
-                 public void onClick(View v){
-                     Toast.makeText(MainActivity.this,"", Toast.LENGTH_LONG).show();
-                 }
-             });*/
+        androidImageButton = findViewById(R.id.img_cross_grey);
 
         setContentView(R.layout.empty_chat_with_driver);
 
-        rv = (RecyclerView) findViewById(R.id.rl_empty_chat_with_driver_recycler);
+        rv = findViewById(R.id.rl_empty_chat_with_driver_recycler);
 
     }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -52,11 +42,7 @@ public class MainActivityEmptyChatWithDriver extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
         RecyclerView recyclerViewMenu = rv;
-
-
-
 
         try {
 
@@ -71,7 +57,6 @@ public class MainActivityEmptyChatWithDriver extends AppCompatActivity {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
     }
 
     private EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
@@ -92,8 +77,7 @@ public class MainActivityEmptyChatWithDriver extends AppCompatActivity {
                                 }
 
                             }
-                        },
-                        "Уже выхожу"),
+                        }, "Уже выхожу"),
 
                 new EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
@@ -110,11 +94,9 @@ public class MainActivityEmptyChatWithDriver extends AppCompatActivity {
                                 }
 
                             }
-                        },
-                        "Не вижу вас")
+                        }, "Не вижу вас")
         };
         return _arr;
-
     }
 }
 

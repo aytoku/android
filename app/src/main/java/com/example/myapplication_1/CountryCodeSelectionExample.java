@@ -12,14 +12,13 @@ public class CountryCodeSelectionExample extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.country_code_selection_example);
 
         onButtonClick();
     }
+
     public void onButtonClick() {
 
         TextView textView = findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_georgia_number_code);

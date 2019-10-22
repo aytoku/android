@@ -39,7 +39,6 @@ public class MainActivityAdapter {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.activity_main, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -48,7 +47,6 @@ public class MainActivityAdapter {
             final ItemsMenu _item = itemsMenu[i];
 
             float _dens = context.getResources().getDisplayMetrics().density;
-
 
             int _size = Math.round(_dens * 40);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
@@ -68,10 +66,8 @@ public class MainActivityAdapter {
                     } catch ( NullPointerException e) {
                         e.printStackTrace();
                     }
-
                 }
             });
-
         }
 
         @Override
@@ -119,7 +115,6 @@ public class MainActivityAdapter {
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
-
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -138,6 +133,5 @@ public class MainActivityAdapter {
 
             }
         }
-
     }
 }

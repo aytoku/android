@@ -27,7 +27,6 @@ public class MainActivityAddress extends AppCompatActivity {
     private List<AddressAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
     ImageButton button;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 

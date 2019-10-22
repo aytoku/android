@@ -15,9 +15,7 @@ public class MainActivityEditMyAddress extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.edit_my_address);
 

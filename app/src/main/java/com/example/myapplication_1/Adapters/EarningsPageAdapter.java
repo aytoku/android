@@ -72,7 +72,6 @@ public class EarningsPageAdapter {
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
             Bitmap _bitmap1 = DrawableUtils.convertToBitmap(_def_draw1, _size, _size);
 
-
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap);
             viewHolder.cost.setText( _item.getStr());

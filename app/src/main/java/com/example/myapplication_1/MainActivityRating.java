@@ -59,7 +59,6 @@ public class MainActivityRating extends AppCompatActivity {
                 star5 = findViewById(R.id.cl_rating_ll_rating_red_star5)
         };
 
-
         final RecyclerView recyclerViewMenu = rv;
 
         try {
@@ -213,8 +212,6 @@ public class MainActivityRating extends AppCompatActivity {
 
     private RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1[] getMenuItems1(){
 
-
-
         RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1[] arr1 = new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1[]{
 
                 new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
@@ -238,7 +235,6 @@ public class MainActivityRating extends AppCompatActivity {
                         getResources().getColor(R.color.my_gray),
                         "80 \u20BD"),
         };
-
         return arr1;
     }
 }

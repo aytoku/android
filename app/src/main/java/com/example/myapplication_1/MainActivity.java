@@ -24,11 +24,11 @@ import com.example.myapplication_1.Adapters.MainActivityAdapter;
         protected void onCreate(@Nullable Bundle savedInstanceState) {
 
             super.onCreate(savedInstanceState);
-             androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
+             androidImageButton = findViewById(R.id.img_cross_grey);
 
                 setContentView(R.layout.main_recycler);
 
-                rv = (RecyclerView) findViewById(R.id.recycler);
+                rv = findViewById(R.id.recycler);
         }
 
         @Override
@@ -79,6 +79,7 @@ import com.example.myapplication_1.Adapters.MainActivityAdapter;
                     }
                 }
             }, "48 \u20BD"),
+
                     new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu(
                             getResources().getColor(R.color.my_gray),
                             R.mipmap.red_car,
@@ -113,6 +114,7 @@ import com.example.myapplication_1.Adapters.MainActivityAdapter;
                                     }
                                 }
                             }, "130 \u20BD"),
+
                     new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu(
                             getResources().getColor(R.color.my_gray),
                             R.mipmap.load,
@@ -130,6 +132,7 @@ import com.example.myapplication_1.Adapters.MainActivityAdapter;
                                     }
                                 }
                             }, "500 \u20BD"),
+
                     new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu(
                             getResources().getColor(R.color.my_gray),
                             R.mipmap.receive,

@@ -61,7 +61,6 @@ public class CountryCodeSelectionAdapter {
             viewHolder.title.setText( _item.getStr() );
             viewHolder.code.setText( _item.getTime() );
 
-
             viewHolder.title.getRootView().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -16,21 +16,19 @@ public class MainActivitySeekbar extends Activity implements SeekBar.OnSeekBarCh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cell_travels_cost_change);
 
-        final SeekBar see = (SeekBar)findViewById(R.id.ll_travel_cost_change_seekBar);
+        final SeekBar see = findViewById(R.id.ll_travel_cost_change_seekBar);
         see.setOnSeekBarChangeListener(this);
-        m = (TextView)findViewById(R.id.ll_travel_cost_change_txtView);
+        m = findViewById(R.id.ll_travel_cost_change_txtView);
         m.setText("0");
 
     }
 
     @Override
     public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-
     }
 
     @Override
     public void onStartTrackingTouch(SeekBar arg0) {
-
     }
 
     @Override
@@ -66,6 +64,5 @@ public class MainActivitySeekbar extends Activity implements SeekBar.OnSeekBarCh
         }
             see.setProgress(b);
             m.setText(String.valueOf(see.getProgress()));
-
     }
 }

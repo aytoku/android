@@ -26,10 +26,7 @@ public class MachinePurposeAdapter {
 
         private final LayoutInflater layoutInflater;
         private final Context context;
-
         private List<ItemsMenu> itemsMenuList;
-
-
 
         public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
@@ -40,7 +37,6 @@ public class MachinePurposeAdapter {
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
 
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_machine_purpose, viewGroup, false);
             ViewHolder itemViewHolder = new ViewHolder(view);
@@ -53,7 +49,6 @@ public class MachinePurposeAdapter {
             final ItemsMenu _item = itemsMenuList.get(i);
 
             float _dens = context.getResources().getDisplayMetrics().density;
-
 
             int _size = Math.round(_dens * 12);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
@@ -71,7 +66,6 @@ public class MachinePurposeAdapter {
                     notifyDataSetChanged();
                 }
             });
-
         }
 
         @Override

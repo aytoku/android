@@ -38,12 +38,10 @@ public class ViewPagerAdapter extends PagerAdapter {
         strings_title.add("Самообучающаяся система");
         strings_desc.add("нейронная сеть подбирает\nлучшие условия работы на основе\nваших данных");
 
-
         InputStream in1 = context.getAssets().open("img/scene2.png");
         images.add(BitmapFactory.decodeStream(in1));
         strings_title.add("Распределние заказов");
         strings_desc.add("новейший алгоритм распределения\nна основе предпочтений клиентов\nи водителей");
-
 
         InputStream in2 = context.getAssets().open("img/scene3.png");
         images.add(BitmapFactory.decodeStream(in2));
@@ -54,7 +52,6 @@ public class ViewPagerAdapter extends PagerAdapter {
     public int getCount(){
         return images.size();
     }
-
 
     @Override
     public boolean isViewFromObject(View view, Object object){
@@ -76,10 +73,10 @@ public class ViewPagerAdapter extends PagerAdapter {
 
             view.setBackground(context.getResources().getDrawable(R.drawable.gradient_red));
         }
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        TextView textView_title = (TextView) view.findViewById(R.id.title_slider);
-        TextView textView_desc = (TextView) view.findViewById(R.id.description_slider);
-        Button button = (Button) view.findViewById(R.id.slider_button);
+        ImageView imageView = view.findViewById(R.id.imageView);
+        TextView textView_title = view.findViewById(R.id.title_slider);
+        TextView textView_desc = view.findViewById(R.id.description_slider);
+        Button button = view.findViewById(R.id.slider_button);
         if(position == 2){
             button.setVisibility(view.VISIBLE);
         }else{
@@ -92,13 +89,10 @@ public class ViewPagerAdapter extends PagerAdapter {
             textView_desc.setText(strings_desc.get(position));
         }
 
-
-
         ViewPager vp = (ViewPager) container;
         vp.addView(view, 0);
         return view;
     }
-
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object){
@@ -106,6 +100,5 @@ public class ViewPagerAdapter extends PagerAdapter {
         ViewPager vp = (ViewPager) container;
         View view = (View) object;
         vp.removeView(view);
-
     }
 }

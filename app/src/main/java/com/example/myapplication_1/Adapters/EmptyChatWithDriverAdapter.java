@@ -1,7 +1,6 @@
 package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +12,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
-
-import ru.osety.amironlibrary.DrawableUtils;
 
 public class EmptyChatWithDriverAdapter {
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
@@ -36,20 +33,12 @@ public class EmptyChatWithDriverAdapter {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_empty_chat_driver, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
             final ItemsMenu _item = itemsMenu[i];
-
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
-            float _dens = context.getResources().getDisplayMetrics().density;
-
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
-            int _size = Math.round(_dens * 40);
 
             viewHolder.title.setText( _item.getTitle() );
             viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
@@ -63,10 +52,8 @@ public class EmptyChatWithDriverAdapter {
                     } catch ( NullPointerException e) {
                         e.printStackTrace();
                     }
-
                 }
             });
-
         }
 
         @Override
@@ -102,7 +89,6 @@ public class EmptyChatWithDriverAdapter {
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
-
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -114,9 +100,7 @@ public class EmptyChatWithDriverAdapter {
                 super(itemView);
                 cv_item = itemView.findViewById(R.id.cv_cell__empty_chat_with_driver);
                 title = itemView.findViewById(R.id.cv_cell__empty_chat_with_driver_title);
-
             }
         }
-
     }
 }

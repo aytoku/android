@@ -30,15 +30,12 @@ public class MainActivityBlacklistPartners extends AppCompatActivity {
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
 
-
-
         return super.onCreateView(parent, name, context, attrs);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
 
         RecyclerView recyclerViewMenu = rv;
 
@@ -55,7 +52,6 @@ public class MainActivityBlacklistPartners extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 
     private BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 

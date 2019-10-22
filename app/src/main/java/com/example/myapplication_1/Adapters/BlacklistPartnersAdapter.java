@@ -19,7 +19,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class BlacklistPartnersAdapter {
 
-
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
         private final ItemsMenu[] itemsMenu;
@@ -32,13 +31,13 @@ public class BlacklistPartnersAdapter {
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
+
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_blacklist_partner, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -47,7 +46,6 @@ public class BlacklistPartnersAdapter {
             final ItemsMenu _item = itemsMenu[i];
 
             float _dens = context.getResources().getDisplayMetrics().density;
-
 
             int _size = Math.round(_dens * 30);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
@@ -64,7 +62,6 @@ public class BlacklistPartnersAdapter {
         }
 
         public static class ItemsMenu {
-
 
             private @ColorInt
             int colorBackgroundInt;
@@ -86,13 +83,10 @@ public class BlacklistPartnersAdapter {
                 return desc;
             }
 
-
-
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
         }
-
 
         class ViewHolder extends RecyclerView.ViewHolder {
 

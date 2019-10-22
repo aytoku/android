@@ -38,7 +38,6 @@ public class SettingsAdapter {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_settings, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -65,7 +64,6 @@ public class SettingsAdapter {
 
         public static class ItemsMenu {
 
-
             private @ColorInt
             int colorBackgroundInt;
             private int imgResId;
@@ -85,13 +83,10 @@ public class SettingsAdapter {
                 return desc;
             }
 
-
-
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
         }
-
 
         class ViewHolder extends RecyclerView.ViewHolder {
 

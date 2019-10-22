@@ -15,15 +15,12 @@ public class MainActivityTripDetails extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.trip_details);
 
         button = findViewById(R.id.rl_order_details_button);
         addListener();
-
     }
 
     public void addListener(){

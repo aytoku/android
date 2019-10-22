@@ -24,13 +24,10 @@ public class MainActivitySettings extends AppCompatActivity {
         setContentView(R.layout.settings);
 
         rv = findViewById(R.id.recycler_settings);
-
     }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -38,7 +35,6 @@ public class MainActivitySettings extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
 
         RecyclerView recyclerViewMenu = rv;
 
@@ -56,8 +52,6 @@ public class MainActivitySettings extends AppCompatActivity {
         }
     }
 
-
-
     private SettingsAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
         SettingsAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new SettingsAdapter.AdapterGridViewMenu.ItemsMenu[]{
@@ -71,7 +65,4 @@ public class MainActivitySettings extends AppCompatActivity {
         };
         return _arr;
     }
-
-
-
 }

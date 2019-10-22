@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.CheckBox;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,9 +24,6 @@ public class MainActivityPartners extends AppCompatActivity {
         setContentView(R.layout.partners);
 
         rv = findViewById(R.id.recycler_partners);
-
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox);
-
     }
 
     @Override
@@ -69,6 +65,4 @@ public class MainActivityPartners extends AppCompatActivity {
         };
         return _arr;
     }
-
-
 }

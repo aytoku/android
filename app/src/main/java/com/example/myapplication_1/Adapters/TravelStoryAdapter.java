@@ -39,7 +39,6 @@ public class TravelStoryAdapter {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_travel_story, viewGroup, false);
             return new ViewHolder(v);
-
         }
 
         @Override
@@ -48,7 +47,6 @@ public class TravelStoryAdapter {
             final ItemsMenu _item = itemsMenu[i];
 
             float _dens = context.getResources().getDisplayMetrics().density;
-
 
             int _size = Math.round(_dens * 40);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
@@ -68,10 +66,8 @@ public class TravelStoryAdapter {
                     } catch ( NullPointerException e) {
                         e.printStackTrace();
                     }
-
                 }
             });
-
         }
 
         @Override
@@ -119,7 +115,6 @@ public class TravelStoryAdapter {
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
-
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -135,9 +130,7 @@ public class TravelStoryAdapter {
                 img = itemView.findViewById(R.id.elisple_red);
                 date = itemView.findViewById(R.id.date);
                 cost = itemView.findViewById(R.id.cost);
-
             }
         }
-
     }
 }

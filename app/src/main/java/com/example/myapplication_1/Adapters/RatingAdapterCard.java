@@ -2,7 +2,6 @@ package com.example.myapplication_1.Adapters;
 
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,18 +16,13 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-import ru.osety.amironlibrary.DrawableUtils;
-
 public class RatingAdapterCard{
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private final Context context;
-
         private List<ItemsMenu1> itemsMenuList1;
-
-
 
         public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu1> itemsMenuList1, Context context) {
             this.itemsMenuList1 = itemsMenuList1;
@@ -50,13 +44,6 @@ public class RatingAdapterCard{
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
             final ItemsMenu1 _item = itemsMenuList1.get(i);
-
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
-            float _dens = context.getResources().getDisplayMetrics().density;
-
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
-            int _size = Math.round(_dens * 40);
 
             viewHolder.price.setText(_item.getStr());
         }

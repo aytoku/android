@@ -23,21 +23,16 @@ public class MainActivityTravelStory extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-        androidImageButton = (ImageButton) findViewById(R.id.img_cross_grey);
-
+        androidImageButton = findViewById(R.id.img_cross_grey);
 
         setContentView(R.layout.travel_story);
 
-        rv = (RecyclerView) findViewById(R.id.recycler_travel_story);
-
+        rv = findViewById(R.id.recycler_travel_story);
     }
 
     @Override
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-
 
         return super.onCreateView(parent, name, context, attrs);
     }
@@ -46,9 +41,7 @@ public class MainActivityTravelStory extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
         RecyclerView recyclerViewMenu = rv;
-
 
         try {
 
@@ -63,7 +56,6 @@ public class MainActivityTravelStory extends AppCompatActivity {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
     }
 
     private TravelStoryAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
@@ -89,10 +81,5 @@ public class MainActivityTravelStory extends AppCompatActivity {
                         }, "66 \u20BD")
         };
         return _arr;
-
     }
-
-
-
 }
-

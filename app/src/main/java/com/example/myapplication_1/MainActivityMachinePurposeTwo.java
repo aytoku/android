@@ -16,9 +16,7 @@ public class MainActivityMachinePurposeTwo extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.cell_machine_purpose2);
 
@@ -51,5 +49,4 @@ public class MainActivityMachinePurposeTwo extends AppCompatActivity {
             }
         });
     }
-
 }

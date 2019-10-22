@@ -104,7 +104,6 @@ public class MainActivityEarnings extends AppCompatActivity {
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
 
-
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
@@ -121,7 +120,6 @@ public class MainActivityEarnings extends AppCompatActivity {
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
 
-
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                     @Override
@@ -137,7 +135,6 @@ public class MainActivityEarnings extends AppCompatActivity {
 
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
-
 
                 new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {

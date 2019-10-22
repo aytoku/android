@@ -1,7 +1,6 @@
 package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +12,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
-
-import ru.osety.amironlibrary.DrawableUtils;
 
 public class ChatWithDriverAdapter {
 
@@ -45,13 +42,6 @@ public class ChatWithDriverAdapter {
 
             final ItemsMenu _item = itemsMenu[i];
 
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
-            float _dens = context.getResources().getDisplayMetrics().density;
-
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
-            int _size = Math.round(_dens * 40);
-
             viewHolder.title.setText( _item.getTitle() );
             viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                 @Override
@@ -64,10 +54,8 @@ public class ChatWithDriverAdapter {
                     } catch ( NullPointerException e) {
                         e.printStackTrace();
                     }
-
                 }
             });
-
         }
 
         @Override
@@ -103,7 +91,6 @@ public class ChatWithDriverAdapter {
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
-
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -115,9 +102,7 @@ public class ChatWithDriverAdapter {
                 super(itemView);
                 cv_item = itemView.findViewById(R.id.cv_cell__empty_chat_with_driver);
                 title = itemView.findViewById(R.id.cv_cell__empty_chat_with_driver_title);
-
             }
         }
-
     }
 }
