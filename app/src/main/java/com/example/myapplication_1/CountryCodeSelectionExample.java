@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CountryCodeSelectionExample extends AppCompatActivity {
 
-    TextView textView;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -24,11 +22,9 @@ public class CountryCodeSelectionExample extends AppCompatActivity {
     }
     public void onButtonClick() {
 
-        // get the text from the EditText
         TextView textView = findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_georgia_number_code);
         String stringToPassBack = textView.getText().toString();
 
-        // put the String to pass back into an Intent and close this activity
         Intent intent = new Intent();
         intent.putExtra("keyName", stringToPassBack);
         setResult(RESULT_OK, intent);

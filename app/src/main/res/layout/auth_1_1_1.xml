@@ -38,8 +38,8 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="Россия +7"
-        android:paddingTop="30dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="5dp"
         android:textAllCaps="false"
         android:textColor="#AAAAAA"
         android:textSize="17sp"
@@ -72,6 +72,7 @@
         android:text="Указан неверный номер"
         android:textAlignment="center"
         android:textColor="#EE4D3F"
+        android:paddingBottom="10dp"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,14 +82,14 @@
         android:id="@+id/cl_auth_1_1_1_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:paddingBottom="10dp"
         android:text="Нажимая кнопку 'Далее', вы принимаете условия\nпользовательского соглашения и политики\nконфиденцальности"
+        android:textAlignment="center"
         android:textColor="#979797"
         android:textSize="13sp"
-        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_auth_1_1_1_ll_auth_1_1_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/cl_auth_1_1_1_ll_auth_1_1_1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/cl_auth_1_1_1_ll_auth_1_1_1"
@@ -102,7 +103,7 @@
         <Button
             android:id="@+id/cl_auth_1_1_1_button1"
             android:layout_width="350dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/mybuttongrey"
             android:text="Далее"
             android:textAllCaps="false"

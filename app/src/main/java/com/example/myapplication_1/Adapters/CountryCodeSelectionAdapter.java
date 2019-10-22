@@ -60,6 +60,14 @@ public class CountryCodeSelectionAdapter {
             viewHolder.letter.setText( _item.getLetter() );
             viewHolder.title.setText( _item.getStr() );
             viewHolder.code.setText( _item.getTime() );
+
+
+            viewHolder.title.getRootView().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    _item.callBack.call(_item);
+                }
+            });
         }
 
         @Override
@@ -78,20 +86,16 @@ public class CountryCodeSelectionAdapter {
             private String letter;
             private int imgResId;
             private String str;
-            private CallBack callBack;
+            public CallBack callBack;
             private String code;
 
-            public ItemsMenu(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack,String code) {
+            public ItemsMenu(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack, String code) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.letter = letter;
                 this.imgResId = imgResId;
                 this.str = str;
                 this.callBack = callBack;
                 this.code = code;
-            }
-
-            public CallBack getCallBack() {
-                return callBack;
             }
 
             public String getLetter(){return letter;}

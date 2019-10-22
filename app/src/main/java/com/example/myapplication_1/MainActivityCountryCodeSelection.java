@@ -89,12 +89,16 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
                                 try{
 
                                     Bundle _args = new Bundle();
+                                    Intent intent = new Intent();
+                                    intent.putExtra("keyName", "Грузия +995");
+                                    setResult(RESULT_OK, intent);
+                                    finish();
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
                             }
-                        }, "+995"),
+                        },"+995"),
 
                 new CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),"Р",
@@ -107,6 +111,10 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
                                 try{
 
                                     Bundle _args = new Bundle();
+                                    Intent intent = new Intent();
+                                    intent.putExtra("keyName", "Россия +7");
+                                    setResult(RESULT_OK, intent);
+                                    finish();
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

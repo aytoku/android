@@ -19,7 +19,7 @@ public class MainActivityAuth111 extends AppCompatActivity {
     TextView textView;
     EditText editText;
     Button button;
-    //private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
+    private static final int SECOND_ACTIVITY_REQUEST_CODE = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -52,9 +52,9 @@ public class MainActivityAuth111 extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 int i = editText.getText().toString().length();
-                if(i<4)
-                    len[0]=0;
-                if(i==4 && len[0]<5){
+                if (i < 4)
+                    len[0] = 0;
+                if (i == 4 && len[0] < 5) {
                     len[0] = 5;
                     String ss = s.toString();
                     String first = ss.substring(0, ss.length() - 1);
@@ -84,40 +84,35 @@ public class MainActivityAuth111 extends AppCompatActivity {
                     editText.setText(first + "-" + last);
                     editText.setSelection(editText.getText().length());
                 }
+
+                if(editText.length()>0){
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.myredbutton));
+                }else{
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybuttongrey));
+                }
             }
         });
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(MainActivityAuth111.this, MainActivityCountryCodeSelection.class);
-                startActivity(intent);
+                startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
             }
         });
     }
-//
-//    public void onButtonClick() {
-//
-//        // Start the SecondActivity
-//        Intent intent = new Intent(MainActivityAuth111.this, CountryCodeSelectionExample.class);
-//        startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
-//    }
-//
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        // check that it is the SecondActivity with an OK result
-//        if (requestCode == SECOND_ACTIVITY_REQUEST_CODE) {
-//            if (resultCode == RESULT_OK) { // Activity.RESULT_OK
-//
-//                // get String data from Intent
-//                String returnString = data.getStringExtra("keyName");
-//
-//                // set text view with string
-//                TextView textView = (TextView) findViewById(R.id.cl_auth_1_1_1_button);
-//                textView.setText(returnString);
-//            }
-//        }
-//    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == SECOND_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+
+                String returnString = data.getStringExtra("keyName");
+
+                TextView textView = findViewById(R.id.cl_auth_1_1_1_button);
+                textView.setText(returnString);
+            }
+        }
+    }
 }

@@ -85,7 +85,6 @@ public class MainActivityTravelStory extends AppCompatActivity {
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
-
                             }
                         }, "66 \u20BD")
         };

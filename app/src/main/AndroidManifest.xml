@@ -14,7 +14,8 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityAuth111">
+        <activity android:name=".MainActivityAuth111"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
