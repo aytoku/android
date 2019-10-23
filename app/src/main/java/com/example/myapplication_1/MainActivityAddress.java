@@ -14,5 +14,8 @@ public class MainActivityAddress extends AppCompatActivity {
 
         setContentView(R.layout.address_layout);
 
+        AddressFragment addressFragment = AddressFragment.getInstance(null);
+
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_address_layout, addressFragment, AddressFragment.TAG).commit();
     }
 }

@@ -14,7 +14,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivityAuth111"
+        <activity android:name=".MainActivityAddress"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,19 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--activity android:name="com.example.myapplication_1.EditMyAdressFragment">
-
-            <intent-filter>
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-            </intent-filter>
-
-
-        </activity-->
 
         <activity android:name=".MainActivityCountryCodeSelection">
 
