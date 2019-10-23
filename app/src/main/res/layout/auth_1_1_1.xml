@@ -58,6 +58,7 @@
         android:inputType="number"
         android:textAlignment="center"
         android:textColorHint="#C0BFC6"
+        android:textCursorDrawable="@null"
         android:textSize="28sp"
         android:maxLength="13"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,34 +83,45 @@
         android:id="@+id/cl_auth_1_1_1_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="5dp"
         android:text="Нажимая кнопку 'Далее', вы принимаете условия\nпользовательского соглашения и политики\nконфиденцальности"
         android:textAlignment="center"
         android:textColor="#979797"
         android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@+id/cl_auth_1_1_1_ll_auth_1_1_1"
+        app:layout_constraintBottom_toTopOf="@+id/cl_auth__1_1_1_rl_auth_1_1_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/cl_auth_1_1_1_ll_auth_1_1_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+<RelativeLayout
+    android:id="@+id/cl_auth__1_1_1_rl_auth_1_1_1"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:gravity="center_horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            android:id="@+id/cl_auth_1_1_1_button1"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mybuttongrey"
-            android:text="Далее"
-            android:textAllCaps="false"
-            android:textColor="#33353E"
-            android:textSize="17sp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cl_auth_1_1_1_card"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:cardCornerRadius="11dp">
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/cl_auth_1_1_1_button1"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/mybuttongrey"
+        android:text="Далее"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal|center_vertical"
+        android:textAllCaps="false"
+        android:textColor="#33353E"
+        android:textSize="17sp" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
