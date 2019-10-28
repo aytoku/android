@@ -8,13 +8,13 @@
     <fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="com.example.myapplication_1.ButtonFragment"
+        android:name="com.example.myapplication_1.Fragments.ButtonFragment"
         tools:layout="@layout/button_layout"/>
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="com.example.myapplication_1.ImageFragment"
+        android:name="com.example.myapplication_1.Fragments.ImageFragment"
         tools:layout="@layout/image_layout"/>
 
 </LinearLayout>

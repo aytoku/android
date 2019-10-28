@@ -2,6 +2,7 @@ package com.example.myapplication_1.Adapters;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +17,16 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
+import javax.security.auth.callback.Callback;
+
 public class RatingAdapterCard{
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
-        private final Context context;
+        private Context context;
         private List<ItemsMenu1> itemsMenuList1;
+        private int selectItem = -1;
 
         public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu1> itemsMenuList1, Context context) {
             this.itemsMenuList1 = itemsMenuList1;
@@ -33,7 +37,6 @@ public class RatingAdapterCard{
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
 
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_rating_card, viewGroup, false);
             ViewHolder itemViewHolder = new ViewHolder(view);
@@ -46,6 +49,23 @@ public class RatingAdapterCard{
             final ItemsMenu1 _item = itemsMenuList1.get(i);
 
             viewHolder.price.setText(_item.getStr());
+
+            if(selectItem == i){
+                viewHolder.cardView.setBackgroundColor(Color.parseColor("#F3F3F3"));
+
+            }else{
+                viewHolder.cardView.setBackgroundColor(Color.WHITE);
+            }
+
+            viewHolder.price.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    notifyItemChanged(selectItem);
+                    selectItem = i;
+                    notifyItemChanged(i);
+                }
+            });
         }
 
         @Override
@@ -55,19 +75,24 @@ public class RatingAdapterCard{
 
         public static class ItemsMenu1 {
 
+            public interface CallBack {
+                void call(ItemsMenu1 itemsMenu);
+            }
+
             private @ColorInt
             int colorBackgroundInt;
             private String price;
+            private Callback callback;
 
-            public ItemsMenu1(int colorBackgroundRes, String price) {
+            public ItemsMenu1(int colorBackgroundRes, String price, CallBack callback) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.price = price;
+                this.callback = callback;
             }
 
             public String getStr() {
                 return price;
             }
-
 
             public int getColorBackground() {
                 return colorBackgroundInt;

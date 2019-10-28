@@ -1,9 +1,11 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication_1.R;
 
 public class MainActivityErrorTwo extends AppCompatActivity {
 

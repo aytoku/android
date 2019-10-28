@@ -1,15 +1,29 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivityCodeScreen extends AppCompatActivity {
+import androidx.fragment.app.Fragment;
+
+import com.example.myapplication_1.R;
+
+public class CodeScreenFragment extends Fragment {
+
+    public static final String TAG = "CodeScreenFragment";
+
+    public static CodeScreenFragment getInstance(Bundle args) {
+
+        CodeScreenFragment f = new CodeScreenFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     EditText code_field1;
     EditText code_field2;
@@ -17,15 +31,17 @@ public class MainActivityCodeScreen extends AppCompatActivity {
     EditText code_field4;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.code);
+        View view = inflater.inflate(R.layout.code,
+                container, false);
 
-        code_field1 = findViewById(R.id.ll_code_screen1);
-        code_field2 = findViewById(R.id.ll_code_screen2);
-        code_field3 = findViewById(R.id.ll_code_screen3);
-        code_field4 = findViewById(R.id.ll_code_screen4);
+        code_field1 = view.findViewById(R.id.ll_code_screen1);
+        code_field2 = view.findViewById(R.id.ll_code_screen2);
+        code_field3 = view.findViewById(R.id.ll_code_screen3);
+        code_field4 = view.findViewById(R.id.ll_code_screen4);
 
         code_field1.addTextChangedListener(new TextWatcher() {
 
@@ -146,5 +162,8 @@ public class MainActivityCodeScreen extends AppCompatActivity {
                 return false;
             }
         });
+
+    return view;
+
     }
 }

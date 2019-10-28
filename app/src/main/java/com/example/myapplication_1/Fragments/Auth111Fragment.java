@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
 import android.content.Intent;
 import android.os.Build;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,7 +13,10 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivityAuth111 extends AppCompatActivity {
+import com.example.myapplication_1.MainActivityCountryCodeSelection;
+import com.example.myapplication_1.R;
+
+public class Auth111Fragment extends AppCompatActivity {
 
     TextView textView;
     EditText editText;
@@ -95,7 +97,7 @@ public class MainActivityAuth111 extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivityAuth111.this, MainActivityCountryCodeSelection.class);
+                Intent intent = new Intent(Auth111Fragment.this, MainActivityCountryCodeSelection.class);
                 startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
             }
         });

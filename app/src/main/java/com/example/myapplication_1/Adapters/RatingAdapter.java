@@ -2,6 +2,7 @@ package com.example.myapplication_1.Adapters;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class RatingAdapter{
         private final LayoutInflater layoutInflater;
         private final Context context;
         private List<ItemsMenu> itemsMenuList;
+        private int selectItem = -1;
 
         public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
@@ -44,8 +46,39 @@ public class RatingAdapter{
             final ItemsMenu _item = itemsMenuList.get(i);
 
             viewHolder.emoji1.setText(_item.getStr());
-
             viewHolder.emoji2.setText(_item.getStr1());
+
+            if(selectItem == i){
+
+                viewHolder.emoji1.setBackgroundColor(Color.parseColor("#F3F3F3"));
+                viewHolder.emoji2.setBackgroundColor(Color.parseColor("#F3F3F3"));
+
+            } else{
+
+                viewHolder.emoji1.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                viewHolder.emoji2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+            }
+
+
+            viewHolder.emoji1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    notifyItemChanged(selectItem);
+                    selectItem = i;
+                    notifyItemChanged(i);
+                }
+            });
+
+            viewHolder.emoji2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    notifyItemChanged(selectItem);
+                    selectItem = i;
+                    notifyItemChanged(i);
+                }
+            });
         }
 
         @Override
@@ -55,15 +88,21 @@ public class RatingAdapter{
 
         public static class ItemsMenu {
 
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+            }
+
             private @ColorInt
             int colorBackgroundInt;
             private String emoji1;
             private String emoji2;
+            private CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes, String emoji1, String emoji2) {
+            public ItemsMenu(int colorBackgroundRes, String emoji1, String emoji2, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.emoji1 = emoji1;
                 this.emoji2 = emoji2;
+                this.callBack = callBack;
             }
 
             public String getStr() {
