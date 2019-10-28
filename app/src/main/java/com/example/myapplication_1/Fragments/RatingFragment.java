@@ -1,6 +1,5 @@
 package com.example.myapplication_1.Fragments;
 
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -193,20 +192,19 @@ public class RatingFragment extends Fragment {
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "\uD83D\uDC4F",
-                        "Вежливость",
-                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
-                            @Override
-                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
-                                try{
-
-                                    Bundle _args = new Bundle();
-                                    Intent intent = new Intent();
-
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        })
+                        "Вежливость"
+//                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+//                            @Override
+//                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+//                                try{
+//
+//
+//                                }catch (NullPointerException e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//                        }
+                        )
         };
         return arr;
     }
@@ -217,20 +215,19 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "10 \u20BD",
-                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
-                            @Override
-                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
-                                try{
-
-                                    Bundle _args = new Bundle();
-                                    Intent intent = new Intent();
-
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        })
+                        "10 \u20BD"
+//                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+//                            @Override
+//                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+//                                try{
+//
+//
+//                                }catch (NullPointerException e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//                        }
+                       )
         };
         return arr1;
     }

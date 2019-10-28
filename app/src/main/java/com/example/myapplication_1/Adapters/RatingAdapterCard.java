@@ -17,8 +17,6 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-import javax.security.auth.callback.Callback;
-
 public class RatingAdapterCard{
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
@@ -75,19 +73,19 @@ public class RatingAdapterCard{
 
         public static class ItemsMenu1 {
 
-            public interface CallBack {
-                void call(ItemsMenu1 itemsMenu);
-            }
+//            public interface CallBack {
+//                void call(ItemsMenu1 itemsMenu);
+//            }
 
             private @ColorInt
             int colorBackgroundInt;
             private String price;
-            private Callback callback;
+            //private Callback callback;
 
-            public ItemsMenu1(int colorBackgroundRes, String price, CallBack callback) {
+            public ItemsMenu1(int colorBackgroundRes, String price) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.price = price;
-                this.callback = callback;
+                //this.callback = callback;
             }
 
             public String getStr() {
