@@ -67,6 +67,7 @@ public class RatingAdapter{
                     notifyItemChanged(selectItem);
                     selectItem = i;
                     notifyItemChanged(i);
+                    _item.callBack.call(_item);
                 }
             });
 
@@ -77,6 +78,7 @@ public class RatingAdapter{
                     notifyItemChanged(selectItem);
                     selectItem = i;
                     notifyItemChanged(i);
+                    _item.callBack.call(_item);
                 }
             });
         }
@@ -88,21 +90,21 @@ public class RatingAdapter{
 
         public static class ItemsMenu {
 
-//            public interface CallBack {
-//                void call(ItemsMenu itemsMenu);
-//            }
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+            }
 
             private @ColorInt
             int colorBackgroundInt;
             private String emoji1;
             private String emoji2;
-            //private CallBack callBack;
+            private CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes, String emoji1, String emoji2 ) {
+            public ItemsMenu(int colorBackgroundRes, String emoji1, String emoji2, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.emoji1 = emoji1;
                 this.emoji2 = emoji2;
-              //  this.callBack = callBack;
+                this.callBack = callBack;
             }
 
             public String getStr() {

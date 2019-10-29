@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -47,6 +48,10 @@ public class RatingFragment extends Fragment {
     private ImageView[] starArr;
     private Drawable imgStarGrey;
     private Drawable imgStarRed;
+    private CardView button;
+    private ImageView star;
+    private String tips;
+    private String praice;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -70,6 +75,8 @@ public class RatingFragment extends Fragment {
                 star4 = view.findViewById(R.id.cl_rating_ll_rating_red_star4),
                 star5 = view.findViewById(R.id.cl_rating_ll_rating_red_star5)
         };
+
+        button = view.findViewById(R.id.cl_rating_ll_rating1_cardButton);
 
         final RecyclerView recyclerViewMenu = rv;
 
@@ -174,6 +181,8 @@ public class RatingFragment extends Fragment {
                 }
             }
         });
+
+        send();
         return view;
     }
 
@@ -181,9 +190,20 @@ public class RatingFragment extends Fragment {
 
         for (int i = 0; i <= starArr.length-1; i++){
             starArr[i].setImageDrawable(imgStarGrey);
+            star = starArr[i];
         }
     }
 
+    public void send(){
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println(star);
+                System.out.println(tips);
+                System.out.println(praice);
+            }
+        });
+    }
 
     private RatingAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
 
@@ -192,19 +212,74 @@ public class RatingFragment extends Fragment {
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "\uD83D\uDC4F",
-                        "Вежливость"
-//                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
-//                            @Override
-//                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
-//                                try{
-//
-//
-//                                }catch (NullPointerException e) {
-//                                    e.printStackTrace();
-//                                }
-//                            }
-//                        }
-                        )
+                        "Вежливость",
+                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                                try{
+                                    itemsMenu.getStr();
+                                    praice = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                 ),
+
+                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "\uD83D\uDC4F",
+                        "Вежливость",
+                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                                try{
+                                    itemsMenu.getStr();
+                                    praice = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                ),
+
+                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "\uD83D\uDC4F",
+                        "Вежливость",
+                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                                try{
+                                    itemsMenu.getStr();
+                                    praice = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                ),
+
+                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "\uD83D\uDC4F",
+                        "Вежливость",
+                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                                try{
+                                    itemsMenu.getStr();
+                                    praice = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                )
         };
         return arr;
     }
@@ -215,19 +290,75 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "10 \u20BD"
-//                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
-//                            @Override
-//                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
-//                                try{
-//
-//
-//                                }catch (NullPointerException e) {
-//                                    e.printStackTrace();
-//                                }
-//                            }
-//                        }
-                       )
+                        "10 \u20BD",
+                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+                            @Override
+                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+                                try{
+
+                                    itemsMenu.getStr();
+                                    tips = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                 ),
+
+                new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
+                        getResources().getColor(R.color.my_gray),
+                        "10 \u20BD",
+                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+                            @Override
+                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+                                try{
+
+                                    itemsMenu.getStr();
+                                    tips = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                ),
+
+                new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
+                        getResources().getColor(R.color.my_gray),
+                        "10 \u20BD",
+                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+                            @Override
+                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+                                try{
+
+                                    itemsMenu.getStr();
+                                    tips = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                ),
+
+                new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
+                        getResources().getColor(R.color.my_gray),
+                        "10 \u20BD",
+                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+                            @Override
+                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+                                try{
+
+                                    itemsMenu.getStr();
+                                    tips = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                )
         };
         return arr1;
     }

@@ -62,6 +62,7 @@ public class RatingAdapterCard{
                     notifyItemChanged(selectItem);
                     selectItem = i;
                     notifyItemChanged(i);
+                    _item.callBack.call(_item);
                 }
             });
         }
@@ -73,19 +74,19 @@ public class RatingAdapterCard{
 
         public static class ItemsMenu1 {
 
-//            public interface CallBack {
-//                void call(ItemsMenu1 itemsMenu);
-//            }
+            public interface CallBack {
+                void call(ItemsMenu1 itemsMenu);
+            }
 
             private @ColorInt
             int colorBackgroundInt;
             private String price;
-            //private Callback callback;
+            private CallBack callBack;
 
-            public ItemsMenu1(int colorBackgroundRes, String price) {
+            public ItemsMenu1(int colorBackgroundRes, String price, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.price = price;
-                //this.callback = callback;
+                this.callBack = callBack;
             }
 
             public String getStr() {
