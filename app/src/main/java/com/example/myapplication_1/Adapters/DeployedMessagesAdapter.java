@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class DeployedMessagesAdapter {
         private Context context;
             private Drawable card_draw;
             private Drawable card;
+            private ImageView imageView;
 
         private List<ItemsMenu> itemsMenuList;
 
@@ -60,6 +62,7 @@ public class DeployedMessagesAdapter {
                 viewHolder.relativeLayout.setBackground(card);
             }else{
                 viewHolder.relativeLayout.setBackground(card_draw);
+                viewHolder.imageView.setVisibility(View.GONE);
             }
         }
 
@@ -97,12 +100,14 @@ public class DeployedMessagesAdapter {
             private final TextView title;
             private final TextView desc;
             private final RelativeLayout relativeLayout;
+            private final ImageView imageView;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 title = itemView.findViewById(R.id.rl_cell_deployed_messages_title);
                 desc = itemView.findViewById(R.id.rl_cell_deployed_messages_desc);
                 relativeLayout = itemView.findViewById(R.id.rl_cell_deployed_messages);
+                imageView  = itemView.findViewById(R.id.rl_cell_deployed_messages_button);
             }
         }
     }
