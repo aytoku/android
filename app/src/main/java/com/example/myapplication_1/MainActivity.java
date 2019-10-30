@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication_1.Fragments.AddPointFragment;
 import com.example.myapplication_1.Fragments.AddressFragment;
 import com.example.myapplication_1.Fragments.AlertFragment;
+import com.example.myapplication_1.Fragments.AssistantFragment;
 import com.example.myapplication_1.Fragments.CodeScreenFragment;
 import com.example.myapplication_1.Fragments.DeployedMessagesFragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         OrderAcceptFragment orderAcceptFragment = OrderAcceptFragment.getInstance(null);
 
+        AssistantFragment assistantFragment = AssistantFragment.getInstance(null);
+
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, ratingFragment, RatingFragment.TAG).hide(ratingFragment);
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, addressFragment, AddressFragment.TAG).hide(addressFragment);
@@ -48,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, deployedMessagesFragment, DeployedMessagesFragment.TAG).hide(deployedMessagesFragment);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, orderAcceptFragment, OrderAcceptFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, orderAcceptFragment, OrderAcceptFragment.TAG).hide(orderAcceptFragment);
+
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, assistantFragment, AssistantFragment.TAG).commit();
 
 //        Bundle args = new Bundle();
 //        args.putInt("key_rating_star", 5);
