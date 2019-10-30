@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -26,16 +27,19 @@ public class AssistantAdapter {
         private Context context;
         private Drawable card;
         private Drawable card_gradient;
-        private ImageView imageView;
+        LinearLayout.LayoutParams params;
 
         private List<ItemsMenu> itemsMenuList;
 
-        public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
+        public AdapterGridViewMenu(List<ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
 
             card = context.getResources().getDrawable(R.drawable.ic_card_gradient);
             card_gradient = context.getResources().getDrawable(R.drawable.card_gradient_1);
+
+            params = new LinearLayout.LayoutParams(
+                    840, 160);
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
@@ -61,6 +65,7 @@ public class AssistantAdapter {
             }else{
                 viewHolder.relativeLayout.setBackground(card_gradient);
                 viewHolder.imageView.setVisibility(View.GONE);
+                viewHolder.relativeLayout.setLayoutParams(params);
             }
         }
 
