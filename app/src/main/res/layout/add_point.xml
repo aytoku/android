@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/ll_add_point"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +8,7 @@
     android:background="@color/my_gray">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/ll_add_point.cv_item"
+        android:id="@+id/cv_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -20,14 +19,13 @@
         app:cardUseCompatPadding="true">
 
             <LinearLayout
-                android:id="@+id/ll_add_point.cv_item.ll_add_point"
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cv"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/ll_add_point.cv_item.ll_add_point.title"
+                    android:id="@+id/cv_item.ll_add_point.title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -38,7 +36,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/ll_add_point.cv_item.ll_add_point.description"
+                    android:id="@+id/cv_item.ll_add_point.description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -50,13 +48,12 @@
                     android:textSize="17sp"/>
 
                 <LinearLayout
-                    android:id="@+id/ll_add_point.cv_item.ll_add_point1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/ll_add_point.cv_item.ll_add_point1.refuse_button"
+                        android:id="@+id/cv_item.ll_add_point1.refuse_button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:text="Отменить"
@@ -68,7 +65,7 @@
                         android:textAllCaps="false"/>
 
                     <Button
-                        android:id="@+id/ll_add_point.cv_item.ll_add_point1.accept_button"
+                        android:id="@+id/cv_item.ll_add_point1.accept_button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:text="Хорошо"
