@@ -38,9 +38,6 @@ public class AssistantAdapter {
             card = context.getResources().getDrawable(R.drawable.ic_card_gradient);
             card_gradient = context.getResources().getDrawable(R.drawable.card_gradient_1);
 
-            params = new LinearLayout.LayoutParams(
-                    840, 160);
-
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
@@ -65,6 +62,9 @@ public class AssistantAdapter {
             }else{
                 viewHolder.relativeLayout.setBackground(card_gradient);
                 viewHolder.imageView.setVisibility(View.GONE);
+                params = (LinearLayout.LayoutParams)viewHolder.relativeLayout.getLayoutParams();
+                params.weight = 160;
+                params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
                 viewHolder.relativeLayout.setLayoutParams(params);
             }
         }

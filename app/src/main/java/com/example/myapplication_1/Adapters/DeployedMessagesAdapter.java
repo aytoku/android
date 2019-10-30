@@ -34,7 +34,7 @@ public class DeployedMessagesAdapter {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
 
-            card_draw = context.getResources().getDrawable(R.drawable.card_draw);
+            card_draw = context.getResources().getDrawable(R.drawable.ic_card_grey_rect);
             card = context.getResources().getDrawable(R.drawable.ic_card);
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
