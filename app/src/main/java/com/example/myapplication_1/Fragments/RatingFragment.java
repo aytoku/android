@@ -212,7 +212,7 @@ public class RatingFragment extends Fragment {
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.finger,
-                        "Вежливость",
+                        "Интересная\n     беседа",
                         new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
@@ -230,7 +230,7 @@ public class RatingFragment extends Fragment {
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.face,
-                        "Вежливость",
+                        "   Хорошее\nнастроение",
                         new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
@@ -262,7 +262,7 @@ public class RatingFragment extends Fragment {
                             }
                         }
                 ),
-                
+
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.handshake,
@@ -308,7 +308,7 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "10 \u20BD",
+                        "20 \u20BD",
                         new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
                             @Override
                             public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
@@ -326,7 +326,7 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "10 \u20BD",
+                        "30 \u20BD",
                         new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
                             @Override
                             public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
@@ -344,7 +344,7 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "10 \u20BD",
+                        "40 \u20BD",
                         new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
                             @Override
                             public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
