@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         AssistantFragment assistantFragment = AssistantFragment.getInstance(null);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, ratingFragment, RatingFragment.TAG).hide(ratingFragment);
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, ratingFragment, RatingFragment.TAG).commit();
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, addressFragment, AddressFragment.TAG).hide(addressFragment);
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, orderAcceptFragment, OrderAcceptFragment.TAG).hide(orderAcceptFragment);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, assistantFragment, AssistantFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, assistantFragment, AssistantFragment.TAG).hide(assistantFragment);
 
 //        Bundle args = new Bundle();
 //        args.putInt("key_rating_star", 5);

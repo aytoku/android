@@ -2,10 +2,14 @@ package com.example.myapplication_1.Adapters;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -16,6 +20,8 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
+import ru.osety.amironlibrary.DrawableUtils;
+
 public class RatingAdapter{
 
     public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
@@ -24,11 +30,13 @@ public class RatingAdapter{
         private final Context context;
         private List<ItemsMenu> itemsMenuList;
         private int selectItem = -1;
+        private Drawable drawable;
 
         public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            drawable = context.getResources().getDrawable(R.drawable.rating_background);
         }
 
         @NonNull
@@ -45,18 +53,26 @@ public class RatingAdapter{
 
             final ItemsMenu _item = itemsMenuList.get(i);
 
-            viewHolder.emoji1.setText(_item.getStr());
+
+            float _dens = context.getResources().getDisplayMetrics().density;
+
+            int _size = Math.round(_dens * 15);
+            Drawable _def_draw = context.getResources().getDrawable(_item.getStr());
+            Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
+            viewHolder.emoji1.setImageBitmap( _bitmap );
+
+
+            viewHolder.emoji1.setScaleType(ImageView.ScaleType.CENTER);
+
             viewHolder.emoji2.setText(_item.getStr1());
 
             if(selectItem == i){
 
-                viewHolder.emoji1.setBackgroundColor(Color.parseColor("#F3F3F3"));
-                viewHolder.emoji2.setBackgroundColor(Color.parseColor("#F3F3F3"));
+                viewHolder.linearLayout.setBackground(drawable);
 
             } else{
 
-                viewHolder.emoji1.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                viewHolder.emoji2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                viewHolder.linearLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
             }
 
 
@@ -96,18 +112,18 @@ public class RatingAdapter{
 
             private @ColorInt
             int colorBackgroundInt;
-            private String emoji1;
+            private int emoji1;
             private String emoji2;
             private CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes, String emoji1, String emoji2, CallBack callBack) {
+            public ItemsMenu(int colorBackgroundRes, int emoji1, String emoji2, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.emoji1 = emoji1;
                 this.emoji2 = emoji2;
                 this.callBack = callBack;
             }
 
-            public String getStr() {
+            public int getStr() {
                 return emoji1;
             }
 
@@ -122,13 +138,15 @@ public class RatingAdapter{
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
-            private final TextView emoji1;
+            private final ImageView emoji1;
             private final TextView emoji2;
+            private final LinearLayout linearLayout;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 emoji1 = itemView.findViewById(R.id.ll_cell_rating_emoji);
                 emoji2 = itemView.findViewById(R.id.ll_cell_rating_emoji_desc);
+                linearLayout = itemView.findViewById(R.id.ll_cell_rating);
             }
         }
     }

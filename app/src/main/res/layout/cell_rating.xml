@@ -7,27 +7,29 @@
         android:id="@+id/ll_cell_rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_gravity="center_horizontal"
         android:focusable="true"
         android:clickable="true"
-        android:paddingRight="40dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <TextView
+        <ImageView
             android:id="@+id/ll_cell_rating_emoji"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="👍"
-            android:textSize="30dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:src="@mipmap/finger"
+            android:scaleY="2"
+            android:scaleX="2" />
 
         <TextView
             android:id="@+id/ll_cell_rating_emoji_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="2"
+            android:paddingRight="8dp"
+            android:paddingBottom="8dp"
             android:paddingLeft="8dp"
             android:text="Интересная\n    беседа"
             android:textSize="12sp" />

@@ -51,7 +51,7 @@ public class RatingFragment extends Fragment {
     private CardView button;
     private ImageView star;
     private String tips;
-    private String praice;
+    private int praice;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -129,8 +129,8 @@ public class RatingFragment extends Fragment {
                 allStarsGrey();
                 if(view.getId()==R.id.cl_rating_ll_rating_red_star2){
 
-                star1.setImageDrawable(imgStarRed);
-                star2.setImageDrawable(imgStarRed);
+                    star1.setImageDrawable(imgStarRed);
+                    star2.setImageDrawable(imgStarRed);
 
                 }
             }
@@ -211,25 +211,7 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "\uD83D\uDC4F",
-                        "Вежливость",
-                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
-                            @Override
-                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
-                                try{
-                                    itemsMenu.getStr();
-                                    praice = itemsMenu.getStr();
-
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                 ),
-
-                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                        "\uD83D\uDC4F",
+                        R.mipmap.finger,
                         "Вежливость",
                         new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
@@ -247,7 +229,7 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "\uD83D\uDC4F",
+                        R.mipmap.face,
                         "Вежливость",
                         new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
@@ -265,7 +247,25 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "\uD83D\uDC4F",
+                        R.mipmap.handshake,
+                        "Вежливость",
+                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                                try{
+                                    itemsMenu.getStr();
+                                    praice = itemsMenu.getStr();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                ),
+                
+                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        R.mipmap.handshake,
                         "Вежливость",
                         new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
@@ -304,7 +304,7 @@ public class RatingFragment extends Fragment {
                                 }
                             }
                         }
-                 ),
+                ),
 
                 new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),

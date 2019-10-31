@@ -49,13 +49,13 @@ public class RatingAdapterCard{
             viewHolder.price.setText(_item.getStr());
 
             if(selectItem == i){
-                viewHolder.cardView.setBackgroundColor(Color.parseColor("#F3F3F3"));
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#F3F3F3"));
 
             }else{
-                viewHolder.cardView.setBackgroundColor(Color.WHITE);
+                viewHolder.cardView.setCardBackgroundColor(Color.WHITE);
             }
 
-            viewHolder.price.setOnClickListener(new View.OnClickListener() {
+            viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
@@ -105,8 +105,8 @@ public class RatingAdapterCard{
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                cardView = itemView.findViewById(R.id.ll_cell_rating_ll_cell_rating_cv_rating);
-                price = itemView.findViewById(R.id.ll_cell_rating_ll_cell_rating_cv_rating3_ll_rating_price1);
+                cardView = itemView.findViewById(R.id.cv_rating);
+                price = itemView.findViewById(R.id.cv_rating_price);
             }
         }
     }
