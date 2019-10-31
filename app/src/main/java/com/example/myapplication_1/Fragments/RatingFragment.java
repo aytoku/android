@@ -212,7 +212,7 @@ public class RatingFragment extends Fragment {
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.finger,
-                        "Интересная\n     беседа",
+                        "Вежливость",
                         new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
@@ -230,7 +230,7 @@ public class RatingFragment extends Fragment {
                 new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.face,
-                        "   Хорошее\nнастроение",
+                        "Вежливость",
                         new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
