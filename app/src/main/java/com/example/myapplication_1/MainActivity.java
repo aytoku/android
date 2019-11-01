@@ -13,6 +13,8 @@ import com.example.myapplication_1.Fragments.CodeScreenFragment;
 import com.example.myapplication_1.Fragments.DeployedMessagesFragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
 import com.example.myapplication_1.Fragments.RatingFragment;
+import com.example.myapplication_1.Fragments.TravelStoryFragment;
+import com.example.myapplication_1.Fragments.TravelStoryOneFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         AssistantFragment assistantFragment = AssistantFragment.getInstance(null);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, ratingFragment, RatingFragment.TAG).commit();
+        TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
+
+        TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(null);
+
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, ratingFragment, RatingFragment.TAG).hide(ratingFragment);
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, addressFragment, AddressFragment.TAG).hide(addressFragment);
 
@@ -55,9 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, assistantFragment, AssistantFragment.TAG).hide(assistantFragment);
 
-//        Bundle args = new Bundle();
-//        args.putInt("key_rating_star", 5);
-//        args.putInt("key_tips_farm", 60);
-//        args.putString("key_praise_driver","Вежливый");
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, travelStoryFragment, TravelStoryFragment.TAG).commit();
+
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, travelStoryOneFragment, TravelStoryOneFragment.TAG).hide(travelStoryOneFragment);
     }
 }

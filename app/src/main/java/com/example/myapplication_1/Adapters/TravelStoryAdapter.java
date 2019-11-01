@@ -87,6 +87,8 @@ public class TravelStoryAdapter {
             private String date;
             private CallBack callBack;
             private String cost;
+            private CardView cv_item;
+            private String uuid;
 
             public ItemsMenu(int colorBackgroundRes, int imgResId, String date, CallBack callBack,String cost) {
                 this.colorBackgroundInt = colorBackgroundRes;
@@ -94,6 +96,11 @@ public class TravelStoryAdapter {
                 this.date = date;
                 this.callBack = callBack;
                 this.cost = cost;
+            }
+            public String getUuid(){ return uuid ;}
+
+            public void setUuid (String uuid){
+                this.uuid = uuid;
             }
 
             public CallBack getCallBack() {
@@ -107,6 +114,8 @@ public class TravelStoryAdapter {
             public String getDate() {
                 return date;
             }
+
+            public CardView getCv_item(){return cv_item;}
 
             public String getCost() {
                 return cost;
