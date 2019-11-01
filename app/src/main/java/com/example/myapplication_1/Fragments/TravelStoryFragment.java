@@ -88,7 +88,7 @@ public class TravelStoryFragment extends Fragment {
                                     Fragment travelStoryFragment = TravelStoryOneFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.cv_item, travelStoryFragment);
+                                    fragmentTransaction.replace(R.id.ll_main, travelStoryFragment);
                                     fragmentTransaction.commit();
 
                                 }catch (NullPointerException e) {
