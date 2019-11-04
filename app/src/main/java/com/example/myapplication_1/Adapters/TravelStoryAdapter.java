@@ -20,13 +20,13 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class TravelStoryAdapter {
 
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public static class AdapterTravelStory extends RecyclerView.Adapter<AdapterTravelStory.ViewHolder> {
 
-        private final ItemsMenu[] itemsMenu;
+        private final TravelStoryCard[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
+        public AdapterTravelStory(AdapterTravelStory.TravelStoryCard[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -44,7 +44,7 @@ public class TravelStoryAdapter {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final TravelStoryCard _item = itemsMenu[i];
 
             float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -75,10 +75,10 @@ public class TravelStoryAdapter {
             return itemsMenu.length;
         }
 
-        public static class ItemsMenu {
+        public static class TravelStoryCard {
 
             public interface CallBack {
-                void call(ItemsMenu itemsMenu);
+                void call(TravelStoryCard itemsMenu);
             }
 
             private @ColorInt
@@ -90,7 +90,7 @@ public class TravelStoryAdapter {
             private CardView cv_item;
             private String uuid;
 
-            public ItemsMenu(int colorBackgroundRes, int imgResId, String date, CallBack callBack,String cost) {
+            public TravelStoryCard(int colorBackgroundRes, int imgResId, String date, CallBack callBack,String cost) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.imgResId = imgResId;
                 this.date = date;
@@ -136,7 +136,7 @@ public class TravelStoryAdapter {
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 cv_item = itemView.findViewById(R.id.cv_item);
-                img = itemView.findViewById(R.id.elisple_red);
+                img = itemView.findViewById(R.id.ellipse_red);
                 date = itemView.findViewById(R.id.date);
                 cost = itemView.findViewById(R.id.cost);
             }

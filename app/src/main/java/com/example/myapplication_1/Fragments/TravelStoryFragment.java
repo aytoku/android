@@ -54,9 +54,9 @@ public class TravelStoryFragment extends Fragment {
 
         try {
 
-            TravelStoryAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            TravelStoryAdapter.AdapterTravelStory.TravelStoryCard[] itemsMenu = getMenuItems();
 
-            TravelStoryAdapter.AdapterGridViewMenu adapterGridViewMenu = new TravelStoryAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());
+            TravelStoryAdapter.AdapterTravelStory adapterGridViewMenu = new TravelStoryAdapter.AdapterTravelStory(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -67,17 +67,17 @@ public class TravelStoryFragment extends Fragment {
         }
     }
 
-    private TravelStoryAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private TravelStoryAdapter.AdapterTravelStory.TravelStoryCard[] getMenuItems() {
 
-        TravelStoryAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new TravelStoryAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        TravelStoryAdapter.AdapterTravelStory.TravelStoryCard []_arr = new TravelStoryAdapter.AdapterTravelStory.TravelStoryCard[]{
 
-                new TravelStoryAdapter.AdapterGridViewMenu.ItemsMenu(
+                new TravelStoryAdapter.AdapterTravelStory.TravelStoryCard(
                         getResources().getColor(R.color.my_gray),
                         R.drawable.icon_ellipse_red,
                         "Сегодня 10:10",
-                        new TravelStoryAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new TravelStoryAdapter.AdapterTravelStory.TravelStoryCard.CallBack() {
                             @Override
-                            public void call(TravelStoryAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(TravelStoryAdapter.AdapterTravelStory.TravelStoryCard itemsMenu) {
 
                                 try {
 

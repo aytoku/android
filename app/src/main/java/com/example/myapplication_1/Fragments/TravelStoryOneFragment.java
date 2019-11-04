@@ -67,9 +67,9 @@ public class TravelStoryOneFragment extends Fragment {
 
         try {
 
-            CellTravelStoryOneCardAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow[] itemsMenu = getMenuItems();
 
-            CellTravelStoryOneCardAdapter.AdapterGridViewMenu adapterGridViewMenu = new CellTravelStoryOneCardAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());
+            CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard adapterGridViewMenu = new CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -84,9 +84,9 @@ public class TravelStoryOneFragment extends Fragment {
 
         try {
 
-            CellTravelStoryOneAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems1();
+            CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc[] itemsMenu = getMenuItems1();
 
-            CellTravelStoryOneAdapter.AdapterGridViewMenu adapterGridViewMenu = new CellTravelStoryOneAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());
+            CellTravelStoryOneAdapter.AdapterTravelStoryOne adapterGridViewMenu = new CellTravelStoryOneAdapter.AdapterTravelStoryOne(itemsMenu, getActivity().getBaseContext());
             recyclerView.setAdapter( adapterGridViewMenu );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -97,17 +97,17 @@ public class TravelStoryOneFragment extends Fragment {
         }
     }
 
-    private CellTravelStoryOneCardAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow[] getMenuItems() {
 
-        CellTravelStoryOneCardAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new CellTravelStoryOneCardAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow []_arr = new CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow[]{
 
-                new CellTravelStoryOneCardAdapter.AdapterGridViewMenu.ItemsMenu(
+                new CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow(
                         getResources().getColor(R.color.my_gray),
                         "Сегодня 10:10",
                         R.drawable.icon_ellipse_red,
-                        new CellTravelStoryOneCardAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow.CallBack() {
                             @Override
-                            public void call(CellTravelStoryOneCardAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow itemsMenu) {
 
                                 try {
 
@@ -122,14 +122,19 @@ public class TravelStoryOneFragment extends Fragment {
         return _arr;
     }
 
-    private CellTravelStoryOneAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems1() {
+    private CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc[] getMenuItems1() {
 
-        CellTravelStoryOneAdapter.AdapterGridViewMenu.ItemsMenu []_arr1 = new CellTravelStoryOneAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc []_arr1 = new CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc[]{
 
-                new CellTravelStoryOneAdapter.AdapterGridViewMenu.ItemsMenu(
+                new CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc(
                         getResources().getColor(R.color.my_gray),
                         "Ожидание",
-                        "5 мин*3 \u20BD","15 \u20BD")
+                        "5 мин*3 \u20BD","15 \u20BD"),
+
+                new CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc(
+                        getResources().getColor(R.color.my_gray),
+                        "Дополнительные услуги",
+                        "Детское кресло, пустой багаж","30 \u20BD")
         };
         return _arr1;
     }

@@ -14,13 +14,13 @@ import com.example.myapplication_1.R;
 
 public class CellTravelStoryOneAdapter {
 
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public static class AdapterTravelStoryOne extends RecyclerView.Adapter<AdapterTravelStoryOne.ViewHolder> {
 
-        private final ItemsMenu[] itemsMenu;
+        private final PaymentDesc[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
+        public AdapterTravelStoryOne(AdapterTravelStoryOne.PaymentDesc[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -38,7 +38,7 @@ public class CellTravelStoryOneAdapter {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final PaymentDesc _item = itemsMenu[i];
 
             viewHolder.title.setText( _item.getTitle() );
             viewHolder.desc.setText( _item.getDesc() );
@@ -50,11 +50,11 @@ public class CellTravelStoryOneAdapter {
             return itemsMenu.length;
         }
 
-        public static class ItemsMenu {
+        public static class PaymentDesc {
 
 
             public interface CallBack {
-                void call(ItemsMenu itemsMenu);
+                void call(PaymentDesc itemsMenu);
             }
 
             private @ColorInt
@@ -63,7 +63,7 @@ public class CellTravelStoryOneAdapter {
             private String desc;
             private String cost;
 
-            public ItemsMenu(int colorBackgroundRes, String title,String desc, String cost) {
+            public PaymentDesc(int colorBackgroundRes, String title,String desc, String cost) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.title = title;
                 this.desc = desc;

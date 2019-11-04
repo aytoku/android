@@ -19,14 +19,14 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class CellTravelStoryOneCardAdapter {
 
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public static class AdapterTravelStoryOneCard extends RecyclerView.Adapter<AdapterTravelStoryOneCard.ViewHolder> {
 
-        private final ItemsMenu[] itemsMenu;
+        private final TravelStoryRow[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
         private final Drawable drawable;
 
-        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
+        public AdapterTravelStoryOneCard(AdapterTravelStoryOneCard.TravelStoryRow[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -46,7 +46,7 @@ public class CellTravelStoryOneCardAdapter {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final TravelStoryRow _item = itemsMenu[i];
 
             float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -64,11 +64,11 @@ public class CellTravelStoryOneCardAdapter {
             return itemsMenu.length;
         }
 
-        public static class ItemsMenu {
+        public static class TravelStoryRow {
 
 
             public interface CallBack {
-                void call(ItemsMenu itemsMenu);
+                void call(TravelStoryRow itemsMenu);
             }
 
             private @ColorInt
@@ -78,7 +78,7 @@ public class CellTravelStoryOneCardAdapter {
             private CallBack callBack;
             private String address;
 
-            public ItemsMenu(int colorBackgroundRes, String date, int imgResId, CallBack callBack,String address) {
+            public TravelStoryRow(int colorBackgroundRes, String date, int imgResId, CallBack callBack,String address) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.date = date;
                 this.imgResId = imgResId;
