@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication_1.MainActivityCountryCodeSelection;
 import com.example.myapplication_1.R;
 
 public class Auth111Fragment extends AppCompatActivity {
@@ -97,7 +96,7 @@ public class Auth111Fragment extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Auth111Fragment.this, MainActivityCountryCodeSelection.class);
+                Intent intent = new Intent(Auth111Fragment.this, CountryCodeSelectionFragment.class);
                 startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
             }
         });

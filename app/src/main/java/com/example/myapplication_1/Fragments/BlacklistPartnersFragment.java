@@ -1,40 +1,48 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.BlacklistPartnersAdapter;
+import com.example.myapplication_1.R;
 
-public class MainActivityBlacklistPartners extends AppCompatActivity {
+public class BlacklistPartnersFragment extends Fragment {
+
+    public static final String TAG = "BlacklistPartnersFragment";
+
+    public static BlacklistPartnersFragment getInstance(Bundle args) {
+
+        BlacklistPartnersFragment f = new BlacklistPartnersFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     RecyclerView rv;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.black_list_partner);
+        View view = inflater.inflate(R.layout.black_list_partner,
+                container, false);
 
-        rv = findViewById(R.id.ll_blackList_partner_recycler_partners);
+        rv = view.findViewById(R.id.ll_blackList_partner_recycler_partners);
+
+        return view;
 
     }
 
     @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-        return super.onCreateView(parent, name, context, attrs);
-    }
-
-    @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
@@ -42,10 +50,10 @@ public class MainActivityBlacklistPartners extends AppCompatActivity {
         try {
             BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            BlacklistPartnersAdapter.AdapterGridViewMenu adapterGridViewMenu = new BlacklistPartnersAdapter.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            BlacklistPartnersAdapter.AdapterGridViewMenu adapterGridViewMenu = new BlacklistPartnersAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {

@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,10 @@ import android.widget.ImageButton;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivityMachinePurposeTwo extends AppCompatActivity {
+import com.example.myapplication_1.TripDetailsFragment;
+import com.example.myapplication_1.R;
+
+public class MachinePurposeTwoFragment extends AppCompatActivity {
 
     ImageButton button;
     ImageButton button1;
@@ -33,7 +36,7 @@ public class MainActivityMachinePurposeTwo extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivityMachinePurposeTwo.this, MainActivityPaymentChange.class );
+                Intent intent = new Intent(MachinePurposeTwoFragment.this, PaymentChangeFragment.class );
                 startActivity(intent);
             }
         });
@@ -44,7 +47,7 @@ public class MainActivityMachinePurposeTwo extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivityMachinePurposeTwo.this, MainActivityTripDetails.class );
+                Intent intent = new Intent(MachinePurposeTwoFragment.this, TripDetailsFragment.class );
                 startActivity(intent);
             }
         });

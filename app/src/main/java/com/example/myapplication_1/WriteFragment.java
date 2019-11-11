@@ -5,13 +5,13 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivityRefusePayment extends AppCompatActivity {
+public class WriteFragment extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.refuse_payment_method);
+        setContentView(R.layout.machine_purpose1);
     }
 }

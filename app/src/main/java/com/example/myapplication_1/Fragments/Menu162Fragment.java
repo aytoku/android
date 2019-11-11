@@ -1,36 +1,48 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.AdapterMenu162;
+import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivityMenu162 extends AppCompatActivity {
+public class Menu162Fragment extends Fragment {
+
+    public static final String TAG = "Menu162Fragment";
+
+    public static Menu162Fragment getInstance(Bundle args) {
+
+        Menu162Fragment f = new Menu162Fragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AdapterMenu162.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.menu_1_6_2);
+        View view = inflater.inflate(R.layout.menu_1_6_2,
+                container, false);
 
-        rv = findViewById(R.id.rl_menu_1_6_2_recycler);
+
+        rv = view.findViewById(R.id.rl_menu_1_6_2_recycler);
 
         final RecyclerView recyclerViewMenu = rv;
 
@@ -38,25 +50,20 @@ public class MainActivityMenu162 extends AppCompatActivity {
 
             AdapterMenu162.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AdapterMenu162.AdapterGridViewMenu(itemsMenuList, getBaseContext());
+            adapterGridViewMenu = new AdapterMenu162.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ));
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
+        return view;
     }
 
     @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-        return super.onCreateView(parent, name, context, attrs);
-    }
-
-    @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
     }
 

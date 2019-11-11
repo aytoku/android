@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.CountryCodeSelectionAdapter;
-import com.example.myapplication_1.Fragments.Auth111Fragment;
+import com.example.myapplication_1.R;
 
-public class MainActivityCountryCodeSelection extends AppCompatActivity {
+public class CountryCodeSelectionFragment extends AppCompatActivity {
 
     ImageButton androidImageButton;
 
@@ -40,7 +40,7 @@ public class MainActivityCountryCodeSelection extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivityCountryCodeSelection.this, Auth111Fragment.class );
+                Intent intent = new Intent(CountryCodeSelectionFragment.this, Auth111Fragment.class );
                 startActivity(intent);
             }
         });

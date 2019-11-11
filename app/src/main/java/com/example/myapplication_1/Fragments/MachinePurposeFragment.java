@@ -1,36 +1,47 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.MachinePurposeAdapter;
+import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivityMachinePurpose extends AppCompatActivity {
+public class MachinePurposeFragment extends Fragment {
+
+    public static final String TAG = "MachinePurposeFragment";
+
+    public static MachinePurposeFragment getInstance(Bundle args) {
+
+        MachinePurposeFragment f = new MachinePurposeFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
     private List<MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.machine_purpose_recycler);
+        View view = inflater.inflate(R.layout.machine_purpose_recycler,
+                container, false);
 
-        rv = findViewById(R.id.ll_machine_purpose_recycler_rv);
+        rv = view.findViewById(R.id.ll_machine_purpose_recycler_rv);
 
         final RecyclerView recyclerViewMenu = rv;
 
@@ -38,25 +49,21 @@ public class MainActivityMachinePurpose extends AppCompatActivity {
 
             MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new MachinePurposeAdapter.AdapterGridViewMenu(itemsMenuList, getBaseContext());
+            adapterGridViewMenu = new MachinePurposeAdapter.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ));
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
+
+        return view;
     }
 
     @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-        return super.onCreateView(parent, name, context, attrs);
-    }
-
-    @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
     }
 

@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.AdapterWish;
 
-public class MainActivityWish extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+public class WishFragment extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
     TextView textView;
     TextView cost_desc;

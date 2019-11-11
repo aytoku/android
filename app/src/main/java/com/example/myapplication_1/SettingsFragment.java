@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.SettingsAdapter;
 
-public class MainActivitySettings extends AppCompatActivity {
+public class SettingsFragment extends AppCompatActivity {
 
     RecyclerView rv;
 
