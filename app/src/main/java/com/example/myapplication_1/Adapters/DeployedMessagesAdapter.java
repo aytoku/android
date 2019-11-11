@@ -49,6 +49,13 @@ public class DeployedMessagesAdapter {
             return itemViewHolder;
         }
 
+        public ViewHolder1 onCreateViewHolder1(@NonNull ViewGroup viewGroup, int i){
+
+            View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
+            ViewHolder1 itemViewHolder1 = new ViewHolder1(view1);
+            return itemViewHolder1;
+        }
+
         @Override
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
@@ -108,6 +115,20 @@ public class DeployedMessagesAdapter {
                 desc = itemView.findViewById(R.id.rl_cell_deployed_messages_desc);
                 relativeLayout = itemView.findViewById(R.id.rl_cell_deployed_messages);
                 imageView  = itemView.findViewById(R.id.rl_cell_deployed_messages_button);
+            }
+        }
+
+        class ViewHolder1 extends RecyclerView.ViewHolder{
+            private final TextView textView;
+            private final ImageView imageView;
+            private final TextView textView1;
+
+            public ViewHolder1(@NonNull View itemView){
+                super(itemView);
+                textView = itemView.findViewById(R.id.ll_cell_deployed_messages_2_title1);
+                imageView = itemView.findViewById(R.id.ll_cell_deployed_messages_2_img);
+                textView1 = itemView.findViewById(R.id.ll_cell_deployed_messages_2_title2);
+
             }
         }
     }

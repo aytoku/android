@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication_1.Fragments.MachinePurposeTwoFragment;
+import com.example.myapplication_1.R;
 
 public class TripDetailsFragment extends AppCompatActivity {
 

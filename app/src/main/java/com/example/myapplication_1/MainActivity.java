@@ -11,6 +11,7 @@ import com.example.myapplication_1.Fragments.AlertFragment;
 import com.example.myapplication_1.Fragments.AssistantFragment;
 import com.example.myapplication_1.Fragments.CodeScreenFragment;
 import com.example.myapplication_1.Fragments.DeployedMessagesFragment;
+import com.example.myapplication_1.Fragments.MachinePurposeTwoFragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
 import com.example.myapplication_1.Fragments.RatingFragment;
 import com.example.myapplication_1.Fragments.TravelStoryFragment;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(null);
 
+        MachinePurposeTwoFragment machinePurposeTwoFragment = MachinePurposeTwoFragment.getInstance(null);
+
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, ratingFragment, RatingFragment.TAG).hide(ratingFragment);
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, addressFragment, AddressFragment.TAG).hide(addressFragment);
@@ -55,13 +58,15 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, codeScreenFragment, CodeScreenFragment.TAG).hide(codeScreenFragment);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, deployedMessagesFragment, DeployedMessagesFragment.TAG).hide(deployedMessagesFragment);
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, deployedMessagesFragment, DeployedMessagesFragment.TAG).commit();
+
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, machinePurposeTwoFragment, MachinePurposeTwoFragment.TAG).hide(machinePurposeTwoFragment);
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, orderAcceptFragment, OrderAcceptFragment.TAG).hide(orderAcceptFragment);
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, assistantFragment, AssistantFragment.TAG).hide(assistantFragment);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, travelStoryFragment, TravelStoryFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, travelStoryFragment, TravelStoryFragment.TAG).hide(travelStoryFragment);
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, travelStoryOneFragment, TravelStoryOneFragment.TAG).hide(travelStoryOneFragment);
     }

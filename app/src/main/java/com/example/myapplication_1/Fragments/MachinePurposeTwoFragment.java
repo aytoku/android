@@ -1,34 +1,51 @@
 package com.example.myapplication_1.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.example.myapplication_1.TripDetailsFragment;
 import com.example.myapplication_1.R;
 
-public class MachinePurposeTwoFragment extends AppCompatActivity {
+public class MachinePurposeTwoFragment extends Fragment {
+
+    public static final String TAG = "MachinePurposeTwoFragment";
+
+    public static MachinePurposeTwoFragment getInstance(Bundle args) {
+
+        MachinePurposeTwoFragment f = new MachinePurposeTwoFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     ImageButton button;
     ImageButton button1;
+    Fragment paymentChangeFragment;
+    Fragment tripDetailsFragment;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.cell_machine_purpose2);
+        View view = inflater.inflate(R.layout.cell_machine_purpose2,
+                container, false);
 
-        button = findViewById(R.id.ll_machine_purpose2_imgButton);
 
-        button1 = findViewById(R.id.ll_machine_purpose2_rl_cell_machine_purpose2_1_imgButton);
+        button = view.findViewById(R.id.ll_machine_purpose2_imgButton);
+
+        button1 = view.findViewById(R.id.ll_machine_purpose2_rl_cell_machine_purpose2_1_imgButton);
 
         addListener();
         addListener2();
+
+        return view;
     }
 
     public void addListener(){
@@ -36,8 +53,12 @@ public class MachinePurposeTwoFragment extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MachinePurposeTwoFragment.this, PaymentChangeFragment.class );
-                startActivity(intent);
+
+                paymentChangeFragment = new MachinePurposeTwoFragment();
+
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, paymentChangeFragment);
+                fragmentTransaction.commit();
             }
         });
     }
@@ -47,8 +68,12 @@ public class MachinePurposeTwoFragment extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MachinePurposeTwoFragment.this, TripDetailsFragment.class );
-                startActivity(intent);
+
+                tripDetailsFragment = new MachinePurposeTwoFragment();
+
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, tripDetailsFragment);
+                fragmentTransaction.commit();
             }
         });
     }

@@ -1,21 +1,31 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.AdapterWish;
+import com.example.myapplication_1.R;
 
-public class WishFragment extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeListener {
+
+    public static final String TAG = "WishFragment";
+
+    public static WishFragment getInstance(Bundle args) {
+
+        WishFragment f = new WishFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     TextView textView;
     TextView cost_desc;
@@ -23,19 +33,24 @@ public class WishFragment extends AppCompatActivity implements SeekBar.OnSeekBar
     RecyclerView rv;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.wishes);
+        View view = inflater.inflate(R.layout.wishes,
+                container, false);
 
-        rv = findViewById(R.id.ll_recycler_wishes);
-        textView = findViewById(R.id.ll_travel_cost_change_txtView);
-        cost_desc = findViewById(R.id.ll_cell_travel_cost_description);
-        desc = findViewById(R.id.desc);
-        final SeekBar see = findViewById(R.id.ll_travel_cost_change_seekBar);
+        rv = view.findViewById(R.id.ll_recycler_wishes);
+        textView = view.findViewById(R.id.ll_travel_cost_change_txtView);
+        cost_desc = view.findViewById(R.id.ll_cell_travel_cost_description);
+        desc = view.findViewById(R.id.desc);
+        final SeekBar see = view.findViewById(R.id.ll_travel_cost_change_seekBar);
         see.setOnSeekBarChangeListener(this);
         textView.setText("0 \u20BD");
         cost_desc.setText("0 \u20BD");
+
+        return view;
     }
             @Override
             public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {}
@@ -82,14 +97,9 @@ public class WishFragment extends AppCompatActivity implements SeekBar.OnSeekBar
                 textView.setText(String.valueOf(see.getProgress()));
             }
 
-    @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-        return super.onCreateView(parent, name, context, attrs);
-    }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
@@ -97,10 +107,10 @@ public class WishFragment extends AppCompatActivity implements SeekBar.OnSeekBar
         try {
             AdapterWish.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
 
-            AdapterWish.AdapterGridViewMenu adapterGridViewMenu = new AdapterWish.AdapterGridViewMenu(itemsMenu, getBaseContext());
+            AdapterWish.AdapterGridViewMenu adapterGridViewMenu = new AdapterWish.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager(getBaseContext(), RecyclerView.VERTICAL, false));
+                    new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
             recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
 
         } catch (NullPointerException e) {
@@ -129,6 +139,5 @@ public class WishFragment extends AppCompatActivity implements SeekBar.OnSeekBar
         return _arr;
     }
 
-    @Override
     public void onPointerCaptureChanged(boolean hasCapture) {}
 }

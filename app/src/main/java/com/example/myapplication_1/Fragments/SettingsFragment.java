@@ -1,39 +1,48 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.SettingsAdapter;
+import com.example.myapplication_1.R;
 
-public class SettingsFragment extends AppCompatActivity {
+public class SettingsFragment extends Fragment {
+
+    public static final String TAG = "SettingsFragment";
+
+    public static SettingsFragment getInstance(Bundle args) {
+
+        SettingsFragment f = new SettingsFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     RecyclerView rv;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.settings);
+        View view = inflater.inflate(R.layout.settings,
+                container, false);
 
-        rv = findViewById(R.id.recycler_settings);
+        rv = view.findViewById(R.id.recycler_settings);
+
+        return view;
     }
 
     @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-        return super.onCreateView(parent, name, context, attrs);
-    }
-
-    @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
@@ -41,10 +50,10 @@ public class SettingsFragment extends AppCompatActivity {
         try {
             SettingsAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            SettingsAdapter.AdapterGridViewMenu adapterGridViewMenu = new SettingsAdapter.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            SettingsAdapter.AdapterGridViewMenu adapterGridViewMenu = new SettingsAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
