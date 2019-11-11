@@ -46,14 +46,14 @@ public class DeployedMessagesAdapter {
 
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
             ViewHolder itemViewHolder = new ViewHolder(view);
+
+            if(i == 2) {
+
+                View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
+                ViewHolder1 itemViewHolder1 = new ViewHolder1(view1);
+            }
+
             return itemViewHolder;
-        }
-
-        public ViewHolder1 onCreateViewHolder1(@NonNull ViewGroup viewGroup, int i){
-
-            View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
-            ViewHolder1 itemViewHolder1 = new ViewHolder1(view1);
-            return itemViewHolder1;
         }
 
         @Override
@@ -128,7 +128,6 @@ public class DeployedMessagesAdapter {
                 textView = itemView.findViewById(R.id.ll_cell_deployed_messages_2_title1);
                 imageView = itemView.findViewById(R.id.ll_cell_deployed_messages_2_img);
                 textView1 = itemView.findViewById(R.id.ll_cell_deployed_messages_2_title2);
-
             }
         }
     }

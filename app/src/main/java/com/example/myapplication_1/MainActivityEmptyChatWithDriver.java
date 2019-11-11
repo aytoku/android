@@ -99,4 +99,3 @@ public class MainActivityEmptyChatWithDriver extends AppCompatActivity {
         return _arr;
     }
 }
-

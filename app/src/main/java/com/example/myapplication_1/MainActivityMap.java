@@ -272,4 +272,3 @@ public class MainActivityMap extends AppCompatActivity {
         }
     }
 }
-

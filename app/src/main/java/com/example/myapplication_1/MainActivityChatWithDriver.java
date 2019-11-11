@@ -98,4 +98,3 @@ public class MainActivityChatWithDriver extends AppCompatActivity {
         return _arr;
     }
 }
-

@@ -1,44 +1,53 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.MainActivityAdapter;
+import com.example.myapplication_1.R;
 
-public class MainActivityCarCard extends AppCompatActivity {
+public class CarCardFragment extends Fragment {
+
+    public static final String TAG = "CarCardFragment";
+
+    public static CarCardFragment getInstance(Bundle args) {
+
+        CarCardFragment f = new CarCardFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     ImageButton androidImageButton;
 
     RecyclerView rv;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        androidImageButton = findViewById(R.id.img_cross_grey);
 
-        setContentView(R.layout.main_recycler);
+        View view = inflater.inflate(R.layout.main_recycler,
+                container, false);
 
-        rv = findViewById(R.id.recycler);
+        androidImageButton = view.findViewById(R.id.img_cross_grey);
+
+        rv = view.findViewById(R.id.recycler);
+
+        return view;
     }
 
     @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-        return super.onCreateView(parent, name, context, attrs);
-    }
-
-    @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
@@ -47,10 +56,10 @@ public class MainActivityCarCard extends AppCompatActivity {
 
             MainActivityAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            MainActivityAdapter.AdapterGridViewMenu adapterGridViewMenu = new MainActivityAdapter.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            MainActivityAdapter.AdapterGridViewMenu adapterGridViewMenu = new MainActivityAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.HORIZONTAL, false ) );
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
@@ -154,4 +163,3 @@ public class MainActivityCarCard extends AppCompatActivity {
         return _arr;
     }
 }
-

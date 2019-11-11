@@ -20,10 +20,8 @@ public class MainActivityChat extends AppCompatActivity {
 
     RecyclerView rv;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         androidImageButton = findViewById(R.id.img_cross_grey);
@@ -31,7 +29,6 @@ public class MainActivityChat extends AppCompatActivity {
         setContentView(R.layout.empty_chat_with_driver);
 
         rv = findViewById(R.id.rl_empty_chat_with_driver_recycler);
-
     }
 
     @Override
@@ -99,4 +96,3 @@ public class MainActivityChat extends AppCompatActivity {
         return _arr;
     }
 }
-

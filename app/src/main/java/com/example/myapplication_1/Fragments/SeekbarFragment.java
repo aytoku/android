@@ -1,26 +1,46 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-public class MainActivitySeekbar extends Activity implements SeekBar.OnSeekBarChangeListener{
+import com.example.myapplication_1.R;
+
+public class SeekbarFragment extends Fragment implements SeekBar.OnSeekBarChangeListener{
+
+    public static final String TAG = "SeekbarFragment";
+
+    public static SeekbarFragment getInstance(Bundle args) {
+
+        SeekbarFragment f = new SeekbarFragment();
+        f.setArguments(args);
+
+        return f;
+    }
+
     TextView m;
     int b = 0;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.cell_travels_cost_change);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        final SeekBar see = findViewById(R.id.ll_travel_cost_change_seekBar);
+        super.onCreate(savedInstanceState);
+
+        View view = inflater.inflate(R.layout.cell_travels_cost_change,
+                container, false);
+
+        final SeekBar see = view.findViewById(R.id.ll_travel_cost_change_seekBar);
         see.setOnSeekBarChangeListener(this);
-        m = findViewById(R.id.ll_travel_cost_change_txtView);
+        m = view.findViewById(R.id.ll_travel_cost_change_txtView);
         m.setText("0");
 
+        return view;
     }
 
     @Override
