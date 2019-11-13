@@ -1,15 +1,28 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-public class MainActivityPaymentPick extends AppCompatActivity {
+import com.example.myapplication_1.R;
+
+public class PaymentPickFragment extends Fragment {
+
+    public static final String TAG = "PaymentPickFragment";
+
+    public static PaymentPickFragment getInstance(Bundle args) {
+
+        PaymentPickFragment f = new PaymentPickFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     private ImageView imgChecked;
     private ImageView imgUnchecked;
@@ -18,20 +31,22 @@ public class MainActivityPaymentPick extends AppCompatActivity {
     boolean f = true;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.payment_pick);
+        View view = inflater.inflate(R.layout.payment_pick,
+                container, false);
 
         imgToggleGrey = getResources().getDrawable(R.drawable.togle_uncheked);
         imgToggleRed = getResources().getDrawable(R.drawable.toggle_checked);
 
-        RelativeLayout toggleChecked = findViewById(R.id.rl_payment_pick_rl_visa);
-        RelativeLayout toggleUnchecked = findViewById(R.id.rl_payment_pick_rl_ruble);
+        RelativeLayout toggleChecked = view.findViewById(R.id.rl_payment_pick_rl_visa);
+        RelativeLayout toggleUnchecked = view.findViewById(R.id.rl_payment_pick_rl_ruble);
 
-        imgChecked = findViewById(R.id.rl_payment_ready_toggleChecked);
-        imgUnchecked = findViewById(R.id.rl_payment_ready_toggleUnchecked);
+        imgChecked = view.findViewById(R.id.rl_payment_ready_toggleChecked);
+        imgUnchecked = view.findViewById(R.id.rl_payment_ready_toggleUnchecked);
 
         toggleChecked.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,5 +67,7 @@ public class MainActivityPaymentPick extends AppCompatActivity {
                 }
             }
         });
+
+        return view;
     }
 }

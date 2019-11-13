@@ -1,57 +1,64 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.EmptyChatWithDriverAdapter;
+import com.example.myapplication_1.R;
 
-public class MainActivityEmptyChatWithDriver extends AppCompatActivity {
+public class EmptyChatWithDriverFragment extends Fragment {
+
+    public static final String TAG = "EmptyChatWithDriverFragment";
+
+    public static EmptyChatWithDriverFragment getInstance(Bundle args) {
+
+        EmptyChatWithDriverFragment f = new EmptyChatWithDriverFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     ImageButton androidImageButton;
 
     RecyclerView rv;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        androidImageButton = findViewById(R.id.img_cross_grey);
 
-        setContentView(R.layout.empty_chat_with_driver);
+        View view = inflater.inflate(R.layout.empty_chat_with_driver,
+                container, false);
+        androidImageButton = view.findViewById(R.id.img_cross_grey);
 
-        rv = findViewById(R.id.rl_empty_chat_with_driver_recycler);
+        rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
 
+        return view;
     }
 
     @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-        return super.onCreateView(parent, name, context, attrs);
-    }
-
-    @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
 
         try {
 
-            EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
 
-            EmptyChatWithDriverAdapter.AdapterGridViewMenu adapterGridViewMenu = new EmptyChatWithDriverAdapter.AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            EmptyChatWithDriverAdapter.AdapterGridViewMenu adapterGridViewMenu = new EmptyChatWithDriverAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.HORIZONTAL, false ) );
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {

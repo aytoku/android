@@ -1,20 +1,20 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.AdapterCreateOrder115;
+import com.example.myapplication_1.R;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -23,23 +23,34 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivityCreateOrder115 extends AppCompatActivity {
+public class CreateOrder115Fragment extends Fragment {
+
+    public static final String TAG = "CreateOrder115Fragment";
+
+    public static CreateOrder115Fragment getInstance(Bundle args) {
+
+        CreateOrder115Fragment f = new CreateOrder115Fragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
     Button button;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.create_order_1_1_5);
+        View view = inflater.inflate(R.layout.create_order_1_1_5,
+                container, false);
 
-        rv = findViewById(R.id.ll_create_order_1_1_5_recycler);
+        rv = view.findViewById(R.id.ll_create_order_1_1_5_recycler);
 
-        button = findViewById(R.id.ll_create_order_1_1_5_add_stop);
+        button = view.findViewById(R.id.ll_create_order_1_1_5_add_stop);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,10 +66,10 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
             AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenuList, getBaseContext());
+            adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ));
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
@@ -86,6 +97,8 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(helper);
         itemTouchHelper.attachToRecyclerView(rv);
+
+        return view;
     }
 
     public void onAddButtonClicked(View view) {
@@ -99,19 +112,13 @@ public class MainActivityCreateOrder115 extends AppCompatActivity {
             adapterGridViewMenu.notifyDataSetChanged();
 
         } catch(NumberFormatException e) {
-            Toast.makeText(getApplicationContext(), "The field is empty",
+            Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
                     Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-
-        return super.onCreateView(parent, name, context, attrs);
-    }
-
-    @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
     }
 

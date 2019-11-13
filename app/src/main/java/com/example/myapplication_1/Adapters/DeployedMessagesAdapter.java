@@ -20,7 +20,7 @@ import java.util.List;
 
 public class DeployedMessagesAdapter {
 
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public static class AdapterGridViewMenu extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private Context context;
@@ -42,35 +42,44 @@ public class DeployedMessagesAdapter {
 
         @NonNull
         @Override
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
-            ViewHolder itemViewHolder = new ViewHolder(view);
+            RecyclerView.ViewHolder itemViewHolder = null;
 
-            if(i == 2) {
+            if(i >= 0 && i != 2) {
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
+                itemViewHolder = new ViewHolder(view);
 
+            }else{
                 View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
-                ViewHolder1 itemViewHolder1 = new ViewHolder1(view1);
+                itemViewHolder = new ViewHolder1(view1);
             }
-
-            return itemViewHolder;
+            return (RecyclerView.ViewHolder)itemViewHolder;
         }
 
         @Override
-        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
 
             final ItemsMenu _item = itemsMenuList.get(i);
 
-            viewHolder.title.setText(_item.getTitle());
-
-            viewHolder.desc.setText(_item.getDesc());
-
-            if(i == 0){
-                viewHolder.relativeLayout.setBackground(card);
+            if (i == 0) {
+                ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
             }else{
-                viewHolder.relativeLayout.setBackground(card_draw);
-                viewHolder.imageView.setVisibility(View.GONE);
+                ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
+                ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
             }
+
+            if(i==2){
+                if(viewHolder instanceof ViewHolder1) {
+
+                    viewHolder = (ViewHolder1)viewHolder;
+                }
+                }else{
+
+                    viewHolder = (ViewHolder)viewHolder;
+                    ((ViewHolder) viewHolder).title.setText(_item.getTitle());
+                    ((ViewHolder) viewHolder).desc.setText(_item.getDesc());
+                }
         }
 
         @Override
@@ -119,6 +128,7 @@ public class DeployedMessagesAdapter {
         }
 
         class ViewHolder1 extends RecyclerView.ViewHolder{
+
             private final TextView textView;
             private final ImageView imageView;
             private final TextView textView1;
