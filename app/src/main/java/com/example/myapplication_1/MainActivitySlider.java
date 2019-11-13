@@ -11,7 +11,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;
 
-public class MainAcitivitySlider extends Activity {
+public class MainActivitySlider extends Activity {
 
     ViewPager viewPager;
     TabLayout tabLayout;

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.myapplication_1.MainAcitivitySlider;
+import com.example.myapplication_1.MainActivitySlider;
 import com.example.myapplication_1.R;
 
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     private List<String> strings_desc = new ArrayList<>();
     private Button button;
 
-    public ViewPagerAdapter(MainAcitivitySlider context) throws IOException {
+    public ViewPagerAdapter(MainActivitySlider context) throws IOException {
         this.context = context;
 
         InputStream in = context.getAssets().open("img/scene1.png");
