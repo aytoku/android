@@ -44,9 +44,10 @@ public class DeployedMessagesAdapter {
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-            RecyclerView.ViewHolder itemViewHolder = null;
+            RecyclerView.ViewHolder itemViewHolder;
 
-            if(i >= 0 && i != 2) {
+            if(i == 0) {
+
                 View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
                 itemViewHolder = new ViewHolder(view);
 
@@ -62,24 +63,20 @@ public class DeployedMessagesAdapter {
 
             final ItemsMenu _item = itemsMenuList.get(i);
 
-            if (i == 0) {
-                ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
-            }else{
-                ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
-                ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
-            }
-
-            if(i==2){
+            if(i == 2){
                 if(viewHolder instanceof ViewHolder1) {
 
                     viewHolder = (ViewHolder1)viewHolder;
                 }
-                }else{
-
+             }else{
+                if (i == 0) {
                     viewHolder = (ViewHolder)viewHolder;
-                    ((ViewHolder) viewHolder).title.setText(_item.getTitle());
-                    ((ViewHolder) viewHolder).desc.setText(_item.getDesc());
+                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
+                }else{
+                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
+                    ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
                 }
+            }
         }
 
         @Override
