@@ -46,7 +46,7 @@ public class DeployedMessagesAdapter {
 
             RecyclerView.ViewHolder itemViewHolder;
 
-            if(i == 0) {
+            if(i >= 0 && i!= 2) {
 
                 View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
                 itemViewHolder = new ViewHolder(view);
@@ -63,20 +63,30 @@ public class DeployedMessagesAdapter {
 
             final ItemsMenu _item = itemsMenuList.get(i);
 
-            if(i == 2){
-                if(viewHolder instanceof ViewHolder1) {
+//            if(i == 0){
+//                viewHolder = (ViewHolder) viewHolder;
+//                ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
+//            }else if(i == 2){
+//                viewHolder = (ViewHolder1)viewHolder;
+//            }else{
+//                ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
+//                ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
+//            }
 
-                    viewHolder = (ViewHolder1)viewHolder;
-                }
-             }else{
-                if (i == 0) {
-                    viewHolder = (ViewHolder)viewHolder;
-                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
-                }else{
-                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
-                    ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
-                }
-            }
+//            if(i == 2){
+//                if(viewHolder instanceof ViewHolder1) {
+//
+//                    viewHolder = (ViewHolder1)viewHolder;
+//                }
+//             }else{
+//                if (i == 0) {
+//                    viewHolder = (ViewHolder)viewHolder;
+//                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
+//                }else{
+//                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
+//                    ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
+//                }
+//            }
         }
 
         @Override
