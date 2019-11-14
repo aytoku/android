@@ -31,7 +31,7 @@ public class Menu11Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<AdapterMenu11.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    private List<AdapterMenu11.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,9 +47,9 @@ public class Menu11Fragment extends Fragment {
 
         try {
 
-            AdapterMenu11.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            AdapterMenu11.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AdapterMenu11.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -61,39 +61,38 @@ public class Menu11Fragment extends Fragment {
         return view;
     }
 
-    private AdapterMenu11.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private AdapterMenu11.ItemsMenu[] getMenuItems() {
 
-        AdapterMenu11.AdapterGridViewMenu.ItemsMenu[] arr = new AdapterMenu11.AdapterGridViewMenu.ItemsMenu[]{
+        AdapterMenu11.ItemsMenu[] arr = new AdapterMenu11.ItemsMenu[]{
 
-                new AdapterMenu11.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "+7 963 377 88 44"),
 
-                new AdapterMenu11.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Способы оплаты"),
 
-                new AdapterMenu11.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Бонусы"),
 
-                new AdapterMenu11.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "История поездок"),
 
-                new AdapterMenu11.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Мои адреса"),
 
-                new AdapterMenu11.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Настройки"),
 
-                new AdapterMenu11.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Информация")
         };
         return arr;
     }
 }
-

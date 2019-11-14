@@ -31,7 +31,7 @@ public class MachinePurposeFragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    private List<MachinePurposeAdapter.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,9 +47,9 @@ public class MachinePurposeFragment extends Fragment {
 
         try {
 
-            MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            MachinePurposeAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new MachinePurposeAdapter.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new MachinePurposeAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -67,11 +67,11 @@ public class MachinePurposeFragment extends Fragment {
         super.onStart();
     }
 
-    private MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private MachinePurposeAdapter.ItemsMenu[] getMenuItems() {
 
-        MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu[] arr = new MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        MachinePurposeAdapter.ItemsMenu[] arr = new MachinePurposeAdapter.ItemsMenu[]{
 
-                new MachinePurposeAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new MachinePurposeAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
 
                         R.drawable.icon_grey_plus,
                         "Добавить остановку",
@@ -80,4 +80,3 @@ public class MachinePurposeFragment extends Fragment {
         return arr;
     }
 }
-

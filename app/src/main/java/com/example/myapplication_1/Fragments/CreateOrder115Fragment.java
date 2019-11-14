@@ -37,7 +37,7 @@ public class CreateOrder115Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    private List<AdapterCreateOrder115.ItemsMenu> itemsMenuList;
     Button button;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,9 +64,9 @@ public class CreateOrder115Fragment extends Fragment {
 
         try {
 
-            AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            AdapterCreateOrder115.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AdapterCreateOrder115.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new AdapterCreateOrder115(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -104,7 +104,7 @@ public class CreateOrder115Fragment extends Fragment {
     public void onAddButtonClicked(View view) {
 
         try {
-            itemsMenuList.add(itemsMenuList.size(), new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+            itemsMenuList.add(itemsMenuList.size(), new AdapterCreateOrder115.ItemsMenu(getResources().getColor(R.color.my_gray),
                     R.drawable.ic_cross,
                     "Максима Горького, 123",
                     R.drawable.icon_three_lines));
@@ -122,23 +122,23 @@ public class CreateOrder115Fragment extends Fragment {
         super.onStart();
     }
 
-    private AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private AdapterCreateOrder115.ItemsMenu[] getMenuItems() {
 
-        AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[] arr = new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu[]{
+        AdapterCreateOrder115.ItemsMenu[] arr = new AdapterCreateOrder115.ItemsMenu[]{
 
-                new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
+                new AdapterCreateOrder115.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.drawable.ic_cross,
                         "Максима Горького, 123",
                         R.drawable.icon_three_lines),
 
-                new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
+                new AdapterCreateOrder115.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.drawable.ic_cross,
                         "Коста, 222",
                         R.drawable.icon_three_lines),
 
-                new AdapterCreateOrder115.AdapterGridViewMenu.ItemsMenu(
+                new AdapterCreateOrder115.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.drawable.ic_cross,
                         "Максима Горького, 23",

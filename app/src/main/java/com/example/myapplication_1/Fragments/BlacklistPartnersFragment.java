@@ -48,9 +48,9 @@ public class BlacklistPartnersFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            BlacklistPartnersAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            BlacklistPartnersAdapter.AdapterGridViewMenu adapterGridViewMenu = new BlacklistPartnersAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
+            BlacklistPartnersAdapter adapterGridViewMenu = new BlacklistPartnersAdapter(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -61,35 +61,35 @@ public class BlacklistPartnersFragment extends Fragment {
         }
     }
 
-    private BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private BlacklistPartnersAdapter.ItemsMenu[] getMenuItems() {
 
-        BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        BlacklistPartnersAdapter.ItemsMenu []_arr = new BlacklistPartnersAdapter.ItemsMenu[]{
 
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.checkbox,
                         "Партнер 1"),
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.icon_accept_checkbox,
                         "Партнер 2"),
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.icon_accept_checkbox,
                         "Партнер 2"),
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.icon_accept_checkbox,
                         "Партнер 2"),
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.icon_accept_checkbox,
                         "Партнер 2"),
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.checkbox,
                         "Партнер 1"),
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.checkbox,
                         "Партнер 1"),
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.checkbox,
                         "Партнер 1"),
-                new BlacklistPartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.checkbox,
                         "Партнер 1")
         };

@@ -60,9 +60,9 @@ public class CountryCodeSelectionFragment extends AppCompatActivity {
 
         try {
 
-            CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            CountryCodeSelectionAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            CountryCodeSelectionAdapter.AdapterGridViewMenu adapterGridViewMenu = new CountryCodeSelectionAdapter.AdapterGridViewMenu(itemsMenu, getBaseContext());
+            CountryCodeSelectionAdapter adapterGridViewMenu = new CountryCodeSelectionAdapter(itemsMenu, getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -73,18 +73,18 @@ public class CountryCodeSelectionFragment extends AppCompatActivity {
         }
     }
 
-    private CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private CountryCodeSelectionAdapter.ItemsMenu[] getMenuItems() {
 
-        CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        CountryCodeSelectionAdapter.ItemsMenu []_arr = new CountryCodeSelectionAdapter.ItemsMenu[]{
 
-                new CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu(
+                new CountryCodeSelectionAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Г",
                         R.mipmap.georgia,
                         "Грузия",
-                        new CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new CountryCodeSelectionAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(CountryCodeSelectionAdapter.ItemsMenu itemsMenu) {
 
                                 try{
 
@@ -100,13 +100,13 @@ public class CountryCodeSelectionFragment extends AppCompatActivity {
                             }
                         },"+995"),
 
-                new CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu(
+                new CountryCodeSelectionAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),"Р",
                         R.mipmap.russia,
                         "Россия",
-                        new CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new CountryCodeSelectionAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(CountryCodeSelectionAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(CountryCodeSelectionAdapter.ItemsMenu itemsMenu) {
 
                                 try{
 

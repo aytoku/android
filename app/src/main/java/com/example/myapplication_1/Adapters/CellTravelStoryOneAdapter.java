@@ -12,15 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
 
-public class CellTravelStoryOneAdapter {
-
-    public static class AdapterTravelStoryOne extends RecyclerView.Adapter<AdapterTravelStoryOne.ViewHolder> {
+    public class CellTravelStoryOneAdapter extends RecyclerView.Adapter<CellTravelStoryOneAdapter.ViewHolder> {
 
         private final PaymentDesc[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public AdapterTravelStoryOne(AdapterTravelStoryOne.PaymentDesc[] itemsMenu, Context context) {
+        public CellTravelStoryOneAdapter(CellTravelStoryOneAdapter.PaymentDesc[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -101,4 +99,3 @@ public class CellTravelStoryOneAdapter {
             }
         }
     }
-}

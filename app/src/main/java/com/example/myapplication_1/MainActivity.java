@@ -19,6 +19,7 @@ import com.example.myapplication_1.Fragments.DriverChatFragment;
 import com.example.myapplication_1.Fragments.EarningsFragment;
 import com.example.myapplication_1.Fragments.EmptyChatWithDriverFragment;
 import com.example.myapplication_1.Fragments.EnergyReductionFragment;
+import com.example.myapplication_1.Fragments.Error12Fragment;
 import com.example.myapplication_1.Fragments.ErrorOneFragment;
 import com.example.myapplication_1.Fragments.ErrorTwoFragment;
 import com.example.myapplication_1.Fragments.InformationFragment;
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         EnergyReductionFragment energyReductionFragment = EnergyReductionFragment.getInstance(null);
         ErrorOneFragment errorOneFragment = ErrorOneFragment.getInstance(null);
         ErrorTwoFragment errorTwoFragment = ErrorTwoFragment.getInstance(null);
+        Error12Fragment error12Fragment = Error12Fragment.getInstance(null);
 
         InformationFragment informationFragment = InformationFragment.getInstance(null);
 

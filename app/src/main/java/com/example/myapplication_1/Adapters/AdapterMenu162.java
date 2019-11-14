@@ -16,16 +16,14 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-public class AdapterMenu162 {
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public class AdapterMenu162 extends RecyclerView.Adapter<AdapterMenu162.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private final Context context;
 
         private List<ItemsMenu> itemsMenuList;
 
-        public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
+        public AdapterMenu162(List<AdapterMenu162.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -87,4 +85,3 @@ public class AdapterMenu162 {
             }
         }
     }
-}

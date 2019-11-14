@@ -20,15 +20,13 @@ import java.util.List;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class AddressAdapter {
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private final Context context;
         private List<ItemsMenu> itemsMenuList;
 
-        public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
+        public AddressAdapter(List<AddressAdapter.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -112,4 +110,3 @@ public class AddressAdapter {
             }
         }
     }
-}

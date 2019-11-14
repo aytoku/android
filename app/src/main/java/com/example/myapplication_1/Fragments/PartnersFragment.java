@@ -48,9 +48,9 @@ public class PartnersFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            PartnersAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            PartnersAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            PartnersAdapter.AdapterGridViewMenu adapterGridViewMenu = new PartnersAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());
+            PartnersAdapter adapterGridViewMenu = new PartnersAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -61,14 +61,14 @@ public class PartnersFragment extends Fragment {
         }
     }
 
-    private PartnersAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private PartnersAdapter.ItemsMenu[] getMenuItems() {
 
-        PartnersAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new PartnersAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        PartnersAdapter.ItemsMenu []_arr = new PartnersAdapter.ItemsMenu[]{
 
-                new PartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new PartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.ic_vector_grey,
                         "Партнер 1"),
-                new PartnersAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new PartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.ic_vector_grey,
                         "Партнер 2")
         };

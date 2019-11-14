@@ -32,7 +32,7 @@ public class DeployedMessagesFragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    private List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,9 +48,9 @@ public class DeployedMessagesFragment extends Fragment {
 
         try {
 
-            DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            DeployedMessagesAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new DeployedMessagesAdapter.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new DeployedMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -80,26 +80,26 @@ public class DeployedMessagesFragment extends Fragment {
         return view;
     }
 
-    private DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private DeployedMessagesAdapter.ItemsMenu[] getMenuItems() {
 
-        DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu[] arr = new DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        DeployedMessagesAdapter.ItemsMenu[] arr = new DeployedMessagesAdapter.ItemsMenu[]{
 
-                new DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu(
+                new DeployedMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу",
                         "30с назад"),
 
-                new DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu(
+                new DeployedMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу",
                         "30с назад"),
 
-                new DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu(
+                new DeployedMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу",
                         "30с назад"),
 
-                new DeployedMessagesAdapter.AdapterGridViewMenu.ItemsMenu(
+                new DeployedMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу",
                         "30с назад")

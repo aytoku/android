@@ -48,9 +48,9 @@ public class EarningsFragment extends Fragment {
 
         try {
 
-            EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            EarningsPageAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            EarningsPageAdapter.AdapterGridViewMenu adapterGridViewMenu = new EarningsPageAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
+            EarningsPageAdapter adapterGridViewMenu = new EarningsPageAdapter(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -61,14 +61,14 @@ public class EarningsFragment extends Fragment {
         }
     }
 
-    private EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private EarningsPageAdapter.ItemsMenu[] getMenuItems() {
 
-        EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        EarningsPageAdapter.ItemsMenu []_arr = new EarningsPageAdapter.ItemsMenu[]{
 
-                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"152\u20BD",   new String[] {"Загород"},   new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                new EarningsPageAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"152\u20BD",   new String[] {"Загород"},   new EarningsPageAdapter.ItemsMenu.CallBack() {
                     @Override
-                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
                         try {
 
@@ -81,10 +81,10 @@ public class EarningsFragment extends Fragment {
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Заводской"),
 
-                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный","Повышенный","Повышенный","Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
-                    @Override
-                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                new EarningsPageAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный","Повышенный","Повышенный","Повышенный"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
+
+                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
                         try {
 
@@ -97,10 +97,10 @@ public class EarningsFragment extends Fragment {
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
 
-                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                new EarningsPageAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Повышенный"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
                     @Override
-                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
                         try {
 
@@ -112,26 +112,10 @@ public class EarningsFragment extends Fragment {
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
 
-                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                new EarningsPageAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
                     @Override
-                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
-
-                        try {
-
-                            Bundle _args = new Bundle();
-
-                        } catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
-
-                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
-                    @Override
-                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
                         try {
 
@@ -144,10 +128,10 @@ public class EarningsFragment extends Fragment {
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
 
-                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                new EarningsPageAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
                     @Override
-                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
                         try {
 
@@ -160,10 +144,26 @@ public class EarningsFragment extends Fragment {
                     }
                 }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
 
-                new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный","Повышенный"}, new EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                new EarningsPageAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
                     @Override
-                    public void call(EarningsPageAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
+
+                        try {
+
+                            Bundle _args = new Bundle();
+
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
+
+                new EarningsPageAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный","Повышенный"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
+                    @Override
+                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
                         try {
 

@@ -18,19 +18,17 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-public class DeployedMessagesAdapter {
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private Context context;
-            private Drawable card_draw;
-            private Drawable card;
-            private ImageView imageView;
+        private Drawable card_draw;
+        private Drawable card;
+        private ImageView imageView;
 
         private List<ItemsMenu> itemsMenuList;
 
-        public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
+        public DeployedMessagesAdapter(List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
 
@@ -63,6 +61,8 @@ public class DeployedMessagesAdapter {
 
             final ItemsMenu _item = itemsMenuList.get(i);
 
+
+
 //            if(i == 0){
 //                viewHolder = (ViewHolder) viewHolder;
 //                ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
@@ -73,20 +73,22 @@ public class DeployedMessagesAdapter {
 //                ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
 //            }
 
-//            if(i == 2){
-//                if(viewHolder instanceof ViewHolder1) {
-//
-//                    viewHolder = (ViewHolder1)viewHolder;
-//                }
-//             }else{
-//                if (i == 0) {
-//                    viewHolder = (ViewHolder)viewHolder;
-//                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
-//                }else{
-//                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
-//                    ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
-//                }
-//            }
+            if(i == 2){
+                if(viewHolder instanceof ViewHolder1)
+
+                    viewHolder = (ViewHolder1)viewHolder;
+
+             }else{
+                if (i == 0) {
+                    viewHolder = (ViewHolder)viewHolder;
+                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
+                    ((ViewHolder) viewHolder).title.setText(_item.getTitle());
+                    ((ViewHolder) viewHolder).desc.setText(_item.getDesc());
+                }else{
+                    ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
+                    ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
+                }
+            }
         }
 
         @Override
@@ -134,13 +136,13 @@ public class DeployedMessagesAdapter {
             }
         }
 
-        class ViewHolder1 extends RecyclerView.ViewHolder{
+         class  ViewHolder1 extends RecyclerView.ViewHolder{
 
             private final TextView textView;
             private final ImageView imageView;
             private final TextView textView1;
 
-            public ViewHolder1(@NonNull View itemView){
+            ViewHolder1(@NonNull View itemView){
                 super(itemView);
                 textView = itemView.findViewById(R.id.ll_cell_deployed_messages_2_title1);
                 imageView = itemView.findViewById(R.id.ll_cell_deployed_messages_2_img);
@@ -148,4 +150,3 @@ public class DeployedMessagesAdapter {
             }
         }
     }
-}

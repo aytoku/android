@@ -38,8 +38,8 @@ public class RatingFragment extends Fragment {
     RecyclerView rv1;
     RecyclerView.Adapter adapterGridViewMenu;
     RecyclerView.Adapter adapterGridViewMenu1;
-    private List<RatingAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
-    private List<RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1> itemsMenuList1;
+    private List<RatingAdapter.ItemsMenu> itemsMenuList;
+    private List<RatingAdapterCard.ItemsMenu1> itemsMenuList1;
     private ImageView star1;
     private ImageView star2;
     private ImageView star3;
@@ -82,9 +82,9 @@ public class RatingFragment extends Fragment {
 
         try {
 
-            RatingAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            RatingAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new RatingAdapter.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new RatingAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
@@ -98,9 +98,9 @@ public class RatingFragment extends Fragment {
 
         try {
 
-            RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1[] itemsMenu1 = getMenuItems1();
+            RatingAdapterCard.ItemsMenu1[] itemsMenu1 = getMenuItems1();
             itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu1));
-            adapterGridViewMenu1 = new RatingAdapterCard.AdapterGridViewMenu(itemsMenuList1, getActivity().getBaseContext());
+            adapterGridViewMenu1 = new RatingAdapterCard(itemsMenuList1, getActivity().getBaseContext());
             recyclerViewMenu1.setAdapter(adapterGridViewMenu1);
             recyclerViewMenu1.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
@@ -205,17 +205,17 @@ public class RatingFragment extends Fragment {
         });
     }
 
-    private RatingAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private RatingAdapter.ItemsMenu[] getMenuItems() {
 
-        RatingAdapter.AdapterGridViewMenu.ItemsMenu[] arr = new RatingAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        RatingAdapter.ItemsMenu[] arr = new RatingAdapter.ItemsMenu[]{
 
-                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
+                new RatingAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.finger,
                         "Вежливость",
-                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new RatingAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(RatingAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     itemsMenu.getStr();
                                     praice = itemsMenu.getStr();
@@ -227,13 +227,13 @@ public class RatingFragment extends Fragment {
                         }
                 ),
 
-                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
+                new RatingAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.face,
                         "Вежливость",
-                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new RatingAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(RatingAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     itemsMenu.getStr();
                                     praice = itemsMenu.getStr();
@@ -245,13 +245,13 @@ public class RatingFragment extends Fragment {
                         }
                 ),
 
-                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
+                new RatingAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.handshake,
                         "Вежливость",
-                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new RatingAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(RatingAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     itemsMenu.getStr();
                                     praice = itemsMenu.getStr();
@@ -263,13 +263,13 @@ public class RatingFragment extends Fragment {
                         }
                 ),
 
-                new RatingAdapter.AdapterGridViewMenu.ItemsMenu(
+                new RatingAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.handshake,
                         "Вежливость",
-                        new RatingAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new RatingAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(RatingAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(RatingAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     itemsMenu.getStr();
                                     praice = itemsMenu.getStr();
@@ -284,16 +284,16 @@ public class RatingFragment extends Fragment {
         return arr;
     }
 
-    private RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1[] getMenuItems1(){
+    private RatingAdapterCard.ItemsMenu1[] getMenuItems1(){
 
-        RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1[] arr1 = new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1[]{
+        RatingAdapterCard.ItemsMenu1[] arr1 = new RatingAdapterCard.ItemsMenu1[]{
 
-                new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
+                new RatingAdapterCard.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
                         "10 \u20BD",
-                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+                        new RatingAdapterCard.ItemsMenu1.CallBack(){
                             @Override
-                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+                            public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
                                 try{
 
                                     itemsMenu.getStr();
@@ -306,12 +306,12 @@ public class RatingFragment extends Fragment {
                         }
                 ),
 
-                new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
+                new RatingAdapterCard.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
                         "20 \u20BD",
-                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+                        new RatingAdapterCard.ItemsMenu1.CallBack(){
                             @Override
-                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+                            public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
                                 try{
 
                                     itemsMenu.getStr();
@@ -324,12 +324,12 @@ public class RatingFragment extends Fragment {
                         }
                 ),
 
-                new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
+                new RatingAdapterCard.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
                         "30 \u20BD",
-                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+                        new RatingAdapterCard.ItemsMenu1.CallBack(){
                             @Override
-                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+                            public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
                                 try{
 
                                     itemsMenu.getStr();
@@ -342,12 +342,12 @@ public class RatingFragment extends Fragment {
                         }
                 ),
 
-                new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1(
+                new RatingAdapterCard.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
                         "40 \u20BD",
-                        new RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1.CallBack(){
+                        new RatingAdapterCard.ItemsMenu1.CallBack(){
                             @Override
-                            public void call(RatingAdapterCard.AdapterGridViewMenu.ItemsMenu1 itemsMenu) {
+                            public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
                                 try{
 
                                     itemsMenu.getStr();

@@ -32,7 +32,7 @@ public class AssistantFragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<AssistantAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    private List<AssistantAdapter.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,9 +48,9 @@ public class AssistantFragment extends Fragment {
 
         try {
 
-            AssistantAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            AssistantAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AssistantAdapter.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new AssistantAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -80,19 +80,19 @@ public class AssistantFragment extends Fragment {
         return view;
     }
 
-    private AssistantAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private AssistantAdapter.ItemsMenu[] getMenuItems() {
 
-        AssistantAdapter.AdapterGridViewMenu.ItemsMenu[] arr = new AssistantAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        AssistantAdapter.ItemsMenu[] arr = new AssistantAdapter.ItemsMenu[]{
 
-                new AssistantAdapter.AdapterGridViewMenu.ItemsMenu(
+                new AssistantAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Вы можете самостоятельно\nотрегулировать стоимоть"),
 
-                new AssistantAdapter.AdapterGridViewMenu.ItemsMenu(
+                new AssistantAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Тариф временно увеличен"),
 
-                new AssistantAdapter.AdapterGridViewMenu.ItemsMenu(
+                new AssistantAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Водитель подъехал")
         };

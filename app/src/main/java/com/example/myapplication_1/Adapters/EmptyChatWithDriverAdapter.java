@@ -13,14 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
 
-public class EmptyChatWithDriverAdapter {
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWithDriverAdapter.ViewHolder> {
 
         private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
+        public EmptyChatWithDriverAdapter(EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -103,4 +102,3 @@ public class EmptyChatWithDriverAdapter {
             }
         }
     }
-}

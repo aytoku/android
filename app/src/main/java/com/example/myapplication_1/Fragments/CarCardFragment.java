@@ -54,9 +54,9 @@ public class CarCardFragment extends Fragment {
 
         try {
 
-            MainActivityAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            MainActivityAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            MainActivityAdapter.AdapterGridViewMenu adapterGridViewMenu = new MainActivityAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
+            MainActivityAdapter adapterGridViewMenu = new MainActivityAdapter(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
@@ -67,17 +67,17 @@ public class CarCardFragment extends Fragment {
         }
     }
 
-    private MainActivityAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private MainActivityAdapter.ItemsMenu[] getMenuItems() {
 
-        MainActivityAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        MainActivityAdapter.ItemsMenu []_arr = new MainActivityAdapter.ItemsMenu[]{
 
-                new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu(
+                new MainActivityAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.yellow_car,
                         "Эконом",
-                        new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new MainActivityAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(MainActivityAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 
@@ -89,13 +89,13 @@ public class CarCardFragment extends Fragment {
                             }
                         }, "48 \u20BD"),
 
-                new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu(
+                new MainActivityAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.red_car,
                         "Стандарт",
-                        new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new MainActivityAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(MainActivityAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 
@@ -106,13 +106,13 @@ public class CarCardFragment extends Fragment {
                                 }
                             }
                         }, "78 \u20BD"),
-                new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu(
+                new MainActivityAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.grey_car,
                         "Комфорт",
-                        new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new MainActivityAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(MainActivityAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 
@@ -124,13 +124,13 @@ public class CarCardFragment extends Fragment {
                             }
                         }, "130 \u20BD"),
 
-                new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu(
+                new MainActivityAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.load,
                         "Грузовое",
-                        new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new MainActivityAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(MainActivityAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 
@@ -142,13 +142,13 @@ public class CarCardFragment extends Fragment {
                             }
                         }, "500 \u20BD"),
 
-                new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu(
+                new MainActivityAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.receive,
                         "Доставка",
-                        new MainActivityAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new MainActivityAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(MainActivityAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 

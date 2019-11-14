@@ -17,15 +17,13 @@ import com.example.myapplication_1.R;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class CountryCodeSelectionAdapter {
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public class CountryCodeSelectionAdapter extends RecyclerView.Adapter<CountryCodeSelectionAdapter.ViewHolder> {
 
         private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
+        public CountryCodeSelectionAdapter(CountryCodeSelectionAdapter.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -132,4 +130,3 @@ public class CountryCodeSelectionAdapter {
             }
         }
     }
-}

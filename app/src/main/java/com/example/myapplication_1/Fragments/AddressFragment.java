@@ -33,7 +33,7 @@ public class AddressFragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<AddressAdapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    private List<AddressAdapter.ItemsMenu> itemsMenuList;
     ImageButton button;
 
     @Override
@@ -53,9 +53,9 @@ public class AddressFragment extends Fragment {
 
         try {
 
-            AddressAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            AddressAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AddressAdapter.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new AddressAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -71,7 +71,7 @@ public class AddressFragment extends Fragment {
     public void onAddButtonClicked(View view) {
 
         try {
-            itemsMenuList.add(itemsMenuList.size(), new AddressAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+            itemsMenuList.add(itemsMenuList.size(), new AddressAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                     R.mipmap.icon_button_plus,
                     "Максима Горького, 123"));
             adapterGridViewMenu.notifyItemInserted(itemsMenuList.size()-1);
@@ -88,16 +88,16 @@ public class AddressFragment extends Fragment {
         super.onStart();
     }
 
-    private AddressAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private AddressAdapter.ItemsMenu[] getMenuItems() {
 
-        AddressAdapter.AdapterGridViewMenu.ItemsMenu[] arr = new AddressAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        AddressAdapter.ItemsMenu[] arr = new AddressAdapter.ItemsMenu[]{
 
-                new AddressAdapter.AdapterGridViewMenu.ItemsMenu(
+                new AddressAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_button_plus,
                         "Добавить адрес дома"),
 
-                new AddressAdapter.AdapterGridViewMenu.ItemsMenu(
+                new AddressAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_button_plus,
                         "Добавить адрес дома")
@@ -105,4 +105,3 @@ public class AddressFragment extends Fragment {
         return arr;
     }
 }
-

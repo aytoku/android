@@ -19,9 +19,7 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-public class AssistantAdapter {
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public class AssistantAdapter extends RecyclerView.Adapter<AssistantAdapter.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private Context context;
@@ -31,7 +29,7 @@ public class AssistantAdapter {
 
         private List<ItemsMenu> itemsMenuList;
 
-        public AdapterGridViewMenu(List<ItemsMenu> itemsMenuList, Context context) {
+        public AssistantAdapter(List<ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
 
@@ -108,4 +106,3 @@ public class AssistantAdapter {
             }
         }
     }
-}

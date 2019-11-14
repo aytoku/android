@@ -67,9 +67,9 @@ public class TravelStoryOneFragment extends Fragment {
 
         try {
 
-            CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow[] itemsMenu = getMenuItems();
+            CellTravelStoryOneCardAdapter.TravelStoryRow[] itemsMenu = getMenuItems();
 
-            CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard adapterGridViewMenu = new CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard(itemsMenu, getActivity().getBaseContext());
+            CellTravelStoryOneCardAdapter adapterGridViewMenu = new CellTravelStoryOneCardAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -84,9 +84,9 @@ public class TravelStoryOneFragment extends Fragment {
 
         try {
 
-            CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc[] itemsMenu = getMenuItems1();
+            CellTravelStoryOneAdapter.PaymentDesc[] itemsMenu = getMenuItems1();
 
-            CellTravelStoryOneAdapter.AdapterTravelStoryOne adapterGridViewMenu = new CellTravelStoryOneAdapter.AdapterTravelStoryOne(itemsMenu, getActivity().getBaseContext());
+            CellTravelStoryOneAdapter adapterGridViewMenu = new CellTravelStoryOneAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerView.setAdapter( adapterGridViewMenu );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -97,17 +97,17 @@ public class TravelStoryOneFragment extends Fragment {
         }
     }
 
-    private CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow[] getMenuItems() {
+    private CellTravelStoryOneCardAdapter.TravelStoryRow[] getMenuItems() {
 
-        CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow []_arr = new CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow[]{
+        CellTravelStoryOneCardAdapter.TravelStoryRow []_arr = new CellTravelStoryOneCardAdapter.TravelStoryRow[]{
 
-                new CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow(
+                new CellTravelStoryOneCardAdapter.TravelStoryRow(
                         getResources().getColor(R.color.my_gray),
                         "Сегодня 10:10",
                         R.drawable.icon_ellipse_red,
-                        new CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow.CallBack() {
+                        new CellTravelStoryOneCardAdapter.TravelStoryRow.CallBack() {
                             @Override
-                            public void call(CellTravelStoryOneCardAdapter.AdapterTravelStoryOneCard.TravelStoryRow itemsMenu) {
+                            public void call(CellTravelStoryOneCardAdapter.TravelStoryRow itemsMenu) {
 
                                 try {
 
@@ -122,16 +122,16 @@ public class TravelStoryOneFragment extends Fragment {
         return _arr;
     }
 
-    private CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc[] getMenuItems1() {
+    private CellTravelStoryOneAdapter.PaymentDesc[] getMenuItems1() {
 
-        CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc []_arr1 = new CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc[]{
+        CellTravelStoryOneAdapter.PaymentDesc []_arr1 = new CellTravelStoryOneAdapter.PaymentDesc[]{
 
-                new CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc(
+                new CellTravelStoryOneAdapter.PaymentDesc(
                         getResources().getColor(R.color.my_gray),
                         "Ожидание",
                         "5 мин*3 \u20BD","15 \u20BD"),
 
-                new CellTravelStoryOneAdapter.AdapterTravelStoryOne.PaymentDesc(
+                new CellTravelStoryOneAdapter.PaymentDesc(
                         getResources().getColor(R.color.my_gray),
                         "Дополнительные услуги",
                         "Детское кресло, пустой багаж","30 \u20BD")

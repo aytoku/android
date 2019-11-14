@@ -31,7 +31,7 @@ public class Menu162Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<AdapterMenu162.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    private List<AdapterMenu162.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,9 +48,9 @@ public class Menu162Fragment extends Fragment {
 
         try {
 
-            AdapterMenu162.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            AdapterMenu162.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AdapterMenu162.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new AdapterMenu162(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -67,21 +67,21 @@ public class Menu162Fragment extends Fragment {
         super.onStart();
     }
 
-    private AdapterMenu162.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private AdapterMenu162.ItemsMenu[] getMenuItems() {
 
-        AdapterMenu162.AdapterGridViewMenu.ItemsMenu[] arr = new AdapterMenu162.AdapterGridViewMenu.ItemsMenu[]{
+        AdapterMenu162.ItemsMenu[] arr = new AdapterMenu162.ItemsMenu[]{
 
-                new AdapterMenu162.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu162.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Большая стоимость",
                         R.drawable.icon_arrow_right),
 
-                new AdapterMenu162.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu162.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Не дали сдачи",
                         R.drawable.icon_arrow_right),
 
-                new AdapterMenu162.AdapterGridViewMenu.ItemsMenu(
+                new AdapterMenu162.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Ошибка программы",
                         R.drawable.icon_arrow_right)
@@ -89,4 +89,3 @@ public class Menu162Fragment extends Fragment {
         return arr;
     }
 }
-

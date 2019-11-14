@@ -17,15 +17,13 @@ import com.example.myapplication_1.R;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class PartnersAdapter {
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHolder> {
 
         private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public AdapterGridViewMenu(AdapterGridViewMenu.ItemsMenu[] itemsMenu, Context context) {
+        public PartnersAdapter(PartnersAdapter.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -104,4 +102,3 @@ public class PartnersAdapter {
             }
         }
     }
-}

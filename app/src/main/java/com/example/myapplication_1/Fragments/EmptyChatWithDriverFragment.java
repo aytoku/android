@@ -53,9 +53,9 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
         try {
 
-            EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            EmptyChatWithDriverAdapter.AdapterGridViewMenu adapterGridViewMenu = new EmptyChatWithDriverAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());
+            EmptyChatWithDriverAdapter adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
@@ -66,14 +66,14 @@ public class EmptyChatWithDriverFragment extends Fragment {
         }
     }
 
-    private EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private EmptyChatWithDriverAdapter.ItemsMenu[] getMenuItems() {
 
-        EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[]{
-                new EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu(
+        EmptyChatWithDriverAdapter.ItemsMenu []_arr = new EmptyChatWithDriverAdapter.ItemsMenu[]{
+                new EmptyChatWithDriverAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        new EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new EmptyChatWithDriverAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 
@@ -86,11 +86,11 @@ public class EmptyChatWithDriverFragment extends Fragment {
                             }
                         }, "Уже выхожу"),
 
-                new EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu(
+                new EmptyChatWithDriverAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        new EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new EmptyChatWithDriverAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(EmptyChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 

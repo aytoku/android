@@ -31,7 +31,7 @@ public class Order115Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<Order115Adapter.AdapterGridViewMenu.ItemsMenu> itemsMenuList;
+    private List<Order115Adapter.ItemsMenu> itemsMenuList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,9 +48,9 @@ public class Order115Fragment extends Fragment {
 
         try {
 
-            Order115Adapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            Order115Adapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new Order115Adapter.AdapterGridViewMenu(itemsMenuList, getActivity().getBaseContext());
+            adapterGridViewMenu = new Order115Adapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -68,32 +68,32 @@ public class Order115Fragment extends Fragment {
         super.onStart();
     }
 
-    private Order115Adapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private Order115Adapter.ItemsMenu[] getMenuItems() {
 
-        Order115Adapter.AdapterGridViewMenu.ItemsMenu[] arr = new Order115Adapter.AdapterGridViewMenu.ItemsMenu[]{
+        Order115Adapter.ItemsMenu[] arr = new Order115Adapter.ItemsMenu[]{
 
-                new Order115Adapter.AdapterGridViewMenu.ItemsMenu(
+                new Order115Adapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
 
-                new Order115Adapter.AdapterGridViewMenu.ItemsMenu(
+                new Order115Adapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
 
-                new Order115Adapter.AdapterGridViewMenu.ItemsMenu(
+                new Order115Adapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
 
-                new Order115Adapter.AdapterGridViewMenu.ItemsMenu(
+                new Order115Adapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
 
 
-                new Order115Adapter.AdapterGridViewMenu.ItemsMenu(
+                new Order115Adapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "\uD83D\uDE0A",
                         "Заказал по ошибке")

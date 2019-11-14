@@ -48,9 +48,9 @@ public class SettingsFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            SettingsAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            SettingsAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            SettingsAdapter.AdapterGridViewMenu adapterGridViewMenu = new SettingsAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
+            SettingsAdapter adapterGridViewMenu = new SettingsAdapter(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -61,14 +61,14 @@ public class SettingsFragment extends Fragment {
         }
     }
 
-    private SettingsAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private SettingsAdapter.ItemsMenu[] getMenuItems() {
 
-        SettingsAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new SettingsAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        SettingsAdapter.ItemsMenu []_arr = new SettingsAdapter.ItemsMenu[]{
 
-                new SettingsAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new SettingsAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
                         "Не звонить"),
-                new SettingsAdapter.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new SettingsAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.mipmap.ic_launcher_round,
                         "Не предлагать сообщения о\nснижении цены")
         };

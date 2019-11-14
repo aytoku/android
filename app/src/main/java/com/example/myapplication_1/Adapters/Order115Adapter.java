@@ -15,15 +15,13 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-public class Order115Adapter {
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private final Context context;
         private List<ItemsMenu> itemsMenuList;
 
-        public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
+        public Order115Adapter(List<Order115Adapter.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -92,4 +90,3 @@ public class Order115Adapter {
             }
         }
     }
-}

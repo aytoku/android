@@ -18,15 +18,13 @@ import com.example.myapplication_1.R;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class TravelStoryAdapter {
-
-    public static class AdapterTravelStory extends RecyclerView.Adapter<AdapterTravelStory.ViewHolder> {
+    public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.ViewHolder> {
 
         private final TravelStoryCard[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public AdapterTravelStory(AdapterTravelStory.TravelStoryCard[] itemsMenu, Context context) {
+        public TravelStoryAdapter(TravelStoryAdapter.TravelStoryCard[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -142,4 +140,3 @@ public class TravelStoryAdapter {
             }
         }
     }
-}

@@ -105,9 +105,9 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            AdapterWish.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
+            AdapterWish.ItemsMenu[] itemsMenu = getMenuItems();
 
-            AdapterWish.AdapterGridViewMenu adapterGridViewMenu = new AdapterWish.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());
+            AdapterWish adapterGridViewMenu = new AdapterWish(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
@@ -119,20 +119,20 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
     }
 
 
-    private AdapterWish.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private AdapterWish.ItemsMenu[] getMenuItems() {
 
         String[] cost_arr = new String[]{"30 \u20BD","0 \u20BD","10 \u20BD"};
         String[] desc_arr = new String[]{"Детское кресло", "Курящий салон", "Некурящий салон"};
 
-        AdapterWish.AdapterGridViewMenu.ItemsMenu[] _arr = new AdapterWish.AdapterGridViewMenu.ItemsMenu[]{
+        AdapterWish.ItemsMenu[] _arr = new AdapterWish.ItemsMenu[]{
 
-                new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new AdapterWish.ItemsMenu(getResources().getColor(R.color.my_gray),
                         cost_arr[0],
                         desc_arr[0]),
-                new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new AdapterWish.ItemsMenu(getResources().getColor(R.color.my_gray),
                         cost_arr[1],
                         desc_arr[1]),
-                new AdapterWish.AdapterGridViewMenu.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new AdapterWish.ItemsMenu(getResources().getColor(R.color.my_gray),
                         cost_arr[2],
                         desc_arr[2])
         };

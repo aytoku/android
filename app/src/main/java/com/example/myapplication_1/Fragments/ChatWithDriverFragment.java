@@ -53,9 +53,9 @@ public class ChatWithDriverFragment extends Fragment {
 
         try {
 
-            ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            ChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            ChatWithDriverAdapter.AdapterGridViewMenu adapterGridViewMenu = new ChatWithDriverAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
+            ChatWithDriverAdapter adapterGridViewMenu = new ChatWithDriverAdapter(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
@@ -66,14 +66,14 @@ public class ChatWithDriverFragment extends Fragment {
         }
     }
 
-    private ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private ChatWithDriverAdapter.ItemsMenu[] getMenuItems() {
 
-        ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu[]{
-                new ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu(
+        ChatWithDriverAdapter.ItemsMenu []_arr = new ChatWithDriverAdapter.ItemsMenu[]{
+                new ChatWithDriverAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        new ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new ChatWithDriverAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(ChatWithDriverAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 
@@ -86,11 +86,11 @@ public class ChatWithDriverFragment extends Fragment {
                             }
                         }, "Уже выхожу"),
 
-                new ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu(
+                new ChatWithDriverAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        new ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                        new ChatWithDriverAdapter.ItemsMenu.CallBack() {
                             @Override
-                            public void call(ChatWithDriverAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                            public void call(ChatWithDriverAdapter.ItemsMenu itemsMenu) {
 
                                 try {
 

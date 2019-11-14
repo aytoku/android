@@ -54,9 +54,9 @@ public class TravelStoryFragment extends Fragment {
 
         try {
 
-            TravelStoryAdapter.AdapterTravelStory.TravelStoryCard[] itemsMenu = getMenuItems();
+            TravelStoryAdapter.TravelStoryCard[] itemsMenu = getMenuItems();
 
-            TravelStoryAdapter.AdapterTravelStory adapterGridViewMenu = new TravelStoryAdapter.AdapterTravelStory(itemsMenu, getActivity().getBaseContext());
+            TravelStoryAdapter adapterGridViewMenu = new TravelStoryAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -67,17 +67,17 @@ public class TravelStoryFragment extends Fragment {
         }
     }
 
-    private TravelStoryAdapter.AdapterTravelStory.TravelStoryCard[] getMenuItems() {
+    private TravelStoryAdapter.TravelStoryCard[] getMenuItems() {
 
-        TravelStoryAdapter.AdapterTravelStory.TravelStoryCard []_arr = new TravelStoryAdapter.AdapterTravelStory.TravelStoryCard[]{
+        TravelStoryAdapter.TravelStoryCard []_arr = new TravelStoryAdapter.TravelStoryCard[]{
 
-                new TravelStoryAdapter.AdapterTravelStory.TravelStoryCard(
+                new TravelStoryAdapter.TravelStoryCard(
                         getResources().getColor(R.color.my_gray),
                         R.drawable.icon_ellipse_red,
                         "Сегодня 10:10",
-                        new TravelStoryAdapter.AdapterTravelStory.TravelStoryCard.CallBack() {
+                        new TravelStoryAdapter.TravelStoryCard.CallBack() {
                             @Override
-                            public void call(TravelStoryAdapter.AdapterTravelStory.TravelStoryCard itemsMenu) {
+                            public void call(TravelStoryAdapter.TravelStoryCard itemsMenu) {
 
                                 try {
 

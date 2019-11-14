@@ -22,9 +22,7 @@ import java.util.List;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class RatingAdapter{
-
-    public static class AdapterGridViewMenu extends RecyclerView.Adapter<AdapterGridViewMenu.ViewHolder> {
+    public  class RatingAdapter extends RecyclerView.Adapter<RatingAdapter.ViewHolder> {
 
         private final LayoutInflater layoutInflater;
         private final Context context;
@@ -32,7 +30,7 @@ public class RatingAdapter{
         private int selectItem = -1;
         private Drawable drawable;
 
-        public AdapterGridViewMenu(List<AdapterGridViewMenu.ItemsMenu> itemsMenuList, Context context) {
+        public RatingAdapter(List<RatingAdapter.ItemsMenu> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -150,4 +148,3 @@ public class RatingAdapter{
             }
         }
     }
-}

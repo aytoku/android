@@ -54,9 +54,9 @@ public class ChatFragment extends Fragment {
 
         try {
 
-            ChatAdapter.AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            ChatAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            ChatAdapter.AdapterGridViewMenu adapterGridViewMenu = new ChatAdapter.AdapterGridViewMenu(itemsMenu, getActivity().getBaseContext());//this;
+            ChatAdapter adapterGridViewMenu = new ChatAdapter(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
@@ -67,14 +67,14 @@ public class ChatFragment extends Fragment {
         }
     }
 
-    private ChatAdapter.AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
+    private ChatAdapter.ItemsMenu[] getMenuItems() {
 
-        ChatAdapter.AdapterGridViewMenu.ItemsMenu []_arr = new ChatAdapter.AdapterGridViewMenu.ItemsMenu[]{
+        ChatAdapter.ItemsMenu []_arr = new ChatAdapter.ItemsMenu[]{
 
-                new ChatAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),new ChatAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                new ChatAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),new ChatAdapter.ItemsMenu.CallBack() {
                     @Override
-                    public void call(ChatAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                    public void call(ChatAdapter.ItemsMenu itemsMenu) {
 
                         try {
 
@@ -86,10 +86,10 @@ public class ChatFragment extends Fragment {
                     }
                 }, "Уже выхожу"),
 
-                new ChatAdapter.AdapterGridViewMenu.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),new ChatAdapter.AdapterGridViewMenu.ItemsMenu.CallBack() {
+                new ChatAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),new ChatAdapter.ItemsMenu.CallBack() {
                     @Override
-                    public void call(ChatAdapter.AdapterGridViewMenu.ItemsMenu itemsMenu) {
+                    public void call(ChatAdapter.ItemsMenu itemsMenu) {
 
                         try {
 

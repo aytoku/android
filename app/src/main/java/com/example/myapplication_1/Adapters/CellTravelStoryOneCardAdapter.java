@@ -17,16 +17,14 @@ import com.example.myapplication_1.R;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class CellTravelStoryOneCardAdapter {
-
-    public static class AdapterTravelStoryOneCard extends RecyclerView.Adapter<AdapterTravelStoryOneCard.ViewHolder> {
+    public class CellTravelStoryOneCardAdapter extends RecyclerView.Adapter<CellTravelStoryOneCardAdapter.ViewHolder> {
 
         private final TravelStoryRow[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
         private final Drawable drawable;
 
-        public AdapterTravelStoryOneCard(AdapterTravelStoryOneCard.TravelStoryRow[] itemsMenu, Context context) {
+        public CellTravelStoryOneCardAdapter(CellTravelStoryOneCardAdapter.TravelStoryRow[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -121,4 +119,3 @@ public class CellTravelStoryOneCardAdapter {
             }
         }
     }
-}
