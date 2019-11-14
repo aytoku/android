@@ -1,19 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="310dp"
+        android:layout_height="80dp"
+        android:background="@drawable/ic_card_grey_rect"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/rl_cell_deployed_messages2_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:text="Выполните еще три заказа и получите\n+30 к рейтингу"
+            android:textColor="#FFF1F1"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/rl_cell_deployed_messages2_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingTop="5dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:text="30с назад"
+            android:textSize="13sp" />
+
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
+            android:paddingTop="10dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_weight="1.5">
+                android:paddingRight="30dp"
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/ll_cell_deployed_messages_2_title1"
@@ -29,11 +69,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="10dp"
+                android:layout_width="50dp"
                 android:layout_height="40dp"
                 android:gravity="center_horizontal"
-                android:background="@drawable/ic_deployed_messages_card_img_back"
-                android:layout_weight="1">
+                android:background="@drawable/ic_deployed_messages_card_img_back">
 
                 <ImageView
                     android:id="@+id/ll_cell_deployed_messages_2_img"
@@ -47,8 +86,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_weight="1.5">
+                android:paddingLeft="30dp"
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/ll_cell_deployed_messages_2_title2"
@@ -64,5 +103,7 @@
             </LinearLayout>
 
     </LinearLayout>
+
+  </LinearLayout>
 
 </LinearLayout>

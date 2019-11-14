@@ -1,5 +1,6 @@
 package com.example.myapplication_1.Adapters;
 
+
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -17,7 +18,7 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final LayoutInflater layoutInflater;
     private Context context;
@@ -25,9 +26,9 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Drawable card;
     private ImageView imageView;
 
-    private List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList;
+    private List<ItemsMenu> itemsMenuList;
 
-    public DeployedMessagesAdapter(List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList, Context context) {
+    public adapter(List<adapter.ItemsMenu> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
 
@@ -37,43 +38,22 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    @Override
-    public int getItemViewType(int position) {
-
-        if (position >= 0 && position != 2) {
-            return 0;
-        }
-
-        else if(position == itemsMenuList.size()-1){
-            return 2;
-        }
-
-        else{
-            return 1;
-        }
-    }
-
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int typeInt) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         RecyclerView.ViewHolder itemViewHolder;
 
-        if (typeInt == 0) {
+        if(i >= 0 && i!= 2) {
+
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
             itemViewHolder = new ViewHolder(view);
-        }
 
-        else if(typeInt == 1){
+        }else{
             View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
             itemViewHolder = new ViewHolder1(view1);
         }
-
-        else{
-            View view2 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages3, viewGroup, false);
-            itemViewHolder = new ViewHolder2(view2);
-        }
-        return (RecyclerView.ViewHolder) itemViewHolder;
+        return (RecyclerView.ViewHolder)itemViewHolder;
     }
 
     @Override
@@ -81,25 +61,21 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         final ItemsMenu _item = itemsMenuList.get(i);
 
-        if (i >=0 && i!=2) {
+        if(i == 2){
+            if(viewHolder instanceof ViewHolder1)
+
+                viewHolder = (ViewHolder1)viewHolder;
+
+        }else{
             if (i == 0) {
-                viewHolder = (ViewHolder) viewHolder;
+                viewHolder = (ViewHolder)viewHolder;
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
                 ((ViewHolder) viewHolder).title.setText(_item.getTitle());
                 ((ViewHolder) viewHolder).desc.setText(_item.getDesc());
-            } else {
+            }else{
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
                 ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
             }
-        }
-
-        else if(i == itemsMenuList.size()-1){
-            viewHolder = (ViewHolder2)viewHolder;
-        }
-
-        else{
-            if (viewHolder instanceof ViewHolder1)
-                viewHolder = (ViewHolder1) viewHolder;
         }
     }
 
@@ -125,7 +101,7 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
             return title;
         }
 
-        public String getDesc() { return desc; }
+        public String getDesc(){ return  desc; }
 
         public int getColorBackground() {
             return colorBackgroundInt;
@@ -144,37 +120,21 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
             title = itemView.findViewById(R.id.rl_cell_deployed_messages_title);
             desc = itemView.findViewById(R.id.rl_cell_deployed_messages_desc);
             relativeLayout = itemView.findViewById(R.id.rl_cell_deployed_messages);
-            imageView = itemView.findViewById(R.id.rl_cell_deployed_messages_button);
+            imageView  = itemView.findViewById(R.id.rl_cell_deployed_messages_button);
         }
     }
 
-    class ViewHolder1 extends RecyclerView.ViewHolder {
+    class  ViewHolder1 extends RecyclerView.ViewHolder{
 
         private final TextView textView;
         private final ImageView imageView;
         private final TextView textView1;
-        private final TextView textView2;
-        private final TextView textView3;
 
-        ViewHolder1(@NonNull View itemView) {
+        ViewHolder1(@NonNull View itemView){
             super(itemView);
             textView = itemView.findViewById(R.id.ll_cell_deployed_messages_2_title1);
             imageView = itemView.findViewById(R.id.ll_cell_deployed_messages_2_img);
             textView1 = itemView.findViewById(R.id.ll_cell_deployed_messages_2_title2);
-            textView2 = itemView.findViewById(R.id.rl_cell_deployed_messages2_title);
-            textView3 = itemView.findViewById(R.id.rl_cell_deployed_messages2_desc);
-        }
-    }
-
-    class ViewHolder2 extends RecyclerView.ViewHolder {
-
-        private final ImageView img;
-        private final TextView textView;
-
-        ViewHolder2(@NonNull View itemView) {
-            super(itemView);
-            textView = itemView.findViewById(R.id.ll_cell_deployed_messages3_img);
-            img = itemView.findViewById(R.id.ll_cell_deployed_messages3_title);
         }
     }
 }
