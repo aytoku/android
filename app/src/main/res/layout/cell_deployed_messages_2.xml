@@ -11,6 +11,7 @@
         android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/ll_cell_deployed_messages_2"
         android:layout_width="310dp"
         android:layout_height="80dp"
         android:background="@drawable/ic_card_grey_rect"
@@ -24,7 +25,7 @@
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
             android:layout_alignParentEnd="true"
-            android:text="Выполните еще три заказа и получите\n+30 к рейтингу"
+            android:text="Как настроение?"
             android:textColor="#FFF1F1"
             android:textSize="15sp" />
 
@@ -45,6 +46,7 @@
     </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_cell_deployed_messages_2_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp">
@@ -52,7 +54,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingRight="30dp"
+                android:paddingRight="24dp"
                 android:gravity="center_horizontal">
 
                 <TextView
@@ -86,7 +88,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="30dp"
+                android:paddingLeft="24dp"
                 android:gravity="center_horizontal">
 
                 <TextView

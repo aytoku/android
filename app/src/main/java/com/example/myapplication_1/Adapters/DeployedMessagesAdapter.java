@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Drawable card_draw;
     private Drawable card;
     private ImageView imageView;
+    LinearLayout.LayoutParams params;
 
     private List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList;
 
@@ -39,18 +41,14 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemViewType(int position) {
-
-        if (position >= 0 && position != 2) {
+        if(position == itemsMenuList.size()-1){
+            return 2;
+        } else if (position >= 0 && position != 2) {
             return 0;
-        }
-
-        else if(position == 2){
+        } else if(position == 2){
             return 1;
         }
 
-        else if(position == itemsMenuList.size()-1){
-            return 2;
-        }
         return position;
     }
 
@@ -63,14 +61,10 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
         if (typeInt == 0) {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
             itemViewHolder = new ViewHolder(view);
-        }
-
-        else if(typeInt == 1){
+        } else if(typeInt == 1){
             View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
             itemViewHolder = new ViewHolder1(view1);
-        }
-
-        else{
+        } else{
             View view2 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages3, viewGroup, false);
             itemViewHolder = new ViewHolder2(view2);
         }
@@ -81,29 +75,35 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
 
         final ItemsMenu _item = itemsMenuList.get(i);
-
-        if (i >=0 && i!=2) {
+        if(i == itemsMenuList.size()-1){
+            if(viewHolder instanceof ViewHolder2)
+                viewHolder = (ViewHolder2)viewHolder;
+            if(i==0){
+                ((ViewHolder2)viewHolder).linearLayout.setVisibility(View.GONE);
+            }
+        } else if (i >=0 && i!=2) {
             if (i == 0) {
                 viewHolder = (ViewHolder) viewHolder;
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
                 ((ViewHolder) viewHolder).title.setText(_item.getTitle());
                 ((ViewHolder) viewHolder).desc.setText(_item.getDesc());
-            }
-
-            else {
+            } else {
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
-                ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
+                params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
+                params.height = 240;
+                params.width = 905;
+                ((ViewHolder) viewHolder).relativeLayout.setLayoutParams(params);
             }
-        }
-
-        else if(i == 2){
+        } else if(i == 2){
             if (viewHolder instanceof ViewHolder1)
                 viewHolder = (ViewHolder1) viewHolder;
-        }
-
-        else if(i == itemsMenuList.size()-1){
-            if(viewHolder instanceof ViewHolder2)
-               viewHolder = (ViewHolder2)viewHolder;
+                params = (LinearLayout.LayoutParams)((ViewHolder1) viewHolder).linearLayout.getLayoutParams();
+                params.height = 240;
+                params.width = 905;
+                ((ViewHolder1) viewHolder).linearLayout.setLayoutParams(params);
+                params = (LinearLayout.LayoutParams)((ViewHolder1)viewHolder).linearLayout1.getLayoutParams();
+                params.width = 905;
+                ((ViewHolder1)viewHolder).linearLayout1.setLayoutParams(params);
         }
     }
 
@@ -159,6 +159,8 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
         private final TextView textView1;
         private final TextView textView2;
         private final TextView textView3;
+        private final LinearLayout linearLayout;
+        private final LinearLayout linearLayout1;
 
         ViewHolder1(@NonNull View itemView) {
             super(itemView);
@@ -167,6 +169,8 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
             textView1 = itemView.findViewById(R.id.ll_cell_deployed_messages_2_title2);
             textView2 = itemView.findViewById(R.id.rl_cell_deployed_messages2_title);
             textView3 = itemView.findViewById(R.id.rl_cell_deployed_messages2_desc);
+            linearLayout = itemView.findViewById(R.id.ll_cell_deployed_messages_2);
+            linearLayout1 = itemView.findViewById(R.id.ll_cell_deployed_messages_2_1);
         }
     }
 
@@ -174,11 +178,13 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         private final ImageView img;
         private final TextView txtView;
+        private final LinearLayout linearLayout;
 
         ViewHolder2(@NonNull View itemView) {
             super(itemView);
             txtView = itemView.findViewById(R.id.ll_cell_deployed_messages3_title);
             img = itemView.findViewById(R.id.ll_cell_deployed_messages3_img);
+            linearLayout = itemView.findViewById(R.id.ll_cell_deployed_messages3);
         }
     }
 }

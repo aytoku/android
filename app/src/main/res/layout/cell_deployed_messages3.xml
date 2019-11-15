@@ -7,10 +7,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:paddingRight="40dp"
+        android:paddingRight="50dp"
         android:paddingTop="10dp">
 
         <LinearLayout
+            android:id="@+id/ll_cell_deployed_messages3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_deploy"
