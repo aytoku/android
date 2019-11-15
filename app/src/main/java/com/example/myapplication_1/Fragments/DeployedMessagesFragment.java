@@ -96,6 +96,11 @@ public class DeployedMessagesFragment extends Fragment {
 
                 new DeployedMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
+                        "Как настроение?",
+                        "30с назад"),
+
+                new DeployedMessagesAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу",
                         "30с назад"),
 

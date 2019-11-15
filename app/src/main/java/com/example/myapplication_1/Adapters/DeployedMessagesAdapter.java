@@ -44,13 +44,14 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
             return 0;
         }
 
+        else if(position == 2){
+            return 1;
+        }
+
         else if(position == itemsMenuList.size()-1){
             return 2;
         }
-
-        else{
-            return 1;
-        }
+        return position;
     }
 
     @NonNull
@@ -87,19 +88,22 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
                 ((ViewHolder) viewHolder).title.setText(_item.getTitle());
                 ((ViewHolder) viewHolder).desc.setText(_item.getDesc());
-            } else {
+            }
+
+            else {
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
                 ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
             }
         }
 
-        else if(i == itemsMenuList.size()-1){
-            viewHolder = (ViewHolder2)viewHolder;
-        }
-
-        else{
+        else if(i == 2){
             if (viewHolder instanceof ViewHolder1)
                 viewHolder = (ViewHolder1) viewHolder;
+        }
+
+        else if(i == itemsMenuList.size()-1){
+            if(viewHolder instanceof ViewHolder2)
+               viewHolder = (ViewHolder2)viewHolder;
         }
     }
 
@@ -169,12 +173,12 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     class ViewHolder2 extends RecyclerView.ViewHolder {
 
         private final ImageView img;
-        private final TextView textView;
+        private final TextView txtView;
 
         ViewHolder2(@NonNull View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.ll_cell_deployed_messages3_img);
-            img = itemView.findViewById(R.id.ll_cell_deployed_messages3_title);
+            txtView = itemView.findViewById(R.id.ll_cell_deployed_messages3_title);
+            img = itemView.findViewById(R.id.ll_cell_deployed_messages3_img);
         }
     }
 }
