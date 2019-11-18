@@ -123,6 +123,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, addressFragment, AddressFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, menuOneFragment, MenuOneFragment.TAG).commit();
     }
 }
