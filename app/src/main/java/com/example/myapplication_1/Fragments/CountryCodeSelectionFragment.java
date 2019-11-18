@@ -1,6 +1,5 @@
 package com.example.myapplication_1.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,8 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.CountryCodeSelectionAdapter;
 import com.example.myapplication_1.R;
-
-import static android.app.Activity.RESULT_OK;
 
 public class CountryCodeSelectionFragment extends Fragment {
 
@@ -35,6 +33,7 @@ public class CountryCodeSelectionFragment extends Fragment {
     RecyclerView rv;
 
     ImageButton imageButton;
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -101,10 +100,11 @@ public class CountryCodeSelectionFragment extends Fragment {
                                 try{
 
                                     Bundle _args = new Bundle();
-                                    Intent intent = new Intent();
-                                    intent.putExtra("keyName", "Грузия +995");
-                                    getActivity().setResult(RESULT_OK, intent);
-                                    getActivity().finish();
+                                    Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                                    auth111Fragment.setArguments(_args);
+                                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                                    transaction.replace(R.id.ll_main, auth111Fragment).commit();
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -123,10 +123,11 @@ public class CountryCodeSelectionFragment extends Fragment {
                                 try{
 
                                     Bundle _args = new Bundle();
-                                    Intent intent = new Intent();
-                                    intent.putExtra("keyName", "Россия +7");
-                                    getActivity().setResult(RESULT_OK, intent);
-                                    getActivity().finish();
+                                    Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                                    auth111Fragment.setArguments(_args);
+                                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                                    transaction.replace(R.id.ll_main, auth111Fragment).commit();
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
