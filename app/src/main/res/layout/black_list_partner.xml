@@ -8,12 +8,13 @@
         android:id="@+id/ll_blackList_partner.rl_blackList_partner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
         android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:paddingRight="15dp">
 
         <ImageButton
-            android:id="@+id/ll_blackList_partner.rl_blackList_partner.img"
+            android:id="@+id/ll_blackList_partner_rl_blackList_partner_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -27,15 +28,15 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:gravity="center_horizontal|center_vertical"
-            android:layout_toStartOf="@+id/ll_blackList_partner.rl_blackList_partner.ready"
-            android:layout_toEndOf="@+id/ll_blackList_partner.rl_blackList_partner.img"
+            android:layout_toStartOf="@+id/ll_blackList_partner_rl_blackList_partner_ready"
+            android:layout_toEndOf="@+id/ll_blackList_partner_rl_blackList_partner_img"
             android:text="Партнеры"
             android:textColor="#424242"
             android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/ll_blackList_partner.rl_blackList_partner.ready"
+            android:id="@+id/ll_blackList_partner_rl_blackList_partner_ready"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,6 +51,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ll_blackList_partner_recycler_partners"
         android:layout_width="match_parent"
+        android:paddingTop="10dp"
         android:layout_height="match_parent"
         android:overScrollMode="never"/>
 

@@ -1,28 +1,45 @@
 package com.example.myapplication_1.Fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.myapplication_1.R;
 
-public class SpinnerTariffsFragment extends AppCompatActivity {
+public class SpinnerTariffsFragment extends Fragment {
+
+    public static final String TAG = "SpinnerTariffsFragment";
+
+    public static SpinnerTariffsFragment getInstance(Bundle args) {
+
+        SpinnerTariffsFragment f = new SpinnerTariffsFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     String[] choose = {"Эконом", "Стандарт", "Не эконом"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tariffs);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        Spinner spinner = (Spinner) findViewById(R.id.choose);
-        // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, choose);
-        // Определяем разметку для использования при выборе элемента
+        super.onCreate(savedInstanceState);
+
+        View view = inflater.inflate(R.layout.tariffs,
+                container, false);
+
+        Spinner spinner = (Spinner) view.findViewById(R.id.choose);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, choose);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Применяем адаптер к элементу spinner
         spinner.setAdapter(adapter);
+
+        return view;
     }
 }

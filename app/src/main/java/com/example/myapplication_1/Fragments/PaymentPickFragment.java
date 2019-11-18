@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
@@ -29,6 +31,7 @@ public class PaymentPickFragment extends Fragment {
     private Drawable imgToggleGrey;
     private Drawable imgToggleRed;
     boolean f = true;
+    private TextView accept;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +41,20 @@ public class PaymentPickFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.payment_pick,
                 container, false);
+
+        Bundle _args = new Bundle();
+        final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
+
+        accept = view.findViewById(R.id.rl_payment_pick_ready);
+
+        accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, menuOneFragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         imgToggleGrey = getResources().getDrawable(R.drawable.togle_uncheked);
         imgToggleRed = getResources().getDrawable(R.drawable.toggle_checked);

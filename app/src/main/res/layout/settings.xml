@@ -4,21 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/title_wish"
-            android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp">
+
+        <ImageButton
+            android:id="@+id/ll_setting_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
+            android:background="@null"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_strelka"/>
+
+        <TextView
+            android:id="@+id/ll_settings_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
             android:text="Настройки"
             android:textStyle="bold"
+            android:layout_centerInParent="true"
             android:textSize="21sp"
             android:textColor="@color/my_black"
             android:paddingLeft="20dp"
             android:paddingBottom="20sp"/>
 
+    </RelativeLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_settings"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
 
@@ -28,7 +47,7 @@
                 android:background="#EDEDED"/>
 
                 <TextView
-                    android:id="@+id/ll_settings.title"
+                    android:id="@+id/ll_settings_title1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"

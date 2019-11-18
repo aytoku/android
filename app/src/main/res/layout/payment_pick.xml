@@ -5,7 +5,7 @@
     android:background="#FFFFFF">
 
         <TextView
-            android:id="@+id/rl_payment_ready.ready"
+            android:id="@+id/rl_payment_pick_ready"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Готово"
@@ -23,7 +23,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rl_payment_ready.ready"
+        android:layout_below="@+id/rl_payment_pick_ready"
         android:orientation="vertical">
 
         <RelativeLayout

@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,6 +49,18 @@ public class AddressFragment extends Fragment {
         rv = view.findViewById(R.id.ll_address_rl_address_ll_address_address_recycler);
 
         button = view.findViewById(R.id.ll_address_rl_address_button_plusik);
+
+        Bundle _args = new Bundle();
+        final Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, editMyAddressFragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         final RecyclerView recyclerViewMenu = rv;
 

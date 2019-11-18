@@ -24,7 +24,6 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Context context;
     private Drawable card_draw;
     private Drawable card;
-    private ImageView imageView;
     LinearLayout.LayoutParams params;
 
     private List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList;

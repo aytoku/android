@@ -14,10 +14,10 @@
 
         <ImageView
             android:id="@+id/ll_cell_blacklist_partner_checkbox"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/checkbox"
             android:layout_width="30dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:src="@drawable/togle_uncheked" />
 
         <TextView
             android:id="@+id/ll_cell_blacklist_partner_desc"

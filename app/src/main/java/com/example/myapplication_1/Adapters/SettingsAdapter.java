@@ -1,12 +1,9 @@
 package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -14,8 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
-
-import ru.osety.amironlibrary.DrawableUtils;
 
     public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHolder> {
 
@@ -43,16 +38,7 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             final ItemsMenu _item = itemsMenu[i];
 
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
-            float _dens = context.getResources().getDisplayMetrics().density;
-
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
-            int _size = Math.round(_dens * 40);
-            Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
-            Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
-            viewHolder.desc.setText( _item.getStr() );
+            viewHolder.title.setText( _item.getStr() );
         }
 
         @Override
@@ -64,21 +50,15 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             private @ColorInt
             int colorBackgroundInt;
-            private int imgResId;
-            private String desc;
+            private String title;
 
-            public ItemsMenu(int colorBackgroundRes, int imgResId,String desc) {
+            public ItemsMenu(int colorBackgroundRes, String title) {
                 this.colorBackgroundInt = colorBackgroundRes;
-                this.imgResId = imgResId;
-                this.desc = desc;
-            }
-
-            public int getImgResId() {
-                return imgResId;
+                this.title = title;
             }
 
             public String getStr() {
-                return desc;
+                return title;
             }
 
             public int getColorBackground() {
@@ -88,13 +68,11 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
-            private final ImageView img;
-            private final TextView desc;
+            private final TextView title;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                img = itemView.findViewById(R.id.img);
-                desc = itemView.findViewById(R.id.desc);
+                title = itemView.findViewById(R.id.ll_settings_rl_settings_title);
             }
         }
     }

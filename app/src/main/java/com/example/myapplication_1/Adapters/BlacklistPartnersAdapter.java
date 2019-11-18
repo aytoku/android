@@ -2,6 +2,7 @@ package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +23,18 @@ import ru.osety.amironlibrary.DrawableUtils;
         private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
+        private Drawable imgToggleGrey;
+        private Drawable imgToggleRed;
+        boolean f = true;
 
         public BlacklistPartnersAdapter(BlacklistPartnersAdapter.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            imgToggleGrey = context.getResources().getDrawable(R.drawable.togle_uncheked);
+            imgToggleRed = context.getResources().getDrawable(R.drawable.toggle_checked);
         }
 
         @NonNull
@@ -39,7 +46,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
 
             final ItemsMenu _item = itemsMenu[i];
 
@@ -52,6 +59,30 @@ import ru.osety.amironlibrary.DrawableUtils;
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
+
+            viewHolder.img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    viewHolder.img.setImageDrawable(imgToggleGrey);
+                    viewHolder.desc.setTextColor(Color.parseColor("#424242"));
+                    if(f =! f){
+                        viewHolder.img.setImageDrawable(imgToggleRed);
+                        viewHolder.desc.setTextColor(Color.parseColor("#FB2933"));
+                    }
+                }
+            });
+
+            viewHolder.desc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    viewHolder.img.setImageDrawable(imgToggleGrey);
+                    viewHolder.desc.setTextColor(Color.parseColor("#424242"));
+                    if(f =! f){
+                        viewHolder.img.setImageDrawable(imgToggleRed);
+                        viewHolder.desc.setTextColor(Color.parseColor("#FB2933"));
+                    }
+                }
+            });
         }
 
         @Override

@@ -9,6 +9,7 @@ import com.example.myapplication_1.Fragments.AddPointFragment;
 import com.example.myapplication_1.Fragments.AddressFragment;
 import com.example.myapplication_1.Fragments.AlertFragment;
 import com.example.myapplication_1.Fragments.AssistantFragment;
+import com.example.myapplication_1.Fragments.Auth111Fragment;
 import com.example.myapplication_1.Fragments.BlacklistPartnersFragment;
 import com.example.myapplication_1.Fragments.ChatFragment;
 import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
@@ -27,6 +28,7 @@ import com.example.myapplication_1.Fragments.MachinePurposeOneFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeTwoFragment;
 import com.example.myapplication_1.Fragments.Menu11Fragment;
 import com.example.myapplication_1.Fragments.Menu162Fragment;
+import com.example.myapplication_1.Fragments.MenuOneFragment;
 import com.example.myapplication_1.Fragments.MenuTwoFragment;
 import com.example.myapplication_1.Fragments.NewCardFragment;
 import com.example.myapplication_1.Fragments.NewSearchFragment;
@@ -43,6 +45,8 @@ import com.example.myapplication_1.Fragments.SearchFragment;
 import com.example.myapplication_1.Fragments.SeekbarFragment;
 import com.example.myapplication_1.Fragments.ServiceFragment;
 import com.example.myapplication_1.Fragments.SettingsFragment;
+import com.example.myapplication_1.Fragments.SpinnerFragment;
+import com.example.myapplication_1.Fragments.SpinnerTariffsFragment;
 import com.example.myapplication_1.Fragments.TravelStoryFragment;
 import com.example.myapplication_1.Fragments.TravelStoryOneFragment;
 import com.example.myapplication_1.Fragments.WishFragment;
@@ -61,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         AddPointFragment addPointFragment = AddPointFragment.getInstance(null);
         AlertFragment alertFragment = AlertFragment.getInstance(null);
         AssistantFragment assistantFragment = AssistantFragment.getInstance(null);
+        Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(null);
 
         BlacklistPartnersFragment blacklistPartnersFragment = BlacklistPartnersFragment.getInstance(null);
 
@@ -85,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         MachinePurposeTwoFragment machinePurposeTwoFragment = MachinePurposeTwoFragment.getInstance(null);
         Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(null);
         Menu162Fragment menu162Fragment = Menu162Fragment.getInstance(null);
+        MenuOneFragment menuOneFragment = MenuOneFragment.getInstance(null);
         MenuTwoFragment menuTwoFragment = MenuTwoFragment.getInstance(null);
 
         NewCardFragment newCardFragment = NewCardFragment.getInstance(null);
@@ -106,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
         SeekbarFragment seekbarFragment = SeekbarFragment.getInstance(null);
         ServiceFragment serviceFragment = ServiceFragment.getInstance(null);
         SettingsFragment settingsFragment = SettingsFragment.getInstance(null);
+        SpinnerFragment spinnerFragment = SpinnerFragment.getInstance(null);
+        SpinnerTariffsFragment spinnerTariffsFragment = SpinnerTariffsFragment.getInstance(null);
 
         TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
         TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(null);
@@ -115,6 +123,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, deployedMessagesFragment, DeployedMessagesFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, addressFragment, AddressFragment.TAG).commit();
     }
 }

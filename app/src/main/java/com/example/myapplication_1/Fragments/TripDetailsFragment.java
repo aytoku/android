@@ -1,37 +1,55 @@
 package com.example.myapplication_1.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
-public class TripDetailsFragment extends AppCompatActivity {
+public class TripDetailsFragment extends Fragment {
+
+    public static final String TAG = "PaymentChangeFragment";
+
+    public static PaymentChangeFragment getInstance(Bundle args) {
+
+        PaymentChangeFragment f = new PaymentChangeFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     ImageButton button;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.trip_details);
+        View view = inflater.inflate(R.layout.trip_details,
+                container, false);
 
-        button = findViewById(R.id.rl_order_details_button);
+        button = view.findViewById(R.id.rl_order_details_button);
         addListener();
+        return view;
     }
 
     public void addListener(){
 
+        Bundle _args = new Bundle();
+        final Fragment machinePurposeTwoFragment = MachinePurposeTwoFragment.getInstance(_args);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TripDetailsFragment.this, MachinePurposeTwoFragment.class );
-                startActivity(intent);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, machinePurposeTwoFragment);
+                fragmentTransaction.commit();
             }
         });
     }

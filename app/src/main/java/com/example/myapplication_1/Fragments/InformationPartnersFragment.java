@@ -1,0 +1,150 @@
+package com.example.myapplication_1.Fragments;
+
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.myapplication_1.R;
+
+public class InformationPartnersFragment extends Fragment {
+
+    public static final String TAG = "InformationPartnersFragment";
+
+    public static InformationPartnersFragment getInstance(Bundle args) {
+
+        InformationPartnersFragment f = new InformationPartnersFragment();
+        f.setArguments(args);
+
+        return f;
+    }
+
+    ImageButton imageButton;
+    private ImageView star1;
+    private ImageView star2;
+    private ImageView star3;
+    private ImageView star4;
+    private ImageView star5;
+    private ImageView[] starArr;
+    private Drawable imgStarGrey;
+    private Drawable imgStarRed;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
+        View view = inflater.inflate(R.layout.information_partners,
+                container, false);
+
+        imageButton = view.findViewById(R.id.rl_information_partners_button);
+
+        imgStarGrey = getResources().getDrawable(R.drawable.icon_little_grey_star);
+        imgStarRed = getResources().getDrawable(R.drawable.icon_little_red_star);
+
+        starArr = new ImageView[]{
+                star1 = view.findViewById(R.id.rl_information_partners_star1),
+                star2 = view.findViewById(R.id.rl_information_partners_star2),
+                star3 = view.findViewById(R.id.rl_information_partners_star3),
+                star4 = view.findViewById(R.id.rl_information_partners_star4),
+                star5 = view.findViewById(R.id.rl_information_partners_star5)
+        };
+
+        star1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                allStarsGrey();
+                if(view.getId()==R.id.rl_information_partners_star1){
+                    star1.setImageDrawable(imgStarRed);
+                }
+            }
+        });
+
+        star2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                allStarsGrey();
+                if(view.getId()==R.id.rl_information_partners_star2){
+
+                    star1.setImageDrawable(imgStarRed);
+                    star2.setImageDrawable(imgStarRed);
+                }
+            }
+        });
+
+        star3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                allStarsGrey();
+                if(view.getId()==R.id.rl_information_partners_star3) {
+
+                    star1.setImageDrawable(imgStarRed);
+                    star2.setImageDrawable(imgStarRed);
+                    star3.setImageDrawable(imgStarRed);
+                }
+            }
+        });
+
+        star4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                allStarsGrey();
+                if(view.getId()==R.id.rl_information_partners_star4) {
+
+                    star1.setImageDrawable(imgStarRed);
+                    star2.setImageDrawable(imgStarRed);
+                    star3.setImageDrawable(imgStarRed);
+                    star4.setImageDrawable(imgStarRed);
+                }
+            }
+        });
+
+        star5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                allStarsGrey();
+                if(view.getId()==R.id.rl_information_partners_star5) {
+
+                    star1.setImageDrawable(imgStarRed);
+                    star2.setImageDrawable(imgStarRed);
+                    star3.setImageDrawable(imgStarRed);
+                    star4.setImageDrawable(imgStarRed);
+                    star5.setImageDrawable(imgStarRed);
+                }
+            }
+        });
+
+        Bundle _args = new Bundle();
+        final Fragment partnersFragment = PartnersFragment.getInstance(_args);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, partnersFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        return view;
+    }
+
+    public void allStarsGrey(){
+
+        for (int i = 0; i <= starArr.length-1; i++){
+            starArr[i].setImageDrawable(imgStarGrey);
+        }
+    }
+}

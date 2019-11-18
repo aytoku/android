@@ -12,20 +12,21 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
-public class ServiceFragment extends Fragment {
+public class AboutAppFragment  extends Fragment {
 
-    public static final String TAG = "ServiceFragment";
+    public static final String TAG = "AboutAppFragment";
 
-    public static ServiceFragment getInstance(Bundle args) {
+    public static AboutAppFragment getInstance(Bundle args) {
 
-        ServiceFragment f = new ServiceFragment();
+        AboutAppFragment f = new AboutAppFragment();
         f.setArguments(args);
 
         return f;
     }
-    private ImageButton imageButton;
-    private ImageButton imageButton1;
-    private TextView textView;
+
+    ImageButton imageButton;
+    ImageButton imageButton1;
+    TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,22 +34,22 @@ public class ServiceFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        View view = inflater.inflate(R.layout.service,
+        View view = inflater.inflate(R.layout.about_app,
                 container, false);
 
-        imageButton = view.findViewById(R.id.ll_service_button);
-        imageButton1 = view.findViewById(R.id.ll_service_img_arrow3);
-        textView = view.findViewById(R.id.ll_service_program_error);
+        imageButton = view.findViewById(R.id.rl_about_app_button);
+        imageButton1 = view.findViewById(R.id.rl_about_app_img_arrow1);
+        textView = view.findViewById(R.id.rl_about_app_policy);
 
         Bundle _args = new Bundle();
-        final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
-        final Fragment menu162Fragment = Menu162Fragment.getInstance(_args);
+        final Fragment informationFragment = InformationFragment.getInstance(_args);
+        final Fragment privacyPolicyFragment = PrivacyPolicyFragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menuOneFragment);
+                fragmentTransaction.replace(R.id.ll_main, informationFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -57,7 +58,7 @@ public class ServiceFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menu162Fragment);
+                fragmentTransaction.replace(R.id.ll_main, privacyPolicyFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -66,7 +67,7 @@ public class ServiceFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menu162Fragment);
+                fragmentTransaction.replace(R.id.ll_main, privacyPolicyFragment);
                 fragmentTransaction.commit();
             }
         });

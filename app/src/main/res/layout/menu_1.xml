@@ -4,72 +4,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/angle_radius">
 
-    <LinearLayout
-        android:id="@+id/ll_menu1"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingTop="40dp"
-        android:orientation="vertical">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ll_menu_1_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"/>
 
-        <Button
-            android:id="@+id/ll_menu1.button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Введите номер телефона"
-            android:textSize="17sp"
-            android:layout_weight="0"
-            android:paddingBottom="20dp"
-            android:textAllCaps="false"
-            android:paddingTop="20dp"
-            android:paddingRight="60dp"
-            android:paddingLeft="20dp"
-            android:textColor="#FFFFFF"
-            android:background="#FD6F6D"/>
-
-        <TextView
-            android:id="@+id/ll_menu1.title1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp"
-            android:layout_weight="0.1"
-            android:paddingLeft="20dp"
-            android:text="Способ оплаты"
-            android:textColor="#424242"
-            android:textSize="17sp"/>
-
-        <TextView
-            android:id="@+id/ll_menu1.titl2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:layout_weight="0.1"
-            android:paddingLeft="20dp"
-            android:text="Настройки"
-            android:textColor="#424242"
-            android:textSize="17sp"/>
-
-        <TextView
-            android:id="@+id/ll_menu1.title2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingLeft="20dp"
-            android:layout_weight="0.1"
-            android:text="Информация"
-            android:textColor="#424242"
-            android:textSize="17sp"/>
-
-        <TextView
-            android:id="@+id/ll_menu1.title3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingLeft="20dp"
-            android:layout_weight="2"
-            android:text="Служба поддержки"
-            android:textColor="#424242"
-            android:textSize="17sp"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+ </LinearLayout>

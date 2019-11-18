@@ -59,7 +59,21 @@ import ru.osety.amironlibrary.DrawableUtils;
             viewHolder.title.setText( _item.getStr() );
             viewHolder.code.setText( _item.getTime() );
 
+            viewHolder.img.getRootView().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    _item.callBack.call(_item);
+                }
+            });
+
             viewHolder.title.getRootView().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    _item.callBack.call(_item);
+                }
+            });
+
+            viewHolder.code.getRootView().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     _item.callBack.call(_item);

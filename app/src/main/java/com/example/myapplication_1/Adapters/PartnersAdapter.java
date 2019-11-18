@@ -48,7 +48,7 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
-            int _size = Math.round(_dens * 40);
+            int _size = Math.round(_dens * 12);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
@@ -56,6 +56,28 @@ import ru.osety.amironlibrary.DrawableUtils;
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
+
+            viewHolder.img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        _item.getCallBack().call(_item);
+                    }catch (NullPointerException e){
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            viewHolder.desc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        _item.getCallBack().call(_item);
+                    }catch (NullPointerException e){
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
 
         @Override
@@ -65,16 +87,22 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         public static class ItemsMenu {
 
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+
+            }
+
             private @ColorInt
             int colorBackgroundInt;
             private int imgResId;
             private String desc;
+            private CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes,int imgResId,String desc) {
+            public ItemsMenu(int colorBackgroundRes,int imgResId,String desc, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.imgResId = imgResId;
                 this.desc = desc;
-                this.imgResId = imgResId;
+                this.callBack = callBack;
             }
 
             public int getImgResId() {
@@ -87,6 +115,10 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             public int getColorBackground() {
                 return colorBackgroundInt;
+            }
+
+            public CallBack getCallBack() {
+                return callBack;
             }
         }
 

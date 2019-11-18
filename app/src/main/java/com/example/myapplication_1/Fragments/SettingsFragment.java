@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +28,7 @@ public class SettingsFragment extends Fragment {
     }
 
     RecyclerView rv;
+    private ImageButton imageButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +41,20 @@ public class SettingsFragment extends Fragment {
 
         rv = view.findViewById(R.id.recycler_settings);
 
+        imageButton = view.findViewById(R.id.ll_setting_button);
+
+        Bundle _args = new Bundle();
+        final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, menuOneFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
         return view;
     }
 
@@ -48,9 +65,9 @@ public class SettingsFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            SettingsAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            SettingsAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            SettingsAdapter adapterGridViewMenu = new SettingsAdapter(itemsMenu, getActivity().getBaseContext());//this;
+            SettingsAdapter adapterGridViewMenu = new SettingsAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -66,10 +83,8 @@ public class SettingsFragment extends Fragment {
         SettingsAdapter.ItemsMenu []_arr = new SettingsAdapter.ItemsMenu[]{
 
                 new SettingsAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
                         "Не звонить"),
                 new SettingsAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
-                        R.mipmap.ic_launcher_round,
                         "Не предлагать сообщения о\nснижении цены")
         };
         return _arr;

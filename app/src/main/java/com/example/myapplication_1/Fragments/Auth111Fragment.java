@@ -5,36 +5,56 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
-public class Auth111Fragment extends AppCompatActivity {
+import static android.app.Activity.RESULT_OK;
+
+public class Auth111Fragment extends Fragment {
+
+    public static final String TAG = "Auth111Fragment";
+
+    public static Auth111Fragment getInstance(Bundle args) {
+
+        Auth111Fragment f = new Auth111Fragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     TextView textView;
     EditText editText;
     TextView button;
+    ImageButton imageButton;
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.auth_1_1_1);
+        View view = inflater.inflate(R.layout.auth_1_1_1,
+                container, false);
 
-        button = findViewById(R.id.cl_auth_1_1_1_button1);
+        button = view.findViewById(R.id.cl_auth_1_1_1_button1);
 
-        textView = findViewById(R.id.cl_auth_1_1_1_button);
+        textView = view.findViewById(R.id.cl_auth_1_1_1_button);
 
-        editText = findViewById(R.id.cl_auth_1_1_1_editTextNumber);
+        editText = view.findViewById(R.id.cl_auth_1_1_1_editTextNumber);
+
+        imageButton = view.findViewById(R.id.cl_auth_1_1_1_image_button);
 
         final int[] len = {0};
         final int[] len1 = {0};
@@ -93,16 +113,32 @@ public class Auth111Fragment extends AppCompatActivity {
             }
         });
 
+        Bundle _args = new Bundle();
+        final Fragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(_args);
+        final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
+
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Auth111Fragment.this, CountryCodeSelectionFragment.class);
-                startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, countryCodeSelectionFragment);
+                fragmentTransaction.commit();
             }
         });
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, menuOneFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        return view;
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == SECOND_ACTIVITY_REQUEST_CODE) {
@@ -110,7 +146,7 @@ public class Auth111Fragment extends AppCompatActivity {
 
                 String returnString = data.getStringExtra("keyName");
 
-                TextView textView = findViewById(R.id.cl_auth_1_1_1_button);
+                TextView textView = getView().findViewById(R.id.cl_auth_1_1_1_button);
                 textView.setText(returnString);
             }
         }

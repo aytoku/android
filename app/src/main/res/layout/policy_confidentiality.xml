@@ -9,7 +9,7 @@
         android:paddingLeft="15dp">
 
         <ImageButton
-            android:id="@+id/rl_choose_place.button_strelka"
+            android:id="@+id/rl_choose_place_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFF"

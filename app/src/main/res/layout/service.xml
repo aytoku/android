@@ -14,7 +14,7 @@
                 android:paddingLeft="15dp">
 
                 <ImageButton
-                    android:id="@+id/ll_service.button"
+                    android:id="@+id/ll_service_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -27,6 +27,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Служба поддержки"
+                    android:paddingTop="10dp"
                     android:layout_centerInParent="true"
                     android:paddingBottom="10dp"
                     android:textColor="#424242"
@@ -104,7 +105,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/icon_ellipse_red"
                             android:scaleType="center"
-                            android:paddingTop="10dp" />
+                            android:paddingTop="13sp" />
 
                         <TextView
                             android:id="@+id/ll_service.address_title1"
@@ -128,7 +129,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/icon_circle"
                             android:scaleType="center"
-                            android:paddingTop="10dp" />
+                            android:paddingTop="13sp" />
 
                         <TextView
                             android:id="@+id/ll_service.address_title2"
@@ -234,7 +235,7 @@
 
             <TextView
                 android:id="@+id/ll_service.questions"
-                android:paddingLeft="35dp"
+                android:paddingLeft="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ваши вопросы"
@@ -248,7 +249,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:paddingLeft="15dp"
+                android:paddingLeft="5dp"
                 android:paddingTop="10dp"
                 android:background="@drawable/grey_line"
                 android:orientation="horizontal">
@@ -259,9 +260,9 @@
                     android:layout_height="wrap_content"
                     android:text="Другая поездка"
                     android:paddingLeft="22dp"
+                    android:gravity="center_vertical"
                     android:paddingBottom="15dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
 
@@ -281,7 +282,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:paddingLeft="15dp"
+                android:paddingLeft="5dp"
                 android:paddingTop="10dp"
                 android:background="@drawable/grey_line"
                 android:orientation="horizontal">
@@ -294,7 +295,7 @@
                     android:paddingLeft="22dp"
                     android:paddingBottom="15dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
 
@@ -314,25 +315,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:paddingLeft="15dp"
+                android:paddingLeft="5dp"
                 android:background="@drawable/grey_line"
                 android:paddingTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/ll_service.program_error"
+                    android:id="@+id/ll_service_program_error"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ошибка программы"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
                     android:paddingLeft="22dp"
                     android:paddingBottom="15dp"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
 
                 <ImageButton
-                    android:id="@+id/ll_service.img_arrow3"
+                    android:id="@+id/ll_service_img_arrow3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="15dp"

@@ -11,7 +11,7 @@
         android:paddingLeft="15dp">
 
         <ImageButton
-            android:id="@+id/rl_tariffs.button"
+            android:id="@+id/rl_tariffs_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -74,7 +74,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:paddingLeft="15dp"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:gravity="center_vertical"
         android:background="@drawable/grey_line"
         android:paddingRight="15dp">
 
@@ -96,7 +98,9 @@
         android:layout_weight="0.1"
         android:paddingLeft="15dp"
         android:background="@drawable/grey_line"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:gravity="center_vertical"
         android:paddingRight="15dp">
 
         <TextView
@@ -126,7 +130,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:paddingLeft="15dp"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:gravity="center_vertical"
         android:background="@drawable/grey_line"
         android:paddingRight="15dp">
 
@@ -157,7 +163,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:paddingLeft="15dp"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:gravity="center_vertical"
         android:background="@drawable/grey_line"
         android:paddingRight="15dp">
 
@@ -188,7 +196,10 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:paddingLeft="15dp"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
+        android:background="@drawable/grey_line"
+        android:paddingBottom="5dp"
+        android:gravity="center_vertical"
         android:paddingRight="15dp">
 
         <TextView
