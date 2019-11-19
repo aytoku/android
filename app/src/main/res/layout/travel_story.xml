@@ -4,6 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/ll_travel_story_img"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:src="@drawable/ic_arrow_left"/>
+
     <TextView
         android:id="@+id/ll_travel_story.title"
         android:layout_width="match_parent"
@@ -12,17 +21,9 @@
         android:text="История поездок"
         android:textColor="#424242"
         android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingBottom="10dp"
         android:textSize="17sp"
         android:textStyle="bold"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:paddingTop="10dp"
-        android:paddingLeft="15dp"
-        android:src="@drawable/ic_arrow_left"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_travel_story"

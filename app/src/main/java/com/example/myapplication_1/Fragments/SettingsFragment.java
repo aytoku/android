@@ -44,13 +44,13 @@ public class SettingsFragment extends Fragment {
         imageButton = view.findViewById(R.id.ll_setting_button);
 
         Bundle _args = new Bundle();
-        final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
+        final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menuOneFragment);
+                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
                 fragmentTransaction.commit();
             }
         });

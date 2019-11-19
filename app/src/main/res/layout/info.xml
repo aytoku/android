@@ -5,8 +5,8 @@
 
     <ImageButton
         android:id="@+id/ll_info_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@null"
         android:paddingTop="15dp"
         android:paddingLeft="15dp"
@@ -34,6 +34,7 @@
             android:textColor="#424242"/>
         
             <RelativeLayout
+                android:id="@+id/rl_info1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
@@ -63,6 +64,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_info2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
@@ -92,6 +94,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_info3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"

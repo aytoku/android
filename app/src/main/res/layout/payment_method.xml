@@ -5,17 +5,19 @@
     android:background="#FFF">
 
     <RelativeLayout
-        android:id="@+id/rl_payment_method"
+        android:id="@+id/rl_payment_method1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/rl_payment_method.button_strelka"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/rl_payment_method_button_strelka"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@null"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
@@ -35,7 +37,6 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/ll_payment_method"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="30dp"
@@ -47,16 +48,17 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:paddingBottom="30dp"
-            android:paddingLeft="20dp"
+            android:paddingLeft="15dp"
             android:textSize="21sp"
             android:text="Способ оплаты"
             android:textColor="#424242"/>
 
         <LinearLayout
+            android:id="@+id/ll_payment_method1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
-            android:paddingLeft="20dp"
+            android:paddingLeft="15dp"
             android:orientation="horizontal">
 
         <ImageView
@@ -96,20 +98,21 @@
 
             </LinearLayout>
 
-                <CheckBox
-                    android:id="@+id/ll_payment_method.checkBoxBold"
-                    android:button="@drawable/toggle_checked"
-                    android:paddingTop="25dp"
-                    android:layout_weight="0"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/ll_payment_method_checkBox"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingTop="10dp"
+                android:src="@drawable/togle_uncheked" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_payment_method2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
+            android:paddingLeft="15dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -146,22 +149,22 @@
 
                 </LinearLayout>
 
-                <CheckBox
-                    android:id="@+id/ll_payment_method.checkBoxBold1"
-                    android:button="@drawable/togle_uncheked"
-                    android:paddingTop="25dp"
-                    android:layout_weight="0"
+                <ImageView
+                    android:id="@+id/ll_payment_method_checkBox1"
                     android:layout_width="30dp"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="10dp"
+                    android:src="@drawable/togle_uncheked" />
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_payment_method3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
+            android:paddingLeft="15dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -198,13 +201,14 @@
 
                 </LinearLayout>
 
-                <CheckBox
-                    android:id="@+id/ll_payment_method.checkBoxBold2"
-                    android:button="@drawable/togle_uncheked"
-                    android:paddingTop="25dp"
-                    android:layout_weight="0"
+
+                <ImageView
+                    android:id="@+id/ll_payment_method_checkBox2"
                     android:layout_width="30dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="10dp"
+                    android:src="@drawable/togle_uncheked" />
 
             </LinearLayout>
 
@@ -220,19 +224,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/ll_payment_method.add_card"
+            <LinearLayout
+                android:id="@+id/ll_payment_method4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Добавить карту"
-                android:paddingBottom="10dp"
-                android:background="@drawable/grey_line"
-                android:paddingTop="10dp"
-                android:paddingLeft="20dp"
-                android:textSize="17sp"
-                android:textColor="#424242"/>
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/ll_payment_method.add_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Добавить карту"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/grey_line"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:textSize="17sp"
+                    android:textColor="#424242"/>
+
+            </LinearLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_payment_method"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"

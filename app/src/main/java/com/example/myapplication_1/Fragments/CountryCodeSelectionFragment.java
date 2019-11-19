@@ -105,6 +105,7 @@ public class CountryCodeSelectionFragment extends Fragment {
                                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                                     transaction.replace(R.id.ll_main, auth111Fragment).commit();
+                                    getActivity().getIntent().getExtras().get("+995");
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -128,6 +129,7 @@ public class CountryCodeSelectionFragment extends Fragment {
                                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                                     transaction.replace(R.id.ll_main, auth111Fragment).commit();
+                                    getActivity().getIntent().getExtras().get("+7");
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

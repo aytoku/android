@@ -28,6 +28,7 @@ public class PaymentPickFragment extends Fragment {
 
     private ImageView imgChecked;
     private ImageView imgUnchecked;
+    private ImageView imgUnchecked1;
     private Drawable imgToggleGrey;
     private Drawable imgToggleRed;
     boolean f = true;
@@ -43,7 +44,7 @@ public class PaymentPickFragment extends Fragment {
                 container, false);
 
         Bundle _args = new Bundle();
-        final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
+        final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
 
         accept = view.findViewById(R.id.rl_payment_pick_ready);
 
@@ -51,7 +52,7 @@ public class PaymentPickFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menuOneFragment);
+                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
                 fragmentTransaction.commit();
             }
         });
@@ -61,27 +62,37 @@ public class PaymentPickFragment extends Fragment {
 
         RelativeLayout toggleChecked = view.findViewById(R.id.rl_payment_pick_rl_visa);
         RelativeLayout toggleUnchecked = view.findViewById(R.id.rl_payment_pick_rl_ruble);
+        RelativeLayout toggleUnchecked1 = view.findViewById(R.id.rl_payment_pick_rl_sber);
 
         imgChecked = view.findViewById(R.id.rl_payment_ready_toggleChecked);
         imgUnchecked = view.findViewById(R.id.rl_payment_ready_toggleUnchecked);
+        imgUnchecked1 = view.findViewById(R.id.rl_payment_ready_toggleUnchecked1);
 
         toggleChecked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(f =!f){
                     imgChecked.setImageDrawable(imgToggleRed);
                     imgUnchecked.setImageDrawable(imgToggleGrey);
-                }
+                    imgUnchecked1.setImageDrawable(imgToggleGrey);
+
             }
         });
 
         toggleUnchecked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(f =!f){
                     imgUnchecked.setImageDrawable(imgToggleRed);
                     imgChecked.setImageDrawable(imgToggleGrey);
-                }
+                    imgUnchecked1.setImageDrawable(imgToggleGrey);
+            }
+        });
+
+        toggleUnchecked1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    imgUnchecked1.setImageDrawable(imgToggleRed);
+                    imgChecked.setImageDrawable(imgToggleGrey);
+                    imgUnchecked.setImageDrawable(imgToggleGrey);
             }
         });
 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -56,13 +57,24 @@ import ru.osety.amironlibrary.DrawableUtils;
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
             viewHolder.title.setText(_item.getStr());
+//
+//            viewHolder.img.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    itemsMenuList.add(i, _item);
+//                    notifyItemInserted(i);
+//                    notifyDataSetChanged();
+//                }
+//            });
 
-            viewHolder.img.setOnClickListener(new View.OnClickListener() {
+            viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    itemsMenuList.add(i, _item);
-                    notifyItemInserted(i);
-                    notifyDataSetChanged();
+                    try {
+                        _item.getCallBack().call(_item);
+                    }catch (NullPointerException e){
+                        e.printStackTrace();
+                    }
                 }
             });
         }
@@ -74,15 +86,22 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         public static class ItemsMenu {
 
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+
+            }
+
             private @ColorInt
             int colorBackgroundInt;
             private int imgResId;
             private String title;
+            CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes, int imgResId, String title) {
+            public ItemsMenu(int colorBackgroundRes, int imgResId, String title, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.imgResId = imgResId;
                 this.title = title;
+                this.callBack = callBack;
             }
 
             public int getImgResId() {
@@ -96,17 +115,23 @@ import ru.osety.amironlibrary.DrawableUtils;
             public int getColorBackground() {
                 return colorBackgroundInt;
             }
+
+            public CallBack getCallBack() {
+                return (CallBack) callBack;
+            }
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
             private final ImageView img;
             private final TextView title;
+            private final LinearLayout linearLayout;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 img = itemView.findViewById(R.id.ll_cell_address_button_plus1);
                 title = itemView.findViewById(R.id.ll_cell_address_add_address_home);
+                linearLayout = itemView.findViewById(R.id.ll_cell_address);
             }
         }
     }

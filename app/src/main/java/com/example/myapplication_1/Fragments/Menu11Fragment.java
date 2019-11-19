@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -67,31 +68,131 @@ public class Menu11Fragment extends Fragment {
 
                 new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "+7 963 377 88 44"),
+                        "+7 963 377 88 44",
+                        new AdapterMenu11.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Способы оплаты"),
+                        "Способы оплаты",
+                        new AdapterMenu11.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, paymentPickFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Бонусы"),
+                        "История поездок",
+                        new AdapterMenu11.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, travelStoryFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "История поездок"),
+                        "Мои адреса",
+                        new AdapterMenu11.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment addressFragment = AddressFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, addressFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Мои адреса"),
+                        "Настройки",
+                        new AdapterMenu11.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment settingsFragment = SettingsFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, settingsFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Настройки"),
+                        "Информация",
+                        new AdapterMenu11.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment informationFragment = InformationFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, informationFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AdapterMenu11.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Информация")
+                        "Служба поддержки",
+                        new AdapterMenu11.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment serviceFragment = ServiceFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, serviceFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
         };
         return arr;
     }

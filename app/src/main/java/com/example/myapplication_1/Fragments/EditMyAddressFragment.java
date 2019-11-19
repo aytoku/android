@@ -7,10 +7,11 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
-class EditMyAddressFragment extends Fragment {
+public class EditMyAddressFragment extends Fragment {
 
     public static final String TAG = "EditMyAddressFragment";
 
@@ -34,6 +35,18 @@ class EditMyAddressFragment extends Fragment {
                 container, false);
 
         button = view.findViewById(R.id.rl_edit_my_address_button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle _args = new Bundle();
+                Fragment addressFragment = AddressFragment.getInstance(_args);
+
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, addressFragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         return view;
     }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -57,18 +58,7 @@ import ru.osety.amironlibrary.DrawableUtils;
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
 
-            viewHolder.img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-                        _item.getCallBack().call(_item);
-                    }catch (NullPointerException e){
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            viewHolder.desc.setOnClickListener(new View.OnClickListener() {
+            viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     try {
@@ -126,11 +116,14 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             private final ImageView img;
             private final TextView desc;
+            private final RelativeLayout relativeLayout;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 img = itemView.findViewById(R.id.ll_cell_partners_rl_cell_partners_img);
                 desc = itemView.findViewById(R.id.ll_cell_partners_rl_cell_partners_title);
+                relativeLayout = itemView.findViewById(R.id.ll_cell_partners_rl_cell_partners);
+
             }
         }
     }

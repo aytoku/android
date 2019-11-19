@@ -13,8 +13,8 @@
 
         <ImageButton
             android:id="@+id/rl_about_app_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@null"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
@@ -105,7 +105,7 @@
         android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/rl_about_app.ll_about_app.rl_about_app"
+        android:id="@+id/rl_about_app_ll_about_app_rl_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

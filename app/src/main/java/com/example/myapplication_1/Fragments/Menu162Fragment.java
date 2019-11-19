@@ -90,17 +90,52 @@ public class Menu162Fragment extends Fragment {
                 new AdapterMenu162.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Большая стоимость",
-                        R.drawable.icon_arrow_right),
+                        R.drawable.icon_arrow_right,
+                        new AdapterMenu162.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu162.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AdapterMenu162.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Не дали сдачи",
-                        R.drawable.icon_arrow_right),
+                        R.drawable.icon_arrow_right,
+                        new AdapterMenu162.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu162.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AdapterMenu162.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "Ошибка программы",
-                        R.drawable.icon_arrow_right)
+                        R.drawable.icon_arrow_right,
+                        new AdapterMenu162.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AdapterMenu162.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, programErrorTwoFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
         };
         return arr;
     }

@@ -36,6 +36,7 @@ public class AddressFragment extends Fragment {
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AddressAdapter.ItemsMenu> itemsMenuList;
     ImageButton button;
+    ImageButton imageButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,16 +50,25 @@ public class AddressFragment extends Fragment {
         rv = view.findViewById(R.id.ll_address_rl_address_ll_address_address_recycler);
 
         button = view.findViewById(R.id.ll_address_rl_address_button_plusik);
+        imageButton = view.findViewById(R.id.ll_address_rl_address_button_strelka);
 
         Bundle _args = new Bundle();
-        final Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
+        final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, editMyAddressFragment);
-                fragmentTransaction.commit();
+
+                onAddButtonClicked(view);
             }
         });
 
@@ -77,7 +87,6 @@ public class AddressFragment extends Fragment {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-        onAddButtonClicked(view);
         return view;
     }
 
@@ -86,7 +95,22 @@ public class AddressFragment extends Fragment {
         try {
             itemsMenuList.add(itemsMenuList.size(), new AddressAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                     R.mipmap.icon_button_plus,
-                    "Максима Горького, 123"));
+                    "Добавить адрес дома",
+                    new AddressAdapter.ItemsMenu.CallBack(){
+                        @Override
+                        public void call(AddressAdapter.ItemsMenu itemsMenu){
+                            try {
+                                Bundle _args = new Bundle();
+                                Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
+
+                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                fragmentTransaction.replace(R.id.ll_main, editMyAddressFragment);
+                                fragmentTransaction.commit();
+                            }catch (NullPointerException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }));
             adapterGridViewMenu.notifyItemInserted(itemsMenuList.size()-1);
             adapterGridViewMenu.notifyDataSetChanged();
 
@@ -96,11 +120,6 @@ public class AddressFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
-
     private AddressAdapter.ItemsMenu[] getMenuItems() {
 
         AddressAdapter.ItemsMenu[] arr = new AddressAdapter.ItemsMenu[]{
@@ -108,12 +127,42 @@ public class AddressFragment extends Fragment {
                 new AddressAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_button_plus,
-                        "Добавить адрес дома"),
+                        "Добавить адрес дома",
+                        new AddressAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AddressAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, editMyAddressFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
 
                 new AddressAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_button_plus,
-                        "Добавить адрес дома")
+                        "Добавить адрес дома",
+                        new AddressAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(AddressAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                    Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
+
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.ll_main, editMyAddressFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
         };
         return arr;
     }

@@ -15,8 +15,8 @@
 
                 <ImageButton
                     android:id="@+id/ll_service_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@null"
                     android:layout_centerInParent="true"
                     android:layout_alignParentLeft="true"
@@ -246,6 +246,7 @@
                 android:textSize="14sp"/>
 
             <RelativeLayout
+                android:id="@+id/rl_service1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
@@ -279,6 +280,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_service2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
@@ -312,6 +314,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_service3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"

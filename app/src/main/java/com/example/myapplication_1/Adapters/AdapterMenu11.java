@@ -43,6 +43,16 @@ import java.util.List;
             final ItemsMenu _item = itemsMenuList.get(i);
 
             viewHolder.title.setText(_item.getStr());
+            viewHolder.title.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        _item.getCallBack().call(_item);
+                    }catch (NullPointerException e){
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
 
         @Override
@@ -52,13 +62,20 @@ import java.util.List;
 
         public static class ItemsMenu {
 
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+
+            }
+
             private @ColorInt
             int colorBackgroundInt;
             private String title;
+            private CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes, String title) {
+            public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.title = title;
+                this.callBack = callBack;
             }
 
             public String getStr() {
@@ -67,6 +84,10 @@ import java.util.List;
 
             public int getColorBackground() {
                 return colorBackgroundInt;
+            }
+
+            public CallBack getCallBack() {
+                return callBack;
             }
         }
 

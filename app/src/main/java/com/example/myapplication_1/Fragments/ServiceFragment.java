@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,8 +24,9 @@ public class ServiceFragment extends Fragment {
         return f;
     }
     private ImageButton imageButton;
-    private ImageButton imageButton1;
-    private TextView textView;
+    private RelativeLayout relativeLayout1;
+    private RelativeLayout relativeLayout2;
+    private RelativeLayout relativeLayout3;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,41 +38,33 @@ public class ServiceFragment extends Fragment {
                 container, false);
 
         imageButton = view.findViewById(R.id.ll_service_button);
-        imageButton1 = view.findViewById(R.id.ll_service_img_arrow3);
-        textView = view.findViewById(R.id.ll_service_program_error);
+        relativeLayout1 = view.findViewById(R.id.rl_service1);
+        relativeLayout2 = view.findViewById(R.id.rl_service2);
+        relativeLayout3 = view.findViewById(R.id.rl_service3);
 
         Bundle _args = new Bundle();
-        final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
-        final Fragment menu162Fragment = Menu162Fragment.getInstance(_args);
+        final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+        final Fragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
+        final Fragment menu161Fragment = Menu162Fragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menuOneFragment);
+                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
                 fragmentTransaction.commit();
             }
         });
 
-        imageButton1.setOnClickListener(new View.OnClickListener() {
+        relativeLayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menu162Fragment);
-                fragmentTransaction.commit();
-            }
-        });
-
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menu162Fragment);
+                fragmentTransaction.replace(R.id.ll_main, menu161Fragment);
                 fragmentTransaction.commit();
             }
         });
 
         return view;
-
     }
 }
