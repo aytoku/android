@@ -8,8 +8,9 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@null"
-        android:paddingTop="15dp"
+        android:paddingTop="20dp"
         android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
         android:layout_alignParentLeft="true"
         android:src="@drawable/icon_strelka"/>
 
@@ -40,6 +41,7 @@
                 android:paddingTop="15dp"
                 android:paddingLeft="20dp"
                 android:background="@drawable/grey_line"
+                android:foreground="?android:selectableItemBackground"
                 android:paddingBottom="17sp"
                 android:orientation="horizontal">
 
@@ -69,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
                 android:paddingBottom="17sp"
+                android:foreground="?android:selectableItemBackground"
                 android:background="@drawable/grey_line"
                 android:orientation="horizontal">
 
@@ -99,6 +102,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
                 android:paddingLeft="20dp"
+                android:foreground="?android:selectableItemBackground"
                 android:background="@drawable/grey_line"
                 android:paddingBottom="17sp"
                 android:orientation="horizontal">

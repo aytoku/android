@@ -44,7 +44,6 @@ public class ServiceFragment extends Fragment {
 
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-        final Fragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
         final Fragment menu161Fragment = Menu162Fragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {

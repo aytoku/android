@@ -103,10 +103,10 @@ public class PartnersFragment extends Fragment {
                             public void call(PartnersAdapter.ItemsMenu itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment informationPartnersFragment = InformationPartnersFragment.getInstance(_args);
+                                    Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, informationPartnersFragment);
+                                    fragmentTransaction.replace(R.id.ll_main, spinnerFragment);
                                     fragmentTransaction.commit();
 
                                 }catch (NullPointerException e) {
@@ -123,10 +123,10 @@ public class PartnersFragment extends Fragment {
                     public void call(PartnersAdapter.ItemsMenu itemsMenu){
                         try {
                             Bundle _args = new Bundle();
-                            Fragment informationPartnersFragment = InformationPartnersFragment.getInstance(_args);
+                            Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
 
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.replace(R.id.ll_main, informationPartnersFragment);
+                            fragmentTransaction.replace(R.id.ll_main, spinnerFragment);
                             fragmentTransaction.commit();
 
                         }catch (NullPointerException e) {

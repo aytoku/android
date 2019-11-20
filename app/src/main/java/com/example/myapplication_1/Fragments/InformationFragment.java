@@ -37,15 +37,15 @@ public class InformationFragment extends Fragment {
                 container, false);
 
         imageButton = view.findViewById(R.id.ll_info_button);
-        relativeLayout1 = view.findViewById(R.id.rl_info1);
+        relativeLayout1 = view.findViewById(R.id.rl_info3);
         relativeLayout2 = view.findViewById(R.id.rl_info2);
-        relativeLayout3 = view.findViewById(R.id.rl_info3);
+        relativeLayout3 = view.findViewById(R.id.rl_info1);
 
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
         final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
         final Fragment partnersFragment = PartnersFragment.getInstance(_args);
-        final Fragment tariffsFragment = TariffsFragment.getInstance(_args);
+        final Fragment spinnerTariffsFragment = SpinnerTariffsFragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +78,7 @@ public class InformationFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, tariffsFragment);
+                fragmentTransaction.replace(R.id.ll_main, spinnerTariffsFragment);
                 fragmentTransaction.commit();
             }
         });

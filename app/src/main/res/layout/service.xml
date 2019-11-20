@@ -319,6 +319,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:paddingLeft="5dp"
+                android:foreground="?android:selectableItemBackground"
                 android:background="@drawable/grey_line"
                 android:paddingTop="10dp"
                 android:orientation="horizontal">

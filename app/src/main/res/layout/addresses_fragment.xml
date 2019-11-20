@@ -54,6 +54,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ll_address_rl_address_ll_address_address_recycler"
             android:layout_width="match_parent"
+            android:overScrollMode="never"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>

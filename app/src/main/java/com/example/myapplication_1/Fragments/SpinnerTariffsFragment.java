@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
@@ -23,6 +25,7 @@ public class SpinnerTariffsFragment extends Fragment {
         return f;
     }
 
+    ImageButton imageButton;
     String[] choose = {"Эконом", "Стандарт", "Не эконом"};
 
     @Override
@@ -39,6 +42,21 @@ public class SpinnerTariffsFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, choose);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+
+        imageButton = view.findViewById(R.id.rl_tariffs_button);
+
+        Bundle _args = new Bundle();
+        final Fragment informationFragment = InformationFragment.getInstance(_args);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, informationFragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         return view;
     }

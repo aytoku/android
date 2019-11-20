@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
@@ -33,20 +32,6 @@ public class TariffsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.tariffs,
                 container, false);
-
-        imageButton = view.findViewById(R.id.rl_tariffs_button);
-
-        Bundle _args = new Bundle();
-        final Fragment informationFragment = InformationFragment.getInstance(_args);
-
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, informationFragment);
-                fragmentTransaction.commit();
-            }
-        });
 
         return view;
 
