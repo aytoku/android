@@ -37,6 +37,7 @@ public class EmptyChatWithDriverFragment extends Fragment {
     RecyclerView rv1;
     RecyclerView.Adapter adapterGridViewMenu;
     private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
+    private List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,12 +63,13 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
         try {
 
-            EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
-
-            EmptyChatWithDriverAdapter adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenu, getActivity().getBaseContext());//this;
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu));
+            adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenuList1, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
+            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {

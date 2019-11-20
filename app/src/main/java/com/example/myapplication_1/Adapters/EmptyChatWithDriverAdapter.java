@@ -14,16 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
 
-    public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWithDriverAdapter.ViewHolder> {
+import java.util.List;
 
-        private final ItemsMenu[] itemsMenu;
+public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWithDriverAdapter.ViewHolder> {
+
+        private List<ItemsMenu> itemsMenuList1;
         private final LayoutInflater layoutInflater;
         private final Context context;
-        private boolean f = true;
         private int selectItem = 0;
+        private boolean f = true;
 
-        public EmptyChatWithDriverAdapter(EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu, Context context) {
-            this.itemsMenu = itemsMenu;
+        public EmptyChatWithDriverAdapter(List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1, Context context) {
+            this.itemsMenuList1 = itemsMenuList1;
             this.context = context;
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -34,13 +36,14 @@ import com.example.myapplication_1.R;
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_empty_chat_driver, viewGroup, false);
-            return new ViewHolder(v);
+            ViewHolder itemViewHolder = new ViewHolder(v);
+            return itemViewHolder;
         }
 
         @Override
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final ItemsMenu _item = itemsMenuList1.get(i);
 
             viewHolder.title.setText( _item.getTitle() );
 
@@ -48,7 +51,7 @@ import com.example.myapplication_1.R;
                 @Override
                 public void onClick(View view) {
 
-                    if(selectItem == i) {
+                    if(f=!f) {
 
                         viewHolder.cv_item.setCardBackgroundColor(Color.parseColor("#FC5B58"));
                         viewHolder.title.setTextColor(Color.WHITE);
@@ -64,7 +67,7 @@ import com.example.myapplication_1.R;
 
         @Override
         public int getItemCount() {
-            return itemsMenu.length;
+            return itemsMenuList1.size();
         }
 
         public static class ItemsMenu {
