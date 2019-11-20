@@ -21,7 +21,7 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
         private List<ItemsMenu> itemsMenuList1;
         private final LayoutInflater layoutInflater;
         private final Context context;
-        private int selectItem = 0;
+        private int selectItem = -1;
         private boolean f = true;
 
         public EmptyChatWithDriverAdapter(List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1, Context context) {
@@ -51,7 +51,7 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
                 @Override
                 public void onClick(View view) {
 
-                    if(f=!f) {
+                    if(selectItem == i) {
 
                         viewHolder.cv_item.setCardBackgroundColor(Color.parseColor("#FC5B58"));
                         viewHolder.title.setTextColor(Color.WHITE);
@@ -62,7 +62,6 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
                     }
                 }
             });
-
         }
 
         @Override
