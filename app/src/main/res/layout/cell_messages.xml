@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_cell_deployed_messages"
+            android:layout_width="310dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/card_draw"
+            android:paddingLeft="15dp">
+
+            <TextView
+                android:id="@+id/rl_cell_deployed_messages_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:paddingTop="10dp"
+                android:layout_alignParentEnd="true"
+                android:text="Выполните еще три заказа и получите\n+30 к рейтингу"
+                android:textColor="#FFF1F1"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/rl_cell_deployed_messages_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                android:text="30с назад"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

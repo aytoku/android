@@ -10,8 +10,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:paddingTop="10dp"
-                android:paddingLeft="15dp">
+                android:paddingTop="10dp">
 
                 <ImageButton
                     android:id="@+id/ll_service_button"
@@ -28,9 +27,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Служба поддержки"
-                    android:paddingTop="10dp"
                     android:layout_centerInParent="true"
-                    android:paddingBottom="10dp"
                     android:textColor="#424242"
                     android:textSize="17sp"
                     android:textStyle="bold"/>

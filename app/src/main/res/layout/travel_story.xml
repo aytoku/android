@@ -4,33 +4,44 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/ll_travel_story_img"
-        android:layout_width="25dp"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:paddingTop="10dp"
-        android:foreground="?android:selectableItemBackground"
-        android:paddingLeft="15dp"
-        android:src="@drawable/ic_arrow_left"/>
-
-    <TextView
-        android:id="@+id/ll_travel_story.title"
+    <RelativeLayout
+        android:id="@+id/rl_travel_story"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="История поездок"
-        android:textColor="#424242"
-        android:paddingTop="5dp"
-        android:paddingBottom="10dp"
-        android:textSize="17sp"
-        android:textStyle="bold"/>
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:id="@+id/ll_travel_story_img"
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:foreground="?android:selectableItemBackground"
+            android:src="@drawable/icon_strelka"/>
+
+        <TextView
+            android:id="@+id/ll_travel_story.title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="История поездок"
+            android:layout_centerInParent="true"
+            android:textColor="#424242"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_travel_story"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never"
-        android:layout_below="@+id/ll_travel_story.title" />
+        android:layout_below="@+id/rl_travel_story" />
 
 </RelativeLayout>

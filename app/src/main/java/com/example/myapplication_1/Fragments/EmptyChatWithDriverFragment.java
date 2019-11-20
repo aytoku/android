@@ -11,8 +11,13 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication_1.Adapters.DriverMessagesAdapter;
 import com.example.myapplication_1.Adapters.EmptyChatWithDriverAdapter;
 import com.example.myapplication_1.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class EmptyChatWithDriverFragment extends Fragment {
 
@@ -29,6 +34,9 @@ public class EmptyChatWithDriverFragment extends Fragment {
     ImageButton androidImageButton;
 
     RecyclerView rv;
+    RecyclerView rv1;
+    RecyclerView.Adapter adapterGridViewMenu;
+    private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +49,7 @@ public class EmptyChatWithDriverFragment extends Fragment {
         androidImageButton = view.findViewById(R.id.img_cross_grey);
 
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
+        rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
         return view;
     }
@@ -53,13 +62,29 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
         try {
 
-            EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
 
-            EmptyChatWithDriverAdapter adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenu, getActivity().getBaseContext());
+            EmptyChatWithDriverAdapter adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenu, getActivity().getBaseContext());//this;
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        RecyclerView recyclerView1 = rv1;
+
+        try {
+
+            DriverMessagesAdapter.ItemsMenu[] itemsMenu = getMenuItems1();
+            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            adapterGridViewMenu = new DriverMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerView1.setAdapter(adapterGridViewMenu);
+            recyclerView1.setLayoutManager(
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
+            recyclerView1.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -70,39 +95,29 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
         EmptyChatWithDriverAdapter.ItemsMenu []_arr = new EmptyChatWithDriverAdapter.ItemsMenu[]{
                 new EmptyChatWithDriverAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                        new EmptyChatWithDriverAdapter.ItemsMenu.CallBack() {
-                            @Override
-                            public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
-
-                                try {
-
-                                    Bundle _args = new Bundle();
-
-                                } catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-                        }, "Уже выхожу"),
+                        getResources().getColor(R.color.my_gray), "Уже выхожу"),
 
                 new EmptyChatWithDriverAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        new EmptyChatWithDriverAdapter.ItemsMenu.CallBack() {
-                            @Override
-                            public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
-
-                                try {
-
-                                    Bundle _args = new Bundle();
-
-                                } catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-                        }, "Не вижу вас")
+                        "Не вижу вас")
         };
         return _arr;
+    }
+
+    private DriverMessagesAdapter.ItemsMenu[] getMenuItems1() {
+
+        DriverMessagesAdapter.ItemsMenu[] arr = new DriverMessagesAdapter.ItemsMenu[]{
+
+                new DriverMessagesAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "Выполните еще три заказа и получите\n+30 к рейтингу",
+                        "30с назад"),
+
+                new DriverMessagesAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "Выполните еще три заказа и получите\n+30 к рейтингу",
+                        "30с назад")
+        };
+        return arr;
     }
 }

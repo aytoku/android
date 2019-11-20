@@ -6,12 +6,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="15dp">
+        android:background="#FFFFFF"
+        android:paddingTop="10dp">
 
         <ImageButton
             android:id="@+id/rl_choose_place_button"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:background="#FFFFFF"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
@@ -20,8 +22,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="15dp"
             android:layout_centerInParent="true"
             android:text="Политика конфиденциальности"
             android:textSize="17sp"

@@ -8,7 +8,7 @@
             android:id="@+id/rl_menu_1_6_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp">
+            android:paddingTop="10dp">
 
             <ImageButton
                 android:id="@+id/rl_menu_1_6_2_button"
@@ -25,10 +25,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:layout_centerInParent="true"
                 android:text="Ошибка программы"
-                android:paddingBottom="20dp"
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:textColor="#424242"/>

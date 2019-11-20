@@ -5,40 +5,28 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_cell__empty_chat_with_driver"
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:paddingLeft="10dp">
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        app:cardCornerRadius="20dp"
+        android:background="@drawable/shadow"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_cell__empty_chat_with_driver"
+        <TextView
+            android:id="@+id/cv_cell__empty_chat_with_driver_title"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="0.5dp">
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="10dp"
+            android:text="Уже выхожу"
+            android:textColor="@color/my_black" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/shadow"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/cv_cell__empty_chat_with_driver_title"
-                    android:layout_width="90dp"
-                    android:textAlignment="center"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:text="Уже выхожу"
-                    android:textColor="#353535"
-                    android:textSize="14sp"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

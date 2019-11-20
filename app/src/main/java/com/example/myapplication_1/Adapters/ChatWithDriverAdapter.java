@@ -18,6 +18,7 @@ import com.example.myapplication_1.R;
         private final ItemsMenu[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
+        private int selectItem = -1;
 
         public ChatWithDriverAdapter(ChatWithDriverAdapter.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
@@ -36,24 +37,12 @@ import com.example.myapplication_1.R;
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
             final ItemsMenu _item = itemsMenu[i];
 
             viewHolder.title.setText( _item.getTitle() );
-            viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-                    try {
-
-                        _item.getCallBack().call(_item);
-
-                    } catch ( NullPointerException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
         }
 
         @Override
@@ -69,17 +58,11 @@ import com.example.myapplication_1.R;
 
             private @ColorInt
             int colorBackgroundInt;
-            private CallBack callBack;
             private String title;
 
-            public ItemsMenu(int colorBackgroundRes, CallBack callBack,String title) {
+            public ItemsMenu(int colorBackgroundRes, String title) {
                 this.colorBackgroundInt = colorBackgroundRes;
-                this.callBack = callBack;
                 this.title = title;
-            }
-
-            public CallBack getCallBack() {
-                return callBack;
             }
 
             public String getTitle() {
