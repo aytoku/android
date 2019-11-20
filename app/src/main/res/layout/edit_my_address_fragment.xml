@@ -27,6 +27,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:background="@null"
+            android:foreground="?android:selectableItemBackground"
             android:src="@drawable/icon_strelka" />
 
         <TextView
@@ -36,6 +37,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:background="@null"
+            android:foreground="?android:selectableItemBackground"
             android:text="Удалить"
             android:textColor="#424242"
             android:textSize="15sp"
@@ -127,6 +129,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:clickable="true"
+            android:foreground="?android:selectableItemBackground"
             android:elevation="0dp"
             app:cardElevation="0dp"
             app:cardBackgroundColor="#F3F3F3"

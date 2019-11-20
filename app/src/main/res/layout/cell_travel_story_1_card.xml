@@ -87,6 +87,7 @@
             android:focusable="true"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
+            android:foreground="?android:selectableItemBackground"
             android:clickable="true"
             android:elevation="0dp"
             app:cardElevation="0dp"

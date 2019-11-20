@@ -10,6 +10,7 @@
         android:background="@null"
         android:paddingTop="20dp"
         android:paddingLeft="15dp"
+        android:foreground="?android:selectableItemBackground"
         android:paddingBottom="5dp"
         android:layout_alignParentLeft="true"
         android:src="@drawable/icon_strelka"/>

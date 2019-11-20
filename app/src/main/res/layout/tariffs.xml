@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,6 +7,7 @@
         android:id="@+id/rl_tariffs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_weight="0"
         android:paddingLeft="10dp">
 
@@ -14,226 +15,230 @@
             android:id="@+id/rl_tariffs_button"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@null"
-            android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
-            android:src="@drawable/icon_strelka"/>
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:foreground="?android:selectableItemBackground"
+            android:src="@drawable/icon_strelka" />
 
         <TextView
             android:id="@+id/rl_tariffs.title"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
             android:layout_centerInParent="true"
-            android:text="Тарифы"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp"
             android:paddingBottom="20dp"
-            android:textStyle="bold"
+            android:text="Тарифы"
+            android:textColor="#424242"
             android:textSize="17sp"
-            android:textColor="#424242"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/ll_tariffs"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_weight="1"
-        android:background="#F3F3F3"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="30dp"
-            android:paddingTop="15dp"
             android:layout_weight="0"
-            android:paddingLeft="10dp">
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="30dp">
 
             <Spinner
                 android:id="@+id/choose"
                 android:layout_width="200dp"
                 android:layout_height="30dp"
-                android:background="@drawable/spinnerr"/>
+                android:background="@drawable/spinnerr" />
 
         </LinearLayout>
 
-    <TextView
-        android:id="@+id/rl_tariffs.cost"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textSize="15sp"
-        android:layout_weight="0.1"
-        android:paddingLeft="15dp"
-        android:textStyle="bold"
-        android:gravity="center_vertical"
-        android:background="#F3F3F3"
-        android:text="Стоимость расчета"
-        android:textColor="#424242"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:paddingLeft="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:gravity="center_vertical"
-        android:background="@drawable/grey_line"
-        android:paddingRight="15dp">
-
         <TextView
-            android:id="@+id/rl_tariffs.price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="39 руб."
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:paddingLeft="15dp"
-        android:background="@drawable/grey_line"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:gravity="center_vertical"
-        android:paddingRight="15dp">
-
-        <TextView
-            android:id="@+id/rl_tariffs.free_expectation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Бесплатное ожидание"
-            android:layout_alignParentLeft="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-        <TextView
-            android:id="@+id/rl_tariffs.expectation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="3 мин"
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:paddingLeft="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:gravity="center_vertical"
-        android:background="@drawable/grey_line"
-        android:paddingRight="15dp">
-
-        <TextView
-            android:id="@+id/rl_tariff.no_free_expectation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Платное ожидание"
-            android:layout_alignParentLeft="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-        <TextView
-            android:id="@+id/rl_tariffs.expectation1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="4 руб/мин"
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:paddingLeft="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:gravity="center_vertical"
-        android:background="@drawable/grey_line"
-        android:paddingRight="15dp">
-
-        <TextView
-            android:id="@+id/rl_tariffs.town_cost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Стоимость по городу"
-            android:layout_alignParentLeft="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-        <TextView
-            android:id="@+id/rl_tariffs.expectation2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="4 руб/мин"
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:paddingLeft="15dp"
-        android:paddingTop="5dp"
-        android:background="@drawable/grey_line"
-        android:paddingBottom="5dp"
-        android:gravity="center_vertical"
-        android:paddingRight="15dp">
-
-        <TextView
-            android:id="@+id/rl_tariffs.expectation.countryside_cost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Стоимость загород"
-            android:layout_alignParentLeft="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-        <TextView
-            android:id="@+id/rl_tariffs.expectation3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="4 руб/мин"
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textColor="#424242"/>
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.3">
-
-        <View
+            android:id="@+id/rl_tariffs.cost"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#EDEDED"/>
+            android:layout_height="40dp"
+            android:layout_weight="0.1"
+            android:background="#F3F3F3"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Стоимость расчета"
+            android:textColor="#424242"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:background="@drawable/grey_line"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/rl_tariffs.price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="39 руб."
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:background="@drawable/grey_line"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/rl_tariffs.free_expectation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Бесплатное ожидание"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rl_tariffs.expectation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="3 мин"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:background="@drawable/grey_line"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/rl_tariff.no_free_expectation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Платное ожидание"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rl_tariffs.expectation1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="4 руб/мин"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:background="@drawable/grey_line"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/rl_tariffs.town_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Стоимость по городу"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rl_tariffs.expectation2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="4 руб/мин"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:background="@drawable/grey_line"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/rl_tariffs.expectation.countryside_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Стоимость загород"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rl_tariffs.expectation3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="4 руб/мин"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EDEDED" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

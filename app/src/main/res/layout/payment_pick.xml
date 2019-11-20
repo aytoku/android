@@ -12,6 +12,7 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:clickable="true"
+            android:foreground="?android:selectableItemBackground"
             android:focusable="true"
             android:paddingTop="10dp"
             android:paddingBottom="20dp"

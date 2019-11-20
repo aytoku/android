@@ -124,6 +124,7 @@
                                 android:focusable="true"
                                 android:clickable="true"
                                 android:elevation="0dp"
+                                android:foreground="?android:selectableItemBackground"
                                 app:cardElevation="0dp"
                                 app:cardBackgroundColor="#F3F3F3"
                                 app:cardCornerRadius="11dp">
@@ -162,6 +163,7 @@
                                 android:focusable="true"
                                 android:paddingRight="10dp"
                                 android:paddingLeft="10dp"
+                                android:foreground="?android:selectableItemBackground"
                                 android:clickable="true"
                                 android:elevation="0dp"
                                 app:cardElevation="0dp"
