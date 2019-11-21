@@ -2,6 +2,7 @@ package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,8 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
         private List<ItemsMenu> itemsMenuList1;
         private final LayoutInflater layoutInflater;
         private final Context context;
+        private Drawable card_draw;
+        private Drawable card;
         private int selectItem = -1;
 
         public EmptyChatWithDriverAdapter(List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1, Context context) {

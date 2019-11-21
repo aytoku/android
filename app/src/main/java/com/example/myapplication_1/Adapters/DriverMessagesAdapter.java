@@ -1,10 +1,12 @@
 package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -20,12 +22,18 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     private final LayoutInflater layoutInflater;
     private Context context;
+    private Drawable card_draw;
+    private Drawable card;
+    LinearLayout.LayoutParams params;
 
     private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
 
     public DriverMessagesAdapter(List<DriverMessagesAdapter.ItemsMenu> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
+
+        card_draw = context.getResources().getDrawable(R.drawable.chat_draw);
+        card = context.getResources().getDrawable(R.drawable.ic_chat_card);
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -43,6 +51,14 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         final ItemsMenu _item = itemsMenuList.get(i);
 
+        if(i == 0){
+            ((ViewHolder)viewHolder).relativeLayout.setBackground(card);
+        }else{
+            ((ViewHolder)viewHolder).relativeLayout.setBackground(card_draw);
+            params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
+            params.height = 240;
+            params.width = 905;
+        }
     }
 
     @Override

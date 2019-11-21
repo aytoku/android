@@ -16,7 +16,7 @@
             android:layout_width="310dp"
             android:layout_height="85dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/ic_card_gradient"
+            android:background="@drawable/ic_chat_card"
             android:paddingLeft="15dp">
 
             <TextView
