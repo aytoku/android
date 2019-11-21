@@ -46,6 +46,7 @@ public class EmptyChatWithDriverFragment extends Fragment {
     private List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
     EditText editText;
     TextView textView;
+    TextView textView1;
     ImageView imageView;
     private Drawable micro;
     private Drawable arrow;
@@ -63,7 +64,8 @@ public class EmptyChatWithDriverFragment extends Fragment {
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
         rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
-        textView = view.findViewById(R.id.rl_empty_chat_with_driver_title1);
+        textView = view.findViewById(R.id.rl_empty_chat_with_driver_title);
+        textView1 = view.findViewById(R.id.rl_empty_chat_with_driver_title1);
 
         editText = view.findViewById(R.id.ll_driver_chat_text);
         imageView = view.findViewById(R.id.ll_empty_chat_with_driver_img);

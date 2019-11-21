@@ -17,7 +17,7 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/rl_empty_chat_with_driver.title"
+            android:id="@+id/rl_empty_chat_with_driver_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Чат с пассажиром"
@@ -36,6 +36,9 @@
             android:layout_height="wrap_content"
             android:text="Чат с оператором"
             android:textColor="#424242"
+            android:paddingTop="10dp"
+            android:background="@drawable/grey_line"
+            android:paddingBottom="10dp"
             android:gravity="center_horizontal"
             android:layout_weight="1"
             android:textSize="17sp"
