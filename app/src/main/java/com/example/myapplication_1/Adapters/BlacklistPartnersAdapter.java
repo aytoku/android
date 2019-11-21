@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -25,7 +26,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         private final Context context;
         private Drawable imgToggleGrey;
         private Drawable imgToggleRed;
-        boolean f = true;
+        private int selectItem = -1;
 
         public BlacklistPartnersAdapter(BlacklistPartnersAdapter.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
@@ -46,7 +47,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         }
 
         @Override
-        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
             final ItemsMenu _item = itemsMenu[i];
 
@@ -60,27 +61,22 @@ import ru.osety.amironlibrary.DrawableUtils;
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
 
-            viewHolder.img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    viewHolder.img.setImageDrawable(imgToggleGrey);
-                    viewHolder.desc.setTextColor(Color.parseColor("#424242"));
-                    if(f =! f){
-                        viewHolder.img.setImageDrawable(imgToggleRed);
-                        viewHolder.desc.setTextColor(Color.parseColor("#FB2933"));
-                    }
-                }
-            });
+            if(selectItem == i){
+                viewHolder.img.setImageDrawable(imgToggleRed);
+                viewHolder.desc.setTextColor(Color.parseColor("#FB2933"));
+            }else{
+                viewHolder.img.setImageDrawable(imgToggleGrey);
+                viewHolder.desc.setTextColor(Color.parseColor("#424242"));
+            }
 
-            viewHolder.desc.setOnClickListener(new View.OnClickListener() {
+            viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    viewHolder.img.setImageDrawable(imgToggleGrey);
-                    viewHolder.desc.setTextColor(Color.parseColor("#424242"));
-                    if(f =! f){
-                        viewHolder.img.setImageDrawable(imgToggleRed);
-                        viewHolder.desc.setTextColor(Color.parseColor("#FB2933"));
-                    }
+
+                    notifyItemChanged(selectItem);
+                    selectItem = i;
+                    notifyItemChanged(i);
+                    _item.callBack.call(_item);
                 }
             });
         }
@@ -92,16 +88,22 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         public static class ItemsMenu {
 
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+            }
+
             private @ColorInt
             int colorBackgroundInt;
             private int imgResId;
             private String desc;
+            private CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes,int imgResId,String desc) {
+            public ItemsMenu(int colorBackgroundRes,int imgResId,String desc, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.imgResId = imgResId;
                 this.desc = desc;
                 this.imgResId = imgResId;
+                this.callBack = callBack;
             }
 
             public int getImgResId() {
@@ -121,11 +123,13 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             private final ImageView img;
             private final TextView desc;
+            private final LinearLayout linearLayout;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 img = itemView.findViewById(R.id.ll_cell_blacklist_partner_checkbox);
                 desc = itemView.findViewById(R.id.ll_cell_blacklist_partner_desc);
+                linearLayout = itemView.findViewById(R.id.ll_cell_blacklist_partner);
             }
         }
     }

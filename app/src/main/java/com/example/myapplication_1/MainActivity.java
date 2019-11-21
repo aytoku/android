@@ -13,6 +13,7 @@ import com.example.myapplication_1.Fragments.Auth111Fragment;
 import com.example.myapplication_1.Fragments.BlacklistPartnersFragment;
 import com.example.myapplication_1.Fragments.ChatFragment;
 import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
+import com.example.myapplication_1.Fragments.ChatWithOperator;
 import com.example.myapplication_1.Fragments.CodeScreenFragment;
 import com.example.myapplication_1.Fragments.CommentsFragment;
 import com.example.myapplication_1.Fragments.DeployedMessagesFragment;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         ChatWithDriverFragment chatWithDriverFragment = ChatWithDriverFragment.getInstance(null);
         CodeScreenFragment codeScreenFragment = CodeScreenFragment.getInstance(null);
         CommentsFragment commentsFragment = CommentsFragment.getInstance(null);
+        ChatWithOperator chatWithOperator = ChatWithOperator.getInstance(null);
 
         DeployedMessagesFragment deployedMessagesFragment = DeployedMessagesFragment.getInstance(null);
         DriverChatFragment driverChatFragment = DriverChatFragment.getInstance(null);

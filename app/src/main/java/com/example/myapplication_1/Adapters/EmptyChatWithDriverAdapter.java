@@ -22,7 +22,6 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
         private final LayoutInflater layoutInflater;
         private final Context context;
         private int selectItem = -1;
-        private boolean f = true;
 
         public EmptyChatWithDriverAdapter(List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1, Context context) {
             this.itemsMenuList1 = itemsMenuList1;
@@ -47,19 +46,24 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
 
             viewHolder.title.setText( _item.getTitle() );
 
+            if(selectItem == i) {
+
+                viewHolder.cv_item.setCardBackgroundColor(Color.parseColor("#FC5B58"));
+                viewHolder.title.setTextColor(Color.WHITE);
+            }else{
+
+                viewHolder.cv_item.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                viewHolder.title.setTextColor(Color.BLACK);
+            }
+
             viewHolder.cv_item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    if(selectItem == i) {
-
-                        viewHolder.cv_item.setCardBackgroundColor(Color.parseColor("#FC5B58"));
-                        viewHolder.title.setTextColor(Color.WHITE);
-                    }else{
-
-                        viewHolder.cv_item.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                        viewHolder.title.setTextColor(Color.BLACK);
-                    }
+                    notifyItemChanged(selectItem);
+                    selectItem = i;
+                    notifyItemChanged(i);
+                    _item.callBack.call(_item);
                 }
             });
         }
@@ -71,15 +75,21 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
 
         public static class ItemsMenu {
 
+            public interface CallBack {
+                void call(ItemsMenu itemsMenu);
+            }
+
+
             private @ColorInt
             int colorBackgroundInt;
 
             private String title;
+            private CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes,String title) {
+            public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack) {
                 this.colorBackgroundInt = colorBackgroundRes;
-
                 this.title = title;
+                this.callBack = callBack;
             }
 
             public String getTitle() {

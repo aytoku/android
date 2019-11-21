@@ -16,7 +16,7 @@
             android:layout_width="310dp"
             android:layout_height="85dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/card_draw"
+            android:background="@drawable/ic_card_gradient"
             android:paddingLeft="15dp">
 
             <TextView

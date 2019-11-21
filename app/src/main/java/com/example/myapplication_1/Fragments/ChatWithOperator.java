@@ -20,13 +20,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class EmptyChatWithDriverFragment extends Fragment {
+public class ChatWithOperator extends Fragment {
 
-    public static final String TAG = "EmptyChatWithDriverFragment";
+    public static final String TAG = "ChatWithOperator";
 
-    public static EmptyChatWithDriverFragment getInstance(Bundle args) {
+    public static ChatWithOperator getInstance(Bundle args) {
 
-        EmptyChatWithDriverFragment f = new EmptyChatWithDriverFragment();
+        ChatWithOperator f = new ChatWithOperator();
         f.setArguments(args);
 
         return f;
@@ -54,7 +54,7 @@ public class EmptyChatWithDriverFragment extends Fragment {
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
         rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
-        textView = view.findViewById(R.id.rl_empty_chat_with_driver_title1);
+        textView = view.findViewById(R.id.chat_with_operator_title);
 
         return view;
     }

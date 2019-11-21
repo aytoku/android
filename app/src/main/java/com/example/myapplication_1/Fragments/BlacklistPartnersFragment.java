@@ -94,16 +94,60 @@ public class BlacklistPartnersFragment extends Fragment {
 
                 new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.togle_uncheked,
-                        "Партнер 1"),
+                        "Партнер 1",
+                        new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
+                                try{
+                                    Bundle _args = new Bundle();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
                 new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.togle_uncheked,
-                        "Партнер 2"),
+                        "Партнер 2",
+                        new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
+                                try{
+                                    Bundle _args = new Bundle();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
                 new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.togle_uncheked,
-                        "Партнер 1"),
+                        "Партнер 1",
+                        new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
+                                try{
+                                    Bundle _args = new Bundle();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
                 new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.togle_uncheked,
-                        "Партнер 2")
+                        "Партнер 2",
+                        new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
+                            @Override
+                            public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
+                                try{
+                                    Bundle _args = new Bundle();
+
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
         };
         return _arr;
     }
