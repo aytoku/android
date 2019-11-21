@@ -38,18 +38,17 @@ public class EmptyChatWithDriverFragment extends Fragment {
     }
 
     ImageButton androidImageButton;
-
     RecyclerView rv;
     RecyclerView rv1;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
-    private List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
+    List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
+    List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
     EditText editText;
     TextView textView;
     TextView textView1;
     ImageView imageView;
-    private Drawable micro;
-    private Drawable arrow;
+    Drawable micro;
+    Drawable arrow;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,6 +58,7 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.empty_chat_with_driver,
                 container, false);
+
         androidImageButton = view.findViewById(R.id.img_cross_grey);
 
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
