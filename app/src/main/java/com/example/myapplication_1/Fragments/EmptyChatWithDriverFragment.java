@@ -1,10 +1,15 @@
 package com.example.myapplication_1.Fragments;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -39,7 +44,11 @@ public class EmptyChatWithDriverFragment extends Fragment {
     RecyclerView.Adapter adapterGridViewMenu;
     private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
     private List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
+    EditText editText;
     TextView textView;
+    ImageView imageView;
+    private Drawable micro;
+    private Drawable arrow;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +64,33 @@ public class EmptyChatWithDriverFragment extends Fragment {
         rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
         textView = view.findViewById(R.id.rl_empty_chat_with_driver_title1);
+
+        editText = view.findViewById(R.id.ll_driver_chat_text);
+        imageView = view.findViewById(R.id.ll_empty_chat_with_driver_img);
+
+        micro = getResources().getDrawable(R.drawable.ic_chat_micro);
+        arrow = getResources().getDrawable(R.drawable.ic_chat_arrow);
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editText.length()>0){
+                    imageView.setImageDrawable(arrow);
+                }else{
+                    imageView.setImageDrawable(micro);
+                }
+            }
+        });
 
         return view;
     }
@@ -138,33 +174,19 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
                 new DriverMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Выполните еще три заказа и получите\n+30 к рейтингу",
-                        "30с назад"),
+                        "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
                 new DriverMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Выполните еще три заказа и получите\n+30 к рейтингу",
-                        "30с назад"),
+                        "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
                 new DriverMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Выполните еще три заказа и получите\n+30 к рейтингу",
-                        "30с назад"),
+                        "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
                 new DriverMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Выполните еще три заказа и получите\n+30 к рейтингу",
-                        "30с назад"),
-
-                new DriverMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                        "Выполните еще три заказа и получите\n+30 к рейтингу",
-                        "30с назад"),
-
-                new DriverMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                        "Выполните еще три заказа и получите\n+30 к рейтингу",
-                        "30с назад")
+                        "Выполните еще три заказа и получите\n+30 к рейтингу")
         };
         return arr;
     }

@@ -30,19 +30,6 @@
                     android:textColor="#FFF1F1"
                     android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/rl_cell_deployed_messages_desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="10dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:background="@android:color/transparent"
-                    android:text="30с назад"
-                    android:textSize="13sp" />
-
             </RelativeLayout>
 
     </LinearLayout>

@@ -5,6 +5,7 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:id="@+id/ll_cell_messages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
@@ -14,7 +15,7 @@
         <RelativeLayout
             android:id="@+id/rl_cell_deployed_messages"
             android:layout_width="310dp"
-            android:layout_height="85dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/ic_chat_card"
             android:paddingLeft="15dp">
@@ -29,19 +30,6 @@
                 android:text="Выполните еще три заказа и получите\n+30 к рейтингу"
                 android:textColor="#FFF1F1"
                 android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/rl_cell_deployed_messages_desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:paddingTop="5dp"
-                android:paddingBottom="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:background="@android:color/transparent"
-                android:text="30с назад"
-                android:textSize="13sp" />
 
         </RelativeLayout>
 

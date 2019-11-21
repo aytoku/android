@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:overScrollMode="never"
             android:paddingTop="50dp"
-            android:paddingBottom="185dp"
+            android:paddingBottom="120dp"
             app:layout_anchorGravity="bottom"
             app:layout_anchor="@+id/rl_empty_chat_with_driver_recycler"/>
 
@@ -70,25 +70,41 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="10dp"
-            app:layout_anchor="@+id/cl_rating.ll_rating1"
-            android:paddingBottom="60dp">
+            android:layout_gravity="bottom"
+            android:paddingBottom="10dp">
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:background="#EDEDED" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
             <EditText
-                android:id="@+id/LL_driver_chat.text"
+                android:id="@+id/ll_driver_chat_text"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:background="#FFFFFF"
-                android:drawableRight="@drawable/ic_micro"
                 android:hint="Введите текст ..."
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp" />
+
+                <ImageView
+                    android:id="@+id/ll_empty_chat_with_driver_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:layout_weight="0"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/ic_chat_micro"/>
+
+            </LinearLayout>
 
             <View
                 android:layout_width="fill_parent"
@@ -96,46 +112,5 @@
                 android:background="#EDEDED" />
 
         </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/cl_rating.ll_rating1"
-        android:layout_width="match_parent"
-        android:layout_height="74dp"
-        android:layout_alignParentBottom="true"
-        android:paddingTop="10dp"
-        android:gravity="center_horizontal"
-        android:layout_gravity="bottom|center_horizontal"
-        tools:ignore="Orientation">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cl_rating_ll_rating1_cardButton"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:clickable="true"
-            android:elevation="0dp"
-            android:focusable="true"
-            android:foreground="?android:selectableItemBackground"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            app:cardBackgroundColor="#F3F3F3"
-            app:cardCornerRadius="11dp"
-            app:cardElevation="0dp">
-
-            <TextView
-                android:id="@+id/ll_travel_story_1_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="Отправить в чат"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#424242"
-                android:textSize="20dp" />
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

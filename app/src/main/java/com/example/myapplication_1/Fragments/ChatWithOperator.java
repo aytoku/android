@@ -138,13 +138,11 @@ public class ChatWithOperator extends Fragment {
 
                 new DriverMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Выполните еще три заказа и получите\n+30 к рейтингу",
-                        "30с назад"),
+                        "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
                 new DriverMessagesAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "Выполните еще три заказа и получите\n+30 к рейтингу",
-                        "30с назад")
+                        "Выполните еще три заказа и получите\n+30 к рейтингу")
         };
         return arr;
     }

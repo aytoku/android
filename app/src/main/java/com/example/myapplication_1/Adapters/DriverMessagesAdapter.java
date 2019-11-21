@@ -1,6 +1,7 @@
 package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private Context context;
     private Drawable card_draw;
     private Drawable card;
+    private Drawable card_grey;
     LinearLayout.LayoutParams params;
 
     private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
@@ -34,6 +36,7 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         card_draw = context.getResources().getDrawable(R.drawable.chat_draw);
         card = context.getResources().getDrawable(R.drawable.ic_chat_card);
+        card_grey = context.getResources().getDrawable(R.drawable.chat_grey_draw);
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -47,17 +50,36 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder viewHolder, final int i) {
 
         final ItemsMenu _item = itemsMenuList.get(i);
 
         if(i == 0){
             ((ViewHolder)viewHolder).relativeLayout.setBackground(card);
+            ((ViewHolder)viewHolder).linearLayout.setPadding(100,0,0,0);
         }else{
             ((ViewHolder)viewHolder).relativeLayout.setBackground(card_draw);
             params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
-            params.height = 240;
-            params.width = 905;
+            params.height = 200;
+            params.width = 900;
+            ((ViewHolder)viewHolder).linearLayout.setPadding(90,20,0,0);
+            ((ViewHolder)viewHolder).title.setTextColor(Color.WHITE);
+        }
+        if(i == 2){
+            ((ViewHolder)viewHolder).relativeLayout.setBackground(card_grey);
+            params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
+            params.height = 200;
+            params.width = 900;
+            ((ViewHolder)viewHolder).linearLayout.setPadding(20,25,10,15);
+            ((ViewHolder)viewHolder).title.setTextColor(Color.BLACK);
+        }
+
+        if(i == 3){
+            ((ViewHolder)viewHolder).relativeLayout.setBackground(card);
+            ((ViewHolder)viewHolder).linearLayout.setPadding(100,0,0,0);
+            params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
+            params.height = 200;
+            params.width = 920;
         }
     }
 
@@ -71,19 +93,16 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         private @ColorInt
         int colorBackgroundInt;
         private String title;
-        private String desc;
 
-        public ItemsMenu(int colorBackgroundRes, String title, String desc) {
+        public ItemsMenu(int colorBackgroundRes, String title) {
             this.colorBackgroundInt = colorBackgroundRes;
             this.title = title;
-            this.desc = desc;
+
         }
 
         public String getTitle() {
             return title;
         }
-
-        public String getDesc() { return desc; }
 
         public int getColorBackground() {
             return colorBackgroundInt;
@@ -93,16 +112,16 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView title;
-        private final TextView desc;
         private final RelativeLayout relativeLayout;
         private final ImageView imageView;
+        private final  LinearLayout linearLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.rl_cell_deployed_messages_title);
-            desc = itemView.findViewById(R.id.rl_cell_deployed_messages_desc);
             relativeLayout = itemView.findViewById(R.id.rl_cell_deployed_messages);
             imageView = itemView.findViewById(R.id.rl_cell_deployed_messages_button);
+            linearLayout = itemView.findViewById(R.id.ll_cell_messages);
         }
     }
 }

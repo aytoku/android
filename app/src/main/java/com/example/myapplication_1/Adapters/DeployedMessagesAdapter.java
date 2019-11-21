@@ -85,7 +85,6 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
                 viewHolder = (ViewHolder) viewHolder;
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
                 ((ViewHolder) viewHolder).title.setText(_item.getTitle());
-                ((ViewHolder) viewHolder).desc.setText(_item.getDesc());
             } else {
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
                 params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
@@ -116,19 +115,16 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
         private @ColorInt
         int colorBackgroundInt;
         private String title;
-        private String desc;
 
-        public ItemsMenu(int colorBackgroundRes, String title, String desc) {
+        public ItemsMenu(int colorBackgroundRes, String title) {
             this.colorBackgroundInt = colorBackgroundRes;
             this.title = title;
-            this.desc = desc;
         }
 
         public String getTitle() {
             return title;
         }
 
-        public String getDesc() { return desc; }
 
         public int getColorBackground() {
             return colorBackgroundInt;
@@ -138,14 +134,12 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView title;
-        private final TextView desc;
         private final RelativeLayout relativeLayout;
         private final ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.rl_cell_deployed_messages_title);
-            desc = itemView.findViewById(R.id.rl_cell_deployed_messages_desc);
             relativeLayout = itemView.findViewById(R.id.rl_cell_deployed_messages);
             imageView = itemView.findViewById(R.id.rl_cell_deployed_messages_button);
         }
