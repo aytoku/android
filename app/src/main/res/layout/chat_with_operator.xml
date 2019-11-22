@@ -7,150 +7,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:id="@+id/ll_chat_with_operator"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:background="@drawable/grey_line"
+        tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:id="@+id/chat_with_operator"
+        <TextView
+            android:id="@+id/ll_chat_with_operator_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_alignParentLeft="true"
-            android:orientation="horizontal"
-            android:background="@drawable/grey_line"
-            tools:ignore="MissingConstraints">
-
-            <TextView
-                android:id="@+id/chat_with_operator_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Чат с пассажиром"
-                android:textColor="#424242"
-                android:layout_weight="1"
-                android:textSize="17sp"
-                android:gravity="center_horizontal"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/chat_with_operator_title1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Чат с оператором"
-                android:background="#FD6F6D"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:gravity="center_horizontal"
-                android:textColor="#FFFFFF"
-                android:layout_weight="1"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/deployed_messages_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_empty_chat_with_driver"
-            android:overScrollMode="never"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chat_with_operator" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rl_empty_chat_with_driver_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/linearLayout4"
-            android:overScrollMode="never"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-            tools:ignore="MissingConstraints" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/cl_rating.ll_rating1"
-            android:orientation="vertical"
+            android:text="Чат с пассажиром"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/cl_rating.ll_rating1">
+            android:layout_weight="1"
+            android:textColor="#424242"
+            android:background="@drawable/grey_line"
+            android:textSize="17sp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED" />
+        <TextView
+            android:id="@+id/ll_chat_with_operator_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Чат с оператором"
+            android:paddingTop="10dp"
+            android:textColor="#FFFFFF"
+            android:background="#F05F52"
+            android:paddingBottom="10dp"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/deployed_messages_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:paddingTop="50dp"
+        android:paddingBottom="120dp"
+        app:layout_anchorGravity="bottom"
+        app:layout_anchor="@+id/rl_empty_chat_with_driver_recycler"/>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rl_empty_chat_with_driver_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:paddingBottom="40dp"
+        app:layout_anchor="@+id/linearLayout4"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:layout_gravity="bottom"
+        android:paddingBottom="10dp">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/LL_driver_chat.text"
+                android:id="@+id/ll_driver_chat_text"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_weight="1"
                 android:layout_centerVertical="true"
                 android:background="#FFFFFF"
-                android:drawableRight="@drawable/ic_micro"
                 android:hint="Введите текст ..."
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp" />
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/cl_rating.ll_rating1"
-            android:layout_width="match_parent"
-            android:layout_height="74dp"
-            android:layout_alignParentBottom="true"
-            android:paddingTop="10dp"
-            android:gravity="center_horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="Orientation">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cl_rating_ll_rating1_cardButton"
-                android:layout_width="350dp"
-                android:layout_height="60dp"
-                android:clickable="true"
-                android:elevation="0dp"
-                android:focusable="true"
-                android:foreground="?android:selectableItemBackground"
-                android:paddingLeft="10dp"
+            <ImageView
+                android:id="@+id/ll_chat_with_operator_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:layout_weight="0"
                 android:paddingRight="10dp"
-                app:cardBackgroundColor="#F3F3F3"
-                app:cardCornerRadius="11dp"
-                app:cardElevation="0dp">
-
-                <TextView
-                    android:id="@+id/ll_travel_story_1_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:text="Отправить в чат"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="#424242"
-                    android:textSize="20dp" />
-
-            </androidx.cardview.widget.CardView>
+                android:src="@drawable/ic_chat_micro"/>
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED" />
+
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

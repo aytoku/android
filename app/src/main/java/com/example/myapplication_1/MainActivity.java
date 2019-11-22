@@ -12,6 +12,7 @@ import com.example.myapplication_1.Fragments.AssistantFragment;
 import com.example.myapplication_1.Fragments.Auth111Fragment;
 import com.example.myapplication_1.Fragments.BlacklistPartnersFragment;
 import com.example.myapplication_1.Fragments.ChatFragment;
+import com.example.myapplication_1.Fragments.ChatSliderFragment;
 import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
 import com.example.myapplication_1.Fragments.ChatWithOperator;
 import com.example.myapplication_1.Fragments.CodeScreenFragment;
@@ -46,6 +47,7 @@ import com.example.myapplication_1.Fragments.SearchFragment;
 import com.example.myapplication_1.Fragments.SeekbarFragment;
 import com.example.myapplication_1.Fragments.ServiceFragment;
 import com.example.myapplication_1.Fragments.SettingsFragment;
+import com.example.myapplication_1.Fragments.SliderFragment;
 import com.example.myapplication_1.Fragments.SpinnerFragment;
 import com.example.myapplication_1.Fragments.SpinnerTariffsFragment;
 import com.example.myapplication_1.Fragments.TravelStoryFragment;
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         CodeScreenFragment codeScreenFragment = CodeScreenFragment.getInstance(null);
         CommentsFragment commentsFragment = CommentsFragment.getInstance(null);
         ChatWithOperator chatWithOperator = ChatWithOperator.getInstance(null);
+        ChatSliderFragment chatSliderFragment = ChatSliderFragment.getInstance(null);
 
         DeployedMessagesFragment deployedMessagesFragment = DeployedMessagesFragment.getInstance(null);
         DriverChatFragment driverChatFragment = DriverChatFragment.getInstance(null);
@@ -115,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         ServiceFragment serviceFragment = ServiceFragment.getInstance(null);
         SettingsFragment settingsFragment = SettingsFragment.getInstance(null);
         SpinnerFragment spinnerFragment = SpinnerFragment.getInstance(null);
+        SliderFragment sliderFragment = SliderFragment.getInstance(null);
         SpinnerTariffsFragment spinnerTariffsFragment = SpinnerTariffsFragment.getInstance(null);
 
         TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
@@ -124,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, emptyChatWithDriverFragment, EmptyChatWithDriverFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, sliderFragment, SliderFragment.TAG).commit();
     }
 }

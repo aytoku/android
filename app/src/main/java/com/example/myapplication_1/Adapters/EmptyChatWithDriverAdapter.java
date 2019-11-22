@@ -104,7 +104,7 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
             }
         }
 
-        class ViewHolder extends RecyclerView.ViewHolder {
+        static class ViewHolder extends RecyclerView.ViewHolder {
 
             private final TextView title;
             private final CardView cv_item;

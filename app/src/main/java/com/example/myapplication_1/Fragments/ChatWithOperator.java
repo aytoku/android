@@ -1,13 +1,19 @@
 package com.example.myapplication_1.Fragments;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +45,11 @@ public class ChatWithOperator extends Fragment {
     RecyclerView.Adapter adapterGridViewMenu;
     private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
     private List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
+    Drawable micro;
+    Drawable arrow;
     TextView textView;
+    EditText editText;
+    ImageView imageView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,14 +57,50 @@ public class ChatWithOperator extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        View view = inflater.inflate(R.layout.empty_chat_with_driver,
+        View view = inflater.inflate(R.layout.chat_with_operator,
                 container, false);
         androidImageButton = view.findViewById(R.id.img_cross_grey);
+
+        textView = view.findViewById(R.id.ll_chat_with_operator_title);
+        editText = view.findViewById(R.id.ll_driver_chat_text);
+
+        imageView = view.findViewById(R.id.ll_chat_with_operator_img);
+
+        micro = getResources().getDrawable(R.drawable.ic_chat_micro);
+        arrow = getResources().getDrawable(R.drawable.ic_chat_arrow);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle _args = new Bundle();
+                Fragment emptyChatWithDriverFragment = EmptyChatWithDriverFragment.getInstance(_args);
+
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, emptyChatWithDriverFragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
         rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
-        textView = view.findViewById(R.id.chat_with_operator_title);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editText.length()>0){
+                    imageView.setImageDrawable(arrow);
+                }else{
+                    imageView.setImageDrawable(micro);
+                }
+            }
+        });
+
 
         return view;
     }
