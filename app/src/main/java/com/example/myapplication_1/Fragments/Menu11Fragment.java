@@ -88,10 +88,10 @@ public class Menu11Fragment extends Fragment {
                             public void call(AdapterMenu11.ItemsMenu itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
+                                    Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, paymentPickFragment);
+                                    fragmentTransaction.replace(R.id.ll_main, paymentMethodFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

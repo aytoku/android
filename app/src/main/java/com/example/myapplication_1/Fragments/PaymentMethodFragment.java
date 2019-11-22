@@ -39,7 +39,7 @@ public class PaymentMethodFragment extends Fragment {
     private Drawable imgToggleRed;
     private LinearLayout linearLayout;
     private RelativeLayout relativeLayout;
-    private boolean f = true;
+    private int selectItem = -1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,33 +99,28 @@ public class PaymentMethodFragment extends Fragment {
         toggleChecked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(f =!f){
                     imgChecked.setImageDrawable(imgToggleRed);
                     imgUnchecked.setImageDrawable(imgToggleGrey);
                     imgUnchecked1.setImageDrawable(imgToggleGrey);
-                }
+
             }
         });
 
         toggleUnchecked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(f =!f){
                     imgUnchecked.setImageDrawable(imgToggleRed);
                     imgChecked.setImageDrawable(imgToggleGrey);
                     imgUnchecked1.setImageDrawable(imgToggleGrey);
-                }
             }
         });
 
         toggleUnchecked1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(f =!f){
                     imgUnchecked1.setImageDrawable(imgToggleRed);
                     imgChecked.setImageDrawable(imgToggleGrey);
                     imgUnchecked.setImageDrawable(imgToggleGrey);
-                }
             }
         });
 

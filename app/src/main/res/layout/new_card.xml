@@ -8,16 +8,17 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp">
 
         <ImageButton
             android:id="@+id/rl_new_card_button"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@null"
-            android:paddingLeft="15dp"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
+            android:foreground="?android:selectableItemBackground"
             android:src="@drawable/icon_strelka"/>
 
         <TextView
@@ -25,8 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#424242"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp"
             android:gravity="center_horizontal"
             android:text="Новая карта"
             android:textStyle="bold"
@@ -46,16 +45,17 @@
                 android:textColor="#8A8A8A"/>
 
             <EditText
-                android:id="@+id/LL_new_card.card_number_field"
-                android:layout_width="wrap_content"
+                android:id="@+id/ll_new_card_card_number_field"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#C0BFC6"
+                android:textAlignment="textStart"
+                android:textCursorDrawable="@null"
+                android:textSize="20sp"
                 android:ems="20"
-                android:paddingTop="15dp"
-                android:textAlignment="center"
-                android:background="@drawable/line_grey"
-                android:textColorHint="#C0BFC6"
-                android:maxLength="12"
-                android:inputType="number"/>
+                android:maxLength="19"
+                android:inputType="number"
+                tools:ignore="MissingPrefix" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -74,27 +74,25 @@
                         android:paddingLeft="15dp"
                         android:text="Срок действия"
                         android:paddingTop="5dp"
-                        android:paddingBottom="20dp"
                         android:textSize="13sp"
                         android:textColor="#8A8A8A"/>
 
                     <EditText
-                        android:id="@+id/LL_new_card.term_field"
+                        android:id="@+id/ll_new_card_term_field"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:backgroundTint="#C0BFC6"
                         android:textAlignment="center"
-                        android:paddingTop="15dp"
-                        android:background="@drawable/line_grey"
-                        android:textColorHint="#C0BFC6"
                         android:maxLength="5"
                         android:inputType="number"/>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -104,28 +102,25 @@
                         android:paddingLeft="15dp"
                         android:text="CVV"
                         android:paddingTop="5dp"
-                        android:paddingBottom="20dp"
                         android:textSize="13sp"
                         android:textColor="#8A8A8A"/>
 
                     <EditText
-                        android:id="@+id/LL_new_card.cvv_field"
+                        android:id="@+id/ll_new_card_cvv_field"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:textAlignment="center"
                         android:layout_weight="1"
-                        android:background="@drawable/line"
-                        android:paddingTop="15dp"
-                        android:textColorHint="#C0BFC6"
+                        android:backgroundTint="#FD6F6D"
                         android:maxLength="4"
                         android:inputType="numberPassword"/>
 
                     <TextView
-                        android:id="@+id/LL_new_card.cv_desc"
+                        android:id="@+id/ll_new_card_cv_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="15dp"
+                        android:paddingLeft="10dp"
                         android:text="Трехзначный код  на\nобороте карты"
                         android:textSize="13sp"
                         android:paddingBottom="40dp"
@@ -152,6 +147,7 @@
             android:focusable="true"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
+            android:foreground="?android:selectableItemBackground"
             android:clickable="true"
             android:elevation="0dp"
             app:cardElevation="0dp"

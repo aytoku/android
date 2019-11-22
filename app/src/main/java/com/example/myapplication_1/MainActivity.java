@@ -128,6 +128,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, sliderFragment, SliderFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, menu11Fragment, Menu11Fragment.TAG).commit();
     }
 }

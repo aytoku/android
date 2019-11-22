@@ -8,10 +8,8 @@
         android:id="@+id/rl_payment_method1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:paddingBottom="10dp"
-        android:paddingTop="10dp"
         android:orientation="horizontal">
 
         <ImageButton
@@ -19,6 +17,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@null"
+            android:foreground="?android:selectableItemBackground"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:src="@drawable/icon_strelka"/>
@@ -29,6 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Изменить"
             android:textSize="15sp"
+            android:foreground="?android:selectableItemBackground"
             android:textStyle="bold"
             android:layout_centerInParent="true"
             android:layout_alignParentRight="true"
@@ -58,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
+            android:foreground="?android:selectableItemBackground"
             android:paddingLeft="15dp"
             android:orientation="horizontal">
 
@@ -112,6 +113,7 @@
             android:id="@+id/ll_payment_method2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
             android:paddingLeft="15dp"
             android:orientation="horizontal">
 
@@ -164,6 +166,7 @@
             android:id="@+id/ll_payment_method3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
             android:paddingLeft="15dp"
             android:orientation="horizontal">
 
@@ -227,6 +230,7 @@
             <LinearLayout
                 android:id="@+id/ll_payment_method4"
                 android:layout_width="match_parent"
+                android:foreground="?android:selectableItemBackground"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -249,6 +253,7 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
                 android:background="@drawable/grey_line"
+                android:foreground="?android:selectableItemBackground"
                 android:paddingLeft="20dp"
                 android:orientation="horizontal">
 
@@ -285,14 +290,13 @@
                         android:layout_width="10dp"
                         android:layout_height="10dp"
                         android:background="@null"
-                        android:src="@drawable/ic_arrow_up"/>
+                        android:src="@drawable/ic_arrow_top"/>
 
                     <ImageButton
                         android:layout_width="10dp"
                         android:layout_height="10dp"
                         android:background="@null"
                         android:src="@drawable/ic_arrow_down"/>
-
 
                 </LinearLayout>
 
