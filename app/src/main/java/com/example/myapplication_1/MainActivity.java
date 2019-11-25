@@ -52,6 +52,7 @@ import com.example.myapplication_1.Fragments.SpinnerFragment;
 import com.example.myapplication_1.Fragments.SpinnerTariffsFragment;
 import com.example.myapplication_1.Fragments.TravelStoryFragment;
 import com.example.myapplication_1.Fragments.TravelStoryOneFragment;
+import com.example.myapplication_1.Fragments.UserAgreementFragment;
 import com.example.myapplication_1.Fragments.WishFragment;
 import com.example.myapplication_1.Fragments.WriteFragment;
 
@@ -123,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
 
         TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
         TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(null);
+
+        UserAgreementFragment userAgreementFragment = UserAgreementFragment.getInstance(null);
 
         WishFragment wishFragment = WishFragment.getInstance(null);
         WriteFragment writeFragment = WriteFragment.getInstance(null);

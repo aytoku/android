@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingRight="10dp">
+        android:paddingLeft="10dp   ">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/ll_cv"
@@ -19,7 +19,6 @@
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="20dp"
-            android:layout_gravity="center_horizontal"
             app:cardElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -29,8 +28,6 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="15dp"
                 android:paddingTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_horizontal"
                 android:paddingRight="15dp"
                 android:paddingBottom="10dp"
                 android:text="0 ₽"

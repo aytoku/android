@@ -74,6 +74,5 @@ public class AboutAppFragment  extends Fragment {
         });
 
         return view;
-
     }
 }
