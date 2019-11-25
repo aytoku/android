@@ -1,19 +1,22 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.DialogFragment;
 
 import com.example.myapplication_1.R;
 
-public class DriverTipsFragment extends Fragment {
+public class DriverTipsFragment extends DialogFragment {
 
     public static final String TAG = "DriverTipsFragment";
 
@@ -25,7 +28,6 @@ public class DriverTipsFragment extends Fragment {
         return f;
     }
 
-    TextView textView;
     CardView cardView;
     CardView cardView1;
     CardView cardView2;
@@ -36,15 +38,20 @@ public class DriverTipsFragment extends Fragment {
     TextView textView4;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
+        LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+        View view = layoutInflater.inflate(R.layout.drivers_tips, null);
 
-        View view = inflater.inflate(R.layout.drivers_tips,
-                container, false);
 
-        textView = view.findViewById(R.id.ll_drivers_tips_title);
+        Dialog dialog = new Dialog(getActivity());
+        WindowManager.LayoutParams p = dialog.getWindow().getAttributes();
+        p.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(p);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(view);
+        dialog.getWindow().setGravity(  Gravity.BOTTOM);
+
 
         cardView = view.findViewById(R.id.ll_cv);
         cardView1 = view.findViewById(R.id.ll_cv1);
@@ -112,21 +119,6 @@ public class DriverTipsFragment extends Fragment {
             }
         });
 
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Bundle _args = new Bundle();
-                Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
-
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, paymentMethodFragment);
-                fragmentTransaction.commit();
-
-            }
-        });
-
-        return view;
-
+        return dialog;
     }
 }

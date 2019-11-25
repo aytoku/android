@@ -38,5 +38,10 @@
         <item name="android:layout_margin">20dp</item>
     </style>
 
+    <style name="MyDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
 
 </resources>

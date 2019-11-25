@@ -70,12 +70,7 @@ public class PaymentMethodFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Bundle _args = new Bundle();
-                Fragment driverTipsFragment = DriverTipsFragment.getInstance(_args);
-
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, driverTipsFragment);
-                fragmentTransaction.commit();
+                showDialog(view);
 
             }
         });
@@ -142,5 +137,15 @@ public class PaymentMethodFragment extends Fragment {
         androidImageButton = view.findViewById(R.id.img_cross_grey);
 
         return view;
+    }
+
+    public void showDialog(View view){
+
+        DriverTipsFragment driverTipsFragment = new DriverTipsFragment();
+        driverTipsFragment.show(getFragmentManager(), "DriverTipsFragment");
+
+//        View dialog = getLayoutInflater().inflate(R.layout.drivers_tips, null);
+//        bottomSheetDialog.setContentView(dialog);
+//        bottomSheetDialog.show();
     }
 }

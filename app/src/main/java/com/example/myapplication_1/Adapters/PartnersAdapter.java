@@ -1,8 +1,6 @@
 package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
-
-import ru.osety.amironlibrary.DrawableUtils;
 
     public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHolder> {
 
@@ -44,18 +40,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             final ItemsMenu _item = itemsMenu[i];
 
-            Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
-            float _dens = context.getResources().getDisplayMetrics().density;
-
-            Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
-            int _size = Math.round(_dens * 12);
-            Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
-            Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
-            viewHolder.img.setBackground( ic_rout_color );
-            viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
-            viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.desc.setText( _item.getStr() );
 
             viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {

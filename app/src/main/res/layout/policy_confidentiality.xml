@@ -35,14 +35,12 @@
         android:background="#EDEDED"/>
 
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="http://faem.ru"
-        android:paddingTop="5dp"
-        android:paddingLeft="15dp"
-        android:autoLink="web"
-        android:linksClickable="true"
-        android:textSize="15sp"/>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
 
 </LinearLayout>

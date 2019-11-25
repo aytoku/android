@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
@@ -24,6 +26,7 @@ public class PrivacyPolicyFragment extends Fragment {
     }
 
     ImageButton imageButton;
+    WebView webView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +38,11 @@ public class PrivacyPolicyFragment extends Fragment {
                 container, false);
 
         imageButton = view.findViewById(R.id.rl_choose_place_button);
+
+        webView = view.findViewById(R.id.webView);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webView.loadUrl("https://faem.ru");
 
         Bundle _args = new Bundle();
         final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
