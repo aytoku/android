@@ -18,7 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="35dp"
-        android:paddingLeft="10dp"
         android:orientation="vertical">
 
         <TextView
@@ -28,7 +27,7 @@
             android:text="Информация"
             android:textSize="21sp"
             android:textStyle="bold"
-            android:paddingLeft="20dp"
+            android:paddingLeft="30dp"
             android:paddingTop="10dp"
             android:paddingBottom="30dp"
             android:textColor="#424242"/>
@@ -37,8 +36,6 @@
                 android:id="@+id/rl_info1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingLeft="20dp"
                 android:background="@drawable/grey_line"
                 android:foreground="?android:selectableItemBackground"
                 android:paddingBottom="17sp"
@@ -49,6 +46,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Тарифы"
+                    android:paddingTop="15dp"
+                    android:paddingLeft="30dp"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
 
@@ -79,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Партнеры"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="30dp"
                     android:textSize="17sp"
                     android:textColor="#424242"/>
 
@@ -99,8 +98,6 @@
                 android:id="@+id/rl_info3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingLeft="20dp"
                 android:foreground="?android:selectableItemBackground"
                 android:background="@drawable/grey_line"
                 android:paddingBottom="17sp"
@@ -112,6 +109,8 @@
                     android:layout_height="wrap_content"
                     android:text="О приложении"
                     android:textSize="17sp"
+                    android:paddingTop="15dp"
+                    android:paddingLeft="30dp"
                     android:textColor="#424242"/>
 
                 <ImageButton
