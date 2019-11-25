@@ -13,13 +13,13 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
-public class PrivacyPolicyFragment extends Fragment {
+public class UserAgreementFragment extends Fragment {
 
-    public static final String TAG = "PrivacyPolicyFragment";
+    public static final String TAG = "UserAgreementFragment";
 
-    public static PrivacyPolicyFragment getInstance(Bundle args) {
+    public static UserAgreementFragment getInstance(Bundle args) {
 
-        PrivacyPolicyFragment f = new PrivacyPolicyFragment();
+        UserAgreementFragment f = new UserAgreementFragment();
         f.setArguments(args);
 
         return f;
@@ -34,7 +34,7 @@ public class PrivacyPolicyFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        View view = inflater.inflate(R.layout.policy_confidentiality,
+        View view = inflater.inflate(R.layout.user_agreement,
                 container, false);
 
         imageButton = view.findViewById(R.id.rl_choose_place_button);
@@ -42,7 +42,7 @@ public class PrivacyPolicyFragment extends Fragment {
         webView = view.findViewById(R.id.webView);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("http://faem.ru/licensiya.html");
+        webView.loadUrl("https://faem.ru/soglashenie.html");
 
         Bundle _args = new Bundle();
         final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);

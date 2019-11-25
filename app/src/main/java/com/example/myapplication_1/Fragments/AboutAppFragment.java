@@ -26,6 +26,7 @@ public class AboutAppFragment  extends Fragment {
 
     ImageButton imageButton;
     RelativeLayout relativeLayout;
+    RelativeLayout relativeLayout1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,10 +39,12 @@ public class AboutAppFragment  extends Fragment {
 
         imageButton = view.findViewById(R.id.rl_about_app_button);
         relativeLayout = view.findViewById(R.id.rl_about_app_ll_about_app_rl_about_app);
+        relativeLayout1 = view.findViewById(R.id.rl_about_app_rl_about_app1);
 
         Bundle _args = new Bundle();
         final Fragment informationFragment = InformationFragment.getInstance(_args);
         final Fragment privacyPolicyFragment = PrivacyPolicyFragment.getInstance(_args);
+        final Fragment userAgreementFragment = UserAgreementFragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +60,15 @@ public class AboutAppFragment  extends Fragment {
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, privacyPolicyFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        relativeLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, userAgreementFragment);
                 fragmentTransaction.commit();
             }
         });
