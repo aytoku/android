@@ -94,7 +94,7 @@ public class DriverTipsFragment extends DialogFragment {
 
                 new DriverTipsAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "0%",
+                        "5%",
                         new DriverTipsAdapter.ItemsMenu.CallBack(){
                             @Override
                             public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
@@ -108,7 +108,7 @@ public class DriverTipsFragment extends DialogFragment {
 
                 new DriverTipsAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "0%",
+                        "10%",
                         new DriverTipsAdapter.ItemsMenu.CallBack(){
                             @Override
                             public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
@@ -122,7 +122,7 @@ public class DriverTipsFragment extends DialogFragment {
 
                 new DriverTipsAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        "0%",
+                        "15%",
                         new DriverTipsAdapter.ItemsMenu.CallBack(){
                             @Override
                             public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
