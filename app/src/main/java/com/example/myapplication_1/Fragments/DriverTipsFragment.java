@@ -51,7 +51,7 @@ public class DriverTipsFragment extends DialogFragment {
         dialog.getWindow().setAttributes(p);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(view);
-        dialog.getWindow().setGravity(  Gravity.BOTTOM);
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
 
 
         rv = view.findViewById(R.id.ll_driver_tips_recycler);
