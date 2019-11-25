@@ -1,7 +1,6 @@
 package com.example.myapplication_1.Fragments;
 
 import android.app.Dialog;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -9,12 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication_1.Adapters.DriverTipsAdapter;
 import com.example.myapplication_1.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DriverTipsFragment extends DialogFragment {
 
@@ -28,17 +33,13 @@ public class DriverTipsFragment extends DialogFragment {
         return f;
     }
 
-    CardView cardView;
-    CardView cardView1;
-    CardView cardView2;
-    CardView cardView3;
-    TextView textView1;
-    TextView textView2;
-    TextView textView3;
-    TextView textView4;
+    RecyclerView rv;
+    RecyclerView.Adapter adapterGridViewMenu;
+    private List<DriverTipsAdapter.ItemsMenu> itemsMenuList;
 
-    @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
 
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.drivers_tips, null);
@@ -53,72 +54,86 @@ public class DriverTipsFragment extends DialogFragment {
         dialog.getWindow().setGravity(  Gravity.BOTTOM);
 
 
-        cardView = view.findViewById(R.id.ll_cv);
-        cardView1 = view.findViewById(R.id.ll_cv1);
-        cardView2 = view.findViewById(R.id.ll_cv2);
-        cardView3 = view.findViewById(R.id.ll_cv3);
+        rv = view.findViewById(R.id.ll_driver_tips_recycler);
 
-        textView1 = view.findViewById(R.id.cv_rating_price);
-        textView2 = view.findViewById(R.id.cv_rating_price1);
-        textView3 = view.findViewById(R.id.cv_rating_price2);
-        textView4 = view.findViewById(R.id.cv_rating_price3);
+        final RecyclerView recyclerViewMenu = rv;
 
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cardView.setCardBackgroundColor(Color.parseColor("#FD6F6D"));
-                textView1.setTextColor(Color.parseColor("#FFFFFF"));
-                cardView1.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                cardView2.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                cardView3.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                textView2.setTextColor(Color.parseColor("#424242"));
-                textView3.setTextColor(Color.parseColor("#424242"));
-                textView4.setTextColor(Color.parseColor("#424242"));
-            }
-        });
+        try {
 
-        cardView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                textView1.setTextColor(Color.parseColor("#424242"));
-                cardView1.setCardBackgroundColor(Color.parseColor("#FD6F6D"));
-                cardView2.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                cardView3.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                textView2.setTextColor(Color.parseColor("#FFFFFF"));
-                textView3.setTextColor(Color.parseColor("#424242"));
-                textView4.setTextColor(Color.parseColor("#424242"));
-            }
-        });
+            DriverTipsAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            adapterGridViewMenu = new DriverTipsAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            recyclerViewMenu.setLayoutManager(
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
+            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
-        cardView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                textView1.setTextColor(Color.parseColor("#424242"));
-                cardView1.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                cardView2.setCardBackgroundColor(Color.parseColor("#FD6F6D"));
-                cardView3.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                textView2.setTextColor(Color.parseColor("#424242"));
-                textView3.setTextColor(Color.parseColor("#FFFFFF"));
-                textView4.setTextColor(Color.parseColor("#424242"));
-            }
-        });
-
-        cardView3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                textView1.setTextColor(Color.parseColor("#424242"));
-                cardView1.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                cardView2.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                cardView3.setCardBackgroundColor(Color.parseColor("#FD6F6D"));
-                textView2.setTextColor(Color.parseColor("#424242"));
-                textView3.setTextColor(Color.parseColor("#424242"));
-                textView4.setTextColor(Color.parseColor("#FFFFFF"));
-            }
-        });
-
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
+        }
         return dialog;
+    }
+
+    private DriverTipsAdapter.ItemsMenu[] getMenuItems() {
+
+        DriverTipsAdapter.ItemsMenu[] arr = new DriverTipsAdapter.ItemsMenu[]{
+
+                new DriverTipsAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "0%",
+                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
+
+                new DriverTipsAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "0%",
+                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
+
+                new DriverTipsAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "0%",
+                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
+
+                new DriverTipsAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "0%",
+                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
+        };
+        return arr;
     }
 }

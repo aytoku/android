@@ -39,7 +39,6 @@ public class PaymentMethodFragment extends Fragment {
     private Drawable imgToggleRed;
     private LinearLayout linearLayout;
     private RelativeLayout relativeLayout;
-    private int selectItem = -1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,7 +70,6 @@ public class PaymentMethodFragment extends Fragment {
             public void onClick(View view) {
 
                 showDialog(view);
-
             }
         });
 
@@ -88,8 +86,6 @@ public class PaymentMethodFragment extends Fragment {
 
             }
         });
-
-
 
         toggleChecked.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +115,6 @@ public class PaymentMethodFragment extends Fragment {
             }
         });
 
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,7 +125,6 @@ public class PaymentMethodFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
                 fragmentTransaction.commit();
-
             }
         });
 
