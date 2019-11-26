@@ -1,14 +1,13 @@
 package com.example.myapplication_1.Fragments;
 
-import android.app.Dialog;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,22 +36,33 @@ public class DriverTipsFragment extends DialogFragment {
     RecyclerView.Adapter adapterGridViewMenu;
     private List<DriverTipsAdapter.ItemsMenu> itemsMenuList;
 
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        LayoutInflater layoutInflater = getActivity().getLayoutInflater();
-        View view = layoutInflater.inflate(R.layout.drivers_tips, null);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.AppTheme_NoActionBar);
+    }
 
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
 
-        Dialog dialog = new Dialog(getActivity());
-        WindowManager.LayoutParams p = dialog.getWindow().getAttributes();
-        p.width = ViewGroup.LayoutParams.MATCH_PARENT;
-        dialog.getWindow().setAttributes(p);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(view);
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
+        Log.i(TAG, "onCreateView: start");
 
+        try {
+            getDialog().getWindow().setBackgroundDrawableResource( android.R.drawable.screen_background_dark_transparent );
+
+        } catch ( NullPointerException npe) {
+            Log.e(TAG, "onCreateView: " + npe.getMessage() );
+        }
+
+        View view = inflater.inflate(R.layout.drivers_tips, container,false);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
+            }
+        });
 
         rv = view.findViewById(R.id.ll_driver_tips_recycler);
 
@@ -71,7 +81,7 @@ public class DriverTipsFragment extends DialogFragment {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-        return dialog;
+        return view;
     }
 
     private DriverTipsAdapter.ItemsMenu[] getMenuItems() {
@@ -123,6 +133,20 @@ public class DriverTipsFragment extends DialogFragment {
                 new DriverTipsAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         "15%",
+                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
+
+                new DriverTipsAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        "20%",
                         new DriverTipsAdapter.ItemsMenu.CallBack(){
                             @Override
                             public void call(DriverTipsAdapter.ItemsMenu itemsMenu){

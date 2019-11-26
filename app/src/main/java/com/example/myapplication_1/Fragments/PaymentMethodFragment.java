@@ -136,10 +136,7 @@ public class PaymentMethodFragment extends Fragment {
     public void showDialog(View view){
 
         DriverTipsFragment driverTipsFragment = new DriverTipsFragment();
+        driverTipsFragment.setCancelable(true);
         driverTipsFragment.show(getFragmentManager(), "DriverTipsFragment");
-
-//        View dialog = getLayoutInflater().inflate(R.layout.drivers_tips, null);
-//        bottomSheetDialog.setContentView(dialog);
-//        bottomSheetDialog.show();
     }
 }
