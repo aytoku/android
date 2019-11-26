@@ -24,6 +24,7 @@ import com.example.myapplication_1.Fragments.EmptyChatWithDriverFragment;
 import com.example.myapplication_1.Fragments.EnergyReductionFragment;
 import com.example.myapplication_1.Fragments.ErrorOneFragment;
 import com.example.myapplication_1.Fragments.ErrorTwoFragment;
+import com.example.myapplication_1.Fragments.ExpandableListViewFragment;
 import com.example.myapplication_1.Fragments.InformationFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeOneFragment;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         EnergyReductionFragment energyReductionFragment = EnergyReductionFragment.getInstance(null);
         ErrorOneFragment errorOneFragment = ErrorOneFragment.getInstance(null);
         ErrorTwoFragment errorTwoFragment = ErrorTwoFragment.getInstance(null);
+        ExpandableListViewFragment expandableListViewFragment = ExpandableListViewFragment.getInstance(null);
 
         InformationFragment informationFragment = InformationFragment.getInstance(null);
 
@@ -131,6 +133,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, menu11Fragment, Menu11Fragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, expandableListViewFragment, ExpandableListViewFragment.TAG).commit();
     }
 }
