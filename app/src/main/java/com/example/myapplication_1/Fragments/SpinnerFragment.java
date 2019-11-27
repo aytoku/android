@@ -15,6 +15,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
+import java.util.Objects;
+
 public class SpinnerFragment extends Fragment {
 
     public static final String TAG = "SpinnerFragment";
@@ -50,7 +52,7 @@ public class SpinnerFragment extends Fragment {
                 container, false);
 
         Spinner spinner = (Spinner) view.findViewById(R.id.choose);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, choose);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Objects.requireNonNull(this.getActivity()), android.R.layout.simple_spinner_item, choose);
 
         Spinner spinner1 = (Spinner) view.findViewById(R.id.choose_cities);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, choose_cities);
