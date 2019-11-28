@@ -33,26 +33,24 @@ public class ExpFragment extends Fragment {
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
 
-        // Находим наш list
         final ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
-        //Создаем набор данных для адаптера
         ArrayList<ArrayList<String>> groups = new ArrayList<ArrayList<String>>();
         ArrayList<String> children1 = new ArrayList<String>();
         children1.add("");
         groups.add(children1);
-        //Создаем адаптер и передаем context и список с данными
+
         final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups);
         listView.setAdapter(adapter);
-        listView.setChoiceMode(ExpandableListView.CHOICE_MODE_SINGLE);
-        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-                view.setSelected(true);
-                return false;
-            }
-        });
+//        listView.setChoiceMode(ExpandableListView.CHOICE_MODE_SINGLE);
+//        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+//            @Override
+//            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+//                view.setSelected(true);
+//                return false;
+//            }
+//        });
             adapter.notifyDataSetChanged();
 
 //            listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
