@@ -33,7 +33,7 @@ public class DriverSpinnerFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        View view = inflater.inflate(R.layout.driver_spinner,
+        View view = inflater.inflate(R.layout.free_order_spinner,
                 container, false);
 
         Spinner spinner = (Spinner) view.findViewById(R.id.spinner);

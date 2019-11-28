@@ -72,11 +72,10 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             convertView = inflater.inflate(R.layout.group_view, null);
         }
 
-        if (isExpanded){
-            //Изменяем что-нибудь, если текущая Group раскрыта
-        }
-        else{
-            //Изменяем что-нибудь, если текущая Group скрыта
+        if(isExpanded){
+
+        }else{
+
         }
 
         TextView textGroup = (TextView) convertView.findViewById(R.id.textGroup);
@@ -92,27 +91,27 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) activity.getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.driver_spinner, null);
+            convertView = inflater.inflate(R.layout.free_order_spinner, null);
         }
 
         Spinner spinner = (Spinner) convertView.findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
-        List countries = new ArrayList();
-        countries.add("По возрастанию цены");
-        countries.add("По убыванию цены");
-        countries.add("Не выбрано");
-        ArrayAdapter dataAdapter = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, countries);
+        List list = new ArrayList();
+        list.add("По возрастанию цены");
+        list.add("По убыванию цены");
+        list.add("Не выбрано");
+        ArrayAdapter dataAdapter = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);
 
 
         Spinner spinner1 = (Spinner) convertView.findViewById(R.id.spinner1);
         spinner1.setOnItemSelectedListener(this);
-        List countries1 = new ArrayList();
-        countries1.add("По возрастанию цены");
-        countries1.add("По убыванию цены");
-        countries1.add("Не выбрано");
-        ArrayAdapter dataAdapter1 = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, countries);
+        List list1 = new ArrayList();
+        list1.add("По возрастанию цены");
+        list1.add("По убыванию цены");
+        list1.add("Не выбрано");
+        ArrayAdapter dataAdapter1 = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, list1);
         dataAdapter1.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner1.setAdapter(dataAdapter1);
 

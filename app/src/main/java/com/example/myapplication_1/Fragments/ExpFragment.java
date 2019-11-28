@@ -35,6 +35,7 @@ public class ExpFragment extends Fragment {
 
         // Находим наш list
         ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.expListView);
+        listView.setGroupIndicator(null);
 
         //Создаем набор данных для адаптера
         ArrayList<ArrayList<String>> groups = new ArrayList<ArrayList<String>>();
