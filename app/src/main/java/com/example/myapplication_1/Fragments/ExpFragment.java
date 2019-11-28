@@ -34,7 +34,7 @@ public class ExpFragment extends Fragment {
                 container, false);
 
         // Находим наш list
-        ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.expListView);
+        final ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
         //Создаем набор данных для адаптера
@@ -43,8 +43,26 @@ public class ExpFragment extends Fragment {
         children1.add("");
         groups.add(children1);
         //Создаем адаптер и передаем context и список с данными
-        ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups);
+        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups);
         listView.setAdapter(adapter);
+        listView.setChoiceMode(ExpandableListView.CHOICE_MODE_SINGLE);
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                view.setSelected(true);
+                return false;
+            }
+        });
+            adapter.notifyDataSetChanged();
+
+//            listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+//                @Override
+//                public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+//                    int index = expandableListView.getFlatListPosition(ExpandableListView.getPackedPositionChild(i,i1));
+//                    expandableListView.setItemChecked(index, true);
+//                    return false;
+//                }
+//            });
 
         return view;
     }
