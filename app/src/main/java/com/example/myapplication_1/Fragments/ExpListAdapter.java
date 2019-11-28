@@ -5,26 +5,23 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.myapplication_1.Adapters.CustomSpinnerAdapter;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
-import java.util.Objects;
+import java.util.List;
 
-public class ExpListAdapter extends BaseExpandableListAdapter{
+public class ExpListAdapter extends BaseExpandableListAdapter implements AdapterView.OnItemSelectedListener{
 
     private final Activity activity;
     private ArrayList<ArrayList<String>> mGroups;
     private Context mContext;
-    private String[] choose = {"По возрастанию цены", "По убыванию цены", "Не выбрано"};
-    private int selectItem = -1;
-    private int[] images = {R.drawable.ic_circle_in_circle, R.drawable.ic_circle_in_cricle_grey, R.drawable.ic_circle_in_cricle_grey};
 
     public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups){
         this.activity = activity;
@@ -99,16 +96,39 @@ public class ExpListAdapter extends BaseExpandableListAdapter{
         }
 
         Spinner spinner = (Spinner) convertView.findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Objects.requireNonNull(activity), android.R.layout.simple_spinner_item, choose);
+        spinner.setOnItemSelectedListener(this);
+        List countries = new ArrayList();
+        countries.add("По возрастанию цены");
+        countries.add("По убыванию цены");
+        countries.add("Не выбрано");
+        ArrayAdapter dataAdapter = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, countries);
+        dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        spinner.setAdapter(dataAdapter);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        CustomSpinnerAdapter customAdapter=new CustomSpinnerAdapter(activity.getApplicationContext(),images,choose);
-        spinner.setAdapter(customAdapter);
+
+        Spinner spinner1 = (Spinner) convertView.findViewById(R.id.spinner1);
+        spinner1.setOnItemSelectedListener(this);
+        List countries1 = new ArrayList();
+        countries1.add("По возрастанию цены");
+        countries1.add("По убыванию цены");
+        countries1.add("Не выбрано");
+        ArrayAdapter dataAdapter1 = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, countries);
+        dataAdapter1.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        spinner1.setAdapter(dataAdapter1);
 
         return convertView;
     }
 
+    @Override
+    public void onItemSelected(AdapterView parent, View view, int position, long id) {
+        // getting selected item
+        String item = parent.getItemAtPosition(position).toString();
+
+    }
+
+    public void onNothingSelected(AdapterView arg0) {
+
+    }
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
