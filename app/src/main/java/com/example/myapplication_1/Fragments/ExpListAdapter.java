@@ -49,19 +49,13 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     }
 
     @Override
-    public long getGroupId(int groupPosition) {
-        return groupPosition;
-    }
+    public long getGroupId(int groupPosition) { return groupPosition; }
 
     @Override
-    public long getChildId(int groupPosition, int childPosition) {
-        return childPosition;
-    }
+    public long getChildId(int groupPosition, int childPosition) { return childPosition; }
 
     @Override
-    public boolean hasStableIds() {
-        return true;
-    }
+    public boolean hasStableIds() { return true; }
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
@@ -82,7 +76,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         ImageView imageView = convertView.findViewById(R.id.imageView);
 
         return convertView;
-
     }
 
     @Override
@@ -122,15 +115,10 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     public void onItemSelected(AdapterView parent, View view, int position, long id) {
         // getting selected item
         String item = parent.getItemAtPosition(position).toString();
-
     }
 
-    public void onNothingSelected(AdapterView arg0) {
-
-    }
+    public void onNothingSelected(AdapterView arg0) { }
 
     @Override
-    public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return true;
-    }
+    public boolean isChildSelectable(int groupPosition, int childPosition) { return true; }
 }
