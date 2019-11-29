@@ -102,18 +102,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         return convertView;
     }
 
-    public static class ExpList{
-
-        public interface CallBack {
-            void call();
-        }
-
-        private CallBack callBack;
-        public ExpList(CallBack callBack){
-            this.callBack = callBack;
-        }
-    }
-
     @Override
     public void onItemSelected(AdapterView parent, View view, int position, long id) {
         // getting selected item

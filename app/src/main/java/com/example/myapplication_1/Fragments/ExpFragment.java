@@ -24,6 +24,7 @@ public class ExpFragment extends Fragment {
 
         return f;
     }
+    int selectItem = -1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,13 +43,22 @@ public class ExpFragment extends Fragment {
         children1.add("");
         groups.add(children1);
 
-        List list = new ArrayList();
+        final List list = new ArrayList();
         list.add("По возрастанию цены");
         list.add("По убыванию цены");
         list.add("Не выбрано");
 
         final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list);
         listView.setAdapter(adapter);
+
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                listView.getExpandableListAdapter().getChild(i, i1);
+                adapter.notifyDataSetInvalidated();
+                return false;
+            }
+        });
 
         return view;
     }
