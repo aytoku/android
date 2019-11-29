@@ -2,6 +2,7 @@ package com.example.myapplication_1.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.DataSetObserver;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -113,4 +114,10 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) { return true; }
+
+    @Override
+    public void registerDataSetObserver(DataSetObserver observer) {
+        /* used to make the notifyDataSetChanged() method work */
+        super.registerDataSetObserver(observer);
+    }
 }
