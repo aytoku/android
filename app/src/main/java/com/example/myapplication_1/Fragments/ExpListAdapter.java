@@ -23,7 +23,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     private Activity activity;
     private ArrayList<ArrayList<String>> mGroups;
     private Context mContext;
-    private List list;
+     private List list;
     private List list1;
 
     public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list){

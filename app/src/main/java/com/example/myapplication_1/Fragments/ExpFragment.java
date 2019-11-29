@@ -50,7 +50,6 @@ public class ExpFragment extends Fragment {
         final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list);
         listView.setAdapter(adapter);
 
-
         return view;
     }
 }
