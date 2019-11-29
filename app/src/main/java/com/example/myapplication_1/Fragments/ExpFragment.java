@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExpFragment extends Fragment {
 
@@ -24,16 +25,16 @@ public class ExpFragment extends Fragment {
         return f;
     }
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
 
-        final ExpandableListView listView = (ExpandableListView)view.findViewById(R.id.expListView);
+        final ExpandableListView listView = (ExpandableListView) view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
         ArrayList<ArrayList<String>> groups = new ArrayList<ArrayList<String>>();
@@ -41,26 +42,13 @@ public class ExpFragment extends Fragment {
         children1.add("");
         groups.add(children1);
 
-        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups);
-        listView.setAdapter(adapter);
-//        listView.setChoiceMode(ExpandableListView.CHOICE_MODE_SINGLE);
-//        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-//            @Override
-//            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-//                view.setSelected(true);
-//                return false;
-//            }
-//        });
-            adapter.notifyDataSetChanged();
+        List list = new ArrayList();
+        list.add("По возрастанию цены");
+        list.add("По убыванию цены");
+        list.add("Не выбрано");
 
-//            listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-//                @Override
-//                public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-//                    int index = expandableListView.getFlatListPosition(ExpandableListView.getPackedPositionChild(i,i1));
-//                    expandableListView.setItemChecked(index, true);
-//                    return false;
-//                }
-//            });
+        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list);
+        listView.setAdapter(adapter);
 
         return view;
     }

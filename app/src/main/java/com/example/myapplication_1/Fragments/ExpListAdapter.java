@@ -19,13 +19,17 @@ import java.util.List;
 
 public class ExpListAdapter extends BaseExpandableListAdapter implements AdapterView.OnItemSelectedListener{
 
-    private final Activity activity;
+    private Activity activity;
     private ArrayList<ArrayList<String>> mGroups;
     private Context mContext;
+    private List list;
+    private List list1;
 
-    public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups){
+    public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list){
         this.activity = activity;
         mGroups = groups;
+        this.list = list;
+        this.list1 = list;
     }
 
     @Override
@@ -66,12 +70,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             convertView = inflater.inflate(R.layout.group_view, null);
         }
 
-        if(isExpanded){
-
-        }else{
-
-        }
-
         TextView textGroup = (TextView) convertView.findViewById(R.id.textGroup);
         ImageView imageView = convertView.findViewById(R.id.imageView);
 
@@ -89,10 +87,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
 
         Spinner spinner = (Spinner) convertView.findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
-        List list = new ArrayList();
-        list.add("По возрастанию цены");
-        list.add("По убыванию цены");
-        list.add("Не выбрано");
         ArrayAdapter dataAdapter = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);
@@ -100,21 +94,31 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
 
         Spinner spinner1 = (Spinner) convertView.findViewById(R.id.spinner1);
         spinner1.setOnItemSelectedListener(this);
-        List list1 = new ArrayList();
-        list1.add("По возрастанию цены");
-        list1.add("По убыванию цены");
-        list1.add("Не выбрано");
         ArrayAdapter dataAdapter1 = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, list1);
         dataAdapter1.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner1.setAdapter(dataAdapter1);
 
+
         return convertView;
+    }
+
+    public static class ExpList{
+
+        public interface CallBack {
+            void call();
+        }
+
+        private CallBack callBack;
+        public ExpList(CallBack callBack){
+            this.callBack = callBack;
+        }
     }
 
     @Override
     public void onItemSelected(AdapterView parent, View view, int position, long id) {
         // getting selected item
         String item = parent.getItemAtPosition(position).toString();
+
     }
 
     public void onNothingSelected(AdapterView arg0) { }
