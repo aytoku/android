@@ -52,6 +52,7 @@ import com.example.myapplication_1.Fragments.SettingsFragment;
 import com.example.myapplication_1.Fragments.SliderFragment;
 import com.example.myapplication_1.Fragments.SpinnerFragment;
 import com.example.myapplication_1.Fragments.SpinnerTariffsFragment;
+import com.example.myapplication_1.Fragments.TariffsPickAlert;
 import com.example.myapplication_1.Fragments.TravelStoryFragment;
 import com.example.myapplication_1.Fragments.TravelStoryOneFragment;
 import com.example.myapplication_1.Fragments.UserAgreementFragment;
@@ -128,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
         TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
         TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(null);
+        TariffsPickAlert tariffsPickAlert = TariffsPickAlert.getInstance(null);
 
         UserAgreementFragment userAgreementFragment = UserAgreementFragment.getInstance(null);
 
@@ -135,6 +137,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, expFragment, ExpFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, tariffsPickAlert, TariffsPickAlert.TAG).commit();
     }
 }
