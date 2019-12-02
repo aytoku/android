@@ -1,4 +1,4 @@
-package com.example.myapplication_1.Fragments;
+package com.example.myapplication_1;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,17 +8,18 @@ import android.widget.ExpandableListView;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.myapplication_1.R;
+import com.example.myapplication_1.Fragments.ExpListAdapter1;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class ExpFragment extends Fragment {
+public class ExpListFragment1 extends Fragment {
 
     public static final String TAG = "ExpFragment";
 
-    public static ExpFragment getInstance(Bundle args) {
+    public static ExpListFragment1 getInstance(Bundle args) {
 
-        ExpFragment f = new ExpFragment();
+        ExpListFragment1 f = new ExpListFragment1();
         f.setArguments(args);
 
         return f;
@@ -41,25 +42,14 @@ public class ExpFragment extends Fragment {
         children1.add("");
         groups.add(children1);
 
-        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups);
+        final List list = new ArrayList();
+        list.add("По возрастанию цены");
+        list.add("По убыванию цены");
+        list.add("Не выбрано");
+
+        final ExpListAdapter1 adapter = new ExpListAdapter1(getActivity(), groups, list);
         listView.setAdapter(adapter);
 
         return view;
-    }
-
-    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
-
-        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList("По убыванию цены",
-                new ExpListAdapter.ItemsMenuList.CallBack() {
-                    @Override
-                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
-                        try{
-
-                        }catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            return itemsMenuList;
     }
 }
