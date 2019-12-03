@@ -5,13 +5,15 @@
     android:paddingBottom="5dp">
 
     <Button
-        android:id="@+id/ll_button"
+        android:id="@+id/rl_button_feature_btn"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="30dp"
         android:maxLines="1"
-        android:background="@drawable/yellow_button"
+        android:background="@drawable/ic_ll_button_background"
         android:text="Загород"
-        android:textSize="9sp"
-        android:textColor="#FFF"/>
+        android:textStyle="normal"
+        android:textSize="13sp"
+        android:textAllCaps="false"
+        android:textColor="#424242"/>
 
 </RelativeLayout>

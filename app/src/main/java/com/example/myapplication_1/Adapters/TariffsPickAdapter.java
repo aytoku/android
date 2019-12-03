@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,11 +24,9 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    LinearLayout.LayoutParams params;
     private Drawable unChecked;
     private Drawable checked;
-    private boolean f = true;
-
+    private int selectItem = -1;
     private List<ItemsMenu> itemsMenuList;
 
     public TariffsPickAdapter(List<TariffsPickAdapter.ItemsMenu> itemsMenuList, Context context) {
@@ -67,15 +64,11 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
 
 
         viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                  if (f =!f) {
-                      viewHolder.imageView.setImageDrawable(checked);
-                  }else {
-                      viewHolder.imageView.setImageDrawable(unChecked);
-                  }
-              }
-          });
+            @Override
+            public void onClick(View view) {
+                viewHolder.imageView.setImageDrawable(checked);
+            }
+        });
     }
 
     @Override
@@ -87,7 +80,6 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
 
         public interface CallBack {
             void call(ItemsMenu itemsMenu);
-
         }
 
         private @ColorInt

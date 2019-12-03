@@ -26,6 +26,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         private final LayoutInflater layoutInflater;
         private final Context context;
         RecyclerView rv;
+        RecyclerView rv1;
 
         public EarningsPageAdapter(EarningsPageAdapter.ItemsMenu[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
@@ -53,11 +54,25 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             try {
 
-                AdapterCellFeatures adapterCellFeatures = new AdapterCellFeatures(_item.str_features, context);
-                viewHolder.rv_features.setAdapter(adapterCellFeatures);
+                AdapterCellTextFeatures adapterCellTextFeatures = new AdapterCellTextFeatures(_item.str_features, context);
+                viewHolder.rv_features.setAdapter(adapterCellTextFeatures);
                 viewHolder.rv_features.setLayoutManager(
-                        new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+                        new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
                 viewHolder.rv_features.setItemAnimator(new DefaultItemAnimator());
+
+            } catch (NullPointerException e){
+                e.printStackTrace();
+            }
+
+            RecyclerView recyclerView = rv1;
+
+            try {
+
+                AdapterCellFeatures adapterCellFeatures = new AdapterCellFeatures(_item.button_features, context);
+                viewHolder.rv_button_features.setAdapter(adapterCellFeatures);
+                viewHolder.rv_button_features.setLayoutManager(
+                        new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+                viewHolder.rv_button_features.setItemAnimator(new DefaultItemAnimator());
 
             } catch (NullPointerException e){
                 e.printStackTrace();
@@ -65,19 +80,14 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             int _size = Math.round(_dens * 12);
 
-            Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Drawable _def_draw1 = context.getResources().getDrawable(_item.getImgArrow());
-            Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
             Bitmap _bitmap1 = DrawableUtils.convertToBitmap(_def_draw1, _size, _size);
 
-            viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
-            viewHolder.img.setImageBitmap( _bitmap);
-            viewHolder.cost.setText( _item.getStr());
-            viewHolder.img.setImageBitmap(_bitmap);
+            viewHolder.dist.setText( _item.getStr());
             viewHolder.distance.setText( _item.getDistance());
-            viewHolder.address_title.setText(_item.getAddress_title());
-            viewHolder.img_arrow.setImageBitmap(_bitmap1);
-            viewHolder.place.setText(_item.getPlace());
+            viewHolder.cost.setText(_item.getAddress_title());
+            viewHolder.img.setImageBitmap(_bitmap1);
+            viewHolder.desc3.setText(_item.getPlace());
             viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -105,22 +115,28 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             private @ColorInt
             int colorBackgroundInt;
-            private String cost;
+            private String dist;
             private CallBack callBack;
             private String[] str_features;
-            private int imgResId;
+            private String[] button_features;
+            private int imageView;
+            private String desc;
             private String distance;
+            private String desc2;
             private String address_title;
             private int img_arrow;
             private String place;
 
-            public ItemsMenu(int colorBackgroundRes, String cost, String[] str_features, CallBack callBack, int imgResId, String distance, String address_title, int img_arrow, String place) {
+            public ItemsMenu(int colorBackgroundRes, String dist, String[] str_features, String[] button_features, int imageView, CallBack callBack, String desc, String distance, String desc2, String address_title, int img_arrow, String place) {
                 this.colorBackgroundInt = colorBackgroundRes;
-                this.cost = cost;
+                this.dist = dist;
                 this.callBack = callBack;
                 this.str_features = str_features;
-                this.imgResId = imgResId;
+                this.button_features = button_features;
+                this.imageView = imageView;
+                this.desc = desc;
                 this.distance = distance;
+                this.desc2 = desc2;
                 this.address_title = address_title;
                 this.img_arrow = img_arrow;
                 this.place = place;
@@ -130,16 +146,12 @@ import ru.osety.amironlibrary.DrawableUtils;
                 return callBack;
             }
 
-            public int getImgResId() {
-                return imgResId;
-            }
-
             public int getImgArrow() {
                 return img_arrow;
             }
 
             public String getStr() {
-                return cost;
+                return dist;
             }
 
             public String getDistance() {
@@ -162,24 +174,28 @@ import ru.osety.amironlibrary.DrawableUtils;
         public class ViewHolder extends RecyclerView.ViewHolder {
 
             private final CardView cv_item;
-            private final TextView cost;
+            private final TextView dist;
             private final RecyclerView rv_features;
-            private final ImageView img;
+            private final RecyclerView rv_button_features;
             private final TextView distance;
-            private final TextView address_title;
-            private final ImageView img_arrow;
-            private final TextView place;
+            private final TextView desc;
+            private final TextView desc2;
+            private final TextView cost;
+            private final ImageView img;
+            private final TextView desc3;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 cv_item = itemView.findViewById(R.id.ll_earnings_page_card_cv);
-                cost = itemView.findViewById(R.id.ll_earnings_page_card_cost);
+                dist = itemView.findViewById(R.id.ll_earnings_page_card_dist);
+                desc = itemView.findViewById(R.id.ll_earnings_page_card_desc);
+                desc2 = itemView.findViewById(R.id.ll_earnings_page_card_desc1);
                 rv_features = itemView.findViewById(R.id.ll_earnings_page_card_recycler);
+                rv_button_features = itemView.findViewById(R.id.ll_earnings_page_card_recycler1);
                 distance = itemView.findViewById(R.id.ll_earnings_page_card_distance);
-                img = itemView.findViewById(R.id.ll_earnings_page_card_img_road);
-                address_title = itemView.findViewById(R.id.ll_earnings_page_card_address_title);
-                img_arrow = itemView.findViewById(R.id.ll_earnings_page_card_img_arrow);
-                place = itemView.findViewById(R.id.ll_earnings_page_card_place);
+                cost = itemView.findViewById(R.id.ll_earnings_page_card_cost);
+                img = itemView.findViewById(R.id.ll_earnings_page_card_img);
+                desc3 = itemView.findViewById(R.id.ll_earnings_page_card_desc2);
             }
         }
     }

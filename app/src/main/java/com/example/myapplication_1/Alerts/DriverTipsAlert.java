@@ -1,4 +1,4 @@
-package com.example.myapplication_1.Fragments;
+package com.example.myapplication_1.Alerts;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -20,13 +20,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DriverTipsFragment extends DialogFragment {
+public class DriverTipsAlert extends DialogFragment {
 
     public static final String TAG = "DriverTipsFragment";
 
-    public static DriverTipsFragment getInstance(Bundle args) {
+    public static DriverTipsAlert getInstance(Bundle args) {
 
-        DriverTipsFragment f = new DriverTipsFragment();
+        DriverTipsAlert f = new DriverTipsAlert();
         f.setArguments(args);
 
         return f;

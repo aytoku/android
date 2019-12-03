@@ -52,7 +52,7 @@ import com.example.myapplication_1.Fragments.SettingsFragment;
 import com.example.myapplication_1.Fragments.SliderFragment;
 import com.example.myapplication_1.Fragments.SpinnerFragment;
 import com.example.myapplication_1.Fragments.SpinnerTariffsFragment;
-import com.example.myapplication_1.Fragments.TariffsPickAlert;
+import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.Fragments.TravelStoryFragment;
 import com.example.myapplication_1.Fragments.TravelStoryOneFragment;
 import com.example.myapplication_1.Fragments.UserAgreementFragment;

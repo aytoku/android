@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication_1.Alerts.DriverTipsAlert;
 import com.example.myapplication_1.R;
 
 public class PaymentMethodFragment extends Fragment {
@@ -135,8 +136,8 @@ public class PaymentMethodFragment extends Fragment {
 
     public void showDialog(View view){
 
-        DriverTipsFragment driverTipsFragment = new DriverTipsFragment();
-        driverTipsFragment.setCancelable(true);
-        driverTipsFragment.show(getFragmentManager(), "DriverTipsFragment");
+        DriverTipsAlert driverTipsAlert = new DriverTipsAlert();
+        driverTipsAlert.setCancelable(true);
+        driverTipsAlert.show(getFragmentManager(), "DriverTipsFragment");
     }
 }

@@ -66,7 +66,7 @@ public class EarningsFragment extends Fragment {
         EarningsPageAdapter.ItemsMenu []_arr = new EarningsPageAdapter.ItemsMenu[]{
 
                 new EarningsPageAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"152\u20BD",   new String[] {"Загород"},   new EarningsPageAdapter.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"1 км", new String[] {"Коста 223/1"}, new String[] {"Детское кресло", "Курящий"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
@@ -79,10 +79,10 @@ public class EarningsFragment extends Fragment {
                         }
 
                     }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Заводской"),
+                }, "До клиента", "1км", "Маршрут заказа", "152\u20BD", R.drawable.ic_lightning_yellow, "10"),
 
                 new EarningsPageAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный","Повышенный","Повышенный","Повышенный"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"1 км", new String[] {"Коста 223/1","Универсам Наш, Хаджи Мамсурова Мамсурова, 42"}, new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.ItemsMenu.CallBack() {
 
                     public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
@@ -95,26 +95,11 @@ public class EarningsFragment extends Fragment {
                         }
 
                     }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
+                },"До клиента", "1км", "Маршрут заказа", "208\u20BD", R.drawable.ic_lightning_yellow, "10"),
 
                 new EarningsPageAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Повышенный"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
-                    @Override
-                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
+                        getResources().getColor(R.color.my_gray),"1 км", new String[] {"Коста 223/1","Молодежная, 7","Универсам Наш, Хаджи Мамсурова, 42 "}, new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.ItemsMenu.CallBack() {
 
-                        try {
-
-                            Bundle _args = new Bundle();
-
-                        } catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
-
-                new EarningsPageAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
-                    @Override
                     public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
                         try {
@@ -126,10 +111,10 @@ public class EarningsFragment extends Fragment {
                         }
 
                     }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
+                },"До клиента", "1км", "Маршрут заказа", "208\u20BD", R.drawable.ic_lightning_yellow, "10"),
 
                 new EarningsPageAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
+                        getResources().getColor(R.color.my_gray),"1 км", new String[] {"Коста 223/1", "Молодежная, 7", "Универсам Наш, Хаджи Мамсурова, 42 " ,"Алания молл, Московское шоссе, 3а"}, new String[] {"Детское кресло", "Детское кресло", "Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.ItemsMenu.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
 
@@ -142,41 +127,8 @@ public class EarningsFragment extends Fragment {
                         }
 
                     }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
-
-                new EarningsPageAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
-                    @Override
-                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
-
-                        try {
-
-                            Bundle _args = new Bundle();
-
-                        } catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
-
-                new EarningsPageAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),"208\u20BD", new String[] {"Час-пик","Повышенный","Повышенный"}, new EarningsPageAdapter.ItemsMenu.CallBack() {
-                    @Override
-                    public void call(EarningsPageAdapter.ItemsMenu itemsMenu) {
-
-                        try {
-
-                            Bundle _args = new Bundle();
-
-                        } catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }, R.drawable.ic_road, "1км",  "Коста, 223/1", R.drawable.ic_grey_arrow, "Кутузова, 22"),
+                }, "До клиента", "1км", "Маршрут заказа", "152\u20BD", R.drawable.ic_lightning_yellow, "10"),
         };
         return _arr;
     }
 }
-
