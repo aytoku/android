@@ -31,7 +31,8 @@ public class TariffsPickAlert extends DialogFragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<TariffsPickAdapter.ItemsMenu> itemsMenuList;
+    List<TariffsPickAdapter.ItemsMenu> itemsMenuList;
+    boolean check = true;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -77,7 +78,7 @@ public class TariffsPickAlert extends DialogFragment {
                                     e.printStackTrace();
                                 }
                             }
-                        },R.drawable.ic_empty_switch),
+                        },R.drawable.ic_empty_switch, check),
 
                 new TariffsPickAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
@@ -91,7 +92,7 @@ public class TariffsPickAlert extends DialogFragment {
                                     e.printStackTrace();
                                 }
                             }
-                        },R.drawable.ic_empty_switch),
+                        },R.drawable.ic_empty_switch, check),
 
                 new TariffsPickAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
@@ -105,7 +106,7 @@ public class TariffsPickAlert extends DialogFragment {
                                     e.printStackTrace();
                                 }
                             }
-                        },R.drawable.ic_empty_switch),
+                        },R.drawable.ic_empty_switch, check),
 
                 new TariffsPickAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
@@ -119,7 +120,7 @@ public class TariffsPickAlert extends DialogFragment {
                                     e.printStackTrace();
                                 }
                             }
-                        },R.drawable.ic_empty_switch),
+                        },R.drawable.ic_empty_switch, check),
 
                 new TariffsPickAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
@@ -133,7 +134,7 @@ public class TariffsPickAlert extends DialogFragment {
                                     e.printStackTrace();
                                 }
                             }
-                        },R.drawable.ic_empty_switch)
+                        },R.drawable.ic_empty_switch, check)
         };
         return arr;
     }

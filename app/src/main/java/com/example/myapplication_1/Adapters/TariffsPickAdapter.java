@@ -20,7 +20,7 @@ import java.util.List;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.ViewHolder> {
+public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.ViewHolder>{
 
     private final LayoutInflater layoutInflater;
     private final Context context;
@@ -66,7 +66,12 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
         viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewHolder.imageView.setImageDrawable(checked);
+                _item.check =! _item.check;
+                if(_item.check){
+                    viewHolder.imageView.setImageDrawable(checked);
+                }else {
+                    viewHolder.imageView.setImageDrawable(unChecked);
+                }
             }
         });
     }
@@ -87,12 +92,14 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
         private String title;
         private CallBack callBack;
         private int img;
+        private boolean check;
 
-        public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack, int img) {
+        public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack, int img, boolean check) {
             this.colorBackgroundInt = colorBackgroundRes;
             this.title = title;
             this.callBack = callBack;
             this.img = img;
+            this.check  = check;
         }
 
         public int getImgResId() {
