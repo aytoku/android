@@ -137,6 +137,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, tariffsPickAlert, TariffsPickAlert.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, expFragment, ExpFragment.TAG).commit();
     }
 }

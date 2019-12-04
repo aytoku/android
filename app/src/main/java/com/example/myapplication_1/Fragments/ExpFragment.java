@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExpFragment extends Fragment {
 
@@ -33,6 +34,7 @@ public class ExpFragment extends Fragment {
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
 
+
         final ExpandableListView listView = (ExpandableListView) view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
@@ -41,7 +43,13 @@ public class ExpFragment extends Fragment {
         children1.add("");
         groups.add(children1);
 
-        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups);
+
+        final List list = new ArrayList();
+        list.add("По возрастанию цены");
+        list.add("По убыванию цены");
+        list.add("Не выбрано");
+
+        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list, getFragmentManager());
         listView.setAdapter(adapter);
 
         return view;
@@ -49,12 +57,11 @@ public class ExpFragment extends Fragment {
 
     private ExpListAdapter.ItemsMenuList getMenuItemsList(){
 
-        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList("По убыванию цены",
+        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
                 new ExpListAdapter.ItemsMenuList.CallBack() {
                     @Override
                     public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
                         try{
-
                         }catch (NullPointerException e) {
                             e.printStackTrace();
                         }

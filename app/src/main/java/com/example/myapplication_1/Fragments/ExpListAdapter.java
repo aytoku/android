@@ -13,19 +13,27 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentManager;
+
+import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExpListAdapter extends BaseExpandableListAdapter implements AdapterView.OnItemSelectedListener{
 
     private Activity activity;
     private ArrayList<ArrayList<String>> mGroups;
     private Context mContext;
+    private List list;
+    private FragmentManager fragmentManager;
 
-    public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups){
+    public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list, FragmentManager fragmentManager){
         this.activity = activity;
         mGroups = groups;
+        this.list = list;
+        this.fragmentManager = fragmentManager;
     }
 
     @Override
@@ -73,7 +81,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     }
 
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
+    public View getChildView(int groupPosition, final int childPosition, boolean isLastChild,
                              View convertView, ViewGroup parent) {
 
         if (convertView == null) {
@@ -82,19 +90,39 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         }
 
         Spinner spinner = (Spinner) convertView.findViewById(R.id.spinner);
-        spinner.setOnItemSelectedListener(this);
-        ArrayAdapter dataAdapter = new ArrayAdapter((activity), android.R.layout.simple_spinner_item);
+//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                Object item  = adapterView.getItemAtPosition(i);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
+        //spinner.setSelection(childPosition);
+        ArrayAdapter dataAdapter = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);
 
 
-        Spinner spinner1 = (Spinner) convertView.findViewById(R.id.spinner1);
-        spinner1.setOnItemSelectedListener(this);
-        ArrayAdapter dataAdapter1 = new ArrayAdapter((activity), android.R.layout.simple_spinner_item);
-        dataAdapter1.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-        spinner1.setAdapter(dataAdapter1);
+        ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog(view);
+            }
+        });
 
         return convertView;
+    }
+
+    private void showDialog(View view) {
+        TariffsPickAlert tariffsPickAlert = new TariffsPickAlert();
+        tariffsPickAlert.setCancelable(true);
+        tariffsPickAlert.show(fragmentManager, "TariffsPickAlert");
     }
 
     @Override
@@ -116,16 +144,13 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
 
     public static class ItemsMenuList {
 
-
         public interface CallBack {
             void call(ItemsMenuList itemsMenuList);
         }
 
-        private String text;
         private ItemsMenuList.CallBack callBack;
 
-        ItemsMenuList(String text, ItemsMenuList.CallBack callBack) {
-            this.text = text;
+        ItemsMenuList(ItemsMenuList.CallBack callBack) {
             this.callBack = callBack;
         }
     }

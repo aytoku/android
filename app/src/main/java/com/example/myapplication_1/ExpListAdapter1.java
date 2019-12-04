@@ -91,13 +91,6 @@ public class ExpListAdapter1 extends BaseExpandableListAdapter implements Adapte
         spinner.setAdapter(dataAdapter);
 
 
-        Spinner spinner1 = (Spinner) convertView.findViewById(R.id.spinner1);
-        spinner1.setOnItemSelectedListener(this);
-        ArrayAdapter dataAdapter1 = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, list1);
-        dataAdapter1.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-        spinner1.setAdapter(dataAdapter1);
-
-
         return convertView;
     }
 
