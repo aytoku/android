@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 
@@ -48,6 +49,8 @@ public class ExpFragment extends Fragment {
         list.add("По возрастанию цены");
         list.add("По убыванию цены");
         list.add("Не выбрано");
+
+        final Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
 
         final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list, getFragmentManager());
         listView.setAdapter(adapter);

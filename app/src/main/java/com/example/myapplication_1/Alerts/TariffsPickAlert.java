@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,7 +36,8 @@ public class TariffsPickAlert extends DialogFragment {
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
     List<TariffsPickAdapter.ItemsMenu> itemsMenuList;
-    boolean check = true;
+    TextView button;
+    boolean check = false;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,6 +84,8 @@ public class TariffsPickAlert extends DialogFragment {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
+
+        button = view.findViewById(R.id.ll_tariffs_pick_button_accept);
         return view;
     }
 
@@ -96,7 +100,8 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    Bundle _args = new Bundle();
+
+
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

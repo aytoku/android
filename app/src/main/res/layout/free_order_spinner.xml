@@ -25,15 +25,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:paddingRight="10dp">
+            android:layout_centerInParent="true"
+            android:paddingRight="20dp">
 
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingRight="60dp"
+                android:paddingRight="40dp"
                 android:textAlignment="center"
-                android:background="@drawable/spinnerr" />
+                android:background="@android:color/transparent"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_free_orders_arrow"/>
 
         </LinearLayout>
 
@@ -49,6 +56,7 @@
         android:layout_below="@+id/rl_driver_spinner">
 
         <TextView
+            android:id="@+id/rl_free_orders_spinner_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -58,9 +66,19 @@
             android:textColor="#424242"
             android:textSize="16sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/rl_free_orders_spinner_title"
+            android:text=""
+            android:textColor="#424242"
+            android:textSize="16sp" />
+
         <ImageView
             android:id="@+id/rl_free_orders_spinner_img"
-            android:layout_width="30dp"
+            android:layout_width="32dp"
             android:layout_height="30dp"
             android:layout_centerInParent="true"
             android:layout_alignParentRight="true"

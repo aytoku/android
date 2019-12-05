@@ -89,26 +89,14 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             convertView = inflater.inflate(R.layout.free_order_spinner, null);
         }
 
-        Spinner spinner = (Spinner) convertView.findViewById(R.id.spinner);
-//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                Object item  = adapterView.getItemAtPosition(i);
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//            }
-//        });
-        //spinner.setSelection(childPosition);
+        final Spinner spinner = (Spinner) convertView.findViewById(R.id.spinner);
         ArrayAdapter dataAdapter = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);
+        spinner.setSelection(spinner.getFirstVisiblePosition());
 
 
         ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
-
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
