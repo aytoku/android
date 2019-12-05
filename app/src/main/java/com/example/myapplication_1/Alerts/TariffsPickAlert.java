@@ -115,7 +115,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -129,7 +128,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -143,7 +141,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -157,7 +154,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
