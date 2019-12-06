@@ -37,6 +37,7 @@ public class TariffsPickAlert extends DialogFragment {
     RecyclerView.Adapter adapterGridViewMenu;
     List<TariffsPickAdapter.ItemsMenu> itemsMenuList;
     TextView button;
+    TariffsPickAlert tariffsPickAlert;
     boolean check = false;
 
     @Override
@@ -86,6 +87,7 @@ public class TariffsPickAlert extends DialogFragment {
         }
 
         button = view.findViewById(R.id.ll_tariffs_pick_button_accept);
+
         return view;
     }
 

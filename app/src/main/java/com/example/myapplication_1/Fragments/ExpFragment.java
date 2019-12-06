@@ -1,5 +1,7 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
@@ -55,7 +58,18 @@ public class ExpFragment extends Fragment {
         final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list, getFragmentManager());
         listView.setAdapter(adapter);
 
+        Bundle bundle = new Bundle();
+        TariffsPickAlert tariffsPickAlert = new TariffsPickAlert();
+        tariffsPickAlert.setArguments(bundle);
+
         return view;
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+       super.onActivityResult(requestCode,resultCode, data);
+       if(resultCode == Activity.RESULT_OK){
+            getTargetFragment().onActivityResult(getTargetRequestCode(), resultCode, data);
+       }
     }
 
     private ExpListAdapter.ItemsMenuList getMenuItemsList(){
