@@ -29,6 +29,9 @@ public class ExpFragment extends Fragment {
         return f;
     }
 
+    private static final int TARGET_FRAGMENT_REQUEST_CODE = 1;
+    private static final String EXTRA_GREETING_MESSAGE = "message";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,32 +61,43 @@ public class ExpFragment extends Fragment {
         final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list, getFragmentManager());
         listView.setAdapter(adapter);
 
-        Bundle bundle = new Bundle();
+
         TariffsPickAlert tariffsPickAlert = new TariffsPickAlert();
-        tariffsPickAlert.setArguments(bundle);
+        tariffsPickAlert.setTargetFragment(ExpFragment.this, TARGET_FRAGMENT_REQUEST_CODE);
+        tariffsPickAlert.show(getFragmentManager(), TariffsPickAlert.TAG);
 
         return view;
     }
 
+    
+
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-       super.onActivityResult(requestCode,resultCode, data);
-       if(resultCode == Activity.RESULT_OK){
+        super.onActivityResult(requestCode,resultCode, data);
+        if(resultCode == Activity.RESULT_OK){
             getTargetFragment().onActivityResult(getTargetRequestCode(), resultCode, data);
-       }
+        }
     }
 
-    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
-
-        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
-                new ExpListAdapter.ItemsMenuList.CallBack() {
-                    @Override
-                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
-                        try{
-                        }catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            return itemsMenuList;
+    public static Intent newIntent(String message) {
+        Intent intent = new Intent();
+        intent.putExtra(EXTRA_GREETING_MESSAGE, message);
+        return intent;
     }
+
+
+
+//    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
+//
+//        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
+//                new ExpListAdapter.ItemsMenuList.CallBack() {
+//                    @Override
+//                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
+//                        try{
+//                        }catch (NullPointerException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                });
+//            return itemsMenuList;
+//    }
 }
