@@ -75,6 +75,7 @@ public class ExpFragment extends Fragment {
                     @Override
                     public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
                         try{
+                            
                         }catch (NullPointerException e) {
                             e.printStackTrace();
                         }

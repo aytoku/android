@@ -28,6 +28,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     private Context mContext;
     private List list;
     private FragmentManager fragmentManager;
+    private List<ExpListAdapter.ItemsMenuList> itemsMenuList1;
 
     public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list, FragmentManager fragmentManager){
         this.activity = activity;
@@ -84,6 +85,8 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     public View getChildView(int groupPosition, final int childPosition, boolean isLastChild,
                              View convertView, ViewGroup parent) {
 
+        final ItemsMenuList itemsMenuList = itemsMenuList1.get(childPosition);
+
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) activity.getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.free_order_spinner, null);
@@ -94,6 +97,18 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);
         spinner.setSelection(spinner.getFirstVisiblePosition());
+
+        final TextView textView = convertView.findViewById(R.id.rl_free_orders_spinner_text);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    itemsMenuList.getCallBack().call(itemsMenuList);
+                }catch (NullPointerException e){
+                    e.printStackTrace();
+                }
+            }
+        });
 
 
         ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
@@ -138,5 +153,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         ItemsMenuList(ItemsMenuList.CallBack callBack) {
             this.callBack = callBack;
         }
+        public  CallBack getCallBack(){return callBack;}
     }
 }
