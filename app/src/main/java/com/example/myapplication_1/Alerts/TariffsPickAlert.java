@@ -113,8 +113,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-
-
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Эконом");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -128,6 +132,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Стандарт");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -141,6 +151,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Комфорт");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -154,6 +170,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Доставка");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -167,6 +189,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Грузовое");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

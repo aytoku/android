@@ -115,7 +115,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
 
     @Override
     public void onItemSelected(AdapterView parent, View view, int position, long id) {
-        // getting selected item
         String item = parent.getItemAtPosition(position).toString();
     }
 
@@ -126,7 +125,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
 
     @Override
     public void registerDataSetObserver(DataSetObserver observer) {
-        /* used to make the notifyDataSetChanged() method work */
         super.registerDataSetObserver(observer);
     }
 

@@ -36,14 +36,13 @@ public class ExpFragment extends Fragment {
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
 
-        final ExpandableListView listView = view.findViewById(R.id.expListView);
+        final ExpandableListView listView = (ExpandableListView) view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
         ArrayList<ArrayList<String>> groups = new ArrayList<ArrayList<String>>();
         ArrayList<String> children1 = new ArrayList<String>();
         children1.add("");
         groups.add(children1);
-
 
         final List list = new ArrayList();
         list.add("По возрастанию цены");
@@ -67,5 +66,20 @@ public class ExpFragment extends Fragment {
         Intent intent = new Intent();
         intent.putExtra("message", message);
         return intent;
+    }
+
+    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
+
+        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
+                new ExpListAdapter.ItemsMenuList.CallBack() {
+                    @Override
+                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
+                        try{
+                        }catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            return itemsMenuList;
     }
 }
