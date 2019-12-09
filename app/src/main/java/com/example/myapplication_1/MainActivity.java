@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         SettingsFragment settingsFragment = SettingsFragment.getInstance(null);
         SpinnerFragment spinnerFragment = SpinnerFragment.getInstance(null);
         SliderFragment sliderFragment = SliderFragment.getInstance(null);
+        SendTestFragment sendTestFragment = SendTestFragment.getInstance();
         SpinnerTariffsFragment spinnerTariffsFragment = SpinnerTariffsFragment.getInstance(null);
 
         TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
@@ -137,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
         WishFragment wishFragment = WishFragment.getInstance(null);
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
-        SendTestFragment sendTestFragment = SendTestFragment.getInstance();
 
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, expFragment, ExpFragment.TAG).commit();

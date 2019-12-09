@@ -90,7 +90,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             convertView = inflater.inflate(R.layout.free_order_spinner, null);
         }
 
-        final Spinner spinner = (Spinner) convertView.findViewById(R.id.spinner);
+        final Spinner spinner = convertView.findViewById(R.id.spinner);
         ArrayAdapter dataAdapter = new ArrayAdapter((activity), android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);

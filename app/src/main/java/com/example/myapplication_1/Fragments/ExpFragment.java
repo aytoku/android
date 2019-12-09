@@ -46,8 +46,8 @@ public class ExpFragment extends Fragment {
         final ExpandableListView listView = view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
-        ArrayList<ArrayList<String>> groups = new ArrayList<ArrayList<String>>();
-        ArrayList<String> children1 = new ArrayList<String>();
+        ArrayList<ArrayList<String>> groups = new ArrayList<>();
+        ArrayList<String> children1 = new ArrayList<>();
         children1.add("");
         groups.add(children1);
 
