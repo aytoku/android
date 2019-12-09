@@ -40,7 +40,6 @@ public class TariffsPickAlert extends DialogFragment {
     RecyclerView.Adapter adapterGridViewMenu;
     List<TariffsPickAdapter.ItemsMenu> itemsMenuList;
     TextView button;
-    TariffsPickAlert tariffsPickAlert;
     boolean check = false;
 
     @Override
@@ -94,8 +93,6 @@ public class TariffsPickAlert extends DialogFragment {
         return view;
     }
 
-
-
     private void sendResult(String message){
         if (getTargetFragment() == null){
             return;
@@ -104,8 +101,6 @@ public class TariffsPickAlert extends DialogFragment {
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
         dismiss();
     }
-
-
 
     private TariffsPickAdapter.ItemsMenu[] getMenuItems() {
 

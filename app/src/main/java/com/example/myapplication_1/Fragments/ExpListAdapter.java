@@ -74,7 +74,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             convertView = inflater.inflate(R.layout.group_view, null);
         }
 
-        TextView textGroup = (TextView) convertView.findViewById(R.id.textGroup);
+        TextView textGroup = convertView.findViewById(R.id.textGroup);
         ImageView imageView = convertView.findViewById(R.id.imageView);
 
         return convertView;
@@ -137,7 +137,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         }
 
         private ItemsMenuList.CallBack callBack;
-
         ItemsMenuList(ItemsMenuList.CallBack callBack) {
             this.callBack = callBack;
         }

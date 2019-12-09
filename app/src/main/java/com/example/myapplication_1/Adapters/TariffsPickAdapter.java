@@ -26,7 +26,6 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
     private final Context context;
     private Drawable unChecked;
     private Drawable checked;
-    private int selectItem = -1;
     private List<ItemsMenu> itemsMenuList;
 
     public TariffsPickAdapter(List<TariffsPickAdapter.ItemsMenu> itemsMenuList, Context context) {
@@ -61,8 +60,6 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
         viewHolder.imageView.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.imageView.setImageBitmap( _bitmap );
         viewHolder.title.setText(_item.getStr());
-
-
         viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
