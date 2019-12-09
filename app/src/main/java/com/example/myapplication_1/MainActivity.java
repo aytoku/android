@@ -47,6 +47,7 @@ import com.example.myapplication_1.Fragments.RefusePaymentFragment;
 import com.example.myapplication_1.Fragments.SearchCarFragment;
 import com.example.myapplication_1.Fragments.SearchFragment;
 import com.example.myapplication_1.Fragments.SeekbarFragment;
+import com.example.myapplication_1.Fragments.SendTestFragment;
 import com.example.myapplication_1.Fragments.ServiceFragment;
 import com.example.myapplication_1.Fragments.SettingsFragment;
 import com.example.myapplication_1.Fragments.SliderFragment;
@@ -135,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
 
         WishFragment wishFragment = WishFragment.getInstance(null);
         WriteFragment writeFragment = WriteFragment.getInstance(null);
+
+        SendTestFragment sendTestFragment = SendTestFragment.getInstance();
 
 
         getSupportFragmentManager().beginTransaction().add(R.id.ll_main, expFragment, ExpFragment.TAG).commit();

@@ -37,13 +37,13 @@ public class ExpFragment extends Fragment {
                 container, false);
 
         try {
-            ExpListAdapter.ItemsMenuList itemsMenuLists = getMenuItemsList();
+            ExpListAdapter.ItemsMenuList itemsMenuList = getMenuItemsList();
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
 
-        final ExpandableListView listView = (ExpandableListView) view.findViewById(R.id.expListView);
+        final ExpandableListView listView = view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
         ArrayList<ArrayList<String>> groups = new ArrayList<ArrayList<String>>();
@@ -71,7 +71,7 @@ public class ExpFragment extends Fragment {
 
     public static Intent newIntent(String message) {
         Intent intent = new Intent();
-        intent.putExtra("message", message);
+        intent.putExtra("", message);
         return intent;
     }
 
@@ -82,7 +82,7 @@ public class ExpFragment extends Fragment {
                     @Override
                     public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
                         try{
-                            
+
                         }catch (NullPointerException e) {
                             e.printStackTrace();
                         }
