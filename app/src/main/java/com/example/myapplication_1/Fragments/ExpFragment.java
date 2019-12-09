@@ -36,6 +36,13 @@ public class ExpFragment extends Fragment {
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
 
+        try {
+            ExpListAdapter.ItemsMenuList itemsMenuLists = getMenuItemsList();
+
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
+        }
+
         final ExpandableListView listView = (ExpandableListView) view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 

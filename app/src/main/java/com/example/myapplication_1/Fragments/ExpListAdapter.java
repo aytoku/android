@@ -85,7 +85,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     public View getChildView(int groupPosition, final int childPosition, boolean isLastChild,
                              View convertView, ViewGroup parent) {
 
-        final ItemsMenuList itemsMenuList = itemsMenuList1.get(childPosition);
+//        final ItemsMenuList itemsMenuList = itemsMenuList1.get(childPosition);
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) activity.getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -103,7 +103,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             @Override
             public void onClick(View view) {
                 try {
-                    itemsMenuList.getCallBack().call(itemsMenuList);
+                    //itemsMenuList.getCallBack().call(itemsMenuList);
                 }catch (NullPointerException e){
                     e.printStackTrace();
                 }
