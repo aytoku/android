@@ -72,7 +72,7 @@ public class TariffsPickAlert extends DialogFragment {
 
         final RecyclerView recyclerViewMenu = rv;
 
-        try {
+        try{
 
             TariffsPickAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<TariffsPickAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
@@ -82,7 +82,7 @@ public class TariffsPickAlert extends DialogFragment {
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
             recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
 
-        } catch (NullPointerException e) {
+        }catch (NullPointerException e){
             e.printStackTrace();
         }
 

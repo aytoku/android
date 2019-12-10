@@ -58,12 +58,7 @@ public class TravelStoryOneAlert extends DialogFragment {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                Fragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(_args);
-
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, travelStoryOneFragment);
-                fragmentTransaction.commit();
+                getDialog().dismiss();
             }
         });
         TextView delete = view.findViewById(R.id.rl_travel_story_1_alert_delete_title);

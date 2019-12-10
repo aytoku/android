@@ -136,7 +136,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         }
 
         private ItemsMenuList.CallBack callBack;
-        ItemsMenuList(ItemsMenuList.CallBack callBack) {
+        public ItemsMenuList(ItemsMenuList.CallBack callBack) {
             this.callBack = callBack;
         }
         public  CallBack getCallBack(){return callBack;}

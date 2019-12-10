@@ -58,7 +58,7 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
         viewHolder.imageView.setScaleType(ImageView.ScaleType.CENTER);
-        viewHolder.imageView.setImageBitmap( _bitmap );
+        viewHolder.imageView.setImageBitmap(_bitmap);
         viewHolder.title.setText(_item.getStr());
         viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override

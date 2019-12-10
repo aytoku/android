@@ -36,13 +36,13 @@ public class ExpFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
-
-        try {
-            ExpListAdapter.ItemsMenuList itemsMenuList = getMenuItemsList();
-
-        } catch ( NullPointerException e) {
-            e.printStackTrace();
-        }
+//
+//        try {
+//            ExpListAdapter.ItemsMenuList itemsMenuList = getMenuItemsList();
+//
+//        } catch ( NullPointerException e) {
+//            e.printStackTrace();
+//        }
 
         final ExpandableListView listView = view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
@@ -59,10 +59,6 @@ public class ExpFragment extends Fragment {
 
         final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list, getFragmentManager());
         listView.setAdapter(adapter);
-
-//        DialogFragment dialogFragment = new TariffsPickAlert();
-//        dialogFragment.setTargetFragment(this, 1);
-//        dialogFragment.show(getFragmentManager(),"TariffsPickAlert");
 
         return view;
     }
