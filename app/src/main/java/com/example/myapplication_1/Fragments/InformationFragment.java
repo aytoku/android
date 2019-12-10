@@ -23,11 +23,6 @@ public class InformationFragment extends Fragment {
         return f;
     }
 
-    private ImageButton imageButton;
-    private RelativeLayout relativeLayout1;
-    private RelativeLayout relativeLayout2;
-    private RelativeLayout relativeLayout3;
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -36,10 +31,10 @@ public class InformationFragment extends Fragment {
         View view = inflater.inflate(R.layout.info,
                 container, false);
 
-        imageButton = view.findViewById(R.id.ll_info_button);
-        relativeLayout1 = view.findViewById(R.id.rl_info3);
-        relativeLayout2 = view.findViewById(R.id.rl_info2);
-        relativeLayout3 = view.findViewById(R.id.rl_info1);
+        ImageButton imageButton = view.findViewById(R.id.ll_info_button);
+        RelativeLayout relativeLayout1 = view.findViewById(R.id.rl_info3);
+        RelativeLayout relativeLayout2 = view.findViewById(R.id.rl_info2);
+        RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_info1);
 
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);

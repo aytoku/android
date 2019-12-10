@@ -38,8 +38,6 @@ public class ChatWithOperator extends Fragment {
         return f;
     }
 
-    ImageButton androidImageButton;
-
     RecyclerView rv;
     RecyclerView rv1;
     RecyclerView.Adapter adapterGridViewMenu;
@@ -47,7 +45,6 @@ public class ChatWithOperator extends Fragment {
     private List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
     Drawable micro;
     Drawable arrow;
-    TextView textView;
     EditText editText;
     ImageView imageView;
 
@@ -59,9 +56,9 @@ public class ChatWithOperator extends Fragment {
 
         View view = inflater.inflate(R.layout.chat_with_operator,
                 container, false);
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
+        ImageButton androidImageButton = view.findViewById(R.id.img_cross_grey);
 
-        textView = view.findViewById(R.id.ll_chat_with_operator_title);
+        TextView textView = view.findViewById(R.id.ll_chat_with_operator_title);
         editText = view.findViewById(R.id.ll_driver_chat_text);
 
         imageView = view.findViewById(R.id.ll_chat_with_operator_img);

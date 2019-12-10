@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -27,10 +26,8 @@ public class NewCardFragment extends Fragment {
         return f;
     }
 
-    ImageButton imageButton;
     EditText editText;
     EditText editText1;
-    CardView button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,10 +38,9 @@ public class NewCardFragment extends Fragment {
         View view = inflater.inflate(R.layout.new_card,
                 container, false);
 
-        imageButton = view.findViewById(R.id.rl_new_card_button);
+        ImageButton imageButton = view.findViewById(R.id.rl_new_card_button);
         editText = view.findViewById(R.id.ll_new_card_card_number_field);
         editText1 = view.findViewById(R.id.ll_new_card_term_field);
-        button = view.findViewById(R.id.cl_rating_ll_rating1_cardButton);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,11 +48,9 @@ public class NewCardFragment extends Fragment {
 
                 Bundle _args = new Bundle();
                 Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, paymentMethodFragment);
                 fragmentTransaction.commit();
-
             }
         });
 

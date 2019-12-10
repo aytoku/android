@@ -46,8 +46,8 @@ public class ChatWithDriverFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.empty_chat_with_driver,
                 container, false);
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
 
+        androidImageButton = view.findViewById(R.id.img_cross_grey);
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
         rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
@@ -62,9 +62,9 @@ public class ChatWithDriverFragment extends Fragment {
 
         try {
 
-            ChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            ChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            ChatWithDriverAdapter adapterGridViewMenu = new ChatWithDriverAdapter(itemsMenu, getActivity().getBaseContext());//this;
+            ChatWithDriverAdapter adapterGridViewMenu = new ChatWithDriverAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );

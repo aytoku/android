@@ -36,9 +36,6 @@ public class TariffsPickAlert extends DialogFragment {
         return f;
     }
 
-    RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
-    List<TariffsPickAdapter.ItemsMenu> itemsMenuList;
     TextView button;
     boolean check = false;
 
@@ -70,15 +67,16 @@ public class TariffsPickAlert extends DialogFragment {
             }
         });
 
-        rv = view.findViewById(R.id.ll_tariffs_pick_recycler);
+        RecyclerView rv = view.findViewById(R.id.ll_tariffs_pick_recycler);
+        button = view.findViewById(R.id.ll_tariffs_pick_button_accept);
 
         final RecyclerView recyclerViewMenu = rv;
 
         try {
 
             TariffsPickAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new TariffsPickAdapter(itemsMenuList, getActivity().getBaseContext());
+            List<TariffsPickAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            RecyclerView.Adapter adapterGridViewMenu = new TariffsPickAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
@@ -87,8 +85,6 @@ public class TariffsPickAlert extends DialogFragment {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-
-        button = view.findViewById(R.id.ll_tariffs_pick_button_accept);
 
         return view;
     }

@@ -32,11 +32,8 @@ public class AddressFragment extends Fragment {
         return f;
     }
 
-    RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AddressAdapter.ItemsMenu> itemsMenuList;
-    ImageButton button;
-    ImageButton imageButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,10 +44,10 @@ public class AddressFragment extends Fragment {
         View view = inflater.inflate(R.layout.addresses_fragment,
                 container, false);
 
-        rv = view.findViewById(R.id.ll_address_rl_address_ll_address_address_recycler);
+        RecyclerView rv = view.findViewById(R.id.ll_address_rl_address_ll_address_address_recycler);
 
-        button = view.findViewById(R.id.ll_address_rl_address_button_plusik);
-        imageButton = view.findViewById(R.id.ll_address_rl_address_button_strelka);
+        ImageButton button = view.findViewById(R.id.ll_address_rl_address_button_plusik);
+        ImageButton imageButton = view.findViewById(R.id.ll_address_rl_address_button_strelka);
 
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);

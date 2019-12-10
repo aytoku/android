@@ -43,7 +43,6 @@ public class Menu11Fragment extends Fragment {
                 container, false);
 
         rv = view.findViewById(R.id.rl_menu_1_1_recycler);
-
         final RecyclerView recyclerViewMenu = rv;
 
         try {

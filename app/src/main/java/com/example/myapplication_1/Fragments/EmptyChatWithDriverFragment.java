@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,15 +37,12 @@ public class EmptyChatWithDriverFragment extends Fragment {
         return f;
     }
 
-    ImageButton androidImageButton;
     RecyclerView rv;
     RecyclerView rv1;
     RecyclerView.Adapter adapterGridViewMenu;
     List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
     List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
     EditText editText;
-    TextView textView;
-    TextView textView1;
     ImageView imageView;
     Drawable micro;
     Drawable arrow;
@@ -60,13 +56,10 @@ public class EmptyChatWithDriverFragment extends Fragment {
         View view = inflater.inflate(R.layout.empty_chat_with_driver,
                 container, false);
 
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
-
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
         rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
-        textView = view.findViewById(R.id.rl_empty_chat_with_driver_title);
-        textView1 = view.findViewById(R.id.rl_empty_chat_with_driver_title1);
+        TextView textView1 = view.findViewById(R.id.rl_empty_chat_with_driver_title1);
 
         editText = view.findViewById(R.id.ll_driver_chat_text);
         imageView = view.findViewById(R.id.ll_empty_chat_with_driver_img);
@@ -96,13 +89,11 @@ public class EmptyChatWithDriverFragment extends Fragment {
             public void onClick(View view) {
                 Bundle _args = new Bundle();
                 Fragment chatWithOperator = ChatWithOperator.getInstance(_args);
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, chatWithOperator);
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 

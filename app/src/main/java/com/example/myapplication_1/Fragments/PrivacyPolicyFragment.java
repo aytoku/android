@@ -25,9 +25,6 @@ public class PrivacyPolicyFragment extends Fragment {
         return f;
     }
 
-    ImageButton imageButton;
-    WebView webView;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,9 +34,9 @@ public class PrivacyPolicyFragment extends Fragment {
         View view = inflater.inflate(R.layout.policy_confidentiality,
                 container, false);
 
-        imageButton = view.findViewById(R.id.rl_choose_place_button);
+        ImageButton imageButton = view.findViewById(R.id.rl_choose_place_button);
 
-        webView = view.findViewById(R.id.webView);
+        WebView webView = view.findViewById(R.id.webView);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("http://faem.ru/licensiya.html");

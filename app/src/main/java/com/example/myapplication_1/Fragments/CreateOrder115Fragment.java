@@ -38,7 +38,6 @@ public class CreateOrder115Fragment extends Fragment {
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AdapterCreateOrder115.ItemsMenu> itemsMenuList;
-    Button button;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,8 +49,7 @@ public class CreateOrder115Fragment extends Fragment {
 
         rv = view.findViewById(R.id.ll_create_order_1_1_5_recycler);
 
-        button = view.findViewById(R.id.ll_create_order_1_1_5_add_stop);
-
+        Button button = view.findViewById(R.id.ll_create_order_1_1_5_add_stop);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -31,8 +31,6 @@ public class PaymentPickFragment extends Fragment {
     private ImageView imgUnchecked1;
     private Drawable imgToggleGrey;
     private Drawable imgToggleRed;
-    boolean f = true;
-    private TextView accept;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,7 +44,7 @@ public class PaymentPickFragment extends Fragment {
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
 
-        accept = view.findViewById(R.id.rl_payment_pick_ready);
+        TextView accept = view.findViewById(R.id.rl_payment_pick_ready);
 
         accept.setOnClickListener(new View.OnClickListener() {
             @Override

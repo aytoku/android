@@ -23,10 +23,6 @@ public class ServiceFragment extends Fragment {
 
         return f;
     }
-    private ImageButton imageButton;
-    private RelativeLayout relativeLayout1;
-    private RelativeLayout relativeLayout2;
-    private RelativeLayout relativeLayout3;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,10 +33,10 @@ public class ServiceFragment extends Fragment {
         View view = inflater.inflate(R.layout.service,
                 container, false);
 
-        imageButton = view.findViewById(R.id.ll_service_button);
-        relativeLayout1 = view.findViewById(R.id.rl_service1);
-        relativeLayout2 = view.findViewById(R.id.rl_service2);
-        relativeLayout3 = view.findViewById(R.id.rl_service3);
+        ImageButton imageButton = view.findViewById(R.id.ll_service_button);
+        RelativeLayout relativeLayout1 = view.findViewById(R.id.rl_service1);
+        RelativeLayout relativeLayout2 = view.findViewById(R.id.rl_service2);
+        RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_service3);
 
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);

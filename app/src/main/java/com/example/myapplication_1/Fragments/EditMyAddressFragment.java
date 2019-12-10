@@ -16,9 +16,6 @@ public class EditMyAddressFragment extends Fragment {
 
     public static final String TAG = "EditMyAddressFragment";
 
-    ImageButton button;
-    TextView textView;
-
     public static EditMyAddressFragment getInstance(Bundle args) {
 
         EditMyAddressFragment f = new EditMyAddressFragment();
@@ -36,9 +33,7 @@ public class EditMyAddressFragment extends Fragment {
         View view = inflater.inflate(R.layout.edit_my_address_fragment,
                 container, false);
 
-        button = view.findViewById(R.id.rl_edit_my_address_button);
-        textView = view.findViewById(R.id.rl_edit_my_address_delete);
-
+        ImageButton button = view.findViewById(R.id.rl_edit_my_address_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +46,7 @@ public class EditMyAddressFragment extends Fragment {
             }
         });
 
+        TextView textView = view.findViewById(R.id.rl_edit_my_address_delete);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

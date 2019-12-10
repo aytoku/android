@@ -25,7 +25,6 @@ public class SpinnerTariffsFragment extends Fragment {
         return f;
     }
 
-    ImageButton imageButton;
     String[] choose = {"Эконом", "Стандарт", "Не эконом"};
 
     @Override
@@ -44,7 +43,7 @@ public class SpinnerTariffsFragment extends Fragment {
         spinner.setAdapter(adapter);
 
 
-        imageButton = view.findViewById(R.id.rl_tariffs_button);
+        ImageButton imageButton = view.findViewById(R.id.rl_tariffs_button);
 
         Bundle _args = new Bundle();
         final Fragment informationFragment = InformationFragment.getInstance(_args);

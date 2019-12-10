@@ -25,8 +25,6 @@ public class MachinePurposeTwoFragment extends Fragment {
 
     ImageButton button;
     ImageButton button1;
-    Fragment paymentChangeFragment;
-    Fragment tripDetailsFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,8 +52,7 @@ public class MachinePurposeTwoFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                paymentChangeFragment = new MachinePurposeTwoFragment();
-
+                Fragment paymentChangeFragment = new MachinePurposeTwoFragment();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, paymentChangeFragment);
                 fragmentTransaction.commit();
@@ -69,8 +66,7 @@ public class MachinePurposeTwoFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                tripDetailsFragment = new MachinePurposeTwoFragment();
-
+                Fragment tripDetailsFragment = new MachinePurposeTwoFragment();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, tripDetailsFragment);
                 fragmentTransaction.commit();

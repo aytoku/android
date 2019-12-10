@@ -28,12 +28,7 @@ public class CountryCodeSelectionFragment extends Fragment {
         return f;
     }
 
-    ImageButton androidImageButton;
-
     RecyclerView rv;
-
-    ImageButton imageButton;
-
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,11 +38,9 @@ public class CountryCodeSelectionFragment extends Fragment {
         View view = inflater.inflate(R.layout.country_code_selection,
                 container, false);
 
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
-
         rv = view.findViewById(R.id.rl_country_code_selection_recycler);
 
-        imageButton = view.findViewById(R.id.rl_cell_country_code_selection_button);
+        ImageButton imageButton = view.findViewById(R.id.rl_cell_country_code_selection_button);
 
         Bundle _args = new Bundle();
         final Fragment auth111Fragment = Auth111Fragment.getInstance(_args);

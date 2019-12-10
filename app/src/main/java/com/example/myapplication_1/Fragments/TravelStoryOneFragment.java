@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
@@ -30,10 +30,8 @@ public class TravelStoryOneFragment extends Fragment {
         return f;
     }
 
-    ImageView button;
     RecyclerView rv;
     RecyclerView rv1;
-    LinearLayout linearLayout;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -44,12 +42,10 @@ public class TravelStoryOneFragment extends Fragment {
         Bundle _args = new Bundle();
         final Fragment travelStoryOneFragment = TravelStoryFragment.getInstance(_args);
 
-        button = view.findViewById(R.id.rl_travel_story_1_imageView);
-
         rv = view.findViewById(R.id.rl_travel_story_1_recycler_card);
-
         rv1 = view.findViewById(R.id.rl_travel_story_1_recycler);
 
+        Button button = view.findViewById(R.id.rl_travel_story_1_imageView);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +55,7 @@ public class TravelStoryOneFragment extends Fragment {
             }
         });
 
-        linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);
+        LinearLayout linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

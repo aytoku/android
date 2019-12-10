@@ -14,7 +14,6 @@ import com.example.myapplication_1.R;
 public class OrderAcceptFragment extends Fragment {
 
     public static final String TAG = "OrderAcceptFragment";
-    private TextView textView;
 
     public static OrderAcceptFragment getInstance(Bundle args) {
 
@@ -33,7 +32,7 @@ public class OrderAcceptFragment extends Fragment {
         View view = inflater.inflate(R.layout.order_accept,
                 container, false);
 
-        textView = view.findViewById(R.id.cv_order_accept_desc);
+        TextView textView = view.findViewById(R.id.cv_order_accept_desc);
         textView.setText(Html.fromHtml("Введите цифру <b>1234</b>, чтобы\nподтвердить завершение на\nданном расстоянии до места\nназначения"));
 
         return view;

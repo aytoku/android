@@ -48,9 +48,9 @@ public class EarningsFragment extends Fragment {
 
         try {
 
-            EarningsPageAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            EarningsPageAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            EarningsPageAdapter adapterGridViewMenu = new EarningsPageAdapter(itemsMenu, getActivity().getBaseContext());//this;
+            EarningsPageAdapter adapterGridViewMenu = new EarningsPageAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );

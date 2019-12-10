@@ -10,6 +10,7 @@ import android.widget.ExpandableListView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication_1.Adapters.ExpListAdapter;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
@@ -58,6 +59,10 @@ public class ExpFragment extends Fragment {
 
         final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list, getFragmentManager());
         listView.setAdapter(adapter);
+
+//        DialogFragment dialogFragment = new TariffsPickAlert();
+//        dialogFragment.setTargetFragment(this, 1);
+//        dialogFragment.show(getFragmentManager(),"TariffsPickAlert");
 
         return view;
     }

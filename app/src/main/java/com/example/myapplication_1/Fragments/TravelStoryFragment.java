@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
@@ -28,11 +27,7 @@ public class TravelStoryFragment extends Fragment {
         return f;
     }
 
-    ImageButton androidImageButton;
-
     RecyclerView rv;
-
-    ImageView imageView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,22 +38,20 @@ public class TravelStoryFragment extends Fragment {
                 container, false);
 
         rv = view.findViewById(R.id.recycler_travel_story);
+        ImageView imageView = view.findViewById(R.id.ll_travel_story_img);
 
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
-        imageView = view.findViewById(R.id.ll_travel_story_img);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle _args = new Bundle();
+                Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
 
-            imageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
+                fragmentTransaction.commit();
 
-                    Bundle _args = new Bundle();
-                    Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-
-                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
-                    fragmentTransaction.commit();
-                }
-            });
+            }
+        });
 
         return view;
     }

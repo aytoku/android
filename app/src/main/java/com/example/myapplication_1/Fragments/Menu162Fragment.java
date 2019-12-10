@@ -33,7 +33,6 @@ public class Menu162Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    ImageButton imageButton;
     private List<AdapterMenu162.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,7 +45,7 @@ public class Menu162Fragment extends Fragment {
 
 
         rv = view.findViewById(R.id.rl_menu_1_6_2_recycler);
-        imageButton = view.findViewById(R.id.rl_menu_1_6_2_button);
+        ImageButton imageButton = view.findViewById(R.id.rl_menu_1_6_2_button);
 
         Bundle _args = new Bundle();
         final Fragment serviceFragment = ServiceFragment.getInstance(_args);

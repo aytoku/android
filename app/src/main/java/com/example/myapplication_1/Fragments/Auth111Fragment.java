@@ -32,10 +32,8 @@ public class Auth111Fragment extends Fragment {
         return f;
     }
 
-    TextView textView;
     EditText editText;
     TextView button;
-    ImageButton imageButton;
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -50,11 +48,11 @@ public class Auth111Fragment extends Fragment {
 
         button = view.findViewById(R.id.cl_auth_1_1_1_button1);
 
-        textView = view.findViewById(R.id.cl_auth_1_1_1_button);
+        TextView textView = view.findViewById(R.id.cl_auth_1_1_1_button);
 
         editText = view.findViewById(R.id.cl_auth_1_1_1_editTextNumber);
 
-        imageButton = view.findViewById(R.id.cl_auth_1_1_1_image_button);
+        ImageButton imageButton = view.findViewById(R.id.cl_auth_1_1_1_image_button);
 
         final int[] len = {0};
         final int[] len1 = {0};

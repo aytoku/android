@@ -30,7 +30,6 @@ public class AssistantFragment extends Fragment {
         return f;
     }
 
-    RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
     private List<AssistantAdapter.ItemsMenu> itemsMenuList;
 
@@ -42,7 +41,7 @@ public class AssistantFragment extends Fragment {
         View view = inflater.inflate(R.layout.assistant,
                 container, false);
 
-        rv = view.findViewById(R.id.assistant_recycler);
+        RecyclerView rv = view.findViewById(R.id.assistant_recycler);
 
         final RecyclerView recyclerViewMenu = rv;
 

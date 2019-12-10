@@ -63,9 +63,8 @@ public class RatingFragment extends Fragment {
 
         imgStarGrey = getResources().getDrawable(R.drawable.icon_star_grey);
         imgStarRed = getResources().getDrawable(R.drawable.red_star_shadow);
-
+        button = view.findViewById(R.id.cl_rating_ll_rating1_cardButton);
         rv = view.findViewById(R.id.cl_rating_rl_rating_recycler1);
-
         rv1 = view.findViewById(R.id.cl_rating_rl_rating_recycler);
 
         starArr = new ImageView[]{
@@ -75,8 +74,6 @@ public class RatingFragment extends Fragment {
                 star4 = view.findViewById(R.id.cl_rating_ll_rating_red_star4),
                 star5 = view.findViewById(R.id.cl_rating_ll_rating_red_star5)
         };
-
-        button = view.findViewById(R.id.cl_rating_ll_rating1_cardButton);
 
         final RecyclerView recyclerViewMenu = rv;
 

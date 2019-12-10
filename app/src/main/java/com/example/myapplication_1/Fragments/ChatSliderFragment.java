@@ -23,10 +23,6 @@ public class ChatSliderFragment extends Fragment {
         return f;
     }
 
-    ViewPager viewPager;
-    TabLayout tabLayout;
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,8 +32,8 @@ public class ChatSliderFragment extends Fragment {
         View view = inflater.inflate(R.layout.chat_slider,
                 container, false);
 
-        viewPager = (ViewPager)view.findViewById(R.id.chat_slider_viewPager);
-        tabLayout = (TabLayout)view.findViewById(R.id.chat_slider_tabLayout);
+        ViewPager viewPager = (ViewPager)view.findViewById(R.id.chat_slider_viewPager);
+        TabLayout tabLayout = (TabLayout)view.findViewById(R.id.chat_slider_tabLayout);
         tabLayout.setupWithViewPager(viewPager, true);
 
 

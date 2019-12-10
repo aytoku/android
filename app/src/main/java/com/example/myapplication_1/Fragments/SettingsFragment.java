@@ -28,7 +28,6 @@ public class SettingsFragment extends Fragment {
     }
 
     RecyclerView rv;
-    private ImageButton imageButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,7 +40,7 @@ public class SettingsFragment extends Fragment {
 
         rv = view.findViewById(R.id.recycler_settings);
 
-        imageButton = view.findViewById(R.id.ll_setting_button);
+        ImageButton imageButton = view.findViewById(R.id.ll_setting_button);
 
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);

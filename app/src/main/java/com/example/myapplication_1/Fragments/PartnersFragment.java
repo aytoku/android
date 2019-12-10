@@ -29,8 +29,6 @@ public class PartnersFragment extends Fragment {
     }
 
     RecyclerView rv;
-    private ImageButton imageButton;
-    private TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,8 +40,8 @@ public class PartnersFragment extends Fragment {
                 container, false);
 
         rv = view.findViewById(R.id.recycler_partners);
-        imageButton = view.findViewById(R.id.rl_partners_button);
-        textView = view.findViewById(R.id.rl_partners_blacklist);
+        ImageButton imageButton = view.findViewById(R.id.rl_partners_button);
+        TextView textView = view.findViewById(R.id.rl_partners_blacklist);
 
         Bundle _args = new Bundle();
         final Fragment informationFragment = InformationFragment.getInstance(_args);

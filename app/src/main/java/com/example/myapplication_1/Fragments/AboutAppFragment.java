@@ -24,10 +24,6 @@ public class AboutAppFragment  extends Fragment {
         return f;
     }
 
-    ImageButton imageButton;
-    RelativeLayout relativeLayout;
-    RelativeLayout relativeLayout1;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,9 +33,9 @@ public class AboutAppFragment  extends Fragment {
         View view = inflater.inflate(R.layout.about_app,
                 container, false);
 
-        imageButton = view.findViewById(R.id.rl_about_app_button);
-        relativeLayout = view.findViewById(R.id.rl_about_app_ll_about_app_rl_about_app);
-        relativeLayout1 = view.findViewById(R.id.rl_about_app_rl_about_app1);
+        ImageButton imageButton = view.findViewById(R.id.rl_about_app_button);
+        RelativeLayout relativeLayout = view.findViewById(R.id.rl_about_app_ll_about_app_rl_about_app);
+        RelativeLayout relativeLayout1 = view.findViewById(R.id.rl_about_app_rl_about_app1);
 
         Bundle _args = new Bundle();
         final Fragment informationFragment = InformationFragment.getInstance(_args);

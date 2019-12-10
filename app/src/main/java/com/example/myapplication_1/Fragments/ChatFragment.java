@@ -26,8 +26,6 @@ public class ChatFragment extends Fragment {
         return f;
     }
 
-    ImageButton androidImageButton;
-
     RecyclerView rv;
 
     @Override
@@ -39,8 +37,7 @@ public class ChatFragment extends Fragment {
         View view = inflater.inflate(R.layout.empty_chat_with_driver,
                 container, false);
 
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
-
+        ImageButton androidImageButton = view.findViewById(R.id.img_cross_grey);
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
 
         return view;

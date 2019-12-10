@@ -45,7 +45,6 @@ public class PaymentChangeFragment extends Fragment {
 
         Bundle _args = new Bundle();
         final Fragment machinePurposeTwoFragment = MachinePurposeTwoFragment.getInstance(_args);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

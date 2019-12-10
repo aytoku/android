@@ -32,14 +32,11 @@ public class PaymentMethodFragment extends Fragment {
         return f;
     }
 
-    ImageButton imageButton;
     private ImageView imgChecked;
     private ImageView imgUnchecked;
     private ImageView imgUnchecked1;
     private Drawable imgToggleGrey;
     private Drawable imgToggleRed;
-    private LinearLayout linearLayout;
-    private RelativeLayout relativeLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,7 +47,7 @@ public class PaymentMethodFragment extends Fragment {
         View view = inflater.inflate(R.layout.payment_method,
                 container, false);
 
-        imageButton = view.findViewById(R.id.rl_payment_method_button_strelka);
+        ImageButton imageButton = view.findViewById(R.id.rl_payment_method_button_strelka);
 
         imgToggleGrey = getResources().getDrawable(R.drawable.togle_uncheked);
         imgToggleRed = getResources().getDrawable(R.drawable.toggle_checked);
@@ -63,8 +60,8 @@ public class PaymentMethodFragment extends Fragment {
         imgUnchecked = view.findViewById(R.id.ll_payment_method_checkBox1);
         imgUnchecked1 = view.findViewById(R.id.ll_payment_method_checkBox2);
 
-        relativeLayout = view.findViewById(R.id.rl_payment_method);
-        linearLayout = view.findViewById(R.id.ll_payment_method4);
+        RelativeLayout relativeLayout = view.findViewById(R.id.rl_payment_method);
+        LinearLayout linearLayout = view.findViewById(R.id.ll_payment_method4);
 
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,7 +119,6 @@ public class PaymentMethodFragment extends Fragment {
 
                 Bundle _args = new Bundle();
                 Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
                 fragmentTransaction.commit();

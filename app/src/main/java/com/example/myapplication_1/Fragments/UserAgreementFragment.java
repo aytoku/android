@@ -25,9 +25,6 @@ public class UserAgreementFragment extends Fragment {
         return f;
     }
 
-    ImageButton imageButton;
-    WebView webView;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,19 +34,19 @@ public class UserAgreementFragment extends Fragment {
         View view = inflater.inflate(R.layout.user_agreement,
                 container, false);
 
-        imageButton = view.findViewById(R.id.rl_choose_place_button);
 
-        webView = view.findViewById(R.id.webView);
+        WebView webView = view.findViewById(R.id.webView);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("https://faem.ru/soglashenie.html");
 
-        Bundle _args = new Bundle();
-        final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
-
+        ImageButton imageButton = view.findViewById(R.id.rl_choose_place_button);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Bundle _args = new Bundle();
+                final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, aboutAppFragment);
                 fragmentTransaction.commit();

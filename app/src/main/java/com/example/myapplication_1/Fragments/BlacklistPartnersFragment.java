@@ -29,8 +29,6 @@ public class BlacklistPartnersFragment extends Fragment {
     }
 
     RecyclerView rv;
-    ImageButton imageButton;
-    TextView textView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,8 +39,8 @@ public class BlacklistPartnersFragment extends Fragment {
                 container, false);
 
         rv = view.findViewById(R.id.ll_blackList_partner_recycler_partners);
-        imageButton = view.findViewById(R.id.ll_blackList_partner_rl_blackList_partner_img);
-        textView = view.findViewById(R.id.ll_blackList_partner_rl_blackList_partner_ready);
+        ImageButton imageButton = view.findViewById(R.id.ll_blackList_partner_rl_blackList_partner_img);
+        TextView textView = view.findViewById(R.id.ll_blackList_partner_rl_blackList_partner_ready);
 
         Bundle _args = new Bundle();
         final Fragment partnersFragment = PartnersFragment.getInstance(_args);

@@ -43,7 +43,6 @@ public class Order115Fragment extends Fragment {
                 container, false);
 
         rv = view.findViewById(R.id.cl_create_order_1_1_5_recycler);
-
         final RecyclerView recyclerViewMenu = rv;
 
         try {
