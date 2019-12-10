@@ -84,7 +84,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     public View getChildView(int groupPosition, final int childPosition, boolean isLastChild,
                              View convertView, ViewGroup parent) {
 
-
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) activity.getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.free_order_spinner, null);
@@ -97,6 +96,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         spinner.setSelection(spinner.getFirstVisiblePosition());
 
         final TextView textView = convertView.findViewById(R.id.rl_free_orders_spinner_text);
+        textView.setText("");
 
         ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +105,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
                 showDialog(view);
             }
         });
-
         return convertView;
     }
 

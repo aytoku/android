@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.CellTravelStoryOneAdapter;
 import com.example.myapplication_1.Adapters.CellTravelStoryOneCardAdapter;
+import com.example.myapplication_1.Alerts.TravelStoryOneAlert;
 import com.example.myapplication_1.R;
 
 public class TravelStoryOneFragment extends Fragment {
@@ -31,6 +33,7 @@ public class TravelStoryOneFragment extends Fragment {
     ImageView button;
     RecyclerView rv;
     RecyclerView rv1;
+    LinearLayout linearLayout;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -52,6 +55,19 @@ public class TravelStoryOneFragment extends Fragment {
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, travelStoryOneFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle _args = new Bundle();
+                Fragment travelStoryOneAlert = TravelStoryOneAlert.getInstance(_args);
+
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, travelStoryOneAlert);
                 fragmentTransaction.commit();
             }
         });
