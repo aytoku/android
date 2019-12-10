@@ -1,7 +1,6 @@
 package com.example.myapplication_1.Alerts;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,14 +37,7 @@ public class TravelStoryOneAlert extends DialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        Log.i(TAG, "onCreateView: start");
 
-        try {
-            getDialog().getWindow().setBackgroundDrawableResource(android.R.drawable.screen_background_dark_transparent);
-
-        } catch (NullPointerException npe) {
-            Log.e(TAG, "onCreateView: " + npe.getMessage());
-        }
         View view = inflater.inflate(R.layout.travel_story_1_alert, container,false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
