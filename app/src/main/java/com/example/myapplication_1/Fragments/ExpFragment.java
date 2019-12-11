@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication_1.Adapters.ExpListAdapter;
+import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ import java.util.List;
 public class ExpFragment extends Fragment {
 
     public static final String TAG = "ExpFragment";
+    private static final int REQUEST_CODE_GET_SORT_FREE_ORDER = 101;
 
     public static ExpFragment getInstance(Bundle args) {
 
@@ -36,13 +39,13 @@ public class ExpFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
-//
-//        try {
-//            ExpListAdapter.ItemsMenuList itemsMenuList = getMenuItemsList();
-//
-//        }catch ( NullPointerException e){
-//            e.printStackTrace();
-//        }
+
+        try {
+            ExpListAdapter.ItemsMenuList itemsMenuList = getMenuItemsList();
+
+        }catch ( NullPointerException e){
+            e.printStackTrace();
+        }
 
         final ExpandableListView listView = view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
@@ -57,7 +60,7 @@ public class ExpFragment extends Fragment {
         list.add("По убыванию цены");
         list.add("Не выбрано");
 
-        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list, getFragmentManager());
+        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list);
         listView.setAdapter(adapter);
 
         return view;
@@ -65,30 +68,41 @@ public class ExpFragment extends Fragment {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode, data);
-        if(resultCode == Activity.RESULT_OK){
-            getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, data);
+        if (requestCode != REQUEST_CODE_GET_SORT_FREE_ORDER){
+            if(resultCode == Activity.RESULT_OK){
+                String message = data.getStringExtra("message");
+                Toast.makeText(getContext(),message, Toast.LENGTH_LONG).show();
+            }
         }
     }
 
     public static Intent newIntent(String message) {
         Intent intent = new Intent();
-        intent.putExtra("", message);
+        intent.putExtra("message", message);
         return intent;
     }
 
-//    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
-//
-//        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
-//                new ExpListAdapter.ItemsMenuList.CallBack() {
-//                    @Override
-//                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
-//                        try{
-//
-//                        }catch (NullPointerException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }, "");
-//            return itemsMenuList;
-//    }
+    private void showDialog() {
+        TariffsPickAlert tariffsPickAlert = TariffsPickAlert.getInstance(null);
+        tariffsPickAlert.setTargetFragment(ExpFragment.this, REQUEST_CODE_GET_SORT_FREE_ORDER);
+        tariffsPickAlert.setCancelable(true);
+        tariffsPickAlert.show(getFragmentManager(), "TariffsPickAlert");
+    }
+
+
+    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
+
+        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
+                new ExpListAdapter.ItemsMenuList.CallBack() {
+                    @Override
+                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
+                        try{
+                            showDialog();
+                        }catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            return itemsMenuList;
+    }
 }

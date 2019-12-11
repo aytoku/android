@@ -90,10 +90,7 @@ public class TariffsPickAlert extends DialogFragment {
     }
 
     private void sendResult(String message){
-//        ExpFragment expFragment = ExpFragment.getInstance(null);
-//        if(getTargetFragment()!=null){
-//            expFragment.onActivityResult(getTargetRequestCode(),message,null);
-//        }
+
         if (getTargetFragment() == null){ return; }
 
         Intent intent = ExpFragment.newIntent(message);
@@ -112,6 +109,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Эконом");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -125,6 +128,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        sendResult("Стандарт");
+                                    }
+                                });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -138,6 +147,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Комфорт");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -151,6 +166,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Доставка");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -164,6 +185,12 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
+                                    button.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            sendResult("Грузовое");
+                                        }
+                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
