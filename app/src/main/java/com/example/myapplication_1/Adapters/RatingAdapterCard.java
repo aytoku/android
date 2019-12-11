@@ -17,94 +17,90 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-    public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.ViewHolder> {
+public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.ViewHolder> {
 
-        private final LayoutInflater layoutInflater;
-        private Context context;
-        private List<ItemsMenu1> itemsMenuList1;
-        private int selectItem = -1;
+    private final LayoutInflater layoutInflater;
+    private Context context;
+    private List<ItemsMenu1> itemsMenuList1;
+    private int selectItem = -1;
 
-        public RatingAdapterCard(List<RatingAdapterCard.ItemsMenu1> itemsMenuList1, Context context) {
-            this.itemsMenuList1 = itemsMenuList1;
-            this.context = context;
-            layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public RatingAdapterCard(List<RatingAdapterCard.ItemsMenu1> itemsMenuList1, Context context) {
+        this.itemsMenuList1 = itemsMenuList1;
+        this.context = context;
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_rating_card, viewGroup, false);
+        ViewHolder itemViewHolder = new ViewHolder(view);
+        return itemViewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+
+        final ItemsMenu1 _item = itemsMenuList1.get(i);
+
+        viewHolder.price.setText(_item.getStr());
+        if(selectItem == i){
+            viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#F3F3F3"));
+        }else{
+            viewHolder.cardView.setCardBackgroundColor(Color.WHITE);
+        }
+        viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notifyItemChanged(selectItem);
+                selectItem = i;
+                notifyItemChanged(i);
+                _item.callBack.call(_item);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return itemsMenuList1.size();
+    }
+
+    public static class ItemsMenu1 {
+
+        public interface CallBack {
+            void call(ItemsMenu1 itemsMenu);
         }
 
-        @NonNull
-        @Override
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        private @ColorInt
+        int colorBackgroundInt;
+        private String price;
+        private CallBack callBack;
 
-            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_rating_card, viewGroup, false);
-            ViewHolder itemViewHolder = new ViewHolder(view);
-            return itemViewHolder;
+        public ItemsMenu1(int colorBackgroundRes, String price, CallBack callBack) {
+            this.colorBackgroundInt = colorBackgroundRes;
+            this.price = price;
+            this.callBack = callBack;
         }
 
-        @Override
-        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
-            final ItemsMenu1 _item = itemsMenuList1.get(i);
-
-            viewHolder.price.setText(_item.getStr());
-
-            if(selectItem == i){
-                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#F3F3F3"));
-
-            }else{
-                viewHolder.cardView.setCardBackgroundColor(Color.WHITE);
-            }
-
-            viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    notifyItemChanged(selectItem);
-                    selectItem = i;
-                    notifyItemChanged(i);
-                    _item.callBack.call(_item);
-                }
-            });
+        public String getStr() {
+            return price;
         }
 
-        @Override
-        public int getItemCount() {
-            return itemsMenuList1.size();
-        }
-
-        public static class ItemsMenu1 {
-
-            public interface CallBack {
-                void call(ItemsMenu1 itemsMenu);
-            }
-
-            private @ColorInt
-            int colorBackgroundInt;
-            private String price;
-            private CallBack callBack;
-
-            public ItemsMenu1(int colorBackgroundRes, String price, CallBack callBack) {
-                this.colorBackgroundInt = colorBackgroundRes;
-                this.price = price;
-                this.callBack = callBack;
-            }
-
-            public String getStr() {
-                return price;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
-            }
-        }
-
-        class ViewHolder extends RecyclerView.ViewHolder {
-
-            private final CardView cardView;
-            private final TextView price;
-
-            public ViewHolder(@NonNull View itemView) {
-                super(itemView);
-                cardView = itemView.findViewById(R.id.cv_rating);
-                price = itemView.findViewById(R.id.cv_rating_price);
-            }
+        public int getColorBackground() {
+            return colorBackgroundInt;
         }
     }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
+
+        private final CardView cardView;
+        private final TextView price;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            cardView = itemView.findViewById(R.id.cv_rating);
+            price = itemView.findViewById(R.id.cv_rating_price);
+        }
+    }
+}

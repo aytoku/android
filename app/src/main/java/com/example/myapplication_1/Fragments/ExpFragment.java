@@ -40,7 +40,7 @@ public class ExpFragment extends Fragment {
 //        try {
 //            ExpListAdapter.ItemsMenuList itemsMenuList = getMenuItemsList();
 //
-//        } catch ( NullPointerException e) {
+//        }catch ( NullPointerException e){
 //            e.printStackTrace();
 //        }
 
@@ -66,7 +66,7 @@ public class ExpFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode, data);
         if(resultCode == Activity.RESULT_OK){
-            getTargetFragment().onActivityResult(getTargetRequestCode(), resultCode, data);
+            getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, data);
         }
     }
 
@@ -76,19 +76,19 @@ public class ExpFragment extends Fragment {
         return intent;
     }
 
-    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
-
-        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
-                new ExpListAdapter.ItemsMenuList.CallBack() {
-                    @Override
-                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
-                        try{
-
-                        }catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            return itemsMenuList;
-    }
+//    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
+//
+//        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
+//                new ExpListAdapter.ItemsMenuList.CallBack() {
+//                    @Override
+//                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
+//                        try{
+//
+//                        }catch (NullPointerException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }, "");
+//            return itemsMenuList;
+//    }
 }

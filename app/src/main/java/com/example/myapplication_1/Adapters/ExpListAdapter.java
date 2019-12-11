@@ -95,8 +95,8 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         spinner.setAdapter(dataAdapter);
         spinner.setSelection(spinner.getFirstVisiblePosition());
 
-        final TextView textView = convertView.findViewById(R.id.rl_free_orders_spinner_text);
-        textView.setText("");
+//        final TextView textView = convertView.findViewById(R.id.rl_free_orders_spinner_text);
+//        textView.setText("");
 
         ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -108,8 +108,17 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         return convertView;
     }
 
+//    class ViewHolder {
+//
+//        private final TextView title;
+//
+//        public ViewHolder(@NonNull View itemView) {
+//            title = itemView.findViewById(R.id.rl_free_orders_spinner_text);
+//        }
+//    }
+
     private void showDialog(View view) {
-        TariffsPickAlert tariffsPickAlert = new TariffsPickAlert();
+        TariffsPickAlert tariffsPickAlert = TariffsPickAlert.getInstance(null);
         tariffsPickAlert.setCancelable(true);
         tariffsPickAlert.show(fragmentManager, "TariffsPickAlert");
     }
@@ -129,16 +138,19 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         super.registerDataSetObserver(observer);
     }
 
-    public static class ItemsMenuList {
-
-        public interface CallBack {
-            void call(ItemsMenuList itemsMenuList);
-        }
-
-        private ItemsMenuList.CallBack callBack;
-        public ItemsMenuList(ItemsMenuList.CallBack callBack) {
-            this.callBack = callBack;
-        }
-        public  CallBack getCallBack(){return callBack;}
-    }
+//    public static class ItemsMenuList {
+//
+//        public interface CallBack {
+//            void call(ItemsMenuList itemsMenuList);
+//        }
+//
+//        private ItemsMenuList.CallBack callBack;
+//        private String textView;
+//
+//        public ItemsMenuList(CallBack callBack, String textView) {
+//            this.callBack = callBack;
+//            this.textView = textView;
+//        }
+//        public  CallBack getCallBack(){return callBack;}
+//    }
 }

@@ -38,6 +38,7 @@ public class TariffsPickAlert extends DialogFragment {
 
     TextView button;
     boolean check = false;
+    //ExpListAdapter expListAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,7 +74,6 @@ public class TariffsPickAlert extends DialogFragment {
         final RecyclerView recyclerViewMenu = rv;
 
         try{
-
             TariffsPickAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<TariffsPickAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             RecyclerView.Adapter adapterGridViewMenu = new TariffsPickAdapter(itemsMenuList, getActivity().getBaseContext());
@@ -90,9 +90,12 @@ public class TariffsPickAlert extends DialogFragment {
     }
 
     private void sendResult(String message){
-        if (getTargetFragment() == null){
-            return;
-        }
+//        ExpFragment expFragment = ExpFragment.getInstance(null);
+//        if(getTargetFragment()!=null){
+//            expFragment.onActivityResult(getTargetRequestCode(),message,null);
+//        }
+        if (getTargetFragment() == null){ return; }
+
         Intent intent = ExpFragment.newIntent(message);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
         dismiss();
@@ -109,12 +112,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Эконом");
-                                        }
-                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -128,12 +125,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Стандарт");
-                                        }
-                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -147,12 +138,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Комфорт");
-                                        }
-                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -166,12 +151,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Доставка");
-                                        }
-                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -185,12 +164,6 @@ public class TariffsPickAlert extends DialogFragment {
                             @Override
                             public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Грузовое");
-                                        }
-                                    });
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

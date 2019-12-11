@@ -16,89 +16,89 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-    public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrder115.ViewHolder> {
+public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrder115.ViewHolder> {
 
-        private final LayoutInflater layoutInflater;
-        private final Context context;
+    private final LayoutInflater layoutInflater;
+    private final Context context;
 
-        private List<ItemsMenu> itemsMenuList;
+    private List<ItemsMenu> itemsMenuList;
 
-        public AdapterCreateOrder115(List<AdapterCreateOrder115.ItemsMenu> itemsMenuList, Context context) {
-            this.itemsMenuList = itemsMenuList;
-            this.context = context;
-            layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public AdapterCreateOrder115(List<AdapterCreateOrder115.ItemsMenu> itemsMenuList, Context context) {
+        this.itemsMenuList = itemsMenuList;
+        this.context = context;
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_create_order_1_1_5, viewGroup, false);
+        ViewHolder itemViewHolder = new ViewHolder(view);
+        return itemViewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+
+        final ItemsMenu _item = itemsMenuList.get(i);
+
+        viewHolder.title.setText(_item.getStr());
+
+        viewHolder.img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemsMenuList.remove(i);
+                notifyItemRemoved(i);
+                notifyItemRangeChanged(i, 1);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return itemsMenuList.size();
+    }
+
+    public static class ItemsMenu {
+
+        private @ColorInt
+        int colorBackgroundInt;
+        private int imgResId;
+        private String title;
+        private int imgResId1;
+
+        public ItemsMenu(int colorBackgroundRes, int imgResId, String title, int imgResId1) {
+            this.colorBackgroundInt = colorBackgroundRes;
+            this.imgResId = imgResId;
+            this.title = title;
+            this.imgResId1 = imgResId1;
         }
 
-        @NonNull
-        @Override
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
-            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_create_order_1_1_5, viewGroup, false);
-            ViewHolder itemViewHolder = new ViewHolder(view);
-            return itemViewHolder;
+        public int getImgResId() {
+            return imgResId;
         }
 
-        @Override
-        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
-            final ItemsMenu _item = itemsMenuList.get(i);
-
-            viewHolder.title.setText(_item.getStr());
-
-            viewHolder.img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    itemsMenuList.remove(i);
-                    notifyItemRemoved(i);
-                    notifyItemRangeChanged(i, 1);
-                }
-            });
+        public String getStr() {
+            return title;
         }
 
-        @Override
-        public int getItemCount() {
-            return itemsMenuList.size();
-        }
-
-        public static class ItemsMenu {
-
-            private @ColorInt
-            int colorBackgroundInt;
-            private int imgResId;
-            private String title;
-            private int imgResId1;
-
-            public ItemsMenu(int colorBackgroundRes, int imgResId, String title, int imgResId1) {
-                this.colorBackgroundInt = colorBackgroundRes;
-                this.imgResId = imgResId;
-                this.title = title;
-                this.imgResId1 = imgResId1;
-            }
-
-            public int getImgResId() {
-                return imgResId;
-            }
-
-            public String getStr() {
-                return title;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
-            }
-        }
-
-        class ViewHolder extends RecyclerView.ViewHolder {
-
-            private final ImageView img;
-            private final TextView title;
-            private final ImageView img1;
-
-            public ViewHolder(@NonNull View itemView) {
-                super(itemView);
-                img = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_button_cross);
-                title = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_title);
-                img1 = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_button_line);
-            }
+        public int getColorBackground() {
+            return colorBackgroundInt;
         }
     }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
+
+        private final ImageView img;
+        private final TextView title;
+        private final ImageView img1;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            img = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_button_cross);
+            title = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_title);
+            img1 = itemView.findViewById(R.id.rl_cell_create_order_1_1_5_button_line);
+        }
+    }
+}
