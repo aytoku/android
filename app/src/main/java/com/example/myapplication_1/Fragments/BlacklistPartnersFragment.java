@@ -29,6 +29,7 @@ public class BlacklistPartnersFragment extends Fragment {
     }
 
     RecyclerView rv;
+    boolean check = false;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,16 +73,15 @@ public class BlacklistPartnersFragment extends Fragment {
 
         RecyclerView recyclerViewMenu = rv;
 
-        try {
+        try{
             BlacklistPartnersAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-
             BlacklistPartnersAdapter adapterGridViewMenu = new BlacklistPartnersAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
-        } catch ( NullPointerException e) {
+        }catch ( NullPointerException e) {
             e.printStackTrace();
         }
     }
@@ -92,7 +92,7 @@ public class BlacklistPartnersFragment extends Fragment {
 
                 new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.togle_uncheked,
-                        "Партнер 1",
+                        "Партнер 1", check,
                         new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
                             @Override
                             public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
@@ -106,7 +106,7 @@ public class BlacklistPartnersFragment extends Fragment {
                         }),
                 new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.togle_uncheked,
-                        "Партнер 2",
+                        "Партнер 2", check,
                         new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
                             @Override
                             public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
@@ -120,7 +120,7 @@ public class BlacklistPartnersFragment extends Fragment {
                         }),
                 new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.togle_uncheked,
-                        "Партнер 1",
+                        "Партнер 1", check,
                         new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
                             @Override
                             public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
@@ -134,7 +134,7 @@ public class BlacklistPartnersFragment extends Fragment {
                         }),
                 new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
                         R.drawable.togle_uncheked,
-                        "Партнер 2",
+                        "Партнер 2", check,
                         new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
                             @Override
                             public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
