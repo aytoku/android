@@ -91,13 +91,13 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         spinner.setAdapter(dataAdapter);
         spinner.setSelection(spinner.getFirstVisiblePosition());
 
-        final ItemsMenuList _itemsMenuList = (ItemsMenuList) list.get(childPosition);
+        //final ItemsMenuList _itemsMenuList = (ItemsMenuList) list.get(childPosition);
         ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    _itemsMenuList.getCallBack().call(_itemsMenuList);
+                   // _itemsMenuList.getCallBack().call(_itemsMenuList);
                 }catch (NullPointerException e){
                     e.printStackTrace();
                 }
