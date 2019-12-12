@@ -22,7 +22,6 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
     private final LayoutInflater layoutInflater;
     private final Context context;
     LinearLayout.LayoutParams params;
-
     private List<ItemsMenu> itemsMenuList;
 
     public MenuOneAdapter(List<MenuOneAdapter.ItemsMenu> itemsMenuList, Context context) {
@@ -48,7 +47,7 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
 
             viewHolder.title.setBackgroundColor(Color.parseColor("#FD6F6D"));
             viewHolder.title.setTextColor(Color.parseColor("#FFFFFF"));
-            params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).title.getLayoutParams();
+            params = (LinearLayout.LayoutParams) viewHolder.title.getLayoutParams();
             params.height = 200;
         }
 

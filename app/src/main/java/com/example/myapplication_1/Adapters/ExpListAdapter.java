@@ -24,13 +24,17 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     private ArrayList<ArrayList<String>> mGroups;
     private Context mContext;
     private List list;
+    ExpListAdapter.ItemsMenuList menuList;
+    TextView textView;
 
 
-    public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list){
+    public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list, ExpListAdapter.ItemsMenuList menuList){
         this.activity = activity;
         mGroups = groups;
         this.list = list;
+        this.menuList = menuList;
     }
+
 
     @Override
     public int getGroupCount() {
@@ -70,9 +74,6 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             convertView = inflater.inflate(R.layout.group_view, null);
         }
 
-        TextView textGroup = convertView.findViewById(R.id.textGroup);
-        ImageView imageView = convertView.findViewById(R.id.imageView);
-
         return convertView;
     }
 
@@ -90,23 +91,24 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);
         spinner.setSelection(spinner.getFirstVisiblePosition());
+        
 
-        //final ItemsMenuList _itemsMenuList = (ItemsMenuList) list.get(childPosition);
         ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                try {
-                   // _itemsMenuList.getCallBack().call(_itemsMenuList);
+            public void onClick(View view){
+                try{
+                   menuList.getCallBack().call(menuList);
                 }catch (NullPointerException e){
                     e.printStackTrace();
                 }
             }
         });
 
+        textView = convertView.findViewById(R.id.rl_free_orders_spinner_text);
+
         return convertView;
     }
-
 
     @Override
     public void onItemSelected(AdapterView parent, View view, int position, long id) {

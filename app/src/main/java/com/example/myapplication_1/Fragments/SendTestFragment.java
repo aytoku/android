@@ -21,6 +21,7 @@ public class SendTestFragment extends Fragment {
     private static final String EXTRA_GREETING_MESSAGE = "message";
 
     TextView showGreetingsTextView;
+    Button button;
 
     public static SendTestFragment getInstance() {
         SendTestFragment fragment = new SendTestFragment();
@@ -32,20 +33,22 @@ public class SendTestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.send_test_fragment, container, false);
 
-        Button button = view.findViewById(R.id.show_dialog_fragment_button);
+        showGreetingsTextView = view.findViewById(R.id.show_greetings_text_view);
+        button = view.findViewById(R.id.show_dialog_fragment_button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showDialog();
             }
         });
-        showGreetingsTextView = view.findViewById(R.id.show_greetings_text_view);
-
         return view;
     }
+
     protected void showDialog() {
-        DialogTestFragment dialogTestFragment = DialogTestFragment.getInstance();
-        dialogTestFragment.show(getFragmentManager(), DialogTestFragment.TAG);
+        DialogTestFragment dialogFragment = DialogTestFragment.getInstance();
+        dialogFragment.setTargetFragment(SendTestFragment.this, TARGET_FRAGMENT_REQUEST_CODE);
+        dialogFragment.show(getFragmentManager(), DialogTestFragment.TAG);
     }
 
     @Override
@@ -64,5 +67,4 @@ public class SendTestFragment extends Fragment {
         intent.putExtra(EXTRA_GREETING_MESSAGE, message);
         return intent;
     }
-
 }

@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -22,6 +22,11 @@ public class ExpFragment extends Fragment {
 
     public static final String TAG = "ExpFragment";
     private static final int REQUEST_CODE_GET_SORT_FREE_ORDER = 101;
+    ExpListAdapter adapter;
+    ExpandableListView listView;
+    ArrayList<ArrayList<String>> groups;
+    List list;
+    TextView textView;
 
     public static ExpFragment getInstance(Bundle args) {
 
@@ -40,28 +45,28 @@ public class ExpFragment extends Fragment {
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
 
-        try {
-            ExpListAdapter.ItemsMenuList itemsMenuList = getMenuItemsList();
-
-        }catch ( NullPointerException e){
-            e.printStackTrace();
-        }
-
-        final ExpandableListView listView = view.findViewById(R.id.expListView);
+        listView = view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
-        ArrayList<ArrayList<String>> groups = new ArrayList<>();
+        groups = new ArrayList<>();
         ArrayList<String> children1 = new ArrayList<>();
         children1.add("");
         groups.add(children1);
 
-        final List list = new ArrayList();
+        list = new ArrayList();
         list.add("По возрастанию цены");
         list.add("По убыванию цены");
         list.add("Не выбрано");
 
-        final ExpListAdapter adapter = new ExpListAdapter(getActivity(), groups, list);
-        listView.setAdapter(adapter);
+        //textView = view.findViewById(R.id.rl_free_orders_spinner_text);
+
+        try {
+            adapter = new ExpListAdapter(getActivity(), groups, list, getMenuItemsList());
+            listView.setAdapter(adapter);
+
+        }catch ( NullPointerException e){
+            e.printStackTrace();
+        }
 
         return view;
     }
@@ -71,7 +76,7 @@ public class ExpFragment extends Fragment {
         if (requestCode != REQUEST_CODE_GET_SORT_FREE_ORDER){
             if(resultCode == Activity.RESULT_OK){
                 String message = data.getStringExtra("message");
-                Toast.makeText(getContext(),message, Toast.LENGTH_LONG).show();
+                textView.setText(message);
             }
         }
     }

@@ -20,6 +20,7 @@ public class DialogTestFragment extends DialogFragment {
     public static final String TAG = DialogTestFragment.class.getSimpleName();
 
     EditText greetingsEditText;
+    Button button;
 
     public static DialogTestFragment getInstance() {
         DialogTestFragment fragment = new DialogTestFragment();
@@ -32,7 +33,7 @@ public class DialogTestFragment extends DialogFragment {
         View view = inflater.inflate(R.layout.dialog_test_fragment, container, false);
 
         greetingsEditText = view.findViewById(R.id.greetings_edit_text);
-        Button button = view.findViewById(R.id.greet_button);
+        button = view.findViewById(R.id.greet_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
