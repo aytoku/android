@@ -35,6 +35,9 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         this.menuList = menuList;
     }
 
+//    public void setActivityTextView(TextView textView) {
+//        textView = textView;
+//    }
 
     @Override
     public int getGroupCount() {
@@ -91,7 +94,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);
         spinner.setSelection(spinner.getFirstVisiblePosition());
-        
+
 
         ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
         imageView.setOnClickListener(new View.OnClickListener() {

@@ -58,11 +58,12 @@ public class ExpFragment extends Fragment {
         list.add("По убыванию цены");
         list.add("Не выбрано");
 
-        //textView = view.findViewById(R.id.rl_free_orders_spinner_text);
+        textView = view.findViewById(R.id.rl_free_orders_spinner_text);
 
         try {
             adapter = new ExpListAdapter(getActivity(), groups, list, getMenuItemsList());
             listView.setAdapter(adapter);
+            //adapter.setActivityTextView(textView);
 
         }catch ( NullPointerException e){
             e.printStackTrace();
@@ -77,6 +78,7 @@ public class ExpFragment extends Fragment {
             if(resultCode == Activity.RESULT_OK){
                 String message = data.getStringExtra("message");
                 textView.setText(message);
+                //Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -108,6 +110,6 @@ public class ExpFragment extends Fragment {
                         }
                     }
                 });
-            return itemsMenuList;
+        return itemsMenuList;
     }
 }
