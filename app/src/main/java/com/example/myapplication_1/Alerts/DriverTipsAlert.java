@@ -1,5 +1,7 @@
 package com.example.myapplication_1.Alerts;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.DriverTipsAdapter;
+import com.example.myapplication_1.Fragments.ExpFragment;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
@@ -82,6 +85,15 @@ public class DriverTipsAlert extends DialogFragment {
             e.printStackTrace();
         }
         return view;
+    }
+
+    private void sendResult(String message){
+
+        if (getTargetFragment() == null){ return; }
+
+        Intent intent = ExpFragment.newIntent(message);
+        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+        dismiss();
     }
 
     private DriverTipsAdapter.ItemsMenu[] getMenuItems() {

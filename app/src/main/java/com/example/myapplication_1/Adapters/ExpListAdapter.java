@@ -35,9 +35,9 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         this.menuList = menuList;
     }
 
-//    public void setActivityTextView(TextView textView) {
-//        textView = textView;
-//    }
+    public void setActivityTextView(TextView textView) {
+        textView = textView;
+    }
 
     @Override
     public int getGroupCount() {

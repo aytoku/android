@@ -1,27 +1,40 @@
 package com.example.myapplication_1.Fragments;
 
-import android.graphics.drawable.Drawable;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication_1.Alerts.DriverTipsAlert;
+import com.example.myapplication_1.Adapters.PaymentMethodAdapter;
+import com.example.myapplication_1.Alerts.DriverTipsAlertNormal;
 import com.example.myapplication_1.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class PaymentMethodFragment extends Fragment {
 
-    ImageButton androidImageButton;
-
+    private static final int REQUEST_CODE_DRIVER_TIPS = 101;
+    private static final int REQUEST_CODE_NEW_CARD = 102;
+    TextView textView;
     RecyclerView rv;
+    RecyclerView.Adapter paymentMethodAdapter;
+    private List<PaymentMethodAdapter.ItemsMenu> itemsMenuList;
+
     public static final String TAG = "PaymentMethodFragment";
 
     public static PaymentMethodFragment getInstance(Bundle args) {
@@ -31,12 +44,6 @@ public class PaymentMethodFragment extends Fragment {
 
         return f;
     }
-
-    private ImageView imgChecked;
-    private ImageView imgUnchecked;
-    private ImageView imgUnchecked1;
-    private Drawable imgToggleGrey;
-    private Drawable imgToggleRed;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,16 +56,21 @@ public class PaymentMethodFragment extends Fragment {
 
         ImageButton imageButton = view.findViewById(R.id.rl_payment_method_button_strelka);
 
-        imgToggleGrey = getResources().getDrawable(R.drawable.togle_uncheked);
-        imgToggleRed = getResources().getDrawable(R.drawable.toggle_checked);
+        rv = view.findViewById(R.id.ll_payment_method_recycler);
+        final RecyclerView recyclerViewMenu = rv;
 
-        LinearLayout toggleChecked = view.findViewById(R.id.ll_payment_method1);
-        LinearLayout toggleUnchecked = view.findViewById(R.id.ll_payment_method2);
-        LinearLayout toggleUnchecked1 = view.findViewById(R.id.ll_payment_method3);
+        try {
+            PaymentMethodAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            paymentMethodAdapter = new PaymentMethodAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(paymentMethodAdapter);
+            recyclerViewMenu.setLayoutManager(
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
+            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
 
-        imgChecked = view.findViewById(R.id.ll_payment_method_checkBox);
-        imgUnchecked = view.findViewById(R.id.ll_payment_method_checkBox1);
-        imgUnchecked1 = view.findViewById(R.id.ll_payment_method_checkBox2);
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
+        }
 
         RelativeLayout relativeLayout = view.findViewById(R.id.rl_payment_method);
         LinearLayout linearLayout = view.findViewById(R.id.ll_payment_method4);
@@ -66,7 +78,6 @@ public class PaymentMethodFragment extends Fragment {
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 showDialog(view);
             }
         });
@@ -74,42 +85,7 @@ public class PaymentMethodFragment extends Fragment {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Bundle _args = new Bundle();
-                Fragment newCardFragment = NewCardFragment.getInstance(_args);
-
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, newCardFragment);
-                fragmentTransaction.commit();
-
-            }
-        });
-
-        toggleChecked.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    imgChecked.setImageDrawable(imgToggleRed);
-                    imgUnchecked.setImageDrawable(imgToggleGrey);
-                    imgUnchecked1.setImageDrawable(imgToggleGrey);
-
-            }
-        });
-
-        toggleUnchecked.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    imgUnchecked.setImageDrawable(imgToggleRed);
-                    imgChecked.setImageDrawable(imgToggleGrey);
-                    imgUnchecked1.setImageDrawable(imgToggleGrey);
-            }
-        });
-
-        toggleUnchecked1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    imgUnchecked1.setImageDrawable(imgToggleRed);
-                    imgChecked.setImageDrawable(imgToggleGrey);
-                    imgUnchecked.setImageDrawable(imgToggleGrey);
+                showNewCardFragment(view);
             }
         });
 
@@ -125,15 +101,103 @@ public class PaymentMethodFragment extends Fragment {
             }
         });
 
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
+        textView = view.findViewById(R.id.ll_payment_method_percents);
 
         return view;
     }
 
-    public void showDialog(View view){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode != Activity.RESULT_OK) {
+            return;
+        }
 
-        DriverTipsAlert driverTipsAlert = new DriverTipsAlert();
-        driverTipsAlert.setCancelable(true);
-        driverTipsAlert.show(getFragmentManager(), "DriverTipsFragment");
+        if (requestCode == REQUEST_CODE_DRIVER_TIPS) {
+            String messageDriver = data.getStringExtra("message");
+            textView.setText(messageDriver);
+        }
+
+        if(requestCode == REQUEST_CODE_NEW_CARD){
+            String messageCard = data.getStringExtra("message");
+            try {
+                itemsMenuList.add(itemsMenuList.size(), new NewCardFragment.ItemsMenu(
+                        messageCard
+                ));
+                paymentMethodAdapter.notifyItemInserted(itemsMenuList.size() - 1);
+                paymentMethodAdapter.notifyDataSetChanged();
+            } catch (NumberFormatException e) {
+                Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public static Intent newIntent(String message) {
+        Intent intent = new Intent();
+        intent.putExtra("message", message);
+        return intent;
+    }
+
+    public void showDialog(View view){
+        DriverTipsAlertNormal driverTipsAlertNormal = DriverTipsAlertNormal.getInstance(null);
+        driverTipsAlertNormal.setTargetFragment(PaymentMethodFragment.this, REQUEST_CODE_DRIVER_TIPS);
+        driverTipsAlertNormal.show(getFragmentManager(), DriverTipsAlertNormal.TAG);
+    }
+
+    public void showNewCardFragment(View view){
+        NewCardFragment newCardFragment = NewCardFragment.getInstance(null);
+        newCardFragment.setTargetFragment(PaymentMethodFragment.this, REQUEST_CODE_NEW_CARD);
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.ll_main, newCardFragment);
+        fragmentTransaction.commit();
+    }
+
+    private PaymentMethodAdapter.ItemsMenu[] getMenuItems() {
+
+        PaymentMethodAdapter.ItemsMenu[] arr = new PaymentMethodAdapter.ItemsMenu[]{
+
+                new PaymentMethodAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                        new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
+
+                new PaymentMethodAdapter.ItemsMenu(
+                getResources().getColor(R.color.my_gray),
+                R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                    @Override
+                    public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                        try {
+                            Bundle _args = new Bundle();
+                        }catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }),
+
+                new PaymentMethodAdapter.ItemsMenu(
+                getResources().getColor(R.color.my_gray),
+                R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                    @Override
+                    public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                        try {
+                            Bundle _args = new Bundle();
+                        }catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                })
+
+        };
+        return arr;
     }
 }

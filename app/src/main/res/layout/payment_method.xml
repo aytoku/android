@@ -53,169 +53,11 @@
             android:text="Способ оплаты"
             android:textColor="#424242"/>
 
-        <LinearLayout
-            android:id="@+id/ll_payment_method1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ll_payment_method_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingRight="15dp"
-            android:foreground="?android:selectableItemBackground"
-            android:paddingLeft="15dp"
-            android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/ll_payment_method.visa"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:background="@null"
-            android:src="@mipmap/icon_credit_card"/>
-
-            <LinearLayout
-                android:paddingLeft="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/grey_line"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/ll_payment_method.visa_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#424242"
-                    android:text="VISA 9966"
-                    android:paddingRight="142dp"
-                    android:textStyle="bold"
-                    android:textSize="17sp"/>
-
-                <TextView
-                    android:id="@+id/ll_payment_method.visa_numbers"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#C6C6C6"
-                    android:text="03/22"
-                    android:paddingBottom="5dp"
-                    android:textSize="13sp"/>
-
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/ll_payment_method_checkBox"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:paddingTop="10dp"
-                android:src="@drawable/togle_uncheked" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_payment_method2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foreground="?android:selectableItemBackground"
-            android:paddingLeft="15dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/ll_payment_method.sberbank"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:src="@mipmap/icon_sber"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingRight="15dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:paddingLeft="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/grey_line"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/ll_payment_method.sber_online"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="#424242"
-                        android:text="Sberbank Online"
-                        android:paddingTop="10dp"
-                        android:paddingRight="100dp"
-                        android:paddingBottom="15dp"
-                        android:textSize="17sp"/>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/ll_payment_method_checkBox1"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingTop="10dp"
-                    android:src="@drawable/togle_uncheked" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_payment_method3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foreground="?android:selectableItemBackground"
-            android:paddingLeft="15dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/ll_payment_method.rubble"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:background="@null"
-                android:src="@mipmap/icon_rub"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingRight="15dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:paddingLeft="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/ll_payment_method.cash"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="#424242"
-                        android:text="Наличные"
-                        android:paddingTop="10dp"
-                        android:paddingRight="142dp"
-                        android:paddingBottom="15dp"
-                        android:textSize="17sp"/>
-
-                </LinearLayout>
-
-
-                <ImageView
-                    android:id="@+id/ll_payment_method_checkBox2"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingTop="10dp"
-                    android:src="@drawable/togle_uncheked" />
-
-            </LinearLayout>
-
-        </LinearLayout>
+            android:overScrollMode="never"/>
 
         <View
             android:layout_width="match_parent"
@@ -269,7 +111,7 @@
                     android:textColor="#424242"/>
 
                 <TextView
-                    android:id="@+id/ll_payment_method.percents"
+                    android:id="@+id/ll_payment_method_percents"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"

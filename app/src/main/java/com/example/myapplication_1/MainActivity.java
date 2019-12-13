@@ -140,6 +140,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, expFragment, ExpFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.ll_main, menu11Fragment, Menu11Fragment.TAG).commit();
     }
 }

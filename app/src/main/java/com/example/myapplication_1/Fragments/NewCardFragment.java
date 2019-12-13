@@ -1,5 +1,7 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,14 +11,17 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.myapplication_1.Adapters.PaymentMethodAdapter;
 import com.example.myapplication_1.R;
 
 public class NewCardFragment extends Fragment {
 
     public static final String TAG = "NewCardFragment";
+    CardView cardView;
 
     public static NewCardFragment getInstance(Bundle args) {
 
@@ -131,6 +136,33 @@ public class NewCardFragment extends Fragment {
             }
         });
 
+
+        cardView = view.findViewById(R.id.ll_new_card_cardButton);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String message = editText.getText().toString();
+                sendResult(message);
+            }
+        });
+
         return view;
+    }
+
+    private void sendResult(String message) {
+
+        if( getTargetFragment() == null ) {
+            return;
+        }
+        Intent intent = PaymentMethodFragment.newIntent("SberBank");
+        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+    }
+
+    public static class ItemsMenu extends PaymentMethodAdapter.ItemsMenu {
+        String title;
+
+        public ItemsMenu(String title){
+            this.title = title;
+        }
     }
 }

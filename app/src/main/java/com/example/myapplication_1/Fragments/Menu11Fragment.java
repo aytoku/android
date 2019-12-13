@@ -58,6 +58,7 @@ public class Menu11Fragment extends Fragment {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
+
         return view;
     }
 

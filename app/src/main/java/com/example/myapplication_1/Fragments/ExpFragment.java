@@ -63,7 +63,7 @@ public class ExpFragment extends Fragment {
         try {
             adapter = new ExpListAdapter(getActivity(), groups, list, getMenuItemsList());
             listView.setAdapter(adapter);
-            //adapter.setActivityTextView(textView);
+            adapter.setActivityTextView(textView);
 
         }catch ( NullPointerException e){
             e.printStackTrace();
