@@ -59,7 +59,6 @@ public class NewCardFragment extends Fragment {
             }
         });
 
-
         final int[] len = {0};
         final int[] len1 = {0};
         final int[] len2 = {0};
@@ -113,12 +112,10 @@ public class NewCardFragment extends Fragment {
 
         editText1.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -135,7 +132,6 @@ public class NewCardFragment extends Fragment {
                 }
             }
         });
-
 
         cardView = view.findViewById(R.id.ll_new_card_cardButton);
         cardView.setOnClickListener(new View.OnClickListener() {
@@ -154,7 +150,7 @@ public class NewCardFragment extends Fragment {
         if( getTargetFragment() == null ) {
             return;
         }
-        Intent intent = PaymentMethodFragment.newIntent("SberBank");
+        Intent intent = PaymentMethodFragment.newIntent(message);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 
