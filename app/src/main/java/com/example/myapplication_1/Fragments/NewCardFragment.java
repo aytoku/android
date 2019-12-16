@@ -20,6 +20,9 @@ import com.example.myapplication_1.R;
 public class NewCardFragment extends Fragment {
 
     public static final String TAG = "NewCardFragment";
+    public static final String KEY_CARD_NUMBER = "Key_card_number";
+    public static final String KEY_DATE = "Key_date";
+    public static final String KEY_CVV = "Key_cvv";
     CardView cardView;
 
     public static NewCardFragment getInstance(Bundle args) {
@@ -32,6 +35,7 @@ public class NewCardFragment extends Fragment {
 
     EditText editText;
     EditText editText1;
+    EditText editText2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,9 +46,17 @@ public class NewCardFragment extends Fragment {
         View view = inflater.inflate(R.layout.new_card,
                 container, false);
 
+        Bundle bundle = new Bundle();
+        PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
+        bundle.getString(KEY_CARD_NUMBER,"card_number");
+        bundle.getString(KEY_DATE,"date");
+        bundle.getString(KEY_CVV,"cvv");
+        paymentMethodFragment.setArguments(bundle);
+
         ImageButton imageButton = view.findViewById(R.id.rl_new_card_button);
         editText = view.findViewById(R.id.ll_new_card_card_number_field);
         editText1 = view.findViewById(R.id.ll_new_card_term_field);
+        editText2 = view.findViewById(R.id.ll_new_card_cvv_field);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,9 +158,10 @@ public class NewCardFragment extends Fragment {
 
     private void sendResult(String message) {
 
-        if( getTargetFragment() == null ) {
+        if(getTargetFragment() == null) {
             return;
         }
+
         Intent intent = PaymentMethodFragment.newIntent(message);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }

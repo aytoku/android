@@ -117,6 +117,7 @@ public class PaymentMethodFragment extends Fragment {
 
         if(requestCode == REQUEST_CODE_NEW_CARD){
             String messageCard = data.getStringExtra("message");
+
 //            try {
 //                itemsMenuList.add(itemsMenuList.size(), new PaymentMethodAdapter.ItemsMenu( getResources().getColor(R.color.my_gray),
 //                        R.mipmap.icon_sber,messageCard, R.drawable.togle_uncheked,
@@ -146,11 +147,14 @@ public class PaymentMethodFragment extends Fragment {
         return intent;
     }
 
-//    public static Intent newIntent1(int img, String message, int img1) {
-//        Intent intent = new Intent();
-//        intent.putExtra("message", message);
-//        return intent;
-//    }
+    public void sendData(){
+        Bundle bundle = getArguments();
+        PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
+        bundle.putString(NewCardFragment.KEY_CARD_NUMBER, "card_number");
+        bundle.putString(NewCardFragment.KEY_DATE, "date");
+        bundle.putString(NewCardFragment.KEY_CVV, "cvv");
+        paymentMethodFragment.setArguments(bundle);
+    }
 
     public void showDialog(View view){
         DriverTipsAlertNormal driverTipsAlertNormal = DriverTipsAlertNormal.getInstance(null);
