@@ -15,7 +15,6 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.myapplication_1.Adapters.PaymentMethodAdapter;
 import com.example.myapplication_1.R;
 
 public class NewCardFragment extends Fragment {
@@ -154,11 +153,11 @@ public class NewCardFragment extends Fragment {
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 
-    public static class ItemsMenu extends PaymentMethodAdapter.ItemsMenu {
-        String title;
-
-        public ItemsMenu(String title){
-            this.title = title;
-        }
-    }
+//    public static class ItemsMenu extends PaymentMethodAdapter.ItemsMenu {
+//        String title;
+//
+//        public ItemsMenu(String title){
+//            this.title = title;
+//        }
+//    }
 }

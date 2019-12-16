@@ -10,7 +10,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -118,16 +117,26 @@ public class PaymentMethodFragment extends Fragment {
 
         if(requestCode == REQUEST_CODE_NEW_CARD){
             String messageCard = data.getStringExtra("message");
-            try {
-                itemsMenuList.add(itemsMenuList.size(), new NewCardFragment.ItemsMenu(
-                        messageCard
-                ));
-                paymentMethodAdapter.notifyItemInserted(itemsMenuList.size() - 1);
-                paymentMethodAdapter.notifyDataSetChanged();
-            } catch (NumberFormatException e) {
-                Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
-                        Toast.LENGTH_SHORT).show();
-            }
+//            try {
+//                itemsMenuList.add(itemsMenuList.size(), new PaymentMethodAdapter.ItemsMenu( getResources().getColor(R.color.my_gray),
+//                        R.mipmap.icon_sber,messageCard, R.drawable.togle_uncheked,
+//                        new PaymentMethodAdapter.ItemsMenu.CallBack(){
+//                            @Override
+//                            public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+//                                try {
+//                                    Bundle _args = new Bundle();
+//                                }catch (NullPointerException e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//                        })
+//                );
+//                paymentMethodAdapter.notifyItemInserted(itemsMenuList.size() - 1);
+//                paymentMethodAdapter.notifyDataSetChanged();
+//            } catch (NumberFormatException e) {
+//                Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
+//                        Toast.LENGTH_SHORT).show();
+//            }
         }
     }
 
@@ -136,6 +145,12 @@ public class PaymentMethodFragment extends Fragment {
         intent.putExtra("message", message);
         return intent;
     }
+
+//    public static Intent newIntent1(int img, String message, int img1) {
+//        Intent intent = new Intent();
+//        intent.putExtra("message", message);
+//        return intent;
+//    }
 
     public void showDialog(View view){
         DriverTipsAlertNormal driverTipsAlertNormal = DriverTipsAlertNormal.getInstance(null);
