@@ -147,13 +147,12 @@ public class PaymentMethodFragment extends Fragment {
         return intent;
     }
 
-    public void sendData(){
-        Bundle bundle = getArguments();
-        PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
+    public static Intent newIntent1(Bundle bundle){
+        Intent intent = new Intent();
         bundle.putString(NewCardFragment.KEY_CARD_NUMBER, "card_number");
         bundle.putString(NewCardFragment.KEY_DATE, "date");
         bundle.putString(NewCardFragment.KEY_CVV, "cvv");
-        paymentMethodFragment.setArguments(bundle);
+        return intent;
     }
 
     public void showDialog(View view){
@@ -176,8 +175,36 @@ public class PaymentMethodFragment extends Fragment {
 
                 new PaymentMethodAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                        R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
-                        new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                            R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                                new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                                    @Override
+                                    public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                                        try {
+                                            Bundle _args = new Bundle();
+                                        }catch (NullPointerException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                        }),
+
+                new PaymentMethodAdapter.ItemsMenu(
+                     getResources().getColor(R.color.my_gray),
+                         R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                             new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                                @Override
+                                public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                                    try {
+                                        Bundle _args = new Bundle();
+                                    }catch (NullPointerException e) {
+                                        e.printStackTrace();
+                                    }
+                            }
+                }),
+
+                new PaymentMethodAdapter.ItemsMenu(
+                    getResources().getColor(R.color.my_gray),
+                      R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                         new PaymentMethodAdapter.ItemsMenu.CallBack(){
                             @Override
                             public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
                                 try {
@@ -186,36 +213,7 @@ public class PaymentMethodFragment extends Fragment {
                                     e.printStackTrace();
                                 }
                             }
-                        }),
-
-                new PaymentMethodAdapter.ItemsMenu(
-                getResources().getColor(R.color.my_gray),
-                R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
-                new PaymentMethodAdapter.ItemsMenu.CallBack(){
-                    @Override
-                    public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
-                        try {
-                            Bundle _args = new Bundle();
-                        }catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }),
-
-                new PaymentMethodAdapter.ItemsMenu(
-                getResources().getColor(R.color.my_gray),
-                R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
-                new PaymentMethodAdapter.ItemsMenu.CallBack(){
-                    @Override
-                    public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
-                        try {
-                            Bundle _args = new Bundle();
-                        }catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                })
-
+                    })
         };
         return arr;
     }

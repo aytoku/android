@@ -46,12 +46,7 @@ public class NewCardFragment extends Fragment {
         View view = inflater.inflate(R.layout.new_card,
                 container, false);
 
-        Bundle bundle = new Bundle();
-        PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
-        bundle.getString(KEY_CARD_NUMBER,"card_number");
-        bundle.getString(KEY_DATE,"date");
-        bundle.getString(KEY_CVV,"cvv");
-        paymentMethodFragment.setArguments(bundle);
+
 
         ImageButton imageButton = view.findViewById(R.id.rl_new_card_button);
         editText = view.findViewById(R.id.ll_new_card_card_number_field);
@@ -76,12 +71,10 @@ public class NewCardFragment extends Fragment {
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -148,21 +141,26 @@ public class NewCardFragment extends Fragment {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = editText.getText().toString();
-                sendResult(message);
+                Bundle bundle = new Bundle();
+                PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
+                bundle.getString(KEY_CARD_NUMBER,"card_number");
+                bundle.getString(KEY_DATE,"date");
+                bundle.getString(KEY_CVV,"cvv");
+                paymentMethodFragment.setArguments(bundle);
+                sendResult(bundle);
             }
         });
 
         return view;
     }
 
-    private void sendResult(String message) {
+    private void sendResult(Bundle bundle) {
 
         if(getTargetFragment() == null) {
             return;
         }
 
-        Intent intent = PaymentMethodFragment.newIntent(message);
+        Intent intent = PaymentMethodFragment.newIntent1(bundle);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 
