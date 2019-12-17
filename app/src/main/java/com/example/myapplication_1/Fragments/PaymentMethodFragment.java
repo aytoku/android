@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -30,6 +31,7 @@ public class PaymentMethodFragment extends Fragment {
     private static final int REQUEST_CODE_DRIVER_TIPS = 101;
     private static final int REQUEST_CODE_NEW_CARD = 102;
     TextView textView;
+    TextView edit;
     RecyclerView rv;
     RecyclerView.Adapter paymentMethodAdapter;
     private List<PaymentMethodAdapter.ItemsMenu> itemsMenuList;
@@ -101,6 +103,17 @@ public class PaymentMethodFragment extends Fragment {
         });
 
         textView = view.findViewById(R.id.ll_payment_method_percents);
+        edit = view.findViewById(R.id.rl_payment_method_edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle _args = new Bundle();
+                PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, paymentPickFragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         return view;
     }
@@ -116,28 +129,32 @@ public class PaymentMethodFragment extends Fragment {
         }
 
         if(requestCode == REQUEST_CODE_NEW_CARD){
-            String messageCard = data.getStringExtra("message");
 
-//            try {
-//                itemsMenuList.add(itemsMenuList.size(), new PaymentMethodAdapter.ItemsMenu( getResources().getColor(R.color.my_gray),
-//                        R.mipmap.icon_sber,messageCard, R.drawable.togle_uncheked,
-//                        new PaymentMethodAdapter.ItemsMenu.CallBack(){
-//                            @Override
-//                            public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
-//                                try {
-//                                    Bundle _args = new Bundle();
-//                                }catch (NullPointerException e) {
-//                                    e.printStackTrace();
-//                                }
-//                            }
-//                        })
-//                );
-//                paymentMethodAdapter.notifyItemInserted(itemsMenuList.size() - 1);
-//                paymentMethodAdapter.notifyDataSetChanged();
-//            } catch (NumberFormatException e) {
-//                Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
-//                        Toast.LENGTH_SHORT).show();
-//            }
+            Bundle bundle = data.getExtras();
+            String card_number = bundle.getString(NewCardFragment.KEY_CARD_NUMBER,"card_number");
+            String date = bundle.getString(NewCardFragment.KEY_DATE,"date");
+            String cvv = bundle.getString(NewCardFragment.KEY_CVV,"cvv");
+
+            try{
+                itemsMenuList.add(itemsMenuList.size(), new PaymentMethodAdapter.ItemsMenu( getResources().getColor(R.color.my_gray),
+                        R.mipmap.icon_sber, card_number, date, cvv, R.drawable.togle_uncheked,
+                        new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
+                );
+                paymentMethodAdapter.notifyItemInserted(itemsMenuList.size() - 1);
+                paymentMethodAdapter.notifyDataSetChanged();
+            }catch (NumberFormatException e) {
+                Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -149,9 +166,7 @@ public class PaymentMethodFragment extends Fragment {
 
     public static Intent newIntent1(Bundle bundle){
         Intent intent = new Intent();
-        bundle.putString(NewCardFragment.KEY_CARD_NUMBER, "card_number");
-        bundle.putString(NewCardFragment.KEY_DATE, "date");
-        bundle.putString(NewCardFragment.KEY_CVV, "cvv");
+        intent.putExtras(bundle);
         return intent;
     }
 
@@ -175,7 +190,7 @@ public class PaymentMethodFragment extends Fragment {
 
                 new PaymentMethodAdapter.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
-                            R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                            R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
                                 new PaymentMethodAdapter.ItemsMenu.CallBack(){
                                     @Override
                                     public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
@@ -189,7 +204,7 @@ public class PaymentMethodFragment extends Fragment {
 
                 new PaymentMethodAdapter.ItemsMenu(
                      getResources().getColor(R.color.my_gray),
-                         R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                         R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
                              new PaymentMethodAdapter.ItemsMenu.CallBack(){
                                 @Override
                                 public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
@@ -203,7 +218,7 @@ public class PaymentMethodFragment extends Fragment {
 
                 new PaymentMethodAdapter.ItemsMenu(
                     getResources().getColor(R.color.my_gray),
-                      R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                      R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
                          new PaymentMethodAdapter.ItemsMenu.CallBack(){
                             @Override
                             public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){

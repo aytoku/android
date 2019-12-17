@@ -1,20 +1,29 @@
 package com.example.myapplication_1.Fragments;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication_1.Adapters.PaymentPickAdapter;
 import com.example.myapplication_1.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class PaymentPickFragment extends Fragment {
+
+    RecyclerView rv;
+    RecyclerView.Adapter paymentMethodAdapter;
+    private List<PaymentPickAdapter.ItemsMenu> itemsMenuList;
 
     public static final String TAG = "PaymentPickFragment";
 
@@ -26,12 +35,6 @@ public class PaymentPickFragment extends Fragment {
         return f;
     }
 
-    private ImageView imgChecked;
-    private ImageView imgUnchecked;
-    private ImageView imgUnchecked1;
-    private Drawable imgToggleGrey;
-    private Drawable imgToggleRed;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,59 +44,86 @@ public class PaymentPickFragment extends Fragment {
         View view = inflater.inflate(R.layout.payment_pick,
                 container, false);
 
-        Bundle _args = new Bundle();
-        final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+        TextView textView = view.findViewById(R.id.rl_payment_pick_ready);
 
-        TextView accept = view.findViewById(R.id.rl_payment_pick_ready);
+        rv = view.findViewById(R.id.rl_payment_pick_recycler);
+        final RecyclerView recyclerViewMenu = rv;
 
-        accept.setOnClickListener(new View.OnClickListener() {
+        try {
+            PaymentPickAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            paymentMethodAdapter = new PaymentPickAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(paymentMethodAdapter);
+            recyclerViewMenu.setLayoutManager(
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
+            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Bundle _args = new Bundle();
+                Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
+                fragmentTransaction.replace(R.id.ll_main, paymentMethodFragment);
                 fragmentTransaction.commit();
             }
         });
 
-        imgToggleGrey = getResources().getDrawable(R.drawable.togle_uncheked);
-        imgToggleRed = getResources().getDrawable(R.drawable.toggle_checked);
-
-        RelativeLayout toggleChecked = view.findViewById(R.id.rl_payment_pick_rl_visa);
-        RelativeLayout toggleUnchecked = view.findViewById(R.id.rl_payment_pick_rl_ruble);
-        RelativeLayout toggleUnchecked1 = view.findViewById(R.id.rl_payment_pick_rl_sber);
-
-        imgChecked = view.findViewById(R.id.rl_payment_ready_toggleChecked);
-        imgUnchecked = view.findViewById(R.id.rl_payment_ready_toggleUnchecked);
-        imgUnchecked1 = view.findViewById(R.id.rl_payment_ready_toggleUnchecked1);
-
-        toggleChecked.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    imgChecked.setImageDrawable(imgToggleRed);
-                    imgUnchecked.setImageDrawable(imgToggleGrey);
-                    imgUnchecked1.setImageDrawable(imgToggleGrey);
-
-            }
-        });
-
-        toggleUnchecked.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    imgUnchecked.setImageDrawable(imgToggleRed);
-                    imgChecked.setImageDrawable(imgToggleGrey);
-                    imgUnchecked1.setImageDrawable(imgToggleGrey);
-            }
-        });
-
-        toggleUnchecked1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    imgUnchecked1.setImageDrawable(imgToggleRed);
-                    imgChecked.setImageDrawable(imgToggleGrey);
-                    imgUnchecked.setImageDrawable(imgToggleGrey);
-            }
-        });
 
         return view;
+    }
+
+    private PaymentPickAdapter.ItemsMenu[] getMenuItems() {
+
+        PaymentPickAdapter.ItemsMenu[] arr = new PaymentPickAdapter.ItemsMenu[]{
+
+                new PaymentPickAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                        new PaymentPickAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(PaymentPickAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
+
+                new PaymentPickAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                        new PaymentPickAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(PaymentPickAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
+
+                new PaymentPickAdapter.ItemsMenu(
+                        getResources().getColor(R.color.my_gray),
+                        R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                        new PaymentPickAdapter.ItemsMenu.CallBack(){
+                            @Override
+                            public void call(PaymentPickAdapter.ItemsMenu itemsMenu){
+                                try {
+                                    Bundle _args = new Bundle();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
+        };
+        return arr;
     }
 }

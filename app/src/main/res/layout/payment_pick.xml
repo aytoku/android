@@ -4,147 +4,58 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
+    <RelativeLayout
+        android:id="@+id/rl_payment_pick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp">
+
+        <ImageButton
+            android:id="@+id/rl_payment_pick_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:foreground="?android:selectableItemBackground"
+            android:src="@drawable/icon_strelka"/>
+
         <TextView
             android:id="@+id/rl_payment_pick_ready"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Готово"
+            android:layout_centerInParent="true"
             android:textSize="15sp"
             android:textStyle="bold"
             android:clickable="true"
             android:foreground="?android:selectableItemBackground"
             android:focusable="true"
-            android:paddingTop="10dp"
-            android:paddingBottom="20dp"
             android:paddingRight="20dp"
             android:gravity="end"
             android:layout_alignParentRight="true"
             android:textColor="#424242"/>
 
-    <LinearLayout
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/rl_payment_pick_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/rl_payment_pick_ready"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_payment_pick"
+        android:text="Способы оплаты"
+        android:paddingLeft="15dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="15dp"
+        android:textColor="#424242"
+        android:textSize="21sp"
+        android:textStyle="bold" />
 
-        <RelativeLayout
-            android:id="@+id/rl_payment_pick_rl_visa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foreground="?android:selectableItemBackground"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp">
-
-            <ImageView
-                android:id="@+id/rl_payment_ready.visa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:paddingTop="15dp"
-                android:src="@mipmap/visa" />
-
-            <TextView
-                android:id="@+id/rl_payment_ready.visa_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/rl_payment_ready.visa"
-                android:paddingTop="12sp"
-                android:paddingLeft="20dp"
-                android:gravity="center_vertical"
-                android:paddingBottom="15dp"
-                android:text="VISA 9966"
-                android:textColor="#424242"
-                android:textSize="17sp" />
-
-            <ImageView
-                android:id="@+id/rl_payment_ready_toggleChecked"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_weight="0"
-                android:paddingTop="10dp"
-                android:src="@drawable/togle_uncheked" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_payment_pick_rl_ruble"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:foreground="?android:selectableItemBackground"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp">
-
-            <ImageView
-                android:id="@+id/rl_payment_ready.rubble"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingTop="15dp"
-                android:src="@mipmap/rubble" />
-
-            <TextView
-                android:id="@+id/rl_payment_ready.cash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/rl_payment_ready.rubble"
-                android:paddingTop="12sp"
-                android:paddingLeft="20dp"
-                android:paddingBottom="15dp"
-                android:text="Наличные"
-                android:textColor="#424242"
-                android:textSize="17sp" />
-
-            <ImageView
-                android:id="@+id/rl_payment_ready_toggleUnchecked"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:paddingTop="10dp"
-                android:src="@drawable/togle_uncheked" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_payment_pick_rl_sber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:foreground="?android:selectableItemBackground"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp">
-
-            <ImageView
-                android:id="@+id/rl_payment_ready.sber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingTop="15dp"
-                android:src="@drawable/ic_sber" />
-
-            <TextView
-                android:id="@+id/rl_payment_ready.cash_sber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/rl_payment_ready.sber"
-                android:paddingTop="12sp"
-                android:paddingLeft="20dp"
-                android:paddingBottom="15dp"
-                android:text="Sberbank"
-                android:textColor="#424242"
-                android:textSize="17sp" />
-
-            <ImageView
-                android:id="@+id/rl_payment_ready_toggleUnchecked1"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:paddingTop="10dp"
-                android:src="@drawable/togle_uncheked" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rl_payment_pick_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_payment_pick_title"
+        android:overScrollMode="never" />
 
 </RelativeLayout>

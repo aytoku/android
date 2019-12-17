@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/rl_payment_pick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:selectableItemBackground"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/rl_payment_pick_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/visa" />
+
+        <TextView
+            android:id="@+id/rl_payment_pick_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/rl_payment_pick_img"
+            android:paddingTop="12sp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="15dp"
+            android:text="VISA 9966"
+            android:textColor="#424242"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/rl_payment_pick_toggleChecked"
+            android:layout_width="30dp"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_weight="0"
+            android:paddingTop="10dp"
+            android:src="@drawable/togle_uncheked" />
+
+    </RelativeLayout>
+
+</LinearLayout>

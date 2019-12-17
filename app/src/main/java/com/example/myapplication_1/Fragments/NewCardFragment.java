@@ -46,8 +46,6 @@ public class NewCardFragment extends Fragment {
         View view = inflater.inflate(R.layout.new_card,
                 container, false);
 
-
-
         ImageButton imageButton = view.findViewById(R.id.rl_new_card_button);
         editText = view.findViewById(R.id.ll_new_card_card_number_field);
         editText1 = view.findViewById(R.id.ll_new_card_term_field);
@@ -81,35 +79,35 @@ public class NewCardFragment extends Fragment {
                 int i = editText.getText().toString().length();
                 if (i < 5)
                     len[0] = 0;
-                if (i == 5 && len[0] < 6) {
-                    len[0] = 6;
-                    String ss = s.toString();
-                    String first = ss.substring(0, ss.length() - 1);
-                    String last = ss.substring(ss.length() - 1);
-                    editText.setText(first + " " + last);
-                    editText.setSelection(editText.getText().length());
+                    if (i == 5 && len[0] < 6) {
+                        len[0] = 6;
+                        String ss = s.toString();
+                        String first = ss.substring(0, ss.length() - 1);
+                        String last = ss.substring(ss.length() - 1);
+                        editText.setText(first + " " + last);
+                        editText.setSelection(editText.getText().length());
                 }
 
                 if (i < 10)
                     len1[0] = 0;
-                if (i == 10 && len1[0] < 10) {
-                    len1[0] = 11;
-                    String ss = s.toString();
-                    String first = ss.substring(0, ss.length() - 1);
-                    String last = ss.substring(ss.length() - 1);
-                    editText.setText(first + " " + last);
-                    editText.setSelection(editText.getText().length());
+                    if (i == 10 && len1[0] < 10) {
+                        len1[0] = 11;
+                        String ss = s.toString();
+                        String first = ss.substring(0, ss.length() - 1);
+                        String last = ss.substring(ss.length() - 1);
+                        editText.setText(first + " " + last);
+                        editText.setSelection(editText.getText().length());
                 }
 
                 if (i < 15)
                     len2[0] = 0;
-                if (i == 15 && len2[0] < 15) {
-                    len2[0] = 16;
-                    String ss = s.toString();
-                    String first = ss.substring(0, ss.length() - 1);
-                    String last = ss.substring(ss.length() - 1);
-                    editText.setText(first + " " + last);
-                    editText.setSelection(editText.getText().length());
+                    if (i == 15 && len2[0] < 15) {
+                        len2[0] = 16;
+                        String ss = s.toString();
+                        String first = ss.substring(0, ss.length() - 1);
+                        String last = ss.substring(ss.length() - 1);
+                        editText.setText(first + " " + last);
+                        editText.setSelection(editText.getText().length());
                 }
             }
         });
@@ -126,13 +124,13 @@ public class NewCardFragment extends Fragment {
                 int i = editText1.getText().toString().length();
                 if (i < 3)
                     len[0] = 0;
-                if (i == 3 && len[0] < 3) {
-                    len[0] = 4;
-                    String ss = s.toString();
-                    String first = ss.substring(0, ss.length() - 1);
-                    String last = ss.substring(ss.length() - 1);
-                    editText1.setText(first + "/" + last);
-                    editText1.setSelection(editText1.getText().length());
+                    if (i == 3 && len[0] < 3) {
+                        len[0] = 4;
+                        String ss = s.toString();
+                        String first = ss.substring(0, ss.length() - 1);
+                        String last = ss.substring(ss.length() - 1);
+                        editText1.setText(first + "/" + last);
+                        editText1.setSelection(editText1.getText().length());
                 }
             }
         });
@@ -143,9 +141,9 @@ public class NewCardFragment extends Fragment {
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
-                bundle.getString(KEY_CARD_NUMBER,"card_number");
-                bundle.getString(KEY_DATE,"date");
-                bundle.getString(KEY_CVV,"cvv");
+                bundle.putString(NewCardFragment.KEY_CARD_NUMBER, "card_number");
+                bundle.putString(NewCardFragment.KEY_DATE, "date");
+                bundle.putString(NewCardFragment.KEY_CVV, "cvv");
                 paymentMethodFragment.setArguments(bundle);
                 sendResult(bundle);
             }
