@@ -49,20 +49,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_auth_1_1_1_title" />
 
+    <TextView
+        android:id="@+id/text_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="70dp"
+        android:paddingTop="10dp"
+        android:text="+7"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="@+id/cl_auth_1_1_1_editTextNumber" />
+
     <EditText
         android:id="@+id/cl_auth_1_1_1_editTextNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#FD6F6D"
-        android:hint="+7 963 378-86-96"
+        android:hint="963 378-86-96"
         android:inputType="number"
-        android:textAlignment="center"
+        android:paddingLeft="112dp"
+        android:textAlignment="viewStart"
         android:textColorHint="#C0BFC6"
         android:textCursorDrawable="@null"
         android:textSize="28sp"
         android:maxLength="13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_auth_1_1_1_button"
         tools:ignore="MissingPrefix" />
 
@@ -70,7 +81,7 @@
         android:id="@+id/cl_auth_1_1_1_text_alert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Указан неверный номер"
+        android:text=""
         android:textAlignment="center"
         android:textColor="#EE4D3F"
         android:paddingBottom="10dp"
@@ -85,7 +96,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:paddingBottom="5dp"
-        android:text="Нажимая кнопку 'Далее', вы принимаете условия\nпользовательского соглашения и политики\nконфиденцальности"
+        android:text=""
         android:textAlignment="center"
         android:textColor="#979797"
         android:textSize="13sp"

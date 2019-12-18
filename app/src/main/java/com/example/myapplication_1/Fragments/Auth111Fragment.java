@@ -1,9 +1,11 @@
 package com.example.myapplication_1.Fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +19,19 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
+import com.google.gson.JsonObject;
+
+import ru.osety.amironlibrary.Query.QueryPost;
+import ru.osety.amironlibrary.Query.QueryTemplate;
 
 import static android.app.Activity.RESULT_OK;
 
 public class Auth111Fragment extends Fragment {
 
     public static final String TAG = "Auth111Fragment";
+    TextView agreement;
+    TextView alert;
+    TextView country_code;
 
     public static Auth111Fragment getInstance(Bundle args) {
 
@@ -49,6 +58,11 @@ public class Auth111Fragment extends Fragment {
         button = view.findViewById(R.id.cl_auth_1_1_1_button1);
 
         TextView textView = view.findViewById(R.id.cl_auth_1_1_1_button);
+        agreement = view.findViewById(R.id.cl_auth_1_1_1_desc);
+        agreement.setText(Html.fromHtml("Нажимая кнопку 'Далее', вы принимаете условия\n<u>пользовательского соглашения</u> и <u>политики\nконфиденцальности</u>"));
+
+        alert = view.findViewById(R.id.cl_auth_1_1_1_text_alert);
+        country_code = view.findViewById(R.id.text_number);
 
         editText = view.findViewById(R.id.cl_auth_1_1_1_editTextNumber);
 
@@ -70,6 +84,19 @@ public class Auth111Fragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 int i = editText.getText().toString().length();
+
+                if(i > 6){
+                    alert.setText("Указан неверный номер");
+                    editText.setTextColor(Color.parseColor("#EE4D3F"));
+                    country_code.setTextColor(Color.parseColor("#EE4D3F"));
+                    alert.setTextColor(Color.parseColor("#EE4D3F"));
+                }else {
+                    alert.setVisibility(View.GONE);
+                    editText.setTextColor(Color.parseColor("#000000"));
+                    country_code.setTextColor(Color.parseColor("#000000"));
+                    alert.setTextColor(Color.parseColor("#000000"));
+                }
+
                 if (i < 4)
                     len[0] = 0;
                 if (i == 4 && len[0] < 5) {
@@ -111,6 +138,17 @@ public class Auth111Fragment extends Fragment {
             }
         });
 
+        agreement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WebViewFragment webViewFragment = WebViewFragment.getInstance(null);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.ll_main, webViewFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+
         Bundle _args = new Bundle();
         final Fragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(_args);
         final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
@@ -134,6 +172,35 @@ public class Auth111Fragment extends Fragment {
         });
 
         return view;
+    }
+
+    public void getAuthorizationCode(){
+       new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+           @Override
+           public void asyncBefore() throws InterruptedException {
+
+           }
+
+           @Override
+           public JsonObject async(String result) throws ClassCastException {
+               return null;
+           }
+
+           @Override
+           public void sync(JsonObject result) {
+
+           }
+
+           @Override
+           public void progress(Integer... status) {
+
+           }
+
+           @Override
+           public void cancel(JsonObject result, Throwable throwable) {
+
+           }
+       });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
