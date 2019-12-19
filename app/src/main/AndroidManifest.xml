@@ -16,7 +16,7 @@
         tools:ignore="HardcodedDebugMode">
 
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".JMain"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
