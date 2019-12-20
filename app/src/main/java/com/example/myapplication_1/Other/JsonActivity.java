@@ -20,9 +20,7 @@ public class JsonActivity  extends AppCompatActivity {
 
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
-            public void asyncBefore() throws InterruptedException {
-
-            }
+            public void asyncBefore() throws InterruptedException {}
 
             @Override
             public JsonObject async(String result) throws ClassCastException {
@@ -35,17 +33,13 @@ public class JsonActivity  extends AppCompatActivity {
             }
 
             @Override
-            public void sync(JsonObject result) {
-
-            }
+            public void sync(JsonObject result) {}
 
             @Override
-            public void progress(Integer... status) {
-            }
+            public void progress(Integer... status) {}
 
             @Override
-            public void cancel(JsonObject result, Throwable throwable) {
-            }
+            public void cancel(JsonObject result, Throwable throwable) {}
         }).query("https://crm.apis.stage.faem.pro/api/v2", json_authorization.toString());
     }
 }
