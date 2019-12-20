@@ -36,6 +36,7 @@ public class JsonActivity  extends AppCompatActivity {
 
             @Override
             public void sync(JsonObject result) {
+
             }
 
             @Override
