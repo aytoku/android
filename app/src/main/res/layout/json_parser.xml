@@ -11,13 +11,4 @@
         android:textColor="@color/my_black"
         android:textSize="20sp"/>
 
-    <Button
-        android:id="@+id/jbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
-        android:text="parse"/>
-
 </RelativeLayout>
