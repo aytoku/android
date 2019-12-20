@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Other;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -20,6 +20,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication_1.R;
 
 import ru.osety.amironlibrary.DrawableUtils;
 

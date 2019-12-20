@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Other;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;

@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Other;
 
 import android.text.TextUtils;
 import android.text.TextWatcher;

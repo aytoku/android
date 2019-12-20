@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.myapplication_1.MainActivitySlider;
+import com.example.myapplication_1.Other.MainActivitySlider;
 import com.example.myapplication_1.R;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Other;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.ExpandableListView;
 
 import androidx.fragment.app.Fragment;
 
+
+import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
 import java.util.List;

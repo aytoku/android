@@ -1,9 +1,11 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Other;
 
 import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication_1.R;
 
 
 public class StartActivity extends AppCompatActivity {

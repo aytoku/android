@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Other;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,17 +36,14 @@ public class JsonActivity  extends AppCompatActivity {
 
             @Override
             public void sync(JsonObject result) {
-
             }
 
             @Override
             public void progress(Integer... status) {
-
             }
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {
-
             }
         }).query("https://crm.apis.stage.faem.pro/api/v2", json_authorization.toString());
     }

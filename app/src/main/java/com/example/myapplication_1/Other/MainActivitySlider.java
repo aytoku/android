@@ -1,4 +1,4 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Other;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.myapplication_1.Adapters.ViewPagerAdapter;
+import com.example.myapplication_1.R;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;

@@ -1,17 +1,19 @@
-package com.example.myapplication_1;
+package com.example.myapplication_1.Other;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivityTest extends AppCompatActivity {
+import com.example.myapplication_1.R;
+
+public class MainActivitySwitch extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.main_layout);
+        setContentView(R.layout.new_switch);
     }
 }

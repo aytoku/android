@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
-import com.example.myapplication_1.DetailInfo;
-import com.example.myapplication_1.HeaderInfo;
+import com.example.myapplication_1.Other.DetailInfo;
+import com.example.myapplication_1.Other.HeaderInfo;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
