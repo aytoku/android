@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="15dp"
+    android:background="@color/my_gray">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cv_order_accept"
-        android:layout_width="280dp"
+        android:id="@+id/cv_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content">
+        app:cardBackgroundColor="@color/my_gray"
+        android:background="@drawable/cv"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cv"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/cv_order_accept.title"
@@ -48,6 +58,7 @@
                 android:backgroundTint="#FD6F6D"
                 android:gravity="center_horizontal"
                 android:hint="1234"
+                android:layout_gravity="center_horizontal"
                 android:textColorHint="#C4C3CA"
                 android:textSize="21sp"
                 android:maxLength="4"
@@ -56,24 +67,39 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cv_order_accept_desc" />
 
-            <TextView
-                android:id="@+id/cv_order_accept.button"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Завершить"
-                android:textColor="#EE4D3F"
-                android:textSize="14sp"
-                android:paddingTop="20dp"
-                android:paddingBottom="15dp"
-                android:textAllCaps="true"
-                android:paddingRight="22dp"
-                android:textStyle="bold"
-                android:gravity="end"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cv_order_accept.editText" />
+                android:paddingTop="15dp"
+                android:orientation="horizontal">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/cv_item.ll_add_point1.refuse_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Закрыть"
+                    android:layout_weight="1"
+                    android:textColor="#424242"
+                    android:background="@drawable/for_button"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/cv_item.ll_add_point1.accept_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Хорошо"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_button_red"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

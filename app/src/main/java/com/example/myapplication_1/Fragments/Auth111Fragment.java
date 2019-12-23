@@ -1,7 +1,6 @@
 package com.example.myapplication_1.Fragments;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import ru.osety.amironlibrary.Query.QueryPost;
 import ru.osety.amironlibrary.Query.QueryTemplate;
@@ -85,17 +86,17 @@ public class Auth111Fragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 int i = editText.getText().toString().length();
 
-                if(i > 6){
-                    alert.setText("Указан неверный номер");
-                    editText.setTextColor(Color.parseColor("#EE4D3F"));
-                    country_code.setTextColor(Color.parseColor("#EE4D3F"));
-                    alert.setTextColor(Color.parseColor("#EE4D3F"));
-                }else {
-                    alert.setVisibility(View.GONE);
-                    editText.setTextColor(Color.parseColor("#000000"));
-                    country_code.setTextColor(Color.parseColor("#000000"));
-                    alert.setTextColor(Color.parseColor("#000000"));
-                }
+//                if(i > 6){
+//                    alert.setText("Указан неверный номер");
+//                    editText.setTextColor(Color.parseColor("#EE4D3F"));
+//                    country_code.setTextColor(Color.parseColor("#EE4D3F"));
+//                    alert.setTextColor(Color.parseColor("#EE4D3F"));
+//                }else {
+//                    alert.setVisibility(View.GONE);
+//                    editText.setTextColor(Color.parseColor("#000000"));
+//                    country_code.setTextColor(Color.parseColor("#000000"));
+//                    alert.setTextColor(Color.parseColor("#000000"));
+//                }
 
                 if (i < 4)
                     len[0] = 0;
@@ -171,37 +172,57 @@ public class Auth111Fragment extends Fragment {
             }
         });
 
+        sendNumber();
+
         return view;
     }
 
-    public void getAuthorizationCode(){
-       new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
-           @Override
-           public void asyncBefore() throws InterruptedException {
+    public void sendNumber(){
+        JsonObject jo = new JsonObject();
+        jo.addProperty("device_id", "ffewqewe");
+        jo.addProperty("phone", "+79998887766");
 
-           }
+        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+            @Override
+            public void asyncBefore() throws InterruptedException {}
 
-           @Override
-           public JsonObject async(String result) throws ClassCastException {
-               return null;
-           }
+            @Override
+            public JsonObject async(String result) throws ClassCastException {
+                JsonParser jsonParser = new JsonParser();
+                JsonObject jsonObject = jsonParser.parse(result).getAsJsonObject();
 
-           @Override
-           public void sync(JsonObject result) {
+                return jsonObject;
+            }
 
-           }
+            @Override
+            public void sync(JsonObject result) {
+                int code =0;
+                if(code == 200){
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            final CodeScreenFragment codeScreenFragment = new CodeScreenFragment();
+                            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                            fragmentTransaction.replace(R.id.ll_main, codeScreenFragment);
+                            fragmentTransaction.commit();
+                        }
+                    });
+                }else{
+                    Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT);
+                }
+                String message = result.get("message").getAsString();
+                int next_request_time = result.get("next_request_time").getAsInt();
 
-           @Override
-           public void progress(Integer... status) {
+            }
 
-           }
+            @Override
+            public void progress(Integer... status) {}
 
-           @Override
-           public void cancel(JsonObject result, Throwable throwable) {
-
-           }
-       });
+            @Override
+            public void cancel(JsonObject result, Throwable throwable) {}
+        }).query("https://crm.apis.stage.faem.pro/api/v2" + "/auth/new", jo.toString());
     }
+
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

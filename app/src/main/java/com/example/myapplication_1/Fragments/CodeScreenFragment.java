@@ -8,10 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication_1.R;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import ru.osety.amironlibrary.Query.QueryPost;
+import ru.osety.amironlibrary.Query.QueryTemplate;
 
 public class CodeScreenFragment extends Fragment {
 
@@ -29,6 +35,7 @@ public class CodeScreenFragment extends Fragment {
     EditText code_field2;
     EditText code_field3;
     EditText code_field4;
+    TextView button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +49,7 @@ public class CodeScreenFragment extends Fragment {
         code_field2 = view.findViewById(R.id.ll_code_screen2);
         code_field3 = view.findViewById(R.id.ll_code_screen3);
         code_field4 = view.findViewById(R.id.ll_code_screen4);
+
 
         code_field1.addTextChangedListener(new TextWatcher() {
 
@@ -61,6 +69,11 @@ public class CodeScreenFragment extends Fragment {
             }
 
             public void afterTextChanged(final Editable s) {
+                if(code_field1.length()>0){
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.myredbutton));
+                }else{
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybuttongrey));
+                }
             }
         });
 
@@ -82,6 +95,11 @@ public class CodeScreenFragment extends Fragment {
             }
 
             public void afterTextChanged(Editable s) {
+                if(code_field2.length()>0){
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.myredbutton));
+                }else{
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybuttongrey));
+                }
             }
         });
 
@@ -115,6 +133,11 @@ public class CodeScreenFragment extends Fragment {
             }
 
             public void afterTextChanged(Editable s) {
+                if(code_field3.length()>0){
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.myredbutton));
+                }else{
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybuttongrey));
+                }
             }
         });
 
@@ -147,6 +170,11 @@ public class CodeScreenFragment extends Fragment {
             }
 
             public void afterTextChanged(Editable s) {
+                if(code_field4.length()>0){
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.myredbutton));
+                }else{
+                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybuttongrey));
+                }
             }
         });
 
@@ -162,7 +190,63 @@ public class CodeScreenFragment extends Fragment {
             }
         });
 
+        button = view.findViewById(R.id.cl_code_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendCode();
+            }
+        });
+
     return view;
 
+    }
+
+    public void sendCode(){
+        JsonObject jo = new JsonObject();
+        jo.addProperty("device_id", "ffewqewe");
+        jo.addProperty("code", "1080");
+
+        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+            @Override
+            public void asyncBefore() throws InterruptedException {
+
+            }
+
+            @Override
+            public JsonObject async(String result) throws ClassCastException {
+                JsonParser jsonParser = new JsonParser();
+                JsonObject jsonObject = jsonParser.parse(result).getAsJsonObject();
+
+                return jsonObject;
+            }
+
+            @Override
+            public void sync(JsonObject result) {
+//                int code  = result.get("code").getAsInt();
+
+                int client_id = result.get("client_id").getAsInt();
+                String token = result.get("token").getAsString();
+                String client_uuid = result.get("client_uuid").getAsString();
+                String refresh_token = result.get("refresh_token").getAsString();
+                String refresh_expiration = result.get("refresh_expiration").getAsString();
+
+//                if(code == 5555){
+//                    System.out.println(client_id);
+//                    System.out.println(token);
+//                    System.out.println(client_uuid);
+//                    System.out.println(refresh_token);
+//                    System.out.println(refresh_expiration);
+//                }else {
+//                    System.out.println("Error");
+//                }
+            }
+
+            @Override
+            public void progress(Integer... status) {}
+
+            @Override
+            public void cancel(JsonObject result, Throwable throwable) {}
+        }).query("https://crm.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
     }
 }
