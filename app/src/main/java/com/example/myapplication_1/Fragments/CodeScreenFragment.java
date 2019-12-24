@@ -3,6 +3,7 @@ package com.example.myapplication_1.Fragments;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.myapplication_1.R;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 import ru.osety.amironlibrary.Query.QueryPost;
@@ -215,31 +217,56 @@ public class CodeScreenFragment extends Fragment {
 
             @Override
             public JsonObject async(String result) throws ClassCastException {
-                JsonParser jsonParser = new JsonParser();
-                JsonObject jsonObject = jsonParser.parse(result).getAsJsonObject();
+                try {
 
-                return jsonObject;
+                    JsonParser jsonParser = new JsonParser();
+                    JsonObject jsonObject = jsonParser.parse(result).getAsJsonObject();
+
+                    return  jsonObject;
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+                return null;
             }
 
             @Override
             public void sync(JsonObject result) {
-//                int code  = result.get("code").getAsInt();
 
-                int client_id = result.get("client_id").getAsInt();
-                String token = result.get("token").getAsString();
-                String client_uuid = result.get("client_uuid").getAsString();
-                String refresh_token = result.get("refresh_token").getAsString();
-                String refresh_expiration = result.get("refresh_expiration").getAsString();
 
-//                if(code == 5555){
-//                    System.out.println(client_id);
-//                    System.out.println(token);
-//                    System.out.println(client_uuid);
-//                    System.out.println(refresh_token);
-//                    System.out.println(refresh_expiration);
-//                }else {
-//                    System.out.println("Error");
-//                }
+                int client_id = 0;
+                try {
+                    client_id = result.get("client_id").getAsInt();
+                }catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+
+                String token = "";
+                try {
+                    token = result.get("token").getAsString();
+                }catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+
+                String client_uuid = "";
+                try {
+                    client_uuid = result.get("client_uuid").getAsString();
+                }catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+
+                String refresh_token = "";
+                try {
+                    refresh_token = result.get("refresh_token").getAsString();
+                }catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+
+                String refresh_expiration = "";
+                try {
+                    refresh_expiration = result.get("refresh_expiration").getAsString();
+                }catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
             }
 
             @Override

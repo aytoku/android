@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 import ru.osety.amironlibrary.Query.QueryPost;
@@ -178,7 +180,7 @@ public class Auth111Fragment extends Fragment {
     }
 
     public void sendNumber(){
-        JsonObject jo = new JsonObject();
+        final JsonObject jo = new JsonObject();
         jo.addProperty("device_id", "ffewqewe");
         jo.addProperty("phone", "+79998887766");
 
@@ -188,16 +190,35 @@ public class Auth111Fragment extends Fragment {
 
             @Override
             public JsonObject async(String result) throws ClassCastException {
-                JsonParser jsonParser = new JsonParser();
-                JsonObject jsonObject = jsonParser.parse(result).getAsJsonObject();
 
-                return jsonObject;
+                try {
+
+                    JsonParser jsonParser = new JsonParser();
+
+                    return  jsonParser.parse(result).getAsJsonObject();
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+
+                return null;
             }
 
             @Override
             public void sync(JsonObject result) {
-                int code =0;
+                int code = 400;
+                try {
+                   code = result.get("code").getAsInt();
+                }catch (NullPointerException | JsonParseException e){
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+
                 if(code == 200){
+                    int next_request_time = -1;
+                    try {
+                        next_request_time = result.get("next_request_time").getAsInt();
+                    }catch (NullPointerException | JsonParseException e){
+                        Log.e(TAG, "sync: " +e.getMessage());
+                    }
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -208,11 +229,15 @@ public class Auth111Fragment extends Fragment {
                         }
                     });
                 }else{
-                    Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT);
-                }
-                String message = result.get("message").getAsString();
-                int next_request_time = result.get("next_request_time").getAsInt();
+                    String message = "message";
+                    try {
+                        message = result.get("message").getAsString();
+                    }catch (NullPointerException | JsonParseException e){
+                        Log.e(TAG, "sync: " +e.getMessage());
+                    }
 
+                    Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
