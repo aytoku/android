@@ -274,6 +274,6 @@ public class CodeScreenFragment extends Fragment {
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {}
-        }).query("https://crm.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
+        }).query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
     }
 }
