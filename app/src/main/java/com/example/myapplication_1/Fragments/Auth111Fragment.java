@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.util.ArrayMap;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,8 @@ import com.example.myapplication_1.R;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
+
+import java.util.Map;
 
 import ru.osety.amironlibrary.Query.QueryPost;
 import ru.osety.amironlibrary.Query.QueryTemplate;
@@ -180,9 +183,12 @@ public class Auth111Fragment extends Fragment {
     }
 
     public void sendNumber(){
-        final JsonObject jo = new JsonObject();
+        JsonObject jo = new JsonObject();
         jo.addProperty("device_id", "ffewqewe");
         jo.addProperty("phone", "+79998887766");
+        Map<String, String> _mapHead = new ArrayMap<>();
+        _mapHead.put("Accept-Charset", "UTF-8");
+        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
 
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
@@ -205,7 +211,7 @@ public class Auth111Fragment extends Fragment {
 
             @Override
             public void sync(JsonObject result) {
-                int code = 400;
+                int code = -1;
                 try {
                    code = result.get("code").getAsInt();
                 }catch (NullPointerException | JsonParseException e){
@@ -236,7 +242,7 @@ public class Auth111Fragment extends Fragment {
                         Log.e(TAG, "sync: " +e.getMessage());
                     }
 
-                    Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -245,7 +251,7 @@ public class Auth111Fragment extends Fragment {
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {}
-        }).query("https://crm.apis.stage.faem.pro/api/v2" + "/auth/new", jo.toString());
+        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2" + "/auth/new", jo.toString());
     }
 
 
