@@ -1,8 +1,12 @@
 package com.example.myapplication_1.Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.ArrayMap;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -10,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -18,12 +23,20 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
+import java.util.Map;
+
 import ru.osety.amironlibrary.Query.QueryPost;
 import ru.osety.amironlibrary.Query.QueryTemplate;
 
 public class CodeScreenFragment extends Fragment {
 
     public static final String TAG = "CodeScreenFragment";
+    public static final String FOLDER = "Folder";
+    public static final String CLIENT_ID = "Client_id";
+    public static final String TOKEN = "Token";
+    public static final String CLIENT = "Client_uuid";
+    public static final String REFRESH_TOKEN = "Refresh_token";
+    public static final String REFRESH_EXPIRATION = "Refresh_expiration";
 
     public static CodeScreenFragment getInstance(Bundle args) {
 
@@ -193,21 +206,27 @@ public class CodeScreenFragment extends Fragment {
         });
 
         button = view.findViewById(R.id.cl_code_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendCode();
-            }
-        });
+        sendCode();
 
     return view;
 
     }
 
+//    public void preference(Context context){
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.putString(FOLDER, TOKEN);
+//        editor.apply();
+//    }
+
     public void sendCode(){
         JsonObject jo = new JsonObject();
         jo.addProperty("device_id", "ffewqewe");
         jo.addProperty("code", "1080");
+        Map<String, String> _mapHead = new ArrayMap<>();
+        _mapHead.put("Accept-Charset", "UTF-8");
+        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
+       // _mapHead.put("Authorization", TOKEN);
 
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
@@ -220,9 +239,8 @@ public class CodeScreenFragment extends Fragment {
                 try {
 
                     JsonParser jsonParser = new JsonParser();
-                    JsonObject jsonObject = jsonParser.parse(result).getAsJsonObject();
+                    return  jsonParser.parse(result).getAsJsonObject();
 
-                    return  jsonObject;
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "async: " +e.getMessage());
                 }
@@ -232,40 +250,61 @@ public class CodeScreenFragment extends Fragment {
             @Override
             public void sync(JsonObject result) {
 
-
-                int client_id = 0;
+                int code = 0;
                 try {
-                    client_id = result.get("client_id").getAsInt();
-                }catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "async: " +e.getMessage());
+                    code = result.get("code").getAsInt();
+                }catch (NullPointerException | JsonParseException e){
+                    Log.e(TAG, "sync:" + e.getMessage());
                 }
+                if(code == 1080) {
 
-                String token = "";
-                try {
-                    token = result.get("token").getAsString();
-                }catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "async: " +e.getMessage());
-                }
+                    int client_id = 0;
+                    try {
+                        client_id = result.get("client_id").getAsInt();
+                    } catch (NullPointerException | JsonParseException e) {
+                        Log.e(TAG, "sync: " + e.getMessage());
+                    }
 
-                String client_uuid = "";
-                try {
-                    client_uuid = result.get("client_uuid").getAsString();
-                }catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "async: " +e.getMessage());
-                }
+                    String token = "";
+                    try {
+                        token = result.get("token").getAsString();
+                    } catch (NullPointerException | JsonParseException e) {
+                        Log.e(TAG, "sync: " + e.getMessage());
+                    }
+                    final String finalToken = token;
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Context context = getActivity().getApplicationContext();
+                            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString(TOKEN, finalToken);
+                            editor.apply();
+                        }
+                    });
 
-                String refresh_token = "";
-                try {
-                    refresh_token = result.get("refresh_token").getAsString();
-                }catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "async: " +e.getMessage());
-                }
+                    String client_uuid = "";
+                    try {
+                        client_uuid = result.get("client_uuid").getAsString();
+                    } catch (NullPointerException | JsonParseException e) {
+                        Log.e(TAG, "sync: " + e.getMessage());
+                    }
 
-                String refresh_expiration = "";
-                try {
-                    refresh_expiration = result.get("refresh_expiration").getAsString();
-                }catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "async: " +e.getMessage());
+                    String refresh_token = "";
+                    try {
+                        refresh_token = result.get("refresh_token").getAsString();
+                    } catch (NullPointerException | JsonParseException e) {
+                        Log.e(TAG, "sync: " + e.getMessage());
+                    }
+
+                    int refresh_expiration = -1;
+                    try {
+                        refresh_expiration = result.get("refresh_expiration").getAsInt();
+                    } catch (NullPointerException | JsonParseException e) {
+                        Log.e(TAG, "sync: " + e.getMessage());
+                    }
+                }else{
+                    Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -274,6 +313,6 @@ public class CodeScreenFragment extends Fragment {
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {}
-        }).query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
+        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
     }
 }

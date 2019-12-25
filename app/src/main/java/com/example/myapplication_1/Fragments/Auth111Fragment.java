@@ -35,6 +35,8 @@ import static android.app.Activity.RESULT_OK;
 public class Auth111Fragment extends Fragment {
 
     public static final String TAG = "Auth111Fragment";
+    //private static final int NOTIFY_ID = 101;
+    //private static String CHANNEL_ID = "Channel_id";
     TextView agreement;
     TextView alert;
     TextView country_code;
@@ -232,6 +234,15 @@ public class Auth111Fragment extends Fragment {
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.ll_main, codeScreenFragment);
                             fragmentTransaction.commit();
+
+//                            NotificationCompat.Builder builder =
+//                                    new NotificationCompat.Builder(getActivity(), CHANNEL_ID)
+//                                            .setContentText("1080")
+//                                            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+//
+//                            NotificationManagerCompat notificationManager =
+//                                    NotificationManagerCompat.from(getActivity());
+//                            notificationManager.notify(NOTIFY_ID, builder.build());
                         }
                     });
                 }else{
