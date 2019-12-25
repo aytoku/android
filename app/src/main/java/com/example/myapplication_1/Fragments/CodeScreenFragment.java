@@ -1,6 +1,7 @@
 package com.example.myapplication_1.Fragments;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Editable;
@@ -29,7 +30,6 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class CodeScreenFragment extends Fragment {
 
     public static final String TAG = "CodeScreenFragment";
-    public static final String FOLDER = "Folder";
     public static final String CLIENT_ID = "Client_id";
     public static final String TOKEN = "Token";
     public static final String CLIENT = "Client_uuid";
@@ -210,12 +210,13 @@ public class CodeScreenFragment extends Fragment {
 
     }
 
-//    public void preference(Context context){
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.putString(FOLDER, TOKEN);
-//        editor.apply();
-//    }
+    public void preference(){
+        Context context = getActivity().getApplicationContext();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(TOKEN, "");
+        editor.apply();
+    }
 
     public void sendCode(){
         JsonObject jo = new JsonObject();
@@ -228,9 +229,7 @@ public class CodeScreenFragment extends Fragment {
 
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
-            public void asyncBefore() throws InterruptedException {
-
-            }
+            public void asyncBefore() throws InterruptedException {}
 
             @Override
             public JsonObject async(String result) throws ClassCastException {
@@ -248,14 +247,6 @@ public class CodeScreenFragment extends Fragment {
             @Override
             public void sync(JsonObject result) {
 
-                int code = 0;
-                try {
-                    code = result.get("code").getAsInt();
-                }catch (NullPointerException | JsonParseException e){
-                    Log.e(TAG, "sync:" + e.getMessage());
-                }
-                if(code == 1080) {
-
                     int client_id = 0;
                     try {
                         client_id = result.get("client_id").getAsInt();
@@ -269,16 +260,6 @@ public class CodeScreenFragment extends Fragment {
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
-                    button.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Context context = getActivity().getApplicationContext();
-                            PreferenceManager.getDefaultSharedPreferences(context);
-//                          SharedPreferences.Editor editor = sharedPreferences.edit();
-//                          editor.putString(TOKEN, token);
-//                          editor.apply();
-                        }
-                    });
 
                     String client_uuid = "";
                     try {
@@ -300,7 +281,6 @@ public class CodeScreenFragment extends Fragment {
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
-                }
             }
 
             @Override
