@@ -30,7 +30,6 @@ public class PreferenceActivity extends Activity {
         }
         if (sharedpreferences.contains(Email)) {
             email.setText(sharedpreferences.getString(Email, ""));
-
         }
 
     }
@@ -49,7 +48,6 @@ public class PreferenceActivity extends Activity {
         email = (TextView) findViewById(R.id.etEmail);
         name.setText("");
         email.setText("");
-
     }
 
     public void Get(View view) {
@@ -63,7 +61,6 @@ public class PreferenceActivity extends Activity {
         }
         if (sharedpreferences.contains(Email)) {
             email.setText(sharedpreferences.getString(Email, ""));
-
         }
     }
 }

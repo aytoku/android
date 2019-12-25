@@ -1,7 +1,6 @@
 package com.example.myapplication_1.Fragments;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Editable;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -226,7 +224,7 @@ public class CodeScreenFragment extends Fragment {
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
-       // _mapHead.put("Authorization", TOKEN);
+        _mapHead.put("Authorization", TOKEN);
 
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
@@ -271,15 +269,14 @@ public class CodeScreenFragment extends Fragment {
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
-                    final String finalToken = token;
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             Context context = getActivity().getApplicationContext();
-                            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString(TOKEN, finalToken);
-                            editor.apply();
+                            PreferenceManager.getDefaultSharedPreferences(context);
+//                          SharedPreferences.Editor editor = sharedPreferences.edit();
+//                          editor.putString(TOKEN, token);
+//                          editor.apply();
                         }
                     });
 
@@ -303,8 +300,6 @@ public class CodeScreenFragment extends Fragment {
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
-                }else{
-                    Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
                 }
             }
 
