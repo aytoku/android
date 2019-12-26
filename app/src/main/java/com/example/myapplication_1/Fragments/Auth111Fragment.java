@@ -156,7 +156,6 @@ public class Auth111Fragment extends Fragment {
             }
         });
 
-
         Bundle _args = new Bundle();
         final Fragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(_args);
         final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
@@ -200,14 +199,12 @@ public class Auth111Fragment extends Fragment {
             public JsonObject async(String result) throws ClassCastException {
 
                 try {
-
                     JsonParser jsonParser = new JsonParser();
-
                     return  jsonParser.parse(result).getAsJsonObject();
+
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "async: " +e.getMessage());
                 }
-
                 return null;
             }
 
@@ -252,7 +249,6 @@ public class Auth111Fragment extends Fragment {
                     }catch (NullPointerException | JsonParseException e){
                         Log.e(TAG, "sync: " +e.getMessage());
                     }
-
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                 }
             }

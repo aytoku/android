@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 import com.google.gson.JsonObject;
@@ -32,7 +33,7 @@ public class CodeScreenFragment extends Fragment {
     public static final String TAG = "CodeScreenFragment";
     public static final String CLIENT_ID = "Client_id";
     public static final String TOKEN = "Token";
-    public static final String CLIENT = "Client_uuid";
+    public static final String CLIENT_UUID = "Client_uuid";
     public static final String REFRESH_TOKEN = "Refresh_token";
     public static final String REFRESH_EXPIRATION = "Refresh_expiration";
 
@@ -203,29 +204,40 @@ public class CodeScreenFragment extends Fragment {
             }
         });
 
+//        final TextView timer = view.findViewById(R.id.rl_code_timer);
+//        final ProgressBar progressBar = view.findViewById(R.id.rl_code_progress);
+//        final TextView textView = view.findViewById(R.id.cl_code_get_code);
+//        new CountDownTimer(25, 1) {
+//            @Override
+//            public void onTick(long l) {
+//                timer.setText("" + l);
+//                progressBar.setProgress((int) 1/1000);
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                timer.setText("_");
+//                //textView.setText("Введите код еще раз");
+//            }
+//        }.start();
+
         button = view.findViewById(R.id.cl_code_button);
-        sendCode();
-
+        getCode();
     return view;
-
     }
 
     public void preference(){
-        Context context = getActivity().getApplicationContext();
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(TOKEN, "");
-        editor.apply();
+
     }
 
-    public void sendCode(){
+    public void getCode(){
         JsonObject jo = new JsonObject();
         jo.addProperty("device_id", "ffewqewe");
-        jo.addProperty("code", "1080");
+        jo.addProperty("code", 1080);
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
-        _mapHead.put("Authorization", TOKEN);
+       // _mapHead.put("Authorization", TOKEN);
 
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
@@ -254,21 +266,21 @@ public class CodeScreenFragment extends Fragment {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
 
-                    String token = "";
+                    String token = "tok";
                     try {
                         token = result.get("token").getAsString();
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
 
-                    String client_uuid = "";
+                    String client_uuid = "client_uu";
                     try {
                         client_uuid = result.get("client_uuid").getAsString();
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
 
-                    String refresh_token = "";
+                    String refresh_token = "refresh_tok";
                     try {
                         refresh_token = result.get("refresh_token").getAsString();
                     } catch (NullPointerException | JsonParseException e) {
@@ -281,6 +293,27 @@ public class CodeScreenFragment extends Fragment {
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
+
+                    Context context = getActivity().getApplicationContext();
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt(CLIENT_ID, client_id);
+                    editor.putString(TOKEN, token);
+                    editor.putString(CLIENT_UUID, client_uuid);
+                    editor.putString(REFRESH_TOKEN, refresh_token);
+                    editor.putInt(REFRESH_EXPIRATION, refresh_expiration);
+                    editor.apply();
+
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            final Auth111Fragment auth111Fragment = new Auth111Fragment();
+                            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                            fragmentTransaction.replace(R.id.ll_main, auth111Fragment);
+                            fragmentTransaction.commit();
+                        }
+                    });
+
             }
 
             @Override
@@ -288,6 +321,7 @@ public class CodeScreenFragment extends Fragment {
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {}
-        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
+        }).addRequestPropertyHead(_mapHead)
+                .query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
     }
 }
