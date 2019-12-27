@@ -231,15 +231,6 @@ public class Auth111Fragment extends Fragment {
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.ll_main, codeScreenFragment);
                             fragmentTransaction.commit();
-
-//                            NotificationCompat.Builder builder =
-//                                    new NotificationCompat.Builder(getActivity(), CHANNEL_ID)
-//                                            .setContentText("1080")
-//                                            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-//
-//                            NotificationManagerCompat notificationManager =
-//                                    NotificationManagerCompat.from(getActivity());
-//                            notificationManager.notify(NOTIFY_ID, builder.build());
                         }
                     });
                 }else{

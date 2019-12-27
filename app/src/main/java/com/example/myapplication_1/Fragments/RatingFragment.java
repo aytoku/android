@@ -2,6 +2,8 @@ package com.example.myapplication_1.Fragments;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.ArrayMap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +18,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.Adapters.RatingAdapter;
 import com.example.myapplication_1.Adapters.RatingAdapterCard;
 import com.example.myapplication_1.R;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+
+import ru.osety.amironlibrary.Query.QueryGet;
+import ru.osety.amironlibrary.Query.QueryPost;
+import ru.osety.amironlibrary.Query.QueryTemplate;
 
 public class RatingFragment extends Fragment {
 
@@ -200,6 +210,107 @@ public class RatingFragment extends Fragment {
                 System.out.println(praice);
             }
         });
+    }
+
+    public void getData(){
+        final JsonObject jsonObject = new JsonObject();
+        Map<String, String> _mapHead = new ArrayMap<>();
+        _mapHead.put("Accept-Charset", "UTF-8");
+        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
+        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+            @Override
+            public void asyncBefore() throws InterruptedException {
+
+            }
+
+            @Override
+            public JsonObject async(String result) throws ClassCastException {
+                try {
+                    JsonParser jsonParser = new JsonParser();
+                    return jsonParser.parse(result).getAsJsonObject();
+                }catch (NullPointerException | JsonParseException e){
+                    Log.e(TAG, "async" + e.getMessage());
+                }
+                return null;
+            }
+
+            @Override
+            public void sync(JsonObject result) {
+                String uu_id = "uu";
+                try {
+                    uu_id = result.get("uu_id").getAsString();
+                }catch (NullPointerException | JsonParseException e){
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+
+                int value = 0;
+                try {
+                    value = result.get("value").getAsInt();
+                }catch (NullPointerException | JsonParseException e){
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+
+                int tips = 0;
+                try {
+                    tips = result.get("tips").getAsInt();
+                }catch (NullPointerException | JsonParseException e){
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+
+                String comment = "com";
+                try {
+                    comment = result.get("comment").getAsString();
+                }catch (NullPointerException | JsonParseException e){
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+            }
+
+            @Override
+            public void progress(Integer... status) {
+
+            }
+
+            @Override
+            public void cancel(JsonObject result, Throwable throwable) {
+
+            }
+        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/order/rating", jsonObject.toString());
+    }
+
+
+
+    public void getTips(){
+        JsonObject jsonObject = new JsonObject();
+        Map<String, String>_mapHead = new ArrayMap<>();
+        _mapHead.put("Accept-Charset", "UTF-8");
+        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
+
+        new QueryGet<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+            @Override
+            public void asyncBefore() throws InterruptedException {
+
+            }
+
+            @Override
+            public JsonObject async(String result) throws ClassCastException {
+                return null;
+            }
+
+            @Override
+            public void sync(JsonObject result) {
+
+            }
+
+            @Override
+            public void progress(Integer... status) {
+
+            }
+
+            @Override
+            public void cancel(JsonObject result, Throwable throwable) {
+
+            }
+        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
     }
 
     private RatingAdapter.ItemsMenu[] getMenuItems() {
