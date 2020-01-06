@@ -219,10 +219,10 @@ public class RatingFragment extends Fragment {
 
     public void getTips(){
         JsonObject jsonObject = new JsonObject();
-        final JsonArray features = jsonObject.getAsJsonArray("features");
-        JsonArray services = jsonObject.getAsJsonArray("services");
-        JsonArray reasons_for_cancel = jsonObject.getAsJsonArray("reasons_for_cancel");
-        JsonArray tip_percent = jsonObject.getAsJsonArray("tip_percent");
+//        final JsonArray features = jsonObject.getAsJsonArray("features");
+//        final JsonArray services = jsonObject.getAsJsonArray("services");
+//        JsonArray reasons_for_cancel = jsonObject.getAsJsonArray("reasons_for_cancel");
+//        JsonArray tip_percent = jsonObject.getAsJsonArray("tip_percent");
         Map<String, String>_mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
@@ -247,14 +247,44 @@ public class RatingFragment extends Fragment {
             @Override
             public void sync(JsonObject result) {
 
-                result = features.getAsJsonObject();
+//                try {
+//                    JsonArray features = result.getAsJsonArray("features");
+//                    result = features.getAsJsonObject();
+//
+//                }catch (NullPointerException | JsonParseException e){
+//                    Log.e(TAG, "sync" + e.getMessage());
+//                }
+//
+//                try {
+//                    JsonArray services = result.getAsJsonArray("services");
+//                    result = services.getAsJsonObject();
+//
+//                }catch (NullPointerException | JsonParseException e){
+//                    Log.e(TAG, "sync" + e.getMessage());
+//                }
+//
+//                try {
+//                    JsonArray reasons_for_cancel = result.getAsJsonArray("reasons_for_cancel");
+//                    JsonObject JOreasons_for_cancel = reasons_for_cancel.getAsJsonObject();
+//
+//                }catch (NullPointerException | JsonParseException e){
+//                    Log.e(TAG, "sync" + e.getMessage());
+//                }
 
-                String  uuid = "uu_id";
                 try {
-                    uuid = result.get("uuid").getAsString();
+                    JsonArray tip_percent = result.getAsJsonArray("tip_percent");
+                    result = tip_percent.getAsJsonObject();
+
                 }catch (NullPointerException | JsonParseException e){
                     Log.e(TAG, "sync" + e.getMessage());
                 }
+
+//                String  uuid = "uu_id";
+//                try {
+//                    uuid = result.get("uuid").getAsString();
+//                }catch (NullPointerException | JsonParseException e){
+//                    Log.e(TAG, "sync" + e.getMessage());
+//                }
 
 //                String name = "Name";
 //                try {
