@@ -237,7 +237,6 @@ public class CodeScreenFragment extends Fragment {
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
-       // _mapHead.put("Authorization", TOKEN);
 
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
@@ -313,7 +312,6 @@ public class CodeScreenFragment extends Fragment {
                             fragmentTransaction.commit();
                         }
                     });
-
             }
 
             @Override

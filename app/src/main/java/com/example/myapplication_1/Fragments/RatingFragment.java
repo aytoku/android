@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.Adapters.RatingAdapter;
 import com.example.myapplication_1.Adapters.RatingAdapterCard;
 import com.example.myapplication_1.R;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
@@ -190,6 +191,10 @@ public class RatingFragment extends Fragment {
         });
 
         send();
+
+        getTips();
+        getData();
+
         return view;
     }
 
@@ -212,15 +217,91 @@ public class RatingFragment extends Fragment {
         });
     }
 
+    public void getTips(){
+        JsonObject jsonObject = new JsonObject();
+        final JsonArray features = jsonObject.getAsJsonArray("features");
+        JsonArray services = jsonObject.getAsJsonArray("services");
+        JsonArray reasons_for_cancel = jsonObject.getAsJsonArray("reasons_for_cancel");
+        JsonArray tip_percent = jsonObject.getAsJsonArray("tip_percent");
+        Map<String, String>_mapHead = new ArrayMap<>();
+        _mapHead.put("Accept-Charset", "UTF-8");
+        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
+
+        new QueryGet<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+            @Override
+            public void asyncBefore() throws InterruptedException {
+            }
+
+            @Override
+            public JsonObject async(String result) throws ClassCastException {
+                try {
+                    JsonParser jsonParser = new JsonParser();
+                    return  jsonParser.parse(result).getAsJsonObject();
+
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+                return null;
+            }
+
+            @Override
+            public void sync(JsonObject result) {
+
+                result = features.getAsJsonObject();
+
+                String  uuid = "uu_id";
+                try {
+                    uuid = result.get("uuid").getAsString();
+                }catch (NullPointerException | JsonParseException e){
+                    Log.e(TAG, "sync" + e.getMessage());
+                }
+
+//                String name = "Name";
+//                try {
+//                    name = result.get("name").getAsString();
+//                }catch (NullPointerException | JsonParseException e){
+//                    Log.e(TAG, "sync" + e.getMessage());
+//                }
+//
+//                String comment = "com";
+//                try {
+//                    comment = result.get("comment").getAsString();
+//                }catch (NullPointerException|JsonParseException e){
+//                    Log.e(TAG,"sync" + e.getMessage());
+//                }
+//
+//                String tag = "TAG";
+//                try {
+//                    tag = result.get("tag").getAsString();
+//                }catch (NullPointerException|JsonParseException e){
+//                    Log.e(TAG,"sync" + e.getMessage());
+//                }
+            }
+
+            @Override
+            public void progress(Integer... status) {
+
+            }
+
+            @Override
+            public void cancel(JsonObject result, Throwable throwable) {
+
+            }
+        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
+    }
+
     public void getData(){
         final JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("order_uuid", "585f892b-dfa5-4d07-9bc7-546cc000fa34");
+        jsonObject.addProperty("value",2);
+        jsonObject.addProperty("tip",23);
+        jsonObject.addProperty("comment","рулил ногами");
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
             public void asyncBefore() throws InterruptedException {
-
             }
 
             @Override
@@ -236,81 +317,16 @@ public class RatingFragment extends Fragment {
 
             @Override
             public void sync(JsonObject result) {
-                String uu_id = "uu";
-                try {
-                    uu_id = result.get("uu_id").getAsString();
-                }catch (NullPointerException | JsonParseException e){
-                    Log.e(TAG, "sync: " +e.getMessage());
-                }
-
-                int value = 0;
-                try {
-                    value = result.get("value").getAsInt();
-                }catch (NullPointerException | JsonParseException e){
-                    Log.e(TAG, "sync: " +e.getMessage());
-                }
-
-                int tips = 0;
-                try {
-                    tips = result.get("tips").getAsInt();
-                }catch (NullPointerException | JsonParseException e){
-                    Log.e(TAG, "sync: " +e.getMessage());
-                }
-
-                String comment = "com";
-                try {
-                    comment = result.get("comment").getAsString();
-                }catch (NullPointerException | JsonParseException e){
-                    Log.e(TAG, "sync: " +e.getMessage());
-                }
             }
 
             @Override
             public void progress(Integer... status) {
-
             }
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {
-
             }
         }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/order/rating", jsonObject.toString());
-    }
-
-
-
-    public void getTips(){
-        JsonObject jsonObject = new JsonObject();
-        Map<String, String>_mapHead = new ArrayMap<>();
-        _mapHead.put("Accept-Charset", "UTF-8");
-        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
-
-        new QueryGet<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
-            @Override
-            public void asyncBefore() throws InterruptedException {
-
-            }
-
-            @Override
-            public JsonObject async(String result) throws ClassCastException {
-                return null;
-            }
-
-            @Override
-            public void sync(JsonObject result) {
-
-            }
-
-            @Override
-            public void progress(Integer... status) {
-
-            }
-
-            @Override
-            public void cancel(JsonObject result, Throwable throwable) {
-
-            }
-        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
     }
 
     private RatingAdapter.ItemsMenu[] getMenuItems() {
