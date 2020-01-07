@@ -19,6 +19,7 @@ import com.example.myapplication_1.Adapters.RatingAdapter;
 import com.example.myapplication_1.Adapters.RatingAdapterCard;
 import com.example.myapplication_1.R;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
@@ -63,6 +64,7 @@ public class RatingFragment extends Fragment {
     private ImageView star;
     private String tips;
     private int praice;
+    List<Integer> list = new ArrayList<Integer>();
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -247,65 +249,17 @@ public class RatingFragment extends Fragment {
             @Override
             public void sync(JsonObject result) {
 
-//                try {
-//                    JsonArray features = result.getAsJsonArray("features");
-//                    result = features.getAsJsonObject();
-//
-//                }catch (NullPointerException | JsonParseException e){
-//                    Log.e(TAG, "sync" + e.getMessage());
-//                }
-//
-//                try {
-//                    JsonArray services = result.getAsJsonArray("services");
-//                    result = services.getAsJsonObject();
-//
-//                }catch (NullPointerException | JsonParseException e){
-//                    Log.e(TAG, "sync" + e.getMessage());
-//                }
-//
-//                try {
-//                    JsonArray reasons_for_cancel = result.getAsJsonArray("reasons_for_cancel");
-//                    JsonObject JOreasons_for_cancel = reasons_for_cancel.getAsJsonObject();
-//
-//                }catch (NullPointerException | JsonParseException e){
-//                    Log.e(TAG, "sync" + e.getMessage());
+//                JsonArray tip_percent = result.getAsJsonArray("tip_percent");
+//                for(int i=0; i<tip_percent.size();i++){
+//                    JsonElement value = tip_percent.get(i);
+//                    JsonElement v = value;
 //                }
 
-                try {
-                    JsonArray tip_percent = result.getAsJsonArray("tip_percent");
-                    result = tip_percent.getAsJsonObject();
+                JsonArray tip_percent = result.getAsJsonArray("tip_percent");
+                for (JsonElement i : tip_percent) {
+                    int e = i.getAsInt();
 
-                }catch (NullPointerException | JsonParseException e){
-                    Log.e(TAG, "sync" + e.getMessage());
                 }
-
-//                String  uuid = "uu_id";
-//                try {
-//                    uuid = result.get("uuid").getAsString();
-//                }catch (NullPointerException | JsonParseException e){
-//                    Log.e(TAG, "sync" + e.getMessage());
-//                }
-
-//                String name = "Name";
-//                try {
-//                    name = result.get("name").getAsString();
-//                }catch (NullPointerException | JsonParseException e){
-//                    Log.e(TAG, "sync" + e.getMessage());
-//                }
-//
-//                String comment = "com";
-//                try {
-//                    comment = result.get("comment").getAsString();
-//                }catch (NullPointerException|JsonParseException e){
-//                    Log.e(TAG,"sync" + e.getMessage());
-//                }
-//
-//                String tag = "TAG";
-//                try {
-//                    tag = result.get("tag").getAsString();
-//                }catch (NullPointerException|JsonParseException e){
-//                    Log.e(TAG,"sync" + e.getMessage());
-//                }
             }
 
             @Override
