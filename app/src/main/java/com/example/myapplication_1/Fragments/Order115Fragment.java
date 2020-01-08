@@ -30,7 +30,7 @@ public class Order115Fragment extends Fragment {
     }
 
     RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
+    RecyclerView.Adapter order115Adapter;
     private List<Order115Adapter.ItemsMenu> itemsMenuList;
 
     @Override
@@ -49,8 +49,8 @@ public class Order115Fragment extends Fragment {
 
             Order115Adapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new Order115Adapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            order115Adapter = new Order115Adapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(order115Adapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

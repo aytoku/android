@@ -204,30 +204,9 @@ public class CodeScreenFragment extends Fragment {
             }
         });
 
-//        final TextView timer = view.findViewById(R.id.rl_code_timer);
-//        final ProgressBar progressBar = view.findViewById(R.id.rl_code_progress);
-//        final TextView textView = view.findViewById(R.id.cl_code_get_code);
-//        new CountDownTimer(25, 1) {
-//            @Override
-//            public void onTick(long l) {
-//                timer.setText("" + l);
-//                progressBar.setProgress((int) 1/1000);
-//            }
-//
-//            @Override
-//            public void onFinish() {
-//                timer.setText("_");
-//                //textView.setText("Введите код еще раз");
-//            }
-//        }.start();
-
         button = view.findViewById(R.id.cl_code_button);
         getCode();
     return view;
-    }
-
-    public void preference(){
-
     }
 
     public void getCode(){

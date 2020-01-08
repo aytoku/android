@@ -32,7 +32,7 @@ public class AddressFragment extends Fragment {
         return f;
     }
 
-    RecyclerView.Adapter adapterGridViewMenu;
+    RecyclerView.Adapter addressAdapter;
     private List<AddressAdapter.ItemsMenu> itemsMenuList;
 
     @Override
@@ -75,8 +75,8 @@ public class AddressFragment extends Fragment {
 
             AddressAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AddressAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            addressAdapter = new AddressAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(addressAdapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
@@ -108,8 +108,8 @@ public class AddressFragment extends Fragment {
                             }
                         }
                     }));
-            adapterGridViewMenu.notifyItemInserted(itemsMenuList.size()-1);
-            adapterGridViewMenu.notifyDataSetChanged();
+            addressAdapter.notifyItemInserted(itemsMenuList.size()-1);
+            addressAdapter.notifyDataSetChanged();
 
         } catch(NumberFormatException e) {
             Toast.makeText(getActivity().getApplicationContext(), "The field is empty",

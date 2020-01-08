@@ -66,8 +66,8 @@ public class CountryCodeSelectionFragment extends Fragment {
 
             CountryCodeSelectionAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            CountryCodeSelectionAdapter adapterGridViewMenu = new CountryCodeSelectionAdapter(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            CountryCodeSelectionAdapter countryCodeSelectionAdapter = new CountryCodeSelectionAdapter(itemsMenu, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter( countryCodeSelectionAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

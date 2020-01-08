@@ -31,6 +31,5 @@ public class AddPointFragment extends Fragment {
                 container, false);
 
         return view;
-
     }
 }

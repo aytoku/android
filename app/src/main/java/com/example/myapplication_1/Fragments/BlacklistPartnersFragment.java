@@ -75,8 +75,8 @@ public class BlacklistPartnersFragment extends Fragment {
 
         try{
             BlacklistPartnersAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            BlacklistPartnersAdapter adapterGridViewMenu = new BlacklistPartnersAdapter(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            BlacklistPartnersAdapter blacklistPartnersAdapter = new BlacklistPartnersAdapter(itemsMenu, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter( blacklistPartnersAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

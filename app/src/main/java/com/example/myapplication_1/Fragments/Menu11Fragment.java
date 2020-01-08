@@ -31,7 +31,7 @@ public class Menu11Fragment extends Fragment {
     }
 
     RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
+    RecyclerView.Adapter menu11Adapter;
     private List<AdapterMenu11.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,8 +49,8 @@ public class Menu11Fragment extends Fragment {
 
             AdapterMenu11.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            menu11Adapter = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(menu11Adapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

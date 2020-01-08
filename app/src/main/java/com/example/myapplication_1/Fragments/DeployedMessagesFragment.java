@@ -31,7 +31,7 @@ public class DeployedMessagesFragment extends Fragment {
     }
 
     RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
+    RecyclerView.Adapter deployedMessagesAdapter;
     private List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,8 +50,8 @@ public class DeployedMessagesFragment extends Fragment {
 
             DeployedMessagesAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new DeployedMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            deployedMessagesAdapter = new DeployedMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(deployedMessagesAdapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
@@ -71,7 +71,7 @@ public class DeployedMessagesFragment extends Fragment {
 
                 int position = viewHolder.getAdapterPosition();
                 itemsMenuList.remove(position);
-                adapterGridViewMenu.notifyDataSetChanged();
+                deployedMessagesAdapter.notifyDataSetChanged();
             }
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);

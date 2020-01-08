@@ -107,8 +107,8 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
         try {
             AdapterWish.ItemsMenu[] itemsMenu = getMenuItems();
 
-            AdapterWish adapterGridViewMenu = new AdapterWish(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            AdapterWish adapterWish = new AdapterWish(itemsMenu, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(adapterWish);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
             recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());

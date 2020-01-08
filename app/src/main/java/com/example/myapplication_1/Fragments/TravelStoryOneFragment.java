@@ -80,8 +80,8 @@ public class TravelStoryOneFragment extends Fragment {
 
             CellTravelStoryOneCardAdapter.TravelStoryRow[] itemsMenu = getMenuItems();
 
-            CellTravelStoryOneCardAdapter adapterGridViewMenu = new CellTravelStoryOneCardAdapter(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            CellTravelStoryOneCardAdapter cellTravelStoryOneCardAdapter = new CellTravelStoryOneCardAdapter(itemsMenu, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter( cellTravelStoryOneCardAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

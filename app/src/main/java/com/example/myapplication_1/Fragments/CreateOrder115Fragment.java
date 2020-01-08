@@ -36,7 +36,7 @@ public class CreateOrder115Fragment extends Fragment {
     }
 
     RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
+    RecyclerView.Adapter createOrder115Adapter;
     private List<AdapterCreateOrder115.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,8 +64,8 @@ public class CreateOrder115Fragment extends Fragment {
 
             AdapterCreateOrder115.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AdapterCreateOrder115(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            createOrder115Adapter = new AdapterCreateOrder115(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(createOrder115Adapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
@@ -83,7 +83,7 @@ public class CreateOrder115Fragment extends Fragment {
                 int position_target = target.getAdapterPosition();
 
                 Collections.swap(itemsMenuList, position_dragged, position_target);
-                adapterGridViewMenu.notifyItemMoved(position_dragged, position_target);
+                createOrder115Adapter.notifyItemMoved(position_dragged, position_target);
 
                 return true;
             }
@@ -106,8 +106,8 @@ public class CreateOrder115Fragment extends Fragment {
                     R.drawable.ic_cross,
                     "Максима Горького, 123",
                     R.drawable.icon_three_lines));
-            adapterGridViewMenu.notifyItemInserted(itemsMenuList.size()-1);
-            adapterGridViewMenu.notifyDataSetChanged();
+            createOrder115Adapter.notifyItemInserted(itemsMenuList.size()-1);
+            createOrder115Adapter.notifyDataSetChanged();
 
         } catch(NumberFormatException e) {
             Toast.makeText(getActivity().getApplicationContext(), "The field is empty",

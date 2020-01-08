@@ -66,8 +66,8 @@ public class SettingsFragment extends Fragment {
         try {
             SettingsAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            SettingsAdapter adapterGridViewMenu = new SettingsAdapter(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            SettingsAdapter settingsAdapter = new SettingsAdapter(itemsMenu, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter( settingsAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

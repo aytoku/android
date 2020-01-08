@@ -93,18 +93,6 @@ public class Auth111Fragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 int i = editText.getText().toString().length();
 
-//                if(i > 6){
-//                    alert.setText("Указан неверный номер");
-//                    editText.setTextColor(Color.parseColor("#EE4D3F"));
-//                    country_code.setTextColor(Color.parseColor("#EE4D3F"));
-//                    alert.setTextColor(Color.parseColor("#EE4D3F"));
-//                }else {
-//                    alert.setVisibility(View.GONE);
-//                    editText.setTextColor(Color.parseColor("#000000"));
-//                    country_code.setTextColor(Color.parseColor("#000000"));
-//                    alert.setTextColor(Color.parseColor("#000000"));
-//                }
-
                 if (i < 4)
                     len[0] = 0;
                 if (i == 4 && len[0] < 5) {

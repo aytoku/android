@@ -77,8 +77,8 @@ public class PartnersFragment extends Fragment {
         try {
             PartnersAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            PartnersAdapter adapterGridViewMenu = new PartnersAdapter(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            PartnersAdapter partnersAdapter = new PartnersAdapter(itemsMenu, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter( partnersAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

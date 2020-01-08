@@ -66,8 +66,8 @@ public class TravelStoryFragment extends Fragment {
 
             TravelStoryAdapter.TravelStoryCard[] itemsMenu = getMenuItems();
 
-            TravelStoryAdapter adapterGridViewMenu = new TravelStoryAdapter(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            TravelStoryAdapter travelStoryAdapter = new TravelStoryAdapter(itemsMenu, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter( travelStoryAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

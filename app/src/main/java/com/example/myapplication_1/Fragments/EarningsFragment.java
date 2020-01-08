@@ -50,8 +50,8 @@ public class EarningsFragment extends Fragment {
 
             EarningsPageAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            EarningsPageAdapter adapterGridViewMenu = new EarningsPageAdapter(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
+            EarningsPageAdapter earningsPageAdapter = new EarningsPageAdapter(itemsMenu, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter( earningsPageAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );

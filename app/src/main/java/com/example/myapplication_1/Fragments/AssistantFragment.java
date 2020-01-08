@@ -30,7 +30,7 @@ public class AssistantFragment extends Fragment {
         return f;
     }
 
-    RecyclerView.Adapter adapterGridViewMenu;
+    RecyclerView.Adapter assistantAdapter;
     private List<AssistantAdapter.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,8 +49,8 @@ public class AssistantFragment extends Fragment {
 
             AssistantAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new AssistantAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            assistantAdapter = new AssistantAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(assistantAdapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
@@ -70,7 +70,7 @@ public class AssistantFragment extends Fragment {
 
                 int position = viewHolder.getAdapterPosition();
                 itemsMenuList.remove(position);
-                adapterGridViewMenu.notifyDataSetChanged();
+                assistantAdapter.notifyDataSetChanged();
             }
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);

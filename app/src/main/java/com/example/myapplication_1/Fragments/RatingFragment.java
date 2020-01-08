@@ -48,8 +48,8 @@ public class RatingFragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView rv1;
-    RecyclerView.Adapter adapterGridViewMenu;
-    RecyclerView.Adapter adapterGridViewMenu1;
+    RecyclerView.Adapter ratingAdapter;
+    RecyclerView.Adapter ratingCardAdapter;
     private List<RatingAdapter.ItemsMenu> itemsMenuList;
     private List<RatingAdapterCard.ItemsMenu1> itemsMenuList1;
     private ImageView star1;
@@ -94,8 +94,8 @@ public class RatingFragment extends Fragment {
         try {
             RatingAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new RatingAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
+            ratingAdapter = new RatingAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerViewMenu.setAdapter(ratingAdapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
             recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
@@ -109,8 +109,8 @@ public class RatingFragment extends Fragment {
         try {
             RatingAdapterCard.ItemsMenu1[] itemsMenu1 = getMenuItems1();
             itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu1));
-            adapterGridViewMenu1 = new RatingAdapterCard(itemsMenuList1, getActivity().getBaseContext());
-            recyclerViewMenu1.setAdapter(adapterGridViewMenu1);
+            ratingCardAdapter = new RatingAdapterCard(itemsMenuList1, getActivity().getBaseContext());
+            recyclerViewMenu1.setAdapter(ratingCardAdapter);
             recyclerViewMenu1.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
             recyclerViewMenu1.setItemAnimator(new DefaultItemAnimator());
@@ -282,7 +282,7 @@ public class RatingFragment extends Fragment {
                 for (JsonElement i : tip_percent) {
                     e = i.getAsInt();
                     list.add(e);
-                    adapterGridViewMenu1.notifyDataSetChanged();
+                    ratingCardAdapter.notifyDataSetChanged();
                 }
             }
 
