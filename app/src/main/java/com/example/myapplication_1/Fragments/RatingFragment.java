@@ -107,7 +107,7 @@ public class RatingFragment extends Fragment {
         final RecyclerView recyclerViewMenu1 = rv1;
 
         try {
-            RatingAdapterCard.TipsList[] tipsLists = getMenuItems1();
+            RatingAdapterCard.TipsList[] tipsLists = getTipsList();
             tipsList = new ArrayList<>(Arrays.asList(tipsLists));
             ratingCardAdapter = new RatingAdapterCard(list, getActivity().getBaseContext());
             recyclerViewMenu1.setAdapter(ratingCardAdapter);
@@ -460,7 +460,7 @@ public class RatingFragment extends Fragment {
         return arr;
     }
 
-    private RatingAdapterCard.TipsList[] getMenuItems1(){
+    private RatingAdapterCard.TipsList[] getTipsList(){
 
         RatingAdapterCard.TipsList[] arr1 = new RatingAdapterCard.TipsList[]{
 
