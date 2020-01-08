@@ -65,10 +65,6 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
 
     public static class TipsList {
 
-        public interface CallBack {
-            void call(TipsList tipsList);
-        }
-
         List<Integer> list;
 
         public TipsList(List<Integer> list) {
