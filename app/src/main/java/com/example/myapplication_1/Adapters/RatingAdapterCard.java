@@ -44,7 +44,7 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
 
         final ItemsMenu1 _item = itemsMenuList1.get(i);
 
-        viewHolder.price.setText(_item.getStr());
+       // viewHolder.price.setText(_item.getStr());
         if(selectItem == i){
             viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#F3F3F3"));
         }else{
@@ -74,18 +74,20 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
 
         private @ColorInt
         int colorBackgroundInt;
-        private String price;
+        //private String price;
+        List<Integer> list;
         private CallBack callBack;
 
-        public ItemsMenu1(int colorBackgroundRes, String price, CallBack callBack) {
+        public ItemsMenu1(int colorBackgroundRes, List<Integer> list, CallBack callBack) {
             this.colorBackgroundInt = colorBackgroundRes;
-            this.price = price;
+            this.list = list;
+            //this.price = price;
             this.callBack = callBack;
         }
 
-        public String getStr() {
-            return price;
-        }
+//        public String getStr() {
+//            return price;
+//        }
 
         public int getColorBackground() {
             return colorBackgroundInt;

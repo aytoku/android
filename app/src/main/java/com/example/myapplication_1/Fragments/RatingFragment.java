@@ -63,8 +63,9 @@ public class RatingFragment extends Fragment {
     private CardView button;
     private ImageView star;
     private String tips;
-    private int praice;
+    private int praise;
     List<Integer> list = new ArrayList<Integer>();
+    int e;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,14 +92,13 @@ public class RatingFragment extends Fragment {
         final RecyclerView recyclerViewMenu = rv;
 
         try {
-
             RatingAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new RatingAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
-                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+                    new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
+            recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -107,14 +107,13 @@ public class RatingFragment extends Fragment {
         final RecyclerView recyclerViewMenu1 = rv1;
 
         try {
-
             RatingAdapterCard.ItemsMenu1[] itemsMenu1 = getMenuItems1();
             itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu1));
             adapterGridViewMenu1 = new RatingAdapterCard(itemsMenuList1, getActivity().getBaseContext());
             recyclerViewMenu1.setAdapter(adapterGridViewMenu1);
             recyclerViewMenu1.setLayoutManager(
-                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
-            recyclerViewMenu1.setItemAnimator( new DefaultItemAnimator() );
+                    new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
+            recyclerViewMenu1.setItemAnimator(new DefaultItemAnimator());
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -123,25 +122,21 @@ public class RatingFragment extends Fragment {
         star1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 allStarsGrey();
                 if(view.getId()==R.id.cl_rating_ll_rating_red_star1){
                     star1.setImageDrawable(imgStarRed);
                 }
-
             }
         });
 
         star2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 allStarsGrey();
                 if(view.getId()==R.id.cl_rating_ll_rating_red_star2){
 
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
-
                 }
             }
         });
@@ -149,14 +144,12 @@ public class RatingFragment extends Fragment {
         star3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 allStarsGrey();
                 if(view.getId()==R.id.cl_rating_ll_rating_red_star3) {
 
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
-
                 }
             }
         });
@@ -164,7 +157,6 @@ public class RatingFragment extends Fragment {
         star4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 allStarsGrey();
                 if(view.getId()==R.id.cl_rating_ll_rating_red_star4) {
 
@@ -179,7 +171,6 @@ public class RatingFragment extends Fragment {
         star5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 allStarsGrey();
                 if(view.getId()==R.id.cl_rating_ll_rating_red_star5) {
 
@@ -196,6 +187,7 @@ public class RatingFragment extends Fragment {
 
         getTips();
         getData();
+        getStepsPercent();
 
         return view;
     }
@@ -214,17 +206,13 @@ public class RatingFragment extends Fragment {
             public void onClick(View view) {
                 System.out.println(star);
                 System.out.println(tips);
-                System.out.println(praice);
+                System.out.println(praise);
             }
         });
     }
 
     public void getTips(){
-        JsonObject jsonObject = new JsonObject();
-//        final JsonArray features = jsonObject.getAsJsonArray("features");
-//        final JsonArray services = jsonObject.getAsJsonArray("services");
-//        JsonArray reasons_for_cancel = jsonObject.getAsJsonArray("reasons_for_cancel");
-//        JsonArray tip_percent = jsonObject.getAsJsonArray("tip_percent");
+        final JsonObject jsonObject = new JsonObject();
         Map<String, String>_mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
@@ -249,29 +237,110 @@ public class RatingFragment extends Fragment {
             @Override
             public void sync(JsonObject result) {
 
-//                JsonArray tip_percent = result.getAsJsonArray("tip_percent");
-//                for(int i=0; i<tip_percent.size();i++){
-//                    JsonElement value = tip_percent.get(i);
-//                    JsonElement v = value;
-//                }
+                String features_uuid = "uu_id";
+                String features_name = "Name";
+                String features_comment = "com";
+                String features_tag = "TAG";
+                JsonArray features = result.getAsJsonArray("features");
+                JsonObject features_jo;
+                for(int i = 0; i < features.size(); i++){
+                    features_jo = (JsonObject) features.get(i);
+                    features_uuid = features_jo.get("uuid").getAsString();
+                    features_name = features_jo.get("name").getAsString();
+                    features_comment = features_jo.get("comment").getAsString();
+                    features_tag = features_jo.get("tag").getAsString();
+                }
+
+                String services_uuid = "uu_id";
+                String services_name = "Name";
+                String services_comment = "com";
+                String services_tag = "TAG";
+                JsonArray services = result.getAsJsonArray("services");
+                JsonObject services_jo;
+                for(int i = 0; i < services.size(); i++){
+                    services_jo = (JsonObject) services.get(i);
+                    services_uuid = services_jo.get("uuid").getAsString();
+                    services_name = services_jo.get("name").getAsString();
+                    services_comment = services_jo.get("comment").getAsString();
+                    services_tag = services_jo.get("tag").getAsString();
+                }
+
+                String reason_name = "r_name";
+                String reason_title = "r_title";
+                String reason_image = "r_image";
+                JsonArray reasons_for_cancel = result.getAsJsonArray("reasons_for_cancel");
+                JsonObject reasons_for_cancel_jo;
+                for(int i = 0; i < reasons_for_cancel.size(); i++){
+                    services_jo = (JsonObject) reasons_for_cancel.get(i);
+                    reason_name = services_jo.get("reason_name").getAsString();
+                    reason_title = services_jo.get("reason_title").getAsString();
+                    reason_image = services_jo.get("reason_image").getAsString();
+                }
+
 
                 JsonArray tip_percent = result.getAsJsonArray("tip_percent");
                 for (JsonElement i : tip_percent) {
-                    int e = i.getAsInt();
-
+                    e = i.getAsInt();
+                    list.add(e);
+                    adapterGridViewMenu1.notifyDataSetChanged();
                 }
             }
 
             @Override
             public void progress(Integer... status) {
-
             }
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {
-
             }
         }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
+    }
+
+    public void getStepsPercent(){
+        final JsonObject jsonObject = new JsonObject();
+        Map<String, String>_mapHead = new ArrayMap<>();
+        _mapHead.put("Accept-Charset", "UTF-8");
+        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
+
+        new QueryGet<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+            @Override
+            public void asyncBefore() throws InterruptedException {
+            }
+
+            @Override
+            public JsonObject async(String result) throws ClassCastException {
+                try {
+                    JsonParser jsonParser = new JsonParser();
+                    return  jsonParser.parse(result).getAsJsonObject();
+
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+                return null;
+            }
+
+            @Override
+            public void sync(JsonObject result) {
+
+                String step_percent = "s_percent";
+                String step_comment = "s_comment";
+                JsonArray steps_with_comment = result.getAsJsonArray("steps_with_comment");
+                JsonObject steps_with_comment_jo;
+                for(int i = 0; i < steps_with_comment.size(); i++){
+                    steps_with_comment_jo = (JsonObject) steps_with_comment.get(i);
+                    step_percent = steps_with_comment_jo.get("step_percent").getAsString();
+                    step_comment = steps_with_comment_jo.get("step_comment").getAsString();
+                }
+            }
+
+            @Override
+            public void progress(Integer... status) {
+            }
+
+            @Override
+            public void cancel(JsonObject result, Throwable throwable) {
+            }
+        }).addRequestPropertyHead(_mapHead).query("https://crm.apis.stage.faem.pro/api/v2/increasedfare", jsonObject.toString());
     }
 
     public void getData(){
@@ -326,7 +395,7 @@ public class RatingFragment extends Fragment {
                             public void call(RatingAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     itemsMenu.getStr();
-                                    praice = itemsMenu.getStr();
+                                    praise = itemsMenu.getStr();
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -344,7 +413,7 @@ public class RatingFragment extends Fragment {
                             public void call(RatingAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     itemsMenu.getStr();
-                                    praice = itemsMenu.getStr();
+                                    praise = itemsMenu.getStr();
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -362,7 +431,7 @@ public class RatingFragment extends Fragment {
                             public void call(RatingAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     itemsMenu.getStr();
-                                    praice = itemsMenu.getStr();
+                                    praise = itemsMenu.getStr();
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -380,7 +449,7 @@ public class RatingFragment extends Fragment {
                             public void call(RatingAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     itemsMenu.getStr();
-                                    praice = itemsMenu.getStr();
+                                    praise = itemsMenu.getStr();
 
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -398,15 +467,11 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "10 \u20BD",
+                        list,
                         new RatingAdapterCard.ItemsMenu1.CallBack(){
                             @Override
                             public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
                                 try{
-
-                                    itemsMenu.getStr();
-                                    tips = itemsMenu.getStr();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -416,15 +481,11 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "20 \u20BD",
+                        list,
                         new RatingAdapterCard.ItemsMenu1.CallBack(){
                             @Override
                             public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
                                 try{
-
-                                    itemsMenu.getStr();
-                                    tips = itemsMenu.getStr();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -434,15 +495,11 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "30 \u20BD",
+                        list,
                         new RatingAdapterCard.ItemsMenu1.CallBack(){
                             @Override
                             public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
                                 try{
-
-                                    itemsMenu.getStr();
-                                    tips = itemsMenu.getStr();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -452,15 +509,11 @@ public class RatingFragment extends Fragment {
 
                 new RatingAdapterCard.ItemsMenu1(
                         getResources().getColor(R.color.my_gray),
-                        "40 \u20BD",
+                        list,
                         new RatingAdapterCard.ItemsMenu1.CallBack(){
                             @Override
                             public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
                                 try{
-
-                                    itemsMenu.getStr();
-                                    tips = itemsMenu.getStr();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
