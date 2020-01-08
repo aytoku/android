@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,11 +20,11 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
 
     private final LayoutInflater layoutInflater;
     private Context context;
-    private List<ItemsMenu1> itemsMenuList1;
+    private List<Integer>list;
     private int selectItem = -1;
 
-    public RatingAdapterCard(List<RatingAdapterCard.ItemsMenu1> itemsMenuList1, Context context) {
-        this.itemsMenuList1 = itemsMenuList1;
+    public RatingAdapterCard(List<Integer> list, Context context) {
+        this.list = list;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -42,9 +41,8 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu1 _item = itemsMenuList1.get(i);
+        final Integer _item = list.get(i);
 
-       // viewHolder.price.setText(_item.getStr());
         if(selectItem == i){
             viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#F3F3F3"));
         }else{
@@ -56,41 +54,25 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
                 notifyItemChanged(selectItem);
                 selectItem = i;
                 notifyItemChanged(i);
-                _item.callBack.call(_item);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return itemsMenuList1.size();
+        return list.size();
     }
 
-    public static class ItemsMenu1 {
+    public static class TipsList {
 
         public interface CallBack {
-            void call(ItemsMenu1 itemsMenu);
+            void call(TipsList tipsList);
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
-        //private String price;
         List<Integer> list;
-        private CallBack callBack;
 
-        public ItemsMenu1(int colorBackgroundRes, List<Integer> list, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public TipsList(List<Integer> list) {
             this.list = list;
-            //this.price = price;
-            this.callBack = callBack;
-        }
-
-//        public String getStr() {
-//            return price;
-//        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

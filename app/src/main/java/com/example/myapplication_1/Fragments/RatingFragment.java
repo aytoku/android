@@ -51,7 +51,7 @@ public class RatingFragment extends Fragment {
     RecyclerView.Adapter ratingAdapter;
     RecyclerView.Adapter ratingCardAdapter;
     private List<RatingAdapter.ItemsMenu> itemsMenuList;
-    private List<RatingAdapterCard.ItemsMenu1> itemsMenuList1;
+    private List<RatingAdapterCard.TipsList> tipsList;
     private ImageView star1;
     private ImageView star2;
     private ImageView star3;
@@ -107,9 +107,9 @@ public class RatingFragment extends Fragment {
         final RecyclerView recyclerViewMenu1 = rv1;
 
         try {
-            RatingAdapterCard.ItemsMenu1[] itemsMenu1 = getMenuItems1();
-            itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu1));
-            ratingCardAdapter = new RatingAdapterCard(itemsMenuList1, getActivity().getBaseContext());
+            RatingAdapterCard.TipsList[] tipsLists = getMenuItems1();
+            tipsList = new ArrayList<>(Arrays.asList(tipsLists));
+            ratingCardAdapter = new RatingAdapterCard(list, getActivity().getBaseContext());
             recyclerViewMenu1.setAdapter(ratingCardAdapter);
             recyclerViewMenu1.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
@@ -276,7 +276,6 @@ public class RatingFragment extends Fragment {
                     reason_title = services_jo.get("reason_title").getAsString();
                     reason_image = services_jo.get("reason_image").getAsString();
                 }
-
 
                 JsonArray tip_percent = result.getAsJsonArray("tip_percent");
                 for (JsonElement i : tip_percent) {
@@ -461,64 +460,24 @@ public class RatingFragment extends Fragment {
         return arr;
     }
 
-    private RatingAdapterCard.ItemsMenu1[] getMenuItems1(){
+    private RatingAdapterCard.TipsList[] getMenuItems1(){
 
-        RatingAdapterCard.ItemsMenu1[] arr1 = new RatingAdapterCard.ItemsMenu1[]{
+        RatingAdapterCard.TipsList[] arr1 = new RatingAdapterCard.TipsList[]{
 
-                new RatingAdapterCard.ItemsMenu1(
-                        getResources().getColor(R.color.my_gray),
-                        list,
-                        new RatingAdapterCard.ItemsMenu1.CallBack(){
-                            @Override
-                            public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
-                                try{
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
+                new RatingAdapterCard.TipsList(
+                        list
                 ),
 
-                new RatingAdapterCard.ItemsMenu1(
-                        getResources().getColor(R.color.my_gray),
-                        list,
-                        new RatingAdapterCard.ItemsMenu1.CallBack(){
-                            @Override
-                            public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
-                                try{
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
+                new RatingAdapterCard.TipsList(
+                        list
                 ),
 
-                new RatingAdapterCard.ItemsMenu1(
-                        getResources().getColor(R.color.my_gray),
-                        list,
-                        new RatingAdapterCard.ItemsMenu1.CallBack(){
-                            @Override
-                            public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
-                                try{
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
+                new RatingAdapterCard.TipsList(
+                        list
                 ),
 
-                new RatingAdapterCard.ItemsMenu1(
-                        getResources().getColor(R.color.my_gray),
-                        list,
-                        new RatingAdapterCard.ItemsMenu1.CallBack(){
-                            @Override
-                            public void call(RatingAdapterCard.ItemsMenu1 itemsMenu) {
-                                try{
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
+                new RatingAdapterCard.TipsList(
+                        list
                 )
         };
         return arr1;
