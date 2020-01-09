@@ -54,7 +54,7 @@ public class RatingFragment extends Fragment {
     List<Integer> list = new ArrayList<Integer>();
     List<TipsList>tipsLists = new ArrayList<>();
     List<PraiseList>praiseLists = new ArrayList<>();
-    int e;
+    int e;  
 
     public static RatingFragment getInstance(Bundle args) {
 
