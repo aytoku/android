@@ -36,7 +36,6 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 
 public class RatingFragment extends Fragment {
 
-
     public static final String TAG = "RatingFragment";
 
     public static RatingFragment getInstance(Bundle args) {
@@ -61,8 +60,6 @@ public class RatingFragment extends Fragment {
     private Drawable imgStarRed;
     private CardView button;
     private ImageView star;
-    private String tips;
-    private int praise;
     List<Integer> list = new ArrayList<Integer>();
     List<TipsList>tipsLists = new ArrayList<>();
     List<PraiseList>praiseLists = new ArrayList<>();
