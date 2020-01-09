@@ -17,6 +17,7 @@ import com.example.myapplication_1.R;
 public class ChatFragment extends Fragment {
 
     public static final String TAG = "ChatFragment";
+    RecyclerView rv;
 
     public static ChatFragment getInstance(Bundle args) {
 
@@ -25,8 +26,6 @@ public class ChatFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

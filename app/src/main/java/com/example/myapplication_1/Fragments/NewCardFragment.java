@@ -24,6 +24,9 @@ public class NewCardFragment extends Fragment {
     public static final String KEY_DATE = "Key_date";
     public static final String KEY_CVV = "Key_cvv";
     CardView cardView;
+    EditText editText;
+    EditText editText1;
+    EditText editText2;
 
     public static NewCardFragment getInstance(Bundle args) {
 
@@ -32,10 +35,6 @@ public class NewCardFragment extends Fragment {
 
         return f;
     }
-
-    EditText editText;
-    EditText editText1;
-    EditText editText2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -16,6 +16,7 @@ import java.util.Objects;
 public class DriverSpinnerFragment extends Fragment {
 
     public static final String TAG = "DriverSpinnerFragment";
+    String[] choose = {"По возрастанию цены", "По убыванию цены", "Не выбрано"};
 
     public static DriverSpinnerFragment getInstance(Bundle args) {
 
@@ -24,8 +25,6 @@ public class DriverSpinnerFragment extends Fragment {
 
         return f;
     }
-
-    String[] choose = {"По возрастанию цены", "По убыванию цены", "Не выбрано"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

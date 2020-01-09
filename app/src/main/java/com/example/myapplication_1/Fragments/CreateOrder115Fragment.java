@@ -26,6 +26,9 @@ import java.util.List;
 public class CreateOrder115Fragment extends Fragment {
 
     public static final String TAG = "CreateOrder115Fragment";
+    RecyclerView rv;
+    RecyclerView.Adapter createOrder115Adapter;
+    private List<AdapterCreateOrder115.CreateOrderItems> itemsMenuList;
 
     public static CreateOrder115Fragment getInstance(Bundle args) {
 
@@ -34,10 +37,6 @@ public class CreateOrder115Fragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
-    RecyclerView.Adapter createOrder115Adapter;
-    private List<AdapterCreateOrder115.CreateOrderItems> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

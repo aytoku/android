@@ -21,6 +21,9 @@ import java.util.List;
 public class DeployedMessagesFragment extends Fragment {
 
     public static final String TAG = "DeployedMessagesFragment";
+    RecyclerView rv;
+    RecyclerView.Adapter deployedMessagesAdapter;
+    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
 
     public static DeployedMessagesFragment getInstance(Bundle args) {
 
@@ -29,10 +32,6 @@ public class DeployedMessagesFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
-    RecyclerView.Adapter deployedMessagesAdapter;
-    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

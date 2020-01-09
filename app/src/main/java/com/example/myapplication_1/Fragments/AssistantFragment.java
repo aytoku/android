@@ -21,6 +21,8 @@ import java.util.List;
 public class AssistantFragment extends Fragment {
 
     public static final String TAG = "AssistantFragment";
+    RecyclerView.Adapter assistantAdapter;
+    private List<AssistantAdapter.AssistantItems> itemsMenuList;
 
     public static AssistantFragment getInstance(Bundle args) {
 
@@ -29,9 +31,6 @@ public class AssistantFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView.Adapter assistantAdapter;
-    private List<AssistantAdapter.AssistantItems> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

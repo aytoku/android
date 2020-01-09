@@ -20,6 +20,9 @@ import java.util.List;
 public class MachinePurposeFragment extends Fragment {
 
     public static final String TAG = "MachinePurposeFragment";
+    RecyclerView rv;
+    RecyclerView.Adapter adapterGridViewMenu;
+    private List<MachinePurposeAdapter.ItemsMenu> itemsMenuList;
 
     public static MachinePurposeFragment getInstance(Bundle args) {
 
@@ -28,10 +31,6 @@ public class MachinePurposeFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
-    private List<MachinePurposeAdapter.ItemsMenu> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -29,15 +29,6 @@ import java.util.List;
 public class ChatWithOperator extends Fragment {
 
     public static final String TAG = "ChatWithOperator";
-
-    public static ChatWithOperator getInstance(Bundle args) {
-
-        ChatWithOperator f = new ChatWithOperator();
-        f.setArguments(args);
-
-        return f;
-    }
-
     RecyclerView rv;
     RecyclerView rv1;
     RecyclerView.Adapter adapterGridViewMenu;
@@ -47,6 +38,14 @@ public class ChatWithOperator extends Fragment {
     Drawable arrow;
     EditText editText;
     ImageView imageView;
+
+    public static ChatWithOperator getInstance(Bundle args) {
+
+        ChatWithOperator f = new ChatWithOperator();
+        f.setArguments(args);
+
+        return f;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

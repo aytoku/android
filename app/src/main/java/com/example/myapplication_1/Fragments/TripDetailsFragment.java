@@ -14,6 +14,7 @@ import com.example.myapplication_1.R;
 public class TripDetailsFragment extends Fragment {
 
     public static final String TAG = "PaymentChangeFragment";
+    ImageButton button;
 
     public static PaymentChangeFragment getInstance(Bundle args) {
 
@@ -22,8 +23,6 @@ public class TripDetailsFragment extends Fragment {
 
         return f;
     }
-
-    ImageButton button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

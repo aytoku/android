@@ -16,6 +16,7 @@ import com.example.myapplication_1.R;
 public class SpinnerTariffsFragment extends Fragment {
 
     public static final String TAG = "SpinnerTariffsFragment";
+    String[] choose = {"Эконом", "Стандарт", "Не эконом"};
 
     public static SpinnerTariffsFragment getInstance(Bundle args) {
 
@@ -24,8 +25,6 @@ public class SpinnerTariffsFragment extends Fragment {
 
         return f;
     }
-
-    String[] choose = {"Эконом", "Стандарт", "Не эконом"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -21,6 +21,10 @@ import com.example.myapplication_1.R;
 public class TravelStoryOneFragment extends Fragment {
 
     public static final String TAG = "TravelStoryOneFragment";
+    ImageView button;
+    RecyclerView rv;
+    RecyclerView rv1;
+    LinearLayout linearLayout;
 
     public static TravelStoryOneFragment getInstance(Bundle args) {
 
@@ -29,11 +33,6 @@ public class TravelStoryOneFragment extends Fragment {
 
         return f;
     }
-
-    ImageView button;
-    RecyclerView rv;
-    RecyclerView rv1;
-    LinearLayout linearLayout;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

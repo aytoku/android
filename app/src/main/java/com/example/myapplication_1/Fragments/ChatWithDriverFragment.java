@@ -22,6 +22,11 @@ import java.util.List;
 public class ChatWithDriverFragment extends Fragment {
 
     public static final String TAG = "ChatWithDriverFragment";
+    ImageButton androidImageButton;
+    RecyclerView rv;
+    RecyclerView rv1;
+    RecyclerView.Adapter adapterGridViewMenu;
+    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
 
     public static ChatWithDriverFragment getInstance(Bundle args) {
 
@@ -30,13 +35,6 @@ public class ChatWithDriverFragment extends Fragment {
 
         return f;
     }
-
-    ImageButton androidImageButton;
-
-    RecyclerView rv;
-    RecyclerView rv1;
-    RecyclerView.Adapter adapterGridViewMenu;
-    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

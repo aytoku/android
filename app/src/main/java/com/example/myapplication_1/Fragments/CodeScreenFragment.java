@@ -36,6 +36,11 @@ public class CodeScreenFragment extends Fragment {
     public static final String CLIENT_UUID = "Client_uuid";
     public static final String REFRESH_TOKEN = "Refresh_token";
     public static final String REFRESH_EXPIRATION = "Refresh_expiration";
+    EditText code_field1;
+    EditText code_field2;
+    EditText code_field3;
+    EditText code_field4;
+    TextView button;
 
     public static CodeScreenFragment getInstance(Bundle args) {
 
@@ -44,12 +49,6 @@ public class CodeScreenFragment extends Fragment {
 
         return f;
     }
-
-    EditText code_field1;
-    EditText code_field2;
-    EditText code_field3;
-    EditText code_field4;
-    TextView button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

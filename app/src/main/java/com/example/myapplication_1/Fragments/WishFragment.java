@@ -18,6 +18,10 @@ import com.example.myapplication_1.R;
 public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeListener {
 
     public static final String TAG = "WishFragment";
+    TextView textView;
+    TextView cost_desc;
+    TextView desc;
+    RecyclerView rv;
 
     public static WishFragment getInstance(Bundle args) {
 
@@ -26,11 +30,6 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
 
         return f;
     }
-
-    TextView textView;
-    TextView cost_desc;
-    TextView desc;
-    RecyclerView rv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

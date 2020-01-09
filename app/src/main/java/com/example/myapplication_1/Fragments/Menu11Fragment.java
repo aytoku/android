@@ -21,6 +21,9 @@ import java.util.List;
 public class Menu11Fragment extends Fragment {
 
     public static final String TAG = "Menu11Fragment";
+    RecyclerView rv;
+    RecyclerView.Adapter menu11Adapter;
+    private List<AdapterMenu11.MenuList> itemsMenuList;
 
     public static Menu11Fragment getInstance(Bundle args) {
 
@@ -29,10 +32,6 @@ public class Menu11Fragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
-    RecyclerView.Adapter menu11Adapter;
-    private List<AdapterMenu11.MenuList> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

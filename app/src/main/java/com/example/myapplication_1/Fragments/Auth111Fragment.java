@@ -40,6 +40,9 @@ public class Auth111Fragment extends Fragment {
     TextView agreement;
     TextView alert;
     TextView country_code;
+    EditText editText;
+    TextView button;
+    private static final int SECOND_ACTIVITY_REQUEST_CODE = 1;
 
     public static Auth111Fragment getInstance(Bundle args) {
 
@@ -48,10 +51,6 @@ public class Auth111Fragment extends Fragment {
 
         return f;
     }
-
-    EditText editText;
-    TextView button;
-    private static final int SECOND_ACTIVITY_REQUEST_CODE = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override

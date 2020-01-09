@@ -28,15 +28,6 @@ import java.util.List;
 public class EmptyChatWithDriverFragment extends Fragment {
 
     public static final String TAG = "EmptyChatWithDriverFragment";
-
-    public static EmptyChatWithDriverFragment getInstance(Bundle args) {
-
-        EmptyChatWithDriverFragment f = new EmptyChatWithDriverFragment();
-        f.setArguments(args);
-
-        return f;
-    }
-
     RecyclerView rv;
     RecyclerView rv1;
     RecyclerView.Adapter adapterGridViewMenu;
@@ -46,6 +37,14 @@ public class EmptyChatWithDriverFragment extends Fragment {
     ImageView imageView;
     Drawable micro;
     Drawable arrow;
+
+    public static EmptyChatWithDriverFragment getInstance(Bundle args) {
+
+        EmptyChatWithDriverFragment f = new EmptyChatWithDriverFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

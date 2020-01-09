@@ -18,6 +18,7 @@ import com.example.myapplication_1.R;
 public class SettingsFragment extends Fragment {
 
     public static final String TAG = "SettingsFragment";
+    RecyclerView rv;
 
     public static SettingsFragment getInstance(Bundle args) {
 
@@ -26,8 +27,6 @@ public class SettingsFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

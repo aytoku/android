@@ -19,6 +19,7 @@ import com.example.myapplication_1.R;
 public class PartnersFragment extends Fragment {
 
     public static final String TAG = "PartnersFragment";
+    RecyclerView rv;
 
     public static PartnersFragment getInstance(Bundle args) {
 
@@ -27,8 +28,6 @@ public class PartnersFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

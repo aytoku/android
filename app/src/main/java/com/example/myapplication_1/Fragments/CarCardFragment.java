@@ -17,6 +17,8 @@ import com.example.myapplication_1.R;
 public class CarCardFragment extends Fragment {
 
     public static final String TAG = "CarCardFragment";
+    ImageButton androidImageButton;
+    RecyclerView rv;
 
     public static CarCardFragment getInstance(Bundle args) {
 
@@ -25,10 +27,6 @@ public class CarCardFragment extends Fragment {
 
         return f;
     }
-
-    ImageButton androidImageButton;
-
-    RecyclerView rv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

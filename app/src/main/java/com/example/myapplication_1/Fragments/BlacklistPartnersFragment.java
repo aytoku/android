@@ -19,6 +19,8 @@ import com.example.myapplication_1.R;
 public class BlacklistPartnersFragment extends Fragment {
 
     public static final String TAG = "BlacklistPartnersFragment";
+    RecyclerView rv;
+    boolean check = false;
 
     public static BlacklistPartnersFragment getInstance(Bundle args) {
 
@@ -27,9 +29,6 @@ public class BlacklistPartnersFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
-    boolean check = false;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -16,6 +16,7 @@ import com.example.myapplication_1.R;
 public class EarningsFragment extends Fragment {
 
     public static final String TAG = "EarningsFragment";
+    RecyclerView rv;
 
     public static EarningsFragment getInstance(Bundle args) {
 
@@ -24,8 +25,6 @@ public class EarningsFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -20,6 +20,9 @@ import java.util.List;
 public class Order115Fragment extends Fragment {
 
     public static final String TAG = "Order115Fragment";
+    RecyclerView rv;
+    RecyclerView.Adapter order115Adapter;
+    private List<Order115Adapter.Order115Items> itemsMenuList;
 
     public static Order115Fragment getInstance(Bundle args) {
 
@@ -28,10 +31,6 @@ public class Order115Fragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
-    RecyclerView.Adapter order115Adapter;
-    private List<Order115Adapter.Order115Items> itemsMenuList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

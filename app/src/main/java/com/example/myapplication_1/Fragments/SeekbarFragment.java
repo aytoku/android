@@ -14,6 +14,8 @@ import com.example.myapplication_1.R;
 public class SeekbarFragment extends Fragment implements SeekBar.OnSeekBarChangeListener{
 
     public static final String TAG = "SeekbarFragment";
+    TextView m;
+    int b = 0;
 
     public static SeekbarFragment getInstance(Bundle args) {
 
@@ -22,9 +24,6 @@ public class SeekbarFragment extends Fragment implements SeekBar.OnSeekBarChange
 
         return f;
     }
-
-    TextView m;
-    int b = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

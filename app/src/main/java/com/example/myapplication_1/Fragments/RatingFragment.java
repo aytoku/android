@@ -37,15 +37,6 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class RatingFragment extends Fragment {
 
     public static final String TAG = "RatingFragment";
-
-    public static RatingFragment getInstance(Bundle args) {
-
-        RatingFragment f = new RatingFragment();
-        f.setArguments(args);
-
-        return f;
-    }
-
     RecyclerView rv;
     RecyclerView rv1;
     RecyclerView.Adapter ratingAdapter;
@@ -64,6 +55,14 @@ public class RatingFragment extends Fragment {
     List<TipsList>tipsLists = new ArrayList<>();
     List<PraiseList>praiseLists = new ArrayList<>();
     int e;
+
+    public static RatingFragment getInstance(Bundle args) {
+
+        RatingFragment f = new RatingFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

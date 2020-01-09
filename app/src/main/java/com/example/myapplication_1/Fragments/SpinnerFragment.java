@@ -20,18 +20,8 @@ import java.util.Objects;
 public class SpinnerFragment extends Fragment {
 
     public static final String TAG = "SpinnerFragment";
-
-    public static SpinnerFragment getInstance(Bundle args) {
-
-        SpinnerFragment f = new SpinnerFragment();
-        f.setArguments(args);
-
-        return f;
-    }
-
     String[] choose = {"Эконом", "Стандарт", "Не эконом"};
     String[] choose_cities = {"Владикавказ", "Ногир", "Беслан"};
-
     ImageButton imageButton;
     private ImageView star1;
     private ImageView star2;
@@ -41,6 +31,14 @@ public class SpinnerFragment extends Fragment {
     private ImageView[] starArr;
     private Drawable imgStarGrey;
     private Drawable imgStarRed;
+
+    public static SpinnerFragment getInstance(Bundle args) {
+
+        SpinnerFragment f = new SpinnerFragment();
+        f.setArguments(args);
+
+        return f;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -23,6 +23,8 @@ import java.util.List;
 public class AddressFragment extends Fragment {
 
     public static final String TAG = "AddressFragment";
+    RecyclerView.Adapter addressAdapter;
+    private List<AddressAdapter.AddressItems> itemsMenuList;
 
     public static AddressFragment getInstance(Bundle args) {
 
@@ -31,9 +33,6 @@ public class AddressFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView.Adapter addressAdapter;
-    private List<AddressAdapter.AddressItems> itemsMenuList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

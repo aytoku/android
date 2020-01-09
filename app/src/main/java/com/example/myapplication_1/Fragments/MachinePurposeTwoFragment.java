@@ -14,6 +14,9 @@ import com.example.myapplication_1.R;
 public class MachinePurposeTwoFragment extends Fragment {
 
     public static final String TAG = "MachinePurposeTwoFragment";
+    ImageButton button;
+    ImageButton button1;
+
 
     public static MachinePurposeTwoFragment getInstance(Bundle args) {
 
@@ -22,9 +25,6 @@ public class MachinePurposeTwoFragment extends Fragment {
 
         return f;
     }
-
-    ImageButton button;
-    ImageButton button1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

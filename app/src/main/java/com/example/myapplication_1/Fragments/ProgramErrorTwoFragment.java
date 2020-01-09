@@ -14,6 +14,7 @@ import com.example.myapplication_1.R;
 public class ProgramErrorTwoFragment extends Fragment {
 
     public static final String TAG = "ProgramErrorTwoFragment";
+    ImageButton imageButton;
 
     public static ProgramErrorTwoFragment getInstance(Bundle args) {
 
@@ -22,8 +23,6 @@ public class ProgramErrorTwoFragment extends Fragment {
 
         return f;
     }
-
-    ImageButton imageButton;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

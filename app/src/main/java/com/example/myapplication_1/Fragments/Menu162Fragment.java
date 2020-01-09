@@ -22,6 +22,9 @@ import java.util.List;
 public class Menu162Fragment extends Fragment {
 
     public static final String TAG = "Menu162Fragment";
+    RecyclerView rv;
+    RecyclerView.Adapter menu162Adapter;
+    private List<AdapterMenu162.Menu162List> itemsMenuList;
 
     public static Menu162Fragment getInstance(Bundle args) {
 
@@ -30,10 +33,6 @@ public class Menu162Fragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
-    RecyclerView.Adapter menu162Adapter;
-    private List<AdapterMenu162.Menu162List> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
