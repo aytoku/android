@@ -20,11 +20,11 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
 
     private final LayoutInflater layoutInflater;
     private Context context;
-    private List<Integer>list;
+    private List<Integer> tipsLists;
     private int selectItem = -1;
 
-    public RatingAdapterCard(List<Integer> list, Context context){
-        this.list = list;
+    public RatingAdapterCard(List<Integer> tipsLists, Context context){
+        this.tipsLists = tipsLists;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -41,12 +41,15 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i){
 
-        final Integer _item = list.get(i);
+        viewHolder.price.setText(String.valueOf(tipsLists.get(i)));
+        tipsLists.get(i);
 
         if(selectItem == i){
-            viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#F3F3F3"));
+            viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#FC5C58"));
+            viewHolder.price.setTextColor(Color.WHITE);
         }else{
             viewHolder.cardView.setCardBackgroundColor(Color.WHITE);
+            viewHolder.price.setTextColor(Color.BLACK);
         }
         viewHolder.cardView.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -60,16 +63,7 @@ public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.Vi
 
     @Override
     public int getItemCount(){
-        return list.size();
-    }
-
-    public static class TipsList{
-
-        List<Integer> list;
-
-        public TipsList(List<Integer> list){
-            this.list = list;
-        }
+        return tipsLists.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{

@@ -32,7 +32,7 @@ public class Menu11Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter menu11Adapter;
-    private List<AdapterMenu11.ItemsMenu> itemsMenuList;
+    private List<AdapterMenu11.MenuList> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,8 +47,8 @@ public class Menu11Fragment extends Fragment {
 
         try {
 
-            AdapterMenu11.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            AdapterMenu11.MenuList[] menuLists = getMenuListItems();
+            itemsMenuList = new ArrayList<>(Arrays.asList(menuLists));
             menu11Adapter = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(menu11Adapter);
             recyclerViewMenu.setLayoutManager(
@@ -62,16 +62,15 @@ public class Menu11Fragment extends Fragment {
         return view;
     }
 
-    private AdapterMenu11.ItemsMenu[] getMenuItems() {
+    private AdapterMenu11.MenuList[] getMenuListItems() {
 
-        AdapterMenu11.ItemsMenu[] arr = new AdapterMenu11.ItemsMenu[]{
+        AdapterMenu11.MenuList[] arr = new AdapterMenu11.MenuList[]{
 
-                new AdapterMenu11.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu11.MenuList(
                         "+7 963 377 88 44",
-                        new AdapterMenu11.ItemsMenu.CallBack(){
+                        new AdapterMenu11.MenuList.CallBack(){
                             @Override
-                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -80,12 +79,11 @@ public class Menu11Fragment extends Fragment {
                             }
                         }),
 
-                new AdapterMenu11.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu11.MenuList(
                         "Способы оплаты",
-                        new AdapterMenu11.ItemsMenu.CallBack(){
+                        new AdapterMenu11.MenuList.CallBack(){
                             @Override
-                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
@@ -99,12 +97,11 @@ public class Menu11Fragment extends Fragment {
                             }
                         }),
 
-                new AdapterMenu11.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu11.MenuList(
                         "История поездок",
-                        new AdapterMenu11.ItemsMenu.CallBack(){
+                        new AdapterMenu11.MenuList.CallBack(){
                             @Override
-                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
@@ -118,12 +115,11 @@ public class Menu11Fragment extends Fragment {
                             }
                         }),
 
-                new AdapterMenu11.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu11.MenuList(
                         "Мои адреса",
-                        new AdapterMenu11.ItemsMenu.CallBack(){
+                        new AdapterMenu11.MenuList.CallBack(){
                             @Override
-                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment addressFragment = AddressFragment.getInstance(_args);
@@ -137,12 +133,11 @@ public class Menu11Fragment extends Fragment {
                             }
                         }),
 
-                new AdapterMenu11.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu11.MenuList(
                         "Настройки",
-                        new AdapterMenu11.ItemsMenu.CallBack(){
+                        new AdapterMenu11.MenuList.CallBack(){
                             @Override
-                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment settingsFragment = SettingsFragment.getInstance(_args);
@@ -156,12 +151,11 @@ public class Menu11Fragment extends Fragment {
                             }
                         }),
 
-                new AdapterMenu11.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu11.MenuList(
                         "Информация",
-                        new AdapterMenu11.ItemsMenu.CallBack(){
+                        new AdapterMenu11.MenuList.CallBack(){
                             @Override
-                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment informationFragment = InformationFragment.getInstance(_args);
@@ -175,12 +169,11 @@ public class Menu11Fragment extends Fragment {
                             }
                         }),
 
-                new AdapterMenu11.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu11.MenuList(
                         "Служба поддержки",
-                        new AdapterMenu11.ItemsMenu.CallBack(){
+                        new AdapterMenu11.MenuList.CallBack(){
                             @Override
-                            public void call(AdapterMenu11.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment serviceFragment = ServiceFragment.getInstance(_args);

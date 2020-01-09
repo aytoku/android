@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,11 +18,11 @@ import ru.osety.amironlibrary.DrawableUtils;
 
     public class CountryCodeSelectionAdapter extends RecyclerView.Adapter<CountryCodeSelectionAdapter.ViewHolder> {
 
-        private final ItemsMenu[] itemsMenu;
+        private final CountryCideItems[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public CountryCodeSelectionAdapter(CountryCodeSelectionAdapter.ItemsMenu[] itemsMenu, Context context) {
+        public CountryCodeSelectionAdapter(CountryCodeSelectionAdapter.CountryCideItems[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -41,7 +40,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final CountryCideItems _item = itemsMenu[i];
 
             Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
             float _dens = context.getResources().getDisplayMetrics().density;
@@ -86,13 +85,12 @@ import ru.osety.amironlibrary.DrawableUtils;
             return itemsMenu.length;
         }
 
-        public static class ItemsMenu {
+        public static class CountryCideItems {
 
             public interface CallBack {
-                void call(ItemsMenu itemsMenu);
+                void call(CountryCideItems itemsMenu);
             }
 
-            private @ColorInt
             int colorBackgroundInt;
             private String letter;
             private int imgResId;
@@ -100,7 +98,7 @@ import ru.osety.amironlibrary.DrawableUtils;
             public CallBack callBack;
             private String code;
 
-            public ItemsMenu(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack, String code) {
+            public CountryCideItems(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack, String code) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.letter = letter;
                 this.imgResId = imgResId;

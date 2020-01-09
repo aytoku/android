@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,9 +25,9 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Drawable card;
     LinearLayout.LayoutParams params;
 
-    private List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList;
+    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
 
-    public DeployedMessagesAdapter(List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList, Context context) {
+    public DeployedMessagesAdapter(List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
 
@@ -73,7 +72,7 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final DeployedMessagesItems _item = itemsMenuList.get(i);
         if(i == itemsMenuList.size()-1){
             if(viewHolder instanceof ViewHolder2)
                 viewHolder = (ViewHolder2)viewHolder;
@@ -110,24 +109,16 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class DeployedMessagesItems {
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String title;
 
-        public ItemsMenu(int colorBackgroundRes, String title) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public DeployedMessagesItems(String title) {
             this.title = title;
         }
 
         public String getTitle() {
             return title;
-        }
-
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

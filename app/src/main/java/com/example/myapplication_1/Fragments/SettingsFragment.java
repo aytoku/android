@@ -64,7 +64,7 @@ public class SettingsFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            SettingsAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            SettingsAdapter.SettingsItems[] itemsMenu = getMenuItems();
 
             SettingsAdapter settingsAdapter = new SettingsAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( settingsAdapter );
@@ -77,13 +77,13 @@ public class SettingsFragment extends Fragment {
         }
     }
 
-    private SettingsAdapter.ItemsMenu[] getMenuItems() {
+    private SettingsAdapter.SettingsItems[] getMenuItems() {
 
-        SettingsAdapter.ItemsMenu []_arr = new SettingsAdapter.ItemsMenu[]{
+        SettingsAdapter.SettingsItems []_arr = new SettingsAdapter.SettingsItems[]{
 
-                new SettingsAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new SettingsAdapter.SettingsItems(
                         "Не звонить"),
-                new SettingsAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new SettingsAdapter.SettingsItems(
                         "Не предлагать сообщения о\nснижении цены")
         };
         return _arr;

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -22,13 +21,13 @@ import ru.osety.amironlibrary.DrawableUtils;
 
     public class EarningsPageAdapter extends RecyclerView.Adapter<EarningsPageAdapter.ViewHolder> {
 
-        private final ItemsMenu[] itemsMenu;
+        private final EarningsPageItems[] itemsMenu;
         private final LayoutInflater layoutInflater;
         private final Context context;
         RecyclerView rv;
         RecyclerView rv1;
 
-        public EarningsPageAdapter(EarningsPageAdapter.ItemsMenu[] itemsMenu, Context context) {
+        public EarningsPageAdapter(EarningsPageAdapter.EarningsPageItems[] itemsMenu, Context context) {
             this.itemsMenu = itemsMenu;
             this.context = context;
 
@@ -46,7 +45,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final EarningsPageItems _item = itemsMenu[i];
 
             float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -107,14 +106,12 @@ import ru.osety.amironlibrary.DrawableUtils;
             return itemsMenu.length;
         }
 
-        public static class ItemsMenu {
+        public static class EarningsPageItems {
 
             public interface CallBack {
-                void call(ItemsMenu itemsMenu);
+                void call(EarningsPageItems itemsMenu);
             }
 
-            private @ColorInt
-            int colorBackgroundInt;
             private String dist;
             private CallBack callBack;
             private String[] str_features;
@@ -127,8 +124,7 @@ import ru.osety.amironlibrary.DrawableUtils;
             private int img_arrow;
             private String place;
 
-            public ItemsMenu(int colorBackgroundRes, String dist, String[] str_features, String[] button_features, int imageView, CallBack callBack, String desc, String distance, String desc2, String address_title, int img_arrow, String place) {
-                this.colorBackgroundInt = colorBackgroundRes;
+            public EarningsPageItems(String dist, String[] str_features, String[] button_features, int imageView, CallBack callBack, String desc, String distance, String desc2, String address_title, int img_arrow, String place) {
                 this.dist = dist;
                 this.callBack = callBack;
                 this.str_features = str_features;
@@ -164,10 +160,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             public String getPlace() {
                 return place;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
             }
         }
 

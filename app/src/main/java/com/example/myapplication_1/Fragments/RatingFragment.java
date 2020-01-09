@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.RatingAdapter;
 import com.example.myapplication_1.Adapters.RatingAdapterCard;
+import com.example.myapplication_1.ClassesForAdapters.PraiseList;
+import com.example.myapplication_1.ClassesForAdapters.TipsList;
 import com.example.myapplication_1.R;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -25,7 +27,6 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -50,8 +51,6 @@ public class RatingFragment extends Fragment {
     RecyclerView rv1;
     RecyclerView.Adapter ratingAdapter;
     RecyclerView.Adapter ratingCardAdapter;
-    private List<RatingAdapter.ItemsMenu> itemsMenuList;
-    private List<RatingAdapterCard.TipsList> tipsList;
     private ImageView star1;
     private ImageView star2;
     private ImageView star3;
@@ -65,6 +64,8 @@ public class RatingFragment extends Fragment {
     private String tips;
     private int praise;
     List<Integer> list = new ArrayList<Integer>();
+    List<TipsList>tipsLists = new ArrayList<>();
+    List<PraiseList>praiseLists = new ArrayList<>();
     int e;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -92,9 +93,7 @@ public class RatingFragment extends Fragment {
         final RecyclerView recyclerViewMenu = rv;
 
         try {
-            RatingAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            ratingAdapter = new RatingAdapter(itemsMenuList, getActivity().getBaseContext());
+            ratingAdapter = new RatingAdapter(praiseLists, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(ratingAdapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
@@ -107,8 +106,6 @@ public class RatingFragment extends Fragment {
         final RecyclerView recyclerViewMenu1 = rv1;
 
         try {
-            RatingAdapterCard.TipsList[] tipsLists = getTipsList();
-            tipsList = new ArrayList<>(Arrays.asList(tipsLists));
             ratingCardAdapter = new RatingAdapterCard(list, getActivity().getBaseContext());
             recyclerViewMenu1.setAdapter(ratingCardAdapter);
             recyclerViewMenu1.setLayoutManager(
@@ -183,7 +180,11 @@ public class RatingFragment extends Fragment {
             }
         });
 
-        send();
+        praiseLists.add(new PraiseList( R.mipmap.finger,"Вежливость"));
+        praiseLists.add(new PraiseList( R.mipmap.face,"Вежливость"));
+        praiseLists.add(new PraiseList( R.mipmap.handshake,"Вежливость"));
+        praiseLists.add(new PraiseList( R.mipmap.handshake,"Вежливость"));
+
 
         getTips();
         getData();
@@ -198,17 +199,6 @@ public class RatingFragment extends Fragment {
             starArr[i].setImageDrawable(imgStarGrey);
             star = starArr[i];
         }
-    }
-
-    public void send(){
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println(star);
-                System.out.println(tips);
-                System.out.println(praise);
-            }
-        });
     }
 
     public void getTips(){
@@ -379,107 +369,5 @@ public class RatingFragment extends Fragment {
             public void cancel(JsonObject result, Throwable throwable) {
             }
         }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/order/rating", jsonObject.toString());
-    }
-
-    private RatingAdapter.ItemsMenu[] getMenuItems() {
-
-        RatingAdapter.ItemsMenu[] arr = new RatingAdapter.ItemsMenu[]{
-
-                new RatingAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                        R.mipmap.finger,
-                        "Вежливость",
-                        new RatingAdapter.ItemsMenu.CallBack() {
-                            @Override
-                            public void call(RatingAdapter.ItemsMenu itemsMenu) {
-                                try{
-                                    itemsMenu.getStr();
-                                    praise = itemsMenu.getStr();
-
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                ),
-
-                new RatingAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                        R.mipmap.face,
-                        "Вежливость",
-                        new RatingAdapter.ItemsMenu.CallBack() {
-                            @Override
-                            public void call(RatingAdapter.ItemsMenu itemsMenu) {
-                                try{
-                                    itemsMenu.getStr();
-                                    praise = itemsMenu.getStr();
-
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                ),
-
-                new RatingAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                        R.mipmap.handshake,
-                        "Вежливость",
-                        new RatingAdapter.ItemsMenu.CallBack() {
-                            @Override
-                            public void call(RatingAdapter.ItemsMenu itemsMenu) {
-                                try{
-                                    itemsMenu.getStr();
-                                    praise = itemsMenu.getStr();
-
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                ),
-
-                new RatingAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                        R.mipmap.handshake,
-                        "Вежливость",
-                        new RatingAdapter.ItemsMenu.CallBack() {
-                            @Override
-                            public void call(RatingAdapter.ItemsMenu itemsMenu) {
-                                try{
-                                    itemsMenu.getStr();
-                                    praise = itemsMenu.getStr();
-
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                )
-        };
-        return arr;
-    }
-
-    private RatingAdapterCard.TipsList[] getTipsList(){
-
-        RatingAdapterCard.TipsList[] arr1 = new RatingAdapterCard.TipsList[]{
-
-                new RatingAdapterCard.TipsList(
-                        list
-                ),
-
-                new RatingAdapterCard.TipsList(
-                        list
-                ),
-
-                new RatingAdapterCard.TipsList(
-                        list
-                ),
-
-                new RatingAdapterCard.TipsList(
-                        list
-                )
-        };
-        return arr1;
     }
 }

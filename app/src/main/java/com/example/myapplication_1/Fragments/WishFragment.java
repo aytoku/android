@@ -105,7 +105,7 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            AdapterWish.ItemsMenu[] itemsMenu = getMenuItems();
+            AdapterWish.WishItems[] itemsMenu = getMenuItems();
 
             AdapterWish adapterWish = new AdapterWish(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterWish);
@@ -119,20 +119,20 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
     }
 
 
-    private AdapterWish.ItemsMenu[] getMenuItems() {
+    private AdapterWish.WishItems[] getMenuItems() {
 
         String[] cost_arr = new String[]{"30 \u20BD","0 \u20BD","10 \u20BD"};
         String[] desc_arr = new String[]{"Детское кресло", "Курящий салон", "Некурящий салон"};
 
-        AdapterWish.ItemsMenu[] _arr = new AdapterWish.ItemsMenu[]{
+        AdapterWish.WishItems[] _arr = new AdapterWish.WishItems[]{
 
-                new AdapterWish.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new AdapterWish.WishItems(
                         cost_arr[0],
                         desc_arr[0]),
-                new AdapterWish.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new AdapterWish.WishItems(
                         cost_arr[1],
                         desc_arr[1]),
-                new AdapterWish.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new AdapterWish.WishItems(
                         cost_arr[2],
                         desc_arr[2])
         };

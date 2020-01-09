@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,11 +14,11 @@ import com.example.myapplication_1.R;
 
 public class AdapterWish extends RecyclerView.Adapter<AdapterWish.ViewHolder> {
 
-    private final ItemsMenu[] itemsMenu;
+    private final WishItems[] itemsMenu;
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    public AdapterWish(AdapterWish.ItemsMenu[] itemsMenu, Context context) {
+    public AdapterWish(AdapterWish.WishItems[] itemsMenu, Context context) {
         this.itemsMenu = itemsMenu;
         this.context = context;
 
@@ -37,7 +36,7 @@ public class AdapterWish extends RecyclerView.Adapter<AdapterWish.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        final ItemsMenu _item = itemsMenu[i];
+        final WishItems _item = itemsMenu[i];
 
         viewHolder.desc.setText(_item.getStr());
         viewHolder.cost.setText(_item.getCost());
@@ -48,15 +47,12 @@ public class AdapterWish extends RecyclerView.Adapter<AdapterWish.ViewHolder> {
         return itemsMenu.length;
     }
 
-    public static class ItemsMenu {
+    public static class WishItems {
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String cost;
         private String desc;
 
-        public ItemsMenu(int colorBackgroundRes, String cost, String desc) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public WishItems(String cost, String desc) {
             this.cost = cost;
             this.desc = desc;
         }
@@ -67,10 +63,6 @@ public class AdapterWish extends RecyclerView.Adapter<AdapterWish.ViewHolder> {
 
         public String getCost() {
             return cost;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

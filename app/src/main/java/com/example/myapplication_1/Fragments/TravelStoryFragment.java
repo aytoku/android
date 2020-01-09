@@ -82,7 +82,6 @@ public class TravelStoryFragment extends Fragment {
         TravelStoryAdapter.TravelStoryCard []_arr = new TravelStoryAdapter.TravelStoryCard[]{
 
                 new TravelStoryAdapter.TravelStoryCard(
-                        getResources().getColor(R.color.my_gray),
                         R.drawable.icon_ellipse_red,
                         "Сегодня 10:10",
                         new TravelStoryAdapter.TravelStoryCard.CallBack() {

@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,20 +49,15 @@ import com.example.myapplication_1.R;
 
         public static class PaymentDesc {
 
-
             public interface CallBack {
                 void call(PaymentDesc itemsMenu);
             }
 
-            private @ColorInt
-            int colorBackgroundInt;
             private String title;
             private String desc;
             private String cost;
 
-            public PaymentDesc(int colorBackgroundRes, String title,String desc, String cost) {
-                this.colorBackgroundInt = colorBackgroundRes;
-                this.title = title;
+            public PaymentDesc(String title,String desc, String cost) {
                 this.desc = desc;
                 this.cost = cost;
             }
@@ -78,10 +72,6 @@ import com.example.myapplication_1.R;
 
             public String getCost() {
                 return cost;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
             }
         }
 

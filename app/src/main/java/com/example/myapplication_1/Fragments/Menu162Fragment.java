@@ -33,7 +33,7 @@ public class Menu162Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter menu162Adapter;
-    private List<AdapterMenu162.ItemsMenu> itemsMenuList;
+    private List<AdapterMenu162.Menu162List> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class Menu162Fragment extends Fragment {
 
         try {
 
-            AdapterMenu162.ItemsMenu[] itemsMenu = getMenuItems();
+            AdapterMenu162.Menu162List[] itemsMenu = getMenu162ListItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             menu162Adapter = new AdapterMenu162(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(menu162Adapter);
@@ -82,17 +82,16 @@ public class Menu162Fragment extends Fragment {
         super.onStart();
     }
 
-    private AdapterMenu162.ItemsMenu[] getMenuItems() {
+    private AdapterMenu162.Menu162List[] getMenu162ListItems() {
 
-        AdapterMenu162.ItemsMenu[] arr = new AdapterMenu162.ItemsMenu[]{
+        AdapterMenu162.Menu162List[] arr = new AdapterMenu162.Menu162List[]{
 
-                new AdapterMenu162.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu162.Menu162List(
                         "Большая стоимость",
                         R.drawable.icon_arrow_right,
-                        new AdapterMenu162.ItemsMenu.CallBack(){
+                        new AdapterMenu162.Menu162List.CallBack(){
                             @Override
-                            public void call(AdapterMenu162.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu162.Menu162List itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -101,13 +100,12 @@ public class Menu162Fragment extends Fragment {
                             }
                         }),
 
-                new AdapterMenu162.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu162.Menu162List(
                         "Не дали сдачи",
                         R.drawable.icon_arrow_right,
-                        new AdapterMenu162.ItemsMenu.CallBack(){
+                        new AdapterMenu162.Menu162List.CallBack(){
                             @Override
-                            public void call(AdapterMenu162.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu162.Menu162List itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -116,13 +114,12 @@ public class Menu162Fragment extends Fragment {
                             }
                         }),
 
-                new AdapterMenu162.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterMenu162.Menu162List(
                         "Ошибка программы",
                         R.drawable.icon_arrow_right,
-                        new AdapterMenu162.ItemsMenu.CallBack(){
+                        new AdapterMenu162.Menu162List.CallBack(){
                             @Override
-                            public void call(AdapterMenu162.ItemsMenu itemsMenu){
+                            public void call(AdapterMenu162.Menu162List itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);

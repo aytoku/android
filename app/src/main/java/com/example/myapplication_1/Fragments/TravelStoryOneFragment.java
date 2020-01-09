@@ -145,12 +145,10 @@ public class TravelStoryOneFragment extends Fragment {
         CellTravelStoryOneAdapter.PaymentDesc []_arr1 = new CellTravelStoryOneAdapter.PaymentDesc[]{
 
                 new CellTravelStoryOneAdapter.PaymentDesc(
-                        getResources().getColor(R.color.my_gray),
                         "Ожидание",
                         "5 мин*3 \u20BD","15 \u20BD"),
 
                 new CellTravelStoryOneAdapter.PaymentDesc(
-                        getResources().getColor(R.color.my_gray),
                         "Дополнительные услуги",
                         "Детское кресло, пустой багаж","30 \u20BD")
         };

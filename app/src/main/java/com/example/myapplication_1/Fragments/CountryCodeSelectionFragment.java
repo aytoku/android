@@ -64,7 +64,7 @@ public class CountryCodeSelectionFragment extends Fragment {
 
         try {
 
-            CountryCodeSelectionAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            CountryCodeSelectionAdapter.CountryCideItems[] itemsMenu = getMenuItems();
 
             CountryCodeSelectionAdapter countryCodeSelectionAdapter = new CountryCodeSelectionAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( countryCodeSelectionAdapter );
@@ -77,18 +77,18 @@ public class CountryCodeSelectionFragment extends Fragment {
         }
     }
 
-    private CountryCodeSelectionAdapter.ItemsMenu[] getMenuItems() {
+    private CountryCodeSelectionAdapter.CountryCideItems[] getMenuItems() {
 
-        CountryCodeSelectionAdapter.ItemsMenu []_arr = new CountryCodeSelectionAdapter.ItemsMenu[]{
+        CountryCodeSelectionAdapter.CountryCideItems []_arr = new CountryCodeSelectionAdapter.CountryCideItems[]{
 
-                new CountryCodeSelectionAdapter.ItemsMenu(
+                new CountryCodeSelectionAdapter.CountryCideItems(
                         getResources().getColor(R.color.my_gray),
                         "Г",
                         R.mipmap.georgia,
                         "Грузия",
-                        new CountryCodeSelectionAdapter.ItemsMenu.CallBack() {
+                        new CountryCodeSelectionAdapter.CountryCideItems.CallBack() {
                             @Override
-                            public void call(CountryCodeSelectionAdapter.ItemsMenu itemsMenu) {
+                            public void call(CountryCodeSelectionAdapter.CountryCideItems itemsMenu) {
 
                                 try{
 
@@ -106,13 +106,13 @@ public class CountryCodeSelectionFragment extends Fragment {
                             }
                         },"+995"),
 
-                new CountryCodeSelectionAdapter.ItemsMenu(
+                new CountryCodeSelectionAdapter.CountryCideItems(
                         getResources().getColor(R.color.my_gray),"Р",
                         R.mipmap.russia,
                         "Россия",
-                        new CountryCodeSelectionAdapter.ItemsMenu.CallBack() {
+                        new CountryCodeSelectionAdapter.CountryCideItems.CallBack() {
                             @Override
-                            public void call(CountryCodeSelectionAdapter.ItemsMenu itemsMenu) {
+                            public void call(CountryCodeSelectionAdapter.CountryCideItems itemsMenu) {
 
                                 try{
 

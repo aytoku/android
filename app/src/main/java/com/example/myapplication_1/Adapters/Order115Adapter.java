@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,9 +18,9 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private List<ItemsMenu> itemsMenuList;
+    private List<Order115Items> itemsMenuList;
 
-    public Order115Adapter(List<Order115Adapter.ItemsMenu> itemsMenuList, Context context) {
+    public Order115Adapter(List<Order115Adapter.Order115Items> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -40,7 +39,7 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final Order115Items _item = itemsMenuList.get(i);
 
         viewHolder.emoji.setText(_item.getEmoji());
         viewHolder.desc.setText(_item.getStr());
@@ -51,15 +50,12 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class Order115Items {
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String emoji;
         private String desc;
 
-        public ItemsMenu(int colorBackgroundRes, String emoji, String desc) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public Order115Items(String emoji, String desc) {
             this.emoji = emoji;
             this.desc = desc;
         }
@@ -70,10 +66,6 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
 
         public String getStr() {
             return desc;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

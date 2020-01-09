@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,9 +21,9 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
     private final Context context;
     private int selectItem = -1;
 
-    private List<ItemsMenu> itemsMenuList;
+    private List<DriverTipsItems> itemsMenuList;
 
-    public DriverTipsAdapter(List<DriverTipsAdapter.ItemsMenu> itemsMenuList, Context context) {
+    public DriverTipsAdapter(List<DriverTipsAdapter.DriverTipsItems> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -42,7 +41,7 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final DriverTipsItems _item = itemsMenuList.get(i);
 
         viewHolder.title.setText(_item.getStr());
 
@@ -72,30 +71,23 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class DriverTipsItems {
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(DriverTipsItems itemsMenu);
 
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String title;
         private CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public DriverTipsItems(String title, CallBack callBack) {
             this.title = title;
             this.callBack = callBack;
         }
 
         public String getStr() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public CallBack getCallBack() {

@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,9 +20,9 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    private List<ItemsMenu> itemsMenuList;
+    private List<CreateOrderItems> itemsMenuList;
 
-    public AdapterCreateOrder115(List<AdapterCreateOrder115.ItemsMenu> itemsMenuList, Context context) {
+    public AdapterCreateOrder115(List<AdapterCreateOrder115.CreateOrderItems> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -41,7 +40,7 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final CreateOrderItems _item = itemsMenuList.get(i);
 
         viewHolder.title.setText(_item.getStr());
 
@@ -60,16 +59,13 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class CreateOrderItems {
 
-        private @ColorInt
-        int colorBackgroundInt;
         private int imgResId;
         private String title;
         private int imgResId1;
 
-        public ItemsMenu(int colorBackgroundRes, int imgResId, String title, int imgResId1) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public CreateOrderItems(int imgResId, String title, int imgResId1) {
             this.imgResId = imgResId;
             this.title = title;
             this.imgResId1 = imgResId1;
@@ -81,10 +77,6 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
 
         public String getStr() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,13 +20,13 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPartnersAdapter.ViewHolder> {
 
-    private final ItemsMenu[] itemsMenu;
+    private final BlackListItems[] itemsMenu;
     private final LayoutInflater layoutInflater;
     private final Context context;
     private Drawable imgToggleGrey;
     private Drawable imgToggleRed;
 
-    public BlacklistPartnersAdapter(BlacklistPartnersAdapter.ItemsMenu[] itemsMenu, Context context) {
+    public BlacklistPartnersAdapter(BlacklistPartnersAdapter.BlackListItems[] itemsMenu, Context context) {
         this.itemsMenu = itemsMenu;
         this.context = context;
 
@@ -48,7 +47,7 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenu[i];
+        final BlackListItems _item = itemsMenu[i];
 
         float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -79,21 +78,18 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
         return itemsMenu.length;
     }
 
-    public static class ItemsMenu {
+    public static class BlackListItems {
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(BlackListItems itemsMenu);
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private int imgResId;
         private String desc;
         private boolean check;
         private CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes,int imgResId,String desc, boolean check, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public BlackListItems(int imgResId,String desc, boolean check, CallBack callBack) {
             this.imgResId = imgResId;
             this.desc = desc;
             this.imgResId = imgResId;
@@ -107,10 +103,6 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
 
         public String getStr() {
             return desc;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

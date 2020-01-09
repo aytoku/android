@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,9 +19,9 @@ public class AdapterMenu11 extends RecyclerView.Adapter<AdapterMenu11.ViewHolder
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    private List<ItemsMenu> itemsMenuList;
+    private List<MenuList> itemsMenuList;
 
-    public AdapterMenu11(List<AdapterMenu11.ItemsMenu> itemsMenuList, Context context) {
+    public AdapterMenu11(List<AdapterMenu11.MenuList> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -40,14 +39,14 @@ public class AdapterMenu11 extends RecyclerView.Adapter<AdapterMenu11.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final MenuList menuListItem = itemsMenuList.get(i);
 
-        viewHolder.title.setText(_item.getStr());
+        viewHolder.title.setText(menuListItem.getStr());
         viewHolder.title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    _item.getCallBack().call(_item);
+                    menuListItem.getCallBack().call(menuListItem);
                 }catch (NullPointerException e){
                     e.printStackTrace();
                 }
@@ -60,29 +59,22 @@ public class AdapterMenu11 extends RecyclerView.Adapter<AdapterMenu11.ViewHolder
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class MenuList {
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(MenuList menuList);
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String title;
         private CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public MenuList(String title, CallBack callBack) {
             this.title = title;
             this.callBack = callBack;
         }
 
         public String getStr() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public CallBack getCallBack() {

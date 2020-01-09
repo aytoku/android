@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,9 +24,9 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private List<ItemsMenu> itemsMenuList;
+    private List<AddressItems> itemsMenuList;
 
-    public AddressAdapter(List<AddressAdapter.ItemsMenu> itemsMenuList, Context context) {
+    public AddressAdapter(List<AddressAdapter.AddressItems> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -45,7 +44,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final AddressItems _item = itemsMenuList.get(i);
 
         Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
         float _dens = context.getResources().getDisplayMetrics().density;
@@ -73,20 +72,19 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class AddressItems {
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(AddressItems itemsMenu);
 
         }
 
-        private @ColorInt
         int colorBackgroundInt;
         private int imgResId;
         private String title;
         CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes, int imgResId, String title, CallBack callBack) {
+        public AddressItems(int colorBackgroundRes, int imgResId, String title, CallBack callBack) {
             this.colorBackgroundInt = colorBackgroundRes;
             this.imgResId = imgResId;
             this.title = title;

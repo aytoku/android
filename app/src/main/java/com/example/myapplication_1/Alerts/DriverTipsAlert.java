@@ -37,7 +37,7 @@ public class DriverTipsAlert extends DialogFragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<DriverTipsAdapter.ItemsMenu> itemsMenuList;
+    private List<DriverTipsAdapter.DriverTipsItems> itemsMenuList;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,7 +73,7 @@ public class DriverTipsAlert extends DialogFragment {
 
         try {
 
-            DriverTipsAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            DriverTipsAdapter.DriverTipsItems[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new DriverTipsAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
@@ -96,16 +96,15 @@ public class DriverTipsAlert extends DialogFragment {
         dismiss();
     }
 
-    private DriverTipsAdapter.ItemsMenu[] getMenuItems() {
+    private DriverTipsAdapter.DriverTipsItems[] getMenuItems() {
 
-        DriverTipsAdapter.ItemsMenu[] arr = new DriverTipsAdapter.ItemsMenu[]{
+        DriverTipsAdapter.DriverTipsItems[] arr = new DriverTipsAdapter.DriverTipsItems[]{
 
-                new DriverTipsAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DriverTipsAdapter.DriverTipsItems(
                         "0%",
-                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                        new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -114,12 +113,11 @@ public class DriverTipsAlert extends DialogFragment {
                             }
                         }),
 
-                new DriverTipsAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DriverTipsAdapter.DriverTipsItems(
                         "5%",
-                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                        new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -128,12 +126,11 @@ public class DriverTipsAlert extends DialogFragment {
                             }
                         }),
 
-                new DriverTipsAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DriverTipsAdapter.DriverTipsItems(
                         "10%",
-                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                        new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -142,12 +139,11 @@ public class DriverTipsAlert extends DialogFragment {
                             }
                         }),
 
-                new DriverTipsAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DriverTipsAdapter.DriverTipsItems(
                         "15%",
-                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                        new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -156,12 +152,11 @@ public class DriverTipsAlert extends DialogFragment {
                             }
                         }),
 
-                new DriverTipsAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DriverTipsAdapter.DriverTipsItems(
                         "20%",
-                        new DriverTipsAdapter.ItemsMenu.CallBack(){
+                        new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.ItemsMenu itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {

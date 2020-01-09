@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,9 +26,9 @@ import java.util.List;
         private Drawable card_gradient;
         LinearLayout.LayoutParams params;
 
-        private List<ItemsMenu> itemsMenuList;
+        private List<AssistantItems> itemsMenuList;
 
-        public AssistantAdapter(List<ItemsMenu> itemsMenuList, Context context) {
+        public AssistantAdapter(List<AssistantItems> itemsMenuList, Context context) {
             this.itemsMenuList = itemsMenuList;
             this.context = context;
 
@@ -51,7 +50,7 @@ import java.util.List;
         @Override
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-            final ItemsMenu _item = itemsMenuList.get(i);
+            final AssistantItems _item = itemsMenuList.get(i);
 
             viewHolder.title.setText(_item.getTitle());
 
@@ -72,23 +71,16 @@ import java.util.List;
             return itemsMenuList.size();
         }
 
-        public static class ItemsMenu {
+        public static class AssistantItems {
 
-            private @ColorInt
-            int colorBackgroundInt;
             private String title;
 
-            public ItemsMenu(int colorBackgroundRes, String title) {
-                this.colorBackgroundInt = colorBackgroundRes;
+            public AssistantItems(String title) {
                 this.title = title;
             }
 
             public String getTitle() {
                 return title;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
             }
         }
 

@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,9 +20,9 @@ public class AdapterMenu162 extends RecyclerView.Adapter<AdapterMenu162.ViewHold
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private List<ItemsMenu> itemsMenuList;
+    private List<Menu162List> itemsMenuList;
 
-    public AdapterMenu162(List<AdapterMenu162.ItemsMenu> itemsMenuList, Context context) {
+    public AdapterMenu162(List<AdapterMenu162.Menu162List> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -41,7 +40,7 @@ public class AdapterMenu162 extends RecyclerView.Adapter<AdapterMenu162.ViewHold
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final Menu162List _item = itemsMenuList.get(i);
 
         viewHolder.title.setText(_item.getStr());
 
@@ -62,20 +61,17 @@ public class AdapterMenu162 extends RecyclerView.Adapter<AdapterMenu162.ViewHold
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class Menu162List {
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(Menu162List menu162List);
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String title;
         private int imageButton;
         private CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes, String title, int imageButton, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public Menu162List(String title, int imageButton, CallBack callBack) {
             this.title = title;
             this.imageButton = imageButton;
             this.callBack = callBack;
@@ -83,10 +79,6 @@ public class AdapterMenu162 extends RecyclerView.Adapter<AdapterMenu162.ViewHold
 
         public String getStr() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public CallBack getCallBack() {

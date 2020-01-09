@@ -64,7 +64,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         public static class TravelStoryRow {
 
-
             public interface CallBack {
                 void call(TravelStoryRow itemsMenu);
             }

@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,11 +15,11 @@ import com.example.myapplication_1.R;
 
 public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHolder> {
 
-    private final ItemsMenu[] itemsMenu;
+    private final PartnersItems[] itemsMenu;
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    public PartnersAdapter(PartnersAdapter.ItemsMenu[] itemsMenu, Context context) {
+    public PartnersAdapter(PartnersAdapter.PartnersItems[] itemsMenu, Context context) {
         this.itemsMenu = itemsMenu;
         this.context = context;
 
@@ -38,7 +37,7 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        final ItemsMenu _item = itemsMenu[i];
+        final PartnersItems _item = itemsMenu[i];
 
         viewHolder.desc.setText( _item.getStr() );
 
@@ -59,21 +58,18 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
         return itemsMenu.length;
     }
 
-    public static class ItemsMenu {
+    public static class PartnersItems {
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(PartnersItems itemsMenu);
 
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private int imgResId;
         private String desc;
         private CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes,int imgResId,String desc, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public PartnersItems(int imgResId,String desc, CallBack callBack) {
             this.imgResId = imgResId;
             this.desc = desc;
             this.callBack = callBack;
@@ -85,10 +81,6 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
 
         public String getStr() {
             return desc;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public CallBack getCallBack() {

@@ -33,7 +33,7 @@ public class AddressFragment extends Fragment {
     }
 
     RecyclerView.Adapter addressAdapter;
-    private List<AddressAdapter.ItemsMenu> itemsMenuList;
+    private List<AddressAdapter.AddressItems> itemsMenuList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,7 +73,7 @@ public class AddressFragment extends Fragment {
 
         try {
 
-            AddressAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            AddressAdapter.AddressItems[] itemsMenu = getAddressItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             addressAdapter = new AddressAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(addressAdapter);
@@ -90,12 +90,12 @@ public class AddressFragment extends Fragment {
     public void onAddButtonClicked(View view) {
 
         try {
-            itemsMenuList.add(itemsMenuList.size(), new AddressAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
+            itemsMenuList.add(itemsMenuList.size(), new AddressAdapter.AddressItems(getResources().getColor(R.color.my_gray),
                     R.mipmap.icon_button_plus,
                     "Добавить адрес дома",
-                    new AddressAdapter.ItemsMenu.CallBack(){
+                    new AddressAdapter.AddressItems.CallBack(){
                         @Override
-                        public void call(AddressAdapter.ItemsMenu itemsMenu){
+                        public void call(AddressAdapter.AddressItems itemsMenu){
                             try {
                                 Bundle _args = new Bundle();
                                 Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
@@ -117,17 +117,17 @@ public class AddressFragment extends Fragment {
         }
     }
 
-    private AddressAdapter.ItemsMenu[] getMenuItems() {
+    private AddressAdapter.AddressItems[] getAddressItems() {
 
-        AddressAdapter.ItemsMenu[] arr = new AddressAdapter.ItemsMenu[]{
+        AddressAdapter.AddressItems[] arr = new AddressAdapter.AddressItems[]{
 
-                new AddressAdapter.ItemsMenu(
+                new AddressAdapter.AddressItems(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_button_plus,
                         "Добавить адрес дома",
-                        new AddressAdapter.ItemsMenu.CallBack(){
+                        new AddressAdapter.AddressItems.CallBack(){
                             @Override
-                            public void call(AddressAdapter.ItemsMenu itemsMenu){
+                            public void call(AddressAdapter.AddressItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
@@ -141,13 +141,13 @@ public class AddressFragment extends Fragment {
                             }
                         }),
 
-                new AddressAdapter.ItemsMenu(
+                new AddressAdapter.AddressItems(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_button_plus,
                         "Добавить адрес дома",
-                        new AddressAdapter.ItemsMenu.CallBack(){
+                        new AddressAdapter.AddressItems.CallBack(){
                             @Override
-                            public void call(AddressAdapter.ItemsMenu itemsMenu){
+                            public void call(AddressAdapter.AddressItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -79,8 +78,6 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
             void call(TravelStoryCard itemsMenu);
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private int imgResId;
         private String date;
         private CallBack callBack;
@@ -88,8 +85,7 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
         private CardView cv_item;
         private String uuid;
 
-        public TravelStoryCard(int colorBackgroundRes, int imgResId, String date, CallBack callBack,String cost) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public TravelStoryCard(int imgResId, String date, CallBack callBack,String cost) {
             this.imgResId = imgResId;
             this.date = date;
             this.callBack = callBack;
@@ -117,10 +113,6 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
 
         public String getCost() {
             return cost;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

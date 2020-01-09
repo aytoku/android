@@ -31,7 +31,7 @@ public class AssistantFragment extends Fragment {
     }
 
     RecyclerView.Adapter assistantAdapter;
-    private List<AssistantAdapter.ItemsMenu> itemsMenuList;
+    private List<AssistantAdapter.AssistantItems> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class AssistantFragment extends Fragment {
 
         try {
 
-            AssistantAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            AssistantAdapter.AssistantItems[] itemsMenu = getAssistantItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             assistantAdapter = new AssistantAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(assistantAdapter);
@@ -79,20 +79,17 @@ public class AssistantFragment extends Fragment {
         return view;
     }
 
-    private AssistantAdapter.ItemsMenu[] getMenuItems() {
+    private AssistantAdapter.AssistantItems[] getAssistantItems() {
 
-        AssistantAdapter.ItemsMenu[] arr = new AssistantAdapter.ItemsMenu[]{
+        AssistantAdapter.AssistantItems[] arr = new AssistantAdapter.AssistantItems[]{
 
-                new AssistantAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AssistantAdapter.AssistantItems(
                         "Вы можете самостоятельно\nотрегулировать стоимоть"),
 
-                new AssistantAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AssistantAdapter.AssistantItems(
                         "Тариф временно увеличен"),
 
-                new AssistantAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AssistantAdapter.AssistantItems(
                         "Водитель подъехал")
         };
         return arr;

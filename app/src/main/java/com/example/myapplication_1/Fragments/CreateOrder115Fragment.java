@@ -37,7 +37,7 @@ public class CreateOrder115Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter createOrder115Adapter;
-    private List<AdapterCreateOrder115.ItemsMenu> itemsMenuList;
+    private List<AdapterCreateOrder115.CreateOrderItems> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class CreateOrder115Fragment extends Fragment {
 
         try {
 
-            AdapterCreateOrder115.ItemsMenu[] itemsMenu = getMenuItems();
+            AdapterCreateOrder115.CreateOrderItems[] itemsMenu = getCreateOrderItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             createOrder115Adapter = new AdapterCreateOrder115(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(createOrder115Adapter);
@@ -102,7 +102,7 @@ public class CreateOrder115Fragment extends Fragment {
     public void onAddButtonClicked(View view) {
 
         try {
-            itemsMenuList.add(itemsMenuList.size(), new AdapterCreateOrder115.ItemsMenu(getResources().getColor(R.color.my_gray),
+            itemsMenuList.add(itemsMenuList.size(), new AdapterCreateOrder115.CreateOrderItems(
                     R.drawable.ic_cross,
                     "Максима Горького, 123",
                     R.drawable.icon_three_lines));
@@ -120,24 +120,21 @@ public class CreateOrder115Fragment extends Fragment {
         super.onStart();
     }
 
-    private AdapterCreateOrder115.ItemsMenu[] getMenuItems() {
+    private AdapterCreateOrder115.CreateOrderItems[] getCreateOrderItems() {
 
-        AdapterCreateOrder115.ItemsMenu[] arr = new AdapterCreateOrder115.ItemsMenu[]{
+        AdapterCreateOrder115.CreateOrderItems[] arr = new AdapterCreateOrder115.CreateOrderItems[]{
 
-                new AdapterCreateOrder115.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterCreateOrder115.CreateOrderItems(
                         R.drawable.ic_cross,
                         "Максима Горького, 123",
                         R.drawable.icon_three_lines),
 
-                new AdapterCreateOrder115.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterCreateOrder115.CreateOrderItems(
                         R.drawable.ic_cross,
                         "Коста, 222",
                         R.drawable.icon_three_lines),
 
-                new AdapterCreateOrder115.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new AdapterCreateOrder115.CreateOrderItems(
                         R.drawable.ic_cross,
                         "Максима Горького, 23",
                         R.drawable.icon_three_lines)

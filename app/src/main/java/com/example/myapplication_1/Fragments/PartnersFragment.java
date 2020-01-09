@@ -75,7 +75,7 @@ public class PartnersFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            PartnersAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            PartnersAdapter.PartnersItems[] itemsMenu = getMenuItems();
 
             PartnersAdapter partnersAdapter = new PartnersAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( partnersAdapter );
@@ -88,17 +88,16 @@ public class PartnersFragment extends Fragment {
         }
     }
 
-    private PartnersAdapter.ItemsMenu[] getMenuItems() {
+    private PartnersAdapter.PartnersItems[] getMenuItems() {
 
-        PartnersAdapter.ItemsMenu []_arr = new PartnersAdapter.ItemsMenu[]{
+        PartnersAdapter.PartnersItems []_arr = new PartnersAdapter.PartnersItems[]{
 
-                new PartnersAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new PartnersAdapter.PartnersItems(
                         R.drawable.icon_arrow_right,
                         "Партнер 1",
-                        new PartnersAdapter.ItemsMenu.CallBack(){
+                        new PartnersAdapter.PartnersItems.CallBack(){
                             @Override
-                            public void call(PartnersAdapter.ItemsMenu itemsMenu){
+                            public void call(PartnersAdapter.PartnersItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
@@ -113,12 +112,12 @@ public class PartnersFragment extends Fragment {
                             }
                         }),
 
-        new PartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
+        new PartnersAdapter.PartnersItems(
                         R.drawable.icon_arrow_right,
                         "Партнер 2",
-                new PartnersAdapter.ItemsMenu.CallBack(){
+                new PartnersAdapter.PartnersItems.CallBack(){
                     @Override
-                    public void call(PartnersAdapter.ItemsMenu itemsMenu){
+                    public void call(PartnersAdapter.PartnersItems itemsMenu){
                         try {
                             Bundle _args = new Bundle();
                             Fragment spinnerFragment = SpinnerFragment.getInstance(_args);

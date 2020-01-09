@@ -32,7 +32,7 @@ public class DeployedMessagesFragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter deployedMessagesAdapter;
-    private List<DeployedMessagesAdapter.ItemsMenu> itemsMenuList;
+    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class DeployedMessagesFragment extends Fragment {
 
         try {
 
-            DeployedMessagesAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            DeployedMessagesAdapter.DeployedMessagesItems[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             deployedMessagesAdapter = new DeployedMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(deployedMessagesAdapter);
@@ -80,28 +80,23 @@ public class DeployedMessagesFragment extends Fragment {
         return view;
     }
 
-    private DeployedMessagesAdapter.ItemsMenu[] getMenuItems() {
+    private DeployedMessagesAdapter.DeployedMessagesItems[] getMenuItems() {
 
-        DeployedMessagesAdapter.ItemsMenu[] arr = new DeployedMessagesAdapter.ItemsMenu[]{
+        DeployedMessagesAdapter.DeployedMessagesItems[] arr = new DeployedMessagesAdapter.DeployedMessagesItems[]{
 
-                new DeployedMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DeployedMessagesAdapter.DeployedMessagesItems(
                         "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
-                new DeployedMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DeployedMessagesAdapter.DeployedMessagesItems(
                         "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
-                new DeployedMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DeployedMessagesAdapter.DeployedMessagesItems(
                         "Как настроение?"),
 
-                new DeployedMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DeployedMessagesAdapter.DeployedMessagesItems(
                         "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
-                new DeployedMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new DeployedMessagesAdapter.DeployedMessagesItems(
                         "Выполните еще три заказа и получите\n+30 к рейтингу")
         };
         return arr;

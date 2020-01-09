@@ -31,7 +31,7 @@ public class Order115Fragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter order115Adapter;
-    private List<Order115Adapter.ItemsMenu> itemsMenuList;
+    private List<Order115Adapter.Order115Items> itemsMenuList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,7 +47,7 @@ public class Order115Fragment extends Fragment {
 
         try {
 
-            Order115Adapter.ItemsMenu[] itemsMenu = getMenuItems();
+            Order115Adapter.Order115Items[] itemsMenu = getMenuItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             order115Adapter = new Order115Adapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(order115Adapter);
@@ -67,33 +67,28 @@ public class Order115Fragment extends Fragment {
         super.onStart();
     }
 
-    private Order115Adapter.ItemsMenu[] getMenuItems() {
+    private Order115Adapter.Order115Items[] getMenuItems() {
 
-        Order115Adapter.ItemsMenu[] arr = new Order115Adapter.ItemsMenu[]{
+        Order115Adapter.Order115Items[] arr = new Order115Adapter.Order115Items[]{
 
-                new Order115Adapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new Order115Adapter.Order115Items(
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
 
-                new Order115Adapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new Order115Adapter.Order115Items(
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
 
-                new Order115Adapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new Order115Adapter.Order115Items(
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
 
-                new Order115Adapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new Order115Adapter.Order115Items(
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
 
 
-                new Order115Adapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new Order115Adapter.Order115Items(
                         "\uD83D\uDE0A",
                         "Заказал по ошибке")
         };

@@ -74,7 +74,7 @@ public class BlacklistPartnersFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try{
-            BlacklistPartnersAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            BlacklistPartnersAdapter.BlackListItems[] itemsMenu = getBlackListItems();
             BlacklistPartnersAdapter blacklistPartnersAdapter = new BlacklistPartnersAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( blacklistPartnersAdapter );
             recyclerViewMenu.setLayoutManager(
@@ -86,16 +86,16 @@ public class BlacklistPartnersFragment extends Fragment {
         }
     }
 
-    private BlacklistPartnersAdapter.ItemsMenu[] getMenuItems() {
+    private BlacklistPartnersAdapter.BlackListItems[] getBlackListItems() {
 
-        BlacklistPartnersAdapter.ItemsMenu []_arr = new BlacklistPartnersAdapter.ItemsMenu[]{
+        BlacklistPartnersAdapter.BlackListItems []_arr = new BlacklistPartnersAdapter.BlackListItems[]{
 
-                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.BlackListItems(
                         R.drawable.togle_uncheked,
                         "Партнер 1", check,
-                        new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
+                        new BlacklistPartnersAdapter.BlackListItems.CallBack() {
                             @Override
-                            public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
+                            public void call(BlacklistPartnersAdapter.BlackListItems itemsMenu) {
                                 try{
                                     Bundle _args = new Bundle();
 
@@ -104,12 +104,12 @@ public class BlacklistPartnersFragment extends Fragment {
                                 }
                             }
                         }),
-                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.BlackListItems(
                         R.drawable.togle_uncheked,
                         "Партнер 2", check,
-                        new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
+                        new BlacklistPartnersAdapter.BlackListItems.CallBack() {
                             @Override
-                            public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
+                            public void call(BlacklistPartnersAdapter.BlackListItems itemsMenu) {
                                 try{
                                     Bundle _args = new Bundle();
 
@@ -118,12 +118,12 @@ public class BlacklistPartnersFragment extends Fragment {
                                 }
                             }
                         }),
-                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.BlackListItems(
                         R.drawable.togle_uncheked,
                         "Партнер 1", check,
-                        new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
+                        new BlacklistPartnersAdapter.BlackListItems.CallBack() {
                             @Override
-                            public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
+                            public void call(BlacklistPartnersAdapter.BlackListItems itemsMenu) {
                                 try{
                                     Bundle _args = new Bundle();
 
@@ -132,12 +132,12 @@ public class BlacklistPartnersFragment extends Fragment {
                                 }
                             }
                         }),
-                new BlacklistPartnersAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
+                new BlacklistPartnersAdapter.BlackListItems(
                         R.drawable.togle_uncheked,
                         "Партнер 2", check,
-                        new BlacklistPartnersAdapter.ItemsMenu.CallBack() {
+                        new BlacklistPartnersAdapter.BlackListItems.CallBack() {
                             @Override
-                            public void call(BlacklistPartnersAdapter.ItemsMenu itemsMenu) {
+                            public void call(BlacklistPartnersAdapter.BlackListItems itemsMenu) {
                                 try{
                                     Bundle _args = new Bundle();
 
