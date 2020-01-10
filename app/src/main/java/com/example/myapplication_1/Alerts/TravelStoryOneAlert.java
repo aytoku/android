@@ -38,7 +38,6 @@ public class TravelStoryOneAlert extends DialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-
         View view = inflater.inflate(R.layout.travel_story_1_alert, container,false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +59,6 @@ public class TravelStoryOneAlert extends DialogFragment {
             public void onClick(View view) {
                 Bundle _args = new Bundle();
                 Fragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(_args);
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, travelStoryOneFragment);
                 fragmentTransaction.commit();

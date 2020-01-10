@@ -27,8 +27,7 @@ import java.util.List;
 public class TariffsPickAlert extends DialogFragment {
 
     public static final String TAG = "TariffsPickAlert";
-    TextView button;
-    boolean check = false;
+    private TextView button;
 
     public static TariffsPickAlert getInstance(Bundle args) {
 
@@ -66,19 +65,19 @@ public class TariffsPickAlert extends DialogFragment {
             }
         });
 
-        RecyclerView rv = view.findViewById(R.id.ll_tariffs_pick_recycler);
+        RecyclerView tariffsPickAlert_rv = view.findViewById(R.id.ll_tariffs_pick_recycler);
         button = view.findViewById(R.id.ll_tariffs_pick_button_accept);
 
-        final RecyclerView recyclerViewMenu = rv;
+        final RecyclerView recyclerView = tariffsPickAlert_rv;
 
         try{
             TariffsPickAdapter.TariffsPickItems[] tariffsPickItems = getTariffsPickItems();
             List<TariffsPickAdapter.TariffsPickItems> itemsMenuList = new ArrayList<>(Arrays.asList(tariffsPickItems));
             RecyclerView.Adapter adapterGridViewMenu = new TariffsPickAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter(adapterGridViewMenu);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
-            recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         }catch (NullPointerException e){
             e.printStackTrace();
@@ -98,6 +97,7 @@ public class TariffsPickAlert extends DialogFragment {
 
     private TariffsPickAdapter.TariffsPickItems[] getTariffsPickItems() {
 
+        boolean check = false;
         TariffsPickAdapter.TariffsPickItems[] arr = new TariffsPickAdapter.TariffsPickItems[]{
 
                 new TariffsPickAdapter.TariffsPickItems(

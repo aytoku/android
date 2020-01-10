@@ -17,14 +17,13 @@ import java.util.List;
 
 public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrder115.ViewHolder> {
 
-    private final LayoutInflater layoutInflater;
     private final Context context;
     private List<CreateOrderItems> createOrderItems;
 
     public AdapterCreateOrder115(List<AdapterCreateOrder115.CreateOrderItems> createOrderItems, Context context) {
         this.createOrderItems = createOrderItems;
         this.context = context;
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @NonNull

@@ -20,10 +20,10 @@ public class DriverTipsAlertNormal extends DialogFragment {
 
     public static final String TAG = "DriverTipsAlertNormal";
 
-    TextView textView1;
-    TextView textView2;
-    TextView textView3;
-    TextView textView4;
+    private TextView textView1;
+    private TextView textView2;
+    private TextView textView3;
+    private TextView textView4;
 
     public static DriverTipsAlertNormal getInstance(Bundle args) {
 

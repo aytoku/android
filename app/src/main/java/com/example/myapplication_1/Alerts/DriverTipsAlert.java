@@ -26,9 +26,6 @@ import java.util.List;
 public class DriverTipsAlert extends DialogFragment {
 
     public static final String TAG = "DriverTipsFragment";
-    RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
-    private List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList;
 
     public static DriverTipsAlert getInstance(Bundle args) {
 
@@ -66,19 +63,19 @@ public class DriverTipsAlert extends DialogFragment {
             }
         });
 
-        rv = view.findViewById(R.id.ll_driver_tips_recycler);
+        RecyclerView driverTips_rv = view.findViewById(R.id.ll_driver_tips_recycler);
 
-        final RecyclerView recyclerViewMenu = rv;
+        final RecyclerView recyclerView = driverTips_rv;
 
         try {
 
             DriverTipsAdapter.DriverTipsItems[] driverTipsItems = getDriverTipsItems();
-            driverTipsItemsList = new ArrayList<>(Arrays.asList(driverTipsItems));
-            adapterGridViewMenu = new DriverTipsAdapter(driverTipsItemsList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
-            recyclerViewMenu.setLayoutManager(
+            List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList = new ArrayList<>(Arrays.asList(driverTipsItems));
+            RecyclerView.Adapter adapterGridViewMenu = new DriverTipsAdapter(driverTipsItemsList, getActivity().getBaseContext());
+            recyclerView.setAdapter(adapterGridViewMenu);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

@@ -19,8 +19,7 @@ import com.example.myapplication_1.R;
 public class DialogTestFragment extends DialogFragment {
 
     public static final String TAG = DialogTestFragment.class.getSimpleName();
-    EditText greetingsEditText;
-    Button button;
+    private EditText greetingsEditText;
 
     public static DialogTestFragment getInstance() {
         DialogTestFragment fragment = new DialogTestFragment();
@@ -33,7 +32,7 @@ public class DialogTestFragment extends DialogFragment {
         View view = inflater.inflate(R.layout.dialog_test_fragment, container, false);
 
         greetingsEditText = view.findViewById(R.id.greetings_edit_text);
-        button = view.findViewById(R.id.greet_button);
+        Button button = view.findViewById(R.id.greet_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +42,7 @@ public class DialogTestFragment extends DialogFragment {
         return view;
     }
 
-    protected void sendGreeting() {
+    private void sendGreeting() {
         String message = greetingsEditText.getText().toString();
         if( message.isEmpty() ) {
             Toast.makeText(getContext(), "Enter a message", Toast.LENGTH_SHORT).show();
