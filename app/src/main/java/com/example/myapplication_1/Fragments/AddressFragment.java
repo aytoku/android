@@ -43,7 +43,7 @@ public class AddressFragment extends Fragment {
         View view = inflater.inflate(R.layout.addresses_fragment,
                 container, false);
 
-        RecyclerView rv = view.findViewById(R.id.ll_address_rl_address_ll_address_address_recycler);
+        RecyclerView address_rv = view.findViewById(R.id.ll_address_rl_address_ll_address_address_recycler);
 
         ImageButton button = view.findViewById(R.id.ll_address_rl_address_button_plusik);
         ImageButton imageButton = view.findViewById(R.id.ll_address_rl_address_button_strelka);
@@ -68,17 +68,17 @@ public class AddressFragment extends Fragment {
             }
         });
 
-        final RecyclerView recyclerViewMenu = rv;
+        final RecyclerView recyclerView = address_rv;
 
         try {
 
             AddressAdapter.AddressItems[] addressItems = getAddressItems();
             addressItemsList = new ArrayList<>(Arrays.asList(addressItems));
             addressAdapter = new AddressAdapter(addressItemsList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(addressAdapter);
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter(addressAdapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

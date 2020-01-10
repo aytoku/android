@@ -31,9 +31,7 @@ public class PaymentMethodFragment extends Fragment {
     private static final int REQUEST_CODE_DRIVER_TIPS = 101;
     private static final int REQUEST_CODE_NEW_CARD = 102;
     TextView textView;
-    TextView edit;
-    RecyclerView rv;
-    RecyclerView.Adapter paymentMethodAdapter;
+    private RecyclerView.Adapter paymentMethodAdapter;
     private List<PaymentMethodAdapter.PaymentMethodItems> itemsMenuList;
 
     public static final String TAG = "PaymentMethodFragment";
@@ -57,8 +55,8 @@ public class PaymentMethodFragment extends Fragment {
 
         ImageButton imageButton = view.findViewById(R.id.rl_payment_method_button_strelka);
 
-        rv = view.findViewById(R.id.ll_payment_method_recycler);
-        final RecyclerView recyclerViewMenu = rv;
+        RecyclerView paymentMethod_rv = view.findViewById(R.id.ll_payment_method_recycler);
+        final RecyclerView recyclerViewMenu = paymentMethod_rv;
 
         try {
             PaymentMethodAdapter.PaymentMethodItems[] paymentMethodItems = getPaymentMethodItems();
@@ -103,7 +101,7 @@ public class PaymentMethodFragment extends Fragment {
         });
 
         textView = view.findViewById(R.id.ll_payment_method_percents);
-        edit = view.findViewById(R.id.rl_payment_method_edit);
+        TextView edit = view.findViewById(R.id.rl_payment_method_edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

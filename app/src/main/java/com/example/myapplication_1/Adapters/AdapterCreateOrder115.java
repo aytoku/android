@@ -19,7 +19,6 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-
     private List<CreateOrderItems> createOrderItems;
 
     public AdapterCreateOrder115(List<AdapterCreateOrder115.CreateOrderItems> createOrderItems, Context context) {
@@ -43,7 +42,6 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
         final CreateOrderItems _item = createOrderItems.get(i);
 
         viewHolder.title.setText(_item.getStr());
-
         viewHolder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +72,6 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
         public int getImg() {
             return img;
         }
-
         public String getStr() {
             return title;
         }

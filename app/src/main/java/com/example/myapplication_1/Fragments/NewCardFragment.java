@@ -23,10 +23,8 @@ public class NewCardFragment extends Fragment {
     public static final String KEY_CARD_NUMBER = "Key_card_number";
     public static final String KEY_DATE = "Key_date";
     public static final String KEY_CVV = "Key_cvv";
-    CardView cardView;
-    EditText editText;
-    EditText editText1;
-    EditText editText2;
+    private EditText editText;
+    private EditText editText1;
 
     public static NewCardFragment getInstance(Bundle args) {
 
@@ -48,7 +46,6 @@ public class NewCardFragment extends Fragment {
         ImageButton imageButton = view.findViewById(R.id.rl_new_card_button);
         editText = view.findViewById(R.id.ll_new_card_card_number_field);
         editText1 = view.findViewById(R.id.ll_new_card_term_field);
-        editText2 = view.findViewById(R.id.ll_new_card_cvv_field);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,7 +131,7 @@ public class NewCardFragment extends Fragment {
             }
         });
 
-        cardView = view.findViewById(R.id.ll_new_card_cardButton);
+        CardView cardView = view.findViewById(R.id.ll_new_card_cardButton);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -160,12 +157,4 @@ public class NewCardFragment extends Fragment {
         Intent intent = PaymentMethodFragment.newIntent1(bundle);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
-
-//    public static class ItemsMenu extends PaymentMethodAdapter.ItemsMenu {
-//        String title;
-//
-//        public ItemsMenu(String title){
-//            this.title = title;
-//        }
-//    }
 }

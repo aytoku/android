@@ -19,9 +19,8 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
 
     public static final String TAG = "WishFragment";
     TextView textView;
-    TextView cost_desc;
-    TextView desc;
-    RecyclerView rv;
+    private TextView cost_desc;
+    private RecyclerView wish_rv;
 
     public static WishFragment getInstance(Bundle args) {
 
@@ -40,10 +39,9 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
         View view = inflater.inflate(R.layout.wishes,
                 container, false);
 
-        rv = view.findViewById(R.id.ll_recycler_wishes);
+        wish_rv = view.findViewById(R.id.ll_recycler_wishes);
         textView = view.findViewById(R.id.ll_travel_cost_change_txtView);
         cost_desc = view.findViewById(R.id.ll_cell_travel_cost_description);
-        desc = view.findViewById(R.id.desc);
         final SeekBar see = view.findViewById(R.id.ll_travel_cost_change_seekBar);
         see.setOnSeekBarChangeListener(this);
         textView.setText("0 \u20BD");
@@ -101,16 +99,16 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
+        RecyclerView recyclerView = wish_rv;
 
         try {
             AdapterWish.WishItems[] wishItems = getWishItems();
 
             AdapterWish adapterWish = new AdapterWish(wishItems, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterWish);
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter(adapterWish);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
-            recyclerViewMenu.setItemAnimator(new DefaultItemAnimator());
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         } catch (NullPointerException e) {
             e.printStackTrace();

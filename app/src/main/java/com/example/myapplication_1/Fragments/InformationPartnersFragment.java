@@ -21,7 +21,6 @@ public class InformationPartnersFragment extends Fragment {
         return f;
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -31,9 +30,6 @@ public class InformationPartnersFragment extends Fragment {
         View view = inflater.inflate(R.layout.information_partners,
                 container, false);
 
-
         return view;
     }
-
-
 }

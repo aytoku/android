@@ -16,7 +16,7 @@ import com.example.myapplication_1.R;
 public class EarningsFragment extends Fragment {
 
     public static final String TAG = "EarningsFragment";
-    RecyclerView rv;
+    RecyclerView earnings_rv;
 
     public static EarningsFragment getInstance(Bundle args) {
 
@@ -34,7 +34,7 @@ public class EarningsFragment extends Fragment {
         View view = inflater.inflate(R.layout.earnings_page_card,
                 container, false);
 
-        rv = view.findViewById(R.id.earnings_page_card_recycler);
+        earnings_rv = view.findViewById(R.id.earnings_page_card_recycler);
 
         return view;
     }
@@ -43,17 +43,17 @@ public class EarningsFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
+        RecyclerView recyclerView = earnings_rv;
 
         try {
 
             EarningsPageAdapter.EarningsPageItems[] earningsPageItems = getEarningsPageItems();
 
             EarningsPageAdapter earningsPageAdapter = new EarningsPageAdapter(earningsPageItems, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( earningsPageAdapter );
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter( earningsPageAdapter );
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

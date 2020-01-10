@@ -40,19 +40,19 @@ public class AssistantFragment extends Fragment {
         View view = inflater.inflate(R.layout.assistant,
                 container, false);
 
-        RecyclerView rv = view.findViewById(R.id.assistant_recycler);
+        RecyclerView assistant_rv = view.findViewById(R.id.assistant_recycler);
 
-        final RecyclerView recyclerViewMenu = rv;
+        final RecyclerView recyclerView = assistant_rv;
 
         try {
 
             AssistantAdapter.AssistantItems[] assistantItems = getAssistantItems();
             assistantItemsList = new ArrayList<>(Arrays.asList(assistantItems));
             assistantAdapter = new AssistantAdapter(assistantItemsList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(assistantAdapter);
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter(assistantAdapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -73,7 +73,7 @@ public class AssistantFragment extends Fragment {
             }
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
-        itemTouchHelper.attachToRecyclerView(rv);
+        itemTouchHelper.attachToRecyclerView(assistant_rv);
 
         return view;
     }

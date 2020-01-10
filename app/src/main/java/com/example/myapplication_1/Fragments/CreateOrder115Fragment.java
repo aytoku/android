@@ -26,7 +26,7 @@ import java.util.List;
 public class CreateOrder115Fragment extends Fragment {
 
     public static final String TAG = "CreateOrder115Fragment";
-    RecyclerView rv;
+    RecyclerView create_order_rv;
     RecyclerView.Adapter createOrder115Adapter;
     private List<AdapterCreateOrder115.CreateOrderItems> createOrderItemsList;
 
@@ -46,7 +46,7 @@ public class CreateOrder115Fragment extends Fragment {
         View view = inflater.inflate(R.layout.create_order_1_1_5,
                 container, false);
 
-        rv = view.findViewById(R.id.ll_create_order_1_1_5_recycler);
+        create_order_rv = view.findViewById(R.id.ll_create_order_1_1_5_recycler);
 
         Button button = view.findViewById(R.id.ll_create_order_1_1_5_add_stop);
         button.setOnClickListener(new View.OnClickListener() {
@@ -57,17 +57,17 @@ public class CreateOrder115Fragment extends Fragment {
             }
         });
 
-        final RecyclerView recyclerViewMenu = rv;
+        final RecyclerView recyclerView = create_order_rv;
 
         try {
 
             AdapterCreateOrder115.CreateOrderItems[] createOrderItems = getCreateOrderItems();
             createOrderItemsList = new ArrayList<>(Arrays.asList(createOrderItems));
             createOrder115Adapter = new AdapterCreateOrder115(createOrderItemsList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(createOrder115Adapter);
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter(createOrder115Adapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -93,7 +93,7 @@ public class CreateOrder115Fragment extends Fragment {
         };
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(helper);
-        itemTouchHelper.attachToRecyclerView(rv);
+        itemTouchHelper.attachToRecyclerView(create_order_rv);
 
         return view;
     }

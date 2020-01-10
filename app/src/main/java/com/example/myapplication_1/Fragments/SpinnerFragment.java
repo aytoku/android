@@ -20,8 +20,8 @@ import java.util.Objects;
 public class SpinnerFragment extends Fragment {
 
     public static final String TAG = "SpinnerFragment";
-    String[] choose = {"Эконом", "Стандарт", "Не эконом"};
-    String[] choose_cities = {"Владикавказ", "Ногир", "Беслан"};
+    private String[] choose = {"Эконом", "Стандарт", "Не эконом"};
+    private String[] choose_cities = {"Владикавказ", "Ногир", "Беслан"};
     ImageButton imageButton;
     private ImageView star1;
     private ImageView star2;
@@ -76,7 +76,6 @@ public class SpinnerFragment extends Fragment {
         star1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 allStarsGrey();
                 if(view.getId()==R.id.rl_information_partners_star1){
                     star1.setImageDrawable(imgStarRed);
@@ -90,7 +89,6 @@ public class SpinnerFragment extends Fragment {
 
                 allStarsGrey();
                 if(view.getId()==R.id.rl_information_partners_star2){
-
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                 }
@@ -103,7 +101,6 @@ public class SpinnerFragment extends Fragment {
 
                 allStarsGrey();
                 if(view.getId()==R.id.rl_information_partners_star3) {
-
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
@@ -117,7 +114,6 @@ public class SpinnerFragment extends Fragment {
 
                 allStarsGrey();
                 if(view.getId()==R.id.rl_information_partners_star4) {
-
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
@@ -132,7 +128,6 @@ public class SpinnerFragment extends Fragment {
 
                 allStarsGrey();
                 if(view.getId()==R.id.rl_information_partners_star5) {
-
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
@@ -144,7 +139,6 @@ public class SpinnerFragment extends Fragment {
 
         Bundle _args = new Bundle();
         final Fragment partnersFragment = PartnersFragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

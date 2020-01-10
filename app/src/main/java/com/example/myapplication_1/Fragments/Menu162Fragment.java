@@ -22,9 +22,6 @@ import java.util.List;
 public class Menu162Fragment extends Fragment {
 
     public static final String TAG = "Menu162Fragment";
-    RecyclerView rv;
-    RecyclerView.Adapter menu162Adapter;
-    private List<AdapterMenu162.Menu162List> itemsMenuList;
 
     public static Menu162Fragment getInstance(Bundle args) {
 
@@ -43,7 +40,7 @@ public class Menu162Fragment extends Fragment {
                 container, false);
 
 
-        rv = view.findViewById(R.id.rl_menu_1_6_2_recycler);
+        RecyclerView menu162_rv = view.findViewById(R.id.rl_menu_1_6_2_recycler);
         ImageButton imageButton = view.findViewById(R.id.rl_menu_1_6_2_button);
 
         Bundle _args = new Bundle();
@@ -58,17 +55,17 @@ public class Menu162Fragment extends Fragment {
             }
         });
 
-        final RecyclerView recyclerViewMenu = rv;
+        final RecyclerView recyclerView = menu162_rv;
 
         try {
 
             AdapterMenu162.Menu162List[] menu162Lists = getMenu162ListItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(menu162Lists));
-            menu162Adapter = new AdapterMenu162(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(menu162Adapter);
-            recyclerViewMenu.setLayoutManager(
+            List<AdapterMenu162.Menu162List> itemsMenuList = new ArrayList<>(Arrays.asList(menu162Lists));
+            RecyclerView.Adapter menu162Adapter = new AdapterMenu162(itemsMenuList, getActivity().getBaseContext());
+            recyclerView.setAdapter(menu162Adapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

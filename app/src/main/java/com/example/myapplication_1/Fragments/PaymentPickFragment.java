@@ -21,10 +21,6 @@ import java.util.List;
 
 public class PaymentPickFragment extends Fragment {
 
-    RecyclerView rv;
-    RecyclerView.Adapter paymentMethodAdapter;
-    private List<PaymentPickAdapter.PaymentPickItems> itemsMenuList;
-
     public static final String TAG = "PaymentPickFragment";
 
     public static PaymentPickFragment getInstance(Bundle args) {
@@ -46,17 +42,17 @@ public class PaymentPickFragment extends Fragment {
 
         TextView textView = view.findViewById(R.id.rl_payment_pick_ready);
 
-        rv = view.findViewById(R.id.rl_payment_pick_recycler);
-        final RecyclerView recyclerViewMenu = rv;
+        RecyclerView paymentPick_rv = view.findViewById(R.id.rl_payment_pick_recycler);
+        final RecyclerView recyclerView = paymentPick_rv;
 
         try {
             PaymentPickAdapter.PaymentPickItems[] paymentPickItems = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(paymentPickItems));
-            paymentMethodAdapter = new PaymentPickAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(paymentMethodAdapter);
-            recyclerViewMenu.setLayoutManager(
+            List<PaymentPickAdapter.PaymentPickItems> itemsMenuList = new ArrayList<>(Arrays.asList(paymentPickItems));
+            RecyclerView.Adapter paymentMethodAdapter = new PaymentPickAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerView.setAdapter(paymentMethodAdapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -73,7 +69,6 @@ public class PaymentPickFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
 
         return view;
     }

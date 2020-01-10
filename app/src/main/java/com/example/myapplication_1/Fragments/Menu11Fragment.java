@@ -21,9 +21,6 @@ import java.util.List;
 public class Menu11Fragment extends Fragment {
 
     public static final String TAG = "Menu11Fragment";
-    RecyclerView rv;
-    RecyclerView.Adapter menu11Adapter;
-    private List<AdapterMenu11.MenuList> itemsMenuList;
 
     public static Menu11Fragment getInstance(Bundle args) {
 
@@ -41,14 +38,14 @@ public class Menu11Fragment extends Fragment {
         View view = inflater.inflate(R.layout.menu_1_1,
                 container, false);
 
-        rv = view.findViewById(R.id.rl_menu_1_1_recycler);
-        final RecyclerView recyclerViewMenu = rv;
+        RecyclerView menu11_rv = view.findViewById(R.id.rl_menu_1_1_recycler);
+        final RecyclerView recyclerViewMenu = menu11_rv;
 
         try {
 
             AdapterMenu11.MenuList[] menuLists = getMenuListItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(menuLists));
-            menu11Adapter = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
+            List<AdapterMenu11.MenuList> itemsMenuList = new ArrayList<>(Arrays.asList(menuLists));
+            RecyclerView.Adapter menu11Adapter = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(menu11Adapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));

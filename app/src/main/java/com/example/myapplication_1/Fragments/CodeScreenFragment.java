@@ -36,10 +36,10 @@ public class CodeScreenFragment extends Fragment {
     public static final String CLIENT_UUID = "Client_uuid";
     public static final String REFRESH_TOKEN = "Refresh_token";
     public static final String REFRESH_EXPIRATION = "Refresh_expiration";
-    EditText code_field1;
-    EditText code_field2;
-    EditText code_field3;
-    EditText code_field4;
+    private EditText code_field1;
+    private EditText code_field2;
+    private EditText code_field3;
+    private EditText code_field4;
     TextView button;
 
     public static CodeScreenFragment getInstance(Bundle args) {
@@ -62,7 +62,6 @@ public class CodeScreenFragment extends Fragment {
         code_field2 = view.findViewById(R.id.ll_code_screen2);
         code_field3 = view.findViewById(R.id.ll_code_screen3);
         code_field4 = view.findViewById(R.id.ll_code_screen4);
-
 
         code_field1.addTextChangedListener(new TextWatcher() {
 

@@ -21,8 +21,7 @@ import java.util.List;
 public class DeployedMessagesFragment extends Fragment {
 
     public static final String TAG = "DeployedMessagesFragment";
-    RecyclerView rv;
-    RecyclerView.Adapter deployedMessagesAdapter;
+    private RecyclerView.Adapter deployedMessagesAdapter;
     private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
 
     public static DeployedMessagesFragment getInstance(Bundle args) {
@@ -41,19 +40,19 @@ public class DeployedMessagesFragment extends Fragment {
         View view = inflater.inflate(R.layout.deployed_messages,
                 container, false);
 
-        rv = view.findViewById(R.id.deployed_messages_recycler);
+        RecyclerView deployedMessages_rv = view.findViewById(R.id.deployed_messages_recycler);
 
-        final RecyclerView recyclerViewMenu = rv;
+        final RecyclerView recyclerView = deployedMessages_rv;
 
         try {
 
             DeployedMessagesAdapter.DeployedMessagesItems[] deployedMessagesItems = getDeployedMessagesItems();
             deployedMessagesItemsList = new ArrayList<>(Arrays.asList(deployedMessagesItems));
             deployedMessagesAdapter = new DeployedMessagesAdapter(deployedMessagesItemsList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(deployedMessagesAdapter);
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter(deployedMessagesAdapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -74,7 +73,7 @@ public class DeployedMessagesFragment extends Fragment {
             }
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
-        itemTouchHelper.attachToRecyclerView(rv);
+        itemTouchHelper.attachToRecyclerView(deployedMessages_rv);
 
         return view;
     }

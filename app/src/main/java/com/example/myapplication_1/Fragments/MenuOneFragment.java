@@ -21,9 +21,6 @@ import java.util.List;
 public class MenuOneFragment extends Fragment {
 
     public static final String TAG = "MenuOneFragment";
-    RecyclerView rv;
-    RecyclerView.Adapter menuOneAdapter;
-    private List<MenuOneAdapter.ItemsMenu> itemsMenuList;
 
     public static MenuOneFragment getInstance(Bundle args) {
 
@@ -41,18 +38,18 @@ public class MenuOneFragment extends Fragment {
         View view = inflater.inflate(R.layout.menu_1,
                 container, false);
 
-        rv = view.findViewById(R.id.ll_menu_1_recycler);
-        final RecyclerView recyclerViewMenu = rv;
+        RecyclerView menuOne_rv = view.findViewById(R.id.ll_menu_1_recycler);
+        final RecyclerView recyclerView = menuOne_rv;
 
         try {
 
             MenuOneAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            menuOneAdapter = new MenuOneAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(menuOneAdapter);
-            recyclerViewMenu.setLayoutManager(
+            List<MenuOneAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            RecyclerView.Adapter menuOneAdapter = new MenuOneAdapter(itemsMenuList, getActivity().getBaseContext());
+            recyclerView.setAdapter(menuOneAdapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

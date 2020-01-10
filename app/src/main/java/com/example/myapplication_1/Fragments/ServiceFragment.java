@@ -34,8 +34,6 @@ public class ServiceFragment extends Fragment {
                 container, false);
 
         ImageButton imageButton = view.findViewById(R.id.ll_service_button);
-        RelativeLayout relativeLayout1 = view.findViewById(R.id.rl_service1);
-        RelativeLayout relativeLayout2 = view.findViewById(R.id.rl_service2);
         RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_service3);
 
         Bundle _args = new Bundle();

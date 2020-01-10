@@ -38,7 +38,7 @@ public class TripDetailsFragment extends Fragment {
         return view;
     }
 
-    public void addListener(){
+    private void addListener(){
 
         Bundle _args = new Bundle();
         final Fragment machinePurposeTwoFragment = MachinePurposeTwoFragment.getInstance(_args);

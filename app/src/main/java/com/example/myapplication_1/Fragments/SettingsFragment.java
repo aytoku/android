@@ -18,7 +18,7 @@ import com.example.myapplication_1.R;
 public class SettingsFragment extends Fragment {
 
     public static final String TAG = "SettingsFragment";
-    RecyclerView rv;
+    RecyclerView settings_rv;
 
     public static SettingsFragment getInstance(Bundle args) {
 
@@ -37,7 +37,7 @@ public class SettingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.settings,
                 container, false);
 
-        rv = view.findViewById(R.id.recycler_settings);
+        settings_rv = view.findViewById(R.id.recycler_settings);
 
         ImageButton imageButton = view.findViewById(R.id.ll_setting_button);
 
@@ -60,16 +60,16 @@ public class SettingsFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
+        RecyclerView recyclerView = settings_rv;
 
         try {
             SettingsAdapter.SettingsItems[] settingsItems = getSettingItems();
 
             SettingsAdapter settingsAdapter = new SettingsAdapter(settingsItems, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( settingsAdapter );
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter( settingsAdapter );
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

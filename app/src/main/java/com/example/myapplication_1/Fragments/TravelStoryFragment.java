@@ -18,7 +18,7 @@ import com.example.myapplication_1.R;
 public class TravelStoryFragment extends Fragment {
 
     public static final String TAG = "TravelStoryFragment";
-    RecyclerView rv;
+    RecyclerView travelStory_rv;
 
     public static TravelStoryFragment getInstance(Bundle args) {
 
@@ -36,7 +36,7 @@ public class TravelStoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.travel_story,
                 container, false);
 
-        rv = view.findViewById(R.id.recycler_travel_story);
+        travelStory_rv = view.findViewById(R.id.recycler_travel_story);
         ImageView imageView = view.findViewById(R.id.ll_travel_story_img);
 
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -44,11 +44,9 @@ public class TravelStoryFragment extends Fragment {
             public void onClick(View view) {
                 Bundle _args = new Bundle();
                 Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
                 fragmentTransaction.commit();
-
             }
         });
 
@@ -59,17 +57,16 @@ public class TravelStoryFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
+        RecyclerView recyclerView = travelStory_rv;
 
         try {
 
             TravelStoryAdapter.TravelStoryCard[] travelStoryCardItems = getTravelStoryCardItems();
-
             TravelStoryAdapter travelStoryAdapter = new TravelStoryAdapter(travelStoryCardItems, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( travelStoryAdapter );
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter( travelStoryAdapter );
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

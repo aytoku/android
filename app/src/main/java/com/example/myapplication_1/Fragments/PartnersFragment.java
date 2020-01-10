@@ -19,7 +19,7 @@ import com.example.myapplication_1.R;
 public class PartnersFragment extends Fragment {
 
     public static final String TAG = "PartnersFragment";
-    RecyclerView rv;
+    RecyclerView partners_rv;
 
     public static PartnersFragment getInstance(Bundle args) {
 
@@ -38,7 +38,7 @@ public class PartnersFragment extends Fragment {
         View view = inflater.inflate(R.layout.partners,
                 container, false);
 
-        rv = view.findViewById(R.id.recycler_partners);
+        partners_rv = view.findViewById(R.id.recycler_partners);
         ImageButton imageButton = view.findViewById(R.id.rl_partners_button);
         TextView textView = view.findViewById(R.id.rl_partners_blacklist);
 
@@ -71,16 +71,16 @@ public class PartnersFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
+        RecyclerView recyclerView = partners_rv;
 
         try {
             PartnersAdapter.PartnersItems[] partnersItems = getPartnersItems();
 
             PartnersAdapter partnersAdapter = new PartnersAdapter(partnersItems, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( partnersAdapter );
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter( partnersAdapter );
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

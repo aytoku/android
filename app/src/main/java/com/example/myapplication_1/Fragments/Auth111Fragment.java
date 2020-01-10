@@ -35,12 +35,7 @@ import static android.app.Activity.RESULT_OK;
 public class Auth111Fragment extends Fragment {
 
     public static final String TAG = "Auth111Fragment";
-    //private static final int NOTIFY_ID = 101;
-    //private static String CHANNEL_ID = "Channel_id";
-    TextView agreement;
-    TextView alert;
-    TextView country_code;
-    EditText editText;
+    private EditText editText;
     TextView button;
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 1;
 
@@ -65,11 +60,8 @@ public class Auth111Fragment extends Fragment {
         button = view.findViewById(R.id.cl_auth_1_1_1_button1);
 
         TextView textView = view.findViewById(R.id.cl_auth_1_1_1_button);
-        agreement = view.findViewById(R.id.cl_auth_1_1_1_desc);
+        TextView agreement = view.findViewById(R.id.cl_auth_1_1_1_desc);
         agreement.setText(Html.fromHtml("Нажимая кнопку 'Далее', вы принимаете условия\n<u>пользовательского соглашения</u> и <u>политики\nконфиденцальности</u>"));
-
-        alert = view.findViewById(R.id.cl_auth_1_1_1_text_alert);
-        country_code = view.findViewById(R.id.text_number);
 
         editText = view.findViewById(R.id.cl_auth_1_1_1_editTextNumber);
 

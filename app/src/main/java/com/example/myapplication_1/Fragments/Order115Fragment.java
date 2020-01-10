@@ -20,9 +20,6 @@ import java.util.List;
 public class Order115Fragment extends Fragment {
 
     public static final String TAG = "Order115Fragment";
-    RecyclerView rv;
-    RecyclerView.Adapter order115Adapter;
-    private List<Order115Adapter.Order115Items> order115ItemsList;
 
     public static Order115Fragment getInstance(Bundle args) {
 
@@ -41,18 +38,18 @@ public class Order115Fragment extends Fragment {
         View view = inflater.inflate(R.layout.order_1_1_5,
                 container, false);
 
-        rv = view.findViewById(R.id.cl_create_order_1_1_5_recycler);
-        final RecyclerView recyclerViewMenu = rv;
+        RecyclerView order115_rv = view.findViewById(R.id.cl_create_order_1_1_5_recycler);
+        final RecyclerView recyclerView = order115_rv;
 
         try {
 
             Order115Adapter.Order115Items[] order115Items = getOrder115Items();
-            order115ItemsList = new ArrayList<>(Arrays.asList(order115Items));
-            order115Adapter = new Order115Adapter(order115ItemsList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(order115Adapter);
-            recyclerViewMenu.setLayoutManager(
+            List<Order115Adapter.Order115Items> order115ItemsList = new ArrayList<>(Arrays.asList(order115Items));
+            RecyclerView.Adapter order115Adapter = new Order115Adapter(order115ItemsList, getActivity().getBaseContext());
+            recyclerView.setAdapter(order115Adapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();

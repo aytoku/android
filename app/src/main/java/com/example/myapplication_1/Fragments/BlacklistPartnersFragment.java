@@ -19,7 +19,7 @@ import com.example.myapplication_1.R;
 public class BlacklistPartnersFragment extends Fragment {
 
     public static final String TAG = "BlacklistPartnersFragment";
-    RecyclerView rv;
+    RecyclerView black_list_rv;
     boolean check = false;
 
     public static BlacklistPartnersFragment getInstance(Bundle args) {
@@ -38,7 +38,7 @@ public class BlacklistPartnersFragment extends Fragment {
         View view = inflater.inflate(R.layout.black_list_partner,
                 container, false);
 
-        rv = view.findViewById(R.id.ll_blackList_partner_recycler_partners);
+        black_list_rv = view.findViewById(R.id.ll_blackList_partner_recycler_partners);
         ImageButton imageButton = view.findViewById(R.id.ll_blackList_partner_rl_blackList_partner_img);
         TextView textView = view.findViewById(R.id.ll_blackList_partner_rl_blackList_partner_ready);
 
@@ -70,15 +70,15 @@ public class BlacklistPartnersFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
+        RecyclerView recyclerView = black_list_rv;
 
         try{
             BlacklistPartnersAdapter.BlackListItems[] blackListItems = getBlackListItems();
             BlacklistPartnersAdapter blacklistPartnersAdapter = new BlacklistPartnersAdapter(blackListItems, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( blacklistPartnersAdapter );
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter( blacklistPartnersAdapter );
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         }catch ( NullPointerException e) {
             e.printStackTrace();

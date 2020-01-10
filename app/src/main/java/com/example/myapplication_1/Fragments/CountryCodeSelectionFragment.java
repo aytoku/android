@@ -19,7 +19,7 @@ import com.example.myapplication_1.R;
 public class CountryCodeSelectionFragment extends Fragment {
 
     public static final String TAG = "CountryCodeSelectionFragment";
-    RecyclerView rv;
+    RecyclerView countryCodeSelection_rv;
 
     public static CountryCodeSelectionFragment getInstance(Bundle args) {
 
@@ -37,7 +37,7 @@ public class CountryCodeSelectionFragment extends Fragment {
         View view = inflater.inflate(R.layout.country_code_selection,
                 container, false);
 
-        rv = view.findViewById(R.id.rl_country_code_selection_recycler);
+        countryCodeSelection_rv = view.findViewById(R.id.rl_country_code_selection_recycler);
 
         ImageButton imageButton = view.findViewById(R.id.rl_cell_country_code_selection_button);
 
@@ -59,17 +59,17 @@ public class CountryCodeSelectionFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
+        RecyclerView recyclerView = countryCodeSelection_rv;
 
         try {
 
             CountryCodeSelectionAdapter.CountryCodeItems[] countryCodeItems = getCountryCodeItems();
 
             CountryCodeSelectionAdapter countryCodeSelectionAdapter = new CountryCodeSelectionAdapter(countryCodeItems, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( countryCodeSelectionAdapter );
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter( countryCodeSelectionAdapter );
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
