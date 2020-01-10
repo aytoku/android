@@ -20,14 +20,14 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPartnersAdapter.ViewHolder> {
 
-    private final BlackListItems[] itemsMenu;
+    private final BlackListItems[] blackListItems;
     private final LayoutInflater layoutInflater;
     private final Context context;
     private Drawable imgToggleGrey;
     private Drawable imgToggleRed;
 
-    public BlacklistPartnersAdapter(BlacklistPartnersAdapter.BlackListItems[] itemsMenu, Context context) {
-        this.itemsMenu = itemsMenu;
+    public BlacklistPartnersAdapter(BlacklistPartnersAdapter.BlackListItems[] blackListItems, Context context) {
+        this.blackListItems = blackListItems;
         this.context = context;
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -47,7 +47,7 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final BlackListItems _item = itemsMenu[i];
+        final BlackListItems _item = blackListItems[i];
 
         float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -75,7 +75,7 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
 
     @Override
     public int getItemCount() {
-        return itemsMenu.length;
+        return blackListItems.length;
     }
 
     public static class BlackListItems {

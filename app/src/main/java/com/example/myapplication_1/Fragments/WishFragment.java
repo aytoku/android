@@ -104,9 +104,9 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            AdapterWish.WishItems[] itemsMenu = getMenuItems();
+            AdapterWish.WishItems[] wishItems = getWishItems();
 
-            AdapterWish adapterWish = new AdapterWish(itemsMenu, getActivity().getBaseContext());
+            AdapterWish adapterWish = new AdapterWish(wishItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterWish);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
@@ -118,7 +118,7 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
     }
 
 
-    private AdapterWish.WishItems[] getMenuItems() {
+    private AdapterWish.WishItems[] getWishItems() {
 
         String[] cost_arr = new String[]{"30 \u20BD","0 \u20BD","10 \u20BD"};
         String[] desc_arr = new String[]{"Детское кресло", "Курящий салон", "Некурящий салон"};

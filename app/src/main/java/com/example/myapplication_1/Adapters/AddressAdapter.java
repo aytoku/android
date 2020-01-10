@@ -24,10 +24,10 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private List<AddressItems> itemsMenuList;
+    private List<AddressItems> addressItemsList;
 
-    public AddressAdapter(List<AddressAdapter.AddressItems> itemsMenuList, Context context) {
-        this.itemsMenuList = itemsMenuList;
+    public AddressAdapter(List<AddressAdapter.AddressItems> addressItemsList, Context context) {
+        this.addressItemsList = addressItemsList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -44,7 +44,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final AddressItems _item = itemsMenuList.get(i);
+        final AddressItems _item = addressItemsList.get(i);
 
         Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
         float _dens = context.getResources().getDisplayMetrics().density;
@@ -69,7 +69,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return itemsMenuList.size();
+        return addressItemsList.size();
     }
 
     public static class AddressItems {

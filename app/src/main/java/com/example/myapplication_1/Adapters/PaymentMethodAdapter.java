@@ -23,12 +23,12 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private List<ItemsMenu> itemsMenuList;
+    private List<PaymentMethodItems> itemsMenuList;
     private Drawable imgToggleGrey;
     private Drawable imgToggleRed;
     private int selectItem = -1;
 
-    public PaymentMethodAdapter(List<PaymentMethodAdapter.ItemsMenu> itemsMenuList, Context context) {
+    public PaymentMethodAdapter(List<PaymentMethodAdapter.PaymentMethodItems> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -50,7 +50,7 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final PaymentMethodItems _item = itemsMenuList.get(i);
 
         float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -91,16 +91,15 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class PaymentMethodItems {
 
-        public ItemsMenu() {
+        public PaymentMethodItems() {
         }
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(PaymentMethodItems itemsMenu);
         }
 
-        int colorBackgroundInt;
         private int card_img;
         private String card_number;
         private String date;
@@ -108,8 +107,7 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
         private int toggle_img;
         private CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes,int card_img, String card_number, String date, String cvv, int toggle_img, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public PaymentMethodItems(int card_img, String card_number, String date, String cvv, int toggle_img, CallBack callBack) {
             this.card_img = card_img;
             this.card_number = card_number;
             this.date = date;
@@ -128,10 +126,6 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
 
         public String getCvv() {
             return cvv;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public int getCardImg() {

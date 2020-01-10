@@ -21,14 +21,14 @@ import ru.osety.amironlibrary.DrawableUtils;
 
     public class EarningsPageAdapter extends RecyclerView.Adapter<EarningsPageAdapter.ViewHolder> {
 
-        private final EarningsPageItems[] itemsMenu;
+        private final EarningsPageItems[] earningsPageItems;
         private final LayoutInflater layoutInflater;
         private final Context context;
         RecyclerView rv;
         RecyclerView rv1;
 
-        public EarningsPageAdapter(EarningsPageAdapter.EarningsPageItems[] itemsMenu, Context context) {
-            this.itemsMenu = itemsMenu;
+        public EarningsPageAdapter(EarningsPageAdapter.EarningsPageItems[] earningsPageItems, Context context) {
+            this.earningsPageItems = earningsPageItems;
             this.context = context;
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -45,7 +45,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final EarningsPageItems _item = itemsMenu[i];
+            final EarningsPageItems _item = earningsPageItems[i];
 
             float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -103,7 +103,7 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         @Override
         public int getItemCount() {
-            return itemsMenu.length;
+            return earningsPageItems.length;
         }
 
         public static class EarningsPageItems {

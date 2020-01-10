@@ -28,7 +28,7 @@ public class CreateOrder115Fragment extends Fragment {
     public static final String TAG = "CreateOrder115Fragment";
     RecyclerView rv;
     RecyclerView.Adapter createOrder115Adapter;
-    private List<AdapterCreateOrder115.CreateOrderItems> itemsMenuList;
+    private List<AdapterCreateOrder115.CreateOrderItems> createOrderItemsList;
 
     public static CreateOrder115Fragment getInstance(Bundle args) {
 
@@ -61,9 +61,9 @@ public class CreateOrder115Fragment extends Fragment {
 
         try {
 
-            AdapterCreateOrder115.CreateOrderItems[] itemsMenu = getCreateOrderItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            createOrder115Adapter = new AdapterCreateOrder115(itemsMenuList, getActivity().getBaseContext());
+            AdapterCreateOrder115.CreateOrderItems[] createOrderItems = getCreateOrderItems();
+            createOrderItemsList = new ArrayList<>(Arrays.asList(createOrderItems));
+            createOrder115Adapter = new AdapterCreateOrder115(createOrderItemsList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(createOrder115Adapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -81,7 +81,7 @@ public class CreateOrder115Fragment extends Fragment {
                 int position_dragged = dragged.getAdapterPosition();
                 int position_target = target.getAdapterPosition();
 
-                Collections.swap(itemsMenuList, position_dragged, position_target);
+                Collections.swap(createOrderItemsList, position_dragged, position_target);
                 createOrder115Adapter.notifyItemMoved(position_dragged, position_target);
 
                 return true;
@@ -101,11 +101,11 @@ public class CreateOrder115Fragment extends Fragment {
     public void onAddButtonClicked(View view) {
 
         try {
-            itemsMenuList.add(itemsMenuList.size(), new AdapterCreateOrder115.CreateOrderItems(
+            createOrderItemsList.add(createOrderItemsList.size(), new AdapterCreateOrder115.CreateOrderItems(
                     R.drawable.ic_cross,
                     "Максима Горького, 123",
                     R.drawable.icon_three_lines));
-            createOrder115Adapter.notifyItemInserted(itemsMenuList.size()-1);
+            createOrder115Adapter.notifyItemInserted(createOrderItemsList.size()-1);
             createOrder115Adapter.notifyDataSetChanged();
 
         } catch(NumberFormatException e) {

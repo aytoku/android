@@ -23,7 +23,7 @@ public class PaymentPickFragment extends Fragment {
 
     RecyclerView rv;
     RecyclerView.Adapter paymentMethodAdapter;
-    private List<PaymentPickAdapter.ItemsMenu> itemsMenuList;
+    private List<PaymentPickAdapter.PaymentPickItems> itemsMenuList;
 
     public static final String TAG = "PaymentPickFragment";
 
@@ -50,8 +50,8 @@ public class PaymentPickFragment extends Fragment {
         final RecyclerView recyclerViewMenu = rv;
 
         try {
-            PaymentPickAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            PaymentPickAdapter.PaymentPickItems[] paymentPickItems = getMenuItems();
+            itemsMenuList = new ArrayList<>(Arrays.asList(paymentPickItems));
             paymentMethodAdapter = new PaymentPickAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(paymentMethodAdapter);
             recyclerViewMenu.setLayoutManager(
@@ -78,16 +78,15 @@ public class PaymentPickFragment extends Fragment {
         return view;
     }
 
-    private PaymentPickAdapter.ItemsMenu[] getMenuItems() {
+    private PaymentPickAdapter.PaymentPickItems[] getMenuItems() {
 
-        PaymentPickAdapter.ItemsMenu[] arr = new PaymentPickAdapter.ItemsMenu[]{
+        PaymentPickAdapter.PaymentPickItems[] arr = new PaymentPickAdapter.PaymentPickItems[]{
 
-                new PaymentPickAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new PaymentPickAdapter.PaymentPickItems(
                         R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
-                        new PaymentPickAdapter.ItemsMenu.CallBack(){
+                        new PaymentPickAdapter.PaymentPickItems.CallBack(){
                             @Override
-                            public void call(PaymentPickAdapter.ItemsMenu itemsMenu){
+                            public void call(PaymentPickAdapter.PaymentPickItems paymentPickItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -96,12 +95,11 @@ public class PaymentPickFragment extends Fragment {
                             }
                         }),
 
-                new PaymentPickAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new PaymentPickAdapter.PaymentPickItems(
                         R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
-                        new PaymentPickAdapter.ItemsMenu.CallBack(){
+                        new PaymentPickAdapter.PaymentPickItems.CallBack(){
                             @Override
-                            public void call(PaymentPickAdapter.ItemsMenu itemsMenu){
+                            public void call(PaymentPickAdapter.PaymentPickItems paymentPickItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -110,12 +108,11 @@ public class PaymentPickFragment extends Fragment {
                             }
                         }),
 
-                new PaymentPickAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new PaymentPickAdapter.PaymentPickItems(
                         R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
-                        new PaymentPickAdapter.ItemsMenu.CallBack(){
+                        new PaymentPickAdapter.PaymentPickItems.CallBack(){
                             @Override
-                            public void call(PaymentPickAdapter.ItemsMenu itemsMenu){
+                            public void call(PaymentPickAdapter.PaymentPickItems paymentPickItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {

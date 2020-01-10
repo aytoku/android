@@ -73,8 +73,8 @@ public class BlacklistPartnersFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try{
-            BlacklistPartnersAdapter.BlackListItems[] itemsMenu = getBlackListItems();
-            BlacklistPartnersAdapter blacklistPartnersAdapter = new BlacklistPartnersAdapter(itemsMenu, getActivity().getBaseContext());
+            BlacklistPartnersAdapter.BlackListItems[] blackListItems = getBlackListItems();
+            BlacklistPartnersAdapter blacklistPartnersAdapter = new BlacklistPartnersAdapter(blackListItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( blacklistPartnersAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -94,7 +94,7 @@ public class BlacklistPartnersFragment extends Fragment {
                         "Партнер 1", check,
                         new BlacklistPartnersAdapter.BlackListItems.CallBack() {
                             @Override
-                            public void call(BlacklistPartnersAdapter.BlackListItems itemsMenu) {
+                            public void call(BlacklistPartnersAdapter.BlackListItems blackListItems) {
                                 try{
                                     Bundle _args = new Bundle();
 
@@ -108,7 +108,7 @@ public class BlacklistPartnersFragment extends Fragment {
                         "Партнер 2", check,
                         new BlacklistPartnersAdapter.BlackListItems.CallBack() {
                             @Override
-                            public void call(BlacklistPartnersAdapter.BlackListItems itemsMenu) {
+                            public void call(BlacklistPartnersAdapter.BlackListItems blackListItems) {
                                 try{
                                     Bundle _args = new Bundle();
 
@@ -122,7 +122,7 @@ public class BlacklistPartnersFragment extends Fragment {
                         "Партнер 1", check,
                         new BlacklistPartnersAdapter.BlackListItems.CallBack() {
                             @Override
-                            public void call(BlacklistPartnersAdapter.BlackListItems itemsMenu) {
+                            public void call(BlacklistPartnersAdapter.BlackListItems blackListItems) {
                                 try{
                                     Bundle _args = new Bundle();
 
@@ -136,7 +136,7 @@ public class BlacklistPartnersFragment extends Fragment {
                         "Партнер 2", check,
                         new BlacklistPartnersAdapter.BlackListItems.CallBack() {
                             @Override
-                            public void call(BlacklistPartnersAdapter.BlackListItems itemsMenu) {
+                            public void call(BlacklistPartnersAdapter.BlackListItems blackListItems) {
                                 try{
                                     Bundle _args = new Bundle();
 

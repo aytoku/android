@@ -37,7 +37,7 @@ public class DriverTipsAlert extends DialogFragment {
 
     RecyclerView rv;
     RecyclerView.Adapter adapterGridViewMenu;
-    private List<DriverTipsAdapter.DriverTipsItems> itemsMenuList;
+    private List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,9 +73,9 @@ public class DriverTipsAlert extends DialogFragment {
 
         try {
 
-            DriverTipsAdapter.DriverTipsItems[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new DriverTipsAdapter(itemsMenuList, getActivity().getBaseContext());
+            DriverTipsAdapter.DriverTipsItems[] driverTipsItems = getDriverTipsItems();
+            driverTipsItemsList = new ArrayList<>(Arrays.asList(driverTipsItems));
+            adapterGridViewMenu = new DriverTipsAdapter(driverTipsItemsList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
@@ -96,7 +96,7 @@ public class DriverTipsAlert extends DialogFragment {
         dismiss();
     }
 
-    private DriverTipsAdapter.DriverTipsItems[] getMenuItems() {
+    private DriverTipsAdapter.DriverTipsItems[] getDriverTipsItems() {
 
         DriverTipsAdapter.DriverTipsItems[] arr = new DriverTipsAdapter.DriverTipsItems[]{
 
@@ -104,7 +104,7 @@ public class DriverTipsAlert extends DialogFragment {
                         "0%",
                         new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -117,7 +117,7 @@ public class DriverTipsAlert extends DialogFragment {
                         "5%",
                         new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -130,7 +130,7 @@ public class DriverTipsAlert extends DialogFragment {
                         "10%",
                         new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -143,7 +143,7 @@ public class DriverTipsAlert extends DialogFragment {
                         "15%",
                         new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -156,7 +156,7 @@ public class DriverTipsAlert extends DialogFragment {
                         "20%",
                         new DriverTipsAdapter.DriverTipsItems.CallBack(){
                             @Override
-                            public void call(DriverTipsAdapter.DriverTipsItems itemsMenu){
+                            public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {

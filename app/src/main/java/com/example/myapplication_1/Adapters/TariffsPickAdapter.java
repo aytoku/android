@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,10 +25,10 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
     private final Context context;
     private Drawable unChecked;
     private Drawable checked;
-    private List<ItemsMenu> itemsMenuList;
+    private List<TariffsPickItems> tariffsPickItemsList;
 
-    public TariffsPickAdapter(List<TariffsPickAdapter.ItemsMenu> itemsMenuList, Context context) {
-        this.itemsMenuList = itemsMenuList;
+    public TariffsPickAdapter(List<TariffsPickAdapter.TariffsPickItems> tariffsPickItemsList, Context context) {
+        this.tariffsPickItemsList = tariffsPickItemsList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -49,7 +48,7 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final TariffsPickItems _item = tariffsPickItemsList.get(i);
 
         float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -75,24 +74,21 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
 
     @Override
     public int getItemCount() {
-        return itemsMenuList.size();
+        return tariffsPickItemsList.size();
     }
 
-    public static class ItemsMenu {
+    public static class TariffsPickItems {
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(TariffsPickItems itemsMenu);
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String title;
         private CallBack callBack;
         private int img;
         private boolean check;
 
-        public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack, int img, boolean check) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public TariffsPickItems(String title, CallBack callBack, int img, boolean check) {
             this.title = title;
             this.callBack = callBack;
             this.img = img;
@@ -105,10 +101,6 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
 
         public String getStr() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public CallBack getCallBack() {

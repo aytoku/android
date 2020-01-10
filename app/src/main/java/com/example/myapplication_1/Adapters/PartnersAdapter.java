@@ -15,12 +15,12 @@ import com.example.myapplication_1.R;
 
 public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHolder> {
 
-    private final PartnersItems[] itemsMenu;
+    private final PartnersItems[] partnersItems;
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    public PartnersAdapter(PartnersAdapter.PartnersItems[] itemsMenu, Context context) {
-        this.itemsMenu = itemsMenu;
+    public PartnersAdapter(PartnersAdapter.PartnersItems[] partnersItems, Context context) {
+        this.partnersItems = partnersItems;
         this.context = context;
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -37,7 +37,7 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        final PartnersItems _item = itemsMenu[i];
+        final PartnersItems _item = partnersItems[i];
 
         viewHolder.desc.setText( _item.getStr() );
 
@@ -55,7 +55,7 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return itemsMenu.length;
+        return partnersItems.length;
     }
 
     public static class PartnersItems {

@@ -24,7 +24,7 @@ public class AddressFragment extends Fragment {
 
     public static final String TAG = "AddressFragment";
     RecyclerView.Adapter addressAdapter;
-    private List<AddressAdapter.AddressItems> itemsMenuList;
+    private List<AddressAdapter.AddressItems> addressItemsList;
 
     public static AddressFragment getInstance(Bundle args) {
 
@@ -72,9 +72,9 @@ public class AddressFragment extends Fragment {
 
         try {
 
-            AddressAdapter.AddressItems[] itemsMenu = getAddressItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            addressAdapter = new AddressAdapter(itemsMenuList, getActivity().getBaseContext());
+            AddressAdapter.AddressItems[] addressItems = getAddressItems();
+            addressItemsList = new ArrayList<>(Arrays.asList(addressItems));
+            addressAdapter = new AddressAdapter(addressItemsList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(addressAdapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -89,7 +89,7 @@ public class AddressFragment extends Fragment {
     public void onAddButtonClicked(View view) {
 
         try {
-            itemsMenuList.add(itemsMenuList.size(), new AddressAdapter.AddressItems(getResources().getColor(R.color.my_gray),
+            addressItemsList.add(addressItemsList.size(), new AddressAdapter.AddressItems(getResources().getColor(R.color.my_gray),
                     R.mipmap.icon_button_plus,
                     "Добавить адрес дома",
                     new AddressAdapter.AddressItems.CallBack(){
@@ -107,7 +107,7 @@ public class AddressFragment extends Fragment {
                             }
                         }
                     }));
-            addressAdapter.notifyItemInserted(itemsMenuList.size()-1);
+            addressAdapter.notifyItemInserted(addressItemsList.size()-1);
             addressAdapter.notifyDataSetChanged();
 
         } catch(NumberFormatException e) {
@@ -126,7 +126,7 @@ public class AddressFragment extends Fragment {
                         "Добавить адрес дома",
                         new AddressAdapter.AddressItems.CallBack(){
                             @Override
-                            public void call(AddressAdapter.AddressItems itemsMenu){
+                            public void call(AddressAdapter.AddressItems addressItems){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
@@ -146,7 +146,7 @@ public class AddressFragment extends Fragment {
                         "Добавить адрес дома",
                         new AddressAdapter.AddressItems.CallBack(){
                             @Override
-                            public void call(AddressAdapter.AddressItems itemsMenu){
+                            public void call(AddressAdapter.AddressItems addressItems){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);

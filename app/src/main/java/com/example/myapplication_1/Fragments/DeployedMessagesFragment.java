@@ -23,7 +23,7 @@ public class DeployedMessagesFragment extends Fragment {
     public static final String TAG = "DeployedMessagesFragment";
     RecyclerView rv;
     RecyclerView.Adapter deployedMessagesAdapter;
-    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
+    private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
 
     public static DeployedMessagesFragment getInstance(Bundle args) {
 
@@ -47,9 +47,9 @@ public class DeployedMessagesFragment extends Fragment {
 
         try {
 
-            DeployedMessagesAdapter.DeployedMessagesItems[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            deployedMessagesAdapter = new DeployedMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
+            DeployedMessagesAdapter.DeployedMessagesItems[] deployedMessagesItems = getDeployedMessagesItems();
+            deployedMessagesItemsList = new ArrayList<>(Arrays.asList(deployedMessagesItems));
+            deployedMessagesAdapter = new DeployedMessagesAdapter(deployedMessagesItemsList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(deployedMessagesAdapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -69,7 +69,7 @@ public class DeployedMessagesFragment extends Fragment {
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
 
                 int position = viewHolder.getAdapterPosition();
-                itemsMenuList.remove(position);
+                deployedMessagesItemsList.remove(position);
                 deployedMessagesAdapter.notifyDataSetChanged();
             }
         };
@@ -79,7 +79,7 @@ public class DeployedMessagesFragment extends Fragment {
         return view;
     }
 
-    private DeployedMessagesAdapter.DeployedMessagesItems[] getMenuItems() {
+    private DeployedMessagesAdapter.DeployedMessagesItems[] getDeployedMessagesItems() {
 
         DeployedMessagesAdapter.DeployedMessagesItems[] arr = new DeployedMessagesAdapter.DeployedMessagesItems[]{
 

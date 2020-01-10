@@ -23,12 +23,12 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private List<ItemsMenu> itemsMenuList;
+    private List<PaymentPickItems> itemsMenuList;
     private Drawable imgToggleGrey;
     private Drawable imgToggleRed;
     private int selectItem = -1;
 
-    public PaymentPickAdapter(List<PaymentPickAdapter.ItemsMenu> itemsMenuList, Context context) {
+    public PaymentPickAdapter(List<PaymentPickAdapter.PaymentPickItems> itemsMenuList, Context context) {
         this.itemsMenuList = itemsMenuList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -50,7 +50,7 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final ItemsMenu _item = itemsMenuList.get(i);
+        final PaymentPickItems _item = itemsMenuList.get(i);
 
         float _dens = context.getResources().getDisplayMetrics().density;
         int _size = Math.round(_dens * 40);
@@ -98,23 +98,21 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
         return itemsMenuList.size();
     }
 
-    public static class ItemsMenu {
+    public static class PaymentPickItems {
 
-        public ItemsMenu() {
+        public PaymentPickItems() {
         }
 
         public interface CallBack {
-            void call(ItemsMenu itemsMenu);
+            void call(PaymentPickItems itemsMenu);
         }
 
-        int colorBackgroundInt;
         private int card_img;
         private String title;
         private int toggle_img;
         private CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes,int card_img, String title, int toggle_img, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public PaymentPickItems(int card_img, String title, int toggle_img, CallBack callBack) {
             this.card_img = card_img;
             this.title = title;
             this.toggle_img = toggle_img;
@@ -123,10 +121,6 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
 
         public String getTitle() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public int getCardImg() {

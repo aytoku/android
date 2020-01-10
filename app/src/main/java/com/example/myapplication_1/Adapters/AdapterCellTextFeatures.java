@@ -19,7 +19,6 @@ public class AdapterCellTextFeatures extends RecyclerView.Adapter<AdapterCellTex
     private final String[] array;
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private final ImageView[] imageViewsArray = new ImageView[0];
     private final Drawable mini_ellipse_red;
     private final Drawable mini_ellipse_black;
     private final Drawable mini_ellipse_green;

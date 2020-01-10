@@ -23,15 +23,6 @@ public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatur
 
 //        Drawable background_button = context.getResources().getDrawable(R.drawable.yellow_button);
 //        draw = DrawableUtils.setTintDrawable(background_button, Color.parseColor("#409AFF"));
-//
-//        Drawable background_button1 = context.getResources().getDrawable(R.drawable.yellow_button);
-//        draw1 = DrawableUtils.setTintDrawable(background_button1, Color.parseColor("#2FBF52"));
-//
-//        Drawable background_button2 = context.getResources().getDrawable(R.drawable.yellow_button);
-//        draw2 = DrawableUtils.setTintDrawable(background_button2, Color.parseColor("#F3B742"));
-//
-//        Drawable background_button3 = context.getResources().getDrawable(R.drawable.yellow_button);
-//        draw3 = DrawableUtils.setTintDrawable(background_button3, Color.parseColor("#F3F3F3"));
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }

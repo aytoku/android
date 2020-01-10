@@ -21,10 +21,10 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
     private final Context context;
     private int selectItem = -1;
 
-    private List<DriverTipsItems> itemsMenuList;
+    private List<DriverTipsItems> driverTipsItemsList;
 
-    public DriverTipsAdapter(List<DriverTipsAdapter.DriverTipsItems> itemsMenuList, Context context) {
-        this.itemsMenuList = itemsMenuList;
+    public DriverTipsAdapter(List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList, Context context) {
+        this.driverTipsItemsList = driverTipsItemsList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -41,7 +41,7 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final DriverTipsItems _item = itemsMenuList.get(i);
+        final DriverTipsItems _item = driverTipsItemsList.get(i);
 
         viewHolder.title.setText(_item.getStr());
 
@@ -68,7 +68,7 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return itemsMenuList.size();
+        return driverTipsItemsList.size();
     }
 
     public static class DriverTipsItems {

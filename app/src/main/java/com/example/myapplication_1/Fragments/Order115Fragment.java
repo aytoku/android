@@ -22,7 +22,7 @@ public class Order115Fragment extends Fragment {
     public static final String TAG = "Order115Fragment";
     RecyclerView rv;
     RecyclerView.Adapter order115Adapter;
-    private List<Order115Adapter.Order115Items> itemsMenuList;
+    private List<Order115Adapter.Order115Items> order115ItemsList;
 
     public static Order115Fragment getInstance(Bundle args) {
 
@@ -46,9 +46,9 @@ public class Order115Fragment extends Fragment {
 
         try {
 
-            Order115Adapter.Order115Items[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            order115Adapter = new Order115Adapter(itemsMenuList, getActivity().getBaseContext());
+            Order115Adapter.Order115Items[] order115Items = getOrder115Items();
+            order115ItemsList = new ArrayList<>(Arrays.asList(order115Items));
+            order115Adapter = new Order115Adapter(order115ItemsList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(order115Adapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -66,7 +66,7 @@ public class Order115Fragment extends Fragment {
         super.onStart();
     }
 
-    private Order115Adapter.Order115Items[] getMenuItems() {
+    private Order115Adapter.Order115Items[] getOrder115Items() {
 
         Order115Adapter.Order115Items[] arr = new Order115Adapter.Order115Items[]{
 

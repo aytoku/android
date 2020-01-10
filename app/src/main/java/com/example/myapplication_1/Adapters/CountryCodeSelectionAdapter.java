@@ -18,12 +18,12 @@ import ru.osety.amironlibrary.DrawableUtils;
 
     public class CountryCodeSelectionAdapter extends RecyclerView.Adapter<CountryCodeSelectionAdapter.ViewHolder> {
 
-        private final CountryCideItems[] itemsMenu;
+        private final CountryCodeItems[] countryCodeItems;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public CountryCodeSelectionAdapter(CountryCodeSelectionAdapter.CountryCideItems[] itemsMenu, Context context) {
-            this.itemsMenu = itemsMenu;
+        public CountryCodeSelectionAdapter(CountryCodeSelectionAdapter.CountryCodeItems[] countryCodeItems, Context context) {
+            this.countryCodeItems = countryCodeItems;
             this.context = context;
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -40,7 +40,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final CountryCideItems _item = itemsMenu[i];
+            final CountryCodeItems _item = countryCodeItems[i];
 
             Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
             float _dens = context.getResources().getDisplayMetrics().density;
@@ -82,13 +82,13 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         @Override
         public int getItemCount() {
-            return itemsMenu.length;
+            return countryCodeItems.length;
         }
 
-        public static class CountryCideItems {
+        public static class CountryCodeItems {
 
             public interface CallBack {
-                void call(CountryCideItems itemsMenu);
+                void call(CountryCodeItems itemsMenu);
             }
 
             int colorBackgroundInt;
@@ -98,7 +98,7 @@ import ru.osety.amironlibrary.DrawableUtils;
             public CallBack callBack;
             private String code;
 
-            public CountryCideItems(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack, String code) {
+            public CountryCodeItems(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack, String code) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.letter = letter;
                 this.imgResId = imgResId;

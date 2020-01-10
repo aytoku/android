@@ -63,9 +63,9 @@ public class SettingsFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            SettingsAdapter.SettingsItems[] itemsMenu = getMenuItems();
+            SettingsAdapter.SettingsItems[] settingsItems = getSettingItems();
 
-            SettingsAdapter settingsAdapter = new SettingsAdapter(itemsMenu, getActivity().getBaseContext());
+            SettingsAdapter settingsAdapter = new SettingsAdapter(settingsItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( settingsAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -76,7 +76,7 @@ public class SettingsFragment extends Fragment {
         }
     }
 
-    private SettingsAdapter.SettingsItems[] getMenuItems() {
+    private SettingsAdapter.SettingsItems[] getSettingItems() {
 
         SettingsAdapter.SettingsItems []_arr = new SettingsAdapter.SettingsItems[]{
 

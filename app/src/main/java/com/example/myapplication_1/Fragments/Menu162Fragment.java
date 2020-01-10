@@ -62,8 +62,8 @@ public class Menu162Fragment extends Fragment {
 
         try {
 
-            AdapterMenu162.Menu162List[] itemsMenu = getMenu162ListItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            AdapterMenu162.Menu162List[] menu162Lists = getMenu162ListItems();
+            itemsMenuList = new ArrayList<>(Arrays.asList(menu162Lists));
             menu162Adapter = new AdapterMenu162(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(menu162Adapter);
             recyclerViewMenu.setLayoutManager(
@@ -90,7 +90,7 @@ public class Menu162Fragment extends Fragment {
                         R.drawable.icon_arrow_right,
                         new AdapterMenu162.Menu162List.CallBack(){
                             @Override
-                            public void call(AdapterMenu162.Menu162List itemsMenu){
+                            public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -104,7 +104,7 @@ public class Menu162Fragment extends Fragment {
                         R.drawable.icon_arrow_right,
                         new AdapterMenu162.Menu162List.CallBack(){
                             @Override
-                            public void call(AdapterMenu162.Menu162List itemsMenu){
+                            public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -118,7 +118,7 @@ public class Menu162Fragment extends Fragment {
                         R.drawable.icon_arrow_right,
                         new AdapterMenu162.Menu162List.CallBack(){
                             @Override
-                            public void call(AdapterMenu162.Menu162List itemsMenu){
+                            public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);

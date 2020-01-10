@@ -19,13 +19,13 @@ import ru.osety.amironlibrary.DrawableUtils;
 
     public class CellTravelStoryOneCardAdapter extends RecyclerView.Adapter<CellTravelStoryOneCardAdapter.ViewHolder> {
 
-        private final TravelStoryRow[] itemsMenu;
+        private final TravelStoryRow[] travelStoryRows;
         private final LayoutInflater layoutInflater;
         private final Context context;
         private final Drawable drawable;
 
-        public CellTravelStoryOneCardAdapter(CellTravelStoryOneCardAdapter.TravelStoryRow[] itemsMenu, Context context) {
-            this.itemsMenu = itemsMenu;
+        public CellTravelStoryOneCardAdapter(CellTravelStoryOneCardAdapter.TravelStoryRow[] travelStoryRows, Context context) {
+            this.travelStoryRows = travelStoryRows;
             this.context = context;
 
             drawable = context.getResources().getDrawable(R.drawable.button_grey_story);
@@ -44,7 +44,7 @@ import ru.osety.amironlibrary.DrawableUtils;
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final TravelStoryRow _item = itemsMenu[i];
+            final TravelStoryRow _item = travelStoryRows[i];
 
             float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -59,7 +59,7 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         @Override
         public int getItemCount() {
-            return itemsMenu.length;
+            return travelStoryRows.length;
         }
 
         public static class TravelStoryRow {

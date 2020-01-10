@@ -20,10 +20,10 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    private List<CreateOrderItems> itemsMenuList;
+    private List<CreateOrderItems> createOrderItems;
 
-    public AdapterCreateOrder115(List<AdapterCreateOrder115.CreateOrderItems> itemsMenuList, Context context) {
-        this.itemsMenuList = itemsMenuList;
+    public AdapterCreateOrder115(List<AdapterCreateOrder115.CreateOrderItems> createOrderItems, Context context) {
+        this.createOrderItems = createOrderItems;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -40,14 +40,14 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final CreateOrderItems _item = itemsMenuList.get(i);
+        final CreateOrderItems _item = createOrderItems.get(i);
 
         viewHolder.title.setText(_item.getStr());
 
         viewHolder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                itemsMenuList.remove(i);
+                createOrderItems.remove(i);
                 notifyItemRemoved(i);
                 notifyItemRangeChanged(i, 1);
             }
@@ -56,7 +56,7 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
 
     @Override
     public int getItemCount() {
-        return itemsMenuList.size();
+        return createOrderItems.size();
     }
 
     public static class CreateOrderItems {

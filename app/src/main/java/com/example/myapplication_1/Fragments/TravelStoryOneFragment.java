@@ -77,9 +77,9 @@ public class TravelStoryOneFragment extends Fragment {
 
         try {
 
-            CellTravelStoryOneCardAdapter.TravelStoryRow[] itemsMenu = getMenuItems();
+            CellTravelStoryOneCardAdapter.TravelStoryRow[] travelStoryRowItems = getTravelStoryRowItems();
 
-            CellTravelStoryOneCardAdapter cellTravelStoryOneCardAdapter = new CellTravelStoryOneCardAdapter(itemsMenu, getActivity().getBaseContext());
+            CellTravelStoryOneCardAdapter cellTravelStoryOneCardAdapter = new CellTravelStoryOneCardAdapter(travelStoryRowItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( cellTravelStoryOneCardAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -94,9 +94,9 @@ public class TravelStoryOneFragment extends Fragment {
 
         try {
 
-            CellTravelStoryOneAdapter.PaymentDesc[] itemsMenu = getMenuItems1();
+            CellTravelStoryOneAdapter.PaymentDesc[] travelStoryItems = getCellTravelStoryItems();
 
-            CellTravelStoryOneAdapter adapterGridViewMenu = new CellTravelStoryOneAdapter(itemsMenu, getActivity().getBaseContext());
+            CellTravelStoryOneAdapter adapterGridViewMenu = new CellTravelStoryOneAdapter(travelStoryItems, getActivity().getBaseContext());
             recyclerView.setAdapter( adapterGridViewMenu );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -114,7 +114,7 @@ public class TravelStoryOneFragment extends Fragment {
         travelStoryOneAlert.show(getFragmentManager(), "DriverTipsFragment");
     }
 
-    private CellTravelStoryOneCardAdapter.TravelStoryRow[] getMenuItems() {
+    private CellTravelStoryOneCardAdapter.TravelStoryRow[] getTravelStoryRowItems() {
 
         CellTravelStoryOneCardAdapter.TravelStoryRow []_arr = new CellTravelStoryOneCardAdapter.TravelStoryRow[]{
 
@@ -124,7 +124,7 @@ public class TravelStoryOneFragment extends Fragment {
                         R.drawable.icon_ellipse_red,
                         new CellTravelStoryOneCardAdapter.TravelStoryRow.CallBack() {
                             @Override
-                            public void call(CellTravelStoryOneCardAdapter.TravelStoryRow itemsMenu) {
+                            public void call(CellTravelStoryOneCardAdapter.TravelStoryRow travelStoryRowItems) {
 
                                 try {
 
@@ -139,7 +139,7 @@ public class TravelStoryOneFragment extends Fragment {
         return _arr;
     }
 
-    private CellTravelStoryOneAdapter.PaymentDesc[] getMenuItems1() {
+    private CellTravelStoryOneAdapter.PaymentDesc[] getCellTravelStoryItems() {
 
         CellTravelStoryOneAdapter.PaymentDesc []_arr1 = new CellTravelStoryOneAdapter.PaymentDesc[]{
 

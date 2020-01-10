@@ -27,6 +27,8 @@ import java.util.List;
 public class TariffsPickAlert extends DialogFragment {
 
     public static final String TAG = "TariffsPickAlert";
+    TextView button;
+    boolean check = false;
 
     public static TariffsPickAlert getInstance(Bundle args) {
 
@@ -35,10 +37,6 @@ public class TariffsPickAlert extends DialogFragment {
 
         return f;
     }
-
-    TextView button;
-    boolean check = false;
-    //ExpListAdapter expListAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,8 +72,8 @@ public class TariffsPickAlert extends DialogFragment {
         final RecyclerView recyclerViewMenu = rv;
 
         try{
-            TariffsPickAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            List<TariffsPickAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            TariffsPickAdapter.TariffsPickItems[] tariffsPickItems = getTariffsPickItems();
+            List<TariffsPickAdapter.TariffsPickItems> itemsMenuList = new ArrayList<>(Arrays.asList(tariffsPickItems));
             RecyclerView.Adapter adapterGridViewMenu = new TariffsPickAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
@@ -98,16 +96,15 @@ public class TariffsPickAlert extends DialogFragment {
         dismiss();
     }
 
-    private TariffsPickAdapter.ItemsMenu[] getMenuItems() {
+    private TariffsPickAdapter.TariffsPickItems[] getTariffsPickItems() {
 
-        TariffsPickAdapter.ItemsMenu[] arr = new TariffsPickAdapter.ItemsMenu[]{
+        TariffsPickAdapter.TariffsPickItems[] arr = new TariffsPickAdapter.TariffsPickItems[]{
 
-                new TariffsPickAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new TariffsPickAdapter.TariffsPickItems(
                         "Эконом",
-                        new TariffsPickAdapter.ItemsMenu.CallBack() {
+                        new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
-                            public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
+                            public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
                                 try {
                                     button.setOnClickListener(new View.OnClickListener() {
                                         @Override
@@ -121,12 +118,11 @@ public class TariffsPickAlert extends DialogFragment {
                             }
                         },R.drawable.ic_empty_switch, check),
 
-                new TariffsPickAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new TariffsPickAdapter.TariffsPickItems(
                         "Стандарт",
-                        new TariffsPickAdapter.ItemsMenu.CallBack() {
+                        new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
-                            public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
+                            public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
                                 try {
                                     button.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -140,12 +136,11 @@ public class TariffsPickAlert extends DialogFragment {
                             }
                         },R.drawable.ic_empty_switch, check),
 
-                new TariffsPickAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new TariffsPickAdapter.TariffsPickItems(
                         "Комфорт",
-                        new TariffsPickAdapter.ItemsMenu.CallBack() {
+                        new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
-                            public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
+                            public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
                                 try {
                                     button.setOnClickListener(new View.OnClickListener() {
                                         @Override
@@ -159,12 +154,11 @@ public class TariffsPickAlert extends DialogFragment {
                             }
                         },R.drawable.ic_empty_switch, check),
 
-                new TariffsPickAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new TariffsPickAdapter.TariffsPickItems(
                         "Доставка",
-                        new TariffsPickAdapter.ItemsMenu.CallBack() {
+                        new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
-                            public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
+                            public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
                                 try {
                                     button.setOnClickListener(new View.OnClickListener() {
                                         @Override
@@ -178,12 +172,11 @@ public class TariffsPickAlert extends DialogFragment {
                             }
                         },R.drawable.ic_empty_switch, check),
 
-                new TariffsPickAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new TariffsPickAdapter.TariffsPickItems(
                         "Грузовое",
-                        new TariffsPickAdapter.ItemsMenu.CallBack() {
+                        new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
-                            public void call(TariffsPickAdapter.ItemsMenu itemsMenu) {
+                            public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
                                 try {
                                     button.setOnClickListener(new View.OnClickListener() {
                                         @Override

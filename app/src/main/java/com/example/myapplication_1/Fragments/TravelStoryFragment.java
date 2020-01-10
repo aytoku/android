@@ -63,9 +63,9 @@ public class TravelStoryFragment extends Fragment {
 
         try {
 
-            TravelStoryAdapter.TravelStoryCard[] itemsMenu = getMenuItems();
+            TravelStoryAdapter.TravelStoryCard[] travelStoryCardItems = getTravelStoryCardItems();
 
-            TravelStoryAdapter travelStoryAdapter = new TravelStoryAdapter(itemsMenu, getActivity().getBaseContext());
+            TravelStoryAdapter travelStoryAdapter = new TravelStoryAdapter(travelStoryCardItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( travelStoryAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -76,7 +76,7 @@ public class TravelStoryFragment extends Fragment {
         }
     }
 
-    private TravelStoryAdapter.TravelStoryCard[] getMenuItems() {
+    private TravelStoryAdapter.TravelStoryCard[] getTravelStoryCardItems() {
 
         TravelStoryAdapter.TravelStoryCard []_arr = new TravelStoryAdapter.TravelStoryCard[]{
 
@@ -85,12 +85,12 @@ public class TravelStoryFragment extends Fragment {
                         "Сегодня 10:10",
                         new TravelStoryAdapter.TravelStoryCard.CallBack() {
                             @Override
-                            public void call(TravelStoryAdapter.TravelStoryCard itemsMenu) {
+                            public void call(TravelStoryAdapter.TravelStoryCard travelStoryCardItems) {
 
                                 try {
 
                                     Bundle _args = new Bundle();
-                                    String cv_id =  itemsMenu.getUuid();
+                                    String cv_id =  travelStoryCardItems.getUuid();
                                     _args.putString("uuid", cv_id);
 
                                     Fragment travelStoryFragment = TravelStoryOneFragment.getInstance(_args);

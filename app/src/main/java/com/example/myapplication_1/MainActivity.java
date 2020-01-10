@@ -17,6 +17,8 @@ import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
 import com.example.myapplication_1.Fragments.ChatWithOperator;
 import com.example.myapplication_1.Fragments.CodeScreenFragment;
 import com.example.myapplication_1.Fragments.CommentsFragment;
+import com.example.myapplication_1.Fragments.CountryCodeSelectionFragment;
+import com.example.myapplication_1.Fragments.CreateOrder115Fragment;
 import com.example.myapplication_1.Fragments.DeployedMessagesFragment;
 import com.example.myapplication_1.Fragments.DriverChatFragment;
 import com.example.myapplication_1.Fragments.DriverSpinnerFragment;
@@ -36,6 +38,7 @@ import com.example.myapplication_1.Fragments.MenuOneFragment;
 import com.example.myapplication_1.Fragments.MenuTwoFragment;
 import com.example.myapplication_1.Fragments.NewCardFragment;
 import com.example.myapplication_1.Fragments.NewSearchFragment;
+import com.example.myapplication_1.Fragments.Order115Fragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
 import com.example.myapplication_1.Fragments.PartnersFragment;
 import com.example.myapplication_1.Fragments.PaymentMethodFragment;
@@ -81,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
         ChatWithDriverFragment chatWithDriverFragment = ChatWithDriverFragment.getInstance(null);
         CodeScreenFragment codeScreenFragment = CodeScreenFragment.getInstance(null);
         CommentsFragment commentsFragment = CommentsFragment.getInstance(null);
+        CountryCodeSelectionFragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(null);
+        CreateOrder115Fragment createOrder115Fragment = CreateOrder115Fragment.getInstance(null);
         ChatWithOperator chatWithOperator = ChatWithOperator.getInstance(null);
         ChatSliderFragment chatSliderFragment = ChatSliderFragment.getInstance(null);
 
@@ -109,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         NewSearchFragment newSearchFragment = NewSearchFragment.getInstance(null);
 
         OrderAcceptFragment orderAcceptFragment = OrderAcceptFragment.getInstance(null);
+        Order115Fragment order115Fragment = Order115Fragment.getInstance(null);
 
         PartnersFragment partnersFragment = PartnersFragment.getInstance(null);
         PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(null);

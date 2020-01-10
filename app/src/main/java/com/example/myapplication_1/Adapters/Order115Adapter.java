@@ -18,10 +18,10 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private List<Order115Items> itemsMenuList;
+    private List<Order115Items> order115ItemsList;
 
-    public Order115Adapter(List<Order115Adapter.Order115Items> itemsMenuList, Context context) {
-        this.itemsMenuList = itemsMenuList;
+    public Order115Adapter(List<Order115Adapter.Order115Items> order115ItemsList, Context context) {
+        this.order115ItemsList = order115ItemsList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -39,7 +39,7 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-        final Order115Items _item = itemsMenuList.get(i);
+        final Order115Items _item = order115ItemsList.get(i);
 
         viewHolder.emoji.setText(_item.getEmoji());
         viewHolder.desc.setText(_item.getStr());
@@ -47,7 +47,7 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return itemsMenuList.size();
+        return order115ItemsList.size();
     }
 
     public static class Order115Items {

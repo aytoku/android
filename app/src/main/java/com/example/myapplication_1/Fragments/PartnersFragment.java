@@ -74,9 +74,9 @@ public class PartnersFragment extends Fragment {
         RecyclerView recyclerViewMenu = rv;
 
         try {
-            PartnersAdapter.PartnersItems[] itemsMenu = getMenuItems();
+            PartnersAdapter.PartnersItems[] partnersItems = getPartnersItems();
 
-            PartnersAdapter partnersAdapter = new PartnersAdapter(itemsMenu, getActivity().getBaseContext());
+            PartnersAdapter partnersAdapter = new PartnersAdapter(partnersItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( partnersAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -87,7 +87,7 @@ public class PartnersFragment extends Fragment {
         }
     }
 
-    private PartnersAdapter.PartnersItems[] getMenuItems() {
+    private PartnersAdapter.PartnersItems[] getPartnersItems() {
 
         PartnersAdapter.PartnersItems []_arr = new PartnersAdapter.PartnersItems[]{
 
@@ -96,7 +96,7 @@ public class PartnersFragment extends Fragment {
                         "Партнер 1",
                         new PartnersAdapter.PartnersItems.CallBack(){
                             @Override
-                            public void call(PartnersAdapter.PartnersItems itemsMenu){
+                            public void call(PartnersAdapter.PartnersItems partnersItems){
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
@@ -116,7 +116,7 @@ public class PartnersFragment extends Fragment {
                         "Партнер 2",
                 new PartnersAdapter.PartnersItems.CallBack(){
                     @Override
-                    public void call(PartnersAdapter.PartnersItems itemsMenu){
+                    public void call(PartnersAdapter.PartnersItems partnersItems){
                         try {
                             Bundle _args = new Bundle();
                             Fragment spinnerFragment = SpinnerFragment.getInstance(_args);

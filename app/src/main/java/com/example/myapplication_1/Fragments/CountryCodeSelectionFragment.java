@@ -19,6 +19,7 @@ import com.example.myapplication_1.R;
 public class CountryCodeSelectionFragment extends Fragment {
 
     public static final String TAG = "CountryCodeSelectionFragment";
+    RecyclerView rv;
 
     public static CountryCodeSelectionFragment getInstance(Bundle args) {
 
@@ -27,8 +28,6 @@ public class CountryCodeSelectionFragment extends Fragment {
 
         return f;
     }
-
-    RecyclerView rv;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -64,9 +63,9 @@ public class CountryCodeSelectionFragment extends Fragment {
 
         try {
 
-            CountryCodeSelectionAdapter.CountryCideItems[] itemsMenu = getMenuItems();
+            CountryCodeSelectionAdapter.CountryCodeItems[] countryCodeItems = getCountryCodeItems();
 
-            CountryCodeSelectionAdapter countryCodeSelectionAdapter = new CountryCodeSelectionAdapter(itemsMenu, getActivity().getBaseContext());
+            CountryCodeSelectionAdapter countryCodeSelectionAdapter = new CountryCodeSelectionAdapter(countryCodeItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( countryCodeSelectionAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -77,18 +76,18 @@ public class CountryCodeSelectionFragment extends Fragment {
         }
     }
 
-    private CountryCodeSelectionAdapter.CountryCideItems[] getMenuItems() {
+    private CountryCodeSelectionAdapter.CountryCodeItems[] getCountryCodeItems() {
 
-        CountryCodeSelectionAdapter.CountryCideItems []_arr = new CountryCodeSelectionAdapter.CountryCideItems[]{
+        CountryCodeSelectionAdapter.CountryCodeItems []_arr = new CountryCodeSelectionAdapter.CountryCodeItems[]{
 
-                new CountryCodeSelectionAdapter.CountryCideItems(
+                new CountryCodeSelectionAdapter.CountryCodeItems(
                         getResources().getColor(R.color.my_gray),
                         "Г",
                         R.mipmap.georgia,
                         "Грузия",
-                        new CountryCodeSelectionAdapter.CountryCideItems.CallBack() {
+                        new CountryCodeSelectionAdapter.CountryCodeItems.CallBack() {
                             @Override
-                            public void call(CountryCodeSelectionAdapter.CountryCideItems itemsMenu) {
+                            public void call(CountryCodeSelectionAdapter.CountryCodeItems countryCodeItems) {
 
                                 try{
 
@@ -106,13 +105,13 @@ public class CountryCodeSelectionFragment extends Fragment {
                             }
                         },"+995"),
 
-                new CountryCodeSelectionAdapter.CountryCideItems(
+                new CountryCodeSelectionAdapter.CountryCodeItems(
                         getResources().getColor(R.color.my_gray),"Р",
                         R.mipmap.russia,
                         "Россия",
-                        new CountryCodeSelectionAdapter.CountryCideItems.CallBack() {
+                        new CountryCodeSelectionAdapter.CountryCodeItems.CallBack() {
                             @Override
-                            public void call(CountryCodeSelectionAdapter.CountryCideItems itemsMenu) {
+                            public void call(CountryCodeSelectionAdapter.CountryCodeItems countryCodeItems) {
 
                                 try{
 

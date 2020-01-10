@@ -25,10 +25,10 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Drawable card;
     LinearLayout.LayoutParams params;
 
-    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
+    private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
 
-    public DeployedMessagesAdapter(List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList, Context context) {
-        this.itemsMenuList = itemsMenuList;
+    public DeployedMessagesAdapter(List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList, Context context) {
+        this.deployedMessagesItemsList = deployedMessagesItemsList;
         this.context = context;
 
         card_draw = context.getResources().getDrawable(R.drawable.ic_card_grey_rect);
@@ -39,7 +39,7 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemViewType(int position) {
-        if(position == itemsMenuList.size()-1){
+        if(position == deployedMessagesItemsList.size()-1){
             return 2;
         } else if (position >= 0 && position != 2) {
             return 0;
@@ -72,8 +72,8 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
 
-        final DeployedMessagesItems _item = itemsMenuList.get(i);
-        if(i == itemsMenuList.size()-1){
+        final DeployedMessagesItems _item = deployedMessagesItemsList.get(i);
+        if(i == deployedMessagesItemsList.size()-1){
             if(viewHolder instanceof ViewHolder2)
                 viewHolder = (ViewHolder2)viewHolder;
             if(i==0){
@@ -106,7 +106,7 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemCount() {
-        return itemsMenuList.size();
+        return deployedMessagesItemsList.size();
     }
 
     public static class DeployedMessagesItems {

@@ -13,12 +13,12 @@ import com.example.myapplication_1.R;
 
 public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHolder> {
 
-    private final SettingsItems[] itemsMenu;
+    private final SettingsItems[] settingsItems;
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    public SettingsAdapter(SettingsAdapter.SettingsItems[] itemsMenu, Context context) {
-        this.itemsMenu = itemsMenu;
+    public SettingsAdapter(SettingsAdapter.SettingsItems[] settingsItems, Context context) {
+        this.settingsItems = settingsItems;
         this.context = context;
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -35,14 +35,14 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        final SettingsItems _item = itemsMenu[i];
+        final SettingsItems _item = settingsItems[i];
 
         viewHolder.title.setText( _item.getStr() );
     }
 
     @Override
     public int getItemCount() {
-        return itemsMenu.length;
+        return settingsItems.length;
     }
 
     public static class SettingsItems {

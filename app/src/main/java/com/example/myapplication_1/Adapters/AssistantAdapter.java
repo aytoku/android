@@ -26,10 +26,10 @@ import java.util.List;
         private Drawable card_gradient;
         LinearLayout.LayoutParams params;
 
-        private List<AssistantItems> itemsMenuList;
+        private List<AssistantItems> assistantItemsList;
 
-        public AssistantAdapter(List<AssistantItems> itemsMenuList, Context context) {
-            this.itemsMenuList = itemsMenuList;
+        public AssistantAdapter(List<AssistantItems> assistantItemsList, Context context) {
+            this.assistantItemsList = assistantItemsList;
             this.context = context;
 
             card = context.getResources().getDrawable(R.drawable.ic_card_gradient);
@@ -50,7 +50,7 @@ import java.util.List;
         @Override
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-            final AssistantItems _item = itemsMenuList.get(i);
+            final AssistantItems _item = assistantItemsList.get(i);
 
             viewHolder.title.setText(_item.getTitle());
 
@@ -68,7 +68,7 @@ import java.util.List;
 
         @Override
         public int getItemCount() {
-            return itemsMenuList.size();
+            return assistantItemsList.size();
         }
 
         public static class AssistantItems {

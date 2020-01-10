@@ -22,7 +22,7 @@ public class AssistantFragment extends Fragment {
 
     public static final String TAG = "AssistantFragment";
     RecyclerView.Adapter assistantAdapter;
-    private List<AssistantAdapter.AssistantItems> itemsMenuList;
+    private List<AssistantAdapter.AssistantItems> assistantItemsList;
 
     public static AssistantFragment getInstance(Bundle args) {
 
@@ -46,9 +46,9 @@ public class AssistantFragment extends Fragment {
 
         try {
 
-            AssistantAdapter.AssistantItems[] itemsMenu = getAssistantItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            assistantAdapter = new AssistantAdapter(itemsMenuList, getActivity().getBaseContext());
+            AssistantAdapter.AssistantItems[] assistantItems = getAssistantItems();
+            assistantItemsList = new ArrayList<>(Arrays.asList(assistantItems));
+            assistantAdapter = new AssistantAdapter(assistantItemsList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(assistantAdapter);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -68,7 +68,7 @@ public class AssistantFragment extends Fragment {
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
 
                 int position = viewHolder.getAdapterPosition();
-                itemsMenuList.remove(position);
+                assistantItemsList.remove(position);
                 assistantAdapter.notifyDataSetChanged();
             }
         };

@@ -47,9 +47,9 @@ public class EarningsFragment extends Fragment {
 
         try {
 
-            EarningsPageAdapter.EarningsPageItems[] itemsMenu = getMenuItems();
+            EarningsPageAdapter.EarningsPageItems[] earningsPageItems = getEarningsPageItems();
 
-            EarningsPageAdapter earningsPageAdapter = new EarningsPageAdapter(itemsMenu, getActivity().getBaseContext());
+            EarningsPageAdapter earningsPageAdapter = new EarningsPageAdapter(earningsPageItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( earningsPageAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -60,7 +60,7 @@ public class EarningsFragment extends Fragment {
         }
     }
 
-    private EarningsPageAdapter.EarningsPageItems[] getMenuItems() {
+    private EarningsPageAdapter.EarningsPageItems[] getEarningsPageItems() {
 
         EarningsPageAdapter.EarningsPageItems []_arr = new EarningsPageAdapter.EarningsPageItems[]{
 
@@ -69,7 +69,7 @@ public class EarningsFragment extends Fragment {
                             new String[] {"Детское кресло", "Курящий"},
                                 R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
                     @Override
-                    public void call(EarningsPageAdapter.EarningsPageItems itemsMenu) {
+                    public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
 
                         try {
 
@@ -87,7 +87,7 @@ public class EarningsFragment extends Fragment {
                             new String[] {"Коста 223/1","Универсам Наш, Хаджи Мамсурова Мамсурова, 42"},
                                 new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
 
-                    public void call(EarningsPageAdapter.EarningsPageItems itemsMenu) {
+                    public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
 
                         try {
 
@@ -105,7 +105,7 @@ public class EarningsFragment extends Fragment {
                             new String[] {"Коста 223/1","Молодежная, 7","Универсам Наш, Хаджи Мамсурова, 42 "},
                                 new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
 
-                    public void call(EarningsPageAdapter.EarningsPageItems itemsMenu) {
+                    public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
 
                         try {
 
@@ -123,7 +123,7 @@ public class EarningsFragment extends Fragment {
                             new String[] {"Коста 223/1", "Молодежная, 7", "Универсам Наш, Хаджи Мамсурова, 42 " ,"Алания молл, Московское шоссе, 3а"},
                                 new String[] {"Детское кресло", "Детское кресло", "Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
                     @Override
-                    public void call(EarningsPageAdapter.EarningsPageItems itemsMenu) {
+                    public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
 
                         try {
 

@@ -34,7 +34,7 @@ public class PaymentMethodFragment extends Fragment {
     TextView edit;
     RecyclerView rv;
     RecyclerView.Adapter paymentMethodAdapter;
-    private List<PaymentMethodAdapter.ItemsMenu> itemsMenuList;
+    private List<PaymentMethodAdapter.PaymentMethodItems> itemsMenuList;
 
     public static final String TAG = "PaymentMethodFragment";
 
@@ -61,8 +61,8 @@ public class PaymentMethodFragment extends Fragment {
         final RecyclerView recyclerViewMenu = rv;
 
         try {
-            PaymentMethodAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            PaymentMethodAdapter.PaymentMethodItems[] paymentMethodItems = getPaymentMethodItems();
+            itemsMenuList = new ArrayList<>(Arrays.asList(paymentMethodItems));
             paymentMethodAdapter = new PaymentMethodAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(paymentMethodAdapter);
             recyclerViewMenu.setLayoutManager(
@@ -136,11 +136,11 @@ public class PaymentMethodFragment extends Fragment {
             String cvv = bundle.getString(NewCardFragment.KEY_CVV,"cvv");
 
             try{
-                itemsMenuList.add(itemsMenuList.size(), new PaymentMethodAdapter.ItemsMenu( getResources().getColor(R.color.my_gray),
+                itemsMenuList.add(itemsMenuList.size(), new PaymentMethodAdapter.PaymentMethodItems(
                         R.mipmap.icon_sber, card_number, date, cvv, R.drawable.togle_uncheked,
-                        new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                        new PaymentMethodAdapter.PaymentMethodItems.CallBack(){
                             @Override
-                            public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                            public void call(PaymentMethodAdapter.PaymentMethodItems itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
@@ -184,16 +184,15 @@ public class PaymentMethodFragment extends Fragment {
         fragmentTransaction.commit();
     }
 
-    private PaymentMethodAdapter.ItemsMenu[] getMenuItems() {
+    private PaymentMethodAdapter.PaymentMethodItems[] getPaymentMethodItems() {
 
-        PaymentMethodAdapter.ItemsMenu[] arr = new PaymentMethodAdapter.ItemsMenu[]{
+        PaymentMethodAdapter.PaymentMethodItems[] arr = new PaymentMethodAdapter.PaymentMethodItems[]{
 
-                new PaymentMethodAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
+                new PaymentMethodAdapter.PaymentMethodItems(
                             R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
-                                new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                                new PaymentMethodAdapter.PaymentMethodItems.CallBack(){
                                     @Override
-                                    public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                                    public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){
                                         try {
                                             Bundle _args = new Bundle();
                                         }catch (NullPointerException e) {
@@ -202,12 +201,11 @@ public class PaymentMethodFragment extends Fragment {
                                     }
                         }),
 
-                new PaymentMethodAdapter.ItemsMenu(
-                     getResources().getColor(R.color.my_gray),
+                new PaymentMethodAdapter.PaymentMethodItems(
                          R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
-                             new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                             new PaymentMethodAdapter.PaymentMethodItems.CallBack(){
                                 @Override
-                                public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                                public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){
                                     try {
                                         Bundle _args = new Bundle();
                                     }catch (NullPointerException e) {
@@ -216,12 +214,11 @@ public class PaymentMethodFragment extends Fragment {
                             }
                 }),
 
-                new PaymentMethodAdapter.ItemsMenu(
-                    getResources().getColor(R.color.my_gray),
+                new PaymentMethodAdapter.PaymentMethodItems(
                       R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
-                         new PaymentMethodAdapter.ItemsMenu.CallBack(){
+                         new PaymentMethodAdapter.PaymentMethodItems.CallBack(){
                             @Override
-                            public void call(PaymentMethodAdapter.ItemsMenu itemsMenu){
+                            public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){
                                 try {
                                     Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {

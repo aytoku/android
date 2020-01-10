@@ -19,12 +19,12 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.ViewHolder> {
 
-    private final TravelStoryCard[] itemsMenu;
+    private final TravelStoryCard[] travelStoryCards;
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    public TravelStoryAdapter(TravelStoryAdapter.TravelStoryCard[] itemsMenu, Context context) {
-        this.itemsMenu = itemsMenu;
+    public TravelStoryAdapter(TravelStoryAdapter.TravelStoryCard[] travelStoryCards, Context context) {
+        this.travelStoryCards = travelStoryCards;
         this.context = context;
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -41,7 +41,7 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        final TravelStoryCard _item = itemsMenu[i];
+        final TravelStoryCard _item = travelStoryCards[i];
 
         float _dens = context.getResources().getDisplayMetrics().density;
 
@@ -69,7 +69,7 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
 
     @Override
     public int getItemCount() {
-        return itemsMenu.length;
+        return travelStoryCards.length;
     }
 
     public static class TravelStoryCard {

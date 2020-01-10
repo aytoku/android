@@ -14,12 +14,12 @@ import com.example.myapplication_1.R;
 
 public class AdapterWish extends RecyclerView.Adapter<AdapterWish.ViewHolder> {
 
-    private final WishItems[] itemsMenu;
+    private final WishItems[] wishItems;
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    public AdapterWish(AdapterWish.WishItems[] itemsMenu, Context context) {
-        this.itemsMenu = itemsMenu;
+    public AdapterWish(AdapterWish.WishItems[] wishItems, Context context) {
+        this.wishItems = wishItems;
         this.context = context;
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -36,7 +36,7 @@ public class AdapterWish extends RecyclerView.Adapter<AdapterWish.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        final WishItems _item = itemsMenu[i];
+        final WishItems _item = wishItems[i];
 
         viewHolder.desc.setText(_item.getStr());
         viewHolder.cost.setText(_item.getCost());
@@ -44,7 +44,7 @@ public class AdapterWish extends RecyclerView.Adapter<AdapterWish.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return itemsMenu.length;
+        return wishItems.length;
     }
 
     public static class WishItems {
