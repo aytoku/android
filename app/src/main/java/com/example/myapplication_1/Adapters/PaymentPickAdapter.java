@@ -100,9 +100,6 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
 
     public static class PaymentPickItems {
 
-        public PaymentPickItems() {
-        }
-
         public interface CallBack {
             void call(PaymentPickItems itemsMenu);
         }

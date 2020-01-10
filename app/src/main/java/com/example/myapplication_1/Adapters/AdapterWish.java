@@ -60,7 +60,6 @@ public class AdapterWish extends RecyclerView.Adapter<AdapterWish.ViewHolder> {
         public String getStr() {
             return desc;
         }
-
         public String getCost() {
             return cost;
         }

@@ -49,7 +49,7 @@ import ru.osety.amironlibrary.DrawableUtils;
             float _dens = context.getResources().getDisplayMetrics().density;
 
             int _size = Math.round(_dens * 40);
-            Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
+            Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
@@ -71,14 +71,14 @@ import ru.osety.amironlibrary.DrawableUtils;
             private @ColorInt
             int colorBackgroundInt;
             private String date;
-            private int imgResId;
+            private int img;
             private CallBack callBack;
             private String address;
 
-            public TravelStoryRow(int colorBackgroundRes, String date, int imgResId, CallBack callBack,String address) {
+            public TravelStoryRow(int colorBackgroundRes, String date, int img, CallBack callBack,String address) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.date = date;
-                this.imgResId = imgResId;
+                this.img = img;
                 this.callBack = callBack;
                 this.address = address;
             }
@@ -87,8 +87,8 @@ import ru.osety.amironlibrary.DrawableUtils;
                 return callBack;
             }
 
-            public int getImgResId() {
-                return imgResId;
+            public int getImg() {
+                return img;
             }
 
             public String getDate() {

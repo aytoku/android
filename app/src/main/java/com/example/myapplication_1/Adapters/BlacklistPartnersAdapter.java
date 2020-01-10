@@ -52,7 +52,7 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
         float _dens = context.getResources().getDisplayMetrics().density;
 
         int _size = Math.round(_dens * 30);
-        Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
+        Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
@@ -84,21 +84,21 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
             void call(BlackListItems itemsMenu);
         }
 
-        private int imgResId;
+        private int img;
         private String desc;
         private boolean check;
         private CallBack callBack;
 
-        public BlackListItems(int imgResId,String desc, boolean check, CallBack callBack) {
-            this.imgResId = imgResId;
+        public BlackListItems(int img,String desc, boolean check, CallBack callBack) {
+            this.img = img;
             this.desc = desc;
-            this.imgResId = imgResId;
+            this.img = img;
             this.check = check;
             this.callBack = callBack;
         }
 
-        public int getImgResId() {
-            return imgResId;
+        public int getImg() {
+            return img;
         }
 
         public String getStr() {

@@ -46,7 +46,7 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
         float _dens = context.getResources().getDisplayMetrics().density;
 
         int _size = Math.round(_dens * 40);
-        Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
+        Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
@@ -78,15 +78,15 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
             void call(TravelStoryCard itemsMenu);
         }
 
-        private int imgResId;
+        private int img;
         private String date;
         private CallBack callBack;
         private String cost;
         private CardView cv_item;
         private String uuid;
 
-        public TravelStoryCard(int imgResId, String date, CallBack callBack,String cost) {
-            this.imgResId = imgResId;
+        public TravelStoryCard(int img, String date, CallBack callBack,String cost) {
+            this.img = img;
             this.date = date;
             this.callBack = callBack;
             this.cost = cost;
@@ -101,8 +101,8 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
             return callBack;
         }
 
-        public int getImgResId() {
-            return imgResId;
+        public int getImg() {
+            return img;
         }
 
         public String getDate() {

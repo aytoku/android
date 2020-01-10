@@ -17,8 +17,8 @@ import com.example.myapplication_1.Fragments.SendTestFragment;
 import com.example.myapplication_1.R;
 
 public class DialogTestFragment extends DialogFragment {
-    public static final String TAG = DialogTestFragment.class.getSimpleName();
 
+    public static final String TAG = DialogTestFragment.class.getSimpleName();
     EditText greetingsEditText;
     Button button;
 

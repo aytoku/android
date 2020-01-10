@@ -16,6 +16,7 @@ import com.example.myapplication_1.Fragments.TravelStoryOneFragment;
 import com.example.myapplication_1.R;
 
 public class TravelStoryOneAlert extends DialogFragment {
+
     public static final String TAG = "TravelStoryOneAlert";
 
     public static TravelStoryOneAlert getInstance(Bundle args) {

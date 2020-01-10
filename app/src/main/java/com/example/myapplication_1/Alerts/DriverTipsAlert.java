@@ -26,6 +26,9 @@ import java.util.List;
 public class DriverTipsAlert extends DialogFragment {
 
     public static final String TAG = "DriverTipsFragment";
+    RecyclerView rv;
+    RecyclerView.Adapter adapterGridViewMenu;
+    private List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList;
 
     public static DriverTipsAlert getInstance(Bundle args) {
 
@@ -34,10 +37,6 @@ public class DriverTipsAlert extends DialogFragment {
 
         return f;
     }
-
-    RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
-    private List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -48,7 +48,7 @@ import ru.osety.amironlibrary.DrawableUtils;
             Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
             int _size = Math.round(_dens * 22);
-            Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
+            Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
             viewHolder.img.setBackground( ic_rout_color );
@@ -93,15 +93,15 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             int colorBackgroundInt;
             private String letter;
-            private int imgResId;
+            private int img;
             private String str;
             public CallBack callBack;
             private String code;
 
-            public CountryCodeItems(int colorBackgroundRes, String letter, int imgResId, String str, CallBack callBack, String code) {
+            public CountryCodeItems(int colorBackgroundRes, String letter, int img, String str, CallBack callBack, String code) {
                 this.colorBackgroundInt = colorBackgroundRes;
                 this.letter = letter;
-                this.imgResId = imgResId;
+                this.img = img;
                 this.str = str;
                 this.callBack = callBack;
                 this.code = code;
@@ -109,8 +109,8 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             public String getLetter(){return letter;}
 
-            public int getImgResId() {
-                return imgResId;
+            public int getImg() {
+                return img;
             }
 
             public String getStr() {

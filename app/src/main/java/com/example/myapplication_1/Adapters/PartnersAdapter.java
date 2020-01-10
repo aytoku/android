@@ -65,18 +65,18 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
 
         }
 
-        private int imgResId;
+        private int img;
         private String desc;
         private CallBack callBack;
 
-        public PartnersItems(int imgResId,String desc, CallBack callBack) {
-            this.imgResId = imgResId;
+        public PartnersItems(int img,String desc, CallBack callBack) {
+            this.img = img;
             this.desc = desc;
             this.callBack = callBack;
         }
 
-        public int getImgResId() {
-            return imgResId;
+        public int getImg() {
+            return img;
         }
 
         public String getStr() {

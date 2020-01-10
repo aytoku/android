@@ -61,18 +61,18 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
 
     public static class CreateOrderItems {
 
-        private int imgResId;
+        private int img;
         private String title;
         private int imgResId1;
 
-        public CreateOrderItems(int imgResId, String title, int imgResId1) {
-            this.imgResId = imgResId;
+        public CreateOrderItems(int img, String title, int imgResId1) {
+            this.img = img;
             this.title = title;
             this.imgResId1 = imgResId1;
         }
 
-        public int getImgResId() {
-            return imgResId;
+        public int getImg() {
+            return img;
         }
 
         public String getStr() {

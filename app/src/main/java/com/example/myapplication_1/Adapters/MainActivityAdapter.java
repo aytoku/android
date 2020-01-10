@@ -47,7 +47,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
         float _dens = context.getResources().getDisplayMetrics().density;
 
         int _size = Math.round(_dens * 40);
-        Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
+        Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
@@ -81,14 +81,14 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
 
         private @ColorInt
         int colorBackgroundInt;
-        private int imgResId;
+        private int img;
         private String title;
         private CallBack callBack;
         private String cost;
 
-        public ItemsMenu(int colorBackgroundRes, int imgResId, String title, CallBack callBack,String cost) {
+        public ItemsMenu(int colorBackgroundRes, int img, String title, CallBack callBack,String cost) {
             this.colorBackgroundInt = colorBackgroundRes;
-            this.imgResId = imgResId;
+            this.img = img;
             this.title = title;
             this.callBack = callBack;
             this.cost = cost;
@@ -98,8 +98,8 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
             return callBack;
         }
 
-        public int getImgResId() {
-            return imgResId;
+        public int getImg() {
+            return img;
         }
 
         public String getDate() {

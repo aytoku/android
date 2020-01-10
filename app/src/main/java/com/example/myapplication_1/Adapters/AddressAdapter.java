@@ -52,7 +52,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
         Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
         int _size = Math.round(_dens * 20);
-        Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
+        Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
         viewHolder.title.setText(_item.getStr());
         viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
@@ -76,23 +76,22 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
         public interface CallBack {
             void call(AddressItems itemsMenu);
-
         }
 
         int colorBackgroundInt;
-        private int imgResId;
+        private int img;
         private String title;
         CallBack callBack;
 
-        public AddressItems(int colorBackgroundRes, int imgResId, String title, CallBack callBack) {
+        public AddressItems(int colorBackgroundRes, int img, String title, CallBack callBack) {
             this.colorBackgroundInt = colorBackgroundRes;
-            this.imgResId = imgResId;
+            this.img = img;
             this.title = title;
             this.callBack = callBack;
         }
 
-        public int getImgResId() {
-            return imgResId;
+        public int getImg() {
+            return img;
         }
 
         public String getStr() {

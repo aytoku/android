@@ -58,6 +58,7 @@ import com.example.myapplication_1.R;
             private String cost;
 
             public PaymentDesc(String title,String desc, String cost) {
+                this.title = title;
                 this.desc = desc;
                 this.cost = cost;
             }

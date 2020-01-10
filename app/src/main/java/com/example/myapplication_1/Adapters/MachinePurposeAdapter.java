@@ -49,7 +49,7 @@ public class MachinePurposeAdapter extends RecyclerView.Adapter<MachinePurposeAd
         float _dens = context.getResources().getDisplayMetrics().density;
 
         int _size = Math.round(_dens * 12);
-        Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
+        Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
 
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
@@ -74,19 +74,19 @@ public class MachinePurposeAdapter extends RecyclerView.Adapter<MachinePurposeAd
 
         private @ColorInt
         int colorBackgroundInt;
-        private int imgResId;
+        private int img;
         private String title;
         private int imgResId1;
 
-        public ItemsMenu(int colorBackgroundRes, int imgResId, String title, int imgResId1) {
+        public ItemsMenu(int colorBackgroundRes, int img, String title, int imgResId1) {
             this.colorBackgroundInt = colorBackgroundRes;
-            this.imgResId = imgResId;
+            this.img = img;
             this.title = title;
             this.imgResId1 = imgResId1;
         }
 
-        public int getImgResId() {
-            return imgResId;
+        public int getImg() {
+            return img;
         }
 
         public String getStr() {
