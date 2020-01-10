@@ -73,7 +73,6 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
 
         public interface CallBack {
             void call(ItemsMenu itemsMenu);
-
         }
 
         private @ColorInt

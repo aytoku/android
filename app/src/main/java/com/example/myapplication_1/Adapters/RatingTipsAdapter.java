@@ -16,14 +16,14 @@ import com.example.myapplication_1.R;
 
 import java.util.List;
 
-public class RatingAdapterCard extends RecyclerView.Adapter<RatingAdapterCard.ViewHolder>{
+public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.ViewHolder>{
 
     private final LayoutInflater layoutInflater;
     private Context context;
     private List<Integer> tipsLists;
     private int selectItem = -1;
 
-    public RatingAdapterCard(List<Integer> tipsLists, Context context){
+    public RatingTipsAdapter(List<Integer> tipsLists, Context context){
         this.tipsLists = tipsLists;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

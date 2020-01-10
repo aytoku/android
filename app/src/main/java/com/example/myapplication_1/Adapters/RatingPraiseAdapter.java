@@ -22,7 +22,7 @@ import java.util.List;
 
 import ru.osety.amironlibrary.DrawableUtils;
 
-public  class RatingAdapter extends RecyclerView.Adapter<RatingAdapter.ViewHolder> {
+public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapter.ViewHolder> {
 
     private final LayoutInflater layoutInflater;
     private final Context context;
@@ -30,7 +30,7 @@ public  class RatingAdapter extends RecyclerView.Adapter<RatingAdapter.ViewHolde
     private int selectItem = -1;
     private Drawable drawable;
 
-    public RatingAdapter(List<PraiseList> praiseLists, Context context) {
+    public RatingPraiseAdapter(List<PraiseList> praiseLists, Context context) {
         this.praiseLists = praiseLists;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -50,7 +50,6 @@ public  class RatingAdapter extends RecyclerView.Adapter<RatingAdapter.ViewHolde
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
         final PraiseList praiseList = praiseLists.get(i);
-
 
         float _dens = context.getResources().getDisplayMetrics().density;
 
