@@ -4,17 +4,27 @@ import java.util.List;
 
 public class TipsList {
 
-    private List<Integer> price;
+    private String price;
+    private List<Integer>list;
 
-    public TipsList( List<Integer> price){
+    public TipsList( String price, List<Integer>list){
         this.price = price;
+        this.list = list;
     }
 
-    public  List<Integer>  getPrice(){
+    public  String  getPrice(){
         return this.price;
     }
 
-    public void setPrice( List<Integer> price){
+    public void setPrice( String price){
         this.price = price;
+    }
+
+    public List<Integer> getList() {
+        return list;
+    }
+
+    public void setList(List<Integer> list) {
+        this.list = list;
     }
 }

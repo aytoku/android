@@ -65,7 +65,9 @@ public class EarningsFragment extends Fragment {
         EarningsPageAdapter.EarningsPageItems []_arr = new EarningsPageAdapter.EarningsPageItems[]{
 
                 new EarningsPageAdapter.EarningsPageItems(
-                        "1 км", new String[] {"Коста 223/1"}, new String[] {"Детское кресло", "Курящий"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
+                        "1 км", new String[] {"Коста 223/1"},
+                            new String[] {"Детское кресло", "Курящий"},
+                                R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.EarningsPageItems itemsMenu) {
 
@@ -81,7 +83,9 @@ public class EarningsFragment extends Fragment {
                 }, "До клиента", "1км", "Маршрут заказа", "152\u20BD", R.drawable.ic_lightning_yellow, "10"),
 
                 new EarningsPageAdapter.EarningsPageItems(
-                        "1 км", new String[] {"Коста 223/1","Универсам Наш, Хаджи Мамсурова Мамсурова, 42"}, new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
+                        "1 км",
+                            new String[] {"Коста 223/1","Универсам Наш, Хаджи Мамсурова Мамсурова, 42"},
+                                new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
 
                     public void call(EarningsPageAdapter.EarningsPageItems itemsMenu) {
 
@@ -97,7 +101,9 @@ public class EarningsFragment extends Fragment {
                 },"До клиента", "1км", "Маршрут заказа", "208\u20BD", R.drawable.ic_lightning_yellow, "10"),
 
                 new EarningsPageAdapter.EarningsPageItems(
-                        "1 км", new String[] {"Коста 223/1","Молодежная, 7","Универсам Наш, Хаджи Мамсурова, 42 "}, new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
+                        "1 км",
+                            new String[] {"Коста 223/1","Молодежная, 7","Универсам Наш, Хаджи Мамсурова, 42 "},
+                                new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
 
                     public void call(EarningsPageAdapter.EarningsPageItems itemsMenu) {
 
@@ -113,7 +119,9 @@ public class EarningsFragment extends Fragment {
                 },"До клиента", "1км", "Маршрут заказа", "208\u20BD", R.drawable.ic_lightning_yellow, "10"),
 
                 new EarningsPageAdapter.EarningsPageItems(
-                        "1 км", new String[] {"Коста 223/1", "Молодежная, 7", "Универсам Наш, Хаджи Мамсурова, 42 " ,"Алания молл, Московское шоссе, 3а"}, new String[] {"Детское кресло", "Детское кресло", "Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
+                        "1 км",
+                            new String[] {"Коста 223/1", "Молодежная, 7", "Универсам Наш, Хаджи Мамсурова, 42 " ,"Алания молл, Московское шоссе, 3а"},
+                                new String[] {"Детское кресло", "Детское кресло", "Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.EarningsPageItems itemsMenu) {
 

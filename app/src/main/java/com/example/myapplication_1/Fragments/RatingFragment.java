@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.Adapters.RatingAdapter;
 import com.example.myapplication_1.Adapters.RatingAdapterCard;
 import com.example.myapplication_1.ClassesForAdapters.PraiseList;
-import com.example.myapplication_1.ClassesForAdapters.TipsList;
 import com.example.myapplication_1.R;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -52,7 +51,6 @@ public class RatingFragment extends Fragment {
     private CardView button;
     private ImageView star;
     List<Integer> list = new ArrayList<Integer>();
-    List<TipsList>tipsLists = new ArrayList<>();
     List<PraiseList>praiseLists = new ArrayList<>();
     int e;
 
