@@ -53,8 +53,6 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
         final PaymentMethodItems _item = itemsMenuList.get(i);
 
         float _dens = context.getResources().getDisplayMetrics().density;
-
-
         int _size = Math.round(_dens * 40);
         Drawable _def_draw = context.getResources().getDrawable(_item.getCardImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
@@ -92,9 +90,6 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
     }
 
     public static class PaymentMethodItems {
-
-        public PaymentMethodItems() {
-        }
 
         public interface CallBack {
             void call(PaymentMethodItems itemsMenu);

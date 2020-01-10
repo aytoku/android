@@ -40,7 +40,6 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
         final PartnersItems _item = partnersItems[i];
 
         viewHolder.desc.setText( _item.getStr() );
-
         viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +61,6 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
 
         public interface CallBack {
             void call(PartnersItems itemsMenu);
-
         }
 
         private int img;

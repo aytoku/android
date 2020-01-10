@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -75,23 +74,16 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
             void call(ItemsMenu itemsMenu);
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String title;
         private CallBack callBack;
 
-        public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public ItemsMenu(String title, CallBack callBack) {
             this.title = title;
             this.callBack = callBack;
         }
 
         public String getStr() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public CallBack getCallBack() {

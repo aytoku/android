@@ -30,7 +30,6 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_order_1_1_5, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -52,16 +51,16 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
 
     public static class Order115Items {
 
-        private String emoji;
+        private String img;
         private String desc;
 
-        public Order115Items(String emoji, String desc) {
-            this.emoji = emoji;
+        public Order115Items(String img, String desc) {
+            this.img = img;
             this.desc = desc;
         }
 
         public String getEmoji() {
-            return emoji;
+            return img;
         }
 
         public String getStr() {

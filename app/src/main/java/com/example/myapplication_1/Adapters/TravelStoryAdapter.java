@@ -57,7 +57,6 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
             public void onClick(View v) {
 
                 try {
-
                     _item.getCallBack().call(_item);
 
                 } catch ( NullPointerException e) {
@@ -82,7 +81,6 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
         private String date;
         private CallBack callBack;
         private String cost;
-        private CardView cv_item;
         private String uuid;
 
         public TravelStoryCard(int img, String date, CallBack callBack,String cost) {
@@ -108,8 +106,6 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
         public String getDate() {
             return date;
         }
-
-        public CardView getCv_item(){return cv_item;}
 
         public String getCost() {
             return cost;

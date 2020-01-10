@@ -29,7 +29,6 @@ public class ViewPagerAdapter extends PagerAdapter {
     private List<Bitmap> images = new ArrayList<>();
     private List<String> strings_title = new ArrayList<>();
     private List<String> strings_desc = new ArrayList<>();
-    private Button button;
 
     public ViewPagerAdapter(MainActivitySlider context) throws IOException {
         this.context = context;

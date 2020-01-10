@@ -62,7 +62,6 @@ public class MenuOneFragment extends Fragment {
         MenuOneAdapter.ItemsMenu[] arr = new MenuOneAdapter.ItemsMenu[]{
 
                 new MenuOneAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Введите номер телефона",
                         new MenuOneAdapter.ItemsMenu.CallBack(){
                             @Override
@@ -81,7 +80,6 @@ public class MenuOneFragment extends Fragment {
                         }),
 
                 new MenuOneAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Способ оплаты",
                         new MenuOneAdapter.ItemsMenu.CallBack(){
                             @Override
@@ -101,7 +99,6 @@ public class MenuOneFragment extends Fragment {
 
 
                 new MenuOneAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Настройки",
                         new MenuOneAdapter.ItemsMenu.CallBack(){
                             @Override
@@ -120,7 +117,6 @@ public class MenuOneFragment extends Fragment {
                         }),
 
                 new MenuOneAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Информация",
                         new MenuOneAdapter.ItemsMenu.CallBack(){
                             @Override
@@ -139,7 +135,6 @@ public class MenuOneFragment extends Fragment {
                         }),
 
                 new MenuOneAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Служба поддержки",
                         new MenuOneAdapter.ItemsMenu.CallBack(){
                             @Override
