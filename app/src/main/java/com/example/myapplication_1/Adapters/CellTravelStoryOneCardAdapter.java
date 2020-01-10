@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,15 +67,12 @@ import ru.osety.amironlibrary.DrawableUtils;
                 void call(TravelStoryRow itemsMenu);
             }
 
-            private @ColorInt
-            int colorBackgroundInt;
             private String date;
             private int img;
             private CallBack callBack;
             private String address;
 
-            public TravelStoryRow(int colorBackgroundRes, String date, int img, CallBack callBack,String address) {
-                this.colorBackgroundInt = colorBackgroundRes;
+            public TravelStoryRow(String date, int img, CallBack callBack,String address) {
                 this.date = date;
                 this.img = img;
                 this.callBack = callBack;
@@ -97,10 +93,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             public String getAddress() {
                 return address;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
             }
         }
 

@@ -34,7 +34,8 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class RatingFragment extends Fragment{
 
     public static final String TAG = "RatingFragment";
-    private RecyclerView.Adapter ratingTipsAdapter;
+    RecyclerView.Adapter ratingTipsAdapter;
+    RecyclerView tips_rv;
     private ImageView star1;
     private ImageView star2;
     private ImageView star3;
@@ -65,7 +66,7 @@ public class RatingFragment extends Fragment{
         imgStarGrey = getResources().getDrawable(R.drawable.icon_star_grey);
         imgStarRed = getResources().getDrawable(R.drawable.red_star_shadow);
         RecyclerView praise_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler1);
-        RecyclerView tips_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler);
+        tips_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler);
 
         starArr = new ImageView[]{
                 star1 = view.findViewById(R.id.cl_rating_ll_rating_red_star1),

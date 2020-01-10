@@ -119,7 +119,6 @@ public class TravelStoryOneFragment extends Fragment {
         CellTravelStoryOneCardAdapter.TravelStoryRow []_arr = new CellTravelStoryOneCardAdapter.TravelStoryRow[]{
 
                 new CellTravelStoryOneCardAdapter.TravelStoryRow(
-                        getResources().getColor(R.color.my_gray),
                         "Сегодня 10:10",
                         R.drawable.icon_ellipse_red,
                         new CellTravelStoryOneCardAdapter.TravelStoryRow.CallBack() {

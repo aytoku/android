@@ -46,10 +46,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
         final AddressItems _item = addressItemsList.get(i);
 
-        Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
         float _dens = context.getResources().getDisplayMetrics().density;
-
-        Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
 
         int _size = Math.round(_dens * 20);
         Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
@@ -78,13 +75,11 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
             void call(AddressItems itemsMenu);
         }
 
-        int colorBackgroundInt;
         private int img;
         private String title;
         CallBack callBack;
 
-        public AddressItems(int colorBackgroundRes, int img, String title, CallBack callBack) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public AddressItems(int img, String title, CallBack callBack) {
             this.img = img;
             this.title = title;
             this.callBack = callBack;
@@ -96,10 +91,6 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
         public String getStr() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
 
         public CallBack getCallBack() {

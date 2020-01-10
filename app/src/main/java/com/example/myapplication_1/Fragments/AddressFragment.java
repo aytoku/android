@@ -89,7 +89,7 @@ public class AddressFragment extends Fragment {
     public void onAddButtonClicked(View view) {
 
         try {
-            addressItemsList.add(addressItemsList.size(), new AddressAdapter.AddressItems(getResources().getColor(R.color.my_gray),
+            addressItemsList.add(addressItemsList.size(), new AddressAdapter.AddressItems(
                     R.mipmap.icon_button_plus,
                     "Добавить адрес дома",
                     new AddressAdapter.AddressItems.CallBack(){
@@ -121,7 +121,6 @@ public class AddressFragment extends Fragment {
         AddressAdapter.AddressItems[] arr = new AddressAdapter.AddressItems[]{
 
                 new AddressAdapter.AddressItems(
-                        getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_button_plus,
                         "Добавить адрес дома",
                         new AddressAdapter.AddressItems.CallBack(){
@@ -141,7 +140,6 @@ public class AddressFragment extends Fragment {
                         }),
 
                 new AddressAdapter.AddressItems(
-                        getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_button_plus,
                         "Добавить адрес дома",
                         new AddressAdapter.AddressItems.CallBack(){
