@@ -52,7 +52,6 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
         final PraiseList praiseList = praiseLists.get(i);
 
         float _dens = context.getResources().getDisplayMetrics().density;
-
         int _size = Math.round(_dens * 15);
         Drawable _def_draw = context.getResources().getDrawable(praiseList.getImage());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
@@ -65,11 +64,9 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
         } else{
             viewHolder.linearLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
-
         viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 notifyItemChanged(selectItem);
                 selectItem = i;
                 notifyItemChanged(i);
@@ -78,7 +75,6 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
         viewHolder.title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 notifyItemChanged(selectItem);
                 selectItem = i;
                 notifyItemChanged(i);
