@@ -103,8 +103,8 @@ public class CreateOrder115Fragment extends Fragment {
         try {
             createOrderItemsList.add(createOrderItemsList.size(), new AdapterCreateOrder115.CreateOrderItems(
                     R.drawable.ic_cross,
-                    "Максима Горького, 123",
-                    R.drawable.icon_three_lines));
+                    "Максима Горького, 123"
+            ));
             createOrder115Adapter.notifyItemInserted(createOrderItemsList.size()-1);
             createOrder115Adapter.notifyDataSetChanged();
 
@@ -125,18 +125,18 @@ public class CreateOrder115Fragment extends Fragment {
 
                 new AdapterCreateOrder115.CreateOrderItems(
                         R.drawable.ic_cross,
-                        "Максима Горького, 123",
-                        R.drawable.icon_three_lines),
+                        "Максима Горького, 123"
+                ),
 
                 new AdapterCreateOrder115.CreateOrderItems(
                         R.drawable.ic_cross,
-                        "Коста, 222",
-                        R.drawable.icon_three_lines),
+                        "Коста, 222"
+                ),
 
                 new AdapterCreateOrder115.CreateOrderItems(
                         R.drawable.ic_cross,
-                        "Максима Горького, 23",
-                        R.drawable.icon_three_lines)
+                        "Максима Горького, 23"
+                )
         };
         return arr;
     }

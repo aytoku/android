@@ -19,18 +19,18 @@ public class AdapterCellTextFeatures extends RecyclerView.Adapter<AdapterCellTex
     private final String[] array;
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private final Drawable mini_ellipse_red;
-    private final Drawable mini_ellipse_black;
-    private final Drawable mini_ellipse_green;
+    private final Drawable ellipse_red;
+    private final Drawable ellipse_black;
+    private final Drawable ellipse_green;
 
     public AdapterCellTextFeatures(String[] array, Context context) {
         this.array = array;
         this.context = context;
 
 
-        mini_ellipse_red = context.getResources().getDrawable(R.drawable.ic_mini_ellipse);
-        mini_ellipse_black = context.getResources().getDrawable(R.drawable.ic_mini_ellipse_black);
-        mini_ellipse_green = context.getResources().getDrawable(R.drawable.ic_mini_ellipse_green);
+        ellipse_red = context.getResources().getDrawable(R.drawable.ic_mini_ellipse);
+        ellipse_black = context.getResources().getDrawable(R.drawable.ic_mini_ellipse_black);
+        ellipse_green = context.getResources().getDrawable(R.drawable.ic_mini_ellipse_green);
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -50,11 +50,11 @@ public class AdapterCellTextFeatures extends RecyclerView.Adapter<AdapterCellTex
 
         if(i == 0){
             viewHolder.textView.setTypeface(null, Typeface.BOLD);
-            viewHolder.imageView.setImageDrawable(mini_ellipse_red);
+            viewHolder.imageView.setImageDrawable(ellipse_red);
         }else if(i == array.length-1){
-            viewHolder.imageView.setImageDrawable(mini_ellipse_green);
+            viewHolder.imageView.setImageDrawable(ellipse_green);
         }else {
-            viewHolder.imageView.setImageDrawable(mini_ellipse_black);
+            viewHolder.imageView.setImageDrawable(ellipse_black);
         }
     }
 
