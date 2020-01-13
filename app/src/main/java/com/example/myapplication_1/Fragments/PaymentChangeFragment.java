@@ -33,7 +33,7 @@ public class PaymentChangeFragment extends Fragment {
         View view = inflater.inflate(R.layout.payment_change,
                 container, false);
 
-        button = view.findViewById(R.id.ll_payment_change_button);
+//        button = view.findViewById(R.id.ll_payment_change_button);
 
         addListener();
 
@@ -43,12 +43,12 @@ public class PaymentChangeFragment extends Fragment {
     public void addListener(){
 
         Bundle _args = new Bundle();
-        final Fragment machinePurposeTwoFragment = MachinePurposeTwoFragment.getInstance(_args);
+        final Fragment machinePurposeLowerPartFragment = MachinePurposeLowerPartFragment.getInstance(_args);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, machinePurposeTwoFragment);
+                fragmentTransaction.replace(R.id.ll_main, machinePurposeLowerPartFragment);
                 fragmentTransaction.commit();
             }
         });

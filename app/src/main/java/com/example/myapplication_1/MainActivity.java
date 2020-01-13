@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication_1.Alerts.PaymentChangeAlert;
+import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.Fragments.AddPointFragment;
 import com.example.myapplication_1.Fragments.AddressFragment;
 import com.example.myapplication_1.Fragments.AlertFragment;
@@ -31,7 +33,7 @@ import com.example.myapplication_1.Fragments.ExpFragment;
 import com.example.myapplication_1.Fragments.InformationFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeOneFragment;
-import com.example.myapplication_1.Fragments.MachinePurposeTwoFragment;
+import com.example.myapplication_1.Fragments.MachinePurposeLowerPartFragment;
 import com.example.myapplication_1.Fragments.Menu11Fragment;
 import com.example.myapplication_1.Fragments.Menu162Fragment;
 import com.example.myapplication_1.Fragments.MenuOneFragment;
@@ -56,7 +58,6 @@ import com.example.myapplication_1.Fragments.SettingsFragment;
 import com.example.myapplication_1.Fragments.SliderFragment;
 import com.example.myapplication_1.Fragments.SpinnerFragment;
 import com.example.myapplication_1.Fragments.SpinnerTariffsFragment;
-import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.Fragments.TravelStoryFragment;
 import com.example.myapplication_1.Fragments.TravelStoryOneFragment;
 import com.example.myapplication_1.Fragments.UserAgreementFragment;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         MachinePurposeFragment machinePurposeFragment = MachinePurposeFragment.getInstance(null);
         MachinePurposeOneFragment machinePurposeOneFragment = MachinePurposeOneFragment.getInstance(null);
-        MachinePurposeTwoFragment machinePurposeTwoFragment = MachinePurposeTwoFragment.getInstance(null);
+        MachinePurposeLowerPartFragment machinePurposeLowerPartFragment = MachinePurposeLowerPartFragment.getInstance(null);
         Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(null);
         Menu162Fragment menu162Fragment = Menu162Fragment.getInstance(null);
         MenuOneFragment menuOneFragment = MenuOneFragment.getInstance(null);
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         Order115Fragment order115Fragment = Order115Fragment.getInstance(null);
 
         PartnersFragment partnersFragment = PartnersFragment.getInstance(null);
+        PaymentChangeAlert paymentChangeAlert = PaymentChangeAlert.getInstance(null);
         PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(null);
         PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(null);
         ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(null);

@@ -41,7 +41,7 @@ public class TripDetailsFragment extends Fragment {
     private void addListener(){
 
         Bundle _args = new Bundle();
-        final Fragment machinePurposeTwoFragment = MachinePurposeTwoFragment.getInstance(_args);
+        final Fragment machinePurposeTwoFragment = MachinePurposeLowerPartFragment.getInstance(_args);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

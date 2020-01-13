@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/rl_cell_payment_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grey_line"
+        android:foreground="?android:selectableItemBackground"
+        android:paddingLeft="15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/rl_cell_payment_change_card_img"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:src="@mipmap/icon_sber"/>
+
+        <TextView
+            android:id="@+id/rl_cell_payment_change_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#424242"
+            android:layout_centerInParent="true"
+            android:text="Sberbank Online"
+            android:paddingTop="10dp"
+            android:paddingRight="100dp"
+            android:paddingBottom="15dp"
+            android:textSize="17sp"/>
+
+        <ImageView
+            android:id="@+id/rl_cell_payment_change_toggle"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingRight="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/togle_uncheked" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

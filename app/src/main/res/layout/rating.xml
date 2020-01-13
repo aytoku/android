@@ -165,7 +165,7 @@
         tools:ignore="Orientation">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/ll_rating1_cardButton"
+            android:id="@+id/ll_rating_cardButton"
             android:layout_width="350dp"
             android:layout_height="61dp"
             android:focusable="true"

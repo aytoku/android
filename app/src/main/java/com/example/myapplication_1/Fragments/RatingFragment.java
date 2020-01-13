@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 import ru.osety.amironlibrary.Query.QueryGet;
+import ru.osety.amironlibrary.Query.QueryPost;
 import ru.osety.amironlibrary.Query.QueryTemplate;
 
 public class RatingFragment extends Fragment{
@@ -64,8 +66,9 @@ public class RatingFragment extends Fragment{
 
         imgStarGrey = getResources().getDrawable(R.drawable.icon_star_grey);
         imgStarRed = getResources().getDrawable(R.drawable.red_star_shadow);
-        RecyclerView praise_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler1);
         RecyclerView tips_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler);
+        RecyclerView praise_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler1);
+        CardView button = view.findViewById(R.id.ll_rating_cardButton);
 
         starArr = new ImageView[]{
                 star1 = view.findViewById(R.id.ll_rating_red_star1),
@@ -166,6 +169,13 @@ public class RatingFragment extends Fragment{
         praiseLists.add(new PraiseList( R.mipmap.handshake,"Вежливость"));
         praiseLists.add(new PraiseList( R.mipmap.handshake,"Вежливость"));
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                postData();
+            }
+        });
+
         getTips();
 
         return view;
@@ -220,6 +230,77 @@ public class RatingFragment extends Fragment{
             @Override
             public void cancel(JsonObject result, Throwable throwable) {
             }
-        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
+        }).addRequestPropertyHead(_mapHead)
+            .setAsyncThreadPool(true)
+                .query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
+    }
+
+    private void postData(){
+        JsonObject jo = new JsonObject();
+        Map<String, String> _mapHead = new ArrayMap<>();
+        _mapHead.put("Accept-Charset", "UTF-8");
+        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
+
+        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+            @Override
+            public void asyncBefore() throws InterruptedException {}
+
+            @Override
+            public JsonObject async(String result) throws ClassCastException {
+
+                try {
+                    JsonParser jsonParser = new JsonParser();
+                    return  jsonParser.parse(result).getAsJsonObject();
+
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
+                return null;
+            }
+
+            @Override
+            public void sync(JsonObject result) {
+
+                String uuid = "uu_id";
+                try {
+                    uuid = result.get("uuid").getAsString();
+
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+
+                int value = 0;
+                try {
+                    value = result.get("value").getAsInt();
+
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+
+                int tip = 0;
+                try {
+                    tip = result.get("tip").getAsInt();
+
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+
+                String comment = "com";
+                try {
+                    comment = result.get("comment").getAsString();
+
+                } catch ( NullPointerException | JsonParseException e) {
+                    Log.e(TAG, "sync: " +e.getMessage());
+                }
+            }
+
+            @Override
+            public void progress(Integer... status) {}
+
+            @Override
+            public void cancel(JsonObject result, Throwable throwable) {}
+        }).addRequestPropertyHead(_mapHead)
+                .setAsyncThreadPool(true)
+                    .query("https://client.apis.stage.faem.pro/api/v2" + "/order/rating", jo.toString());
     }
 }
