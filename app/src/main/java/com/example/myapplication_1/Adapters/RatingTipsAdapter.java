@@ -20,11 +20,11 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
 
     private final LayoutInflater layoutInflater;
     private Context context;
-    private List<Integer> tipsLists;
+    private List<Integer> tipsList;
     private int selectItem = -1;
 
-    public RatingTipsAdapter(List<Integer> tipsLists, Context context){
-        this.tipsLists = tipsLists;
+    public RatingTipsAdapter(List<Integer> tipsList, Context context){
+        this.tipsList = tipsList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -41,8 +41,8 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i){
 
-        viewHolder.price.setText(String.valueOf(tipsLists.get(i)));
-        tipsLists.get(i);
+        viewHolder.price.setText(String.valueOf(tipsList.get(i)));
+        tipsList.get(i);
 
         if(selectItem == i){
             viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#FC5C58"));
@@ -63,7 +63,7 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
 
     @Override
     public int getItemCount(){
-        return tipsLists.size();
+        return tipsList.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
