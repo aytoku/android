@@ -68,11 +68,11 @@ public class RatingFragment extends Fragment{
         RecyclerView tips_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler);
 
         starArr = new ImageView[]{
-                star1 = view.findViewById(R.id.cl_rating_ll_rating_red_star1),
-                star2 = view.findViewById(R.id.cl_rating_ll_rating_red_star2),
-                star3 = view.findViewById(R.id.cl_rating_ll_rating_red_star3),
-                star4 = view.findViewById(R.id.cl_rating_ll_rating_red_star4),
-                star5 = view.findViewById(R.id.cl_rating_ll_rating_red_star5)
+                star1 = view.findViewById(R.id.ll_rating_red_star1),
+                star2 = view.findViewById(R.id.ll_rating_red_star2),
+                star3 = view.findViewById(R.id.ll_rating_red_star3),
+                star4 = view.findViewById(R.id.ll_rating_red_star4),
+                star5 = view.findViewById(R.id.ll_rating_red_star5)
         };
 
         final RecyclerView praiseRecyclerView = praise_rv;
@@ -85,7 +85,7 @@ public class RatingFragment extends Fragment{
             praiseRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         } catch ( NullPointerException e) {
-            e.printStackTrace();
+            Log.e(TAG, "onCreateView" +e.getMessage());
         }
 
         final RecyclerView tipsRecyclerView = tips_rv;
@@ -98,14 +98,14 @@ public class RatingFragment extends Fragment{
             tipsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         } catch ( NullPointerException e) {
-            e.printStackTrace();
+            Log.e(TAG, "onCreateView" +e.getMessage());
         }
 
         star1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.cl_rating_ll_rating_red_star1){
+                if(view.getId()==R.id.ll_rating_red_star1){
                     star1.setImageDrawable(imgStarRed);
                 }
             }
@@ -115,7 +115,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.cl_rating_ll_rating_red_star2){
+                if(view.getId()==R.id.ll_rating_red_star2){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                 }
@@ -126,7 +126,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.cl_rating_ll_rating_red_star3){
+                if(view.getId()==R.id.ll_rating_red_star3){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
@@ -138,7 +138,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.cl_rating_ll_rating_red_star4){
+                if(view.getId()==R.id.ll_rating_red_star4){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
@@ -151,7 +151,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.cl_rating_ll_rating_red_star5){
+                if(view.getId()==R.id.ll_rating_red_star5){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);

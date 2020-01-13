@@ -72,14 +72,6 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
                 notifyItemChanged(i);
             }
         });
-        viewHolder.title.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                notifyItemChanged(selectItem);
-                selectItem = i;
-                notifyItemChanged(i);
-            }
-        });
     }
 
     @Override
