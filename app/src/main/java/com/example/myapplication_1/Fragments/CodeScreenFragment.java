@@ -42,7 +42,7 @@ public class CodeScreenFragment extends Fragment {
     private EditText code_field2;
     private EditText code_field3;
     private EditText code_field4;
-    TextView button;
+    private TextView button;
 
     public static CodeScreenFragment getInstance(Bundle args) {
 
