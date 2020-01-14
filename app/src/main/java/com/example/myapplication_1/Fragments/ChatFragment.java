@@ -50,9 +50,9 @@ public class ChatFragment extends Fragment {
 
         try {
 
-            ChatAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            ChatAdapter.ItemsMenu[] itemsMenu = getMenuItems();
 
-            ChatAdapter adapterGridViewMenu = new ChatAdapter(itemsMenu, getActivity().getBaseContext());//this;
+            ChatAdapter adapterGridViewMenu = new ChatAdapter(itemsMenu, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );

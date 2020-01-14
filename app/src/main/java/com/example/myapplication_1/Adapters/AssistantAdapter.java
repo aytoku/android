@@ -24,7 +24,6 @@ import java.util.List;
         private Context context;
         private Drawable card;
         private Drawable card_gradient;
-        LinearLayout.LayoutParams params;
 
         private List<AssistantItems> assistantItemsList;
 
@@ -59,7 +58,7 @@ import java.util.List;
             }else{
                 viewHolder.relativeLayout.setBackground(card_gradient);
                 viewHolder.imageView.setVisibility(View.GONE);
-                params = (LinearLayout.LayoutParams)viewHolder.relativeLayout.getLayoutParams();
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) viewHolder.relativeLayout.getLayoutParams();
                 params.weight = 160;
                 params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
                 viewHolder.relativeLayout.setLayoutParams(params);

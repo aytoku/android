@@ -24,8 +24,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
     private ArrayList<ArrayList<String>> mGroups;
     private Context mContext;
     private List list;
-    ExpListAdapter.ItemsMenuList menuList;
-    TextView textView;
+    private ExpListAdapter.ItemsMenuList menuList;
 
 
     public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list, ExpListAdapter.ItemsMenuList menuList){
@@ -108,7 +107,7 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             }
         });
 
-        textView = convertView.findViewById(R.id.rl_free_orders_spinner_text);
+        TextView textView = convertView.findViewById(R.id.rl_free_orders_spinner_text);
 
         return convertView;
     }

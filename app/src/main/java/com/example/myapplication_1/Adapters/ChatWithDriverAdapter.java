@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -56,21 +55,14 @@ import com.example.myapplication_1.R;
                 void call(ItemsMenu itemsMenu);
             }
 
-            private @ColorInt
-            int colorBackgroundInt;
             private String title;
 
-            public ItemsMenu(int colorBackgroundRes, String title) {
-                this.colorBackgroundInt = colorBackgroundRes;
+            public ItemsMenu(String title) {
                 this.title = title;
             }
 
             public String getTitle() {
                 return title;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
             }
         }
 

@@ -20,7 +20,7 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    LinearLayout.LayoutParams params;
+    private LinearLayout.LayoutParams params;
     private List<ItemsMenu> itemsMenuList;
 
     public MenuOneAdapter(List<MenuOneAdapter.ItemsMenu> itemsMenuList, Context context) {

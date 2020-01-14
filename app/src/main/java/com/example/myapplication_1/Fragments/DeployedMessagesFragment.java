@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.Adapters.DeployedMessagesAdapter;
 import com.example.myapplication_1.R;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,7 +62,7 @@ public class DeployedMessagesFragment extends Fragment {
 
         ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+            public boolean onMove(@NotNull RecyclerView recyclerView, @NotNull RecyclerView.ViewHolder viewHolder, @NotNull RecyclerView.ViewHolder target) {
                 return false;
             }
 

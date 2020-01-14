@@ -1,5 +1,6 @@
 package com.example.myapplication_1.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,16 +13,16 @@ import com.example.myapplication_1.R;
 
 public class CustomSpinnerAdapter extends BaseAdapter {
     Context context;
-    int flags[];
-    String[] countryNames;
-    LayoutInflater inflter;
+    private int[] flags;
+    private String[] countryNames;
+    private LayoutInflater inflater;
     int selecItem = -1;
 
     public CustomSpinnerAdapter(Context applicationContext, int[] flags, String[] countryNames) {
         this.context = applicationContext;
         this.flags = flags;
         this.countryNames = countryNames;
-        inflter = (LayoutInflater.from(applicationContext));
+        inflater = (LayoutInflater.from(applicationContext));
     }
 
     @Override
@@ -39,9 +40,10 @@ public class CustomSpinnerAdapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint({"ViewHolder", "InflateParams"})
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflter.inflate(R.layout.custom_spinner, null);
+        view = inflater.inflate(R.layout.custom_spinner, null);
         ImageView icon = (ImageView) view.findViewById(R.id.imageView);
         TextView names = (TextView) view.findViewById(R.id.textView);
         icon.setImageResource(flags[i]);

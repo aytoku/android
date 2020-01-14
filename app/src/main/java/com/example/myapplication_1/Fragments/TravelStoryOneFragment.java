@@ -21,10 +21,8 @@ import com.example.myapplication_1.R;
 public class TravelStoryOneFragment extends Fragment {
 
     public static final String TAG = "TravelStoryOneFragment";
-    ImageView button;
-    RecyclerView rv;
-    RecyclerView rv1;
-    LinearLayout linearLayout;
+    private RecyclerView rv;
+    private RecyclerView rv1;
 
     public static TravelStoryOneFragment getInstance(Bundle args) {
 
@@ -43,7 +41,7 @@ public class TravelStoryOneFragment extends Fragment {
         Bundle _args = new Bundle();
         final Fragment travelStoryOneFragment = TravelStoryFragment.getInstance(_args);
 
-        button = view.findViewById(R.id.rl_travel_story_1_imageView);
+        ImageView button = view.findViewById(R.id.rl_travel_story_1_imageView);
 
         rv = view.findViewById(R.id.rl_travel_story_1_recycler_card);
 
@@ -58,7 +56,7 @@ public class TravelStoryOneFragment extends Fragment {
             }
         });
 
-        linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);
+        LinearLayout linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,7 +105,7 @@ public class TravelStoryOneFragment extends Fragment {
         }
     }
 
-    public void showDialog(View view){
+    private void showDialog(View view){
 
         TravelStoryOneAlert travelStoryOneAlert = new TravelStoryOneAlert();
         travelStoryOneAlert.setCancelable(true);

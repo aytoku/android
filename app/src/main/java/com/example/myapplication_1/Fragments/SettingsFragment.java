@@ -18,7 +18,7 @@ import com.example.myapplication_1.R;
 public class SettingsFragment extends Fragment {
 
     public static final String TAG = "SettingsFragment";
-    RecyclerView settings_rv;
+    private RecyclerView settings_rv;
 
     public static SettingsFragment getInstance(Bundle args) {
 

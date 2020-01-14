@@ -24,8 +24,6 @@ import ru.osety.amironlibrary.DrawableUtils;
         private final EarningsPageItems[] earningsPageItems;
         private final LayoutInflater layoutInflater;
         private final Context context;
-        RecyclerView rv;
-        RecyclerView rv1;
 
         public EarningsPageAdapter(EarningsPageAdapter.EarningsPageItems[] earningsPageItems, Context context) {
             this.earningsPageItems = earningsPageItems;
@@ -49,8 +47,6 @@ import ru.osety.amironlibrary.DrawableUtils;
 
             float _dens = context.getResources().getDisplayMetrics().density;
 
-            RecyclerView recyclerViewMenu = rv;
-
             try {
 
                 AdapterCellTextFeatures adapterCellTextFeatures = new AdapterCellTextFeatures(_item.str_features, context);
@@ -62,8 +58,6 @@ import ru.osety.amironlibrary.DrawableUtils;
             } catch (NullPointerException e){
                 e.printStackTrace();
             }
-
-            RecyclerView recyclerView = rv1;
 
             try {
 

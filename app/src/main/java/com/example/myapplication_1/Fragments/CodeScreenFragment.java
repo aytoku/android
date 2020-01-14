@@ -1,6 +1,8 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -245,6 +247,7 @@ public class CodeScreenFragment extends Fragment {
                     String token = "tok";
                     try {
                         token = result.get("token").getAsString();
+                        sendResult(token);
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
@@ -298,5 +301,13 @@ public class CodeScreenFragment extends Fragment {
             public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
                 .query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
+    }
+
+    private void sendResult(String new_token){
+        if(getTargetFragment() == null){
+            return;
+        }
+        Intent intent = RatingFragment.newIntent(new_token);
+        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 }

@@ -19,7 +19,7 @@ import com.example.myapplication_1.R;
 public class CountryCodeSelectionFragment extends Fragment {
 
     public static final String TAG = "CountryCodeSelectionFragment";
-    RecyclerView countryCodeSelection_rv;
+    private RecyclerView countryCodeSelection_rv;
 
     public static CountryCodeSelectionFragment getInstance(Bundle args) {
 

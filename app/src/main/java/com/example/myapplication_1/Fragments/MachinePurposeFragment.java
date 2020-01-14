@@ -20,9 +20,6 @@ import java.util.List;
 public class MachinePurposeFragment extends Fragment {
 
     public static final String TAG = "MachinePurposeFragment";
-    RecyclerView rv;
-    RecyclerView.Adapter adapterGridViewMenu;
-    private List<MachinePurposeAdapter.ItemsMenu> itemsMenuList;
 
     public static MachinePurposeFragment getInstance(Bundle args) {
 
@@ -40,15 +37,15 @@ public class MachinePurposeFragment extends Fragment {
         View view = inflater.inflate(R.layout.machine_purpose_recycler,
                 container, false);
 
-        rv = view.findViewById(R.id.ll_machine_purpose_recycler_rv);
+        RecyclerView rv = view.findViewById(R.id.ll_machine_purpose_recycler_rv);
 
         final RecyclerView recyclerViewMenu = rv;
 
         try {
 
             MachinePurposeAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new MachinePurposeAdapter(itemsMenuList, getActivity().getBaseContext());
+            List<MachinePurposeAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            RecyclerView.Adapter adapterGridViewMenu = new MachinePurposeAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));

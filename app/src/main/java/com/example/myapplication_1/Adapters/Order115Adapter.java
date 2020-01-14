@@ -59,7 +59,7 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
             this.desc = desc;
         }
 
-        public String getEmoji() {
+        String getEmoji() {
             return img;
         }
 

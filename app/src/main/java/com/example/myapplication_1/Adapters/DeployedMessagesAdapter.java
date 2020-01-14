@@ -23,7 +23,6 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Context context;
     private Drawable card_draw;
     private Drawable card;
-    LinearLayout.LayoutParams params;
 
     private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
 
@@ -46,7 +45,6 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
         } else if(position == 2){
             return 1;
         }
-
         return position;
     }
 
@@ -73,6 +71,7 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
 
         final DeployedMessagesItems _item = deployedMessagesItemsList.get(i);
+        LinearLayout.LayoutParams params;
         if(i == deployedMessagesItemsList.size()-1){
             if(viewHolder instanceof ViewHolder2)
                 viewHolder = (ViewHolder2)viewHolder;

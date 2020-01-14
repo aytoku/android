@@ -99,7 +99,7 @@ public class PaymentChangeAdapter extends RecyclerView.Adapter<PaymentChangeAdap
             this.callBack = callBack;
         }
 
-        public int getCardImg() {
+        int getCardImg() {
             return card_img;
         }
 

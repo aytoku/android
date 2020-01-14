@@ -21,7 +21,7 @@ import java.util.List;
 public class AssistantFragment extends Fragment {
 
     public static final String TAG = "AssistantFragment";
-    RecyclerView.Adapter assistantAdapter;
+    private RecyclerView.Adapter assistantAdapter;
     private List<AssistantAdapter.AssistantItems> assistantItemsList;
 
     public static AssistantFragment getInstance(Bundle args) {

@@ -107,7 +107,7 @@ import ru.osety.amironlibrary.DrawableUtils;
                 this.code = code;
             }
 
-            public String getLetter(){return letter;}
+            String getLetter(){return letter;}
 
             public int getImg() {
                 return img;
@@ -117,11 +117,11 @@ import ru.osety.amironlibrary.DrawableUtils;
                 return str;
             }
 
-            public String getTime() {
+            String getTime() {
                 return code;
             }
 
-            public int getColorBackground() {
+            int getColorBackground() {
                 return colorBackgroundInt;
             }
         }

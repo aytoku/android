@@ -162,7 +162,7 @@ public class Auth111Fragment extends Fragment {
         return view;
     }
 
-    public void sendNumber(){
+    private void sendNumber(){
         JsonObject jo = new JsonObject();
         jo.addProperty("device_id", "ffewqewe");
         jo.addProperty("phone", "+79998887766");

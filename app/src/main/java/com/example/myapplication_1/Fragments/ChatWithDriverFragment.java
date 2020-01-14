@@ -92,12 +92,9 @@ public class ChatWithDriverFragment extends Fragment {
     private ChatWithDriverAdapter.ItemsMenu[] getMenuItems() {
 
         ChatWithDriverAdapter.ItemsMenu []_arr = new ChatWithDriverAdapter.ItemsMenu[]{
-                new ChatWithDriverAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray), "Уже выхожу"),
+                new ChatWithDriverAdapter.ItemsMenu( "Уже выхожу"),
 
-                new ChatWithDriverAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
-                       "Не вижу вас")
+                new ChatWithDriverAdapter.ItemsMenu("Не вижу вас")
         };
         return _arr;
     }

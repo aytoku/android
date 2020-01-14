@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -82,25 +81,16 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
                 void call(ItemsMenu itemsMenu);
             }
 
-
-            private @ColorInt
-            int colorBackgroundInt;
-
             private String title;
             private CallBack callBack;
 
-            public ItemsMenu(int colorBackgroundRes, String title, CallBack callBack) {
-                this.colorBackgroundInt = colorBackgroundRes;
+            public ItemsMenu(String title, CallBack callBack) {
                 this.title = title;
                 this.callBack = callBack;
             }
 
             public String getTitle() {
                 return title;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
             }
         }
 

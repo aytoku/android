@@ -162,19 +162,19 @@ public class PaymentMethodFragment extends Fragment {
         return intent;
     }
 
-    public static Intent newIntent1(Bundle bundle){
+    static Intent newIntent1(Bundle bundle){
         Intent intent = new Intent();
         intent.putExtras(bundle);
         return intent;
     }
 
-    public void showDialog(View view){
+    private void showDialog(View view){
         DriverTipsAlertNormal driverTipsAlertNormal = DriverTipsAlertNormal.getInstance(null);
         driverTipsAlertNormal.setTargetFragment(PaymentMethodFragment.this, REQUEST_CODE_DRIVER_TIPS);
         driverTipsAlertNormal.show(getFragmentManager(), DriverTipsAlertNormal.TAG);
     }
 
-    public void showNewCardFragment(View view){
+    private void showNewCardFragment(View view){
         NewCardFragment newCardFragment = NewCardFragment.getInstance(null);
         newCardFragment.setTargetFragment(PaymentMethodFragment.this, REQUEST_CODE_NEW_CARD);
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();

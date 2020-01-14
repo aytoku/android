@@ -1,5 +1,7 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.ArrayMap;
@@ -38,6 +40,7 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class RatingFragment extends Fragment{
 
     public static final String TAG = "RatingFragment";
+    private static final int REQUEST_CODE_TOKEN = 101;
     private RecyclerView.Adapter ratingTipsAdapter;
     private ImageView star1;
     private ImageView star2;
@@ -316,5 +319,20 @@ public class RatingFragment extends Fragment{
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
                     .query("https://client.apis.stage.faem.pro/api/v2"+"/order/rating", jo.toString());
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(resultCode != Activity.RESULT_OK){
+            return;
+        }
+        if(requestCode == REQUEST_CODE_TOKEN){
+            String new_token = data.getStringExtra("token");
+        }
+    }
+
+    static Intent newIntent(String new_token){
+        Intent intent = new Intent();
+        intent.putExtra("token", new_token);
+        return intent;
     }
 }

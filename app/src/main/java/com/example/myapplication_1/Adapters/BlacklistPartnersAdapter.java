@@ -92,7 +92,6 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
         public BlackListItems(int img,String desc, boolean check, CallBack callBack) {
             this.img = img;
             this.desc = desc;
-            this.img = img;
             this.check = check;
             this.callBack = callBack;
         }

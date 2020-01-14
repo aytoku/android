@@ -120,7 +120,7 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
             return title;
         }
 
-        public int getCardImg() {
+        int getCardImg() {
             return card_img;
         }
 

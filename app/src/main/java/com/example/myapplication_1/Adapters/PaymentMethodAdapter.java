@@ -111,7 +111,7 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
             this.callBack = callBack;
         }
 
-        public String getCardNumber() {
+        String getCardNumber() {
             return card_number;
         }
 
@@ -123,7 +123,7 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
             return cvv;
         }
 
-        public int getCardImg() {
+        int getCardImg() {
             return card_img;
         }
 

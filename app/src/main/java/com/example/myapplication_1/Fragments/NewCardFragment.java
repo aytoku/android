@@ -20,9 +20,9 @@ import com.example.myapplication_1.R;
 public class NewCardFragment extends Fragment {
 
     public static final String TAG = "NewCardFragment";
-    public static final String KEY_CARD_NUMBER = "Key_card_number";
-    public static final String KEY_DATE = "Key_date";
-    public static final String KEY_CVV = "Key_cvv";
+    static final String KEY_CARD_NUMBER = "Key_card_number";
+    static final String KEY_DATE = "Key_date";
+    static final String KEY_CVV = "Key_cvv";
     private EditText editText;
     private EditText editText1;
 

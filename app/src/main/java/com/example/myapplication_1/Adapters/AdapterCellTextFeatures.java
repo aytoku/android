@@ -26,8 +26,7 @@ public class AdapterCellTextFeatures extends RecyclerView.Adapter<AdapterCellTex
     public AdapterCellTextFeatures(String[] array, Context context) {
         this.array = array;
         this.context = context;
-
-
+        
         ellipse_red = context.getResources().getDrawable(R.drawable.ic_mini_ellipse);
         ellipse_black = context.getResources().getDrawable(R.drawable.ic_mini_ellipse_black);
         ellipse_green = context.getResources().getDrawable(R.drawable.ic_mini_ellipse_green);

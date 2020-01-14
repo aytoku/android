@@ -10,8 +10,6 @@ import com.example.myapplication_1.Fragments.EmptyChatWithDriverFragment;
 
 public class ChatViewPagerAdapter extends FragmentPagerAdapter {
 
-    private int COUNT = 2;
-
     public ChatViewPagerAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -33,7 +31,7 @@ public class ChatViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return COUNT;
+        return 2;
     }
 
     @Nullable

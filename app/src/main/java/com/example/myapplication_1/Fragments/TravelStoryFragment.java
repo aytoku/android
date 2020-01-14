@@ -18,7 +18,7 @@ import com.example.myapplication_1.R;
 public class TravelStoryFragment extends Fragment {
 
     public static final String TAG = "TravelStoryFragment";
-    RecyclerView travelStory_rv;
+    private RecyclerView travelStory_rv;
 
     public static TravelStoryFragment getInstance(Bundle args) {
 

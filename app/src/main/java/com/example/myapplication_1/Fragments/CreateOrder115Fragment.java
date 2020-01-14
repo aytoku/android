@@ -26,8 +26,7 @@ import java.util.List;
 public class CreateOrder115Fragment extends Fragment {
 
     public static final String TAG = "CreateOrder115Fragment";
-    RecyclerView create_order_rv;
-    RecyclerView.Adapter createOrder115Adapter;
+    private RecyclerView.Adapter createOrder115Adapter;
     private List<AdapterCreateOrder115.CreateOrderItems> createOrderItemsList;
 
     public static CreateOrder115Fragment getInstance(Bundle args) {
@@ -46,7 +45,7 @@ public class CreateOrder115Fragment extends Fragment {
         View view = inflater.inflate(R.layout.create_order_1_1_5,
                 container, false);
 
-        create_order_rv = view.findViewById(R.id.ll_create_order_1_1_5_recycler);
+        RecyclerView create_order_rv = view.findViewById(R.id.ll_create_order_1_1_5_recycler);
 
         Button button = view.findViewById(R.id.ll_create_order_1_1_5_add_stop);
         button.setOnClickListener(new View.OnClickListener() {

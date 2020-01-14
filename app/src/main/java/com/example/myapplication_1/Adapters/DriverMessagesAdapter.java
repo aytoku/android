@@ -26,7 +26,6 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private Drawable card_draw;
     private Drawable card;
     private Drawable card_grey;
-    LinearLayout.LayoutParams params;
 
     private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
 
@@ -54,6 +53,7 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         final ItemsMenu _item = itemsMenuList.get(i);
 
+        LinearLayout.LayoutParams params;
         if(i == 0){
             ((ViewHolder)viewHolder).relativeLayout.setBackground(card);
             ((ViewHolder)viewHolder).linearLayout.setPadding(100,0,0,0);

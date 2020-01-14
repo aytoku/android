@@ -19,8 +19,8 @@ import com.example.myapplication_1.R;
 public class BlacklistPartnersFragment extends Fragment {
 
     public static final String TAG = "BlacklistPartnersFragment";
-    RecyclerView black_list_rv;
-    boolean check = false;
+    private RecyclerView black_list_rv;
+    private boolean check = false;
 
     public static BlacklistPartnersFragment getInstance(Bundle args) {
 

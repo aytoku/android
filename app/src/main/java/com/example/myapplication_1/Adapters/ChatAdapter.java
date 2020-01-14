@@ -44,7 +44,6 @@ import com.example.myapplication_1.R;
                 public void onClick(View v) {
 
                     try {
-
                         _item.getCallBack().call(_item);
 
                     } catch ( NullPointerException e) {
@@ -79,8 +78,6 @@ import com.example.myapplication_1.R;
             public CallBack getCallBack() {
                 return callBack;
             }
-
-
 
             public String getTitle() {
                 return title;

@@ -28,15 +28,13 @@ import java.util.List;
 public class EmptyChatWithDriverFragment extends Fragment {
 
     public static final String TAG = "EmptyChatWithDriverFragment";
-    RecyclerView rv;
-    RecyclerView rv1;
-    RecyclerView.Adapter adapterGridViewMenu;
+    private RecyclerView rv;
+    private RecyclerView rv1;
     List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
-    List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
-    EditText editText;
-    ImageView imageView;
-    Drawable micro;
-    Drawable arrow;
+    private EditText editText;
+    private ImageView imageView;
+    private Drawable micro;
+    private Drawable arrow;
 
     public static EmptyChatWithDriverFragment getInstance(Bundle args) {
 
@@ -102,10 +100,11 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
         RecyclerView recyclerViewMenu = rv;
 
+        RecyclerView.Adapter adapterGridViewMenu;
         try {
 
             EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu));
+            List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenuList1, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
@@ -138,7 +137,7 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
         EmptyChatWithDriverAdapter.ItemsMenu []_arr = new EmptyChatWithDriverAdapter.ItemsMenu[]{
                 new EmptyChatWithDriverAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray), "Уже выхожу",
+                        "Уже выхожу",
                         new EmptyChatWithDriverAdapter.ItemsMenu.CallBack() {
                             @Override
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
@@ -152,7 +151,6 @@ public class EmptyChatWithDriverFragment extends Fragment {
                         }),
 
                 new EmptyChatWithDriverAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Не вижу вас",
                         new EmptyChatWithDriverAdapter.ItemsMenu.CallBack() {
                             @Override

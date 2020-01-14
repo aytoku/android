@@ -86,7 +86,7 @@ public class AddressFragment extends Fragment {
         return view;
     }
 
-    public void onAddButtonClicked(View view) {
+    private void onAddButtonClicked(View view) {
 
         try {
             addressItemsList.add(addressItemsList.size(), new AddressAdapter.AddressItems(

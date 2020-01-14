@@ -1,5 +1,6 @@
 package com.example.myapplication_1.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +17,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.myapplication_1.Other.MainActivitySlider;
 import com.example.myapplication_1.R;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -25,7 +28,6 @@ import java.util.List;
 public class ViewPagerAdapter extends PagerAdapter {
 
     private Context context;
-    private LayoutInflater layoutInflater;
     private List<Bitmap> images = new ArrayList<>();
     private List<String> strings_title = new ArrayList<>();
     private List<String> strings_desc = new ArrayList<>();
@@ -54,15 +56,16 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object){
+    public boolean isViewFromObject(@NotNull View view, @NotNull Object object){
         return view == object;
     }
 
+    @NotNull
     @Override
-    public Object instantiateItem(ViewGroup container, int position){
+    public Object instantiateItem(@NotNull ViewGroup container, int position){
 
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.custom_layout, null);
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        @SuppressLint("InflateParams") View view = layoutInflater.inflate(R.layout.custom_layout, null);
         if (position == 0){
 
             view.setBackground(context.getResources().getDrawable(R.drawable.gradient_blue));
@@ -78,9 +81,9 @@ public class ViewPagerAdapter extends PagerAdapter {
         TextView textView_desc = view.findViewById(R.id.description_slider);
         Button button = view.findViewById(R.id.slider_button);
         if(position == 2){
-            button.setVisibility(view.VISIBLE);
+            button.setVisibility(View.VISIBLE);
         }else{
-            button.setVisibility(view.GONE);
+            button.setVisibility(View.GONE);
         }
         imageView.setImageBitmap(images.get(position));
         textView_title.setText(strings_title.get(position));
@@ -95,7 +98,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object){
+    public void destroyItem(@NotNull ViewGroup container, int position, @NotNull Object object){
 
         ViewPager vp = (ViewPager) container;
         View view = (View) object;

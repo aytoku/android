@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.myapplication_1.R;
 
 public class InformationFragment extends Fragment {
+
     public static final String TAG = "InformationFragment";
 
     public static InformationFragment getInstance(Bundle args) {

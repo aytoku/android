@@ -14,7 +14,7 @@ import com.example.myapplication_1.R;
 public class TripDetailsFragment extends Fragment {
 
     public static final String TAG = "PaymentChangeFragment";
-    ImageButton button;
+    private ImageButton button;
 
     public static PaymentChangeFragment getInstance(Bundle args) {
 
