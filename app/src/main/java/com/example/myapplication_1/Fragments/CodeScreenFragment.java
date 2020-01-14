@@ -31,11 +31,11 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class CodeScreenFragment extends Fragment {
 
     public static final String TAG = "CodeScreenFragment";
-    public static final String CLIENT_ID = "Client_id";
-    public static final String TOKEN = "Token";
-    public static final String CLIENT_UUID = "Client_uuid";
-    public static final String REFRESH_TOKEN = "Refresh_token";
-    public static final String REFRESH_EXPIRATION = "Refresh_expiration";
+    private static final String CLIENT_ID = "Client_id";
+    private static final String TOKEN = "Token";
+    private static final String CLIENT_UUID = "Client_uuid";
+    private static final String REFRESH_TOKEN = "Refresh_token";
+    private static final String REFRESH_EXPIRATION = "Refresh_expiration";
     private EditText code_field1;
     private EditText code_field2;
     private EditText code_field3;
@@ -207,7 +207,7 @@ public class CodeScreenFragment extends Fragment {
     return view;
     }
 
-    public void getCode(){
+    private void getCode(){
         JsonObject jo = new JsonObject();
         jo.addProperty("device_id", "ffewqewe");
         jo.addProperty("code", 1080);
@@ -283,9 +283,9 @@ public class CodeScreenFragment extends Fragment {
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            final Auth111Fragment auth111Fragment = new Auth111Fragment();
+                            final RatingFragment ratingFragment = new RatingFragment();
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.replace(R.id.ll_main, auth111Fragment);
+                            fragmentTransaction.replace(R.id.ll_main, ratingFragment);
                             fragmentTransaction.commit();
                         }
                     });

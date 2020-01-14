@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.auth0.android.jwt.Claim;
+import com.auth0.android.jwt.JWT;
 import com.example.myapplication_1.Adapters.RatingPraiseAdapter;
 import com.example.myapplication_1.Adapters.RatingTipsAdapter;
 import com.example.myapplication_1.ClassesForAdapters.PraiseList;
@@ -48,6 +50,7 @@ public class RatingFragment extends Fragment{
     List<Integer> list = new ArrayList<>();
     private List<PraiseList>praiseLists = new ArrayList<>();
     private int tip_index;
+    private static final String TOKEN = "Token";
 
     public static RatingFragment getInstance(Bundle args) {
 
@@ -236,7 +239,7 @@ public class RatingFragment extends Fragment{
     }
 
     private void postData(){
-        JsonObject jo = new JsonObject();
+        final JsonObject jo = new JsonObject();
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
@@ -260,6 +263,17 @@ public class RatingFragment extends Fragment{
 
             @Override
             public void sync(JsonObject result) {
+
+//                Context context = getActivity().getApplicationContext();
+//                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+//                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                editor.putString(TOKEN, token);
+
+                String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOjIsImNsaWVudF91dWlkIjoiNDMxYjNjNmQtZjdkNS00YjQ5LThlYzEtZTE0NjE1ZTVjZjAzIiwiZGV2aWNlX2lkIjoiZmZld3Fld2UiLCJwaG9uZSI6Iis3OTk5ODh3ODc3NjYiLCJleHAiOjE1Njc1MDI3OTAsImlhdCI6MTU2NzQ5NTU5MH0.nRqqasRhnkYjbmy-qadzXEs47SUzeb4R8yjfgmwIF7Y";
+                JWT jwt = new JWT(token);
+                Claim claim = jwt.getClaim("tip");
+                String s = claim.asString();
+
 
                 String uuid = "uu_id";
                 try {
@@ -301,6 +315,6 @@ public class RatingFragment extends Fragment{
             public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
-                    .query("https://client.apis.stage.faem.pro/api/v2" + "/order/rating", jo.toString());
+                    .query("https://client.apis.stage.faem.pro/api/v2"+"/order/rating", jo.toString());
     }
 }
