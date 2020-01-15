@@ -17,7 +17,7 @@ public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatur
     private final LayoutInflater layoutInflater;
     private final Context context;
 
-    public AdapterCellFeatures(String[] array, Context context) {
+    AdapterCellFeatures(String[] array, Context context) {
         this.array = array;
         this.context = context;
 

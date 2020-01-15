@@ -20,7 +20,6 @@ public class BlacklistPartnersFragment extends Fragment {
 
     public static final String TAG = "BlacklistPartnersFragment";
     private RecyclerView black_list_rv;
-    private boolean check = false;
 
     public static BlacklistPartnersFragment getInstance(Bundle args) {
 
@@ -87,6 +86,7 @@ public class BlacklistPartnersFragment extends Fragment {
 
     private BlacklistPartnersAdapter.BlackListItems[] getBlackListItems() {
 
+        boolean check = false;
         BlacklistPartnersAdapter.BlackListItems []_arr = new BlacklistPartnersAdapter.BlackListItems[]{
 
                 new BlacklistPartnersAdapter.BlackListItems(

@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,12 +14,12 @@ import com.example.myapplication_1.R;
 
     public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
-        private final ItemsMenu[] itemsMenu;
+        private final ChatItems[] chatItems;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public ChatAdapter(ChatAdapter.ItemsMenu[] itemsMenu, Context context) {
-            this.itemsMenu = itemsMenu;
+        public ChatAdapter(ChatAdapter.ChatItems[] chatItems, Context context) {
+            this.chatItems = chatItems;
             this.context = context;
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -37,7 +36,7 @@ import com.example.myapplication_1.R;
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final ChatItems _item = chatItems[i];
 
             viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                 @Override
@@ -55,22 +54,19 @@ import com.example.myapplication_1.R;
 
         @Override
         public int getItemCount() {
-            return itemsMenu.length;
+            return chatItems.length;
         }
 
-        public static class ItemsMenu {
+        public static class ChatItems {
 
             public interface CallBack {
-                void call(ItemsMenu itemsMenu);
+                void call(ChatItems itemsMenu);
             }
 
-            private @ColorInt
-            int colorBackgroundInt;
             private CallBack callBack;
             private String title;
 
-            public ItemsMenu(int colorBackgroundRes,  CallBack callBack,String title) {
-                this.colorBackgroundInt = colorBackgroundRes;
+            public ChatItems(CallBack callBack,String title) {
                 this.callBack = callBack;
                 this.title = title;
             }
@@ -81,10 +77,6 @@ import com.example.myapplication_1.R;
 
             public String getTitle() {
                 return title;
-            }
-
-            public int getColorBackground() {
-                return colorBackgroundInt;
             }
         }
 

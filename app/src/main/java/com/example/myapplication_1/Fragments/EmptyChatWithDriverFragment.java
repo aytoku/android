@@ -172,19 +172,15 @@ public class EmptyChatWithDriverFragment extends Fragment {
         DriverMessagesAdapter.ItemsMenu[] arr = new DriverMessagesAdapter.ItemsMenu[]{
 
                 new DriverMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
                 new DriverMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
                 new DriverMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу"),
 
                 new DriverMessagesAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Выполните еще три заказа и получите\n+30 к рейтингу")
         };
         return arr;

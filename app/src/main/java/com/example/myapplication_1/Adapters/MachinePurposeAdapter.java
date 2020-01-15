@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -72,14 +71,11 @@ public class MachinePurposeAdapter extends RecyclerView.Adapter<MachinePurposeAd
 
     public static class ItemsMenu {
 
-        private @ColorInt
-        int colorBackgroundInt;
         private int img;
         private String title;
         private int imgResId1;
 
-        public ItemsMenu(int colorBackgroundRes, int img, String title, int imgResId1) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public ItemsMenu(int img, String title, int imgResId1) {
             this.img = img;
             this.title = title;
             this.imgResId1 = imgResId1;
@@ -91,10 +87,6 @@ public class MachinePurposeAdapter extends RecyclerView.Adapter<MachinePurposeAd
 
         public String getStr() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

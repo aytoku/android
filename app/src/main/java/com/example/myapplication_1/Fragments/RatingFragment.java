@@ -277,7 +277,6 @@ public class RatingFragment extends Fragment{
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
-
                 JWT jwt = new JWT(token);
                 Claim claim = jwt.getClaim("tip");
                 String s = claim.asString();

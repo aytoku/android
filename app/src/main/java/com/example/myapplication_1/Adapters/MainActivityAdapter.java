@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -79,15 +78,12 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
             void call(ItemsMenu itemsMenu);
         }
 
-        private @ColorInt
-        int colorBackgroundInt;
         private int img;
         private String title;
         private CallBack callBack;
         private String cost;
 
-        public ItemsMenu(int colorBackgroundRes, int img, String title, CallBack callBack,String cost) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public ItemsMenu(int img, String title, CallBack callBack,String cost) {
             this.img = img;
             this.title = title;
             this.callBack = callBack;
@@ -108,10 +104,6 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
 
         public String getCost() {
             return cost;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

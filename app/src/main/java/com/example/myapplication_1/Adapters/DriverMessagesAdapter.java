@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -90,22 +89,15 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     public static class ItemsMenu {
 
-        private @ColorInt
-        int colorBackgroundInt;
         private String title;
 
-        public ItemsMenu(int colorBackgroundRes, String title) {
-            this.colorBackgroundInt = colorBackgroundRes;
+        public ItemsMenu(String title) {
             this.title = title;
 
         }
 
         public String getTitle() {
             return title;
-        }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
         }
     }
 

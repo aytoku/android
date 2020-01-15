@@ -66,9 +66,7 @@ public class MachinePurposeFragment extends Fragment {
     private MachinePurposeAdapter.ItemsMenu[] getMenuItems() {
 
         MachinePurposeAdapter.ItemsMenu[] arr = new MachinePurposeAdapter.ItemsMenu[]{
-
-                new MachinePurposeAdapter.ItemsMenu(getResources().getColor(R.color.my_gray),
-
+                new MachinePurposeAdapter.ItemsMenu(
                         R.drawable.icon_grey_plus,
                         "Добавить остановку",
                         R.drawable.icon_arrow_right)

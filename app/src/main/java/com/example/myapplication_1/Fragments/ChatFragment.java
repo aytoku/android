@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -36,7 +35,6 @@ public class ChatFragment extends Fragment {
         View view = inflater.inflate(R.layout.empty_chat_with_driver,
                 container, false);
 
-        ImageButton androidImageButton = view.findViewById(R.id.img_cross_grey);
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
 
         return view;
@@ -46,31 +44,30 @@ public class ChatFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
+        RecyclerView recyclerView = rv;
 
         try {
 
-            ChatAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            ChatAdapter.ChatItems[] chatItems = getChatItems();
 
-            ChatAdapter adapterGridViewMenu = new ChatAdapter(itemsMenu, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
-            recyclerViewMenu.setLayoutManager(
+            ChatAdapter chatAdapter = new ChatAdapter(chatItems, getActivity().getBaseContext());
+            recyclerView.setAdapter( chatAdapter );
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
     }
 
-    private ChatAdapter.ItemsMenu[] getMenuItems() {
+    private ChatAdapter.ChatItems[] getChatItems() {
 
-        ChatAdapter.ItemsMenu []_arr = new ChatAdapter.ItemsMenu[]{
+        ChatAdapter.ChatItems []_arr = new ChatAdapter.ChatItems[]{
 
-                new ChatAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),new ChatAdapter.ItemsMenu.CallBack() {
+                new ChatAdapter.ChatItems(new ChatAdapter.ChatItems.CallBack() {
                     @Override
-                    public void call(ChatAdapter.ItemsMenu itemsMenu) {
+                    public void call(ChatAdapter.ChatItems itemsMenu) {
 
                         try {
 
@@ -82,10 +79,9 @@ public class ChatFragment extends Fragment {
                     }
                 }, "Уже выхожу"),
 
-                new ChatAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),new ChatAdapter.ItemsMenu.CallBack() {
+                new ChatAdapter.ChatItems(new ChatAdapter.ChatItems.CallBack() {
                     @Override
-                    public void call(ChatAdapter.ItemsMenu itemsMenu) {
+                    public void call(ChatAdapter.ChatItems itemsMenu) {
 
                         try {
 

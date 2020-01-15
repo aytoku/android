@@ -14,13 +14,12 @@ import com.example.myapplication_1.R;
 
     public class ChatWithDriverAdapter extends RecyclerView.Adapter<ChatWithDriverAdapter.ViewHolder> {
 
-        private final ItemsMenu[] itemsMenu;
+        private final ChatWithDriverItem[] chatWithDriverItems;
         private final LayoutInflater layoutInflater;
         private final Context context;
-        private int selectItem = -1;
 
-        public ChatWithDriverAdapter(ChatWithDriverAdapter.ItemsMenu[] itemsMenu, Context context) {
-            this.itemsMenu = itemsMenu;
+        public ChatWithDriverAdapter(ChatWithDriverAdapter.ChatWithDriverItem[] chatWithDriverItems, Context context) {
+            this.chatWithDriverItems = chatWithDriverItems;
             this.context = context;
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -38,26 +37,25 @@ import com.example.myapplication_1.R;
         @Override
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-            final ItemsMenu _item = itemsMenu[i];
+            final ChatWithDriverItem _item = chatWithDriverItems[i];
 
             viewHolder.title.setText( _item.getTitle() );
-
         }
 
         @Override
         public int getItemCount() {
-            return itemsMenu.length;
+            return chatWithDriverItems.length;
         }
 
-        public static class ItemsMenu {
+        public static class ChatWithDriverItem {
 
             public interface CallBack {
-                void call(ItemsMenu itemsMenu);
+                void call(ChatWithDriverItem itemsMenu);
             }
 
             private String title;
 
-            public ItemsMenu(String title) {
+            public ChatWithDriverItem(String title) {
                 this.title = title;
             }
 

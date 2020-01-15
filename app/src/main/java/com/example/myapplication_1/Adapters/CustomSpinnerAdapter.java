@@ -16,7 +16,6 @@ public class CustomSpinnerAdapter extends BaseAdapter {
     private int[] flags;
     private String[] countryNames;
     private LayoutInflater inflater;
-    int selecItem = -1;
 
     public CustomSpinnerAdapter(Context applicationContext, int[] flags, String[] countryNames) {
         this.context = applicationContext;

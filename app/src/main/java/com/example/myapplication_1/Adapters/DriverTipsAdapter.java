@@ -75,7 +75,6 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
 
         public interface CallBack {
             void call(DriverTipsItems itemsMenu);
-
         }
 
         private String title;

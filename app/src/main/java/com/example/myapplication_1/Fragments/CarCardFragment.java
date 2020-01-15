@@ -70,7 +70,6 @@ public class CarCardFragment extends Fragment {
         MainActivityAdapter.ItemsMenu []_arr = new MainActivityAdapter.ItemsMenu[]{
 
                 new MainActivityAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         R.mipmap.yellow_car,
                         "Эконом",
                         new MainActivityAdapter.ItemsMenu.CallBack() {
@@ -88,7 +87,6 @@ public class CarCardFragment extends Fragment {
                         }, "48 \u20BD"),
 
                 new MainActivityAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         R.mipmap.red_car,
                         "Стандарт",
                         new MainActivityAdapter.ItemsMenu.CallBack() {
@@ -105,7 +103,6 @@ public class CarCardFragment extends Fragment {
                             }
                         }, "78 \u20BD"),
                 new MainActivityAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         R.mipmap.grey_car,
                         "Комфорт",
                         new MainActivityAdapter.ItemsMenu.CallBack() {
@@ -123,7 +120,6 @@ public class CarCardFragment extends Fragment {
                         }, "130 \u20BD"),
 
                 new MainActivityAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         R.mipmap.load,
                         "Грузовое",
                         new MainActivityAdapter.ItemsMenu.CallBack() {
@@ -141,7 +137,6 @@ public class CarCardFragment extends Fragment {
                         }, "500 \u20BD"),
 
                 new MainActivityAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         R.mipmap.receive,
                         "Доставка",
                         new MainActivityAdapter.ItemsMenu.CallBack() {

@@ -23,7 +23,7 @@ public class AdapterCellTextFeatures extends RecyclerView.Adapter<AdapterCellTex
     private final Drawable ellipse_black;
     private final Drawable ellipse_green;
 
-    public AdapterCellTextFeatures(String[] array, Context context) {
+    AdapterCellTextFeatures(String[] array, Context context) {
         this.array = array;
         this.context = context;
         

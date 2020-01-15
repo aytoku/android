@@ -60,9 +60,9 @@ public class ChatWithDriverFragment extends Fragment {
 
         try {
 
-            ChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            ChatWithDriverAdapter.ChatWithDriverItem[] chatWithDriverItems = getChatWithDriverItems();
 
-            ChatWithDriverAdapter adapterGridViewMenu = new ChatWithDriverAdapter(itemsMenu, getActivity().getBaseContext());
+            ChatWithDriverAdapter adapterGridViewMenu = new ChatWithDriverAdapter(chatWithDriverItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
@@ -89,12 +89,12 @@ public class ChatWithDriverFragment extends Fragment {
         }
     }
 
-    private ChatWithDriverAdapter.ItemsMenu[] getMenuItems() {
+    private ChatWithDriverAdapter.ChatWithDriverItem[] getChatWithDriverItems() {
 
-        ChatWithDriverAdapter.ItemsMenu []_arr = new ChatWithDriverAdapter.ItemsMenu[]{
-                new ChatWithDriverAdapter.ItemsMenu( "Уже выхожу"),
+        ChatWithDriverAdapter.ChatWithDriverItem []_arr = new ChatWithDriverAdapter.ChatWithDriverItem[]{
+                new ChatWithDriverAdapter.ChatWithDriverItem( "Уже выхожу"),
 
-                new ChatWithDriverAdapter.ItemsMenu("Не вижу вас")
+                new ChatWithDriverAdapter.ChatWithDriverItem("Не вижу вас")
         };
         return _arr;
     }
