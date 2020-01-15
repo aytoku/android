@@ -1,10 +1,12 @@
 package com.example.myapplication_1.Fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -43,6 +45,7 @@ public class CodeScreenFragment extends Fragment {
     private EditText code_field3;
     private EditText code_field4;
     private TextView button;
+    private TextView timer;
 
     public static CodeScreenFragment getInstance(Bundle args) {
 
@@ -205,6 +208,9 @@ public class CodeScreenFragment extends Fragment {
         });
 
         button = view.findViewById(R.id.cl_code_button);
+        timer = view.findViewById(R.id.rl_code_timer);
+
+        timer();
         getCode();
     return view;
     }
@@ -224,11 +230,10 @@ public class CodeScreenFragment extends Fragment {
             @Override
             public JsonObject async(String result) throws ClassCastException {
                 try {
-
                     JsonParser jsonParser = new JsonParser();
-                    return  jsonParser.parse(result).getAsJsonObject();
+                    return jsonParser.parse(result).getAsJsonObject();
 
-                } catch ( NullPointerException | JsonParseException e) {
+                }catch( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "async: " +e.getMessage());
                 }
                 return null;
@@ -300,7 +305,8 @@ public class CodeScreenFragment extends Fragment {
             @Override
             public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
-                .query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
+                .setAsyncThreadPool(true)
+                    .query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
     }
 
     private void sendResult(String new_token){
@@ -309,5 +315,17 @@ public class CodeScreenFragment extends Fragment {
         }
         Intent intent = RatingFragment.newIntent(new_token);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+    }
+
+    private void timer(){
+       new CountDownTimer(25000, 1000) {
+           @SuppressLint("SetTextI18n")
+           public void onTick(long millisUntilFinished) {
+               timer.setText("" + millisUntilFinished / 1000);
+           }
+           public void onFinish() {
+               timer.setText("0");
+           }
+       }.start();
     }
 }

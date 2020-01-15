@@ -142,8 +142,7 @@ public class ChatWithOperator extends Fragment {
     private EmptyChatWithDriverAdapter.ItemsMenu[] getMenuItems() {
 
         EmptyChatWithDriverAdapter.ItemsMenu []_arr = new EmptyChatWithDriverAdapter.ItemsMenu[]{
-                new EmptyChatWithDriverAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray), "Уже выхожу",
+                new EmptyChatWithDriverAdapter.ItemsMenu( "Уже выхожу",
                         new EmptyChatWithDriverAdapter.ItemsMenu.CallBack() {
                             @Override
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
@@ -157,7 +156,6 @@ public class ChatWithOperator extends Fragment {
                         }),
 
                 new EmptyChatWithDriverAdapter.ItemsMenu(
-                        getResources().getColor(R.color.my_gray),
                         "Не вижу вас",
                         new EmptyChatWithDriverAdapter.ItemsMenu.CallBack() {
                             @Override

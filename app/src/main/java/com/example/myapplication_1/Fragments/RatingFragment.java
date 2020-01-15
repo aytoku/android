@@ -1,9 +1,12 @@
 package com.example.myapplication_1.Fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,6 +56,7 @@ public class RatingFragment extends Fragment{
     List<Integer> list = new ArrayList<>();
     private List<PraiseList>praiseLists = new ArrayList<>();
     private int tip_index;
+    //private String token;
     private static final String TOKEN = "Token";
 
     public static RatingFragment getInstance(Bundle args) {
@@ -267,21 +271,20 @@ public class RatingFragment extends Fragment{
             @Override
             public void sync(JsonObject result) {
 
-//                Context context = getActivity().getApplicationContext();
-//                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-//                SharedPreferences.Editor editor = sharedPreferences.edit();
-//                editor.putString(TOKEN, token);
-
                 String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOjIsImNsaWVudF91dWlkIjoiNDMxYjNjNmQtZjdkNS00YjQ5LThlYzEtZTE0NjE1ZTVjZjAzIiwiZGV2aWNlX2lkIjoiZmZld3Fld2UiLCJwaG9uZSI6Iis3OTk5ODh3ODc3NjYiLCJleHAiOjE1Njc1MDI3OTAsImlhdCI6MTU2NzQ5NTU5MH0.nRqqasRhnkYjbmy-qadzXEs47SUzeb4R8yjfgmwIF7Y";
+
+                Context context = getActivity().getApplicationContext();
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
                 JWT jwt = new JWT(token);
                 Claim claim = jwt.getClaim("tip");
                 String s = claim.asString();
 
-
                 String uuid = "uu_id";
                 try {
                     uuid = result.get("uuid").getAsString();
-
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "sync: " +e.getMessage());
                 }
@@ -289,7 +292,6 @@ public class RatingFragment extends Fragment{
                 int value = 0;
                 try {
                     value = result.get("value").getAsInt();
-
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "sync: " +e.getMessage());
                 }
@@ -297,7 +299,6 @@ public class RatingFragment extends Fragment{
                 int tip = 0;
                 try {
                     tip = result.get("tip").getAsInt();
-
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "sync: " +e.getMessage());
                 }
@@ -305,7 +306,6 @@ public class RatingFragment extends Fragment{
                 String comment = "com";
                 try {
                     comment = result.get("comment").getAsString();
-
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "sync: " +e.getMessage());
                 }
@@ -327,6 +327,7 @@ public class RatingFragment extends Fragment{
         }
         if(requestCode == REQUEST_CODE_TOKEN){
             String new_token = data.getStringExtra("token");
+           // token = new_token;
         }
     }
 
