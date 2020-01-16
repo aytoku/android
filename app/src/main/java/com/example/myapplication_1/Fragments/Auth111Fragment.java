@@ -157,7 +157,6 @@ public class Auth111Fragment extends Fragment {
             }
         });
         sendNumber();
-
         return view;
     }
 
@@ -229,7 +228,6 @@ public class Auth111Fragment extends Fragment {
             public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2" + "/auth/new", jo.toString());
     }
-
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
