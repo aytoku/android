@@ -44,7 +44,7 @@ public class ProgramErrorTwoFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.ll_main, menu162Fragment);
+                        fragmentTransaction.replace(R.id.rl_main, menu162Fragment);
                         fragmentTransaction.commit();
                     }
                 });

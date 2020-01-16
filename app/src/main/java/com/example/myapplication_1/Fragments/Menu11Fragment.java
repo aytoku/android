@@ -85,7 +85,7 @@ public class Menu11Fragment extends Fragment {
                                     Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, paymentMethodFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -103,7 +103,7 @@ public class Menu11Fragment extends Fragment {
                                     Fragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, travelStoryFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, travelStoryFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -121,7 +121,7 @@ public class Menu11Fragment extends Fragment {
                                     Fragment addressFragment = AddressFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, addressFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, addressFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -139,7 +139,7 @@ public class Menu11Fragment extends Fragment {
                                     Fragment settingsFragment = SettingsFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, settingsFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, settingsFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -157,7 +157,7 @@ public class Menu11Fragment extends Fragment {
                                     Fragment informationFragment = InformationFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, informationFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, informationFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -175,7 +175,7 @@ public class Menu11Fragment extends Fragment {
                                     Fragment serviceFragment = ServiceFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, serviceFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, serviceFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

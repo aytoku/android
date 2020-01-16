@@ -48,7 +48,7 @@ public class UserAgreementFragment extends Fragment {
                 Bundle _args = new Bundle();
                 final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, aboutAppFragment);
+                fragmentTransaction.replace(R.id.rl_main, aboutAppFragment);
                 fragmentTransaction.commit();
             }
         });

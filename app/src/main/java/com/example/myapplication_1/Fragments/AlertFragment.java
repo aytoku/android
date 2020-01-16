@@ -26,11 +26,9 @@ public class AlertFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         View view = inflater.inflate(R.layout.alert,
                 container, false);
 
         return view;
-
     }
 }

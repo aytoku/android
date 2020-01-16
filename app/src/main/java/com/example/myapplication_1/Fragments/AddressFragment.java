@@ -55,7 +55,7 @@ public class AddressFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
+                fragmentTransaction.replace(R.id.rl_main, menu11Fragment);
                 fragmentTransaction.commit();
             }
         });
@@ -100,7 +100,7 @@ public class AddressFragment extends Fragment {
                                 Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
 
                                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.ll_main, editMyAddressFragment);
+                                fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                 fragmentTransaction.commit();
                             }catch (NullPointerException e) {
                                 e.printStackTrace();
@@ -131,7 +131,7 @@ public class AddressFragment extends Fragment {
                                     Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, editMyAddressFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -150,7 +150,7 @@ public class AddressFragment extends Fragment {
                                     Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, editMyAddressFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

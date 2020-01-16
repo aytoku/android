@@ -20,8 +20,7 @@ public class SendTestFragment extends Fragment {
     private static final int TARGET_FRAGMENT_REQUEST_CODE = 1;
     private static final String EXTRA_GREETING_MESSAGE = "message";
 
-    TextView showGreetingsTextView;
-    Button button;
+    private TextView showGreetingsTextView;
 
     public static SendTestFragment getInstance() {
         SendTestFragment fragment = new SendTestFragment();
@@ -34,7 +33,7 @@ public class SendTestFragment extends Fragment {
         View view = inflater.inflate(R.layout.send_test_fragment, container, false);
 
         showGreetingsTextView = view.findViewById(R.id.show_greetings_text_view);
-        button = view.findViewById(R.id.show_dialog_fragment_button);
+        Button button = view.findViewById(R.id.show_dialog_fragment_button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

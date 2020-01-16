@@ -51,7 +51,7 @@ public class TravelStoryOneFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, travelStoryOneFragment);
+                fragmentTransaction.replace(R.id.rl_main, travelStoryOneFragment);
                 fragmentTransaction.commit();
             }
         });

@@ -48,7 +48,7 @@ public class CountryCodeSelectionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, auth111Fragment);
+                fragmentTransaction.replace(R.id.rl_main, auth111Fragment);
                 fragmentTransaction.commit();
             }
         });
@@ -96,7 +96,7 @@ public class CountryCodeSelectionFragment extends Fragment {
                                     auth111Fragment.setArguments(_args);
                                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();
-                                    transaction.replace(R.id.ll_main, auth111Fragment).commit();
+                                    transaction.replace(R.id.rl_main, auth111Fragment).commit();
                                     getActivity().getIntent().getExtras().get("+995");
 
                                 }catch (NullPointerException e) {
@@ -120,7 +120,7 @@ public class CountryCodeSelectionFragment extends Fragment {
                                     auth111Fragment.setArguments(_args);
                                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();
-                                    transaction.replace(R.id.ll_main, auth111Fragment).commit();
+                                    transaction.replace(R.id.rl_main, auth111Fragment).commit();
                                     getActivity().getIntent().getExtras().get("+7");
 
                                 }catch (NullPointerException e) {

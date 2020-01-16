@@ -50,7 +50,7 @@ public class Menu162Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, serviceFragment);
+                fragmentTransaction.replace(R.id.rl_main, serviceFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -121,7 +121,7 @@ public class Menu162Fragment extends Fragment {
                                     Fragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, programErrorTwoFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

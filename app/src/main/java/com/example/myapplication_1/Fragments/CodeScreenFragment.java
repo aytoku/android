@@ -293,7 +293,7 @@ public class CodeScreenFragment extends Fragment {
                         public void onClick(View view) {
                             final RatingFragment ratingFragment = new RatingFragment();
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.replace(R.id.ll_main, ratingFragment);
+                            fragmentTransaction.replace(R.id.rl_main, ratingFragment);
                             fragmentTransaction.commit();
                         }
                     });

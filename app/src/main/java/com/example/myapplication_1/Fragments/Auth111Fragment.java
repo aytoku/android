@@ -130,7 +130,7 @@ public class Auth111Fragment extends Fragment {
             public void onClick(View view) {
                 WebViewFragment webViewFragment = WebViewFragment.getInstance(null);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, webViewFragment);
+                fragmentTransaction.replace(R.id.rl_main, webViewFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -143,7 +143,7 @@ public class Auth111Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, countryCodeSelectionFragment);
+                fragmentTransaction.replace(R.id.rl_main, countryCodeSelectionFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -152,11 +152,10 @@ public class Auth111Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menuOneFragment);
+                fragmentTransaction.replace(R.id.rl_main, menuOneFragment);
                 fragmentTransaction.commit();
             }
         });
-
         sendNumber();
 
         return view;
@@ -208,7 +207,7 @@ public class Auth111Fragment extends Fragment {
                         public void onClick(View view) {
                             final CodeScreenFragment codeScreenFragment = new CodeScreenFragment();
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.replace(R.id.ll_main, codeScreenFragment);
+                            fragmentTransaction.replace(R.id.rl_main, codeScreenFragment);
                             fragmentTransaction.commit();
                         }
                     });

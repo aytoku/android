@@ -47,7 +47,7 @@ public class TripDetailsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, machinePurposeTwoFragment);
+                fragmentTransaction.replace(R.id.rl_main, machinePurposeTwoFragment);
                 fragmentTransaction.commit();
             }
         });

@@ -48,7 +48,7 @@ public class BlacklistPartnersFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, partnersFragment);
+                fragmentTransaction.replace(R.id.rl_main, partnersFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -57,7 +57,7 @@ public class BlacklistPartnersFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, partnersFragment);
+                fragmentTransaction.replace(R.id.rl_main, partnersFragment);
                 fragmentTransaction.commit();
             }
         });

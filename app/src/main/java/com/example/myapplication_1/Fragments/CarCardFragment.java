@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -17,8 +16,7 @@ import com.example.myapplication_1.R;
 public class CarCardFragment extends Fragment {
 
     public static final String TAG = "CarCardFragment";
-    ImageButton androidImageButton;
-    RecyclerView rv;
+    private RecyclerView rv;
 
     public static CarCardFragment getInstance(Bundle args) {
 
@@ -36,8 +34,6 @@ public class CarCardFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.main_recycler,
                 container, false);
-
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
 
         rv = view.findViewById(R.id.recycler);
 

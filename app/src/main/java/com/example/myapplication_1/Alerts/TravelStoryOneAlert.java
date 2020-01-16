@@ -60,7 +60,7 @@ public class TravelStoryOneAlert extends DialogFragment {
                 Bundle _args = new Bundle();
                 Fragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, travelStoryOneFragment);
+                fragmentTransaction.replace(R.id.rl_main, travelStoryOneFragment);
                 fragmentTransaction.commit();
             }
         });

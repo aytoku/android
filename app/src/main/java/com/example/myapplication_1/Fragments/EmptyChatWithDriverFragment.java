@@ -87,7 +87,7 @@ public class EmptyChatWithDriverFragment extends Fragment {
                 Bundle _args = new Bundle();
                 Fragment chatWithOperator = ChatWithOperator.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, chatWithOperator);
+                fragmentTransaction.replace(R.id.rl_main, chatWithOperator);
                 fragmentTransaction.commit();
             }
         });

@@ -50,7 +50,7 @@ public class PartnersFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, informationFragment);
+                fragmentTransaction.replace(R.id.rl_main, informationFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -59,7 +59,7 @@ public class PartnersFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, blacklistPartnersFragment);
+                fragmentTransaction.replace(R.id.rl_main, blacklistPartnersFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -102,7 +102,7 @@ public class PartnersFragment extends Fragment {
                                     Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, spinnerFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, spinnerFragment);
                                     fragmentTransaction.commit();
 
                                 }catch (NullPointerException e) {
@@ -122,7 +122,7 @@ public class PartnersFragment extends Fragment {
                             Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
 
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.replace(R.id.ll_main, spinnerFragment);
+                            fragmentTransaction.replace(R.id.rl_main, spinnerFragment);
                             fragmentTransaction.commit();
 
                         }catch (NullPointerException e) {

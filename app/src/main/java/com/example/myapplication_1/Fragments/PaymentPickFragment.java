@@ -65,7 +65,7 @@ public class PaymentPickFragment extends Fragment {
                 Bundle _args = new Bundle();
                 Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, paymentMethodFragment);
+                fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
                 fragmentTransaction.commit();
             }
         });

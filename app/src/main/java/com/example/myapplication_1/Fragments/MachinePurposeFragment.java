@@ -42,7 +42,6 @@ public class MachinePurposeFragment extends Fragment {
         final RecyclerView recyclerViewMenu = rv;
 
         try {
-
             MachinePurposeAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<MachinePurposeAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             RecyclerView.Adapter adapterGridViewMenu = new MachinePurposeAdapter(itemsMenuList, getActivity().getBaseContext());

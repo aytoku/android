@@ -38,21 +38,18 @@ public class SettingsFragment extends Fragment {
                 container, false);
 
         settings_rv = view.findViewById(R.id.recycler_settings);
-
         ImageButton imageButton = view.findViewById(R.id.ll_setting_button);
 
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
+                fragmentTransaction.replace(R.id.rl_main, menu11Fragment);
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 
@@ -64,7 +61,6 @@ public class SettingsFragment extends Fragment {
 
         try {
             SettingsAdapter.SettingsItems[] settingsItems = getSettingItems();
-
             SettingsAdapter settingsAdapter = new SettingsAdapter(settingsItems, getActivity().getBaseContext());
             recyclerView.setAdapter( settingsAdapter );
             recyclerView.setLayoutManager(

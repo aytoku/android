@@ -29,15 +29,12 @@ import java.util.List;
 public class ChatWithOperator extends Fragment {
 
     public static final String TAG = "ChatWithOperator";
-    RecyclerView rv;
-    RecyclerView rv1;
-    RecyclerView.Adapter adapterGridViewMenu;
-    private List<DriverMessagesAdapter.ItemsMenu> itemsMenuList;
-    private List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1;
-    Drawable micro;
-    Drawable arrow;
-    EditText editText;
-    ImageView imageView;
+    private RecyclerView rv;
+    private RecyclerView rv1;
+    private Drawable micro;
+    private Drawable arrow;
+    private EditText editText;
+    private ImageView imageView;
 
     public static ChatWithOperator getInstance(Bundle args) {
 
@@ -72,7 +69,7 @@ public class ChatWithOperator extends Fragment {
                 Fragment emptyChatWithDriverFragment = EmptyChatWithDriverFragment.getInstance(_args);
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, emptyChatWithDriverFragment);
+                fragmentTransaction.replace(R.id.rl_main, emptyChatWithDriverFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -107,10 +104,11 @@ public class ChatWithOperator extends Fragment {
 
         RecyclerView recyclerViewMenu = rv;
 
+        RecyclerView.Adapter adapterGridViewMenu;
         try {
 
             EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
-            itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu));
+            List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenuList1, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter(adapterGridViewMenu);
             recyclerViewMenu.setLayoutManager(
@@ -127,7 +125,7 @@ public class ChatWithOperator extends Fragment {
         try {
 
             DriverMessagesAdapter.ItemsMenu[] itemsMenu = getMenuItems1();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            List<DriverMessagesAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new DriverMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerView1.setAdapter(adapterGridViewMenu);
             recyclerView1.setLayoutManager(

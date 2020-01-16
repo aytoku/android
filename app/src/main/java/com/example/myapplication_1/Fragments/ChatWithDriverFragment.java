@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -22,11 +21,8 @@ import java.util.List;
 public class ChatWithDriverFragment extends Fragment {
 
     public static final String TAG = "ChatWithDriverFragment";
-    ImageButton androidImageButton;
-    RecyclerView rv;
-    RecyclerView rv1;
-    RecyclerView.Adapter adapterGridViewMenu;
-    private List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList;
+    private RecyclerView rv;
+    private RecyclerView rv1;
 
     public static ChatWithDriverFragment getInstance(Bundle args) {
 
@@ -45,7 +41,6 @@ public class ChatWithDriverFragment extends Fragment {
         View view = inflater.inflate(R.layout.empty_chat_with_driver,
                 container, false);
 
-        androidImageButton = view.findViewById(R.id.img_cross_grey);
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
         rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
@@ -61,7 +56,6 @@ public class ChatWithDriverFragment extends Fragment {
         try {
 
             ChatWithDriverAdapter.ChatWithDriverItem[] chatWithDriverItems = getChatWithDriverItems();
-
             ChatWithDriverAdapter adapterGridViewMenu = new ChatWithDriverAdapter(chatWithDriverItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
@@ -77,8 +71,8 @@ public class ChatWithDriverFragment extends Fragment {
         try {
 
             DeployedMessagesAdapter.DeployedMessagesItems[] itemsMenu = getMenuItems1();
-            itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
-            adapterGridViewMenu = new DeployedMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
+            List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
+            RecyclerView.Adapter adapterGridViewMenu = new DeployedMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
             recyclerView1.setAdapter(adapterGridViewMenu);
             recyclerView1.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));

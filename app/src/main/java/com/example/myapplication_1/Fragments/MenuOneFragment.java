@@ -71,7 +71,7 @@ public class MenuOneFragment extends Fragment {
                                     Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, auth111Fragment);
+                                    fragmentTransaction.replace(R.id.rl_main, auth111Fragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -89,7 +89,7 @@ public class MenuOneFragment extends Fragment {
                                     Fragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, paymentPickFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, paymentPickFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -108,7 +108,7 @@ public class MenuOneFragment extends Fragment {
                                     Fragment settingsFragment = SettingsFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, settingsFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, settingsFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -126,7 +126,7 @@ public class MenuOneFragment extends Fragment {
                                     Fragment informationFragment = InformationFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, informationFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, informationFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -144,7 +144,7 @@ public class MenuOneFragment extends Fragment {
                                     Fragment serviceFragment = ServiceFragment.getInstance(_args);
 
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.ll_main, serviceFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, serviceFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

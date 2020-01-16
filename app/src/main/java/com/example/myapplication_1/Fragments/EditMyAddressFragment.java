@@ -41,7 +41,7 @@ public class EditMyAddressFragment extends Fragment {
                 Fragment addressFragment = AddressFragment.getInstance(_args);
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, addressFragment);
+                fragmentTransaction.replace(R.id.rl_main, addressFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -54,7 +54,7 @@ public class EditMyAddressFragment extends Fragment {
                 Fragment addressFragment = AddressFragment.getInstance(_args);
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, addressFragment);
+                fragmentTransaction.replace(R.id.rl_main, addressFragment);
                 fragmentTransaction.commit();
             }
         });

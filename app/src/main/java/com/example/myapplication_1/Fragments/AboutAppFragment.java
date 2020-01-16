@@ -46,7 +46,7 @@ public class AboutAppFragment  extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, informationFragment);
+                fragmentTransaction.replace(R.id.rl_main, informationFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -55,7 +55,7 @@ public class AboutAppFragment  extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, privacyPolicyFragment);
+                fragmentTransaction.replace(R.id.rl_main, privacyPolicyFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -64,7 +64,7 @@ public class AboutAppFragment  extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, userAgreementFragment);
+                fragmentTransaction.replace(R.id.rl_main, userAgreementFragment);
                 fragmentTransaction.commit();
             }
         });

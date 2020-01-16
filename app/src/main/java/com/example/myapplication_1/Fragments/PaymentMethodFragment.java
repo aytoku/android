@@ -95,7 +95,7 @@ public class PaymentMethodFragment extends Fragment {
                 Bundle _args = new Bundle();
                 Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, menu11Fragment);
+                fragmentTransaction.replace(R.id.rl_main, menu11Fragment);
                 fragmentTransaction.commit();
             }
         });
@@ -108,7 +108,7 @@ public class PaymentMethodFragment extends Fragment {
                 Bundle _args = new Bundle();
                 PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.ll_main, paymentPickFragment);
+                fragmentTransaction.replace(R.id.rl_main, paymentPickFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -178,7 +178,7 @@ public class PaymentMethodFragment extends Fragment {
         NewCardFragment newCardFragment = NewCardFragment.getInstance(null);
         newCardFragment.setTargetFragment(PaymentMethodFragment.this, REQUEST_CODE_NEW_CARD);
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.ll_main, newCardFragment);
+        fragmentTransaction.replace(R.id.rl_main, newCardFragment);
         fragmentTransaction.commit();
     }
 
