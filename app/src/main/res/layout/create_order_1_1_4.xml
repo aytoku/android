@@ -32,30 +32,30 @@
 
     </LinearLayout>
 
-        <TextView
-            android:id="@+id/ll_create_order.trip_cost"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Поездка 87₽, ~12 мин"
-            android:paddingTop="5dp"
-            android:textColor="#AAAAAA"
-            android:textSize="14sp"
-            android:paddingBottom="30dp"
-            android:paddingLeft="90dp"/>
+    <TextView
+        android:id="@+id/ll_create_order.trip_cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Поездка 87₽, ~12 мин"
+        android:paddingTop="5dp"
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="90dp"/>
 
-        <Button
-            android:id="@+id/ll_create_order.ready_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Готово"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#33353E"
-            android:background="@drawable/mybuttongrey"
-            android:textAllCaps="false"
-            android:paddingLeft="170dp"
-            android:textSize="17sp"
-            android:paddingRight="170dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"/>
+    <Button
+        android:id="@+id/ll_create_order.ready_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Готово"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#33353E"
+        android:background="@drawable/mybuttongrey"
+        android:textAllCaps="false"
+        android:paddingLeft="170dp"
+        android:textSize="17sp"
+        android:paddingRight="170dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"/>
 
 </LinearLayout>

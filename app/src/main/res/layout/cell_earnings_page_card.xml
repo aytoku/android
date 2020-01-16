@@ -6,140 +6,140 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ll_earnings_page_card_cv"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ll_earnings_page_card_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="1.8dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="1.8dp">
+            android:layout_height="match_parent"
+            android:background="@drawable/free_orders_background"
+            android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/free_orders_background"
-                        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:paddingLeft="18dp"
-                            android:paddingRight="5dp"
-                            android:paddingBottom="5dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/ll_earnings_page_card_dist"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="152₽"
-                                android:textColor="#424242"
-                                android:textSize="15sp"
-                                android:paddingRight="10dp"
-                                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/ll_earnings_page_card_dist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="152₽"
+                    android:textColor="#424242"
+                    android:textSize="15sp"
+                    android:paddingRight="10dp"
+                    android:textStyle="bold"/>
 
 
-                            <TextView
-                                android:id="@+id/ll_earnings_page_card_desc"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="До клиента"
-                                android:textColor="#C3C3C3"
-                                android:textSize="13sp"
-                                android:paddingRight="10dp"/>
+                <TextView
+                    android:id="@+id/ll_earnings_page_card_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="До клиента"
+                    android:textColor="#C3C3C3"
+                    android:textSize="13sp"
+                    android:paddingRight="10dp"/>
 
 
-                            <TextView
-                                android:id="@+id/ll_earnings_page_card_distance"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5 км"
-                                android:textColor="#424242"
-                                android:textSize="15sp"
-                                android:paddingRight="10dp"
-                                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/ll_earnings_page_card_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 км"
+                    android:textColor="#424242"
+                    android:textSize="15sp"
+                    android:paddingRight="10dp"
+                    android:textStyle="bold"/>
 
 
-                            <TextView
-                                android:id="@+id/ll_earnings_page_card_desc1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Маршрут заказа"
-                                android:textColor="#C3C3C3"
-                                android:textSize="13sp"
-                                android:paddingRight="10dp"/>
+                <TextView
+                    android:id="@+id/ll_earnings_page_card_desc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Маршрут заказа"
+                    android:textColor="#C3C3C3"
+                    android:textSize="13sp"
+                    android:paddingRight="10dp"/>
 
-                    </LinearLayout>
+            </LinearLayout>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/ll_earnings_page_card_recycler"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingRight="15dp"
-                            android:overScrollMode="never"
-                            android:paddingLeft="15dp"
-                            android:orientation="horizontal"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ll_earnings_page_card_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:overScrollMode="never"
+                android:paddingLeft="15dp"
+                android:orientation="horizontal"/>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/ll_earnings_page_card_recycler1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingRight="15dp"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
-                            android:overScrollMode="never"
-                            android:paddingLeft="15dp"
-                            android:orientation="horizontal"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ll_earnings_page_card_recycler1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:overScrollMode="never"
+                android:paddingLeft="15dp"
+                android:orientation="horizontal"/>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="18dp"
-                            android:paddingBottom="10dp"
-                            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18dp"
+                android:paddingBottom="10dp"
+                android:orientation="horizontal">
 
-                            <TextView
-                                android:id="@+id/ll_earnings_page_card_cost"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="152₽"
-                                android:textColor="#424242"
-                                android:maxLines="1"
-                                android:ellipsize="end"
-                                android:textStyle="bold"
-                                android:singleLine="true"
-                                android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/ll_earnings_page_card_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="152₽"
+                    android:textColor="#424242"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:textSize="15sp"/>
 
-                                <ImageView
-                                    android:id="@+id/ll_earnings_page_card_img"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:paddingTop="5dp"
-                                    android:background="@null"
-                                    android:paddingLeft="15dp"
-                                    android:src="@drawable/ic_lightning_yellow"
-                                    android:scaleY="1.1"
-                                    android:scaleX="1.1"/>
+                <ImageView
+                    android:id="@+id/ll_earnings_page_card_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:background="@null"
+                    android:paddingLeft="15dp"
+                    android:src="@drawable/ic_lightning_yellow"
+                    android:scaleY="1.1"
+                    android:scaleX="1.1"/>
 
-                            <TextView
-                                android:id="@+id/ll_earnings_page_card_desc2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="10"
-                                android:textStyle="bold"
-                                android:paddingLeft="5dp"
-                                android:maxLines="1"
-                                android:ellipsize="end"
-                                android:singleLine="true"
-                                android:textColor="#424242"
-                                android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/ll_earnings_page_card_desc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textStyle="bold"
+                    android:paddingLeft="5dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="#424242"
+                    android:textSize="15sp"/>
 
-                        </LinearLayout>
+            </LinearLayout>
 
-                    </LinearLayout>
+        </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
 

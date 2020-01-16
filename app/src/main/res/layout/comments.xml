@@ -56,7 +56,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cl_comments.rl_comments"
         tools:ignore="RtlCompat" />
 
-
     <LinearLayout
         android:id="@+id/cl_comments.rl_comments.ll_comments"
         android:layout_width="match_parent"

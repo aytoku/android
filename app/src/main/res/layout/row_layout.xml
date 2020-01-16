@@ -33,6 +33,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -55,6 +56,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -77,6 +79,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
+
     </LinearLayout>
 
     <View
@@ -84,4 +87,5 @@
         android:layout_height="2dp"
         android:layout_marginTop="8dp"
         android:background="#000000" />
+
 </LinearLayout>

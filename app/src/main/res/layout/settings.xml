@@ -32,17 +32,17 @@
 
     </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:overScrollMode="never"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"/>
 
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#EDEDED"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,6 +71,7 @@
                     android:paddingBottom="15dp"
                     android:background="@drawable/grey_line"
                     android:textColor="#C6C6C6"/>
+
     </LinearLayout>
 
 </LinearLayout>

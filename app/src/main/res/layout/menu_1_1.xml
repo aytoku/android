@@ -5,10 +5,10 @@
     android:layout_gravity="left"
     android:background="@drawable/angle_radius">
 
-           <androidx.recyclerview.widget.RecyclerView
-               android:id="@+id/rl_menu_1_1_recycler"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:overScrollMode="never"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rl_menu_1_1_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"/>
 
 </LinearLayout>

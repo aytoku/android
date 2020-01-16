@@ -44,73 +44,73 @@
 
     </RelativeLayout>
 
-        <TextView
-            android:id="@+id/cl_edit_my_address.title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:text="Название"
-            android:textColor="#9B9B9B"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rl_edit_my_address" />
+    <TextView
+        android:id="@+id/cl_edit_my_address.title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="Название"
+        android:textColor="#9B9B9B"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_edit_my_address" />
 
-        <TextView
-            android:id="@+id/cl_edit_my_address.home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/grey_line"
-            android:paddingLeft="15dp"
-            android:paddingBottom="20dp"
-            android:text="Дом"
-            android:textColor="#424242"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.title" />
+    <TextView
+        android:id="@+id/cl_edit_my_address.home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grey_line"
+        android:paddingLeft="15dp"
+        android:paddingBottom="20dp"
+        android:text="Дом"
+        android:textColor="#424242"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.title" />
 
-        <TextView
-            android:id="@+id/cl_edit_my_address.address_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:text="Коста Хетагуров, 123"
-            android:textColor="#424242"
-            android:textSize="17sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.home" />
+    <TextView
+        android:id="@+id/cl_edit_my_address.address_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="Коста Хетагуров, 123"
+        android:textColor="#424242"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.home" />
 
-        <TextView
-            android:id="@+id/cl_edit_my_address.address_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/grey_line"
-            android:paddingLeft="15dp"
-            android:paddingBottom="15sp"
-            android:text="г. Владикавказ, руспублика Северная Осетия-Алания,\nРоссия"
-            android:textColor="#9B9B9B"
-            android:textSize="11sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.address_title" />
+    <TextView
+        android:id="@+id/cl_edit_my_address.address_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grey_line"
+        android:paddingLeft="15dp"
+        android:paddingBottom="15sp"
+        android:text="г. Владикавказ, руспублика Северная Осетия-Алания,\nРоссия"
+        android:textColor="#9B9B9B"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.address_title" />
 
-        <TextView
-            android:id="@+id/cl_edit_my_address.hint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:text="Подскажите водителю, как лучше к вам \nподъехать "
-            android:textColor="#9B9B9B"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.address_desc" />
+    <TextView
+        android:id="@+id/cl_edit_my_address.hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="Подскажите водителю, как лучше к вам \nподъехать "
+        android:textColor="#9B9B9B"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_edit_my_address.address_desc" />
 
     <LinearLayout
         android:layout_width="match_parent"

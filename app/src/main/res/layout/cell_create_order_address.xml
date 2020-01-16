@@ -101,108 +101,108 @@
 
         </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ll_cell_create_order.ll_cell_create_order2"
+        <LinearLayout
+            android:id="@+id/ll_cell_create_order.ll_cell_create_order2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="25dp"
+                android:background="@drawable/grey_line"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order1.title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingRight="15dp"
-                    android:orientation="vertical">
+                    android:layout_weight="3"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="35dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Максима Горького, 23"
+                    android:textAlignment="gravity"
+                    android:textColor="#424242"
+                    android:textSize="17sp" />
 
-                <LinearLayout
-                    android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="25dp"
-                    android:background="@drawable/grey_line"
-                    android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order1.title"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="3"
-                            android:paddingTop="20dp"
-                            android:paddingBottom="10dp"
-                            android:paddingRight="35dp"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:singleLine="true"
-                            android:text="Максима Горького, 23"
-                            android:textAlignment="gravity"
-                            android:textColor="#424242"
-                            android:textSize="17sp" />
-
-                        <Button
-                            android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order1.button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_weight="0"
-                            android:background="@drawable/button_grey_story"
-                            android:text="Уточнить"
-                            android:textAllCaps="false"
-                            android:textColor="#AAAAAA"
-                            android:textSize="13sp" />
-
-                </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:paddingBottom="25dp">
-
-                     <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:layout_weight="4">
-
-                         <TextView
-                             android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title1"
-                             android:layout_width="wrap_content"
-                             android:layout_height="wrap_content"
-                             android:layout_marginEnd="88dp"
-                             android:textAlignment="center"
-                             android:paddingTop="20dp"
-                             android:maxLines="1"
-                             android:ellipsize="end"
-                             android:singleLine="true"
-                             android:text="Коста Хетагурова, 123"
-                             android:textColor="#424242"
-                             android:textSize="17sp"
-                             tools:ignore="MissingConstraints" />
-
-                         <TextView
-                             android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title2"
-                             android:layout_width="100dp"
-                             android:layout_height="wrap_content"
-                             android:text="~12 мин"
-                             android:textColor="#AAAAAA"
-                             android:textSize="14sp"
-                             app:layout_constraintBottom_toBottomOf="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title1"
-                             app:layout_constraintStart_toEndOf="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title1"
-                             app:layout_constraintTop_toTopOf="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title1"
-                             app:layout_constraintVertical_bias="1.0"
-                             tools:ignore="MissingConstraints" />
-
-                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <ImageView
-                        android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.img"
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:paddingTop="20dp"
-                        android:layout_weight="0"
-                        android:scaleType="center"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"
-                        android:src="@drawable/icon_cross_grey_1" />
-                    </LinearLayout>
+                <Button
+                    android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order1.button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/button_grey_story"
+                    android:text="Уточнить"
+                    android:textAllCaps="false"
+                    android:textColor="#AAAAAA"
+                    android:textSize="13sp" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="25dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:layout_weight="4">
+
+                    <TextView
+                        android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="88dp"
+                        android:textAlignment="center"
+                        android:paddingTop="20dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="Коста Хетагурова, 123"
+                        android:textColor="#424242"
+                        android:textSize="17sp"
+                        tools:ignore="MissingConstraints" />
+
+                    <TextView
+                        android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title2"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="~12 мин"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title1"
+                        app:layout_constraintStart_toEndOf="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title1"
+                        app:layout_constraintTop_toTopOf="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.cl_cell_create_order_address.title1"
+                        app:layout_constraintVertical_bias="1.0"
+                        tools:ignore="MissingConstraints" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/ll_cell_create_order.ll_cell_create_order2.ll_cell_create_order2.img"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="20dp"
+                    android:layout_weight="0"
+                    android:scaleType="center"
+                    android:scaleX="1.2"
+                    android:scaleY="1.2"
+                    android:src="@drawable/icon_cross_grey_1" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

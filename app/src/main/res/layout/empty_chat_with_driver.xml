@@ -46,45 +46,43 @@
 
     </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/deployed_messages_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:overScrollMode="never"
-            android:paddingTop="50dp"
-            android:paddingBottom="120dp"
-            app:layout_anchorGravity="bottom"
-            app:layout_anchor="@+id/rl_empty_chat_with_driver_recycler"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/deployed_messages_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:paddingTop="50dp"
+        android:paddingBottom="120dp"
+        app:layout_anchorGravity="bottom"
+        app:layout_anchor="@+id/rl_empty_chat_with_driver_recycler"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rl_empty_chat_with_driver_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:paddingBottom="40dp"
+        app:layout_anchor="@+id/linearLayout4"
+        tools:ignore="MissingConstraints" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:layout_gravity="bottom"
+        android:paddingBottom="10dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rl_empty_chat_with_driver_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:overScrollMode="never"
-            android:paddingBottom="40dp"
-            app:layout_anchor="@+id/linearLayout4"
-            tools:ignore="MissingConstraints" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED" />
 
         <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="10dp"
-            android:layout_gravity="bottom"
-            android:paddingBottom="10dp">
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/ll_driver_chat_text"
@@ -98,22 +96,22 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp" />
 
-                <ImageView
-                    android:id="@+id/ll_empty_chat_with_driver_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:layout_weight="0"
-                    android:paddingRight="10dp"
-                    android:src="@drawable/ic_chat_micro"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#EDEDED" />
+            <ImageView
+                android:id="@+id/ll_empty_chat_with_driver_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:layout_weight="0"
+                android:paddingRight="10dp"
+                android:src="@drawable/ic_chat_micro"/>
 
         </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED" />
+
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

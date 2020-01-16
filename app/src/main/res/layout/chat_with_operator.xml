@@ -56,8 +56,6 @@
         app:layout_anchorGravity="bottom"
         app:layout_anchor="@+id/rl_empty_chat_with_driver_recycler"/>
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rl_empty_chat_with_driver_recycler"
         android:layout_width="match_parent"

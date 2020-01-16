@@ -6,350 +6,350 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:paddingTop="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingTop="10dp">
 
-                <ImageButton
-                    android:id="@+id/ll_service_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@null"
-                    android:foreground="?android:selectableItemBackground"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentLeft="true"
-                    android:src="@drawable/icon_strelka"/>
+        <ImageButton
+            android:id="@+id/ll_service_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:foreground="?android:selectableItemBackground"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_strelka"/>
 
-                <TextView
-                    android:id="@+id/ll_service.title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Служба поддержки"
-                    android:layout_centerInParent="true"
-                    android:textColor="#424242"
-                    android:textSize="17sp"
-                    android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/ll_service.title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Служба поддержки"
+            android:layout_centerInParent="true"
+            android:textColor="#424242"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
 
-            </RelativeLayout>
+    </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/ll_service.last_trip"
-                    android:paddingLeft="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Последняя поездка"
-                    android:layout_weight="0"
-                    android:paddingBottom="5dp"
-                    android:textColor="#B9B9B9"
-                    android:textSize="14sp"/>
+    <TextView
+        android:id="@+id/ll_service.last_trip"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Последняя поездка"
+        android:layout_weight="0"
+        android:paddingBottom="5dp"
+        android:textColor="#B9B9B9"
+        android:textSize="14sp"/>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/ll_service.cv"
-                android:layout_weight="0"
-                android:layout_gravity="center"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ll_service.cv"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/my_gray">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_with_shadow"
+            android:orientation="vertical">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="0dp"
-                app:cardBackgroundColor="@color/my_gray">
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ll_service.date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Сегодня 10:10"
+                    android:paddingTop="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingBottom="15dp"
+                    android:textStyle="bold"
+                    android:textColor="#424242"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:id="@+id/ll_service.cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="66 ₽"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="160dp"
+                    android:textStyle="bold"
+                    android:textColor="#424242"
+                    android:textSize="17sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ll_service.omg_red_circle"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon_ellipse_red"
+                    android:scaleType="center"
+                    android:paddingTop="13sp" />
+
+                <TextView
+                    android:id="@+id/ll_service.address_title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Максима Горького, 23"
+                    android:textSize="17sp"
+                    android:textColor="#424242"
+                    android:paddingTop="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ll_service.img_blue_circle"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon_circle"
+                    android:scaleType="center"
+                    android:paddingTop="13sp" />
+
+                <TextView
+                    android:id="@+id/ll_service.address_title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Коста Хетагурова, 123"
+                    android:textSize="17sp"
+                    android:textColor="#424242"
+                    android:paddingTop="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:paddingTop="22dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/background_with_shadow"
-                    android:orientation="vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    android:gravity="center_horizontal"
+                    tools:ignore="Orientation">
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp"
+                        android:foreground="?android:selectableItemBackground"
+                        app:cardBackgroundColor="#F3F3F3"
+                        app:cardCornerRadius="11dp">
 
                         <TextView
-                            android:id="@+id/ll_service.date"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Сегодня 10:10"
-                            android:paddingTop="15dp"
-                            android:paddingLeft="15dp"
-                            android:paddingBottom="15dp"
+                            android:id="@+id/button_write"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:text="Помощь"
+                            android:foreground="?android:selectableItemBackground"
+                            android:focusable="true"
+                            android:drawableStart="@drawable/icon_details"
+                            android:clickable="true"
+                            android:paddingLeft="20dp"
                             android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:gravity="center_vertical"
+                            android:textAllCaps="false"
                             android:textColor="#424242"
-                            android:textSize="17sp"/>
+                            android:textSize="14sp"/>
 
-                        <TextView
-                            android:id="@+id/ll_service.cost"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="66 ₽"
-                            android:paddingRight="15dp"
-                            android:paddingLeft="160dp"
-                            android:textStyle="bold"
-                            android:textColor="#424242"
-                            android:textSize="17sp"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/ll_service.omg_red_circle"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/icon_ellipse_red"
-                            android:scaleType="center"
-                            android:paddingTop="13sp" />
-
-                        <TextView
-                            android:id="@+id/ll_service.address_title1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Максима Горького, 23"
-                            android:textSize="17sp"
-                            android:textColor="#424242"
-                            android:paddingTop="15dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/ll_service.img_blue_circle"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/icon_circle"
-                            android:scaleType="center"
-                            android:paddingTop="13sp" />
-
-                        <TextView
-                            android:id="@+id/ll_service.address_title2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Коста Хетагурова, 123"
-                            android:textSize="17sp"
-                            android:textColor="#424242"
-                            android:paddingTop="15dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="20dp"
-                        android:paddingTop="22dp"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingTop="20dp"
-                            android:gravity="center_horizontal"
-                            tools:ignore="Orientation">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:focusable="true"
-                                android:clickable="true"
-                                android:elevation="0dp"
-                                app:cardElevation="0dp"
-                                android:foreground="?android:selectableItemBackground"
-                                app:cardBackgroundColor="#F3F3F3"
-                                app:cardCornerRadius="11dp">
-
-                                <TextView
-                                    android:id="@+id/button_write"
-                                    android:layout_width="150dp"
-                                    android:layout_height="50dp"
-                                    android:text="Помощь"
-                                    android:foreground="?android:selectableItemBackground"
-                                    android:focusable="true"
-                                    android:drawableStart="@drawable/icon_details"
-                                    android:clickable="true"
-                                    android:paddingLeft="20dp"
-                                    android:textStyle="bold"
-                                    android:textAlignment="center"
-                                    android:gravity="center_vertical"
-                                    android:textAllCaps="false"
-                                    android:textColor="#424242"
-                                    android:textSize="14sp"/>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingTop="20dp"
-                            android:gravity="center_horizontal"
-                            tools:ignore="Orientation">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:focusable="true"
-                                android:paddingRight="10dp"
-                                android:paddingLeft="10dp"
-                                android:clickable="true"
-                                android:elevation="0dp"
-                                app:cardElevation="0dp"
-                                android:foreground="?android:selectableItemBackground"
-                                app:cardBackgroundColor="#F3F3F3"
-                                app:cardCornerRadius="11dp">
-
-                                <TextView
-                                    android:id="@+id/button_call"
-                                    android:layout_width="150dp"
-                                    android:layout_height="50dp"
-                                    android:drawableStart="@drawable/icon_phone"
-                                    android:text="Водитель"
-                                    android:focusable="true"
-                                    android:textStyle="bold"
-                                    android:foreground="?android:selectableItemBackground"
-                                    android:clickable="true"
-                                    android:paddingLeft="20dp"
-                                    android:textAlignment="center"
-                                    android:gravity="center_vertical"
-                                    android:textAllCaps="false"
-                                    android:textColor="#424242"
-                                    android:textSize="14sp"/>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/ll_service.questions"
-                android:paddingLeft="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ваши вопросы"
-                android:paddingTop="15dp"
-                android:layout_weight="0"
-                android:paddingBottom="10dp"
-                android:textColor="#B9B9B9"
-                android:textSize="14sp"/>
-
-            <RelativeLayout
-                android:id="@+id/rl_service1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:paddingLeft="5dp"
-                android:foreground="?android:selectableItemBackground"
-                android:background="@drawable/grey_line"
-                android:paddingTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/ll_service.another_trip"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Другая поездка"
-                    android:paddingLeft="22dp"
-                    android:gravity="center_vertical"
-                    android:paddingBottom="15dp"
-                    android:layout_alignParentLeft="true"
-                    android:textSize="17sp"
-                    android:textColor="#424242"/>
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    android:gravity="center_horizontal"
+                    tools:ignore="Orientation">
 
-                <ImageButton
-                    android:id="@+id/ll_service.img_arrow1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="15dp"
-                    android:layout_centerInParent="true"
-                    android:background="@null"
-                    android:layout_alignParentRight="true"
-                    android:src="@drawable/icon_arrow_right"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:paddingRight="10dp"
+                        android:paddingLeft="10dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        app:cardElevation="0dp"
+                        android:foreground="?android:selectableItemBackground"
+                        app:cardBackgroundColor="#F3F3F3"
+                        app:cardCornerRadius="11dp">
 
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/button_call"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:drawableStart="@drawable/icon_phone"
+                            android:text="Водитель"
+                            android:focusable="true"
+                            android:textStyle="bold"
+                            android:foreground="?android:selectableItemBackground"
+                            android:clickable="true"
+                            android:paddingLeft="20dp"
+                            android:textAlignment="center"
+                            android:gravity="center_vertical"
+                            android:textAllCaps="false"
+                            android:textColor="#424242"
+                            android:textSize="14sp"/>
 
-            <RelativeLayout
-                android:id="@+id/rl_service2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:paddingLeft="5dp"
-                android:foreground="?android:selectableItemBackground"
-                android:background="@drawable/grey_line"
-                android:paddingTop="10dp"
-                android:orientation="horizontal">
+                    </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/ll_service.ad_ride"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Неаккуратное вождение"
-                    android:paddingLeft="22dp"
-                    android:paddingBottom="15dp"
-                    android:layout_alignParentLeft="true"
-                    android:gravity="center_vertical"
-                    android:textSize="17sp"
-                    android:textColor="#424242"/>
+                </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/ll_service.img_arrow2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="15dp"
-                    android:layout_centerInParent="true"
-                    android:background="@null"
-                    android:layout_alignParentRight="true"
-                    android:src="@drawable/icon_arrow_right"/>
+            </LinearLayout>
 
-            </RelativeLayout>
+        </LinearLayout>
 
-            <RelativeLayout
-                android:id="@+id/rl_service3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:paddingLeft="5dp"
-                android:foreground="?android:selectableItemBackground"
-                android:background="@drawable/grey_line"
-                android:paddingTop="10dp"
-                android:orientation="horizontal">
+    </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/ll_service_program_error"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ошибка программы"
-                    android:layout_alignParentLeft="true"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="22dp"
-                    android:paddingBottom="15dp"
-                    android:textSize="17sp"
-                    android:textColor="#424242"/>
+    <TextView
+        android:id="@+id/ll_service.questions"
+        android:paddingLeft="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ваши вопросы"
+        android:paddingTop="15dp"
+        android:layout_weight="0"
+        android:paddingBottom="10dp"
+        android:textColor="#B9B9B9"
+        android:textSize="14sp"/>
 
-                <ImageButton
-                    android:id="@+id/ll_service_img_arrow3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="15dp"
-                    android:layout_centerInParent="true"
-                    android:background="@null"
-                    android:layout_alignParentRight="true"
-                    android:src="@drawable/icon_arrow_right"/>
+    <RelativeLayout
+        android:id="@+id/rl_service1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingLeft="5dp"
+        android:foreground="?android:selectableItemBackground"
+        android:background="@drawable/grey_line"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
 
-            </RelativeLayout>
+        <TextView
+            android:id="@+id/ll_service.another_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Другая поездка"
+            android:paddingLeft="22dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="15dp"
+            android:layout_alignParentLeft="true"
+            android:textSize="17sp"
+            android:textColor="#424242"/>
+
+        <ImageButton
+            android:id="@+id/ll_service.img_arrow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_arrow_right"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_service2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingLeft="5dp"
+        android:foreground="?android:selectableItemBackground"
+        android:background="@drawable/grey_line"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ll_service.ad_ride"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Неаккуратное вождение"
+            android:paddingLeft="22dp"
+            android:paddingBottom="15dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            android:textSize="17sp"
+            android:textColor="#424242"/>
+
+        <ImageButton
+            android:id="@+id/ll_service.img_arrow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_arrow_right"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_service3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingLeft="5dp"
+        android:foreground="?android:selectableItemBackground"
+        android:background="@drawable/grey_line"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ll_service_program_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ошибка программы"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="22dp"
+            android:paddingBottom="15dp"
+            android:textSize="17sp"
+            android:textColor="#424242"/>
+
+        <ImageButton
+            android:id="@+id/ll_service_img_arrow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_arrow_right"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

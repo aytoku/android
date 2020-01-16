@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-
     <RelativeLayout
         android:id="@+id/rl_machine_purpose"
         android:layout_width="wrap_content"

@@ -7,50 +7,53 @@
     android:background="#000"
     android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp">
-            <Button
-                android:id="@+id/ll_no_connection.button"
-                android:layout_width="360dp"
-                android:layout_height="50dp"
-                android:textSize="17sp"
-                android:paddingRight="60dp"
-                android:textAlignment="center"
-                android:paddingLeft="70dp"
-                android:drawableLeft="@drawable/ic_call_white"
-                android:textColor="#ffffff"
-                android:background="@drawable/no_connection"
-                android:textAllCaps="false"
-                android:text="Вызвать по телефону" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp">
 
-        </LinearLayout>
+        <Button
+            android:id="@+id/ll_no_connection.button"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:textSize="17sp"
+            android:paddingRight="60dp"
+            android:textAlignment="center"
+            android:paddingLeft="70dp"
+            android:drawableLeft="@drawable/ic_call_white"
+            android:textColor="#ffffff"
+            android:background="@drawable/no_connection"
+            android:textAllCaps="false"
+            android:text="Вызвать по телефону" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp">
-            <Button
-                android:id="@+id/ll_button_red.button_red"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="90dp"
-                android:paddingRight="90dp"
-                android:paddingTop="20dp"
-                android:textSize="17sp"
-                android:paddingBottom="20dp"
-                android:textColor="#ffffff"
-                android:background="@drawable/mybutton"
-                android:textAllCaps="false"
-                android:text="Вызвать такси" />
-
-        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="15dp">
+
+        <Button
+            android:id="@+id/ll_button_red.button_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="90dp"
+            android:paddingRight="90dp"
+            android:paddingTop="20dp"
+            android:textSize="17sp"
+            android:paddingBottom="20dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/mybutton"
+            android:textAllCaps="false"
+            android:text="Вызвать такси" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp">
+
         <Button
             android:id="@+id/ll_button_red.button_green"
             android:layout_width="wrap_content"
@@ -67,51 +70,51 @@
 
     </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp">
 
-                <Button
-                    android:id="@+id/ll_create_order.ready_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Готово"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="#33353E"
-                    android:background="@drawable/mybuttongrey"
-                    android:textAllCaps="false"
-                    android:paddingLeft="170dp"
-                    android:textSize="17sp"
-                    android:paddingRight="170dp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp"/>
+        <Button
+            android:id="@+id/ll_create_order.ready_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Готово"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#33353E"
+            android:background="@drawable/mybuttongrey"
+            android:textAllCaps="false"
+            android:paddingLeft="170dp"
+            android:textSize="17sp"
+            android:paddingRight="170dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"/>
 
-            </LinearLayout>
+    </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp">
 
-                <Button
-                    android:id="@+id/search_button"
-                    android:layout_width="380dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/mybuttonwhite"
-                    android:drawableStart="@drawable/icon_search_blue"
-                    android:inputType="text"
-                    android:text="Куда?"
-                    android:paddingLeft="150dp"
-                    android:paddingRight="140dp"
-                    android:textAllCaps="false"
-                    android:textColor="#9B9B9B"
-                    android:textSize="17sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="380dp"
+            android:layout_height="40dp"
+            android:background="@drawable/mybuttonwhite"
+            android:drawableStart="@drawable/icon_search_blue"
+            android:inputType="text"
+            android:text="Куда?"
+            android:paddingLeft="150dp"
+            android:paddingRight="140dp"
+            android:textAllCaps="false"
+            android:textColor="#9B9B9B"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
-            </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
