@@ -193,7 +193,6 @@ public class RatingFragment extends Fragment{
     private void allStarsGrey(){
         for (int i = 0; i <= starArr.length-1; i++){
             starArr[i].setImageDrawable(imgStarGrey);
-            ImageView star = starArr[i];
         }
     }
 

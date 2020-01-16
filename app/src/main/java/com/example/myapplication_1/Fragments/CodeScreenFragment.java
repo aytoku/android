@@ -212,6 +212,7 @@ public class CodeScreenFragment extends Fragment {
 
         timer();
         getCode();
+
     return view;
     }
 
