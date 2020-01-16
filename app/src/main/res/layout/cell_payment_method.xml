@@ -7,40 +7,44 @@
         android:id="@+id/rl_payment_method"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:foreground="?android:selectableItemBackground"
-        android:paddingLeft="15dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
 
         <ImageView
             android:id="@+id/rl_payment_method_card_img"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
             android:background="@null"
-            android:src="@mipmap/icon_sber"/>
+            android:src="@mipmap/icon_sber" />
 
         <TextView
             android:id="@+id/rl_payment_method_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#424242"
             android:layout_centerInParent="true"
-            android:text="Sberbank Online"
             android:paddingTop="10dp"
             android:paddingRight="100dp"
             android:paddingBottom="15dp"
-            android:textSize="17sp"/>
+            android:text="Sberbank Online"
+            android:textColor="#424242"
+            android:textSize="17sp" />
 
         <ImageView
             android:id="@+id/rl_payment_method_toggle"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:paddingRight="10dp"
-            android:layout_alignParentRight="true"
             android:src="@drawable/togle_uncheked" />
 
-        </RelativeLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

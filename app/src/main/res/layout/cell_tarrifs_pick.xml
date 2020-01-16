@@ -5,29 +5,33 @@
 
     <RelativeLayout
         android:id="@+id/rl_cell_tariffs_pick"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:foreground="?android:selectableItemBackground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:foreground="?android:selectableItemBackground"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
 
         <ImageView
             android:id="@+id/rl_cell_tariffs_pick_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
+            android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_empty_switch"
-            android:layout_alignParentLeft="true"/>
+            android:paddingLeft="15dp"
+            android:src="@drawable/ic_empty_switch" />
 
         <TextView
             android:id="@+id/rl_cell_tariffs_pick_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/rl_cell_tariffs_pick_img"
-            android:text="Эконом"
             android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/rl_cell_tariffs_pick_img"
             android:paddingLeft="20dp"
+            android:text="Эконом"
             android:textColor="#424242"
             android:textSize="16sp" />
 
