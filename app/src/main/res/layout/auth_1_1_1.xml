@@ -58,6 +58,7 @@
         android:text="+7"
         android:textColor="#000000"
         android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cl_auth_1_1_1_editTextNumber" />
 
     <EditText

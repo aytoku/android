@@ -79,6 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:layout_alignParentStart="true"
             android:text="Лицензеонное соглашение"
             android:textColor="#424242"
             android:paddingBottom="15dp"
@@ -97,13 +98,6 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/rl_about_app.ll_about_app"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
     <RelativeLayout
         android:id="@+id/rl_about_app_ll_about_app_rl_about_app"
         android:layout_width="match_parent"
@@ -119,6 +113,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
+            android:layout_alignParentStart="true"
             android:paddingBottom="15dp"
             android:text="Политика конфиденцальности"
             android:textColor="#424242"
@@ -135,8 +130,6 @@
             android:src="@drawable/ic_vector_grey"/>
 
     </RelativeLayout>
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/rl_about_app.desc"

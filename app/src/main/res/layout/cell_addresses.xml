@@ -12,25 +12,25 @@
         android:foreground="?android:selectableItemBackground"
         android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/ll_cell_address_button_plus1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:src="@mipmap/icon_button_plus"
-        android:scaleX="0.7"
-        android:scaleY="0.7" />
+        <ImageButton
+            android:id="@+id/ll_cell_address_button_plus1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@mipmap/icon_button_plus"
+            android:scaleX="0.7"
+            android:scaleY="0.7" />
 
-    <TextView
-        android:id="@+id/ll_cell_address_add_address_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Добавить адрес дома"
-        android:paddingTop="10dp"
-        android:paddingBottom="15dp"
-        android:textSize="17sp"
-        android:paddingLeft="10dp"
-        android:textColor="#424242"/>
+        <TextView
+            android:id="@+id/ll_cell_address_add_address_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить адрес дома"
+            android:paddingTop="10dp"
+            android:paddingBottom="15dp"
+            android:textSize="17sp"
+            android:paddingLeft="10dp"
+            android:textColor="#424242"/>
 
     </LinearLayout>
 

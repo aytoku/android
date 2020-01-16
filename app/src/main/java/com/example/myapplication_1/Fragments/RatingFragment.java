@@ -174,10 +174,10 @@ public class RatingFragment extends Fragment{
             }
         });
 
-        praiseLists.add(new PraiseList( R.mipmap.finger,"Вежливость"));
-        praiseLists.add(new PraiseList( R.mipmap.face,"Вежливость"));
-        praiseLists.add(new PraiseList( R.mipmap.handshake,"Вежливость"));
-        praiseLists.add(new PraiseList( R.mipmap.handshake,"Вежливость"));
+        praiseLists.add(new PraiseList(R.mipmap.finger,"Вежливость"));
+        praiseLists.add(new PraiseList(R.mipmap.face,"Вежливость"));
+        praiseLists.add(new PraiseList(R.mipmap.handshake,"Вежливость"));
+        praiseLists.add(new PraiseList(R.mipmap.handshake,"Вежливость"));
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,14 +185,12 @@ public class RatingFragment extends Fragment{
                 postData();
             }
         });
-
         getTips();
 
         return view;
     }
 
     private void allStarsGrey(){
-
         for (int i = 0; i <= starArr.length-1; i++){
             starArr[i].setImageDrawable(imgStarGrey);
             ImageView star = starArr[i];
@@ -270,15 +268,13 @@ public class RatingFragment extends Fragment{
 
             @Override
             public void sync(JsonObject result) {
-
                 String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOjIsImNsaWVudF91dWlkIjoiNDMxYjNjNmQtZjdkNS00YjQ5LThlYzEtZTE0NjE1ZTVjZjAzIiwiZGV2aWNlX2lkIjoiZmZld3Fld2UiLCJwaG9uZSI6Iis3OTk5ODh3ODc3NjYiLCJleHAiOjE1Njc1MDI3OTAsImlhdCI6MTU2NzQ5NTU5MH0.nRqqasRhnkYjbmy-qadzXEs47SUzeb4R8yjfgmwIF7Y";
                 Context context = getActivity().getApplicationContext();
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
                 sharedPreferences.getString(TOKEN, token);
                 JWT jwt = new JWT(token);
-                Claim claim = jwt.getClaim("value");
+                Claim claim = jwt.getClaim("uu_id");
                 String s = claim.asString();
-
                 String uuid = "uu_id";
                 try {
                     uuid = result.get("uuid").getAsString();
@@ -324,6 +320,9 @@ public class RatingFragment extends Fragment{
         }
         if(requestCode == REQUEST_CODE_TOKEN){
             String new_token = data.getStringExtra("token");
+            Context context = getActivity().getApplicationContext();
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+            sharedPreferences.getString(TOKEN, new_token);
         }
     }
 

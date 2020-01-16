@@ -116,7 +116,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cl_rating_rl_rating_recycler"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="90dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
@@ -144,13 +144,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cl_rating_rl_rating_recycler1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
         android:paddingLeft="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:overScrollMode="never"
         android:paddingBottom="20dp"
-        android:orientation="horizontal"
+
         app:layout_constraintBottom_toTopOf="@+id/cl_rating.ll_rating1"/>
 
     <LinearLayout
