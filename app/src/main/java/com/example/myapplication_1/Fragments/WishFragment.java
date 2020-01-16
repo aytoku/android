@@ -135,6 +135,4 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
         };
         return _arr;
     }
-
-    public void onPointerCaptureChanged(boolean hasCapture) {}
 }

@@ -12,10 +12,7 @@ import com.example.myapplication_1.R;
 
 public class NotificationActivity extends AppCompatActivity {
 
-    // Идентификатор уведомления
     private static final int NOTIFY_ID = 101;
-
-    // Идентификатор канала
     private static String CHANNEL_ID = "Cat channel";
 
 

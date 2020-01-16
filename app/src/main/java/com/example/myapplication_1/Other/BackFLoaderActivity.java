@@ -84,8 +84,6 @@ public class BackFLoaderActivity extends Activity {
                     buffer = new byte[1024];
                     bufferLength = 0;
 
-                    // читаем со входа и пишем в выход,
-                    // с каждой итерацией публикуем прогресс
                     while ((bufferLength = inputStream.read(buffer)) > 0) {
                         fos.write(buffer, 0, bufferLength);
                         downloadedSize += bufferLength;
@@ -106,8 +104,6 @@ public class BackFLoaderActivity extends Activity {
 
                 return null;
             }
-
-            // обновляем progressDialog
             protected void onProgressUpdate(Integer... values) {
                 progressDialog
                         .setProgress((int) ((values[0] / (float) values[1]) * 100));
@@ -115,12 +111,10 @@ public class BackFLoaderActivity extends Activity {
 
             @Override
             protected void onPostExecute(File file) {
-                // отображаем сообщение, если возникла ошибка
                 if (m_error != null) {
                     m_error.printStackTrace();
                     return;
                 }
-                // закрываем прогресс и удаляем временный файл
                 progressDialog.hide();
                 file.delete();
             }

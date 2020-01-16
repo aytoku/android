@@ -31,7 +31,6 @@ public class PreferenceActivity extends Activity {
         if (sharedpreferences.contains(Email)) {
             email.setText(sharedpreferences.getString(Email, ""));
         }
-
     }
 
     public void Save(View view) {

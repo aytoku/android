@@ -58,9 +58,9 @@ public class MainActivityMap extends AppCompatActivity {
 
         try {
 
-            AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();//model_data
+            AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
 
-            AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());//this;
+            AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getBaseContext(), RecyclerView.HORIZONTAL, false ) );

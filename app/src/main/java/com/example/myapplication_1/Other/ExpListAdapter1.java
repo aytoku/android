@@ -98,9 +98,7 @@ public class ExpListAdapter1 extends BaseExpandableListAdapter implements Adapte
 
     @Override
     public void onItemSelected(AdapterView parent, View view, int position, long id) {
-        // getting selected item
         String item = parent.getItemAtPosition(position).toString();
-
     }
 
     public void onNothingSelected(AdapterView arg0) { }

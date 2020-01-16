@@ -16,7 +16,7 @@ public class HeaderInfo {
     public ArrayList<DetailInfo> getProductList() {
         return productList;
     }
-    public void setProductList(ArrayList<DetailInfo> productList) {
+    void setProductList(ArrayList<DetailInfo> productList) {
         this.productList = productList;
     }
 }

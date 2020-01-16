@@ -34,7 +34,6 @@ public class MainActivitySlider extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         viewPager.setAdapter(viewPagerAdapter);
     }
 }
