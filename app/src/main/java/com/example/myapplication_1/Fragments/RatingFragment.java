@@ -307,7 +307,7 @@ public class RatingFragment extends Fragment{
             public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
-                    .query("https://client.apis.stage.faem.pro/api/v2"+"/order/rating", jo.toString());
+                    .query("https://client.apis.stage.faem.pro/api/v2/order/rating", jo.toString());
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){

@@ -303,7 +303,7 @@ public class CodeScreenFragment extends Fragment {
             public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
-                    .query("https://client.apis.stage.faem.pro/api/v2" + "/auth/verification", jo.toString());
+                    .query("https://client.apis.stage.faem.pro/api/v2/auth/verification", jo.toString());
     }
 
     private void sendResult(String new_token){
