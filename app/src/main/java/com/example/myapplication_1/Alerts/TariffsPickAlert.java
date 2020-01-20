@@ -69,8 +69,8 @@ public class TariffsPickAlert extends DialogFragment {
 
         try{
             TariffsPickAdapter.TariffsPickItems[] tariffsPickItems = getTariffsPickItems();
-            List<TariffsPickAdapter.TariffsPickItems> itemsMenuList = new ArrayList<>(Arrays.asList(tariffsPickItems));
-            RecyclerView.Adapter adapterGridViewMenu = new TariffsPickAdapter(itemsMenuList, getActivity().getBaseContext());
+            List<TariffsPickAdapter.TariffsPickItems> tariffsPickItemsList = new ArrayList<>(Arrays.asList(tariffsPickItems));
+            RecyclerView.Adapter adapterGridViewMenu = new TariffsPickAdapter(tariffsPickItemsList, getActivity().getBaseContext());
             recyclerView.setAdapter(adapterGridViewMenu);
             recyclerView.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
