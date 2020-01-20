@@ -280,21 +280,18 @@ public class RatingFragment extends Fragment{
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "sync: " +e.getMessage());
                 }
-
                 int value = 0;
                 try {
                     value = result.get("value").getAsInt();
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "sync: " +e.getMessage());
                 }
-
                 int tip = 0;
                 try {
                     tip = result.get("tip").getAsInt();
                 } catch ( NullPointerException | JsonParseException e) {
                     Log.e(TAG, "sync: " +e.getMessage());
                 }
-
                 String comment = "com";
                 try {
                     comment = result.get("comment").getAsString();
