@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -57,8 +56,6 @@ public class RatingFragment extends Fragment{
     List<Integer> list = new ArrayList<>();
     private List<PraiseList>praiseLists = new ArrayList<>();
     private int tip_index;
-    private TextView textView;
-    //private String token;
     private static final String TOKEN = "Token";
 
     public static RatingFragment getInstance(Bundle args) {
@@ -81,7 +78,6 @@ public class RatingFragment extends Fragment{
         RecyclerView tips_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler);
         RecyclerView praise_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler1);
         CardView button = view.findViewById(R.id.ll_rating_cardButton);
-        textView = view.findViewById(R.id.cl_rating_cost);
 
         starArr = new ImageView[]{
                 star1 = view.findViewById(R.id.ll_rating_red_star1),
@@ -316,7 +312,6 @@ public class RatingFragment extends Fragment{
         }
         if(requestCode == REQUEST_CODE_TOKEN){
             String new_token = data.getStringExtra("token");
-            textView.setText(new_token);
             Context context = getActivity().getApplicationContext();
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
             sharedPreferences.getString(TOKEN, new_token);
