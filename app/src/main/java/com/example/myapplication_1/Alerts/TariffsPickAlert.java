@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.TariffsPickAdapter;
-import com.example.myapplication_1.Fragments.ExpFragment;
+import com.example.myapplication_1.Fragments.FreeOrders13ExpListFragment;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
@@ -27,7 +26,6 @@ import java.util.List;
 public class TariffsPickAlert extends DialogFragment {
 
     public static final String TAG = "TariffsPickAlert";
-    private TextView button;
 
     public static TariffsPickAlert getInstance(Bundle args) {
 
@@ -66,7 +64,6 @@ public class TariffsPickAlert extends DialogFragment {
         });
 
         RecyclerView tariffsPickAlert_rv = view.findViewById(R.id.ll_tariffs_pick_recycler);
-        button = view.findViewById(R.id.ll_tariffs_pick_button_accept);
 
         final RecyclerView recyclerView = tariffsPickAlert_rv;
 
@@ -90,7 +87,7 @@ public class TariffsPickAlert extends DialogFragment {
 
         if (getTargetFragment() == null){ return; }
 
-        Intent intent = ExpFragment.newIntent(message);
+        Intent intent = FreeOrders13ExpListFragment.newIntent(message);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
         dismiss();
     }
@@ -105,16 +102,6 @@ public class TariffsPickAlert extends DialogFragment {
                         new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
                             public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
-                                try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Эконом");
-                                        }
-                                    });
-                                } catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
                             }
                         },R.drawable.ic_empty_switch, check),
 
@@ -123,16 +110,6 @@ public class TariffsPickAlert extends DialogFragment {
                         new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
                             public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
-                                try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        sendResult("Стандарт");
-                                    }
-                                });
-                                } catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
                             }
                         },R.drawable.ic_empty_switch, check),
 
@@ -141,16 +118,6 @@ public class TariffsPickAlert extends DialogFragment {
                         new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
                             public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
-                                try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Комфорт");
-                                        }
-                                    });
-                                } catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
                             }
                         },R.drawable.ic_empty_switch, check),
 
@@ -159,16 +126,6 @@ public class TariffsPickAlert extends DialogFragment {
                         new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
                             public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
-                                try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Доставка");
-                                        }
-                                    });
-                                } catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
                             }
                         },R.drawable.ic_empty_switch, check),
 
@@ -177,16 +134,6 @@ public class TariffsPickAlert extends DialogFragment {
                         new TariffsPickAdapter.TariffsPickItems.CallBack() {
                             @Override
                             public void call(TariffsPickAdapter.TariffsPickItems tariffsPickItems) {
-                                try {
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            sendResult("Грузовое");
-                                        }
-                                    });
-                                } catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
                             }
                         },R.drawable.ic_empty_switch, check)
         };

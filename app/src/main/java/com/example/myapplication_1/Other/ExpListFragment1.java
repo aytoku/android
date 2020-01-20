@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ExpListFragment1 extends Fragment {
 
-    public static final String TAG = "ExpFragment";
+    public static final String TAG = "FreeOrders13ExpListFragment";
 
     public static ExpListFragment1 getInstance(Bundle args) {
 
@@ -48,8 +48,8 @@ public class ExpListFragment1 extends Fragment {
         list.add("По убыванию цены");
         list.add("Не выбрано");
 
-        final ExpListAdapter1 adapter = new ExpListAdapter1(getActivity(), groups, list);
-        listView.setAdapter(adapter);
+//        final ExpListAdapter1 adapter = new ExpListAdapter1(getActivity(), groups, list);
+    //    listView.setAdapter(adapter);
 
         return view;
     }

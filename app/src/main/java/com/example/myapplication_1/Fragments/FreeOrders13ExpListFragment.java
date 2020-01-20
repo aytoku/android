@@ -11,29 +11,26 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.myapplication_1.Adapters.ExpListAdapter;
+import com.example.myapplication_1.Adapters.FreeOrders13ExpListAdapter;
 import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpFragment extends Fragment {
+public class FreeOrders13ExpListFragment extends Fragment {
 
-    public static final String TAG = "ExpFragment";
+    public static final String TAG = "FreeOrders13ExpListFragment";
     private static final int REQUEST_CODE_GET_SORT_FREE_ORDER = 101;
-    ExpListAdapter adapter;
-    ExpandableListView listView;
-    ArrayList<ArrayList<String>> groups;
-    List list;
+    List sort_list;
     TextView textView;
 
-    public static ExpFragment getInstance(Bundle args) {
+    public static FreeOrders13ExpListFragment getInstance(Bundle args) {
 
-        ExpFragment f = new ExpFragment();
-        f.setArguments(args);
+        FreeOrders13ExpListFragment freeOrders13ExpListFragment = new FreeOrders13ExpListFragment();
+        freeOrders13ExpListFragment.setArguments(args);
 
-        return f;
+        return freeOrders13ExpListFragment;
     }
 
     @Override
@@ -45,25 +42,25 @@ public class ExpFragment extends Fragment {
         View view = inflater.inflate(R.layout.expandalbe_list_view,
                 container, false);
 
-        listView = view.findViewById(R.id.expListView);
+        ExpandableListView listView = view.findViewById(R.id.expListView);
         listView.setGroupIndicator(null);
 
-        groups = new ArrayList<>();
+        ArrayList<ArrayList<String>> groups = new ArrayList<>();
         ArrayList<String> children1 = new ArrayList<>();
         children1.add("");
         groups.add(children1);
 
-        list = new ArrayList();
-        list.add("По возрастанию цены");
-        list.add("По убыванию цены");
-        list.add("Не выбрано");
+        sort_list = new ArrayList();
+        sort_list.add("По возрастанию цены");
+        sort_list.add("По убыванию цены");
+        sort_list.add("Не выбрано");
 
         textView = view.findViewById(R.id.rl_free_orders_spinner_text);
 
         try {
-            adapter = new ExpListAdapter(getActivity(), groups, list, getMenuItemsList());
-            listView.setAdapter(adapter);
-            adapter.setActivityTextView(textView);
+            FreeOrders13ExpListAdapter freeOrders13ExpListAdapter = new FreeOrders13ExpListAdapter(getActivity(), groups, sort_list, getFreeOrders13List());
+            listView.setAdapter(freeOrders13ExpListAdapter);
+            freeOrders13ExpListAdapter.setActivityTextView(textView);
 
         }catch ( NullPointerException e){
             e.printStackTrace();
@@ -78,7 +75,6 @@ public class ExpFragment extends Fragment {
             if(resultCode == Activity.RESULT_OK){
                 String message = data.getStringExtra("message");
                 textView.setText(message);
-                //Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -91,18 +87,16 @@ public class ExpFragment extends Fragment {
 
     private void showDialog() {
         TariffsPickAlert tariffsPickAlert = TariffsPickAlert.getInstance(null);
-        tariffsPickAlert.setTargetFragment(ExpFragment.this, REQUEST_CODE_GET_SORT_FREE_ORDER);
+        tariffsPickAlert.setTargetFragment(FreeOrders13ExpListFragment.this, REQUEST_CODE_GET_SORT_FREE_ORDER);
         tariffsPickAlert.setCancelable(true);
         tariffsPickAlert.show(getFragmentManager(), "TariffsPickAlert");
     }
 
-
-    private ExpListAdapter.ItemsMenuList getMenuItemsList(){
-
-        ExpListAdapter.ItemsMenuList itemsMenuList = new ExpListAdapter.ItemsMenuList(
-                new ExpListAdapter.ItemsMenuList.CallBack() {
+    private FreeOrders13ExpListAdapter.FreeOrders13List getFreeOrders13List(){
+        FreeOrders13ExpListAdapter.FreeOrders13List itemsMenuList = new FreeOrders13ExpListAdapter.FreeOrders13List(
+                new FreeOrders13ExpListAdapter.FreeOrders13List.CallBack() {
                     @Override
-                    public void call(ExpListAdapter.ItemsMenuList itemsMenuList) {
+                    public void call(FreeOrders13ExpListAdapter.FreeOrders13List freeOrders13List) {
                         try{
                             showDialog();
                         }catch (NullPointerException e) {

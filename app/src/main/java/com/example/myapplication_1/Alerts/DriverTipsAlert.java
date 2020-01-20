@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.DriverTipsAdapter;
-import com.example.myapplication_1.Fragments.ExpFragment;
+import com.example.myapplication_1.Fragments.FreeOrders13ExpListFragment;
 import com.example.myapplication_1.R;
 
 import java.util.ArrayList;
@@ -87,7 +87,7 @@ public class DriverTipsAlert extends DialogFragment {
 
         if (getTargetFragment() == null){ return; }
 
-        Intent intent = ExpFragment.newIntent(message);
+        Intent intent = FreeOrders13ExpListFragment.newIntent(message);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
         dismiss();
     }

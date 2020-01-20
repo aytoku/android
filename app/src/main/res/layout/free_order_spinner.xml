@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/rl_driver_spinner"
+        android:id="@+id/rl_free_order_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
@@ -53,7 +53,7 @@
         android:paddingLeft="15dp"
         android:paddingBottom="10dp"
         android:background="@drawable/grey_line"
-        android:layout_below="@+id/rl_driver_spinner">
+        android:layout_below="@+id/rl_free_order_spinner">
 
         <TextView
             android:id="@+id/rl_free_orders_spinner_title"

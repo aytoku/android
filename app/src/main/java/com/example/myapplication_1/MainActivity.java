@@ -29,11 +29,11 @@ import com.example.myapplication_1.Fragments.EmptyChatWithDriverFragment;
 import com.example.myapplication_1.Fragments.EnergyReductionFragment;
 import com.example.myapplication_1.Fragments.ErrorOneFragment;
 import com.example.myapplication_1.Fragments.ErrorTwoFragment;
-import com.example.myapplication_1.Fragments.ExpFragment;
+import com.example.myapplication_1.Fragments.FreeOrders13ExpListFragment;
 import com.example.myapplication_1.Fragments.InformationFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeFragment;
-import com.example.myapplication_1.Fragments.MachinePurposeOneFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeLowerPartFragment;
+import com.example.myapplication_1.Fragments.MachinePurposeOneFragment;
 import com.example.myapplication_1.Fragments.Menu11Fragment;
 import com.example.myapplication_1.Fragments.Menu162Fragment;
 import com.example.myapplication_1.Fragments.MenuOneFragment;
@@ -99,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
         EnergyReductionFragment energyReductionFragment = EnergyReductionFragment.getInstance(null);
         ErrorOneFragment errorOneFragment = ErrorOneFragment.getInstance(null);
         ErrorTwoFragment errorTwoFragment = ErrorTwoFragment.getInstance(null);
-        ExpFragment expFragment = ExpFragment.getInstance(null);
+
+        FreeOrders13ExpListFragment freeOrders13ExpListFragment = FreeOrders13ExpListFragment.getInstance(null);
 
         InformationFragment informationFragment = InformationFragment.getInstance(null);
 
@@ -147,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, auth111Fragment, Auth111Fragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, freeOrders13ExpListFragment, FreeOrders13ExpListFragment.TAG).commit();
     }
 }

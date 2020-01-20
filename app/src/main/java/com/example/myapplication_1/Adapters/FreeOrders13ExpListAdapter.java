@@ -18,20 +18,20 @@ import com.example.myapplication_1.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpListAdapter extends BaseExpandableListAdapter implements AdapterView.OnItemSelectedListener{
+public class FreeOrders13ExpListAdapter extends BaseExpandableListAdapter implements AdapterView.OnItemSelectedListener{
 
     private Activity activity;
     private ArrayList<ArrayList<String>> mGroups;
     private Context mContext;
     private List list;
-    private ExpListAdapter.ItemsMenuList menuList;
+    private FreeOrders13ExpListAdapter.FreeOrders13List freeOrders13List;
 
 
-    public ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list, ExpListAdapter.ItemsMenuList menuList){
+    public FreeOrders13ExpListAdapter(Activity activity, ArrayList<ArrayList<String>> groups, List list, FreeOrders13ExpListAdapter.FreeOrders13List freeOrders13List){
         this.activity = activity;
         mGroups = groups;
         this.list = list;
-        this.menuList = menuList;
+        this.freeOrders13List = freeOrders13List;
     }
 
     public void setActivityTextView(TextView textView) {
@@ -100,14 +100,12 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
             @Override
             public void onClick(View view){
                 try{
-                   menuList.getCallBack().call(menuList);
+                   freeOrders13List.getCallBack().call(freeOrders13List);
                 }catch (NullPointerException e){
                     e.printStackTrace();
                 }
             }
         });
-
-        TextView textView = convertView.findViewById(R.id.rl_free_orders_spinner_text);
 
         return convertView;
     }
@@ -127,15 +125,15 @@ public class ExpListAdapter extends BaseExpandableListAdapter implements Adapter
         super.registerDataSetObserver(observer);
     }
 
-    public static class ItemsMenuList {
+    public static class FreeOrders13List {
 
         public interface CallBack {
-            void call(ItemsMenuList itemsMenuList);
+            void call(FreeOrders13List freeOrders13List);
         }
 
-        private ItemsMenuList.CallBack callBack;
+        private FreeOrders13List.CallBack callBack;
 
-        public ItemsMenuList(CallBack callBack) {
+        public FreeOrders13List(CallBack callBack) {
             this.callBack = callBack;
         }
         public  CallBack getCallBack(){return callBack;}
