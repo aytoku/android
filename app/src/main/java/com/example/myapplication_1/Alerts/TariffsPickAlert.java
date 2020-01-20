@@ -29,10 +29,10 @@ public class TariffsPickAlert extends DialogFragment {
 
     public static TariffsPickAlert getInstance(Bundle args) {
 
-        TariffsPickAlert f = new TariffsPickAlert();
-        f.setArguments(args);
+        TariffsPickAlert tariffsPickAlert = new TariffsPickAlert();
+        tariffsPickAlert.setArguments(args);
 
-        return f;
+        return tariffsPickAlert;
     }
 
     @Override
