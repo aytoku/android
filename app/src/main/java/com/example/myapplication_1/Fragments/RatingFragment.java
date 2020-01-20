@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -56,6 +57,7 @@ public class RatingFragment extends Fragment{
     List<Integer> list = new ArrayList<>();
     private List<PraiseList>praiseLists = new ArrayList<>();
     private int tip_index;
+    private TextView textView;
     //private String token;
     private static final String TOKEN = "Token";
 
@@ -79,6 +81,7 @@ public class RatingFragment extends Fragment{
         RecyclerView tips_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler);
         RecyclerView praise_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler1);
         CardView button = view.findViewById(R.id.ll_rating_cardButton);
+        textView = view.findViewById(R.id.cl_rating_cost);
 
         starArr = new ImageView[]{
                 star1 = view.findViewById(R.id.ll_rating_red_star1),
@@ -268,9 +271,6 @@ public class RatingFragment extends Fragment{
             @Override
             public void sync(JsonObject result) {
                 String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOjIsImNsaWVudF91dWlkIjoiNDMxYjNjNmQtZjdkNS00YjQ5LThlYzEtZTE0NjE1ZTVjZjAzIiwiZGV2aWNlX2lkIjoiZmZld3Fld2UiLCJwaG9uZSI6Iis3OTk5ODh3ODc3NjYiLCJleHAiOjE1Njc1MDI3OTAsImlhdCI6MTU2NzQ5NTU5MH0.nRqqasRhnkYjbmy-qadzXEs47SUzeb4R8yjfgmwIF7Y";
-                Context context = getActivity().getApplicationContext();
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-                sharedPreferences.getString(TOKEN, token);
                 JWT jwt = new JWT(token);
                 Claim claim = jwt.getClaim("uu_id");
                 String s = claim.asString();
@@ -319,6 +319,7 @@ public class RatingFragment extends Fragment{
         }
         if(requestCode == REQUEST_CODE_TOKEN){
             String new_token = data.getStringExtra("token");
+            textView.setText(new_token);
             Context context = getActivity().getApplicationContext();
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
             sharedPreferences.getString(TOKEN, new_token);

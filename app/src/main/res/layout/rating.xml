@@ -9,7 +9,7 @@
     android:background="#FFFFFF">
 
     <TextView
-        android:id="@+id/cl_rating.cost"
+        android:id="@+id/cl_rating_cost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

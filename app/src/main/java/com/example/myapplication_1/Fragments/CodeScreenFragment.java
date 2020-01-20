@@ -249,7 +249,6 @@ public class CodeScreenFragment extends Fragment {
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
-
                     String token = "tok";
                     try {
                         token = result.get("token").getAsString();
@@ -257,21 +256,18 @@ public class CodeScreenFragment extends Fragment {
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
-
                     String client_uuid = "client_uu";
                     try {
                         client_uuid = result.get("client_uuid").getAsString();
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
-
                     String refresh_token = "refresh_tok";
                     try {
                         refresh_token = result.get("refresh_token").getAsString();
                     } catch (NullPointerException | JsonParseException e) {
                         Log.e(TAG, "sync: " + e.getMessage());
                     }
-
                     int refresh_expiration = -1;
                     try {
                         refresh_expiration = result.get("refresh_expiration").getAsInt();

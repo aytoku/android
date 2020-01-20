@@ -120,12 +120,10 @@ public class PaymentMethodFragment extends Fragment {
         if (resultCode != Activity.RESULT_OK) {
             return;
         }
-
         if (requestCode == REQUEST_CODE_DRIVER_TIPS) {
             String messageDriver = data.getStringExtra("message");
             textView.setText(messageDriver);
         }
-
         if(requestCode == REQUEST_CODE_NEW_CARD){
 
             Bundle bundle = data.getExtras();

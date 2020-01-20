@@ -103,7 +103,6 @@ public class DriverTipsAlertNormal extends DialogFragment {
     }
 
     private void sendResult(String message) {
-
         if( getTargetFragment() == null ) {
             return;
         }
