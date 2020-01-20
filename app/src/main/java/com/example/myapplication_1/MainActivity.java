@@ -148,6 +148,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, freeOrders13ExpListFragment, FreeOrders13ExpListFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, auth111Fragment, Auth111Fragment.TAG).commit();
     }
 }
