@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Диагностика"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="19sp"
+            android:textColor="#424242"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_cross_black"
+            android:layout_centerInParent="true"
+            android:paddingRight="15dp"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="Блокирует работу"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:background="#F3F3F3"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ll_diagnostics_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Мешает работе"
+        android:paddingLeft="15dp"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:background="#F3F3F3"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_button"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Список одобреных приложений"
+                android:textSize="15sp"
+                android:textColor="#424242"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавьте приложение в список..."
+                android:textColor="#C3C3C3"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_arrow_black_right"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

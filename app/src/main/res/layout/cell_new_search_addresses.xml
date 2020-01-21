@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/ll_cell_new_search_addresses_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:paddingTop="10dp"
+        android:text="Августовских событий, 79"
+        android:textColor="#424242"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:id="@+id/ll_cell_new_search_addresses_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:paddingLeft="40dp"
+        android:ellipsize="end"
+        android:paddingTop="5dp"
+        android:text="г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
+        android:textColor="#9B9B9B"
+        android:textSize="11sp"/>
+
+</LinearLayout>

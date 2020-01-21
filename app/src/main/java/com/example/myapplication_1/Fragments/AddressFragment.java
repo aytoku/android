@@ -23,7 +23,7 @@ import java.util.List;
 public class AddressFragment extends Fragment {
 
     public static final String TAG = "AddressFragment";
-    RecyclerView.Adapter addressAdapter;
+    private RecyclerView.Adapter addressAdapter;
     private List<AddressAdapter.AddressItems> addressItemsList;
 
     public static AddressFragment getInstance(Bundle args) {
@@ -71,7 +71,6 @@ public class AddressFragment extends Fragment {
         final RecyclerView recyclerView = address_rv;
 
         try {
-
             AddressAdapter.AddressItems[] addressItems = getAddressItems();
             addressItemsList = new ArrayList<>(Arrays.asList(addressItems));
             addressAdapter = new AddressAdapter(addressItemsList, getActivity().getBaseContext());
