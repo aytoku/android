@@ -233,9 +233,7 @@ public class Auth111Fragment extends Fragment {
 
         if (requestCode == SECOND_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-
                 String returnString = data.getStringExtra("keyName");
-
                 TextView textView = getView().findViewById(R.id.cl_auth_1_1_1_button);
                 textView.setText(returnString);
             }
