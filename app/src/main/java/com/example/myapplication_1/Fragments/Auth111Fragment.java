@@ -193,7 +193,6 @@ public class Auth111Fragment extends Fragment {
                 }catch (NullPointerException | JsonParseException e){
                     Log.e(TAG, "sync: " +e.getMessage());
                 }
-
                 if(code == 200){
                     int next_request_time = -1;
                     try {
@@ -226,7 +225,7 @@ public class Auth111Fragment extends Fragment {
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {}
-        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2" + "/auth/new", jo.toString());
+        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/auth/new", jo.toString());
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

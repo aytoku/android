@@ -55,8 +55,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
+        android:padding="15dp">
 
         <ImageView
             android:layout_width="wrap_content"

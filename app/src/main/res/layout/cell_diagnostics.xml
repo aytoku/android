@@ -19,7 +19,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:layout_toEndOf="@+id/rl_cell_diagnostics_close_button_img"
             android:orientation="vertical">
 
             <TextView
@@ -27,9 +29,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Список одобреных приложений"
-                android:textSize="15sp"
                 android:textColor="#424242"
-                android:textStyle="bold"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/rl_cell_diagnostics_desc"
@@ -37,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="Добавьте приложение в список..."
                 android:textColor="#C3C3C3"
-                android:textSize="13sp"/>
+                android:textSize="13sp" />
 
         </LinearLayout>
 

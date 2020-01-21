@@ -242,7 +242,6 @@ public class CodeScreenFragment extends Fragment {
 
             @Override
             public void sync(JsonObject result) {
-
                     int client_id = 0;
                     try {
                         client_id = result.get("client_id").getAsInt();

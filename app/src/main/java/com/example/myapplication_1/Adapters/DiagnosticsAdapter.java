@@ -1,8 +1,6 @@
 package com.example.myapplication_1.Adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.R;
 
 import java.util.List;
-
-import ru.osety.amironlibrary.DrawableUtils;
 
 public class DiagnosticsAdapter extends RecyclerView.Adapter<DiagnosticsAdapter.ViewHolder>  {
 
@@ -41,15 +37,6 @@ public class DiagnosticsAdapter extends RecyclerView.Adapter<DiagnosticsAdapter.
     public void onBindViewHolder(final ViewHolder viewHolder, final int i){
         final DiagnosticsItems diagnosticsItems = diagnosticsItemsList.get(i);
 
-        float _dens = context.getResources().getDisplayMetrics().density;
-        int _size = Math.round(_dens * 15);
-        Drawable _drawable = context.getResources().getDrawable(diagnosticsItems.getImg());
-        Drawable drawable = context.getResources().getDrawable(diagnosticsItems.getClose_button_img());
-        Bitmap _bitmap = DrawableUtils.convertToBitmap(_drawable, _size, _size);
-        Bitmap bitmap = DrawableUtils.convertToBitmap(drawable, _size, _size);
-        viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
-        viewHolder.img.setImageBitmap(_bitmap);
-        viewHolder.close_button_img.setImageBitmap(bitmap);
         viewHolder.title.setText(diagnosticsItems.getTitle());
         viewHolder.desc.setText(diagnosticsItems.getDesc());
     }

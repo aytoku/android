@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -9,18 +9,12 @@
     android:versionName="0.0.1"
     tools:overrideLibrary="ru.osety.amironlibrary">
 
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        layout="@layout/expandalbe_list_view"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/earnings_page_card_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:overScrollMode="never"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:scrollbarThumbVertical="@drawable/yoursdrawablefile"/>
+        android:scrollbarThumbVertical="@drawable/yoursdrawablefile"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-</LinearLayout>
+</RelativeLayout>

@@ -185,7 +185,6 @@ public class RatingFragment extends Fragment{
             }
         });
         getTips();
-
         return view;
     }
 
