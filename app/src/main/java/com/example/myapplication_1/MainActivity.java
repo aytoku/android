@@ -22,6 +22,7 @@ import com.example.myapplication_1.Fragments.CommentsFragment;
 import com.example.myapplication_1.Fragments.CountryCodeSelectionFragment;
 import com.example.myapplication_1.Fragments.CreateOrder115Fragment;
 import com.example.myapplication_1.Fragments.DeployedMessagesFragment;
+import com.example.myapplication_1.Fragments.DiagnosticsFragment;
 import com.example.myapplication_1.Fragments.DriverChatFragment;
 import com.example.myapplication_1.Fragments.DriverSpinnerFragment;
 import com.example.myapplication_1.Fragments.EarningsFragment;
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         DeployedMessagesFragment deployedMessagesFragment = DeployedMessagesFragment.getInstance(null);
         DriverChatFragment driverChatFragment = DriverChatFragment.getInstance(null);
         DriverSpinnerFragment driverSpinnerFragment = DriverSpinnerFragment.getInstance(null);
+        DiagnosticsFragment diagnosticsFragment = DiagnosticsFragment.getInstance(null);
 
         EarningsFragment earningsFragment = EarningsFragment.getInstance(null);
         EmptyChatWithDriverFragment emptyChatWithDriverFragment = EmptyChatWithDriverFragment.getInstance(null);
