@@ -93,7 +93,6 @@ public class RatingFragment extends Fragment{
             praiseRecyclerView.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
             praiseRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
         } catch ( NullPointerException e) {
             Log.e(TAG, "onCreateView" +e.getMessage());
         }
@@ -105,7 +104,6 @@ public class RatingFragment extends Fragment{
             tipsRecyclerView.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
             tipsRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
         } catch ( NullPointerException e) {
             Log.e(TAG, "onCreateView" +e.getMessage());
         }
