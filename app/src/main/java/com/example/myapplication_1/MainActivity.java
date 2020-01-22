@@ -31,6 +31,7 @@ import com.example.myapplication_1.Fragments.EnergyReductionFragment;
 import com.example.myapplication_1.Fragments.ErrorOneFragment;
 import com.example.myapplication_1.Fragments.ErrorTwoFragment;
 import com.example.myapplication_1.Fragments.FreeOrders13ExpListFragment;
+import com.example.myapplication_1.Fragments.HowToWorkFragment;
 import com.example.myapplication_1.Fragments.InformationFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeLowerPartFragment;
@@ -103,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
         ErrorTwoFragment errorTwoFragment = ErrorTwoFragment.getInstance(null);
 
         FreeOrders13ExpListFragment freeOrders13ExpListFragment = FreeOrders13ExpListFragment.getInstance(null);
+
+        HowToWorkFragment howToWorkFragment = HowToWorkFragment.getInstance(null);
 
         InformationFragment informationFragment = InformationFragment.getInstance(null);
 
