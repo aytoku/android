@@ -36,15 +36,15 @@ public class Auth111Fragment extends Fragment {
 
     public static final String TAG = "Auth111Fragment";
     private EditText editText;
-    TextView button;
+    private TextView button;
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 1;
 
     public static Auth111Fragment getInstance(Bundle args) {
 
-        Auth111Fragment f = new Auth111Fragment();
-        f.setArguments(args);
+        Auth111Fragment auth111Fragment = new Auth111Fragment();
+        auth111Fragment.setArguments(args);
 
-        return f;
+        return auth111Fragment;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -58,19 +58,15 @@ public class Auth111Fragment extends Fragment {
                 container, false);
 
         button = view.findViewById(R.id.cl_auth_1_1_1_button1);
-
         TextView textView = view.findViewById(R.id.cl_auth_1_1_1_button);
         TextView agreement = view.findViewById(R.id.cl_auth_1_1_1_desc);
         agreement.setText(Html.fromHtml("Нажимая кнопку 'Далее', вы принимаете условия\n<u>пользовательского соглашения</u> и <u>политики\nконфиденцальности</u>"));
-
         editText = view.findViewById(R.id.cl_auth_1_1_1_editTextNumber);
-
         ImageButton imageButton = view.findViewById(R.id.cl_auth_1_1_1_image_button);
 
         final int[] len = {0};
         final int[] len1 = {0};
         final int[] len2 = {0};
-
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -94,7 +90,6 @@ public class Auth111Fragment extends Fragment {
                     editText.setText(first + " " + last);
                     editText.setSelection(editText.getText().length());
                 }
-
                 if (i < 8)
                     len1[0] = 0;
                 if (i == 8 && len1[0] < 9) {
@@ -105,7 +100,6 @@ public class Auth111Fragment extends Fragment {
                     editText.setText(first + "-" + last);
                     editText.setSelection(editText.getText().length());
                 }
-
                 if (i < 11)
                     len2[0] = 0;
                 if (i == 11 && len2[0] < 12) {
@@ -116,7 +110,6 @@ public class Auth111Fragment extends Fragment {
                     editText.setText(first + "-" + last);
                     editText.setSelection(editText.getText().length());
                 }
-
                 if(editText.length()>0){
                     button.setBackgroundDrawable(getResources().getDrawable(R.drawable.myredbutton));
                 }else{
@@ -124,7 +117,6 @@ public class Auth111Fragment extends Fragment {
                 }
             }
         });
-
         agreement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,11 +126,9 @@ public class Auth111Fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         Bundle _args = new Bundle();
         final Fragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(_args);
         final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,7 +137,6 @@ public class Auth111Fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

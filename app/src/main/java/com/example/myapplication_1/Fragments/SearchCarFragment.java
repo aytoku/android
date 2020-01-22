@@ -15,10 +15,10 @@ public class SearchCarFragment extends Fragment {
 
     public static SearchCarFragment getInstance(Bundle args) {
 
-        SearchCarFragment f = new SearchCarFragment();
-        f.setArguments(args);
+        SearchCarFragment searchCarFragment = new SearchCarFragment();
+        searchCarFragment.setArguments(args);
 
-        return f;
+        return searchCarFragment;
     }
 
     @Override

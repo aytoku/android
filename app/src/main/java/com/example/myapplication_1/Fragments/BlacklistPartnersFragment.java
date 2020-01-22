@@ -23,10 +23,10 @@ public class BlacklistPartnersFragment extends Fragment {
 
     public static BlacklistPartnersFragment getInstance(Bundle args) {
 
-        BlacklistPartnersFragment f = new BlacklistPartnersFragment();
-        f.setArguments(args);
+        BlacklistPartnersFragment blacklistPartnersFragment = new BlacklistPartnersFragment();
+        blacklistPartnersFragment.setArguments(args);
 
-        return f;
+        return blacklistPartnersFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,7 +43,6 @@ public class BlacklistPartnersFragment extends Fragment {
 
         Bundle _args = new Bundle();
         final Fragment partnersFragment = PartnersFragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +51,6 @@ public class BlacklistPartnersFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +68,6 @@ public class BlacklistPartnersFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerView = black_list_rv;
-
         try{
             BlacklistPartnersAdapter.BlackListItems[] blackListItems = getBlackListItems();
             BlacklistPartnersAdapter blacklistPartnersAdapter = new BlacklistPartnersAdapter(blackListItems, getActivity().getBaseContext());
@@ -97,7 +94,6 @@ public class BlacklistPartnersFragment extends Fragment {
                             public void call(BlacklistPartnersAdapter.BlackListItems blackListItems) {
                                 try{
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -111,7 +107,6 @@ public class BlacklistPartnersFragment extends Fragment {
                             public void call(BlacklistPartnersAdapter.BlackListItems blackListItems) {
                                 try{
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -125,7 +120,6 @@ public class BlacklistPartnersFragment extends Fragment {
                             public void call(BlacklistPartnersAdapter.BlackListItems blackListItems) {
                                 try{
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -139,7 +133,6 @@ public class BlacklistPartnersFragment extends Fragment {
                             public void call(BlacklistPartnersAdapter.BlackListItems blackListItems) {
                                 try{
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

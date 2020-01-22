@@ -15,10 +15,10 @@ public class EnergyReductionFragment extends Fragment {
 
     public static EnergyReductionFragment getInstance(Bundle args) {
 
-        EnergyReductionFragment f = new EnergyReductionFragment();
-        f.setArguments(args);
+        EnergyReductionFragment energyReductionFragment = new EnergyReductionFragment();
+        energyReductionFragment.setArguments(args);
 
-        return f;
+        return energyReductionFragment;
     }
 
     @Override

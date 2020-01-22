@@ -15,10 +15,10 @@ public class MachinePurposeOneFragment extends Fragment {
 
     public static MachinePurposeOneFragment getInstance(Bundle args) {
 
-        MachinePurposeOneFragment f = new MachinePurposeOneFragment();
-        f.setArguments(args);
+        MachinePurposeOneFragment machinePurposeOneFragment = new MachinePurposeOneFragment();
+        machinePurposeOneFragment.setArguments(args);
 
-        return f;
+        return machinePurposeOneFragment;
     }
 
     @Override

@@ -23,10 +23,10 @@ public class CountryCodeSelectionFragment extends Fragment {
 
     public static CountryCodeSelectionFragment getInstance(Bundle args) {
 
-        CountryCodeSelectionFragment f = new CountryCodeSelectionFragment();
-        f.setArguments(args);
+        CountryCodeSelectionFragment countryCodeSelectionFragment = new CountryCodeSelectionFragment();
+        countryCodeSelectionFragment.setArguments(args);
 
-        return f;
+        return countryCodeSelectionFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,12 +38,10 @@ public class CountryCodeSelectionFragment extends Fragment {
                 container, false);
 
         countryCodeSelection_rv = view.findViewById(R.id.rl_country_code_selection_recycler);
-
         ImageButton imageButton = view.findViewById(R.id.rl_cell_country_code_selection_button);
 
         Bundle _args = new Bundle();
         final Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,17 +58,13 @@ public class CountryCodeSelectionFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerView = countryCodeSelection_rv;
-
         try {
-
             CountryCodeSelectionAdapter.CountryCodeItems[] countryCodeItems = getCountryCodeItems();
-
             CountryCodeSelectionAdapter countryCodeSelectionAdapter = new CountryCodeSelectionAdapter(countryCodeItems, getActivity().getBaseContext());
             recyclerView.setAdapter( countryCodeSelectionAdapter );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -88,9 +82,7 @@ public class CountryCodeSelectionFragment extends Fragment {
                         new CountryCodeSelectionAdapter.CountryCodeItems.CallBack() {
                             @Override
                             public void call(CountryCodeSelectionAdapter.CountryCodeItems countryCodeItems) {
-
                                 try{
-
                                     Bundle _args = new Bundle();
                                     Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
                                     auth111Fragment.setArguments(_args);
@@ -98,7 +90,6 @@ public class CountryCodeSelectionFragment extends Fragment {
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                                     transaction.replace(R.id.rl_main, auth111Fragment).commit();
                                     getActivity().getIntent().getExtras().get("+995");
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -112,9 +103,7 @@ public class CountryCodeSelectionFragment extends Fragment {
                         new CountryCodeSelectionAdapter.CountryCodeItems.CallBack() {
                             @Override
                             public void call(CountryCodeSelectionAdapter.CountryCodeItems countryCodeItems) {
-
                                 try{
-
                                     Bundle _args = new Bundle();
                                     Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
                                     auth111Fragment.setArguments(_args);
@@ -122,7 +111,6 @@ public class CountryCodeSelectionFragment extends Fragment {
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                                     transaction.replace(R.id.rl_main, auth111Fragment).commit();
                                     getActivity().getIntent().getExtras().get("+7");
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

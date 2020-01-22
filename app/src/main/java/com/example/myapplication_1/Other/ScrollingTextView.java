@@ -17,7 +17,6 @@ public class ScrollingTextView extends TextView {
     public ScrollingTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
-
     public ScrollingTextView(Context context) {
         super(context);
     }

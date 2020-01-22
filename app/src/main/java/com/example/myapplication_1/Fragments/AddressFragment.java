@@ -28,10 +28,10 @@ public class AddressFragment extends Fragment {
 
     public static AddressFragment getInstance(Bundle args) {
 
-        AddressFragment f = new AddressFragment();
-        f.setArguments(args);
+        AddressFragment addressFragment = new AddressFragment();
+        addressFragment.setArguments(args);
 
-        return f;
+        return addressFragment;
     }
 
     @Override
@@ -44,7 +44,6 @@ public class AddressFragment extends Fragment {
                 container, false);
 
         RecyclerView address_rv = view.findViewById(R.id.ll_address_rl_address_ll_address_address_recycler);
-
         ImageButton button = view.findViewById(R.id.ll_address_rl_address_button_plusik);
         ImageButton imageButton = view.findViewById(R.id.ll_address_rl_address_button_strelka);
 
@@ -59,7 +58,6 @@ public class AddressFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

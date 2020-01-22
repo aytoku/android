@@ -18,12 +18,12 @@ public class EarningsFragment extends Fragment {
     public static final String TAG = "EarningsFragment";
     private RecyclerView earnings_rv;
 
-    public static EarningsFragment getInstance(Bundle args) {
+    public static EarningsFragment getInstance(Bundle args){
 
-        EarningsFragment f = new EarningsFragment();
-        f.setArguments(args);
+        EarningsFragment earningsFragment = new EarningsFragment();
+        earningsFragment.setArguments(args);
 
-        return f;
+        return earningsFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,17 +44,13 @@ public class EarningsFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerView = earnings_rv;
-
-        try {
-
+        try{
             EarningsPageAdapter.EarningsPageItems[] earningsPageItems = getEarningsPageItems();
-
             EarningsPageAdapter earningsPageAdapter = new EarningsPageAdapter(earningsPageItems, getActivity().getBaseContext());
             recyclerView.setAdapter( earningsPageAdapter );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -70,14 +66,11 @@ public class EarningsFragment extends Fragment {
                                 R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
-
-                        try {
-
-                            Bundle _args = new Bundle();
-
-                        } catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
+                                try {
+                                    Bundle _args = new Bundle();
+                                } catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
 
                     }
                 }, "До клиента", "1км", "Маршрут заказа", "152\u20BD", R.drawable.ic_lightning_yellow, "10"),
@@ -85,17 +78,15 @@ public class EarningsFragment extends Fragment {
                 new EarningsPageAdapter.EarningsPageItems(
                         "1 км",
                             new String[] {"Коста 223/1","Универсам Наш, Хаджи Мамсурова Мамсурова, 42"},
-                                new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
+                                new String[] {"Детское кресло"},
+                                    R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
 
-                    public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
-
-                        try {
-
-                            Bundle _args = new Bundle();
-
-                        } catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
+                        public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
+                                    try {
+                                        Bundle _args = new Bundle();
+                                    } catch (NullPointerException e) {
+                                        e.printStackTrace();
+                                    }
 
                     }
                 },"До клиента", "1км", "Маршрут заказа", "208\u20BD", R.drawable.ic_lightning_yellow, "10"),
@@ -103,17 +94,15 @@ public class EarningsFragment extends Fragment {
                 new EarningsPageAdapter.EarningsPageItems(
                         "1 км",
                             new String[] {"Коста 223/1","Молодежная, 7","Универсам Наш, Хаджи Мамсурова, 42 "},
-                                new String[] {"Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
+                                new String[] {"Детское кресло"},
+                                    R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
 
                     public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
-
-                        try {
-
-                            Bundle _args = new Bundle();
-
-                        } catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
+                                    try {
+                                        Bundle _args = new Bundle();
+                                    } catch (NullPointerException e) {
+                                        e.printStackTrace();
+                                    }
 
                     }
                 },"До клиента", "1км", "Маршрут заказа", "208\u20BD", R.drawable.ic_lightning_yellow, "10"),
@@ -124,14 +113,11 @@ public class EarningsFragment extends Fragment {
                                 new String[] {"Детское кресло", "Детское кресло", "Детское кресло"}, R.drawable.ic_mini_ellipse, new EarningsPageAdapter.EarningsPageItems.CallBack() {
                     @Override
                     public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
-
-                        try {
-
-                            Bundle _args = new Bundle();
-
-                        } catch (NullPointerException e) {
-                            e.printStackTrace();
-                        }
+                                    try {
+                                        Bundle _args = new Bundle();
+                                    } catch (NullPointerException e) {
+                                        e.printStackTrace();
+                                    }
 
                     }
                 }, "До клиента", "1км", "Маршрут заказа", "152\u20BD", R.drawable.ic_lightning_yellow, "10"),

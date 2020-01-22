@@ -15,10 +15,10 @@ public class WriteFragment extends Fragment {
 
     public static WriteFragment getInstance(Bundle args) {
 
-        WriteFragment f = new WriteFragment();
-        f.setArguments(args);
+        WriteFragment writeFragment = new WriteFragment();
+        writeFragment.setArguments(args);
 
-        return f;
+        return writeFragment;
     }
 
     @Override

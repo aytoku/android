@@ -24,10 +24,10 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
 
     public static WishFragment getInstance(Bundle args) {
 
-        WishFragment f = new WishFragment();
-        f.setArguments(args);
+        WishFragment wishFragment = new WishFragment();
+        wishFragment.setArguments(args);
 
-        return f;
+        return wishFragment;
     }
 
     @Override
@@ -94,22 +94,18 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
                 textView.setText(String.valueOf(see.getProgress()));
             }
 
-
     @Override
     public void onStart() {
         super.onStart();
 
         RecyclerView recyclerView = wish_rv;
-
         try {
             AdapterWish.WishItems[] wishItems = getWishItems();
-
             AdapterWish adapterWish = new AdapterWish(wishItems, getActivity().getBaseContext());
             recyclerView.setAdapter(adapterWish);
             recyclerView.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
-
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -122,7 +118,6 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
         String[] desc_arr = new String[]{"Детское кресло", "Курящий салон", "Некурящий салон"};
 
         AdapterWish.WishItems[] _arr = new AdapterWish.WishItems[]{
-
                 new AdapterWish.WishItems(
                         cost_arr[0],
                         desc_arr[0]),

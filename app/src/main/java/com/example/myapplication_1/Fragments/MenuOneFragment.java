@@ -24,10 +24,10 @@ public class MenuOneFragment extends Fragment {
 
     public static MenuOneFragment getInstance(Bundle args) {
 
-        MenuOneFragment f = new MenuOneFragment();
-        f.setArguments(args);
+        MenuOneFragment menuOneFragment = new MenuOneFragment();
+        menuOneFragment.setArguments(args);
 
-        return f;
+        return menuOneFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,9 +40,7 @@ public class MenuOneFragment extends Fragment {
 
         RecyclerView menuOne_rv = view.findViewById(R.id.ll_menu_1_recycler);
         final RecyclerView recyclerView = menuOne_rv;
-
         try {
-
             MenuOneAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<MenuOneAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             RecyclerView.Adapter menuOneAdapter = new MenuOneAdapter(itemsMenuList, getActivity().getBaseContext());
@@ -50,7 +48,6 @@ public class MenuOneFragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -69,7 +66,6 @@ public class MenuOneFragment extends Fragment {
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
-
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, auth111Fragment);
                                     fragmentTransaction.commit();
@@ -87,7 +83,6 @@ public class MenuOneFragment extends Fragment {
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
-
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, paymentPickFragment);
                                     fragmentTransaction.commit();
@@ -106,7 +101,6 @@ public class MenuOneFragment extends Fragment {
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment settingsFragment = SettingsFragment.getInstance(_args);
-
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, settingsFragment);
                                     fragmentTransaction.commit();
@@ -124,7 +118,6 @@ public class MenuOneFragment extends Fragment {
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment informationFragment = InformationFragment.getInstance(_args);
-
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, informationFragment);
                                     fragmentTransaction.commit();
@@ -142,7 +135,6 @@ public class MenuOneFragment extends Fragment {
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment serviceFragment = ServiceFragment.getInstance(_args);
-
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, serviceFragment);
                                     fragmentTransaction.commit();

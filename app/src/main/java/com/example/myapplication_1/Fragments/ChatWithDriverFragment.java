@@ -26,10 +26,10 @@ public class ChatWithDriverFragment extends Fragment {
 
     public static ChatWithDriverFragment getInstance(Bundle args) {
 
-        ChatWithDriverFragment f = new ChatWithDriverFragment();
-        f.setArguments(args);
+        ChatWithDriverFragment chatWithDriverFragment = new ChatWithDriverFragment();
+        chatWithDriverFragment.setArguments(args);
 
-        return f;
+        return chatWithDriverFragment;
     }
 
     @Override
@@ -52,7 +52,6 @@ public class ChatWithDriverFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
-
         try {
 
             ChatWithDriverAdapter.ChatWithDriverItem[] chatWithDriverItems = getChatWithDriverItems();
@@ -61,15 +60,12 @@ public class ChatWithDriverFragment extends Fragment {
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
 
         RecyclerView recyclerView1 = rv1;
-
         try {
-
             DeployedMessagesAdapter.DeployedMessagesItems[] itemsMenu = getMenuItems1();
             List<DeployedMessagesAdapter.DeployedMessagesItems> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             RecyclerView.Adapter adapterGridViewMenu = new DeployedMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
@@ -77,7 +73,6 @@ public class ChatWithDriverFragment extends Fragment {
             recyclerView1.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView1.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

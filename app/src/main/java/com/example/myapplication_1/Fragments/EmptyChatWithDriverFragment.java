@@ -38,10 +38,10 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
     public static EmptyChatWithDriverFragment getInstance(Bundle args) {
 
-        EmptyChatWithDriverFragment f = new EmptyChatWithDriverFragment();
-        f.setArguments(args);
+        EmptyChatWithDriverFragment emptyChatWithDriverFragment = new EmptyChatWithDriverFragment();
+        emptyChatWithDriverFragment.setArguments(args);
 
-        return f;
+        return emptyChatWithDriverFragment;
     }
 
     @Override
@@ -55,12 +55,9 @@ public class EmptyChatWithDriverFragment extends Fragment {
 
         rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
         rv1 = view.findViewById(R.id.deployed_messages_recycler);
-
         TextView textView1 = view.findViewById(R.id.rl_empty_chat_with_driver_title1);
-
         editText = view.findViewById(R.id.ll_driver_chat_text);
         imageView = view.findViewById(R.id.ll_empty_chat_with_driver_img);
-
         micro = getResources().getDrawable(R.drawable.ic_chat_micro);
         arrow = getResources().getDrawable(R.drawable.ic_chat_arrow);
 
@@ -80,7 +77,6 @@ public class EmptyChatWithDriverFragment extends Fragment {
                 }
             }
         });
-
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,10 +95,8 @@ public class EmptyChatWithDriverFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
-
         RecyclerView.Adapter adapterGridViewMenu;
         try {
-
             EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenuList1, getActivity().getBaseContext());
@@ -111,15 +105,12 @@ public class EmptyChatWithDriverFragment extends Fragment {
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
 
         RecyclerView recyclerView1 = rv1;
-
         try {
-
             DriverMessagesAdapter.ItemsMenu[] itemsMenu = getMenuItems1();
             itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new DriverMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
@@ -127,7 +118,6 @@ public class EmptyChatWithDriverFragment extends Fragment {
             recyclerView1.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView1.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -143,7 +133,6 @@ public class EmptyChatWithDriverFragment extends Fragment {
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -157,7 +146,6 @@ public class EmptyChatWithDriverFragment extends Fragment {
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

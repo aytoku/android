@@ -18,10 +18,10 @@ public class ProgramErrorTwoFragment extends Fragment {
 
     public static ProgramErrorTwoFragment getInstance(Bundle args) {
 
-        ProgramErrorTwoFragment f = new ProgramErrorTwoFragment();
-        f.setArguments(args);
+        ProgramErrorTwoFragment programErrorTwoFragment = new ProgramErrorTwoFragment();
+        programErrorTwoFragment.setArguments(args);
 
-        return f;
+        return programErrorTwoFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,15 +39,9 @@ public class ProgramErrorTwoFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                imageButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.rl_main, menu162Fragment);
-                        fragmentTransaction.commit();
-                    }
-                });
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.rl_main, menu162Fragment);
+                fragmentTransaction.commit();
             }
         });
 

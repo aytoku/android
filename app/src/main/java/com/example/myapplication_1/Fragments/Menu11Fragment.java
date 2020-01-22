@@ -24,10 +24,10 @@ public class Menu11Fragment extends Fragment {
 
     public static Menu11Fragment getInstance(Bundle args) {
 
-        Menu11Fragment f = new Menu11Fragment();
-        f.setArguments(args);
+        Menu11Fragment menu11Fragment = new Menu11Fragment();
+        menu11Fragment.setArguments(args);
 
-        return f;
+        return menu11Fragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,17 +39,17 @@ public class Menu11Fragment extends Fragment {
                 container, false);
 
         RecyclerView menu11_rv = view.findViewById(R.id.rl_menu_1_1_recycler);
-        final RecyclerView recyclerViewMenu = menu11_rv;
+        final RecyclerView recyclerView = menu11_rv;
 
         try {
 
             AdapterMenu11.MenuList[] menuLists = getMenuListItems();
             List<AdapterMenu11.MenuList> itemsMenuList = new ArrayList<>(Arrays.asList(menuLists));
             RecyclerView.Adapter menu11Adapter = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(menu11Adapter);
-            recyclerViewMenu.setLayoutManager(
+            recyclerView.setAdapter(menu11Adapter);
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -66,13 +66,7 @@ public class Menu11Fragment extends Fragment {
                         "+7 963 377 88 44",
                         new AdapterMenu11.MenuList.CallBack(){
                             @Override
-                            public void call(AdapterMenu11.MenuList menuList){
-                                try {
-                                    Bundle _args = new Bundle();
-                                }catch (NullPointerException e) {
-                                    e.printStackTrace();
-                                }
-                            }
+                            public void call(AdapterMenu11.MenuList menuList){}
                         }),
 
                 new AdapterMenu11.MenuList(
@@ -82,8 +76,7 @@ public class Menu11Fragment extends Fragment {
                             public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
-
+                                    PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
                                     fragmentTransaction.commit();
@@ -100,8 +93,7 @@ public class Menu11Fragment extends Fragment {
                             public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
-
+                                    TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, travelStoryFragment);
                                     fragmentTransaction.commit();
@@ -118,8 +110,7 @@ public class Menu11Fragment extends Fragment {
                             public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment addressFragment = AddressFragment.getInstance(_args);
-
+                                    AddressFragment addressFragment = AddressFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, addressFragment);
                                     fragmentTransaction.commit();
@@ -136,8 +127,7 @@ public class Menu11Fragment extends Fragment {
                             public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment settingsFragment = SettingsFragment.getInstance(_args);
-
+                                    SettingsFragment settingsFragment = SettingsFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, settingsFragment);
                                     fragmentTransaction.commit();
@@ -154,8 +144,7 @@ public class Menu11Fragment extends Fragment {
                             public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment informationFragment = InformationFragment.getInstance(_args);
-
+                                    InformationFragment informationFragment = InformationFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, informationFragment);
                                     fragmentTransaction.commit();
@@ -172,8 +161,7 @@ public class Menu11Fragment extends Fragment {
                             public void call(AdapterMenu11.MenuList menuList){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment serviceFragment = ServiceFragment.getInstance(_args);
-
+                                    ServiceFragment serviceFragment = ServiceFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, serviceFragment);
                                     fragmentTransaction.commit();

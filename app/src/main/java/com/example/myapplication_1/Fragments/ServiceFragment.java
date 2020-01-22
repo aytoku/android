@@ -18,10 +18,10 @@ public class ServiceFragment extends Fragment {
 
     public static ServiceFragment getInstance(Bundle args) {
 
-        ServiceFragment f = new ServiceFragment();
-        f.setArguments(args);
+        ServiceFragment serviceFragment = new ServiceFragment();
+        serviceFragment.setArguments(args);
 
-        return f;
+        return serviceFragment;
     }
 
     @Override
@@ -39,7 +39,6 @@ public class ServiceFragment extends Fragment {
         Bundle _args = new Bundle();
         final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
         final Fragment menu161Fragment = Menu162Fragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +47,6 @@ public class ServiceFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         relativeLayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +55,6 @@ public class ServiceFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 }

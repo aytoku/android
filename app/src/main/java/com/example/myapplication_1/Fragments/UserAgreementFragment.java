@@ -19,10 +19,10 @@ public class UserAgreementFragment extends Fragment {
 
     public static UserAgreementFragment getInstance(Bundle args) {
 
-        UserAgreementFragment f = new UserAgreementFragment();
-        f.setArguments(args);
+        UserAgreementFragment userAgreementFragment = new UserAgreementFragment();
+        userAgreementFragment.setArguments(args);
 
-        return f;
+        return userAgreementFragment;
     }
 
     @Override
@@ -34,17 +34,14 @@ public class UserAgreementFragment extends Fragment {
         View view = inflater.inflate(R.layout.user_agreement,
                 container, false);
 
-
         WebView webView = view.findViewById(R.id.webView);
+        ImageButton imageButton = view.findViewById(R.id.rl_choose_place_button);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("https://faem.ru/soglashenie.html");
-
-        ImageButton imageButton = view.findViewById(R.id.rl_choose_place_button);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Bundle _args = new Bundle();
                 final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
@@ -52,7 +49,6 @@ public class UserAgreementFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 }

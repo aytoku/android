@@ -19,10 +19,10 @@ public class WebViewFragment extends Fragment {
 
     public static WebViewFragment getInstance(Bundle args) {
 
-        WebViewFragment f = new WebViewFragment();
-        f.setArguments(args);
+        WebViewFragment webViewFragment = new WebViewFragment();
+        webViewFragment.setArguments(args);
 
-        return f;
+        return webViewFragment;
     }
 
     @Override
@@ -34,17 +34,14 @@ public class WebViewFragment extends Fragment {
         View view = inflater.inflate(R.layout.webview,
                 container, false);
 
-
         WebView webView = view.findViewById(R.id.ll_webView);
+        ImageButton imageButton = view.findViewById(R.id.ll_webview_button);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("https://faem.ru/soglashenie.html");
-
-        ImageButton imageButton = view.findViewById(R.id.ll_webview_button);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Bundle _args = new Bundle();
                 final Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
@@ -52,7 +49,6 @@ public class WebViewFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 }

@@ -15,7 +15,6 @@ public class NotificationActivity extends AppCompatActivity {
     private static final int NOTIFY_ID = 101;
     private static String CHANNEL_ID = "Cat channel";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,6 @@ public class NotificationActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 NotificationCompat.Builder builder =
                         new NotificationCompat.Builder(NotificationActivity.this, CHANNEL_ID)
                                 .setSmallIcon(R.drawable.icon_cross)

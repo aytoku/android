@@ -25,10 +25,10 @@ public class PaymentPickFragment extends Fragment {
 
     public static PaymentPickFragment getInstance(Bundle args) {
 
-        PaymentPickFragment f = new PaymentPickFragment();
-        f.setArguments(args);
+        PaymentPickFragment paymentPickFragment = new PaymentPickFragment();
+        paymentPickFragment.setArguments(args);
 
-        return f;
+        return paymentPickFragment;
     }
 
     @Override
@@ -41,7 +41,6 @@ public class PaymentPickFragment extends Fragment {
                 container, false);
 
         TextView textView = view.findViewById(R.id.rl_payment_pick_ready);
-
         RecyclerView paymentPick_rv = view.findViewById(R.id.rl_payment_pick_recycler);
         final RecyclerView recyclerView = paymentPick_rv;
 
@@ -53,15 +52,12 @@ public class PaymentPickFragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Bundle _args = new Bundle();
                 Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();

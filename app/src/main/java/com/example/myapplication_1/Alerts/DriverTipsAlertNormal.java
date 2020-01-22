@@ -27,10 +27,10 @@ public class DriverTipsAlertNormal extends DialogFragment {
 
     public static DriverTipsAlertNormal getInstance(Bundle args) {
 
-        DriverTipsAlertNormal f = new DriverTipsAlertNormal();
-        f.setArguments(args);
+        DriverTipsAlertNormal driverTipsAlertNormal = new DriverTipsAlertNormal();
+        driverTipsAlertNormal.setArguments(args);
 
-        return f;
+        return driverTipsAlertNormal;
     }
 
     @Override
@@ -45,10 +45,8 @@ public class DriverTipsAlertNormal extends DialogFragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         Log.i(TAG, "onCreateView: start");
-
         try {
             getDialog().getWindow().setBackgroundDrawableResource(android.R.drawable.screen_background_dark_transparent);
-
         } catch (NullPointerException npe) {
             Log.e(TAG, "onCreateView: " + npe.getMessage());
         }
@@ -60,7 +58,6 @@ public class DriverTipsAlertNormal extends DialogFragment {
                 dismiss();
             }
         });
-
 
         textView1 = view.findViewById(R.id.ll_driver_tips_normal_txt1);
         textView2 = view.findViewById(R.id.ll_driver_tips_normal_txt2);
@@ -74,7 +71,6 @@ public class DriverTipsAlertNormal extends DialogFragment {
                 sendResult(message);
             }
         });
-
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,7 +78,6 @@ public class DriverTipsAlertNormal extends DialogFragment {
                 sendResult(message);
             }
         });
-
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,7 +85,6 @@ public class DriverTipsAlertNormal extends DialogFragment {
                 sendResult(message);
             }
         });
-
         textView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +92,6 @@ public class DriverTipsAlertNormal extends DialogFragment {
                 sendResult(message);
             }
         });
-
         return view;
     }
 

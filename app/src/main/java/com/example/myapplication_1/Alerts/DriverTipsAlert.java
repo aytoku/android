@@ -29,10 +29,10 @@ public class DriverTipsAlert extends DialogFragment {
 
     public static DriverTipsAlert getInstance(Bundle args) {
 
-        DriverTipsAlert f = new DriverTipsAlert();
-        f.setArguments(args);
+        DriverTipsAlert driverTipsAlert = new DriverTipsAlert();
+        driverTipsAlert.setArguments(args);
 
-        return f;
+        return driverTipsAlert;
     }
 
     @Override
@@ -47,14 +47,11 @@ public class DriverTipsAlert extends DialogFragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         Log.i(TAG, "onCreateView: start");
-
         try {
             getDialog().getWindow().setBackgroundDrawableResource( android.R.drawable.screen_background_dark_transparent );
-
         } catch ( NullPointerException npe) {
             Log.e(TAG, "onCreateView: " + npe.getMessage() );
         }
-
         View view = inflater.inflate(R.layout.drivers_tips, container,false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,13 +59,10 @@ public class DriverTipsAlert extends DialogFragment {
                 dismiss();
             }
         });
-
         RecyclerView driverTips_rv = view.findViewById(R.id.ll_driver_tips_recycler);
 
         final RecyclerView recyclerView = driverTips_rv;
-
         try {
-
             DriverTipsAdapter.DriverTipsItems[] driverTipsItems = getDriverTipsItems();
             List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList = new ArrayList<>(Arrays.asList(driverTipsItems));
             RecyclerView.Adapter adapterGridViewMenu = new DriverTipsAdapter(driverTipsItemsList, getActivity().getBaseContext());
@@ -76,7 +70,6 @@ public class DriverTipsAlert extends DialogFragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -84,18 +77,14 @@ public class DriverTipsAlert extends DialogFragment {
     }
 
     private void sendResult(String message){
-
         if (getTargetFragment() == null){ return; }
-
         Intent intent = FreeOrders13ExpListFragment.newIntent(message);
         getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
         dismiss();
     }
 
     private DriverTipsAdapter.DriverTipsItems[] getDriverTipsItems() {
-
         DriverTipsAdapter.DriverTipsItems[] arr = new DriverTipsAdapter.DriverTipsItems[]{
-
                 new DriverTipsAdapter.DriverTipsItems(
                         "0%",
                         new DriverTipsAdapter.DriverTipsItems.CallBack(){

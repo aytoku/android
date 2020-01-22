@@ -15,10 +15,10 @@ public class CommentsFragment extends Fragment {
 
     public static CommentsFragment getInstance(Bundle args) {
 
-        CommentsFragment f = new CommentsFragment();
-        f.setArguments(args);
+        CommentsFragment commentsFragment = new CommentsFragment();
+        commentsFragment.setArguments(args);
 
-        return f;
+        return commentsFragment;
     }
 
     @Override

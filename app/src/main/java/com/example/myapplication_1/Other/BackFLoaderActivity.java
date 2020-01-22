@@ -34,7 +34,6 @@ public class BackFLoaderActivity extends Activity {
                 ViewGroup.LayoutParams.WRAP_CONTENT));
     }
 
-
     @SuppressLint("StaticFieldLeak")
     private void downloadFile(String url) {
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -49,7 +48,6 @@ public class BackFLoaderActivity extends Activity {
                 progressDialog.setMax(100);
                 progressDialog
                         .setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-
                 progressDialog.show();
             }
 
@@ -69,18 +67,14 @@ public class BackFLoaderActivity extends Activity {
                 try {
                     url = new URL(params[0]);
                     urlConnection = (HttpURLConnection) url.openConnection();
-
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setDoOutput(true);
                     urlConnection.connect();
-
                     file = File.createTempFile("Mustachify", "download");
                     fos = new FileOutputStream(file);
                     inputStream = urlConnection.getInputStream();
-
                     totalSize = urlConnection.getContentLength();
                     downloadedSize = 0;
-
                     buffer = new byte[1024];
                     bufferLength = 0;
 
@@ -89,10 +83,8 @@ public class BackFLoaderActivity extends Activity {
                         downloadedSize += bufferLength;
                         publishProgress(downloadedSize, totalSize);
                     }
-
                     fos.close();
                     inputStream.close();
-
                     return file;
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
@@ -101,7 +93,6 @@ public class BackFLoaderActivity extends Activity {
                     e.printStackTrace();
                     m_error = e;
                 }
-
                 return null;
             }
             protected void onProgressUpdate(Integer... values) {

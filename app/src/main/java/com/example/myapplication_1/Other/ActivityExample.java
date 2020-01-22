@@ -51,23 +51,18 @@ public class ActivityExample extends AppCompatActivity implements View.OnClickLi
 
     public void onClick(View v) {
 
-        switch (v.getId()) {
+        if (v.getId() == R.id.add) {
+            Spinner spinner = (Spinner) findViewById(R.id.department);
+            String department = spinner.getSelectedItem().toString();
+            EditText editText = (EditText) findViewById(R.id.product);
+            String product = editText.getText().toString();
+            editText.setText("");
+            int groupPosition = addProduct(department, product);
+            listAdapter.notifyDataSetChanged();
 
-            case R.id.add:
-
-                Spinner spinner = (Spinner) findViewById(R.id.department);
-                String department = spinner.getSelectedItem().toString();
-                EditText editText = (EditText) findViewById(R.id.product);
-                String product = editText.getText().toString();
-                editText.setText("");
-                int groupPosition = addProduct(department,product);
-                listAdapter.notifyDataSetChanged();
-
-                collapseAll();
-                expandableListView.expandGroup(groupPosition);
-                expandableListView.setSelectedGroup(groupPosition);
-
-                break;
+            collapseAll();
+            expandableListView.expandGroup(groupPosition);
+            expandableListView.setSelectedGroup(groupPosition);
         }
     }
     private void expandAll() {

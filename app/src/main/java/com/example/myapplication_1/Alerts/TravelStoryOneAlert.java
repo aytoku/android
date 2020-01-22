@@ -21,10 +21,10 @@ public class TravelStoryOneAlert extends DialogFragment {
 
     public static TravelStoryOneAlert getInstance(Bundle args) {
 
-        TravelStoryOneAlert f = new TravelStoryOneAlert();
-        f.setArguments(args);
+        TravelStoryOneAlert travelStoryOneAlert = new TravelStoryOneAlert();
+        travelStoryOneAlert.setArguments(args);
 
-        return f;
+        return travelStoryOneAlert;
     }
 
     @Override

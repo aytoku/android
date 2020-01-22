@@ -49,10 +49,10 @@ public class CodeScreenFragment extends Fragment {
 
     public static CodeScreenFragment getInstance(Bundle args) {
 
-        CodeScreenFragment f = new CodeScreenFragment();
-        f.setArguments(args);
+        CodeScreenFragment codeScreenFragment = new CodeScreenFragment();
+        codeScreenFragment.setArguments(args);
 
-        return f;
+        return codeScreenFragment;
     }
 
     @Override
@@ -67,9 +67,10 @@ public class CodeScreenFragment extends Fragment {
         code_field2 = view.findViewById(R.id.ll_code_screen2);
         code_field3 = view.findViewById(R.id.ll_code_screen3);
         code_field4 = view.findViewById(R.id.ll_code_screen4);
+        button = view.findViewById(R.id.cl_code_button);
+        timer = view.findViewById(R.id.rl_code_timer);
 
         code_field1.addTextChangedListener(new TextWatcher() {
-
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length()>1 &&  start==0){
                     code_field1.setText(s.subSequence(before, before+1));
@@ -93,9 +94,7 @@ public class CodeScreenFragment extends Fragment {
                 }
             }
         });
-
         code_field2.addTextChangedListener(new TextWatcher() {
-
             public void onTextChanged(CharSequence s, int start,int before, int count) {
 
                 if(s.length()>1 &&  start==0){
@@ -119,11 +118,9 @@ public class CodeScreenFragment extends Fragment {
                 }
             }
         });
-
         code_field2.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-
                 if(keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_UP) {
 
                     code_field1.requestFocus();
@@ -131,9 +128,7 @@ public class CodeScreenFragment extends Fragment {
                 return false;
             }
         });
-
         code_field3.addTextChangedListener(new TextWatcher() {
-
             public void onTextChanged(CharSequence s, int start,int before, int count) {
                 if(s.length()>1 &&  start==0){
                     code_field3.setText(s.subSequence(before, before+1));
@@ -157,11 +152,9 @@ public class CodeScreenFragment extends Fragment {
                 }
             }
         });
-
         code_field3.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-
                 if(keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_UP) {
 
                     code_field2.requestFocus();
@@ -169,9 +162,7 @@ public class CodeScreenFragment extends Fragment {
                 return false;
             }
         });
-
         code_field4.addTextChangedListener(new TextWatcher() {
-
             public void onTextChanged(CharSequence s, int start,int before, int count) {
                 if(s.length()>1 &&  start==0){
                     code_field4.setText(s.subSequence(before, before+1));
@@ -194,11 +185,9 @@ public class CodeScreenFragment extends Fragment {
                 }
             }
         });
-
         code_field4.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-
                 if(keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_UP) {
 
                     code_field3.requestFocus();
@@ -206,9 +195,6 @@ public class CodeScreenFragment extends Fragment {
                 return false;
             }
         });
-
-        button = view.findViewById(R.id.cl_code_button);
-        timer = view.findViewById(R.id.rl_code_timer);
 
         timer();
         getCode();

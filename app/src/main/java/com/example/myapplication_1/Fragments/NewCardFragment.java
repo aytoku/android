@@ -28,10 +28,10 @@ public class NewCardFragment extends Fragment {
 
     public static NewCardFragment getInstance(Bundle args) {
 
-        NewCardFragment f = new NewCardFragment();
-        f.setArguments(args);
+        NewCardFragment newCardFragment = new NewCardFragment();
+        newCardFragment.setArguments(args);
 
-        return f;
+        return newCardFragment;
     }
 
     @Override
@@ -50,7 +50,6 @@ public class NewCardFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Bundle _args = new Bundle();
                 Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();

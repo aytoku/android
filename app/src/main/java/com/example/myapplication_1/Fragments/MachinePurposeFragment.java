@@ -23,10 +23,10 @@ public class MachinePurposeFragment extends Fragment {
 
     public static MachinePurposeFragment getInstance(Bundle args) {
 
-        MachinePurposeFragment f = new MachinePurposeFragment();
-        f.setArguments(args);
+        MachinePurposeFragment machinePurposeFragment= new MachinePurposeFragment();
+        machinePurposeFragment.setArguments(args);
 
-        return f;
+        return machinePurposeFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,7 +40,6 @@ public class MachinePurposeFragment extends Fragment {
         RecyclerView rv = view.findViewById(R.id.ll_machine_purpose_recycler_rv);
 
         final RecyclerView recyclerViewMenu = rv;
-
         try {
             MachinePurposeAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<MachinePurposeAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
@@ -49,11 +48,9 @@ public class MachinePurposeFragment extends Fragment {
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
         return view;
     }
 

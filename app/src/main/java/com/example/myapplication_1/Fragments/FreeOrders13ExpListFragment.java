@@ -22,7 +22,6 @@ public class FreeOrders13ExpListFragment extends Fragment {
 
     public static final String TAG = "FreeOrders13ExpListFragment";
     private static final int REQUEST_CODE_GET_SORT_FREE_ORDER = 101;
-    List sort_list;
     TextView textView;
 
     public static FreeOrders13ExpListFragment getInstance(Bundle args) {
@@ -43,6 +42,7 @@ public class FreeOrders13ExpListFragment extends Fragment {
                 container, false);
 
         ExpandableListView listView = view.findViewById(R.id.expListView);
+        textView = view.findViewById(R.id.rl_free_orders_spinner_text);
         listView.setGroupIndicator(null);
 
         ArrayList<ArrayList<String>> groups = new ArrayList<>();
@@ -50,22 +50,18 @@ public class FreeOrders13ExpListFragment extends Fragment {
         children1.add("");
         groups.add(children1);
 
-        sort_list = new ArrayList();
+        List sort_list = new ArrayList();
         sort_list.add("По возрастанию цены");
         sort_list.add("По убыванию цены");
         sort_list.add("Не выбрано");
-
-        textView = view.findViewById(R.id.rl_free_orders_spinner_text);
 
         try {
             FreeOrders13ExpListAdapter freeOrders13ExpListAdapter = new FreeOrders13ExpListAdapter(getActivity(), groups, sort_list, getFreeOrders13List());
             listView.setAdapter(freeOrders13ExpListAdapter);
             freeOrders13ExpListAdapter.setActivityTextView(textView);
-
         }catch ( NullPointerException e){
             e.printStackTrace();
         }
-
         return view;
     }
 

@@ -26,10 +26,10 @@ public class PaymentChangeAlert extends DialogFragment {
 
     public static PaymentChangeAlert getInstance(Bundle args) {
 
-        PaymentChangeAlert f = new PaymentChangeAlert();
-        f.setArguments(args);
+        PaymentChangeAlert paymentChangeAlert = new PaymentChangeAlert();
+        paymentChangeAlert.setArguments(args);
 
-        return f;
+        return paymentChangeAlert;
     }
 
     @Override
@@ -44,10 +44,8 @@ public class PaymentChangeAlert extends DialogFragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         Log.i(TAG, "onCreateView: start");
-
         try {
             getDialog().getWindow().setBackgroundDrawableResource(android.R.drawable.screen_background_dark_transparent);
-
         } catch (NullPointerException npe) {
             Log.e(TAG, "onCreateView: " + npe.getMessage());
         }
@@ -61,11 +59,8 @@ public class PaymentChangeAlert extends DialogFragment {
         });
 
         RecyclerView payment_change_rv = view.findViewById(R.id.rl_cell_payment_change_recycler);
-
         final RecyclerView recyclerView = payment_change_rv;
-
         try {
-
             PaymentChangeAdapter.PaymentChangeItems[] paymentChangeItems = getPaymentChangeItems();
             List<PaymentChangeAdapter.PaymentChangeItems> paymentChangeItemsList = new ArrayList<>(Arrays.asList(paymentChangeItems));
             RecyclerView.Adapter adapterGridViewMenu = new PaymentChangeAdapter(paymentChangeItemsList, getActivity().getBaseContext());
@@ -73,11 +68,9 @@ public class PaymentChangeAlert extends DialogFragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
         return view;
     }
 

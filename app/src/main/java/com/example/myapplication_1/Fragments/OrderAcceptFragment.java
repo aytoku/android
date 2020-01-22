@@ -17,10 +17,10 @@ public class OrderAcceptFragment extends Fragment {
 
     public static OrderAcceptFragment getInstance(Bundle args) {
 
-        OrderAcceptFragment f = new OrderAcceptFragment();
-        f.setArguments(args);
+        OrderAcceptFragment orderAcceptFragment = new OrderAcceptFragment();
+        orderAcceptFragment.setArguments(args);
 
-        return f;
+        return orderAcceptFragment;
     }
 
     @Override

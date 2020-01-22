@@ -38,10 +38,10 @@ public class PaymentMethodFragment extends Fragment {
 
     public static PaymentMethodFragment getInstance(Bundle args) {
 
-        PaymentMethodFragment f = new PaymentMethodFragment();
-        f.setArguments(args);
+        PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
+        paymentMethodFragment.setArguments(args);
 
-        return f;
+        return paymentMethodFragment;
     }
 
     @Override
@@ -53,11 +53,13 @@ public class PaymentMethodFragment extends Fragment {
         View view = inflater.inflate(R.layout.payment_method,
                 container, false);
 
+        RelativeLayout relativeLayout = view.findViewById(R.id.rl_payment_method);
+        LinearLayout linearLayout = view.findViewById(R.id.ll_payment_method4);
+        textView = view.findViewById(R.id.ll_payment_method_percents);
+        TextView edit = view.findViewById(R.id.rl_payment_method_edit);
         ImageButton imageButton = view.findViewById(R.id.rl_payment_method_button_strelka);
-
         RecyclerView paymentMethod_rv = view.findViewById(R.id.ll_payment_method_recycler);
         final RecyclerView recyclerViewMenu = paymentMethod_rv;
-
         try {
             PaymentMethodAdapter.PaymentMethodItems[] paymentMethodItems = getPaymentMethodItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(paymentMethodItems));
@@ -66,13 +68,9 @@ public class PaymentMethodFragment extends Fragment {
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
-        RelativeLayout relativeLayout = view.findViewById(R.id.rl_payment_method);
-        LinearLayout linearLayout = view.findViewById(R.id.ll_payment_method4);
 
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,18 +78,15 @@ public class PaymentMethodFragment extends Fragment {
                 showDialog(view);
             }
         });
-
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showNewCardFragment(view);
             }
         });
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Bundle _args = new Bundle();
                 Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
@@ -99,9 +94,6 @@ public class PaymentMethodFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
-        textView = view.findViewById(R.id.ll_payment_method_percents);
-        TextView edit = view.findViewById(R.id.rl_payment_method_edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,7 +104,6 @@ public class PaymentMethodFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 

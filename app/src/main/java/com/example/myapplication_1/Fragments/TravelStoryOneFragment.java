@@ -26,10 +26,10 @@ public class TravelStoryOneFragment extends Fragment {
 
     public static TravelStoryOneFragment getInstance(Bundle args) {
 
-        TravelStoryOneFragment f = new TravelStoryOneFragment();
-        f.setArguments(args);
+        TravelStoryOneFragment travelStoryOneFragment = new TravelStoryOneFragment();
+        travelStoryOneFragment.setArguments(args);
 
-        return f;
+        return travelStoryOneFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,13 +40,10 @@ public class TravelStoryOneFragment extends Fragment {
 
         Bundle _args = new Bundle();
         final Fragment travelStoryOneFragment = TravelStoryFragment.getInstance(_args);
-
         ImageView button = view.findViewById(R.id.rl_travel_story_1_imageView);
-
         rv = view.findViewById(R.id.rl_travel_story_1_recycler_card);
-
+        LinearLayout linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);
         rv1 = view.findViewById(R.id.rl_travel_story_1_recycler);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,15 +52,12 @@ public class TravelStoryOneFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
-        LinearLayout linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showDialog(view);
             }
         });
-
         return view;
     }
 
@@ -72,34 +66,25 @@ public class TravelStoryOneFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
-
         try {
-
             CellTravelStoryOneCardAdapter.TravelStoryRow[] travelStoryRowItems = getTravelStoryRowItems();
-
             CellTravelStoryOneCardAdapter cellTravelStoryOneCardAdapter = new CellTravelStoryOneCardAdapter(travelStoryRowItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( cellTravelStoryOneCardAdapter );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
 
-
         RecyclerView recyclerView = rv1;
-
         try {
-
             CellTravelStoryOneAdapter.PaymentDesc[] travelStoryItems = getCellTravelStoryItems();
-
             CellTravelStoryOneAdapter adapterGridViewMenu = new CellTravelStoryOneAdapter(travelStoryItems, getActivity().getBaseContext());
             recyclerView.setAdapter( adapterGridViewMenu );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -122,11 +107,8 @@ public class TravelStoryOneFragment extends Fragment {
                         new CellTravelStoryOneCardAdapter.TravelStoryRow.CallBack() {
                             @Override
                             public void call(CellTravelStoryOneCardAdapter.TravelStoryRow travelStoryRowItems) {
-
                                 try {
-
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

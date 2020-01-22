@@ -14,15 +14,15 @@ import com.example.myapplication_1.R;
 public class SeekbarFragment extends Fragment implements SeekBar.OnSeekBarChangeListener{
 
     public static final String TAG = "SeekbarFragment";
-    TextView m;
-    int b = 0;
+    private TextView m;
+    private int b = 0;
 
     public static SeekbarFragment getInstance(Bundle args) {
 
-        SeekbarFragment f = new SeekbarFragment();
-        f.setArguments(args);
+        SeekbarFragment seekbarFragment = new SeekbarFragment();
+        seekbarFragment.setArguments(args);
 
-        return f;
+        return seekbarFragment;
     }
 
     @Override

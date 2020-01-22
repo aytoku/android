@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,10 +37,10 @@ public class ChatWithOperator extends Fragment {
 
     public static ChatWithOperator getInstance(Bundle args) {
 
-        ChatWithOperator f = new ChatWithOperator();
-        f.setArguments(args);
+        ChatWithOperator chatWithOperator = new ChatWithOperator();
+        chatWithOperator.setArguments(args);
 
-        return f;
+        return chatWithOperator;
     }
 
     @Override
@@ -52,30 +51,24 @@ public class ChatWithOperator extends Fragment {
 
         View view = inflater.inflate(R.layout.chat_with_operator,
                 container, false);
-        ImageButton androidImageButton = view.findViewById(R.id.img_cross_grey);
 
+        rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
+        rv1 = view.findViewById(R.id.deployed_messages_recycler);
         TextView textView = view.findViewById(R.id.ll_chat_with_operator_title);
         editText = view.findViewById(R.id.ll_driver_chat_text);
-
         imageView = view.findViewById(R.id.ll_chat_with_operator_img);
-
         micro = getResources().getDrawable(R.drawable.ic_chat_micro);
         arrow = getResources().getDrawable(R.drawable.ic_chat_arrow);
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle _args = new Bundle();
                 Fragment emptyChatWithDriverFragment = EmptyChatWithDriverFragment.getInstance(_args);
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, emptyChatWithDriverFragment);
                 fragmentTransaction.commit();
             }
         });
-
-        rv = view.findViewById(R.id.rl_empty_chat_with_driver_recycler);
-        rv1 = view.findViewById(R.id.deployed_messages_recycler);
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -94,7 +87,6 @@ public class ChatWithOperator extends Fragment {
             }
         });
 
-
         return view;
     }
 
@@ -103,10 +95,8 @@ public class ChatWithOperator extends Fragment {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
-
         RecyclerView.Adapter adapterGridViewMenu;
         try {
-
             EmptyChatWithDriverAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<EmptyChatWithDriverAdapter.ItemsMenu> itemsMenuList1 = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new EmptyChatWithDriverAdapter(itemsMenuList1, getActivity().getBaseContext());
@@ -115,15 +105,12 @@ public class ChatWithOperator extends Fragment {
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
 
         RecyclerView recyclerView1 = rv1;
-
         try {
-
             DriverMessagesAdapter.ItemsMenu[] itemsMenu = getMenuItems1();
             List<DriverMessagesAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             adapterGridViewMenu = new DriverMessagesAdapter(itemsMenuList, getActivity().getBaseContext());
@@ -131,7 +118,6 @@ public class ChatWithOperator extends Fragment {
             recyclerView1.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView1.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -146,7 +132,6 @@ public class ChatWithOperator extends Fragment {
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -160,7 +145,6 @@ public class ChatWithOperator extends Fragment {
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
                                 try{
                                     Bundle _args = new Bundle();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

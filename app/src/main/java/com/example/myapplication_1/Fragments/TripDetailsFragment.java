@@ -18,10 +18,10 @@ public class TripDetailsFragment extends Fragment {
 
     public static PaymentChangeFragment getInstance(Bundle args) {
 
-        PaymentChangeFragment f = new PaymentChangeFragment();
-        f.setArguments(args);
+        PaymentChangeFragment paymentChangeFragment = new PaymentChangeFragment();
+        paymentChangeFragment.setArguments(args);
 
-        return f;
+        return paymentChangeFragment;
     }
 
     @Override
@@ -39,10 +39,8 @@ public class TripDetailsFragment extends Fragment {
     }
 
     private void addListener(){
-
         Bundle _args = new Bundle();
         final Fragment machinePurposeTwoFragment = MachinePurposeLowerPartFragment.getInstance(_args);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

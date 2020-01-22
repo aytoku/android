@@ -18,16 +18,15 @@ public class AboutAppFragment  extends Fragment {
 
     public static AboutAppFragment getInstance(Bundle args) {
 
-        AboutAppFragment f = new AboutAppFragment();
-        f.setArguments(args);
+        AboutAppFragment aboutAppFragment = new AboutAppFragment();
+        aboutAppFragment.setArguments(args);
 
-        return f;
+        return aboutAppFragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
 
         View view = inflater.inflate(R.layout.about_app,
@@ -50,7 +49,6 @@ public class AboutAppFragment  extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +57,6 @@ public class AboutAppFragment  extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         relativeLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

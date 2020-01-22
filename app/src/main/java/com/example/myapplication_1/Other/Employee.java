@@ -2,7 +2,6 @@ package com.example.myapplication_1.Other;
 
 public class Employee
 {
-
     private String name;
     private int age;
     private String mail;

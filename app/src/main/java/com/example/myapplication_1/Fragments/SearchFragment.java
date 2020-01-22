@@ -15,10 +15,10 @@ public class SearchFragment extends Fragment {
 
     public static SearchFragment getInstance(Bundle args) {
 
-        SearchFragment f = new SearchFragment();
-        f.setArguments(args);
+        SearchFragment searchFragment = new SearchFragment();
+        searchFragment.setArguments(args);
 
-        return f;
+        return searchFragment;
     }
 
     @Override

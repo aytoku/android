@@ -15,10 +15,10 @@ public class RefusePaymentFragment extends Fragment {
 
     public static RefusePaymentFragment getInstance(Bundle args) {
 
-        RefusePaymentFragment f = new RefusePaymentFragment();
-        f.setArguments(args);
+        RefusePaymentFragment refusePaymentFragment = new RefusePaymentFragment();
+        refusePaymentFragment.setArguments(args);
 
-        return f;
+        return refusePaymentFragment;
     }
 
     @Override

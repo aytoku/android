@@ -22,10 +22,8 @@ public class CountryCodeSelectionExample extends AppCompatActivity {
     }
 
     public void onButtonClick() {
-
         TextView textView = findViewById(R.id.ll_cell_country_code_selection_ll_cell_country_code_selection1_georgia_number_code);
         String stringToPassBack = textView.getText().toString();
-
         Intent intent = new Intent();
         intent.putExtra("keyName", stringToPassBack);
         setResult(RESULT_OK, intent);

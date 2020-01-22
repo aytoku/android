@@ -15,10 +15,10 @@ public class ErrorTwoFragment extends Fragment {
 
     public static ErrorTwoFragment getInstance(Bundle args) {
 
-        ErrorTwoFragment f = new ErrorTwoFragment();
-        f.setArguments(args);
+        ErrorTwoFragment errorTwoFragment = new ErrorTwoFragment();
+        errorTwoFragment.setArguments(args);
 
-        return f;
+        return errorTwoFragment;
     }
 
     @Override

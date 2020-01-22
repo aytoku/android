@@ -15,10 +15,10 @@ public class InformationPartnersFragment extends Fragment {
 
     public static InformationPartnersFragment getInstance(Bundle args) {
 
-        InformationPartnersFragment f = new InformationPartnersFragment();
-        f.setArguments(args);
+        InformationPartnersFragment informationPartnersFragment = new InformationPartnersFragment();
+        informationPartnersFragment.setArguments(args);
 
-        return f;
+        return informationPartnersFragment;
     }
 
     @Override

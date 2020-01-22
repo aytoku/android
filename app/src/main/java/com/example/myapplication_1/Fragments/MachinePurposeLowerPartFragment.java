@@ -15,10 +15,10 @@ public class MachinePurposeLowerPartFragment extends Fragment {
 
     public static MachinePurposeLowerPartFragment getInstance(Bundle args) {
 
-        MachinePurposeLowerPartFragment f = new MachinePurposeLowerPartFragment();
-        f.setArguments(args);
+        MachinePurposeLowerPartFragment machinePurposeLowerPartFragment = new MachinePurposeLowerPartFragment();
+        machinePurposeLowerPartFragment.setArguments(args);
 
-        return f;
+        return machinePurposeLowerPartFragment;
     }
 
     @Override

@@ -13,22 +13,22 @@ import com.example.myapplication_1.R;
 
 import java.util.Objects;
 
-public class DriverSpinnerFragment extends Fragment {
+public class DriverSpinnerFragment extends Fragment{
 
     public static final String TAG = "DriverSpinnerFragment";
-    String[] choose = {"По возрастанию цены", "По убыванию цены", "Не выбрано"};
+    private String[] choose = {"По возрастанию цены", "По убыванию цены", "Не выбрано"};
 
-    public static DriverSpinnerFragment getInstance(Bundle args) {
+    public static DriverSpinnerFragment getInstance(Bundle args){
 
-        DriverSpinnerFragment f = new DriverSpinnerFragment();
-        f.setArguments(args);
+        DriverSpinnerFragment driverSpinnerFragment = new DriverSpinnerFragment();
+        driverSpinnerFragment.setArguments(args);
 
-        return f;
+        return driverSpinnerFragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
 
@@ -37,7 +37,6 @@ public class DriverSpinnerFragment extends Fragment {
 
         Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(Objects.requireNonNull(this.getActivity()), android.R.layout.simple_spinner_item, choose);
-
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 

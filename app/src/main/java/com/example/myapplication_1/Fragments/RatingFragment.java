@@ -60,9 +60,9 @@ public class RatingFragment extends Fragment{
 
     public static RatingFragment getInstance(Bundle args) {
 
-        RatingFragment f = new RatingFragment();
-        f.setArguments(args);
-        return f;
+        RatingFragment ratingFragment = new RatingFragment();
+        ratingFragment.setArguments(args);
+        return ratingFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,7 +78,6 @@ public class RatingFragment extends Fragment{
         RecyclerView tips_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler);
         RecyclerView praise_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler1);
         CardView button = view.findViewById(R.id.ll_rating_cardButton);
-
         starArr = new ImageView[]{
                 star1 = view.findViewById(R.id.ll_rating_red_star1),
                 star2 = view.findViewById(R.id.ll_rating_red_star2),
@@ -88,7 +87,6 @@ public class RatingFragment extends Fragment{
         };
 
         final RecyclerView praiseRecyclerView = praise_rv;
-
         try {
             RecyclerView.Adapter ratingPraiseAdapter = new RatingPraiseAdapter(praiseLists, getActivity().getBaseContext());
             praiseRecyclerView.setAdapter(ratingPraiseAdapter);
@@ -101,7 +99,6 @@ public class RatingFragment extends Fragment{
         }
 
         final RecyclerView tipsRecyclerView = tips_rv;
-
         try {
             ratingTipsAdapter = new RatingTipsAdapter(list, getActivity().getBaseContext());
             tipsRecyclerView.setAdapter(ratingTipsAdapter);
@@ -112,7 +109,6 @@ public class RatingFragment extends Fragment{
         } catch ( NullPointerException e) {
             Log.e(TAG, "onCreateView" +e.getMessage());
         }
-
         star1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,7 +118,6 @@ public class RatingFragment extends Fragment{
                 }
             }
         });
-
         star2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,7 +128,6 @@ public class RatingFragment extends Fragment{
                 }
             }
         });
-
         star3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,7 +139,6 @@ public class RatingFragment extends Fragment{
                 }
             }
         });
-
         star4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,7 +151,6 @@ public class RatingFragment extends Fragment{
                 }
             }
         });
-
         star5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,7 +164,6 @@ public class RatingFragment extends Fragment{
                 }
             }
         });
-
         praiseLists.add(new PraiseList(R.mipmap.finger,"Вежливость"));
         praiseLists.add(new PraiseList(R.mipmap.face,"Вежливость"));
         praiseLists.add(new PraiseList(R.mipmap.handshake,"Вежливость"));
@@ -207,21 +198,19 @@ public class RatingFragment extends Fragment{
 
             @Override
             public JsonObject async(String result) throws ClassCastException {
-                try {
+                try{
                     JsonParser jsonParser = new JsonParser();
                     return  jsonParser.parse(result).getAsJsonObject();
-
-                } catch ( NullPointerException | JsonParseException e) {
+                }catch(NullPointerException | JsonParseException e){
                     Log.e(TAG, "async: " +e.getMessage());
                 }
                 return null;
             }
 
             @Override
-            public void sync(JsonObject result) {
-
+            public void sync(JsonObject result){
                 JsonArray tip_percent = result.getAsJsonArray("tip_percent");
-                for (JsonElement i : tip_percent) {
+                for (JsonElement i : tip_percent){
                     tip_index = i.getAsInt();
                     list.add(tip_index);
                     ratingTipsAdapter.notifyDataSetChanged();
@@ -229,12 +218,10 @@ public class RatingFragment extends Fragment{
             }
 
             @Override
-            public void progress(Integer... status) {
-            }
+            public void progress(Integer... status){}
 
             @Override
-            public void cancel(JsonObject result, Throwable throwable) {
-            }
+            public void cancel(JsonObject result, Throwable throwable){}
         }).addRequestPropertyHead(_mapHead)
             .setAsyncThreadPool(true)
                 .query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
@@ -246,18 +233,16 @@ public class RatingFragment extends Fragment{
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
 
-        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>(){
             @Override
-            public void asyncBefore() throws InterruptedException {}
+            public void asyncBefore() throws InterruptedException{}
 
             @Override
-            public JsonObject async(String result) throws ClassCastException {
-
-                try {
+            public JsonObject async(String result) throws ClassCastException{
+                try{
                     JsonParser jsonParser = new JsonParser();
                     return  jsonParser.parse(result).getAsJsonObject();
-
-                } catch ( NullPointerException | JsonParseException e) {
+                }catch ( NullPointerException | JsonParseException e){
                     Log.e(TAG, "async: " +e.getMessage());
                 }
                 return null;

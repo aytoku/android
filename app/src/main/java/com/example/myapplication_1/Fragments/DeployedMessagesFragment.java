@@ -28,10 +28,10 @@ public class DeployedMessagesFragment extends Fragment {
 
     public static DeployedMessagesFragment getInstance(Bundle args) {
 
-        DeployedMessagesFragment f = new DeployedMessagesFragment();
-        f.setArguments(args);
+        DeployedMessagesFragment deployedMessagesFragment = new DeployedMessagesFragment();
+        deployedMessagesFragment.setArguments(args);
 
-        return f;
+        return deployedMessagesFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,9 +45,7 @@ public class DeployedMessagesFragment extends Fragment {
         RecyclerView deployedMessages_rv = view.findViewById(R.id.deployed_messages_recycler);
 
         final RecyclerView recyclerView = deployedMessages_rv;
-
         try {
-
             DeployedMessagesAdapter.DeployedMessagesItems[] deployedMessagesItems = getDeployedMessagesItems();
             deployedMessagesItemsList = new ArrayList<>(Arrays.asList(deployedMessagesItems));
             deployedMessagesAdapter = new DeployedMessagesAdapter(deployedMessagesItemsList, getActivity().getBaseContext());
@@ -55,7 +53,6 @@ public class DeployedMessagesFragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

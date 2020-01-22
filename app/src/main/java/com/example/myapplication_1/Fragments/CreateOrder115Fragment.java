@@ -31,10 +31,10 @@ public class CreateOrder115Fragment extends Fragment {
 
     public static CreateOrder115Fragment getInstance(Bundle args) {
 
-        CreateOrder115Fragment f = new CreateOrder115Fragment();
-        f.setArguments(args);
+        CreateOrder115Fragment createOrder115Fragment = new CreateOrder115Fragment();
+        createOrder115Fragment.setArguments(args);
 
-        return f;
+        return createOrder115Fragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,20 +46,15 @@ public class CreateOrder115Fragment extends Fragment {
                 container, false);
 
         RecyclerView create_order_rv = view.findViewById(R.id.ll_create_order_1_1_5_recycler);
-
         Button button = view.findViewById(R.id.ll_create_order_1_1_5_add_stop);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 onAddButtonClicked(view);
             }
         });
-
         final RecyclerView recyclerView = create_order_rv;
-
         try {
-
             AdapterCreateOrder115.CreateOrderItems[] createOrderItems = getCreateOrderItems();
             createOrderItemsList = new ArrayList<>(Arrays.asList(createOrderItems));
             createOrder115Adapter = new AdapterCreateOrder115(createOrderItemsList, getActivity().getBaseContext());
@@ -67,11 +62,9 @@ public class CreateOrder115Fragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
         ItemTouchHelper.SimpleCallback helper = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,0) {
 
             @Override
@@ -79,7 +72,6 @@ public class CreateOrder115Fragment extends Fragment {
 
                 int position_dragged = dragged.getAdapterPosition();
                 int position_target = target.getAdapterPosition();
-
                 Collections.swap(createOrderItemsList, position_dragged, position_target);
                 createOrder115Adapter.notifyItemMoved(position_dragged, position_target);
 
@@ -106,7 +98,6 @@ public class CreateOrder115Fragment extends Fragment {
             ));
             createOrder115Adapter.notifyItemInserted(createOrderItemsList.size()-1);
             createOrder115Adapter.notifyDataSetChanged();
-
         } catch(NumberFormatException e) {
             Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
                     Toast.LENGTH_SHORT).show();

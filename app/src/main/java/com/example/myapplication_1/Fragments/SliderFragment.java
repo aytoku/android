@@ -17,10 +17,10 @@ public class SliderFragment extends Fragment {
 
     public static SliderFragment getInstance(Bundle args) {
 
-        SliderFragment f = new SliderFragment();
-        f.setArguments(args);
+        SliderFragment sliderFragment= new SliderFragment();
+        sliderFragment.setArguments(args);
 
-        return f;
+        return sliderFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,7 +30,6 @@ public class SliderFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.slider_main,
                 container, false);
-
 
         ViewPager viewPager = view.findViewById(R.id.viewPager);
         if (viewPager != null) {

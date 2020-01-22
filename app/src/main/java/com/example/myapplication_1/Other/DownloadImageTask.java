@@ -37,5 +37,4 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     protected void onPostExecute(Bitmap result) {
         this.callBack.sync(result);
     }
-
 }

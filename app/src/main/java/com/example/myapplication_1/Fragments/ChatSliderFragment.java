@@ -17,10 +17,10 @@ public class ChatSliderFragment extends Fragment {
 
     public static ChatSliderFragment getInstance(Bundle args) {
 
-        ChatSliderFragment f = new ChatSliderFragment();
-        f.setArguments(args);
+        ChatSliderFragment chatSliderFragment = new ChatSliderFragment();
+        chatSliderFragment.setArguments(args);
 
-        return f;
+        return chatSliderFragment;
     }
 
     @Override
@@ -35,7 +35,6 @@ public class ChatSliderFragment extends Fragment {
         ViewPager viewPager = (ViewPager)view.findViewById(R.id.chat_slider_viewPager);
         TabLayout tabLayout = (TabLayout)view.findViewById(R.id.chat_slider_tabLayout);
         tabLayout.setupWithViewPager(viewPager, true);
-
 
         return view;
     }

@@ -18,10 +18,10 @@ public class EditMyAddressFragment extends Fragment {
 
     public static EditMyAddressFragment getInstance(Bundle args) {
 
-        EditMyAddressFragment f = new EditMyAddressFragment();
-        f.setArguments(args);
+        EditMyAddressFragment editMyAddressFragment = new EditMyAddressFragment();
+        editMyAddressFragment.setArguments(args);
 
-        return f;
+        return editMyAddressFragment;
     }
 
     @Override
@@ -33,26 +33,23 @@ public class EditMyAddressFragment extends Fragment {
         View view = inflater.inflate(R.layout.edit_my_address_fragment,
                 container, false);
 
+        TextView textView = view.findViewById(R.id.rl_edit_my_address_delete);
         ImageButton button = view.findViewById(R.id.rl_edit_my_address_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle _args = new Bundle();
                 Fragment addressFragment = AddressFragment.getInstance(_args);
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, addressFragment);
                 fragmentTransaction.commit();
             }
         });
-
-        TextView textView = view.findViewById(R.id.rl_edit_my_address_delete);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle _args = new Bundle();
                 Fragment addressFragment = AddressFragment.getInstance(_args);
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, addressFragment);
                 fragmentTransaction.commit();

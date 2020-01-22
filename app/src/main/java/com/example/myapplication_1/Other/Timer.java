@@ -14,17 +14,15 @@ public class Timer extends Activity {
 
     private TextView textView;
     private ProgressBar progressBar;
-    private Button button;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timer);
 
-
         textView = findViewById(R.id.textViewCounter);
         progressBar = findViewById(R.id.progress_bar);
-        button = findViewById(R.id.timer_button);
+        Button button = findViewById(R.id.timer_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,7 +32,6 @@ public class Timer extends Activity {
                         textView.setText("" + l);
                         progressBar.setProgress((int)1/1000);
                     }
-
                     @Override
                     public void onFinish() {
                         textView.setText("_");

@@ -15,17 +15,17 @@ public class AlertFragment extends Fragment {
 
     public static AlertFragment getInstance(Bundle args) {
 
-        AlertFragment f = new AlertFragment();
-        f.setArguments(args);
+        AlertFragment alertFragment = new AlertFragment();
+        alertFragment.setArguments(args);
 
-        return f;
+        return alertFragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
+
         View view = inflater.inflate(R.layout.alert,
                 container, false);
 

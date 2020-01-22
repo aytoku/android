@@ -25,10 +25,10 @@ public class Menu162Fragment extends Fragment {
 
     public static Menu162Fragment getInstance(Bundle args) {
 
-        Menu162Fragment f = new Menu162Fragment();
-        f.setArguments(args);
+        Menu162Fragment menu162Fragment = new Menu162Fragment();
+        menu162Fragment.setArguments(args);
 
-        return f;
+        return menu162Fragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,7 +45,6 @@ public class Menu162Fragment extends Fragment {
 
         Bundle _args = new Bundle();
         final Fragment serviceFragment = ServiceFragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,9 +55,7 @@ public class Menu162Fragment extends Fragment {
         });
 
         final RecyclerView recyclerView = menu162_rv;
-
         try {
-
             AdapterMenu162.Menu162List[] menu162Lists = getMenu162ListItems();
             List<AdapterMenu162.Menu162List> itemsMenuList = new ArrayList<>(Arrays.asList(menu162Lists));
             RecyclerView.Adapter menu162Adapter = new AdapterMenu162(itemsMenuList, getActivity().getBaseContext());
@@ -66,7 +63,6 @@ public class Menu162Fragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -119,7 +115,6 @@ public class Menu162Fragment extends Fragment {
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
-
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();

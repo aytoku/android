@@ -18,10 +18,10 @@ public class InformationFragment extends Fragment {
 
     public static InformationFragment getInstance(Bundle args) {
 
-        InformationFragment f = new InformationFragment();
-        f.setArguments(args);
+        InformationFragment informationFragment = new InformationFragment();
+        informationFragment.setArguments(args);
 
-        return f;
+        return informationFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,7 +51,6 @@ public class InformationFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         relativeLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +59,6 @@ public class InformationFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         relativeLayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +67,6 @@ public class InformationFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         relativeLayout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -26,14 +26,14 @@ public class AssistantFragment extends Fragment {
 
     public static AssistantFragment getInstance(Bundle args) {
 
-        AssistantFragment f = new AssistantFragment();
-        f.setArguments(args);
+        AssistantFragment assistantFragment = new AssistantFragment();
+        assistantFragment.setArguments(args);
 
-        return f;
+        return assistantFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
 
@@ -43,9 +43,7 @@ public class AssistantFragment extends Fragment {
         RecyclerView assistant_rv = view.findViewById(R.id.assistant_recycler);
 
         final RecyclerView recyclerView = assistant_rv;
-
         try {
-
             AssistantAdapter.AssistantItems[] assistantItems = getAssistantItems();
             assistantItemsList = new ArrayList<>(Arrays.asList(assistantItems));
             assistantAdapter = new AssistantAdapter(assistantItemsList, getActivity().getBaseContext());
@@ -66,7 +64,6 @@ public class AssistantFragment extends Fragment {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-
                 int position = viewHolder.getAdapterPosition();
                 assistantItemsList.remove(position);
                 assistantAdapter.notifyDataSetChanged();

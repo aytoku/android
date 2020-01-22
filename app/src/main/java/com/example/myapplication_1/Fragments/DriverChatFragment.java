@@ -15,10 +15,10 @@ public class DriverChatFragment extends Fragment {
 
     public static DriverChatFragment getInstance(Bundle args) {
 
-        DriverChatFragment f = new DriverChatFragment();
-        f.setArguments(args);
+        DriverChatFragment driverChatFragment = new DriverChatFragment();
+        driverChatFragment.setArguments(args);
 
-        return f;
+        return driverChatFragment;
     }
 
     @Override

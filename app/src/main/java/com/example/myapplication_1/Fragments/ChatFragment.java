@@ -20,10 +20,10 @@ public class ChatFragment extends Fragment {
 
     public static ChatFragment getInstance(Bundle args) {
 
-        ChatFragment f = new ChatFragment();
-        f.setArguments(args);
+        ChatFragment chatFragment = new ChatFragment();
+        chatFragment.setArguments(args);
 
-        return f;
+        return chatFragment;
     }
 
     @Override
@@ -45,17 +45,13 @@ public class ChatFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerView = rv;
-
         try {
-
             ChatAdapter.ChatItems[] chatItems = getChatItems();
-
             ChatAdapter chatAdapter = new ChatAdapter(chatItems, getActivity().getBaseContext());
             recyclerView.setAdapter( chatAdapter );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -68,11 +64,8 @@ public class ChatFragment extends Fragment {
                 new ChatAdapter.ChatItems(new ChatAdapter.ChatItems.CallBack() {
                     @Override
                     public void call(ChatAdapter.ChatItems itemsMenu) {
-
                         try {
-
                             Bundle _args = new Bundle();
-
                         } catch (NullPointerException e) {
                             e.printStackTrace();
                         }
@@ -82,11 +75,8 @@ public class ChatFragment extends Fragment {
                 new ChatAdapter.ChatItems(new ChatAdapter.ChatItems.CallBack() {
                     @Override
                     public void call(ChatAdapter.ChatItems itemsMenu) {
-
                         try {
-
                             Bundle _args = new Bundle();
-
                         } catch (NullPointerException e) {
                             e.printStackTrace();
                         }

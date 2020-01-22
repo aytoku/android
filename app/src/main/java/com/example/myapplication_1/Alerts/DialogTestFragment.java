@@ -22,8 +22,8 @@ public class DialogTestFragment extends DialogFragment {
     private EditText greetingsEditText;
 
     public static DialogTestFragment getInstance() {
-        DialogTestFragment fragment = new DialogTestFragment();
-        return fragment;
+        DialogTestFragment dialogTestFragment = new DialogTestFragment();
+        return dialogTestFragment;
     }
 
     @Nullable

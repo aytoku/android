@@ -15,10 +15,10 @@ public class PaymentChangeFragment extends Fragment {
 
     public static PaymentChangeFragment getInstance(Bundle args) {
 
-        PaymentChangeFragment f = new PaymentChangeFragment();
-        f.setArguments(args);
+        PaymentChangeFragment paymentChangeFragment = new PaymentChangeFragment();
+        paymentChangeFragment.setArguments(args);
 
-        return f;
+        return paymentChangeFragment;
     }
 
     @Override

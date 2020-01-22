@@ -20,10 +20,10 @@ public class ExpListFragment1 extends Fragment {
 
     public static ExpListFragment1 getInstance(Bundle args) {
 
-        ExpListFragment1 f = new ExpListFragment1();
-        f.setArguments(args);
+        ExpListFragment1 expListFragment1 = new ExpListFragment1();
+        expListFragment1.setArguments(args);
 
-        return f;
+        return expListFragment1;
     }
 
     @Override
@@ -50,7 +50,6 @@ public class ExpListFragment1 extends Fragment {
 
 //        final ExpListAdapter1 adapter = new ExpListAdapter1(getActivity(), groups, list);
     //    listView.setAdapter(adapter);
-
         return view;
     }
 }

@@ -19,10 +19,10 @@ public class PrivacyPolicyFragment extends Fragment {
 
     public static PrivacyPolicyFragment getInstance(Bundle args) {
 
-        PrivacyPolicyFragment f = new PrivacyPolicyFragment();
-        f.setArguments(args);
+        PrivacyPolicyFragment privacyPolicyFragment = new PrivacyPolicyFragment();
+        privacyPolicyFragment.setArguments(args);
 
-        return f;
+        return privacyPolicyFragment;
     }
 
     @Override
@@ -35,7 +35,6 @@ public class PrivacyPolicyFragment extends Fragment {
                 container, false);
 
         ImageButton imageButton = view.findViewById(R.id.rl_choose_place_button);
-
         WebView webView = view.findViewById(R.id.webView);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -43,7 +42,6 @@ public class PrivacyPolicyFragment extends Fragment {
 
         Bundle _args = new Bundle();
         final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

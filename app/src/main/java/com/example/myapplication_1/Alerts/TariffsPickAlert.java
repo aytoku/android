@@ -47,10 +47,8 @@ public class TariffsPickAlert extends DialogFragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         Log.i(TAG, "onCreateView: start");
-
         try {
             getDialog().getWindow().setBackgroundDrawableResource( android.R.drawable.screen_background_dark_transparent );
-
         } catch ( NullPointerException npe) {
             Log.e(TAG, "onCreateView: " + npe.getMessage() );
         }
@@ -64,9 +62,7 @@ public class TariffsPickAlert extends DialogFragment {
         });
 
         RecyclerView tariffsPickAlert_rv = view.findViewById(R.id.ll_tariffs_pick_recycler);
-
         final RecyclerView recyclerView = tariffsPickAlert_rv;
-
         try{
             TariffsPickAdapter.TariffsPickItems[] tariffsPickItems = getTariffsPickItems();
             List<TariffsPickAdapter.TariffsPickItems> tariffsPickItemsList = new ArrayList<>(Arrays.asList(tariffsPickItems));
@@ -75,11 +71,9 @@ public class TariffsPickAlert extends DialogFragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
-
         }catch (NullPointerException e){
             e.printStackTrace();
         }
-
         return view;
     }
 

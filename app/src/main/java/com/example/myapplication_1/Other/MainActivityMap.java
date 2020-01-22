@@ -8,7 +8,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,17 +26,13 @@ import ru.osety.amironlibrary.DrawableUtils;
 
 public class MainActivityMap extends AppCompatActivity {
 
-    ImageButton androidImageButton;
-
     RecyclerView rv;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
-        androidImageButton = findViewById(R.id.img_cross_grey);
 
         setContentView(R.layout.map);
 
@@ -55,26 +50,20 @@ public class MainActivityMap extends AppCompatActivity {
         super.onStart();
 
         RecyclerView recyclerViewMenu = rv;
-
         try {
-
             AdapterGridViewMenu.ItemsMenu[] itemsMenu = getMenuItems();
-
             AdapterGridViewMenu adapterGridViewMenu = new AdapterGridViewMenu(itemsMenu, getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );
             recyclerViewMenu.setLayoutManager(
                     new LinearLayoutManager( getBaseContext(), RecyclerView.HORIZONTAL, false ) );
             recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
     }
 
     private AdapterGridViewMenu.ItemsMenu[] getMenuItems() {
-
         AdapterGridViewMenu.ItemsMenu []_arr = new AdapterGridViewMenu.ItemsMenu[]{
-
                 new AdapterGridViewMenu.ItemsMenu(
                         getResources().getColor(R.color.my_gray),
                         R.mipmap.icon_light_car,
@@ -82,15 +71,11 @@ public class MainActivityMap extends AppCompatActivity {
                         new AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
-
                                 try {
-
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
-
                             }
                         }, "5 мин"),
 
@@ -101,15 +86,11 @@ public class MainActivityMap extends AppCompatActivity {
                         new AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
-
                                 try {
-
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
-
                             }
                         }, "2 мин"),
 
@@ -120,15 +101,11 @@ public class MainActivityMap extends AppCompatActivity {
                         new AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
-
                                 try {
-
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
-
                             }
                         }, "8 мин"),
 
@@ -139,15 +116,11 @@ public class MainActivityMap extends AppCompatActivity {
                         new AdapterGridViewMenu.ItemsMenu.CallBack() {
                             @Override
                             public void call(AdapterGridViewMenu.ItemsMenu itemsMenu) {
-
                                 try {
-
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
-
                             }
                         }, "15 мин")
         };
@@ -182,13 +155,10 @@ public class MainActivityMap extends AppCompatActivity {
 
             Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
             float _dens = context.getResources().getDisplayMetrics().density;
-
             Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
             int _size = Math.round(_dens * 40);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
             viewHolder.img.setBackground( ic_rout_color );
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap );
@@ -197,11 +167,8 @@ public class MainActivityMap extends AppCompatActivity {
             viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     try {
-
                         _item.getCallBack().call(_item);
-
                     } catch ( NullPointerException e) {
                         e.printStackTrace();
                     }
@@ -238,7 +205,7 @@ public class MainActivityMap extends AppCompatActivity {
                 return callBack;
             }
 
-            public int getImgResId() {
+            int getImgResId() {
                 return imgResId;
             }
 
@@ -246,24 +213,22 @@ public class MainActivityMap extends AppCompatActivity {
                 return str;
             }
 
-            public String getTime() {
+            String getTime() {
                 return time;
             }
 
-            public int getColorBackground() {
+            int getColorBackground() {
                 return colorBackgroundInt;
             }
-
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
-
             private final ImageView img;
             private final TextView title;
             private final CardView cv_item;
             private final TextView time;
 
-            public ViewHolder(@NonNull View itemView) {
+            ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 cv_item = itemView.findViewById(R.id.cv_item);
                 img = itemView.findViewById(R.id.img);

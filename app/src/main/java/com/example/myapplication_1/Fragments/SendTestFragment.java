@@ -23,8 +23,8 @@ public class SendTestFragment extends Fragment {
     private TextView showGreetingsTextView;
 
     public static SendTestFragment getInstance() {
-        SendTestFragment fragment = new SendTestFragment();
-        return fragment;
+        SendTestFragment sendTestFragment = new SendTestFragment();
+        return sendTestFragment;
     }
 
     @Nullable
@@ -34,7 +34,6 @@ public class SendTestFragment extends Fragment {
 
         showGreetingsTextView = view.findViewById(R.id.show_greetings_text_view);
         Button button = view.findViewById(R.id.show_dialog_fragment_button);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +43,7 @@ public class SendTestFragment extends Fragment {
         return view;
     }
 
-    protected void showDialog() {
+    private void showDialog() {
         DialogTestFragment dialogFragment = DialogTestFragment.getInstance();
         dialogFragment.setTargetFragment(SendTestFragment.this, TARGET_FRAGMENT_REQUEST_CODE);
         dialogFragment.show(getFragmentManager(), DialogTestFragment.TAG);

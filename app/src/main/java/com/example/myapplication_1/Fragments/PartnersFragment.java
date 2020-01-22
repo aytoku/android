@@ -23,10 +23,10 @@ public class PartnersFragment extends Fragment {
 
     public static PartnersFragment getInstance(Bundle args) {
 
-        PartnersFragment f = new PartnersFragment();
-        f.setArguments(args);
+        PartnersFragment partnersFragment = new PartnersFragment();
+        partnersFragment.setArguments(args);
 
-        return f;
+        return partnersFragment;
     }
 
     @Override
@@ -45,7 +45,6 @@ public class PartnersFragment extends Fragment {
         Bundle _args = new Bundle();
         final Fragment informationFragment = InformationFragment.getInstance(_args);
         final Fragment blacklistPartnersFragment = BlacklistPartnersFragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +53,6 @@ public class PartnersFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,16 +70,13 @@ public class PartnersFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerView = partners_rv;
-
         try {
             PartnersAdapter.PartnersItems[] partnersItems = getPartnersItems();
-
             PartnersAdapter partnersAdapter = new PartnersAdapter(partnersItems, getActivity().getBaseContext());
             recyclerView.setAdapter( partnersAdapter );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -100,11 +95,9 @@ public class PartnersFragment extends Fragment {
                                 try {
                                     Bundle _args = new Bundle();
                                     Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
-
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, spinnerFragment);
                                     fragmentTransaction.commit();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -120,11 +113,9 @@ public class PartnersFragment extends Fragment {
                         try {
                             Bundle _args = new Bundle();
                             Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
-
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.rl_main, spinnerFragment);
                             fragmentTransaction.commit();
-
                         }catch (NullPointerException e) {
                             e.printStackTrace();
                         }

@@ -22,10 +22,10 @@ public class TravelStoryFragment extends Fragment {
 
     public static TravelStoryFragment getInstance(Bundle args) {
 
-        TravelStoryFragment f = new TravelStoryFragment();
-        f.setArguments(args);
+        TravelStoryFragment travelStoryFragment = new TravelStoryFragment();
+        travelStoryFragment.setArguments(args);
 
-        return f;
+        return travelStoryFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +38,6 @@ public class TravelStoryFragment extends Fragment {
 
         travelStory_rv = view.findViewById(R.id.recycler_travel_story);
         ImageView imageView = view.findViewById(R.id.ll_travel_story_img);
-
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +48,6 @@ public class TravelStoryFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 
@@ -58,16 +56,13 @@ public class TravelStoryFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerView = travelStory_rv;
-
         try {
-
             TravelStoryAdapter.TravelStoryCard[] travelStoryCardItems = getTravelStoryCardItems();
             TravelStoryAdapter travelStoryAdapter = new TravelStoryAdapter(travelStoryCardItems, getActivity().getBaseContext());
             recyclerView.setAdapter( travelStoryAdapter );
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -83,19 +78,14 @@ public class TravelStoryFragment extends Fragment {
                         new TravelStoryAdapter.TravelStoryCard.CallBack() {
                             @Override
                             public void call(TravelStoryAdapter.TravelStoryCard travelStoryCardItems) {
-
                                 try {
-
                                     Bundle _args = new Bundle();
                                     String cv_id =  travelStoryCardItems.getUuid();
                                     _args.putString("uuid", cv_id);
-
                                     Fragment travelStoryFragment = TravelStoryOneFragment.getInstance(_args);
-
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, travelStoryFragment);
                                     fragmentTransaction.commit();
-
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

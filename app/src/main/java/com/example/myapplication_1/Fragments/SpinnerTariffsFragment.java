@@ -16,14 +16,14 @@ import com.example.myapplication_1.R;
 public class SpinnerTariffsFragment extends Fragment {
 
     public static final String TAG = "SpinnerTariffsFragment";
-    String[] choose = {"Эконом", "Стандарт", "Не эконом"};
+    private String[] choose = {"Эконом", "Стандарт", "Не эконом"};
 
     public static SpinnerTariffsFragment getInstance(Bundle args) {
 
-        SpinnerTariffsFragment f = new SpinnerTariffsFragment();
-        f.setArguments(args);
+        SpinnerTariffsFragment spinnerTariffsFragment = new SpinnerTariffsFragment();
+        spinnerTariffsFragment.setArguments(args);
 
-        return f;
+        return spinnerTariffsFragment;
     }
 
     @Override
@@ -35,18 +35,14 @@ public class SpinnerTariffsFragment extends Fragment {
         View view = inflater.inflate(R.layout.tariffs,
                 container, false);
 
+        ImageButton imageButton = view.findViewById(R.id.rl_tariffs_button);
         Spinner spinner = (Spinner) view.findViewById(R.id.choose);
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, choose);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-
-        ImageButton imageButton = view.findViewById(R.id.rl_tariffs_button);
-
         Bundle _args = new Bundle();
         final Fragment informationFragment = InformationFragment.getInstance(_args);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +51,6 @@ public class SpinnerTariffsFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 }

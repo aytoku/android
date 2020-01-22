@@ -22,10 +22,10 @@ public class SettingsFragment extends Fragment {
 
     public static SettingsFragment getInstance(Bundle args) {
 
-        SettingsFragment f = new SettingsFragment();
-        f.setArguments(args);
+        SettingsFragment settingsFragment = new SettingsFragment();
+        settingsFragment.setArguments(args);
 
-        return f;
+        return settingsFragment;
     }
 
     @Override
@@ -58,7 +58,6 @@ public class SettingsFragment extends Fragment {
         super.onStart();
 
         RecyclerView recyclerView = settings_rv;
-
         try {
             SettingsAdapter.SettingsItems[] settingsItems = getSettingItems();
             SettingsAdapter settingsAdapter = new SettingsAdapter(settingsItems, getActivity().getBaseContext());
@@ -66,7 +65,6 @@ public class SettingsFragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

@@ -9,7 +9,7 @@ public class MaskWatcher implements TextWatcher {
     private boolean isDeleting = false;
     private String mask;
 
-    public MaskWatcher(String mask) {
+    private MaskWatcher(String mask) {
         this.mask = mask;
     }
 
@@ -38,7 +38,6 @@ public class MaskWatcher implements TextWatcher {
         if(isDeleting && editableLength-1 >= 0 && mask.charAt(editableLength-1) != '#') {
             editable.delete(editableLength-1, editableLength);
         }
-
         if (isRunning || isDeleting) {
             return;
         }
@@ -50,9 +49,7 @@ public class MaskWatcher implements TextWatcher {
             } else if (mask.charAt(editableLength-1) != '#') {
                 editable.insert(editableLength-1, mask, editableLength-1, editableLength);
             }
-
         }
-
         isRunning = false;
     }
 

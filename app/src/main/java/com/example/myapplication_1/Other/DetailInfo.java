@@ -8,7 +8,7 @@ public class DetailInfo {
     public String getSequence() {
         return sequence;
     }
-    public void setSequence(String sequence) {
+    void setSequence(String sequence) {
         this.sequence = sequence;
     }
     public String getName() {

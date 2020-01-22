@@ -23,10 +23,10 @@ public class Order115Fragment extends Fragment {
 
     public static Order115Fragment getInstance(Bundle args) {
 
-        Order115Fragment f = new Order115Fragment();
-        f.setArguments(args);
+        Order115Fragment order115Fragment = new Order115Fragment();
+        order115Fragment.setArguments(args);
 
-        return f;
+        return order115Fragment;
     }
 
     @Override
@@ -40,9 +40,7 @@ public class Order115Fragment extends Fragment {
 
         RecyclerView order115_rv = view.findViewById(R.id.cl_create_order_1_1_5_recycler);
         final RecyclerView recyclerView = order115_rv;
-
         try {
-
             Order115Adapter.Order115Items[] order115Items = getOrder115Items();
             List<Order115Adapter.Order115Items> order115ItemsList = new ArrayList<>(Arrays.asList(order115Items));
             RecyclerView.Adapter order115Adapter = new Order115Adapter(order115ItemsList, getActivity().getBaseContext());
@@ -50,11 +48,9 @@ public class Order115Fragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
         return view;
     }
 

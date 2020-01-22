@@ -24,10 +24,10 @@ public class NewSearchFragment extends Fragment {
 
     public static NewSearchFragment getInstance(Bundle args) {
 
-        NewSearchFragment f = new NewSearchFragment();
-        f.setArguments(args);
+        NewSearchFragment newSearchFragment = new NewSearchFragment();
+        newSearchFragment.setArguments(args);
 
-        return f;
+        return newSearchFragment;
     }
 
     @Override

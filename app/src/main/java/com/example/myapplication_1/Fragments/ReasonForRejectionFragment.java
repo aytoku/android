@@ -15,10 +15,10 @@ public class ReasonForRejectionFragment extends Fragment {
 
     public static ReasonForRejectionFragment getInstance(Bundle args) {
 
-        ReasonForRejectionFragment f = new ReasonForRejectionFragment();
-        f.setArguments(args);
+        ReasonForRejectionFragment reasonForRejectionFragment = new ReasonForRejectionFragment();
+        reasonForRejectionFragment.setArguments(args);
 
-        return f;
+        return reasonForRejectionFragment;
     }
 
     @Override

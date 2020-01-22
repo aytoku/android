@@ -20,10 +20,10 @@ public class CarCardFragment extends Fragment {
 
     public static CarCardFragment getInstance(Bundle args) {
 
-        CarCardFragment f = new CarCardFragment();
-        f.setArguments(args);
+        CarCardFragment carCardFragment = new CarCardFragment();
+        carCardFragment.setArguments(args);
 
-        return f;
+        return carCardFragment;
     }
 
     @Override
@@ -44,18 +44,14 @@ public class CarCardFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerViewMenu = rv;
-
+        RecyclerView recyclerView = rv;
         try {
-
-            MainActivityAdapter.ItemsMenu[] itemsMenu = getMenuItems();//model_data
-
-            MainActivityAdapter adapterGridViewMenu = new MainActivityAdapter(itemsMenu, getActivity().getBaseContext());//this;
-            recyclerViewMenu.setAdapter( adapterGridViewMenu );
-            recyclerViewMenu.setLayoutManager(
+            MainActivityAdapter.ItemsMenu[] itemsMenu = getMenuItems();
+            MainActivityAdapter adapterGridViewMenu = new MainActivityAdapter(itemsMenu, getActivity().getBaseContext());
+            recyclerView.setAdapter( adapterGridViewMenu );
+            recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ) );
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
-
+            recyclerView.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
@@ -75,7 +71,6 @@ public class CarCardFragment extends Fragment {
                                 try {
 
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -92,7 +87,6 @@ public class CarCardFragment extends Fragment {
                                 try {
 
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -108,7 +102,6 @@ public class CarCardFragment extends Fragment {
                                 try {
 
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -125,7 +118,6 @@ public class CarCardFragment extends Fragment {
                                 try {
 
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -142,7 +134,6 @@ public class CarCardFragment extends Fragment {
                                 try {
 
                                     Bundle _args = new Bundle();
-
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

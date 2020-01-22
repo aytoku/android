@@ -15,10 +15,10 @@ public class MenuTwoFragment extends Fragment {
 
     public static MenuTwoFragment getInstance(Bundle args) {
 
-        MenuTwoFragment f = new MenuTwoFragment();
-        f.setArguments(args);
+        MenuTwoFragment menuTwoFragment = new MenuTwoFragment();
+        menuTwoFragment.setArguments(args);
 
-        return f;
+        return menuTwoFragment;
     }
 
     @Override

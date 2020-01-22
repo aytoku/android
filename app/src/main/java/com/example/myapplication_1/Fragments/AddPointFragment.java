@@ -15,10 +15,10 @@ public class AddPointFragment extends Fragment {
 
     public static AddPointFragment getInstance(Bundle args) {
 
-        AddPointFragment f = new AddPointFragment();
-        f.setArguments(args);
+        AddPointFragment addPointFragment = new AddPointFragment();
+        addPointFragment.setArguments(args);
 
-        return f;
+        return addPointFragment;
     }
 
     @Override
