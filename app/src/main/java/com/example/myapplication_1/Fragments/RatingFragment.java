@@ -20,8 +20,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.auth0.android.jwt.Claim;
-import com.auth0.android.jwt.JWT;
 import com.example.myapplication_1.Adapters.RatingPraiseAdapter;
 import com.example.myapplication_1.Adapters.RatingTipsAdapter;
 import com.example.myapplication_1.ClassesForAdapters.PraiseList;
@@ -44,6 +42,7 @@ public class RatingFragment extends Fragment{
 
     public static final String TAG = "RatingFragment";
     private static final int REQUEST_CODE_TOKEN = 101;
+    private static final String ACCESS_TOKEN = "pk.eyJ1IjoiZmFlbXRheGkiLCJhIjoiY2pyYXNqZ3RhMHQxNTQ5bjBxMWlvcWF6eSJ9.ISSgNBMdG7idL3ljb2ILTg";
     private RecyclerView.Adapter ratingTipsAdapter;
     private ImageView star1;
     private ImageView star2;
@@ -167,7 +166,7 @@ public class RatingFragment extends Fragment{
         praiseLists.add(new PraiseList(R.mipmap.handshake,"Вежливость"));
         praiseLists.add(new PraiseList(R.mipmap.handshake,"Вежливость"));
 
-        button.setOnClickListener(new View.OnClickListener() {
+       button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 postData();
@@ -227,9 +226,14 @@ public class RatingFragment extends Fragment{
 
     private void postData(){
         final JsonObject jo = new JsonObject();
+        jo.addProperty("order_uuid", "585f892b-dfa5-4d07-9bc7-546cc000fa34");
+        jo.addProperty("value", String.valueOf(starArr[1]));
+        jo.addProperty("tip", list.get(4));
+        jo.addProperty("comment", String.valueOf(praiseLists.get(1)));
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
+        _mapHead.put("Authorization", "Bearer " + ACCESS_TOKEN);
 
         new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>(){
             @Override
@@ -248,34 +252,7 @@ public class RatingFragment extends Fragment{
 
             @Override
             public void sync(JsonObject result) {
-                String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOjIsImNsaWVudF91dWlkIjoiNDMxYjNjNmQtZjdkNS00YjQ5LThlYzEtZTE0NjE1ZTVjZjAzIiwiZGV2aWNlX2lkIjoiZmZld3Fld2UiLCJwaG9uZSI6Iis3OTk5ODh3ODc3NjYiLCJleHAiOjE1Njc1MDI3OTAsImlhdCI6MTU2NzQ5NTU5MH0.nRqqasRhnkYjbmy-qadzXEs47SUzeb4R8yjfgmwIF7Y";
-                JWT jwt = new JWT(token);
-                Claim claim = jwt.getClaim("uu_id");
-                String s = claim.asString();
-                String uuid = "uu_id";
-                try {
-                    uuid = result.get("uuid").getAsString();
-                } catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "sync: " +e.getMessage());
-                }
-                int value = 0;
-                try {
-                    value = result.get("value").getAsInt();
-                } catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "sync: " +e.getMessage());
-                }
-                int tip = 0;
-                try {
-                    tip = result.get("tip").getAsInt();
-                } catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "sync: " +e.getMessage());
-                }
-                String comment = "com";
-                try {
-                    comment = result.get("comment").getAsString();
-                } catch ( NullPointerException | JsonParseException e) {
-                    Log.e(TAG, "sync: " +e.getMessage());
-                }
+
             }
 
             @Override

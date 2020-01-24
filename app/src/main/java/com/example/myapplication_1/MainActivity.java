@@ -44,6 +44,7 @@ import com.example.myapplication_1.Fragments.NewCardFragment;
 import com.example.myapplication_1.Fragments.NewSearchFragment;
 import com.example.myapplication_1.Fragments.Order115Fragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
+import com.example.myapplication_1.Fragments.PageMainFragment;
 import com.example.myapplication_1.Fragments.PartnersFragment;
 import com.example.myapplication_1.Fragments.PaymentMethodFragment;
 import com.example.myapplication_1.Fragments.PaymentPickFragment;
@@ -123,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         OrderAcceptFragment orderAcceptFragment = OrderAcceptFragment.getInstance(null);
         Order115Fragment order115Fragment = Order115Fragment.getInstance(null);
 
+        PageMainFragment pageMainFragment = new PageMainFragment().getInstance(null);
         PartnersFragment partnersFragment = PartnersFragment.getInstance(null);
         PaymentChangeAlert paymentChangeAlert = PaymentChangeAlert.getInstance(null);
         PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(null);
@@ -153,6 +155,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, auth111Fragment, Auth111Fragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, ratingFragment, RatingFragment.TAG).commit();
     }
 }

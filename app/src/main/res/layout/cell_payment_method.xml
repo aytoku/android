@@ -17,7 +17,7 @@
 
         <ImageView
             android:id="@+id/rl_payment_method_card_img"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"

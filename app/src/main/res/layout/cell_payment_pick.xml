@@ -8,41 +8,42 @@
         android:id="@+id/rl_payment_pick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:foreground="?android:selectableItemBackground"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
 
         <ImageView
             android:id="@+id/rl_payment_pick_img"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
-            android:src="@mipmap/visa" />
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:src="@mipmap/icon_sber" />
 
         <TextView
             android:id="@+id/rl_payment_pick_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_toEndOf="@+id/rl_payment_pick_img"
-            android:paddingTop="12sp"
-            android:paddingLeft="20dp"
-            android:gravity="center_vertical"
+            android:paddingTop="10dp"
+            android:paddingRight="100dp"
             android:paddingBottom="15dp"
-            android:text="VISA 9966"
+            android:text="Sberbank Online"
             android:textColor="#424242"
             android:textSize="17sp" />
 
         <ImageView
             android:id="@+id/rl_payment_pick_toggleChecked"
             android:layout_width="30dp"
-            android:layout_centerInParent="true"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_weight="0"
-            android:paddingTop="10dp"
+            android:layout_centerInParent="true"
+            android:paddingRight="10dp"
             android:src="@drawable/togle_uncheked" />
 
     </RelativeLayout>

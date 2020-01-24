@@ -273,9 +273,9 @@ public class CodeScreenFragment extends Fragment {
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            final RatingFragment ratingFragment = new RatingFragment();
+                            final Menu11Fragment menu11Fragment = new Menu11Fragment();
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.replace(R.id.rl_main, ratingFragment);
+                            fragmentTransaction.replace(R.id.rl_main, menu11Fragment);
                             fragmentTransaction.commit();
                         }
                     });

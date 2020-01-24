@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="left"
     android:background="@drawable/angle_radius">
 
+    <TextView
+        android:id="@+id/rl_menu_1_1_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:foreground="?android:selectableItemBackground"
+        android:paddingLeft="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Введите номер телефона"
+        android:textColor="#424242"
+        android:textSize="17sp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rl_menu_1_1_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:overScrollMode="never"/>
+        android:layout_below="@+id/rl_menu_1_1_title"
+        android:overScrollMode="never" />
 
-</LinearLayout>
+</RelativeLayout>

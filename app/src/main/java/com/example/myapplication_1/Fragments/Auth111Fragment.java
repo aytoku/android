@@ -1,5 +1,6 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -192,7 +193,9 @@ public class Auth111Fragment extends Fragment {
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            final CodeScreenFragment codeScreenFragment = new CodeScreenFragment();
+//                            String phone_number = editText.getText().toString();
+//                            sendResult(phone_number);
+                            final Menu11Fragment codeScreenFragment = new Menu11Fragment();
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.rl_main, codeScreenFragment);
                             fragmentTransaction.commit();
@@ -227,5 +230,13 @@ public class Auth111Fragment extends Fragment {
                 textView.setText(returnString);
             }
         }
+    }
+
+    private void sendResult(String phone_number){
+        if(getTargetFragment()== null){
+            return;
+        }
+        Intent intent = Menu11Fragment.newIntent(phone_number);
+        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 }

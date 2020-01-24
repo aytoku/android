@@ -1,9 +1,12 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -21,6 +24,8 @@ import java.util.List;
 public class Menu11Fragment extends Fragment {
 
     public static final String TAG = "Menu11Fragment";
+    private static final int REQUEST_CODE = 101;
+    private TextView title;
 
     public static Menu11Fragment getInstance(Bundle args) {
 
@@ -39,10 +44,19 @@ public class Menu11Fragment extends Fragment {
                 container, false);
 
         RecyclerView menu11_rv = view.findViewById(R.id.rl_menu_1_1_recycler);
+        title = view.findViewById(R.id.rl_menu_1_1_title);
+        title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle _args = new Bundle();
+                Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.rl_main, auth111Fragment);
+                fragmentTransaction.commit();
+            }
+        });
         final RecyclerView recyclerView = menu11_rv;
-
         try {
-
             AdapterMenu11.MenuList[] menuLists = getMenuListItems();
             List<AdapterMenu11.MenuList> itemsMenuList = new ArrayList<>(Arrays.asList(menuLists));
             RecyclerView.Adapter menu11Adapter = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
@@ -54,20 +68,12 @@ public class Menu11Fragment extends Fragment {
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
         return view;
     }
 
     private AdapterMenu11.MenuList[] getMenuListItems() {
 
         AdapterMenu11.MenuList[] arr = new AdapterMenu11.MenuList[]{
-
-                new AdapterMenu11.MenuList(
-                        "+7 963 377 88 44",
-                        new AdapterMenu11.MenuList.CallBack(){
-                            @Override
-                            public void call(AdapterMenu11.MenuList menuList){}
-                        }),
 
                 new AdapterMenu11.MenuList(
                         "Способы оплаты",
@@ -172,5 +178,21 @@ public class Menu11Fragment extends Fragment {
                         })
         };
         return arr;
+    }
+
+    public void onActivityResult(int resultCode, int requestCode, Intent intent){
+        if(resultCode != Activity.RESULT_OK){
+            return;
+        }
+        if(requestCode == REQUEST_CODE){
+            String phone_number = intent.getStringExtra("phone_number");
+            title.setText(phone_number);
+        }
+    }
+
+    static Intent newIntent(String phone_number){
+        Intent intent = new Intent();
+        intent.putExtra("phone_number", phone_number);
+        return intent;
     }
 }
