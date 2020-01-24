@@ -44,7 +44,7 @@ import com.example.myapplication_1.Fragments.NewCardFragment;
 import com.example.myapplication_1.Fragments.NewSearchFragment;
 import com.example.myapplication_1.Fragments.Order115Fragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
-import com.example.myapplication_1.Fragments.PageMainFragment;
+import com.example.myapplication_1.Other.PageMainFragment;
 import com.example.myapplication_1.Fragments.PartnersFragment;
 import com.example.myapplication_1.Fragments.PaymentMethodFragment;
 import com.example.myapplication_1.Fragments.PaymentPickFragment;

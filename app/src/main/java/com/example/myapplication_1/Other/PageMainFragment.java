@@ -1,4 +1,4 @@
-package com.example.myapplication_1.Fragments;
+package com.example.myapplication_1.Other;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -17,16 +17,13 @@ import com.example.myapplication_1.R;
 public class PageMainFragment extends Fragment {
 
     public static final String TAG = "PageMainFragment";
-    static final int PAGE_COUNT = 10;
+    private static final int PAGE_COUNT = 10;
     public static PageMainFragment getInstance(Bundle args) {
 
         PageMainFragment pageMainFragment = new PageMainFragment();
         pageMainFragment.setArguments(args);
         return pageMainFragment;
     }
-
-    ViewPager pager;
-    PagerAdapter pagerAdapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,8 +34,8 @@ public class PageMainFragment extends Fragment {
                 container, false);
 
 
-        pager = view.findViewById(R.id.pager);
-        pagerAdapter = new MyFragmentPagerAdapter(getFragmentManager());
+        ViewPager pager = view.findViewById(R.id.pager);
+        PagerAdapter pagerAdapter = new MyFragmentPagerAdapter(getFragmentManager());
         pager.setAdapter(pagerAdapter);
 
         pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -63,7 +60,7 @@ public class PageMainFragment extends Fragment {
 
     private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
-        public MyFragmentPagerAdapter(FragmentManager fm) {
+        MyFragmentPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
