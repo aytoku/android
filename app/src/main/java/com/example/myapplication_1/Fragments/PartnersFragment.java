@@ -19,7 +19,7 @@ import com.example.myapplication_1.R;
 public class PartnersFragment extends Fragment {
 
     public static final String TAG = "PartnersFragment";
-    RecyclerView partners_rv;
+    private RecyclerView partners_rv;
 
     public static PartnersFragment getInstance(Bundle args) {
 

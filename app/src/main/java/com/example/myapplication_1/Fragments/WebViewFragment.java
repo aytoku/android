@@ -43,7 +43,7 @@ public class WebViewFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle _args = new Bundle();
-                final Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                final Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, auth111Fragment);
                 fragmentTransaction.commit();

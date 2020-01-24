@@ -1,11 +1,14 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -34,16 +37,39 @@ public class ServiceFragment extends Fragment {
                 container, false);
 
         ImageButton imageButton = view.findViewById(R.id.ll_service_button);
+        RelativeLayout relativeLayout1 = view.findViewById(R.id.rl_service1);
+        RelativeLayout relativeLayout2 = view.findViewById(R.id.rl_service2);
         RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_service3);
+        final TextView textView = view.findViewById(R.id.ll_service_ad_ride);
 
         Bundle _args = new Bundle();
-        final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-        final Fragment menu161Fragment = Menu162Fragment.getInstance(_args);
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+        final Menu162Fragment menu161Fragment = Menu162Fragment.getInstance(_args);
+        final TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
+        final ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, menu11Fragment);
+                fragmentTransaction.commit();
+            }
+        });
+        relativeLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.rl_main, travelStoryFragment);
+                fragmentTransaction.commit();
+            }
+        });
+        relativeLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String message = textView.getText().toString();
+                sendResult(message);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                 fragmentTransaction.commit();
             }
         });
@@ -56,5 +82,12 @@ public class ServiceFragment extends Fragment {
             }
         });
         return view;
+    }
+    private void sendResult(String message){
+        if(getTargetFragment() == null){
+            return;
+        }
+        Intent intent = ProgramErrorTwoFragment.newIntent(message);
+        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 }

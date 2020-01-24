@@ -37,9 +37,9 @@ public class AboutAppFragment  extends Fragment {
         RelativeLayout relativeLayout1 = view.findViewById(R.id.rl_about_app_rl_about_app1);
 
         Bundle _args = new Bundle();
-        final Fragment informationFragment = InformationFragment.getInstance(_args);
-        final Fragment privacyPolicyFragment = PrivacyPolicyFragment.getInstance(_args);
-        final Fragment userAgreementFragment = UserAgreementFragment.getInstance(_args);
+        final InformationFragment informationFragment = InformationFragment.getInstance(_args);
+        final PrivacyPolicyFragment privacyPolicyFragment = PrivacyPolicyFragment.getInstance(_args);
+        final UserAgreementFragment userAgreementFragment = UserAgreementFragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override

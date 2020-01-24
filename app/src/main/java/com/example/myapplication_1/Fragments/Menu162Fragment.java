@@ -1,5 +1,7 @@
 package com.example.myapplication_1.Fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ import java.util.List;
 public class Menu162Fragment extends Fragment {
 
     public static final String TAG = "Menu162Fragment";
+    private static final int REQUEST_CODE = 101;
 
     public static Menu162Fragment getInstance(Bundle args) {
 
@@ -86,6 +89,10 @@ public class Menu162Fragment extends Fragment {
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle _args = new Bundle();
+                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
+                                    fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -100,6 +107,10 @@ public class Menu162Fragment extends Fragment {
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle _args = new Bundle();
+                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
+                                    fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -114,7 +125,7 @@ public class Menu162Fragment extends Fragment {
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
+                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();
@@ -125,5 +136,14 @@ public class Menu162Fragment extends Fragment {
                         })
         };
         return arr;
+    }
+
+    public void onActivityResult(int resultCode, int requestCode, Intent intent){
+        if(resultCode != Activity.RESULT_OK){
+            return;
+        }
+        if(requestCode == REQUEST_CODE){
+            String message = intent.getStringExtra("message");
+        }
     }
 }

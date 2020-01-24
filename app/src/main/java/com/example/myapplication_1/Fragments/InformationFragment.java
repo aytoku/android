@@ -38,10 +38,10 @@ public class InformationFragment extends Fragment {
         RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_info1);
 
         Bundle _args = new Bundle();
-        final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-        final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
-        final Fragment partnersFragment = PartnersFragment.getInstance(_args);
-        final Fragment spinnerTariffsFragment = SpinnerTariffsFragment.getInstance(_args);
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+        final AboutAppFragment aboutAppFragment = AboutAppFragment.getInstance(_args);
+        final PartnersFragment partnersFragment = PartnersFragment.getInstance(_args);
+        final SpinnerTariffsFragment spinnerTariffsFragment = SpinnerTariffsFragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override

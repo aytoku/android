@@ -84,7 +84,7 @@ public class CountryCodeSelectionFragment extends Fragment {
                             public void call(CountryCodeSelectionAdapter.CountryCodeItems countryCodeItems) {
                                 try{
                                     Bundle _args = new Bundle();
-                                    Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                                    Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
                                     auth111Fragment.setArguments(_args);
                                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -105,7 +105,7 @@ public class CountryCodeSelectionFragment extends Fragment {
                             public void call(CountryCodeSelectionAdapter.CountryCodeItems countryCodeItems) {
                                 try{
                                     Bundle _args = new Bundle();
-                                    Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                                    Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
                                     auth111Fragment.setArguments(_args);
                                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();

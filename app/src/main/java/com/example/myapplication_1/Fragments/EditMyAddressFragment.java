@@ -39,7 +39,7 @@ public class EditMyAddressFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle _args = new Bundle();
-                Fragment addressFragment = AddressFragment.getInstance(_args);
+                AddressFragment addressFragment = AddressFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, addressFragment);
                 fragmentTransaction.commit();
@@ -49,7 +49,7 @@ public class EditMyAddressFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle _args = new Bundle();
-                Fragment addressFragment = AddressFragment.getInstance(_args);
+                AddressFragment addressFragment = AddressFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, addressFragment);
                 fragmentTransaction.commit();

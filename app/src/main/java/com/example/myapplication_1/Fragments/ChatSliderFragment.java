@@ -32,8 +32,8 @@ public class ChatSliderFragment extends Fragment {
         View view = inflater.inflate(R.layout.chat_slider,
                 container, false);
 
-        ViewPager viewPager = (ViewPager)view.findViewById(R.id.chat_slider_viewPager);
-        TabLayout tabLayout = (TabLayout)view.findViewById(R.id.chat_slider_tabLayout);
+        ViewPager viewPager = view.findViewById(R.id.chat_slider_viewPager);
+        TabLayout tabLayout = view.findViewById(R.id.chat_slider_tabLayout);
         tabLayout.setupWithViewPager(viewPager, true);
 
         return view;

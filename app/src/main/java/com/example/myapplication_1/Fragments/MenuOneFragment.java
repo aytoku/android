@@ -65,7 +65,7 @@ public class MenuOneFragment extends Fragment {
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                                    Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, auth111Fragment);
                                     fragmentTransaction.commit();
@@ -82,7 +82,7 @@ public class MenuOneFragment extends Fragment {
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
+                                    PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, paymentPickFragment);
                                     fragmentTransaction.commit();
@@ -100,7 +100,7 @@ public class MenuOneFragment extends Fragment {
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment settingsFragment = SettingsFragment.getInstance(_args);
+                                    SettingsFragment settingsFragment = SettingsFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, settingsFragment);
                                     fragmentTransaction.commit();
@@ -117,7 +117,7 @@ public class MenuOneFragment extends Fragment {
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment informationFragment = InformationFragment.getInstance(_args);
+                                    InformationFragment informationFragment = InformationFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, informationFragment);
                                     fragmentTransaction.commit();
@@ -134,7 +134,7 @@ public class MenuOneFragment extends Fragment {
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment serviceFragment = ServiceFragment.getInstance(_args);
+                                    ServiceFragment serviceFragment = ServiceFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, serviceFragment);
                                     fragmentTransaction.commit();

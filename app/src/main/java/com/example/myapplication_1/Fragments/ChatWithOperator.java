@@ -63,7 +63,7 @@ public class ChatWithOperator extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle _args = new Bundle();
-                Fragment emptyChatWithDriverFragment = EmptyChatWithDriverFragment.getInstance(_args);
+                EmptyChatWithDriverFragment emptyChatWithDriverFragment = EmptyChatWithDriverFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, emptyChatWithDriverFragment);
                 fragmentTransaction.commit();

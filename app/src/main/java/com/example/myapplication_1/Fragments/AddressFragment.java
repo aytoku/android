@@ -48,7 +48,7 @@ public class AddressFragment extends Fragment {
         ImageButton imageButton = view.findViewById(R.id.ll_address_rl_address_button_strelka);
 
         Bundle _args = new Bundle();
-        final Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,13 +61,11 @@ public class AddressFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 onAddButtonClicked(view);
             }
         });
 
         final RecyclerView recyclerView = address_rv;
-
         try {
             AddressAdapter.AddressItems[] addressItems = getAddressItems();
             addressItemsList = new ArrayList<>(Arrays.asList(addressItems));
@@ -94,8 +92,7 @@ public class AddressFragment extends Fragment {
                         public void call(AddressAdapter.AddressItems itemsMenu){
                             try {
                                 Bundle _args = new Bundle();
-                                Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
-
+                                EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
                                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                 fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                 fragmentTransaction.commit();
@@ -125,8 +122,7 @@ public class AddressFragment extends Fragment {
                             public void call(AddressAdapter.AddressItems addressItems){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
-
+                                    EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                     fragmentTransaction.commit();
@@ -144,8 +140,7 @@ public class AddressFragment extends Fragment {
                             public void call(AddressAdapter.AddressItems addressItems){
                                 try {
                                     Bundle _args = new Bundle();
-                                    Fragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
-
+                                    EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                     fragmentTransaction.commit();

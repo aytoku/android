@@ -58,16 +58,6 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
         viewHolder.card_img.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.card_img.setImageBitmap( _bitmap );
-
-
-        float _dens1 = context.getResources().getDisplayMetrics().density;
-        int _size1 = Math.round(_dens1 * 40);
-        Drawable _def_draw1 = context.getResources().getDrawable(_item.getCardImg());
-        Bitmap _bitmap1 = DrawableUtils.convertToBitmap(_def_draw1, _size1, _size1);
-        viewHolder.toggle_img.setScaleType(ImageView.ScaleType.CENTER);
-        viewHolder.toggle_img.setImageBitmap( _bitmap1);
-
-
         viewHolder.title.setText( _item.getTitle() );
         if(selectItem == i){
             viewHolder.toggle_img.setImageDrawable(imgToggleRed);

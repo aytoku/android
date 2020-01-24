@@ -39,7 +39,7 @@ public class TravelStoryOneFragment extends Fragment {
         View view = inflater.inflate(R.layout.travel_story_1, container, false);
 
         Bundle _args = new Bundle();
-        final Fragment travelStoryOneFragment = TravelStoryFragment.getInstance(_args);
+        final TravelStoryFragment travelStoryOneFragment = TravelStoryFragment.getInstance(_args);
         ImageView button = view.findViewById(R.id.rl_travel_story_1_imageView);
         rv = view.findViewById(R.id.rl_travel_story_1_recycler_card);
         LinearLayout linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);

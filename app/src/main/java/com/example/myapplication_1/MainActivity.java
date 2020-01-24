@@ -44,6 +44,7 @@ import com.example.myapplication_1.Fragments.NewCardFragment;
 import com.example.myapplication_1.Fragments.NewSearchFragment;
 import com.example.myapplication_1.Fragments.Order115Fragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
+import com.example.myapplication_1.Fragments.TariffsFragment;
 import com.example.myapplication_1.Other.PageMainFragment;
 import com.example.myapplication_1.Fragments.PartnersFragment;
 import com.example.myapplication_1.Fragments.PaymentMethodFragment;
@@ -145,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
         SendTestFragment sendTestFragment = SendTestFragment.getInstance();
         SpinnerTariffsFragment spinnerTariffsFragment = SpinnerTariffsFragment.getInstance(null);
 
+        TariffsFragment tariffsFragment = TariffsFragment.getInstance(null);
         TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
         TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(null);
         TariffsPickAlert tariffsPickAlert = TariffsPickAlert.getInstance(null);
@@ -155,6 +157,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, ratingFragment, RatingFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, menu11Fragment, Menu11Fragment.TAG).commit();
     }
 }

@@ -51,7 +51,7 @@ public class NewCardFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle _args = new Bundle();
-                Fragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
+                PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
                 fragmentTransaction.commit();

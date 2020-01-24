@@ -56,7 +56,6 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
         int _size = Math.round(_dens * 40);
         Drawable _def_draw = context.getResources().getDrawable(_item.getCardImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
         viewHolder.card_img.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.card_img.setImageBitmap( _bitmap );
         viewHolder.title.setText( _item.getCardNumber() );

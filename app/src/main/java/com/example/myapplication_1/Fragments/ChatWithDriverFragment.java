@@ -82,7 +82,6 @@ public class ChatWithDriverFragment extends Fragment {
 
         ChatWithDriverAdapter.ChatWithDriverItem []_arr = new ChatWithDriverAdapter.ChatWithDriverItem[]{
                 new ChatWithDriverAdapter.ChatWithDriverItem( "Уже выхожу"),
-
                 new ChatWithDriverAdapter.ChatWithDriverItem("Не вижу вас")
         };
         return _arr;

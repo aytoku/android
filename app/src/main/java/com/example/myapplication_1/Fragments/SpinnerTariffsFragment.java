@@ -42,7 +42,7 @@ public class SpinnerTariffsFragment extends Fragment {
         spinner.setAdapter(adapter);
 
         Bundle _args = new Bundle();
-        final Fragment informationFragment = InformationFragment.getInstance(_args);
+        final InformationFragment informationFragment = InformationFragment.getInstance(_args);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

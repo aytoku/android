@@ -124,7 +124,7 @@ public class SpinnerFragment extends Fragment {
         });
 
         Bundle _args = new Bundle();
-        final Fragment partnersFragment = PartnersFragment.getInstance(_args);
+        final PartnersFragment partnersFragment = PartnersFragment.getInstance(_args);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

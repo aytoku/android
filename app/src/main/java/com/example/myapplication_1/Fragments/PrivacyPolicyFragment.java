@@ -41,7 +41,7 @@ public class PrivacyPolicyFragment extends Fragment {
         webView.loadUrl("http://faem.ru/licensiya.html");
 
         Bundle _args = new Bundle();
-        final Fragment aboutAppFragment = AboutAppFragment.getInstance(_args);
+        final AboutAppFragment aboutAppFragment = AboutAppFragment.getInstance(_args);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

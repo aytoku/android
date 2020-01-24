@@ -128,8 +128,8 @@ public class Auth111Fragment extends Fragment {
             }
         });
         Bundle _args = new Bundle();
-        final Fragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(_args);
-        final Fragment menuOneFragment = MenuOneFragment.getInstance(_args);
+        final CountryCodeSelectionFragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(_args);
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,7 +142,7 @@ public class Auth111Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.rl_main, menuOneFragment);
+                fragmentTransaction.replace(R.id.rl_main, menu11Fragment);
                 fragmentTransaction.commit();
             }
         });
