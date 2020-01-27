@@ -164,12 +164,10 @@ public class Auth111Fragment extends Fragment {
 
             @Override
             public JsonObject async(String result) throws ClassCastException {
-
-                try {
+                try{
                     JsonParser jsonParser = new JsonParser();
                     return  jsonParser.parse(result).getAsJsonObject();
-
-                } catch ( NullPointerException | JsonParseException e) {
+                }catch( NullPointerException | JsonParseException e){
                     Log.e(TAG, "async: " +e.getMessage());
                 }
                 return null;
@@ -193,8 +191,6 @@ public class Auth111Fragment extends Fragment {
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-//                            String phone_number = editText.getText().toString();
-//                            sendResult(phone_number);
                             final Menu11Fragment codeScreenFragment = new Menu11Fragment();
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.rl_main, codeScreenFragment);
@@ -217,7 +213,9 @@ public class Auth111Fragment extends Fragment {
 
             @Override
             public void cancel(JsonObject result, Throwable throwable) {}
-        }).addRequestPropertyHead(_mapHead).query("https://client.apis.stage.faem.pro/api/v2/auth/new", jo.toString());
+        }).addRequestPropertyHead(_mapHead)
+                .setAsyncThreadPool(true)
+                    .query("https://client.apis.stage.faem.pro/api/v2/auth/new", jo.toString());
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

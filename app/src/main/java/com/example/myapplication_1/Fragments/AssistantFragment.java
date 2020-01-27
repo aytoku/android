@@ -43,7 +43,7 @@ public class AssistantFragment extends Fragment {
         RecyclerView assistant_rv = view.findViewById(R.id.assistant_recycler);
 
         final RecyclerView recyclerView = assistant_rv;
-        try {
+        try{
             AssistantAdapter.AssistantItems[] assistantItems = getAssistantItems();
             assistantItemsList = new ArrayList<>(Arrays.asList(assistantItems));
             assistantAdapter = new AssistantAdapter(assistantItemsList, getActivity().getBaseContext());
@@ -52,7 +52,7 @@ public class AssistantFragment extends Fragment {
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
-        } catch ( NullPointerException e) {
+        }catch( NullPointerException e){
             e.printStackTrace();
         }
 
@@ -63,7 +63,7 @@ public class AssistantFragment extends Fragment {
             }
 
             @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir){
                 int position = viewHolder.getAdapterPosition();
                 assistantItemsList.remove(position);
                 assistantAdapter.notifyDataSetChanged();
@@ -75,7 +75,7 @@ public class AssistantFragment extends Fragment {
         return view;
     }
 
-    private AssistantAdapter.AssistantItems[] getAssistantItems() {
+    private AssistantAdapter.AssistantItems[] getAssistantItems(){
 
         AssistantAdapter.AssistantItems[] arr = new AssistantAdapter.AssistantItems[]{
 

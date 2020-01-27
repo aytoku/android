@@ -59,7 +59,6 @@ public class BlacklistPartnersFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 

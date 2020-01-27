@@ -65,7 +65,6 @@ public class AboutAppFragment  extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
         return view;
     }
 }

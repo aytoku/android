@@ -66,7 +66,7 @@ public class AddressFragment extends Fragment {
         });
 
         final RecyclerView recyclerView = address_rv;
-        try {
+        try{
             AddressAdapter.AddressItems[] addressItems = getAddressItems();
             addressItemsList = new ArrayList<>(Arrays.asList(addressItems));
             addressAdapter = new AddressAdapter(addressItemsList, getActivity().getBaseContext());
@@ -75,7 +75,7 @@ public class AddressFragment extends Fragment {
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
 
-        } catch ( NullPointerException e) {
+        }catch(NullPointerException e){
             e.printStackTrace();
         }
         return view;
@@ -83,14 +83,14 @@ public class AddressFragment extends Fragment {
 
     private void onAddButtonClicked(View view) {
 
-        try {
+        try{
             addressItemsList.add(addressItemsList.size(), new AddressAdapter.AddressItems(
                     R.mipmap.icon_button_plus,
                     "Добавить адрес дома",
                     new AddressAdapter.AddressItems.CallBack(){
                         @Override
                         public void call(AddressAdapter.AddressItems itemsMenu){
-                            try {
+                            try{
                                 Bundle _args = new Bundle();
                                 EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
                                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
@@ -104,7 +104,7 @@ public class AddressFragment extends Fragment {
             addressAdapter.notifyItemInserted(addressItemsList.size()-1);
             addressAdapter.notifyDataSetChanged();
 
-        } catch(NumberFormatException e) {
+        }catch(NumberFormatException e) {
             Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
                     Toast.LENGTH_SHORT).show();
         }

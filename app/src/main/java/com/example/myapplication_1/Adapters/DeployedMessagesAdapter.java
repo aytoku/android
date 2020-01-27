@@ -23,7 +23,7 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Context context;
     private Drawable card_draw;
     private Drawable card;
-
+    private List<String> list;
     private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
 
     public DeployedMessagesAdapter(List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList, Context context) {
@@ -36,17 +36,17 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        if(position == deployedMessagesItemsList.size()-1){
-            return 2;
-        } else if (position >= 0 && position != 2) {
-            return 0;
-        } else if(position == 2){
-            return 1;
-        }
-        return position;
-    }
+//    @Override
+//    public int getItemViewType(int position) {
+//        if(position == deployedMessagesItemsList.size()-1){
+//            return 2;
+//        } else if (position >= 0 && position != 2) {
+//            return 0;
+//        } else if(position == 2){
+//            return 1;
+//        }
+//        return position;
+//    }
 
     @NonNull
     @Override
@@ -54,16 +54,16 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         RecyclerView.ViewHolder itemViewHolder;
 
-        if (typeInt == 0) {
+        //if (typeInt == 0) {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
             itemViewHolder = new ViewHolder(view);
-        } else if(typeInt == 1){
-            View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
-            itemViewHolder = new ViewHolder1(view1);
-        } else{
-            View view2 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages3, viewGroup, false);
-            itemViewHolder = new ViewHolder2(view2);
-        }
+//        } else if(typeInt == 1){
+//            View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
+//            itemViewHolder = new ViewHolder1(view1);
+//        } else{
+//            View view2 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages3, viewGroup, false);
+//            itemViewHolder = new ViewHolder2(view2);
+//        }
         return (RecyclerView.ViewHolder) itemViewHolder;
     }
 
@@ -72,35 +72,42 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         final DeployedMessagesItems _item = deployedMessagesItemsList.get(i);
         LinearLayout.LayoutParams params;
-        if(i == deployedMessagesItemsList.size()-1){
-            if(viewHolder instanceof ViewHolder2)
-                viewHolder = (ViewHolder2)viewHolder;
-            if(i==0){
-                ((ViewHolder2)viewHolder).linearLayout.setVisibility(View.GONE);
-            }
-        } else if (i >=0 && i!=2) {
-            if (i == 0) {
-                viewHolder = (ViewHolder) viewHolder;
-                ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
-                ((ViewHolder) viewHolder).title.setText(_item.getTitle());
-            } else {
-                ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
-                params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
-                params.height = 240;
-                params.width = 905;
-                ((ViewHolder) viewHolder).relativeLayout.setLayoutParams(params);
-            }
-        } else if(i == 2){
-            if (viewHolder instanceof ViewHolder1)
-                viewHolder = (ViewHolder1) viewHolder;
-                params = (LinearLayout.LayoutParams)((ViewHolder1) viewHolder).linearLayout.getLayoutParams();
-                params.height = 240;
-                params.width = 905;
-                ((ViewHolder1) viewHolder).linearLayout.setLayoutParams(params);
-                params = (LinearLayout.LayoutParams)((ViewHolder1)viewHolder).linearLayout1.getLayoutParams();
-                params.width = 905;
-                ((ViewHolder1)viewHolder).linearLayout1.setLayoutParams(params);
+        if(i > 0){
+            ((ViewHolder)viewHolder).relativeLayout.setBackground(card_draw);
+            params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
+            params.height = 240;
+            params.width = 905;
         }
+//        if(i == deployedMessagesItemsList.size()-1){
+//            if(viewHolder instanceof ViewHolder2)
+//                viewHolder = (ViewHolder2)viewHolder;
+//            if(i==0){
+//                ((ViewHolder2)viewHolder).linearLayout.setVisibility(View.GONE);
+//            }
+//        } else if (i >=0 && i!=2) {
+//            if (i == 0) {
+//                viewHolder = (ViewHolder) viewHolder;
+//                ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
+//                ((ViewHolder) viewHolder).title.setText(_item.getTitle());
+//            } else {
+//                ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
+//                params = (LinearLayout.LayoutParams)((ViewHolder) viewHolder).relativeLayout.getLayoutParams();
+//                params.height = 240;
+//                params.width = 905;
+//                ((ViewHolder) viewHolder).relativeLayout.setLayoutParams(params);
+//            }
+//        }
+//        else if(i == 2){
+//            if (viewHolder instanceof ViewHolder1)
+//                viewHolder = (ViewHolder1) viewHolder;
+//                params = (LinearLayout.LayoutParams)((ViewHolder1) viewHolder).linearLayout.getLayoutParams();
+//                params.height = 240;
+//                params.width = 905;
+//                ((ViewHolder1) viewHolder).linearLayout.setLayoutParams(params);
+//                params = (LinearLayout.LayoutParams)((ViewHolder1)viewHolder).linearLayout1.getLayoutParams();
+//                params.width = 905;
+//                ((ViewHolder1)viewHolder).linearLayout1.setLayoutParams(params);
+//        }
     }
 
     @Override
@@ -122,7 +129,6 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         private final TextView title;
         private final RelativeLayout relativeLayout;
         private final ImageView imageView;
@@ -136,7 +142,6 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     class ViewHolder1 extends RecyclerView.ViewHolder {
-
         private final TextView textView;
         private final ImageView imageView;
         private final TextView textView1;
@@ -158,7 +163,6 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     class ViewHolder2 extends RecyclerView.ViewHolder {
-
         private final ImageView img;
         private final TextView txtView;
         private final LinearLayout linearLayout;
