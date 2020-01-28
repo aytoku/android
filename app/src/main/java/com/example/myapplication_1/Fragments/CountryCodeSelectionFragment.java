@@ -40,8 +40,8 @@ public class CountryCodeSelectionFragment extends Fragment {
         countryCodeSelection_rv = view.findViewById(R.id.rl_country_code_selection_recycler);
         ImageButton imageButton = view.findViewById(R.id.rl_cell_country_code_selection_button);
 
-        Bundle _args = new Bundle();
-        final Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final Fragment auth111Fragment = Auth111Fragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,9 +71,7 @@ public class CountryCodeSelectionFragment extends Fragment {
     }
 
     private CountryCodeSelectionAdapter.CountryCodeItems[] getCountryCodeItems() {
-
         CountryCodeSelectionAdapter.CountryCodeItems []_arr = new CountryCodeSelectionAdapter.CountryCodeItems[]{
-
                 new CountryCodeSelectionAdapter.CountryCodeItems(
                         getResources().getColor(R.color.my_gray),
                         "Г",

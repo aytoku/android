@@ -45,9 +45,8 @@ public class Menu162Fragment extends Fragment {
 
         RecyclerView menu162_rv = view.findViewById(R.id.rl_menu_1_6_2_recycler);
         ImageButton imageButton = view.findViewById(R.id.rl_menu_1_6_2_button);
-
-        Bundle _args = new Bundle();
-        final Fragment serviceFragment = ServiceFragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final Fragment serviceFragment = ServiceFragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,9 +77,7 @@ public class Menu162Fragment extends Fragment {
     }
 
     private AdapterMenu162.Menu162List[] getMenu162ListItems() {
-
         AdapterMenu162.Menu162List[] arr = new AdapterMenu162.Menu162List[]{
-
                 new AdapterMenu162.Menu162List(
                         "Большая стоимость",
                         R.drawable.icon_arrow_right,
@@ -88,8 +85,8 @@ public class Menu162Fragment extends Fragment {
                             @Override
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();
@@ -106,8 +103,8 @@ public class Menu162Fragment extends Fragment {
                             @Override
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();
@@ -124,8 +121,8 @@ public class Menu162Fragment extends Fragment {
                             @Override
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();

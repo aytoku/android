@@ -51,7 +51,6 @@ public class DiagnosticsFragment extends Fragment {
         }catch (NullPointerException e){
             e.printStackTrace();
         }
-
         return view;
     }
 

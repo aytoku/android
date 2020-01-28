@@ -60,9 +60,7 @@ public class Order115Fragment extends Fragment {
     }
 
     private Order115Adapter.Order115Items[] getOrder115Items() {
-
         Order115Adapter.Order115Items[] arr = new Order115Adapter.Order115Items[]{
-
                 new Order115Adapter.Order115Items(
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
@@ -78,7 +76,6 @@ public class Order115Fragment extends Fragment {
                 new Order115Adapter.Order115Items(
                         "\uD83D\uDE0A",
                         "Заказал по ошибке"),
-
 
                 new Order115Adapter.Order115Items(
                         "\uD83D\uDE0A",

@@ -41,8 +41,8 @@ public class BlacklistPartnersFragment extends Fragment {
         ImageButton imageButton = view.findViewById(R.id.ll_blackList_partner_rl_blackList_partner_img);
         TextView textView = view.findViewById(R.id.ll_blackList_partner_rl_blackList_partner_ready);
 
-        Bundle _args = new Bundle();
-        final PartnersFragment partnersFragment = PartnersFragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final PartnersFragment partnersFragment = PartnersFragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +74,6 @@ public class BlacklistPartnersFragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         }catch ( NullPointerException e) {
             e.printStackTrace();
         }

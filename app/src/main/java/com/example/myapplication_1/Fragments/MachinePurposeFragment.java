@@ -60,7 +60,6 @@ public class MachinePurposeFragment extends Fragment {
     }
 
     private MachinePurposeAdapter.ItemsMenu[] getMenuItems() {
-
         MachinePurposeAdapter.ItemsMenu[] arr = new MachinePurposeAdapter.ItemsMenu[]{
                 new MachinePurposeAdapter.ItemsMenu(
                         R.drawable.icon_grey_plus,

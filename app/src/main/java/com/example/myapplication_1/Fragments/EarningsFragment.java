@@ -57,9 +57,7 @@ public class EarningsFragment extends Fragment {
     }
 
     private EarningsPageAdapter.EarningsPageItems[] getEarningsPageItems() {
-
         EarningsPageAdapter.EarningsPageItems []_arr = new EarningsPageAdapter.EarningsPageItems[]{
-
                 new EarningsPageAdapter.EarningsPageItems(
                         "1 км", new String[] {"Коста 223/1"},
                             new String[] {"Детское кресло", "Курящий"},

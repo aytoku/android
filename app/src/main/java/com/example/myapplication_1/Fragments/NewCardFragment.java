@@ -46,12 +46,11 @@ public class NewCardFragment extends Fragment {
         ImageButton imageButton = view.findViewById(R.id.rl_new_card_button);
         editText = view.findViewById(R.id.ll_new_card_card_number_field);
         editText1 = view.findViewById(R.id.ll_new_card_term_field);
-
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
+                Bundle bundle = new Bundle();
+                PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
                 fragmentTransaction.commit();

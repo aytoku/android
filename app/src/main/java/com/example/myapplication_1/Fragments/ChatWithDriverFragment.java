@@ -53,7 +53,6 @@ public class ChatWithDriverFragment extends Fragment {
 
         RecyclerView recyclerViewMenu = rv;
         try {
-
             ChatWithDriverAdapter.ChatWithDriverItem[] chatWithDriverItems = getChatWithDriverItems();
             ChatWithDriverAdapter adapterGridViewMenu = new ChatWithDriverAdapter(chatWithDriverItems, getActivity().getBaseContext());
             recyclerViewMenu.setAdapter( adapterGridViewMenu );

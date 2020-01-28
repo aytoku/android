@@ -55,17 +55,15 @@ public class MenuOneFragment extends Fragment {
     }
 
     private MenuOneAdapter.ItemsMenu[] getMenuItems() {
-
         MenuOneAdapter.ItemsMenu[] arr = new MenuOneAdapter.ItemsMenu[]{
-
                 new MenuOneAdapter.ItemsMenu(
                         "Введите номер телефона",
                         new MenuOneAdapter.ItemsMenu.CallBack(){
                             @Override
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, auth111Fragment);
                                     fragmentTransaction.commit();
@@ -81,8 +79,8 @@ public class MenuOneFragment extends Fragment {
                             @Override
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, paymentPickFragment);
                                     fragmentTransaction.commit();
@@ -99,8 +97,8 @@ public class MenuOneFragment extends Fragment {
                             @Override
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    SettingsFragment settingsFragment = SettingsFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    SettingsFragment settingsFragment = SettingsFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, settingsFragment);
                                     fragmentTransaction.commit();
@@ -116,8 +114,8 @@ public class MenuOneFragment extends Fragment {
                             @Override
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    InformationFragment informationFragment = InformationFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    InformationFragment informationFragment = InformationFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, informationFragment);
                                     fragmentTransaction.commit();
@@ -133,8 +131,8 @@ public class MenuOneFragment extends Fragment {
                             @Override
                             public void call(MenuOneAdapter.ItemsMenu itemsMenu){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    ServiceFragment serviceFragment = ServiceFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    ServiceFragment serviceFragment = ServiceFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, serviceFragment);
                                     fragmentTransaction.commit();

@@ -51,7 +51,6 @@ public class AssistantFragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         }catch( NullPointerException e){
             e.printStackTrace();
         }
@@ -76,9 +75,7 @@ public class AssistantFragment extends Fragment {
     }
 
     private AssistantAdapter.AssistantItems[] getAssistantItems(){
-
         AssistantAdapter.AssistantItems[] arr = new AssistantAdapter.AssistantItems[]{
-
                 new AssistantAdapter.AssistantItems(
                         "Вы можете самостоятельно\nотрегулировать стоимоть"),
 

@@ -69,7 +69,6 @@ public class CreateOrder115Fragment extends Fragment {
 
             @Override
             public boolean onMove(@NotNull RecyclerView recyclerView, RecyclerView.ViewHolder dragged, RecyclerView.ViewHolder target) {
-
                 int position_dragged = dragged.getAdapterPosition();
                 int position_target = target.getAdapterPosition();
                 Collections.swap(createOrderItemsList, position_dragged, position_target);
@@ -89,8 +88,7 @@ public class CreateOrder115Fragment extends Fragment {
         return view;
     }
 
-    public void onAddButtonClicked(View view) {
-
+    private void onAddButtonClicked(View view) {
         try {
             createOrderItemsList.add(createOrderItemsList.size(), new AdapterCreateOrder115.CreateOrderItems(
                     R.drawable.ic_cross,
@@ -110,9 +108,7 @@ public class CreateOrder115Fragment extends Fragment {
     }
 
     private AdapterCreateOrder115.CreateOrderItems[] getCreateOrderItems() {
-
         AdapterCreateOrder115.CreateOrderItems[] arr = new AdapterCreateOrder115.CreateOrderItems[]{
-
                 new AdapterCreateOrder115.CreateOrderItems(
                         R.drawable.ic_cross,
                         "Максима Горького, 123"

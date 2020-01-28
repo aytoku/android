@@ -269,7 +269,6 @@ public class CodeScreenFragment extends Fragment {
                     editor.putString(REFRESH_TOKEN, refresh_token);
                     editor.putInt(REFRESH_EXPIRATION, refresh_expiration);
                     editor.apply();
-
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {

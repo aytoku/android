@@ -87,8 +87,8 @@ public class PaymentMethodFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+                Bundle bundle = new Bundle();
+                Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, menu11Fragment);
                 fragmentTransaction.commit();
@@ -97,8 +97,8 @@ public class PaymentMethodFragment extends Fragment {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(_args);
+                Bundle bundle = new Bundle();
+                PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, paymentPickFragment);
                 fragmentTransaction.commit();
@@ -172,9 +172,7 @@ public class PaymentMethodFragment extends Fragment {
     }
 
     private PaymentMethodAdapter.PaymentMethodItems[] getPaymentMethodItems() {
-
         PaymentMethodAdapter.PaymentMethodItems[] arr = new PaymentMethodAdapter.PaymentMethodItems[]{
-
                 new PaymentMethodAdapter.PaymentMethodItems(
                             R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
                                 new PaymentMethodAdapter.PaymentMethodItems.CallBack(){

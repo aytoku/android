@@ -38,8 +38,8 @@ public class EditMyAddressFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                AddressFragment addressFragment = AddressFragment.getInstance(_args);
+                Bundle bundle = new Bundle();
+                AddressFragment addressFragment = AddressFragment.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, addressFragment);
                 fragmentTransaction.commit();
@@ -48,8 +48,8 @@ public class EditMyAddressFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                AddressFragment addressFragment = AddressFragment.getInstance(_args);
+                Bundle bundle = new Bundle();
+                AddressFragment addressFragment = AddressFragment.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, addressFragment);
                 fragmentTransaction.commit();

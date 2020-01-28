@@ -124,7 +124,6 @@ public class EmptyChatWithDriverFragment extends Fragment {
     }
 
     private EmptyChatWithDriverAdapter.ItemsMenu[] getMenuItems() {
-
         EmptyChatWithDriverAdapter.ItemsMenu []_arr = new EmptyChatWithDriverAdapter.ItemsMenu[]{
                 new EmptyChatWithDriverAdapter.ItemsMenu(
                         "Уже выхожу",
@@ -156,9 +155,7 @@ public class EmptyChatWithDriverFragment extends Fragment {
     }
 
     private DriverMessagesAdapter.ItemsMenu[] getMenuItems1() {
-
         DriverMessagesAdapter.ItemsMenu[] arr = new DriverMessagesAdapter.ItemsMenu[]{
-
                 new DriverMessagesAdapter.ItemsMenu(
                         "Выполните еще три заказа и получите\n+30 к рейтингу"),
 

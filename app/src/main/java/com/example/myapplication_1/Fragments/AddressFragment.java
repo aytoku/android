@@ -47,9 +47,8 @@ public class AddressFragment extends Fragment {
         ImageButton button = view.findViewById(R.id.ll_address_rl_address_button_plusik);
         ImageButton imageButton = view.findViewById(R.id.ll_address_rl_address_button_strelka);
 
-        Bundle _args = new Bundle();
-        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-
+        Bundle bundle = new Bundle();
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +73,6 @@ public class AddressFragment extends Fragment {
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
-
         }catch(NullPointerException e){
             e.printStackTrace();
         }
@@ -82,7 +80,6 @@ public class AddressFragment extends Fragment {
     }
 
     private void onAddButtonClicked(View view) {
-
         try{
             addressItemsList.add(addressItemsList.size(), new AddressAdapter.AddressItems(
                     R.mipmap.icon_button_plus,
@@ -91,8 +88,8 @@ public class AddressFragment extends Fragment {
                         @Override
                         public void call(AddressAdapter.AddressItems itemsMenu){
                             try{
-                                Bundle _args = new Bundle();
-                                EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
+                                Bundle bundle = new Bundle();
+                                EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(bundle);
                                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                 fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                 fragmentTransaction.commit();
@@ -103,7 +100,6 @@ public class AddressFragment extends Fragment {
                     }));
             addressAdapter.notifyItemInserted(addressItemsList.size()-1);
             addressAdapter.notifyDataSetChanged();
-
         }catch(NumberFormatException e) {
             Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
                     Toast.LENGTH_SHORT).show();
@@ -111,9 +107,7 @@ public class AddressFragment extends Fragment {
     }
 
     private AddressAdapter.AddressItems[] getAddressItems() {
-
         AddressAdapter.AddressItems[] arr = new AddressAdapter.AddressItems[]{
-
                 new AddressAdapter.AddressItems(
                         R.mipmap.icon_button_plus,
                         "Добавить адрес дома",

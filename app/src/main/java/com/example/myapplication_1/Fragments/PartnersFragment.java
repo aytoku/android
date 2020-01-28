@@ -42,9 +42,9 @@ public class PartnersFragment extends Fragment {
         ImageButton imageButton = view.findViewById(R.id.rl_partners_button);
         TextView textView = view.findViewById(R.id.rl_partners_blacklist);
 
-        Bundle _args = new Bundle();
-        final Fragment informationFragment = InformationFragment.getInstance(_args);
-        final Fragment blacklistPartnersFragment = BlacklistPartnersFragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final Fragment informationFragment = InformationFragment.getInstance(bundle);
+        final Fragment blacklistPartnersFragment = BlacklistPartnersFragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,9 +83,7 @@ public class PartnersFragment extends Fragment {
     }
 
     private PartnersAdapter.PartnersItems[] getPartnersItems() {
-
         PartnersAdapter.PartnersItems []_arr = new PartnersAdapter.PartnersItems[]{
-
                 new PartnersAdapter.PartnersItems(
                         R.drawable.icon_arrow_right,
                         "Партнер 1",
@@ -93,8 +91,8 @@ public class PartnersFragment extends Fragment {
                             @Override
                             public void call(PartnersAdapter.PartnersItems partnersItems){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    Fragment spinnerFragment = SpinnerFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, spinnerFragment);
                                     fragmentTransaction.commit();
@@ -111,8 +109,8 @@ public class PartnersFragment extends Fragment {
                     @Override
                     public void call(PartnersAdapter.PartnersItems partnersItems){
                         try {
-                            Bundle _args = new Bundle();
-                            Fragment spinnerFragment = SpinnerFragment.getInstance(_args);
+                            Bundle bundle = new Bundle();
+                            Fragment spinnerFragment = SpinnerFragment.getInstance(bundle);
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.rl_main, spinnerFragment);
                             fragmentTransaction.commit();

@@ -58,9 +58,7 @@ public class ChatFragment extends Fragment {
     }
 
     private ChatAdapter.ChatItems[] getChatItems() {
-
         ChatAdapter.ChatItems []_arr = new ChatAdapter.ChatItems[]{
-
                 new ChatAdapter.ChatItems(new ChatAdapter.ChatItems.CallBack() {
                     @Override
                     public void call(ChatAdapter.ChatItems itemsMenu) {

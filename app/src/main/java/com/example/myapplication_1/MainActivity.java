@@ -9,7 +9,7 @@ import com.example.myapplication_1.Alerts.PaymentChangeAlert;
 import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.Fragments.AddPointFragment;
 import com.example.myapplication_1.Fragments.AddressFragment;
-import com.example.myapplication_1.Fragments.AlertFragment;
+import com.example.myapplication_1.Alerts.AlertFragment;
 import com.example.myapplication_1.Fragments.AssistantFragment;
 import com.example.myapplication_1.Fragments.Auth111Fragment;
 import com.example.myapplication_1.Fragments.BlacklistPartnersFragment;
