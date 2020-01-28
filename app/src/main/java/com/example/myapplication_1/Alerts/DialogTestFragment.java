@@ -30,7 +30,6 @@ public class DialogTestFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dialog_test_fragment, container, false);
-
         greetingsEditText = view.findViewById(R.id.greetings_edit_text);
         Button button = view.findViewById(R.id.greet_button);
         button.setOnClickListener(new View.OnClickListener() {

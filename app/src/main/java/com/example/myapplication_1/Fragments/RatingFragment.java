@@ -251,9 +251,7 @@ public class RatingFragment extends Fragment{
             }
 
             @Override
-            public void sync(JsonObject result) {
-
-            }
+            public void sync(JsonObject result) {}
 
             @Override
             public void progress(Integer... status) {}
