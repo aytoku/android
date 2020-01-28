@@ -27,16 +27,13 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_settings, viewGroup, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
         final SettingsItems _item = settingsItems[i];
-
         viewHolder.title.setText( _item.getStr() );
     }
 
@@ -48,11 +45,9 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
     public static class SettingsItems {
 
         private String title;
-
         public SettingsItems(String title) {
             this.title = title;
         }
-
         public String getStr() {
             return title;
         }

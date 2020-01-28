@@ -32,7 +32,6 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_menu_1, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -40,16 +39,13 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final ItemsMenu _item = itemsMenuList.get(i);
         if (i == 0) {
-
             viewHolder.title.setBackgroundColor(Color.parseColor("#FD6F6D"));
             viewHolder.title.setTextColor(Color.parseColor("#FFFFFF"));
             params = (LinearLayout.LayoutParams) viewHolder.title.getLayoutParams();
             params.height = 200;
         }
-
         viewHolder.title.setText(_item.getStr());
         viewHolder.title.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +65,6 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
     }
 
     public static class ItemsMenu {
-
         public interface CallBack {
             void call(ItemsMenu itemsMenu);
         }
@@ -85,7 +80,6 @@ public class MenuOneAdapter extends RecyclerView.Adapter<MenuOneAdapter.ViewHold
         public String getStr() {
             return title;
         }
-
         public CallBack getCallBack() {
             return callBack;
         }

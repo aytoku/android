@@ -36,7 +36,6 @@ public class DiagnosticsAdapter extends RecyclerView.Adapter<DiagnosticsAdapter.
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int i){
         final DiagnosticsItems diagnosticsItems = diagnosticsItemsList.get(i);
-
         viewHolder.title.setText(diagnosticsItems.getTitle());
         viewHolder.desc.setText(diagnosticsItems.getDesc());
     }
@@ -58,16 +57,12 @@ public class DiagnosticsAdapter extends RecyclerView.Adapter<DiagnosticsAdapter.
             this.img = img;
         }
 
-        public int getClose_button_img(){return close_button_img;}
-
         public int getImg() {
             return img;
         }
-
         public String getTitle() {
             return title;
         }
-
         public String getDesc() {
             return desc;
         }

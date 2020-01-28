@@ -41,7 +41,6 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_payment_pick, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -49,9 +48,7 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final PaymentPickItems _item = itemsMenuList.get(i);
-
         float _dens = context.getResources().getDisplayMetrics().density;
         int _size = Math.round(_dens * 40);
         Drawable _def_draw = context.getResources().getDrawable(_item.getCardImg());
@@ -109,11 +106,9 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
         public String getTitle() {
             return title;
         }
-
         int getCardImg() {
             return card_img;
         }
-
         public CallBack getCallBack() {
             return callBack;
         }

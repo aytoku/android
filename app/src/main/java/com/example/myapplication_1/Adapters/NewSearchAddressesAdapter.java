@@ -35,7 +35,6 @@ public class NewSearchAddressesAdapter extends RecyclerView.Adapter<NewSearchAdd
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int i){
         final NewSearchAddressesItems newSearchAddressesItems = newSearchAddressesItemsList.get(i);
-
         viewHolder.title.setText(newSearchAddressesItems.getTitle());
         viewHolder.desc.setText(newSearchAddressesItems.getDesc());
     }
@@ -56,7 +55,6 @@ public class NewSearchAddressesAdapter extends RecyclerView.Adapter<NewSearchAdd
         public String getTitle() {
             return title;
         }
-
         public String getDesc() {
             return desc;
         }

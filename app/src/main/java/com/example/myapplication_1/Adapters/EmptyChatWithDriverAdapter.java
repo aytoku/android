@@ -32,7 +32,6 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_empty_chat_driver, viewGroup, false);
             ViewHolder itemViewHolder = new ViewHolder(v);
             return itemViewHolder;
@@ -40,25 +39,18 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
 
         @Override
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
             final ItemsMenu _item = itemsMenuList1.get(i);
-
             viewHolder.title.setText( _item.getTitle() );
-
             if(selectItem == i) {
-
                 viewHolder.cv_item.setCardBackgroundColor(Color.parseColor("#FC5B58"));
                 viewHolder.title.setTextColor(Color.WHITE);
             }else{
-
                 viewHolder.cv_item.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                 viewHolder.title.setTextColor(Color.BLACK);
             }
-
             viewHolder.cv_item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     notifyItemChanged(selectItem);
                     selectItem = i;
                     notifyItemChanged(i);
@@ -73,7 +65,6 @@ public class EmptyChatWithDriverAdapter extends RecyclerView.Adapter<EmptyChatWi
         }
 
         public static class ItemsMenu {
-
             public interface CallBack {
                 void call(ItemsMenu itemsMenu);
             }

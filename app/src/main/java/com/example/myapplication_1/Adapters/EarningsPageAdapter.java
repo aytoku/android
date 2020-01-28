@@ -35,47 +35,37 @@ import ru.osety.amironlibrary.DrawableUtils;
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_earnings_page_card, viewGroup, false);
             return new ViewHolder(v);
         }
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
             final EarningsPageItems _item = earningsPageItems[i];
-
             float _dens = context.getResources().getDisplayMetrics().density;
-
-            try {
-
+            try{
                 AdapterCellTextFeatures adapterCellTextFeatures = new AdapterCellTextFeatures(_item.str_features, context);
                 viewHolder.rv_features.setAdapter(adapterCellTextFeatures);
                 viewHolder.rv_features.setLayoutManager(
                         new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
                 viewHolder.rv_features.setItemAnimator(new DefaultItemAnimator());
-
-            } catch (NullPointerException e){
+            }catch (NullPointerException e){
                 e.printStackTrace();
             }
 
-            try {
-
+            try{
                 AdapterCellFeatures adapterCellFeatures = new AdapterCellFeatures(_item.button_features, context);
                 viewHolder.rv_button_features.setAdapter(adapterCellFeatures);
                 viewHolder.rv_button_features.setLayoutManager(
                         new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
                 viewHolder.rv_button_features.setItemAnimator(new DefaultItemAnimator());
-
-            } catch (NullPointerException e){
+            }catch (NullPointerException e){
                 e.printStackTrace();
             }
 
             int _size = Math.round(_dens * 12);
-
             Drawable _def_draw1 = context.getResources().getDrawable(_item.getImgArrow());
             Bitmap _bitmap1 = DrawableUtils.convertToBitmap(_def_draw1, _size, _size);
-
             viewHolder.dist.setText( _item.getStr());
             viewHolder.distance.setText( _item.getDistance());
             viewHolder.cost.setText(_item.getAddress_title());
@@ -84,11 +74,9 @@ import ru.osety.amironlibrary.DrawableUtils;
             viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    try {
+                    try{
                         _item.getCallBack().call(_item);
-
-                    } catch ( NullPointerException e){
+                    }catch( NullPointerException e){
                         e.printStackTrace();
                     }
                 }
@@ -135,24 +123,19 @@ import ru.osety.amironlibrary.DrawableUtils;
             public CallBack getCallBack() {
                 return callBack;
             }
-
-            public int getImgArrow() {
+            int getImgArrow() {
                 return img_arrow;
             }
-
             public String getStr() {
                 return dist;
             }
-
-            public String getDistance() {
+            String getDistance() {
                 return distance;
             }
-
-            public String getAddress_title() {
+            String getAddress_title() {
                 return address_title;
             }
-
-            public String getPlace() {
+            String getPlace() {
                 return place;
             }
         }

@@ -27,16 +27,13 @@ import com.example.myapplication_1.R;
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_travel_story_1, viewGroup, false);
             return new ViewHolder(v);
         }
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
             final PaymentDesc _item = paymentDescs[i];
-
             viewHolder.title.setText( _item.getTitle() );
             viewHolder.desc.setText( _item.getDesc() );
             viewHolder.cost.setText( _item.getCost() );
@@ -48,7 +45,6 @@ import com.example.myapplication_1.R;
         }
 
         public static class PaymentDesc {
-
             public interface CallBack {
                 void call(PaymentDesc itemsMenu);
             }
@@ -66,11 +62,9 @@ import com.example.myapplication_1.R;
             public String getTitle() {
                 return title;
             }
-
             public String getDesc() {
                 return desc;
             }
-
             public String getCost() {
                 return cost;
             }

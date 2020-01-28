@@ -33,34 +33,26 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.activity_main, viewGroup, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
         final ItemsMenu _item = itemsMenu[i];
-
         float _dens = context.getResources().getDisplayMetrics().density;
-
         int _size = Math.round(_dens * 40);
         Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.title.setText( _item.getDate() );
         viewHolder.cost.setText( _item.getCost() );
         viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                try {
-
+                try{
                     _item.getCallBack().call(_item);
-
-                } catch ( NullPointerException e) {
+                }catch(NullPointerException e){
                     e.printStackTrace();
                 }
             }
@@ -73,7 +65,6 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     }
 
     public static class ItemsMenu {
-
         public interface CallBack {
             void call(ItemsMenu itemsMenu);
         }
@@ -93,15 +84,12 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
         public CallBack getCallBack() {
             return callBack;
         }
-
         public int getImg() {
             return img;
         }
-
-        public String getDate() {
+        String getDate() {
             return title;
         }
-
         public String getCost() {
             return cost;
         }

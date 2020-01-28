@@ -29,16 +29,13 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_partners, viewGroup, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
         final PartnersItems _item = partnersItems[i];
-
         viewHolder.desc.setText( _item.getStr() );
         viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +55,6 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
     }
 
     public static class PartnersItems {
-
         public interface CallBack {
             void call(PartnersItems itemsMenu);
         }
@@ -76,11 +72,9 @@ public class PartnersAdapter extends RecyclerView.Adapter<PartnersAdapter.ViewHo
         public int getImg() {
             return img;
         }
-
         public String getStr() {
             return desc;
         }
-
         public CallBack getCallBack() {
             return callBack;
         }

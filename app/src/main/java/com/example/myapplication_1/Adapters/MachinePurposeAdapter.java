@@ -34,7 +34,6 @@ public class MachinePurposeAdapter extends RecyclerView.Adapter<MachinePurposeAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_machine_purpose, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -42,15 +41,11 @@ public class MachinePurposeAdapter extends RecyclerView.Adapter<MachinePurposeAd
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final ItemsMenu _item = itemsMenuList.get(i);
-
         float _dens = context.getResources().getDisplayMetrics().density;
-
         int _size = Math.round(_dens * 12);
         Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.img.setImageBitmap( _bitmap );
         viewHolder.title.setText(_item.getStr());
@@ -84,7 +79,6 @@ public class MachinePurposeAdapter extends RecyclerView.Adapter<MachinePurposeAd
         public int getImg() {
             return img;
         }
-
         public String getStr() {
             return title;
         }

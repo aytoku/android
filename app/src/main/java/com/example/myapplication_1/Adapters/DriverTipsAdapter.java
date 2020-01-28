@@ -20,7 +20,6 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
     private final LayoutInflater layoutInflater;
     private final Context context;
     private int selectItem = -1;
-
     private List<DriverTipsItems> driverTipsItemsList;
 
     public DriverTipsAdapter(List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList, Context context) {
@@ -32,7 +31,6 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_driver_tips, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -40,11 +38,8 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final DriverTipsItems _item = driverTipsItemsList.get(i);
-
         viewHolder.title.setText(_item.getStr());
-
         if(selectItem == i){
             viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#FD6F6D"));
             viewHolder.title.setTextColor(Color.WHITE);
@@ -53,7 +48,6 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
             viewHolder.cardView.setCardBackgroundColor(Color.WHITE);
             viewHolder.title.setTextColor(Color.BLACK);
         }
-
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +82,6 @@ public class DriverTipsAdapter extends RecyclerView.Adapter<DriverTipsAdapter.Vi
         public String getStr() {
             return title;
         }
-
         public CallBack getCallBack() {
             return callBack;
         }

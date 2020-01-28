@@ -41,7 +41,6 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_payment_method, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -49,9 +48,7 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final PaymentMethodItems _item = itemsMenuList.get(i);
-
         float _dens = context.getResources().getDisplayMetrics().density;
         int _size = Math.round(_dens * 40);
         Drawable _def_draw = context.getResources().getDrawable(_item.getCardImg());
@@ -89,7 +86,6 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
     }
 
     public static class PaymentMethodItems {
-
         public interface CallBack {
             void call(PaymentMethodItems itemsMenu);
         }
@@ -113,19 +109,9 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
         String getCardNumber() {
             return card_number;
         }
-
-        public String getDate() {
-            return date;
-        }
-
-        public String getCvv() {
-            return cvv;
-        }
-
         int getCardImg() {
             return card_img;
         }
-
         public CallBack getCallBack() {
             return callBack;
         }

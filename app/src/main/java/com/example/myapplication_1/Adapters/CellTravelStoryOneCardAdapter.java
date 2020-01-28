@@ -32,22 +32,17 @@ public class CellTravelStoryOneCardAdapter extends RecyclerView.Adapter<CellTrav
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_travel_story_1_card, viewGroup, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
         final TravelStoryRow _item = travelStoryRows[i];
-
         float _dens = context.getResources().getDisplayMetrics().density;
-
         int _size = Math.round(_dens * 40);
         Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.date.setText( _item.getDate() );
         viewHolder.address.setText( _item.getAddress() );
@@ -79,15 +74,12 @@ public class CellTravelStoryOneCardAdapter extends RecyclerView.Adapter<CellTrav
         public CallBack getCallBack() {
             return callBack;
         }
-
         public int getImg() {
             return img;
         }
-
         String getDate() {
             return date;
         }
-
         String getAddress() {
             return address;
         }

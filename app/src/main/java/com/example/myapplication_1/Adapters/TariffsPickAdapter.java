@@ -39,7 +39,6 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_tarrifs_pick, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -47,15 +46,11 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final TariffsPickItems _item = tariffsPickItemsList.get(i);
-
         float _dens = context.getResources().getDisplayMetrics().density;
-
         int _size = Math.round(_dens * 18);
         Drawable _def_draw = context.getResources().getDrawable(_item.getImgResId());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
         viewHolder.imageView.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.imageView.setImageBitmap(_bitmap);
         viewHolder.title.setText(_item.getStr());
@@ -78,7 +73,6 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
     }
 
     public static class TariffsPickItems {
-
         public interface CallBack {
             void call(TariffsPickItems itemsMenu);
         }
@@ -95,14 +89,12 @@ public class TariffsPickAdapter extends RecyclerView.Adapter<TariffsPickAdapter.
             this.check  = check;
         }
 
-        public int getImgResId() {
+        int getImgResId() {
             return img;
         }
-
         public String getStr() {
             return title;
         }
-
         public CallBack getCallBack() {
             return callBack;
         }

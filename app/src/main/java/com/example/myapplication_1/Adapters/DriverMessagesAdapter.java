@@ -42,16 +42,13 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int typeInt) {
-
         ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_messages, viewGroup, false);
         return new DriverMessagesAdapter.ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder viewHolder, final int i) {
-
         final ItemsMenu _item = itemsMenuList.get(i);
-
         LinearLayout.LayoutParams params;
         if(i == 0){
             ((ViewHolder)viewHolder).relativeLayout.setBackground(card);
@@ -72,7 +69,6 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             ((ViewHolder)viewHolder).linearLayout.setPadding(20,25,10,15);
             ((ViewHolder)viewHolder).title.setTextColor(Color.BLACK);
         }
-
         if(i == 3){
             ((ViewHolder)viewHolder).relativeLayout.setBackground(card);
             ((ViewHolder)viewHolder).linearLayout.setPadding(100,0,0,0);
@@ -93,7 +89,6 @@ public class DriverMessagesAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         public ItemsMenu(String title) {
             this.title = title;
-
         }
 
         public String getTitle() {

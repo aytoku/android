@@ -137,8 +137,7 @@ public class DeployedMessagesFragment extends Fragment {
             @Override
             public JsonObject async(String result) throws ClassCastException {
                 try {
-                    result = "[\n" +
-                            "  {\n" +
+                    result = "  {\n" +
                             "    \"uuid\": \"bd8f7c60-80a4-4cc6-a6bf-a004b0b247dc\",\n" +
                             "    \"message\": \"Тест. Только для рафа\",\n" +
                             "    \"ack\": true,\n" +
@@ -146,8 +145,7 @@ public class DeployedMessagesFragment extends Fragment {
                             "    \"driver_uuid\": \"96751bdf-9024-45da-82c5-a51f47b9efdb\",\n" +
                             "    \"created_at_unix\": 1575376152,\n" +
                             "    \"tag\": \"\"\n" +
-                            "  }" +
-                            "]";
+                            "  }";
                     JsonParser jsonParser = new JsonParser();
                     return  jsonParser.parse(result).getAsJsonObject();
                 }catch( NullPointerException | JsonParseException e){
@@ -165,13 +163,14 @@ public class DeployedMessagesFragment extends Fragment {
                 }catch (NullPointerException|JsonParseException e){
                     Log.e(TAG, "sync" + e.getMessage());
                 }
+                deployedMessagesAdapter.notifyDataSetChanged();
                 long created_at_unix = 0;
                 try {
                     created_at_unix = result.get("created_at_unix").getAsLong();
                     long current_date = new Date().getTime();
                     long dif = current_date - created_at_unix;
                     Date date = new Date(dif * 1000);
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss z");
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
                     simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-4"));
                     String s = simpleDateFormat.format(date);
                 }catch (NullPointerException|JsonParseException e){

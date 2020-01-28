@@ -24,7 +24,6 @@ import java.util.List;
         private Context context;
         private Drawable card;
         private Drawable card_gradient;
-
         private List<AssistantItems> assistantItemsList;
 
         public AssistantAdapter(List<AssistantItems> assistantItemsList, Context context) {
@@ -33,14 +32,12 @@ import java.util.List;
 
             card = context.getResources().getDrawable(R.drawable.ic_card_gradient);
             card_gradient = context.getResources().getDrawable(R.drawable.card_gradient_1);
-
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_assistant, viewGroup, false);
             ViewHolder itemViewHolder = new ViewHolder(view);
             return itemViewHolder;
@@ -50,7 +47,6 @@ import java.util.List;
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
             final AssistantItems _item = assistantItemsList.get(i);
-
             viewHolder.title.setText(_item.getTitle());
 
             if(i == 0){
@@ -73,11 +69,9 @@ import java.util.List;
         public static class AssistantItems {
 
             private String title;
-
             public AssistantItems(String title) {
                 this.title = title;
             }
-
             public String getTitle() {
                 return title;
             }

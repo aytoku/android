@@ -41,7 +41,6 @@ public class PaymentChangeAdapter extends RecyclerView.Adapter<PaymentChangeAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_payment_change, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -49,14 +48,11 @@ public class PaymentChangeAdapter extends RecyclerView.Adapter<PaymentChangeAdap
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final PaymentChangeItems _item = itemsMenuList.get(i);
-
         float _dens = context.getResources().getDisplayMetrics().density;
         int _size = Math.round(_dens * 40);
         Drawable _def_draw = context.getResources().getDrawable(_item.getCardImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
         viewHolder.card_img.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.card_img.setImageBitmap( _bitmap );
         viewHolder.title.setText( _item.getTitle() );
@@ -82,7 +78,6 @@ public class PaymentChangeAdapter extends RecyclerView.Adapter<PaymentChangeAdap
     }
 
     public static class PaymentChangeItems {
-
         public interface CallBack {
             void call(PaymentChangeItems itemsMenu);
         }
@@ -102,9 +97,7 @@ public class PaymentChangeAdapter extends RecyclerView.Adapter<PaymentChangeAdap
         int getCardImg() {
             return card_img;
         }
-
         public String getTitle(){return title;}
-
         public CallBack getCallBack() {
             return callBack;
         }

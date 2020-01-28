@@ -40,7 +40,6 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_rating, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -48,9 +47,7 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final PraiseList praiseList = praiseLists.get(i);
-
         float _dens = context.getResources().getDisplayMetrics().density;
         int _size = Math.round(_dens * 15);
         Drawable _def_draw = context.getResources().getDrawable(praiseList.getImage());
@@ -58,7 +55,6 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
         viewHolder.imageView.setImageBitmap( _bitmap );
         viewHolder.imageView.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.title.setText(praiseList.getTitle());
-
         if(selectItem == i){
             viewHolder.linearLayout.setBackground(drawable);
         } else{

@@ -67,13 +67,10 @@ public class ViewPagerAdapter extends PagerAdapter {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         @SuppressLint("InflateParams") View view = layoutInflater.inflate(R.layout.custom_layout, null);
         if (position == 0){
-
             view.setBackground(context.getResources().getDrawable(R.drawable.gradient_blue));
         }else if (position == 1){
-
             view.setBackground(context.getResources().getDrawable(R.drawable.gradient_green));
         }else{
-
             view.setBackground(context.getResources().getDrawable(R.drawable.gradient_red));
         }
         ImageView imageView = view.findViewById(R.id.imageView);
@@ -99,7 +96,6 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(@NotNull ViewGroup container, int position, @NotNull Object object){
-
         ViewPager vp = (ViewPager) container;
         View view = (View) object;
         vp.removeView(view);

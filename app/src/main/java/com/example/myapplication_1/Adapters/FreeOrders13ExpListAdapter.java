@@ -75,7 +75,6 @@ public class FreeOrders13ExpListAdapter extends BaseExpandableListAdapter implem
             LayoutInflater inflater = (LayoutInflater) activity.getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.group_view, null);
         }
-
         return convertView;
     }
 
@@ -93,8 +92,6 @@ public class FreeOrders13ExpListAdapter extends BaseExpandableListAdapter implem
         dataAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spinner.setAdapter(dataAdapter);
         spinner.setSelection(spinner.getFirstVisiblePosition());
-
-
         ImageView imageView = convertView.findViewById(R.id.rl_free_orders_spinner_img);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

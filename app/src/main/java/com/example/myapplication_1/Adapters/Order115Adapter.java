@@ -29,7 +29,6 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_order_1_1_5, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -37,9 +36,7 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final Order115Items _item = order115ItemsList.get(i);
-
         viewHolder.emoji.setText(_item.getEmoji());
         viewHolder.desc.setText(_item.getStr());
     }
@@ -62,7 +59,6 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
         String getEmoji() {
             return img;
         }
-
         public String getStr() {
             return desc;
         }

@@ -40,7 +40,6 @@ public class NewSearchAdapter extends RecyclerView.Adapter<NewSearchAdapter.View
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int i){
         final NewSearchItems newSearchItems = newSearchAdapterList.get(i);
-
         float _dens = context.getResources().getDisplayMetrics().density;
         int _size = Math.round(_dens * 15);
         Drawable _drawable = context.getResources().getDrawable(newSearchItems.getImg());
@@ -69,11 +68,9 @@ public class NewSearchAdapter extends RecyclerView.Adapter<NewSearchAdapter.View
         public int getImg() {
             return img;
         }
-
         public String getTitle() {
             return title;
         }
-
         public String getDesc() {
             return desc;
         }

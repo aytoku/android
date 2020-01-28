@@ -28,7 +28,6 @@ import com.example.myapplication_1.R;
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_empty_chat_driver, viewGroup, false);
             return new ViewHolder(v);
         }
@@ -37,15 +36,12 @@ import com.example.myapplication_1.R;
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
             final ChatItems _item = chatItems[i];
-
             viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    try {
+                    try{
                         _item.getCallBack().call(_item);
-
-                    } catch ( NullPointerException e) {
+                    }catch ( NullPointerException e){
                         e.printStackTrace();
                     }
                 }
@@ -74,7 +70,6 @@ import com.example.myapplication_1.R;
             public CallBack getCallBack() {
                 return callBack;
             }
-
             public String getTitle() {
                 return title;
             }

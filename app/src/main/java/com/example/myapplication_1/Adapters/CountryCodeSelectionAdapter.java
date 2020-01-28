@@ -39,39 +39,31 @@ import ru.osety.amironlibrary.DrawableUtils;
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
             final CountryCodeItems _item = countryCodeItems[i];
-
             Drawable ic_background_xml = context.getResources().getDrawable(R.mipmap.icon_car);
             float _dens = context.getResources().getDisplayMetrics().density;
-
             Drawable ic_rout_color = DrawableUtils.setTintDrawable(ic_background_xml, _item.getColorBackground());
-
             int _size = Math.round(_dens * 22);
             Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
             Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-
             viewHolder.img.setBackground( ic_rout_color );
             viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
             viewHolder.img.setImageBitmap( _bitmap );
             viewHolder.letter.setText( _item.getLetter() );
             viewHolder.title.setText( _item.getStr() );
             viewHolder.code.setText( _item.getTime() );
-
             viewHolder.img.getRootView().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     _item.callBack.call(_item);
                 }
             });
-
             viewHolder.title.getRootView().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     _item.callBack.call(_item);
                 }
             });
-
             viewHolder.code.getRootView().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -86,7 +78,6 @@ import ru.osety.amironlibrary.DrawableUtils;
         }
 
         public static class CountryCodeItems {
-
             public interface CallBack {
                 void call(CountryCodeItems itemsMenu);
             }
@@ -108,19 +99,15 @@ import ru.osety.amironlibrary.DrawableUtils;
             }
 
             String getLetter(){return letter;}
-
             public int getImg() {
                 return img;
             }
-
             public String getStr() {
                 return str;
             }
-
             String getTime() {
                 return code;
             }
-
             int getColorBackground() {
                 return colorBackgroundInt;
             }

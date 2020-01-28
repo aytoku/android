@@ -28,7 +28,6 @@ import com.example.myapplication_1.R;
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
             ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_empty_chat_driver, viewGroup, false);
             return new ViewHolder(v);
 
@@ -36,9 +35,7 @@ import com.example.myapplication_1.R;
 
         @Override
         public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
             final ChatWithDriverItem _item = chatWithDriverItems[i];
-
             viewHolder.title.setText( _item.getTitle() );
         }
 
@@ -48,17 +45,14 @@ import com.example.myapplication_1.R;
         }
 
         public static class ChatWithDriverItem {
-
             public interface CallBack {
                 void call(ChatWithDriverItem itemsMenu);
             }
 
             private String title;
-
             public ChatWithDriverItem(String title) {
                 this.title = title;
             }
-
             public String getTitle() {
                 return title;
             }

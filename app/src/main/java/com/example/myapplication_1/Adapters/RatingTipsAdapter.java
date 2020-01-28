@@ -32,7 +32,6 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i){
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_rating_card, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -40,10 +39,8 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i){
-
         viewHolder.price.setText(String.valueOf(tipsList.get(i)));
         tipsList.get(i);
-
         if(selectItem == i){
             viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#FC5C58"));
             viewHolder.price.setTextColor(Color.WHITE);
