@@ -22,7 +22,6 @@ import com.google.gson.JsonParser;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,10 +36,10 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class DeployedMessagesFragment extends Fragment {
 
     public static final String TAG = "DeployedMessagesFragment";
-    public static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkcml2ZXJfaWQiOjAsImRyaXZlcl91dWlkIjoiYWIyNzc1MWUtYzI0Yi00NGNkLTkxZDItYmE3ZjBjNTQ0YzFjIiwiZGV2aWNlX2lkIjoiMzU4NDMwMTc3MzY1NjQiLCJwaG9uZSI6Iis3OTA2NDk0NTM2NSIsImV4cCI6MTU4MDE4NjAxNiwiaWF0IjoxNTgwMTE0MDE2fQ.qLggDus1ViBl3N38IMXWPB4y5smd9h8ylBfTU0yoFuk";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkcml2ZXJfaWQiOjAsImRyaXZlcl91dWlkIjoiYWIyNzc1MWUtYzI0Yi00NGNkLTkxZDItYmE3ZjBjNTQ0YzFjIiwiZGV2aWNlX2lkIjoiMzU4NDMwMTc3MzY1NjQiLCJwaG9uZSI6Iis3OTA2NDk0NTM2NSIsImV4cCI6MTU4MDE4NjAxNiwiaWF0IjoxNTgwMTE0MDE2fQ.qLggDus1ViBl3N38IMXWPB4y5smd9h8ylBfTU0yoFuk";
     private RecyclerView.Adapter deployedMessagesAdapter;
     private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
-    private List<ArrayList> list = new ArrayList<>();
+    private List<String> list = new ArrayList<>();
 
     public static DeployedMessagesFragment getInstance(Bundle args) {
 
@@ -54,26 +53,6 @@ public class DeployedMessagesFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-        long unix_time = 1575376152;
-        Date unix_date = new Date(unix_time * 1000L);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy:mm:dd HH:mm:ss");
-        simpleDateFormat.setTimeZone    (TimeZone.getTimeZone("GMT-4"));
-        String correct_time = simpleDateFormat.format(unix_date);
-        System.out.println(correct_time);
-
-        DateFormat dateFormat = new SimpleDateFormat("yyyy:mm:dd HH:mm:ss");
-        long current_date = new Date().getTime();
-        Date cur = new Date(current_date * 1000L);
-        System.out.println(dateFormat.format(current_date));
-
-        long dif = current_date - unix_time;
-        Date date2 = new Date(dif * 1000L);
-        SimpleDateFormat simpleDateFormatDif = new SimpleDateFormat("yyyy:mm:dd HH:mm:ss");
-        simpleDateFormatDif.setTimeZone    (TimeZone.getTimeZone("GMT-4"));
-        String difference = simpleDateFormat.format(date2);
-        System.out.println("Прошло" + difference + "минут");
-
 
         View view = inflater.inflate(R.layout.deployed_messages,
                 container, false);
@@ -108,6 +87,15 @@ public class DeployedMessagesFragment extends Fragment {
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(deployedMessages_rv);
+
+        long created_at_unix = 1575376152;
+        long current_date = new Date().getTime();
+        long dif = current_date - created_at_unix;
+        Date date = new Date(dif * 1000L);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-4"));
+        String s = simpleDateFormat.format(date);
+        System.out.println(s);
 
         getText();
         return view;
@@ -148,7 +136,18 @@ public class DeployedMessagesFragment extends Fragment {
             @SuppressLint("LongLogTag")
             @Override
             public JsonObject async(String result) throws ClassCastException {
-                try{
+                try {
+                    result = "[\n" +
+                            "  {\n" +
+                            "    \"uuid\": \"bd8f7c60-80a4-4cc6-a6bf-a004b0b247dc\",\n" +
+                            "    \"message\": \"Тест. Только для рафа\",\n" +
+                            "    \"ack\": true,\n" +
+                            "    \"order_uuid\": \"\",\n" +
+                            "    \"driver_uuid\": \"96751bdf-9024-45da-82c5-a51f47b9efdb\",\n" +
+                            "    \"created_at_unix\": 1575376152,\n" +
+                            "    \"tag\": \"\"\n" +
+                            "  }" +
+                            "]";
                     JsonParser jsonParser = new JsonParser();
                     return  jsonParser.parse(result).getAsJsonObject();
                 }catch( NullPointerException | JsonParseException e){
@@ -172,7 +171,7 @@ public class DeployedMessagesFragment extends Fragment {
                     long current_date = new Date().getTime();
                     long dif = current_date - created_at_unix;
                     Date date = new Date(dif * 1000);
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss z");
                     simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-4"));
                     String s = simpleDateFormat.format(date);
                 }catch (NullPointerException|JsonParseException e){
@@ -187,6 +186,6 @@ public class DeployedMessagesFragment extends Fragment {
             public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
-                    .query("https://driver.apis.stage.faem.pro/alerts/history", jo.toString());
+                    .query("https://driver.apis.stage.faem.pro/api/v2/alerts/history", jo.toString());
     }
 }
