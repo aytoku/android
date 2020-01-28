@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.DeployedMessagesAdapter;
 import com.example.myapplication_1.R;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
@@ -40,6 +42,7 @@ public class DeployedMessagesFragment extends Fragment {
     private RecyclerView.Adapter deployedMessagesAdapter;
     private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
     private List<String> list = new ArrayList<>();
+    private int index;
 
     public static DeployedMessagesFragment getInstance(Bundle args) {
 
@@ -137,7 +140,8 @@ public class DeployedMessagesFragment extends Fragment {
             @Override
             public JsonObject async(String result) throws ClassCastException {
                 try {
-                    result = "  {\n" +
+                    result =
+                            "  {\n" +
                             "    \"uuid\": \"bd8f7c60-80a4-4cc6-a6bf-a004b0b247dc\",\n" +
                             "    \"message\": \"Тест. Только для рафа\",\n" +
                             "    \"ack\": true,\n" +
@@ -163,7 +167,12 @@ public class DeployedMessagesFragment extends Fragment {
                 }catch (NullPointerException|JsonParseException e){
                     Log.e(TAG, "sync" + e.getMessage());
                 }
-                deployedMessagesAdapter.notifyDataSetChanged();
+                JsonArray tip_percent = result.getAsJsonArray("");
+                for (JsonElement i : tip_percent){
+                    index = i.getAsInt();
+                    list.add(String.valueOf(index));
+                    deployedMessagesAdapter.notifyDataSetChanged();
+                }
                 long created_at_unix = 0;
                 try {
                     created_at_unix = result.get("created_at_unix").getAsLong();

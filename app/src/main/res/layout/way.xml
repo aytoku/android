@@ -13,7 +13,7 @@
         android:paddingBottom="10dp">
 
         <TextView
-            android:id="@+id/ll_way.rl_way_wishes"
+            android:id="@+id/rl_wishes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Пожелания"
@@ -23,7 +23,6 @@
             android:textSize="17sp"/>
 
         <LinearLayout
-            android:id="@+id/rl_way.ll_way"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
@@ -31,7 +30,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/ll_way.rl_way.ll_way.payment_method"
+                android:id="@+id/ll_way_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Способ оплаты"
@@ -39,7 +38,7 @@
                 android:textSize="17sp"/>
 
             <TextView
-                android:id="@+id/ll_way.rl_way.ll_way.cash"
+                android:id="@+id/ll_way_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#AFAFAF"
