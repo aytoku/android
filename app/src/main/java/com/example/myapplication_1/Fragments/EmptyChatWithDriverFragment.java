@@ -80,8 +80,8 @@ public class EmptyChatWithDriverFragment extends Fragment {
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                ChatWithOperator chatWithOperator = ChatWithOperator.getInstance(_args);
+                Bundle bundle = new Bundle();
+                ChatWithOperator chatWithOperator = ChatWithOperator.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, chatWithOperator);
                 fragmentTransaction.commit();
@@ -131,7 +131,6 @@ public class EmptyChatWithDriverFragment extends Fragment {
                             @Override
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
                                 try{
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -144,7 +143,6 @@ public class EmptyChatWithDriverFragment extends Fragment {
                             @Override
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
                                 try{
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

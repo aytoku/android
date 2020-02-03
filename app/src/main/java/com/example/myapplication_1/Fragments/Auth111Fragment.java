@@ -127,9 +127,9 @@ public class Auth111Fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        Bundle _args = new Bundle();
-        final CountryCodeSelectionFragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(_args);
-        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final CountryCodeSelectionFragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(bundle);
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

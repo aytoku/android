@@ -36,13 +36,13 @@ public class SpinnerTariffsFragment extends Fragment {
                 container, false);
 
         ImageButton imageButton = view.findViewById(R.id.rl_tariffs_button);
-        Spinner spinner = (Spinner) view.findViewById(R.id.choose);
+        Spinner spinner = view.findViewById(R.id.choose);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, choose);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        Bundle _args = new Bundle();
-        final InformationFragment informationFragment = InformationFragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final InformationFragment informationFragment = InformationFragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -42,8 +42,8 @@ public class WebViewFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                final Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(_args);
+                Bundle bundle = new Bundle();
+                final Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, auth111Fragment);
                 fragmentTransaction.commit();

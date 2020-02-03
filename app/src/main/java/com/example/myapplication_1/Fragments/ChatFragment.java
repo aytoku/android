@@ -63,7 +63,6 @@ public class ChatFragment extends Fragment {
                     @Override
                     public void call(ChatAdapter.ChatItems itemsMenu) {
                         try {
-                            Bundle _args = new Bundle();
                         } catch (NullPointerException e) {
                             e.printStackTrace();
                         }
@@ -74,7 +73,6 @@ public class ChatFragment extends Fragment {
                     @Override
                     public void call(ChatAdapter.ChatItems itemsMenu) {
                         try {
-                            Bundle _args = new Bundle();
                         } catch (NullPointerException e) {
                             e.printStackTrace();
                         }

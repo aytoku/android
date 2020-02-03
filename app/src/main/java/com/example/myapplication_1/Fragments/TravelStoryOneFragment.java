@@ -38,8 +38,8 @@ public class TravelStoryOneFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.travel_story_1, container, false);
 
-        Bundle _args = new Bundle();
-        final TravelStoryFragment travelStoryOneFragment = TravelStoryFragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final TravelStoryFragment travelStoryOneFragment = TravelStoryFragment.getInstance(bundle);
         ImageView button = view.findViewById(R.id.rl_travel_story_1_imageView);
         rv = view.findViewById(R.id.rl_travel_story_1_recycler_card);
         LinearLayout linearLayout = view.findViewById(R.id.rl_travel_story_1_ll);
@@ -91,16 +91,13 @@ public class TravelStoryOneFragment extends Fragment {
     }
 
     private void showDialog(View view){
-
         TravelStoryOneAlert travelStoryOneAlert = new TravelStoryOneAlert();
         travelStoryOneAlert.setCancelable(true);
         travelStoryOneAlert.show(getFragmentManager(), "DriverTipsFragment");
     }
 
     private CellTravelStoryOneCardAdapter.TravelStoryRow[] getTravelStoryRowItems() {
-
         CellTravelStoryOneCardAdapter.TravelStoryRow []_arr = new CellTravelStoryOneCardAdapter.TravelStoryRow[]{
-
                 new CellTravelStoryOneCardAdapter.TravelStoryRow(
                         "Сегодня 10:10",
                         R.drawable.icon_ellipse_red,
@@ -108,7 +105,6 @@ public class TravelStoryOneFragment extends Fragment {
                             @Override
                             public void call(CellTravelStoryOneCardAdapter.TravelStoryRow travelStoryRowItems) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -119,9 +115,7 @@ public class TravelStoryOneFragment extends Fragment {
     }
 
     private CellTravelStoryOneAdapter.PaymentDesc[] getCellTravelStoryItems() {
-
         CellTravelStoryOneAdapter.PaymentDesc []_arr1 = new CellTravelStoryOneAdapter.PaymentDesc[]{
-
                 new CellTravelStoryOneAdapter.PaymentDesc(
                         "Ожидание",
                         "5 мин*3 \u20BD","15 \u20BD"),

@@ -129,7 +129,6 @@ public class PaymentMethodFragment extends Fragment {
                             @Override
                             public void call(PaymentMethodAdapter.PaymentMethodItems itemsMenu){
                                 try {
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -179,7 +178,6 @@ public class PaymentMethodFragment extends Fragment {
                                     @Override
                                     public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){
                                         try {
-                                            Bundle _args = new Bundle();
                                         }catch (NullPointerException e) {
                                             e.printStackTrace();
                                         }
@@ -192,7 +190,6 @@ public class PaymentMethodFragment extends Fragment {
                                 @Override
                                 public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){
                                     try {
-                                        Bundle _args = new Bundle();
                                     }catch (NullPointerException e) {
                                         e.printStackTrace();
                                     }
@@ -205,7 +202,6 @@ public class PaymentMethodFragment extends Fragment {
                             @Override
                             public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){
                                 try {
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

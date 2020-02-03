@@ -67,9 +67,8 @@ public class CarCardFragment extends Fragment {
                         new MainActivityAdapter.ItemsMenu.CallBack() {
                             @Override
                             public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
-                                try {
-                                    Bundle _args = new Bundle();
-                                } catch (NullPointerException e) {
+                                try{
+                                }catch(NullPointerException e){
                                     e.printStackTrace();
                                 }
                             }
@@ -81,9 +80,8 @@ public class CarCardFragment extends Fragment {
                         new MainActivityAdapter.ItemsMenu.CallBack() {
                             @Override
                             public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
-                                try {
-                                    Bundle _args = new Bundle();
-                                } catch (NullPointerException e) {
+                                try{
+                                }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
                             }
@@ -95,7 +93,6 @@ public class CarCardFragment extends Fragment {
                             @Override
                             public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -109,7 +106,6 @@ public class CarCardFragment extends Fragment {
                             @Override
                             public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -123,7 +119,6 @@ public class CarCardFragment extends Fragment {
                             @Override
                             public void call(MainActivityAdapter.ItemsMenu itemsMenu) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

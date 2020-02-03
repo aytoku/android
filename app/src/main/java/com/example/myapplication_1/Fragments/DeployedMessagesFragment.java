@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.Adapters.DeployedMessagesAdapter;
 import com.example.myapplication_1.R;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
@@ -67,7 +68,7 @@ public class DeployedMessagesFragment extends Fragment {
         try {
             DeployedMessagesAdapter.DeployedMessagesItems[] deployedMessagesItems = getDeployedMessagesItems();
             deployedMessagesItemsList = new ArrayList<>(Arrays.asList(deployedMessagesItems));
-            deployedMessagesAdapter = new DeployedMessagesAdapter(deployedMessagesItemsList, getActivity().getBaseContext());
+            deployedMessagesAdapter = new DeployedMessagesAdapter(messageList, getActivity().getBaseContext());
             recyclerView.setAdapter(deployedMessagesAdapter);
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -133,17 +134,25 @@ public class DeployedMessagesFragment extends Fragment {
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
         _mapHead.put("Authorization", "Bearer" + TOKEN);
-        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonArray, String>() {
             @Override
             public void asyncBefore() throws InterruptedException {}
 
             @SuppressLint("LongLogTag")
             @Override
-            public JsonObject async(String result) throws ClassCastException {
+            public JsonArray async(String result) throws ClassCastException {
                 try {
                     result =
-                            " [ data: " +
-                                    "{\n" +
+                            "{\n" +
+                            "    \"uuid\": \"bd8f7c60-80a4-4cc6-a6bf-a004b0b247dc\",\n" +
+                            "    \"message\": \"Тест. Только для рафа\",\n" +
+                            "    \"ack\": true,\n" +
+                            "    \"order_uuid\": \"\",\n" +
+                            "    \"driver_uuid\": \"96751bdf-9024-45da-82c5-a51f47b9efdb\",\n" +
+                            "    \"created_at_unix\": 1575376152,\n" +
+                            "    \"tag\": \"\"\n" +
+                            "  }," +
+                    "  {\n" +
                             "    \"uuid\": \"bd8f7c60-80a4-4cc6-a6bf-a004b0b247dc\",\n" +
                             "    \"message\": \"Тест. Только для рафа\",\n" +
                             "    \"ack\": true,\n" +
@@ -153,7 +162,7 @@ public class DeployedMessagesFragment extends Fragment {
                             "    \"tag\": \"\"\n" +
                             "  }]";
                     JsonParser jsonParser = new JsonParser();
-                    return  jsonParser.parse(result).getAsJsonObject();
+                    return  jsonParser.parse(result).getAsJsonArray();
                 }catch( NullPointerException | JsonParseException e){
                     Log.e(TAG, "async: " +e.getMessage());
                 }
@@ -162,11 +171,10 @@ public class DeployedMessagesFragment extends Fragment {
 
             @SuppressLint("LongLogTag")
             @Override
-            public void sync(JsonObject result) {
+            public void sync(JsonArray result) {
                 Gson gson = new Gson();
                 MessageDialog mes = gson.fromJson(result, MessageDialog.class);
                 Log.i("GSON", mes.message + mes.created_at_unix);
-                JsonArray jsonArray = result.getAsJsonArray("data");
                 String message = "message";
                 try {
                     message = result.get("message").getAsString();
@@ -180,25 +188,13 @@ public class DeployedMessagesFragment extends Fragment {
                     messageDialog.created_at_unix = result.get("created_at_unix").getAsLong();
                     messageList.add(messageDialog);
                 }
-//                long created_at_unix = 0;
-//                try {
-//                    created_at_unix = result.get("created_at_unix").getAsLong();
-//                    long current_date = new Date().getTime();
-//                    long dif = current_date - created_at_unix;
-//                    Date date = new Date(dif * 1000L);
-//                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
-//                    simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-4"));
-//                    String s = simpleDateFormat.format(date);
-//                }catch (NullPointerException| JsonParseException e){
-//                    Log.e(TAG, "sync" + e.getMessage());
-//                }
             }
 
             @Override
             public void progress(Integer... status) {}
 
             @Override
-            public void cancel(JsonObject result, Throwable throwable) {}
+            public void cancel(JsonArray result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
                     .query("https://driver.apis.stage.faem.pro/api/v2/alerts/history", jo.toString());

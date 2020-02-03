@@ -61,7 +61,7 @@ public class TravelStoryFragment extends Fragment {
             TravelStoryAdapter travelStoryAdapter = new TravelStoryAdapter(travelStoryCardItems, getActivity().getBaseContext());
             recyclerView.setAdapter( travelStoryAdapter );
             recyclerView.setLayoutManager(
-                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
+                    new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
@@ -79,10 +79,10 @@ public class TravelStoryFragment extends Fragment {
                             @Override
                             public void call(TravelStoryAdapter.TravelStoryCard travelStoryCardItems) {
                                 try {
-                                    Bundle _args = new Bundle();
+                                    Bundle bundle = new Bundle();
                                     String cv_id =  travelStoryCardItems.getUuid();
-                                    _args.putString("uuid", cv_id);
-                                    TravelStoryOneFragment travelStoryFragment = TravelStoryOneFragment.getInstance(_args);
+                                    bundle.putString("uuid", cv_id);
+                                    TravelStoryOneFragment travelStoryFragment = TravelStoryOneFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, travelStoryFragment);
                                     fragmentTransaction.commit();

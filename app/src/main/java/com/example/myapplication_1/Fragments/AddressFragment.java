@@ -115,8 +115,8 @@ public class AddressFragment extends Fragment {
                             @Override
                             public void call(AddressAdapter.AddressItems addressItems){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                     fragmentTransaction.commit();
@@ -133,8 +133,8 @@ public class AddressFragment extends Fragment {
                             @Override
                             public void call(AddressAdapter.AddressItems addressItems){
                                 try {
-                                    Bundle _args = new Bundle();
-                                    EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(_args);
+                                    Bundle bundle = new Bundle();
+                                    EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
                                     fragmentTransaction.commit();

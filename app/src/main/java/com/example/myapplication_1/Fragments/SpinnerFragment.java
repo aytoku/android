@@ -49,9 +49,9 @@ public class SpinnerFragment extends Fragment {
         View view = inflater.inflate(R.layout.information_partners,
                 container, false);
 
-        Spinner spinner = (Spinner) view.findViewById(R.id.choose);
+        Spinner spinner = view.findViewById(R.id.choose);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(Objects.requireNonNull(this.getActivity()), android.R.layout.simple_spinner_item, choose);
-        Spinner spinner1 = (Spinner) view.findViewById(R.id.choose_cities);
+        Spinner spinner1 = view.findViewById(R.id.choose_cities);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, choose_cities);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -123,8 +123,8 @@ public class SpinnerFragment extends Fragment {
             }
         });
 
-        Bundle _args = new Bundle();
-        final PartnersFragment partnersFragment = PartnersFragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final PartnersFragment partnersFragment = PartnersFragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

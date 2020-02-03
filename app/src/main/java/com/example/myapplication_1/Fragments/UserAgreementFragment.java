@@ -42,8 +42,8 @@ public class UserAgreementFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                final AboutAppFragment aboutAppFragment = AboutAppFragment.getInstance(_args);
+                Bundle bundle = new Bundle();
+                final AboutAppFragment aboutAppFragment = AboutAppFragment.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, aboutAppFragment);
                 fragmentTransaction.commit();

@@ -113,7 +113,6 @@ public class WishFragment extends Fragment implements SeekBar.OnSeekBarChangeLis
 
 
     private AdapterWish.WishItems[] getWishItems() {
-
         String[] cost_arr = new String[]{"30 \u20BD","0 \u20BD","10 \u20BD"};
         String[] desc_arr = new String[]{"Детское кресло", "Курящий салон", "Некурящий салон"};
 

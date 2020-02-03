@@ -131,7 +131,6 @@ public class ChatWithOperator extends Fragment {
                             @Override
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
                                 try{
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -144,7 +143,6 @@ public class ChatWithOperator extends Fragment {
                             @Override
                             public void call(EmptyChatWithDriverAdapter.ItemsMenu itemsMenu) {
                                 try{
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

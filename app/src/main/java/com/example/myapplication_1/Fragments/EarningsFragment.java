@@ -65,7 +65,6 @@ public class EarningsFragment extends Fragment {
                     @Override
                     public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
                                 try {
-                                    Bundle _args = new Bundle();
                                 } catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -81,7 +80,6 @@ public class EarningsFragment extends Fragment {
 
                         public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
                                     try {
-                                        Bundle _args = new Bundle();
                                     } catch (NullPointerException e) {
                                         e.printStackTrace();
                                     }
@@ -97,7 +95,6 @@ public class EarningsFragment extends Fragment {
 
                     public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
                                     try {
-                                        Bundle _args = new Bundle();
                                     } catch (NullPointerException e) {
                                         e.printStackTrace();
                                     }
@@ -112,7 +109,6 @@ public class EarningsFragment extends Fragment {
                     @Override
                     public void call(EarningsPageAdapter.EarningsPageItems earningsPageItems) {
                                     try {
-                                        Bundle _args = new Bundle();
                                     } catch (NullPointerException e) {
                                         e.printStackTrace();
                                     }

@@ -58,8 +58,8 @@ public class PaymentPickFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle _args = new Bundle();
-                PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(_args);
+                Bundle bundle = new Bundle();
+                PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(bundle);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
                 fragmentTransaction.commit();
@@ -77,7 +77,6 @@ public class PaymentPickFragment extends Fragment {
                             @Override
                             public void call(PaymentPickAdapter.PaymentPickItems paymentPickItems){
                                 try {
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -90,7 +89,6 @@ public class PaymentPickFragment extends Fragment {
                             @Override
                             public void call(PaymentPickAdapter.PaymentPickItems paymentPickItems){
                                 try {
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -103,7 +101,6 @@ public class PaymentPickFragment extends Fragment {
                             @Override
                             public void call(PaymentPickAdapter.PaymentPickItems paymentPickItems){
                                 try {
-                                    Bundle _args = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

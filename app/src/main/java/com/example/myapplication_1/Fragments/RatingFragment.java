@@ -172,8 +172,8 @@ public class RatingFragment extends Fragment{
                 postData();
             }
         });
-        getTips();
-        return view;
+       getTips();
+       return view;
     }
 
     private void allStarsGrey(){

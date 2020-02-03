@@ -42,11 +42,11 @@ public class ServiceFragment extends Fragment {
         RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_service3);
         final TextView textView = view.findViewById(R.id.ll_service_ad_ride);
 
-        Bundle _args = new Bundle();
-        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
-        final Menu162Fragment menu161Fragment = Menu162Fragment.getInstance(_args);
-        final TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(_args);
-        final ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
+        final Menu162Fragment menu161Fragment = Menu162Fragment.getInstance(bundle);
+        final TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(bundle);
+        final ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

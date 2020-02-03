@@ -40,8 +40,8 @@ public class SettingsFragment extends Fragment {
         settings_rv = view.findViewById(R.id.recycler_settings);
         ImageButton imageButton = view.findViewById(R.id.ll_setting_button);
 
-        Bundle _args = new Bundle();
-        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(_args);
+        Bundle bundle = new Bundle();
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
