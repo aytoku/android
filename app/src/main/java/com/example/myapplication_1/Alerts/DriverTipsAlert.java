@@ -65,8 +65,8 @@ public class DriverTipsAlert extends DialogFragment {
         try {
             DriverTipsAdapter.DriverTipsItems[] driverTipsItems = getDriverTipsItems();
             List<DriverTipsAdapter.DriverTipsItems> driverTipsItemsList = new ArrayList<>(Arrays.asList(driverTipsItems));
-            RecyclerView.Adapter adapterGridViewMenu = new DriverTipsAdapter(driverTipsItemsList, getActivity().getBaseContext());
-            recyclerView.setAdapter(adapterGridViewMenu);
+            RecyclerView.Adapter driverTipsAdapter = new DriverTipsAdapter(driverTipsItemsList, getActivity().getBaseContext());
+            recyclerView.setAdapter(driverTipsAdapter);
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
             recyclerView.setItemAnimator( new DefaultItemAnimator() );
@@ -91,7 +91,7 @@ public class DriverTipsAlert extends DialogFragment {
                             @Override
                             public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
-                                    Bundle _args = new Bundle();
+                                    Bundle bundle = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -104,7 +104,7 @@ public class DriverTipsAlert extends DialogFragment {
                             @Override
                             public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
-                                    Bundle _args = new Bundle();
+                                    Bundle bundle = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -117,7 +117,7 @@ public class DriverTipsAlert extends DialogFragment {
                             @Override
                             public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
-                                    Bundle _args = new Bundle();
+                                    Bundle bundle = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -130,7 +130,7 @@ public class DriverTipsAlert extends DialogFragment {
                             @Override
                             public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
-                                    Bundle _args = new Bundle();
+                                    Bundle bundle = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -143,7 +143,7 @@ public class DriverTipsAlert extends DialogFragment {
                             @Override
                             public void call(DriverTipsAdapter.DriverTipsItems driverTipsItems){
                                 try {
-                                    Bundle _args = new Bundle();
+                                    Bundle bundle = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

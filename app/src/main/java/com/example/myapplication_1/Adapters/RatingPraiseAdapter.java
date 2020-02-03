@@ -15,7 +15,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication_1.ClassesForAdapters.PraiseList;
 import com.example.myapplication_1.R;
 
 import java.util.List;
@@ -26,12 +25,12 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
 
     private final LayoutInflater layoutInflater;
     private final Context context;
-    private List<PraiseList> praiseLists;
+    private List<RatingPraiseAdapter.RatingPraiseItems> ratingPraiseItemsList;
     private int selectItem = -1;
     private Drawable drawable;
 
-    public RatingPraiseAdapter(List<PraiseList> praiseLists, Context context) {
-        this.praiseLists = praiseLists;
+    public RatingPraiseAdapter(List<RatingPraiseAdapter.RatingPraiseItems> ratingPraiseItemsList, Context context) {
+        this.ratingPraiseItemsList = ratingPraiseItemsList;
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         drawable = context.getResources().getDrawable(R.drawable.rating_background);
@@ -40,21 +39,21 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_rating, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_rating_praise, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-        final PraiseList praiseList = praiseLists.get(i);
+        final RatingPraiseItems ratingPraiseItems = ratingPraiseItemsList.get(i);
         float _dens = context.getResources().getDisplayMetrics().density;
         int _size = Math.round(_dens * 15);
-        Drawable _def_draw = context.getResources().getDrawable(praiseList.getImage());
+        Drawable _def_draw = context.getResources().getDrawable(ratingPraiseItems.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
         viewHolder.imageView.setImageBitmap( _bitmap );
         viewHolder.imageView.setScaleType(ImageView.ScaleType.CENTER);
-        viewHolder.title.setText(praiseList.getTitle());
+        viewHolder.title.setText(ratingPraiseItems.getStr());
         if(selectItem == i){
             viewHolder.linearLayout.setBackground(drawable);
         } else{
@@ -72,20 +71,36 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
 
     @Override
     public int getItemCount() {
-        return praiseLists.size();
+        return ratingPraiseItemsList.size();
+    }
+
+    public static class RatingPraiseItems {
+        private int img;
+        private String desc;
+
+        public RatingPraiseItems(int img,String desc) {
+            this.img = img;
+            this.desc = desc;
+        }
+
+        public int getImg() {
+            return img;
+        }
+        public String getStr() {
+            return desc;
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         private final ImageView imageView;
         private final TextView title;
         private final LinearLayout linearLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.ll_cell_rating_emoji);
-            title = itemView.findViewById(R.id.ll_cell_rating_emoji_desc);
-            linearLayout = itemView.findViewById(R.id.ll_cell_rating);
+            imageView = itemView.findViewById(R.id.ll_cell_rating_praise_img);
+            title = itemView.findViewById(R.id.ll_cell_rating_praise_desc);
+            linearLayout = itemView.findViewById(R.id.ll_cell_rating_praise);
         }
     }
 }

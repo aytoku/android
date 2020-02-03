@@ -84,7 +84,7 @@ public class PaymentChangeAlert extends DialogFragment {
                             @Override
                             public void call(PaymentChangeAdapter.PaymentChangeItems paymentChangeItems){
                                 try {
-                                    Bundle _args = new Bundle();
+                                    Bundle bundle = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -97,7 +97,7 @@ public class PaymentChangeAlert extends DialogFragment {
                             @Override
                             public void call(PaymentChangeAdapter.PaymentChangeItems paymentChangeItems){
                                 try {
-                                    Bundle _args = new Bundle();
+                                    Bundle bundle = new Bundle();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

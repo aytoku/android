@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -22,7 +23,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.RatingPraiseAdapter;
 import com.example.myapplication_1.Adapters.RatingTipsAdapter;
-import com.example.myapplication_1.ClassesForAdapters.PraiseList;
 import com.example.myapplication_1.R;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -31,6 +31,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -53,7 +54,6 @@ public class RatingFragment extends Fragment{
     private Drawable imgStarGrey;
     private Drawable imgStarRed;
     List<Integer> list = new ArrayList<>();
-    private List<PraiseList>praiseLists = new ArrayList<>();
     private int tip_index;
     private static final String TOKEN = "Token";
 
@@ -74,26 +74,30 @@ public class RatingFragment extends Fragment{
 
         imgStarGrey = getResources().getDrawable(R.drawable.icon_star_grey);
         imgStarRed = getResources().getDrawable(R.drawable.red_star_shadow);
-        RecyclerView tips_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler);
-        RecyclerView praise_rv = view.findViewById(R.id.cl_rating_rl_rating_recycler1);
+        RecyclerView tips_rv = view.findViewById(R.id.rl_rating_tips_recycler);
+        RecyclerView praise_rv = view.findViewById(R.id.rl_rating_praise_recycler);
         CardView button = view.findViewById(R.id.ll_rating_cardButton);
+        LinearLayout address = view.findViewById(R.id.rl_rating_ll_rating_address);
         starArr = new ImageView[]{
-                star1 = view.findViewById(R.id.ll_rating_red_star1),
-                star2 = view.findViewById(R.id.ll_rating_red_star2),
-                star3 = view.findViewById(R.id.ll_rating_red_star3),
-                star4 = view.findViewById(R.id.ll_rating_red_star4),
-                star5 = view.findViewById(R.id.ll_rating_red_star5)
+                star1 = view.findViewById(R.id.ll_rating_star_image1),
+                star2 = view.findViewById(R.id.ll_rating_star_image2),
+                star3 = view.findViewById(R.id.ll_rating_star_image3),
+                star4 = view.findViewById(R.id.ll_rating_star_image4),
+                star5 = view.findViewById(R.id.ll_rating_star_image5)
         };
+        address.setVisibility(View.GONE);
 
         final RecyclerView praiseRecyclerView = praise_rv;
         try {
-            RecyclerView.Adapter ratingPraiseAdapter = new RatingPraiseAdapter(praiseLists, getActivity().getBaseContext());
-            praiseRecyclerView.setAdapter(ratingPraiseAdapter);
+            RatingPraiseAdapter.RatingPraiseItems[] ratingPraiseItems = getRatingPraiseItems();
+            List<RatingPraiseAdapter.RatingPraiseItems> ratingPraiseItemsList = new ArrayList<>(Arrays.asList(ratingPraiseItems));
+            RecyclerView.Adapter menu11Adapter = new RatingPraiseAdapter(ratingPraiseItemsList, getActivity().getBaseContext());
+            praiseRecyclerView.setAdapter(menu11Adapter);
             praiseRecyclerView.setLayoutManager(
-                    new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
-            praiseRecyclerView.setItemAnimator(new DefaultItemAnimator());
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
+            praiseRecyclerView.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
-            Log.e(TAG, "onCreateView" +e.getMessage());
+            e.printStackTrace();
         }
 
         final RecyclerView tipsRecyclerView = tips_rv;
@@ -110,7 +114,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.ll_rating_red_star1){
+                if(view.getId()==R.id.ll_rating_star_image1){
                     star1.setImageDrawable(imgStarRed);
                 }
             }
@@ -119,7 +123,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.ll_rating_red_star2){
+                if(view.getId()==R.id.ll_rating_star_image2){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                 }
@@ -129,7 +133,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.ll_rating_red_star3){
+                if(view.getId()==R.id.ll_rating_star_image3){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
@@ -140,7 +144,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.ll_rating_red_star4){
+                if(view.getId()==R.id.ll_rating_star_image4){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
@@ -152,7 +156,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 allStarsGrey();
-                if(view.getId()==R.id.ll_rating_red_star5){
+                if(view.getId()==R.id.ll_rating_star_image5){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
@@ -161,10 +165,6 @@ public class RatingFragment extends Fragment{
                 }
             }
         });
-        praiseLists.add(new PraiseList(R.mipmap.finger,"Вежливость"));
-        praiseLists.add(new PraiseList(R.mipmap.face,"Вежливость"));
-        praiseLists.add(new PraiseList(R.mipmap.handshake,"Вежливость"));
-        praiseLists.add(new PraiseList(R.mipmap.handshake,"Вежливость"));
 
        button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,7 +229,6 @@ public class RatingFragment extends Fragment{
         jo.addProperty("order_uuid", "585f892b-dfa5-4d07-9bc7-546cc000fa34");
         jo.addProperty("value", String.valueOf(starArr[1]));
         jo.addProperty("tip", list.get(4));
-        jo.addProperty("comment", String.valueOf(praiseLists.get(1)));
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
@@ -261,6 +260,23 @@ public class RatingFragment extends Fragment{
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
                     .query("https://client.apis.stage.faem.pro/api/v2/order/rating", jo.toString());
+    }
+
+    private RatingPraiseAdapter.RatingPraiseItems[] getRatingPraiseItems() {
+        RatingPraiseAdapter.RatingPraiseItems[] arr = new RatingPraiseAdapter.RatingPraiseItems[]{
+                new RatingPraiseAdapter.RatingPraiseItems(
+                        R.mipmap.finger,"Вежливость"),
+
+                new RatingPraiseAdapter.RatingPraiseItems(
+                        R.mipmap.face,"Вежливость"),
+
+                new RatingPraiseAdapter.RatingPraiseItems(
+                        R.mipmap.handshake,"Вежливость"),
+
+                new RatingPraiseAdapter.RatingPraiseItems(
+                        R.mipmap.handshake,"Вежливость")
+        };
+        return arr;
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){

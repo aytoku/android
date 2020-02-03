@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/ll_cell_rating"
+        android:id="@+id/ll_cell_rating_praise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/ll_cell_rating_emoji"
+            android:id="@+id/ll_cell_rating_praise_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
@@ -24,7 +24,7 @@
             android:scaleX="2" />
 
         <TextView
-            android:id="@+id/ll_cell_rating_emoji_desc"
+            android:id="@+id/ll_cell_rating_praise_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="2"

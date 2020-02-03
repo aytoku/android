@@ -13,8 +13,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication_1.Fragments.MessageDialog;
 import com.example.myapplication_1.R;
 
+import java.util.Collections;
 import java.util.List;
 
 public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -24,6 +26,8 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private Drawable card_draw;
     private Drawable card;
     private List<String> list;
+    private List<MessageDialog> messageDialogs;
+    private List<MessageDialog> data = Collections.emptyList();
     private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
 
     public DeployedMessagesAdapter(List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList, Context context) {
@@ -70,7 +74,11 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
 
-        final DeployedMessagesItems _item = deployedMessagesItemsList.get(i);
+        //final DeployedMessagesItems _item = deployedMessagesItemsList.get(i);
+        ((ViewHolder)viewHolder).title.setText(list.get(i));
+        list.get(i);
+        MessageDialog messageDialog = data.get(i);
+        ((ViewHolder)viewHolder).title.setText(messageDialog.message);
         LinearLayout.LayoutParams params;
         if(i > 0){
             ((ViewHolder)viewHolder).relativeLayout.setBackground(card_draw);
@@ -112,7 +120,7 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemCount() {
-        return deployedMessagesItemsList.size();
+        return messageDialogs.size();
     }
 
     public static class DeployedMessagesItems {

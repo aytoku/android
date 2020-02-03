@@ -15,7 +15,7 @@ import com.example.myapplication_1.Fragments.Auth111Fragment;
 import com.example.myapplication_1.Fragments.BlacklistPartnersFragment;
 import com.example.myapplication_1.Fragments.ChatFragment;
 import com.example.myapplication_1.Fragments.ChatSliderFragment;
-import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
+//import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
 import com.example.myapplication_1.Fragments.ChatWithOperator;
 import com.example.myapplication_1.Fragments.CodeScreenFragment;
 import com.example.myapplication_1.Fragments.CommentsFragment;
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         BlacklistPartnersFragment blacklistPartnersFragment = BlacklistPartnersFragment.getInstance(null);
 
         ChatFragment chatFragment = ChatFragment.getInstance(null);
-        ChatWithDriverFragment chatWithDriverFragment = ChatWithDriverFragment.getInstance(null);
+//        ChatWithDriverFragment chatWithDriverFragment = ChatWithDriverFragment.getInstance(null);
         CodeScreenFragment codeScreenFragment = CodeScreenFragment.getInstance(null);
         CommentsFragment commentsFragment = CommentsFragment.getInstance(null);
         CountryCodeSelectionFragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(null);
@@ -157,6 +157,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, deployedMessagesFragment, DeployedMessagesFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, ratingFragment, RatingFragment.TAG).commit();
     }
 }
