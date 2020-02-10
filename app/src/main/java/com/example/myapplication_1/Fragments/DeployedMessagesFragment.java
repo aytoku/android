@@ -17,8 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.Adapters.DeployedMessagesAdapter;
 import com.example.myapplication_1.R;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
@@ -68,7 +66,7 @@ public class DeployedMessagesFragment extends Fragment {
         try {
             DeployedMessagesAdapter.DeployedMessagesItems[] deployedMessagesItems = getDeployedMessagesItems();
             deployedMessagesItemsList = new ArrayList<>(Arrays.asList(deployedMessagesItems));
-            deployedMessagesAdapter = new DeployedMessagesAdapter(messageList, getActivity().getBaseContext());
+            deployedMessagesAdapter = new DeployedMessagesAdapter(deployedMessagesItemsList, getActivity().getBaseContext());
             recyclerView.setAdapter(deployedMessagesAdapter);
             recyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
@@ -134,13 +132,13 @@ public class DeployedMessagesFragment extends Fragment {
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
         _mapHead.put("Authorization", "Bearer" + TOKEN);
-        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonArray, String>() {
+        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
             public void asyncBefore() throws InterruptedException {}
 
             @SuppressLint("LongLogTag")
             @Override
-            public JsonArray async(String result) throws ClassCastException {
+            public JsonObject async(String result) throws ClassCastException {
                 try {
                     result =
                             "{\n" +
@@ -151,18 +149,9 @@ public class DeployedMessagesFragment extends Fragment {
                             "    \"driver_uuid\": \"96751bdf-9024-45da-82c5-a51f47b9efdb\",\n" +
                             "    \"created_at_unix\": 1575376152,\n" +
                             "    \"tag\": \"\"\n" +
-                            "  }," +
-                    "  {\n" +
-                            "    \"uuid\": \"bd8f7c60-80a4-4cc6-a6bf-a004b0b247dc\",\n" +
-                            "    \"message\": \"Тест. Только для рафа\",\n" +
-                            "    \"ack\": true,\n" +
-                            "    \"order_uuid\": \"\",\n" +
-                            "    \"driver_uuid\": \"96751bdf-9024-45da-82c5-a51f47b9efdb\",\n" +
-                            "    \"created_at_unix\": 1575376152,\n" +
-                            "    \"tag\": \"\"\n" +
-                            "  }]";
+                            "  }";
                     JsonParser jsonParser = new JsonParser();
-                    return  jsonParser.parse(result).getAsJsonArray();
+                    return  jsonParser.parse(result).getAsJsonObject();
                 }catch( NullPointerException | JsonParseException e){
                     Log.e(TAG, "async: " +e.getMessage());
                 }
@@ -171,7 +160,7 @@ public class DeployedMessagesFragment extends Fragment {
 
             @SuppressLint("LongLogTag")
             @Override
-            public void sync(JsonArray result) {
+            public void sync(JsonObject result) {
                 Gson gson = new Gson();
                 MessageDialog mes = gson.fromJson(result, MessageDialog.class);
                 Log.i("GSON", mes.message + mes.created_at_unix);
@@ -194,7 +183,7 @@ public class DeployedMessagesFragment extends Fragment {
             public void progress(Integer... status) {}
 
             @Override
-            public void cancel(JsonArray result, Throwable throwable) {}
+            public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
                     .query("https://driver.apis.stage.faem.pro/api/v2/alerts/history", jo.toString());

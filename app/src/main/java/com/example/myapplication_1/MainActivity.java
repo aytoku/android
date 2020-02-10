@@ -109,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
 
         HowToWorkFragment howToWorkFragment = HowToWorkFragment.getInstance(null);
 
+        IsMoonTime isMoonTime = IsMoonTime.getInstance(null);
+
         InformationFragment informationFragment = InformationFragment.getInstance(null);
 
         MachinePurposeFragment machinePurposeFragment = MachinePurposeFragment.getInstance(null);
@@ -157,6 +159,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, ratingFragment, RatingFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, isMoonTime, IsMoonTime.TAG).commit();
     }
 }

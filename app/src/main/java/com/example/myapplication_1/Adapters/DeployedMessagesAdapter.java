@@ -30,8 +30,8 @@ public class DeployedMessagesAdapter extends RecyclerView.Adapter<RecyclerView.V
     private List<MessageDialog> data = Collections.emptyList();
     private List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList;
 
-    public DeployedMessagesAdapter(List<MessageDialog>messageDialogs, Context context) {
-        this.messageDialogs = messageDialogs;
+    public DeployedMessagesAdapter(List<DeployedMessagesAdapter.DeployedMessagesItems> deployedMessagesItemsList, Context context) {
+        this.deployedMessagesItemsList = deployedMessagesItemsList;
         this.context = context;
 
         card_draw = context.getResources().getDrawable(R.drawable.ic_card_grey_rect);
