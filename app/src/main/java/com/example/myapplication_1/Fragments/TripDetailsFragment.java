@@ -2,6 +2,7 @@ package com.example.myapplication_1.Fragments;
 
 import android.os.Bundle;
 import android.util.ArrayMap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.Adapters.TripDetailsAdapter;
 import com.example.myapplication_1.R;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 import java.util.Map;
 
-import ru.osety.amironlibrary.Query.QueryPost;
+import ru.osety.amironlibrary.Query.QueryGet;
 import ru.osety.amironlibrary.Query.QueryTemplate;
 
 public class TripDetailsFragment extends Fragment {
@@ -68,6 +70,8 @@ public class TripDetailsFragment extends Fragment {
             e.printStackTrace();
         }
 
+        getData();
+
         return view;
     }
 
@@ -93,7 +97,7 @@ public class TripDetailsFragment extends Fragment {
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
         //_mapHead.put("Authorization", "Bearer" + TOKEN);
-        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
+        new QueryGet<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
             public void asyncBefore() throws InterruptedException {
             }
@@ -107,6 +111,19 @@ public class TripDetailsFragment extends Fragment {
             @Override
             public void sync(JsonObject result) {
 
+                String uuid = "uu_id";
+                try {
+                    uuid = result.get("uuid").getAsString();
+                }catch (NullPointerException| JsonParseException e){
+                    Log.e(TAG, "sync" + e.getMessage());
+                }
+
+                String comment = "com";
+                try {
+                    comment = result.get("comment").getAsString();
+                }catch (NullPointerException| JsonParseException e){
+                    Log.e(TAG, "sync" + e.getMessage());
+                }
             }
 
             @Override
@@ -120,6 +137,6 @@ public class TripDetailsFragment extends Fragment {
             }
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
-                    .query();
+                    .query("https://driver.apis.stage.faem.pro/api/v2/orders/order_uuid", jo.toString());
     }
 }
