@@ -45,6 +45,7 @@ import com.example.myapplication_1.Fragments.NewSearchFragment;
 import com.example.myapplication_1.Fragments.Order115Fragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
 import com.example.myapplication_1.Fragments.TariffsFragment;
+import com.example.myapplication_1.Fragments.TripDetailsFragment;
 import com.example.myapplication_1.Other.PageMainFragment;
 import com.example.myapplication_1.Fragments.PartnersFragment;
 import com.example.myapplication_1.Fragments.PaymentMethodFragment;
@@ -152,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
         TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(null);
         TariffsPickAlert tariffsPickAlert = TariffsPickAlert.getInstance(null);
+        TripDetailsFragment tripDetailsFragment = TripDetailsFragment.getInstance(null);
 
         UserAgreementFragment userAgreementFragment = UserAgreementFragment.getInstance(null);
 
@@ -159,6 +161,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, isMoonTime, IsMoonTime.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, tripDetailsFragment, TripDetailsFragment.TAG).commit();
     }
 }
