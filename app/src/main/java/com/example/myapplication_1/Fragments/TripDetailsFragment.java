@@ -68,8 +68,6 @@ public class TripDetailsFragment extends Fragment {
             e.printStackTrace();
         }
 
-        getData();
-
         return view;
     }
 
