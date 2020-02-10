@@ -80,7 +80,7 @@ public class TripDetailsFragment extends Fragment {
                 new TripDetailsAdapter.TripDetailsItems(
                         "Водитель", new String[]{"Гаглоев Игорь Борисович", "Серый LADA 2114, A944 PK 15", "+7 (988) 839-57-11"}),
                 new TripDetailsAdapter.TripDetailsItems(
-                        "Поездка", new String[]{"улица Бзарова, 27/2", "улица Nалалихина, 47"}),
+                        "Поездка", new String[]{"улица Бзарова, 27/2", "улица Налалихина, 47"}),
                 new TripDetailsAdapter.TripDetailsItems(
                         "Время", new String[]{"Сегодня в 22:26"}),
                 new TripDetailsAdapter.TripDetailsItems(
