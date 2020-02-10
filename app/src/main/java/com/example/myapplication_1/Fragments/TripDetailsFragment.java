@@ -20,6 +20,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import ru.osety.amironlibrary.Query.QueryGet;
@@ -28,6 +30,9 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class TripDetailsFragment extends Fragment {
 
     public static final String TAG = "TripDetailsFragment";
+    private int street_index;
+    List<String>list = new ArrayList<>();
+    TripDetailsAdapter tripDetailsAdapter;
 
     public static TripDetailsFragment getInstance(Bundle args) {
 
@@ -61,7 +66,7 @@ public class TripDetailsFragment extends Fragment {
         final RecyclerView trip_details_title_rv = view.findViewById(R.id.ll_trip_details_title_recycler);
         try{
             TripDetailsAdapter.TripDetailsItems[] tripDetailsItems = getTripDetailsItems();
-            TripDetailsAdapter tripDetailsAdapter = new TripDetailsAdapter(tripDetailsItems, getActivity().getApplicationContext());
+            tripDetailsAdapter = new TripDetailsAdapter(tripDetailsItems, getActivity().getApplicationContext());
             trip_details_title_rv.setAdapter( tripDetailsAdapter );
             trip_details_title_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
@@ -70,7 +75,7 @@ public class TripDetailsFragment extends Fragment {
             e.printStackTrace();
         }
 
-        getData();
+   //     getData();
 
         return view;
     }
@@ -104,12 +109,67 @@ public class TripDetailsFragment extends Fragment {
 
             @Override
             public JsonObject async(String result) throws ClassCastException {
+                try {
+                    result = "\"uuid\": \"9b637b25-93ff-4780-8c65-430302c52a78\",\n" +
+                            "    \"comment\": \"Просит побыстрей\",\n" +
+                            "    \"routes\": [\n" +
+                            "        {\n" +
+                            "            \"unrestricted_value\": \"Наш супермаркет Х.Мамсурова, Мамсурова Хаджи 42\",\n" +
+                            "            \"value\": \"Наш супермаркет Х.Мамсурова\",\n" +
+                            "            \"country\": \"\",\n" +
+                            "            \"region\": \"\",\n" +
+                            "            \"region_type\": \"\",\n" +
+                            "            \"type\": \"\",\n" +
+                            "            \"city\": \"Владикавказ\",\n" +
+                            "            \"city_type\": \"\",\n" +
+                            "            \"street\": \"Хаджи Мамсурова\",\n" +
+                            "            \"street_type\": \"\",\n" +
+                            "            \"street_with_type\": \"\",\n" +
+                            "            \"house\": \"42\",\n" +
+                            "            \"out_of_town\": false,\n" +
+                            "            \"house_type\": \"\",\n" +
+                            "            \"accuracy_level\": 0,\n" +
+                            "\t\t\t\t\t\t\"comment\": \"к ржавой калитке\",\n" +
+                            "            \"radius\": 10000,\n" +
+                            "            \"lat\": 43.036274,\n" +
+                            "            \"lon\": 44.655212\n" +
+                            "        },\n" +
+                            "        {\n" +
+                            "            \"unrestricted_value\": \"Привоз , Академика Шегрена 40\",\n" +
+                            "            \"value\": \"Привоз \",\n" +
+                            "            \"country\": \"\",\n" +
+                            "            \"region\": \"\",\n" +
+                            "            \"region_type\": \"\",\n" +
+                            "            \"type\": \"\",\n" +
+                            "            \"city\": \"Владикавказ\",\n" +
+                            "            \"city_type\": \"\",\n" +
+                            "            \"street\": \"Академика Шегрена\",\n" +
+                            "            \"street_type\": \"\",\n" +
+                            "            \"street_with_type\": \"\",\n" +
+                            "            \"house\": \"40\",\n" +
+                            "            \"out_of_town\": false,\n" +
+                            "\t\t\t\t\t\t\"comment\": \"к ржавой калитке\",\n" +
+                            "            \"house_type\": \"\",\n" +
+                            "            \"accuracy_level\": 0,\n" +
+                            "            \"radius\": 10000,\n" +
+                            "            \"lat\": 43.033966,\n" +
+                            "            \"lon\": 44.6944\n" +
+                            "        }\n" +
+                            "    ]";
+                }catch( NullPointerException | JsonParseException e){
+                    Log.e(TAG, "async: " +e.getMessage());
+                }
                 JsonParser jsonParser = new JsonParser();
                 return  jsonParser.parse(result).getAsJsonObject();
             }
 
             @Override
             public void sync(JsonObject result) {
+
+//                JsonArray street = result.getAsJsonArray("value");
+//                for(JsonElement i: street){
+//                    street_index = i.getAsInt();
+//                }
 
                 String uuid = "uu_id";
                 try {
@@ -127,16 +187,12 @@ public class TripDetailsFragment extends Fragment {
             }
 
             @Override
-            public void progress(Integer... status) {
-
-            }
+            public void progress(Integer... status) {}
 
             @Override
-            public void cancel(JsonObject result, Throwable throwable) {
-
-            }
+            public void cancel(JsonObject result, Throwable throwable) {}
         }).addRequestPropertyHead(_mapHead)
                 .setAsyncThreadPool(true)
-                    .query("https://driver.apis.stage.faem.pro/api/v2/orders/order_uuid", jo.toString());
+                    .query("https://client.apis.stage.faem.pro/api/v2/orders/order_uuid", jo.toString());
     }
 }
