@@ -22,7 +22,6 @@ public class Order115Fragment extends Fragment {
     public static final String TAG = "Order115Fragment";
 
     public static Order115Fragment getInstance(Bundle args) {
-
         Order115Fragment order115Fragment = new Order115Fragment();
         order115Fragment.setArguments(args);
 

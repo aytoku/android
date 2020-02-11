@@ -57,6 +57,7 @@ public class RatingFragment extends Fragment{
     List<Integer> list = new ArrayList<>();
     private int tip_index;
     private static final String TOKEN = "Token";
+    private int selectItem = -1;
 
     public static RatingFragment getInstance(Bundle args) {
 

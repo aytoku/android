@@ -37,7 +37,7 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
         final Order115Items _item = order115ItemsList.get(i);
-        viewHolder.emoji.setText(_item.getEmoji());
+        viewHolder.image.setText(_item.getImg());
         viewHolder.desc.setText(_item.getStr());
     }
 
@@ -47,7 +47,6 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
     }
 
     public static class Order115Items {
-
         private String img;
         private String desc;
 
@@ -56,7 +55,7 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
             this.desc = desc;
         }
 
-        String getEmoji() {
+        String getImg() {
             return img;
         }
         public String getStr() {
@@ -65,14 +64,13 @@ public class Order115Adapter extends RecyclerView.Adapter<Order115Adapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
-        private final TextView emoji;
+        private final TextView image;
         private final TextView desc;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            emoji = itemView.findViewById(R.id.ll_cell_order_1_1_5_emoji);
-            desc = itemView.findViewById(R.id.ll_cell_order_1_1_5_desc);
+            image = itemView.findViewById(R.id.rl_cell_order_1_1_5_image);
+            desc = itemView.findViewById(R.id.rl_cell_order_1_1_5_desc);
         }
     }
 }
