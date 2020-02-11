@@ -30,9 +30,7 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class TripDetailsFragment extends Fragment {
 
     public static final String TAG = "TripDetailsFragment";
-    private int street_index;
     List<String>list = new ArrayList<>();
-    TripDetailsAdapter tripDetailsAdapter;
 
     public static TripDetailsFragment getInstance(Bundle args) {
 
@@ -66,16 +64,14 @@ public class TripDetailsFragment extends Fragment {
         final RecyclerView trip_details_title_rv = view.findViewById(R.id.ll_trip_details_title_recycler);
         try{
             TripDetailsAdapter.TripDetailsItems[] tripDetailsItems = getTripDetailsItems();
-            tripDetailsAdapter = new TripDetailsAdapter(tripDetailsItems, getActivity().getApplicationContext());
-            trip_details_title_rv.setAdapter( tripDetailsAdapter );
+            TripDetailsAdapter tripDetailsAdapter = new TripDetailsAdapter(tripDetailsItems, getActivity().getApplicationContext());
+            trip_details_title_rv.setAdapter(tripDetailsAdapter);
             trip_details_title_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ) );
             trip_details_title_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
-
-   //     getData();
 
         return view;
     }
@@ -101,7 +97,6 @@ public class TripDetailsFragment extends Fragment {
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
         _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
-        //_mapHead.put("Authorization", "Bearer" + TOKEN);
         new QueryGet<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>() {
             @Override
             public void asyncBefore() throws InterruptedException {
@@ -165,11 +160,6 @@ public class TripDetailsFragment extends Fragment {
 
             @Override
             public void sync(JsonObject result) {
-
-//                JsonArray street = result.getAsJsonArray("value");
-//                for(JsonElement i: street){
-//                    street_index = i.getAsInt();
-//                }
 
                 String uuid = "uu_id";
                 try {

@@ -67,7 +67,6 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
                 notifyItemChanged(i);
             }
         });
-
     }
 
     @Override

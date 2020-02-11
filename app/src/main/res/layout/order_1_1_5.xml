@@ -57,7 +57,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="end"
-            android:background="@drawable/ic_group_10_red_button"
+            android:background="@drawable/ic_order_1_1_5"
             android:clickable="true"
             android:focusable="true"
             android:textAllCaps="false"
