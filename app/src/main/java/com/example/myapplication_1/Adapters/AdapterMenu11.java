@@ -30,7 +30,6 @@ public class AdapterMenu11 extends RecyclerView.Adapter<AdapterMenu11.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_menu_1_1, viewGroup, false);
         ViewHolder itemViewHolder = new ViewHolder(view);
         return itemViewHolder;
@@ -38,16 +37,14 @@ public class AdapterMenu11 extends RecyclerView.Adapter<AdapterMenu11.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final MenuList menuListItem = itemsMenuList.get(i);
-
         viewHolder.title.setText(menuListItem.getStr());
         viewHolder.title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     menuListItem.getCallBack().call(menuListItem);
-                }catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     e.printStackTrace();
                 }
             }

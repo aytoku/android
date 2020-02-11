@@ -37,7 +37,6 @@ public class AdapterCellTextFeatures extends RecyclerView.Adapter<AdapterCellTex
     @NonNull
     @Override
     public AdapterCellTextFeatures.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.cell_features_text, viewGroup, false);
         return new AdapterCellTextFeatures.ViewHolder(v);
     }
@@ -47,12 +46,12 @@ public class AdapterCellTextFeatures extends RecyclerView.Adapter<AdapterCellTex
 
         viewHolder.textView.setText(array[i]);
 
-        if(i == 0){
+        if(i == 0) {
             viewHolder.textView.setTypeface(null, Typeface.BOLD);
             viewHolder.imageView.setImageDrawable(ellipse_red);
-        }else if(i == array.length-1){
+        } else if(i == array.length-1) {
             viewHolder.imageView.setImageDrawable(ellipse_green);
-        }else {
+        } else {
             viewHolder.imageView.setImageDrawable(ellipse_black);
         }
     }
@@ -63,7 +62,6 @@ public class AdapterCellTextFeatures extends RecyclerView.Adapter<AdapterCellTex
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         private final TextView textView;
         private final ImageView imageView;
         public ViewHolder(@NonNull View itemView) {

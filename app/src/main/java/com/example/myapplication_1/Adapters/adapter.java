@@ -48,7 +48,7 @@ public class adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages, viewGroup, false);
             itemViewHolder = new ViewHolder(view);
 
-        }else{
+        } else {
             View view1 = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_deployed_messages_2, viewGroup, false);
             itemViewHolder = new ViewHolder1(view1);
         }
@@ -65,12 +65,12 @@ public class adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder = (ViewHolder1)viewHolder;
 
-        }else{
+        } else {
             if (i == 0) {
                 viewHolder = (ViewHolder)viewHolder;
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card);
                 ((ViewHolder) viewHolder).title.setText(_item.getTitle());
-            }else{
+            } else {
                 ((ViewHolder) viewHolder).relativeLayout.setBackground(card_draw);
                 ((ViewHolder) viewHolder).imageView.setVisibility(View.GONE);
             }
@@ -100,10 +100,6 @@ public class adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
         public String getDesc(){ return  desc; }
-
-        public int getColorBackground() {
-            return colorBackgroundInt;
-        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

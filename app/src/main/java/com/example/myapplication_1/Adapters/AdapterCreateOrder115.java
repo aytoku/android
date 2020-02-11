@@ -37,9 +37,7 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-
         final CreateOrderItems _item = createOrderItems.get(i);
-
         viewHolder.title.setText(_item.getStr());
         viewHolder.img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +55,6 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
     }
 
     public static class CreateOrderItems {
-
         private int img;
         private String title;
 
@@ -75,7 +72,6 @@ public class AdapterCreateOrder115 extends RecyclerView.Adapter<AdapterCreateOrd
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         private final ImageView img;
         private final TextView title;
         private final ImageView img1;

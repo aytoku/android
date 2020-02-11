@@ -30,14 +30,12 @@ public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatur
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         ViewGroup v = (ViewGroup) layoutInflater.inflate(R.layout.button_feature, viewGroup, false);
         return new AdapterCellFeatures.ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AdapterCellFeatures.ViewHolder viewHolder, int i) {
-
         viewHolder.button.setText(array[i]);
        // viewHolder.button.setBackground(getCurrentColorButton(array[i]));
     }
@@ -63,7 +61,6 @@ public class AdapterCellFeatures  extends RecyclerView.Adapter<AdapterCellFeatur
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
         private final TextView button;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
