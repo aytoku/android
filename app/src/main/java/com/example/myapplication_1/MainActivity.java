@@ -5,17 +5,16 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication_1.Alerts.AlertFragment;
 import com.example.myapplication_1.Alerts.PaymentChangeAlert;
 import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.Fragments.AddPointFragment;
 import com.example.myapplication_1.Fragments.AddressFragment;
-import com.example.myapplication_1.Alerts.AlertFragment;
 import com.example.myapplication_1.Fragments.AssistantFragment;
 import com.example.myapplication_1.Fragments.Auth111Fragment;
 import com.example.myapplication_1.Fragments.BlacklistPartnersFragment;
 import com.example.myapplication_1.Fragments.ChatFragment;
 import com.example.myapplication_1.Fragments.ChatSliderFragment;
-//import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
 import com.example.myapplication_1.Fragments.ChatWithOperator;
 import com.example.myapplication_1.Fragments.CodeScreenFragment;
 import com.example.myapplication_1.Fragments.CommentsFragment;
@@ -44,9 +43,6 @@ import com.example.myapplication_1.Fragments.NewCardFragment;
 import com.example.myapplication_1.Fragments.NewSearchFragment;
 import com.example.myapplication_1.Fragments.Order115Fragment;
 import com.example.myapplication_1.Fragments.OrderAcceptFragment;
-import com.example.myapplication_1.Fragments.TariffsFragment;
-import com.example.myapplication_1.Fragments.TripDetailsFragment;
-import com.example.myapplication_1.Other.PageMainFragment;
 import com.example.myapplication_1.Fragments.PartnersFragment;
 import com.example.myapplication_1.Fragments.PaymentMethodFragment;
 import com.example.myapplication_1.Fragments.PaymentPickFragment;
@@ -63,11 +59,16 @@ import com.example.myapplication_1.Fragments.SettingsFragment;
 import com.example.myapplication_1.Fragments.SliderFragment;
 import com.example.myapplication_1.Fragments.SpinnerFragment;
 import com.example.myapplication_1.Fragments.SpinnerTariffsFragment;
+import com.example.myapplication_1.Fragments.TariffsFragment;
 import com.example.myapplication_1.Fragments.TravelStoryFragment;
 import com.example.myapplication_1.Fragments.TravelStoryOneFragment;
+import com.example.myapplication_1.Fragments.TripDetailsFragment;
 import com.example.myapplication_1.Fragments.UserAgreementFragment;
 import com.example.myapplication_1.Fragments.WishFragment;
 import com.example.myapplication_1.Fragments.WriteFragment;
+import com.example.myapplication_1.Other.PageMainFragment;
+
+//import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -161,6 +162,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, order115Fragment, Order115Fragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, ratingFragment, RatingFragment.TAG).commit();
     }
 }
