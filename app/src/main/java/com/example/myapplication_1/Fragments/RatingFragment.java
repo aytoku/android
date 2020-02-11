@@ -51,13 +51,12 @@ public class RatingFragment extends Fragment{
     private ImageView star3;
     private ImageView star4;
     private ImageView star5;
-    private ImageView[] starArr;
     private Drawable imgStarGrey;
     private Drawable imgStarRed;
     List<Integer> list = new ArrayList<>();
     private int tip_index;
     private static final String TOKEN = "Token";
-    private int selectItem = -1;
+    private List<ImageView> statList;
 
     public static RatingFragment getInstance(Bundle args) {
 
@@ -80,13 +79,14 @@ public class RatingFragment extends Fragment{
         RecyclerView praise_rv = view.findViewById(R.id.rl_rating_praise_recycler);
         CardView button = view.findViewById(R.id.ll_rating_cardButton);
         LinearLayout address = view.findViewById(R.id.rl_rating_ll_rating_address);
-        starArr = new ImageView[]{
-                star1 = view.findViewById(R.id.ll_rating_star_image1),
-                star2 = view.findViewById(R.id.ll_rating_star_image2),
-                star3 = view.findViewById(R.id.ll_rating_star_image3),
-                star4 = view.findViewById(R.id.ll_rating_star_image4),
-                star5 = view.findViewById(R.id.ll_rating_star_image5)
-        };
+
+        statList = new ArrayList<>();
+        statList.add(star1 = view.findViewById(R.id.ll_rating_star_image1));
+        statList.add(star2 = view.findViewById(R.id.ll_rating_star_image2));
+        statList.add(star3 = view.findViewById(R.id.ll_rating_star_image3));
+        statList.add(star4 = view.findViewById(R.id.ll_rating_star_image4));
+        statList.add( star5 = view.findViewById(R.id.ll_rating_star_image5));
+
         address.setVisibility(View.GONE);
 
         final RecyclerView praiseRecyclerView = praise_rv;
@@ -182,8 +182,8 @@ public class RatingFragment extends Fragment{
     }
 
     private void allStarsGrey(){
-        for (int i = 0; i <= starArr.length-1; i++){
-            starArr[i].setImageDrawable(imgStarGrey);
+        for (int i = 0; i <= statList.size()-1; i++){
+            statList.get(i).setImageDrawable(imgStarGrey);
         }
     }
 
@@ -232,7 +232,7 @@ public class RatingFragment extends Fragment{
     private void postData(){
         final JsonObject jo = new JsonObject();
         jo.addProperty("order_uuid", "585f892b-dfa5-4d07-9bc7-546cc000fa34");
-        jo.addProperty("value", String.valueOf(starArr[1]));
+        jo.addProperty("value", String.valueOf(statList.get(1)));
         jo.addProperty("tip", list.get(4));
         Map<String, String> _mapHead = new ArrayMap<>();
         _mapHead.put("Accept-Charset", "UTF-8");
