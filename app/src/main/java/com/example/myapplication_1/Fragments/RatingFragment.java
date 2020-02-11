@@ -128,8 +128,6 @@ public class RatingFragment extends Fragment{
                 if(view.getId()==R.id.ll_rating_star_image1){
                     star1.setImageDrawable(imgStarRed);
                 }
-                System.out.println(starArr[0]);
-
             }
         });
         star2.setOnClickListener(new View.OnClickListener() {
@@ -140,7 +138,6 @@ public class RatingFragment extends Fragment{
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                 }
-                System.out.println(starArr[1]);
             }
         });
         star3.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +149,6 @@ public class RatingFragment extends Fragment{
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
                 }
-                System.out.println(starArr[2]);
             }
         });
         star4.setOnClickListener(new View.OnClickListener() {
@@ -165,7 +161,6 @@ public class RatingFragment extends Fragment{
                     star3.setImageDrawable(imgStarRed);
                     star4.setImageDrawable(imgStarRed);
                 }
-                System.out.println(starArr[3]);
             }
         });
         star5.setOnClickListener(new View.OnClickListener() {
@@ -179,16 +174,8 @@ public class RatingFragment extends Fragment{
                     star4.setImageDrawable(imgStarRed);
                     star5.setImageDrawable(imgStarRed);
                 }
-                System.out.println(starArr[4]);
             }
         });
-
-//       button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                postData();
-//            }
-//        });
        getTips();
        return view;
     }
