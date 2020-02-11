@@ -5,7 +5,7 @@
 
     <LinearLayout
         android:id="@+id/ll_menu_1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="40dp"
         android:foreground="?android:selectableItemBackground"
@@ -14,7 +14,7 @@
         <TextView
             android:id="@+id/ll_cell_menu_1_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Введите номер телефона"
             android:textSize="17sp"
             android:paddingBottom="10dp"

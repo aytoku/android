@@ -37,7 +37,7 @@ public class Order115Fragment extends Fragment {
         View view = inflater.inflate(R.layout.order_1_1_5,
                 container, false);
 
-        RecyclerView order115_rv = view.findViewById(R.id.cl_create_order_1_1_5_recycler);
+        RecyclerView order115_rv = view.findViewById(R.id.rl_create_order_1_1_5_recycler);
         final RecyclerView recyclerView = order115_rv;
         try {
             Order115Adapter.Order115Items[] order115Items = getOrder115Items();

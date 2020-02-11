@@ -38,7 +38,6 @@
         android:layout_height="wrap_content"
         android:overScrollMode="never"/>
 
-
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
@@ -50,27 +49,27 @@
         android:orientation="vertical"
         android:foreground="?android:selectableItemBackground">
 
-                <TextView
-                    android:id="@+id/ll_settings_title1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="Язык голосового ввода"
-                    android:textColor="#424242"
-                    android:textSize="17sp"
-                    android:paddingRight="90dp"
-                    android:paddingLeft="20dp"/>
+        <TextView
+            android:id="@+id/ll_settings_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Язык голосового ввода"
+            android:textColor="#424242"
+            android:textSize="17sp"
+            android:paddingRight="90dp"
+            android:paddingLeft="20dp"/>
 
-                <TextView
-                    android:id="@+id/ll_settings.description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Русский"
-                    android:paddingLeft="20dp"
-                    android:textSize="13sp"
-                    android:paddingBottom="15dp"
-                    android:background="@drawable/grey_line"
-                    android:textColor="#C6C6C6"/>
+        <TextView
+            android:id="@+id/ll_settings.description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Русский"
+            android:paddingLeft="20dp"
+            android:textSize="13sp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/grey_line"
+            android:textColor="#C6C6C6"/>
 
     </LinearLayout>
 

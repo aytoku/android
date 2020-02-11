@@ -3,29 +3,33 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <ImageView
-            android:id="@+id/ll_travel_story_1_img_red_circle"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:id="@+id/rl_travel_story_1_img_red_circle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/icon_ellipse_red"
             android:scaleType="center"
             android:background="@null"
-            android:paddingTop="10dp" />
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"/>
 
         <TextView
-            android:id="@+id/ll_travel_story_1_address_title"
-            android:layout_width="match_parent"
+            android:id="@+id/rl_travel_story_1_address_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/rl_travel_story_1_img_red_circle"
             android:text="Максима Горького, 23"
-            android:textSize="17sp"
             android:textColor="#424242"
-            android:paddingTop="15dp" />
+            android:textSize="17sp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

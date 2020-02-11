@@ -24,7 +24,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="20dp"
             android:layout_centerInParent="true"
             android:text="Партнеры"
             android:textStyle="bold"
@@ -41,6 +40,7 @@
             android:foreground="?android:selectableItemBackground"
             android:text="Черный список"
             android:paddingRight="15dp"
+            android:paddingLeft="15dp"
             android:textSize="17sp"
             android:textColor="#424242"/>
 

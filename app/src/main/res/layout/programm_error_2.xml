@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
@@ -10,13 +10,14 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:paddingTop="10dp"
         tools:ignore="MissingConstraints">
 
         <ImageButton
-            android:id="@+id/ll_program_error1_img"
+            android:id="@+id/rl_program_error1_img"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
@@ -26,12 +27,11 @@
             android:src="@drawable/ic_arrow_left" />
 
         <TextView
-            android:id="@+id/ll_program_error1_title"
+            android:id="@+id/rl_program_error1_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_weight="0.5"
-            android:gravity="center_horizontal"
             android:text="Ошибка программы"
             android:textColor="#424242"
             android:textSize="17sp"
@@ -40,58 +40,63 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/ll_program_error1.desc"
+        android:id="@+id/rl_program_error1.desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_weight="1"
         android:paddingLeft="15dp"
         android:text="Вы можете написать подрробный комментарий\nо поездке или сообщить какую-либо\nинформацию о водителе"
         android:textColor="#B4B4B4"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+        android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/ll_program_error1.desc1"
+        android:id="@+id/rl_program_error1.desc1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_program_error1.desc"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_weight="1"
         android:paddingLeft="15dp"
         android:paddingTop="20dp"
         android:paddingBottom="5dp"
         android:text="Комментарий"
         android:textColor="#B4B4B4"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/ll_program_error1.desc" />
+        android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/ll_program_error1.textarea"
+        android:id="@+id/rl_program_error1.textarea"
         android:layout_width="345dp"
         android:layout_height="210dp"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/rl_program_error1.desc1"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:background="@drawable/textarea"
         android:ellipsize="start"
         android:gravity="center"
         android:inputType="text"
-        android:paddingBottom="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_program_error1.desc1" />
+        android:paddingBottom="40dp" />
 
     <LinearLayout
-        android:id="@+id/cl_rating.ll_rating1"
+        android:id="@+id/rl_rating.ll_rating1"
         android:layout_width="match_parent"
         android:layout_height="74dp"
+        android:layout_below="@+id/rl_program_error1.textarea"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:paddingTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_program_error1.textarea"
         tools:ignore="Orientation">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cl_rating_ll_rating1_cardButton"
+            android:id="@+id/ll_rating_ll_rating1_cardButton"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:clickable="true"
@@ -121,4 +126,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

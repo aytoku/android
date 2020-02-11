@@ -11,6 +11,15 @@
         android:paddingTop="10dp"
         android:paddingBottom="5dp">
 
+        <ImageView
+            android:id="@+id/rl_travel_story_1_imageView"
+            android:layout_width="30dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:foreground="?android:selectableItemBackground"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_strelka"/>
+
         <TextView
             android:id="@+id/rl_travel_story_1.title"
             android:layout_width="wrap_content"
@@ -21,15 +30,6 @@
             android:layout_centerInParent="true"
             android:textSize="17sp"
             android:textStyle="bold"/>
-
-        <ImageView
-            android:id="@+id/rl_travel_story_1_imageView"
-            android:layout_width="30dp"
-            android:layout_height="15dp"
-            android:layout_alignParentLeft="true"
-            android:foreground="?android:selectableItemBackground"
-            android:layout_centerInParent="true"
-            android:src="@drawable/icon_strelka"/>
 
     </RelativeLayout>
 

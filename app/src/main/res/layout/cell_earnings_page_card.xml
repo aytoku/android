@@ -39,7 +39,6 @@
                     android:paddingRight="10dp"
                     android:textStyle="bold"/>
 
-
                 <TextView
                     android:id="@+id/ll_earnings_page_card_desc"
                     android:layout_width="wrap_content"
@@ -48,7 +47,6 @@
                     android:textColor="#C3C3C3"
                     android:textSize="13sp"
                     android:paddingRight="10dp"/>
-
 
                 <TextView
                     android:id="@+id/ll_earnings_page_card_distance"
@@ -59,7 +57,6 @@
                     android:textSize="15sp"
                     android:paddingRight="10dp"
                     android:textStyle="bold"/>
-
 
                 <TextView
                     android:id="@+id/ll_earnings_page_card_desc1"

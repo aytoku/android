@@ -92,53 +92,56 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/ll_service.omg_red_circle"
                     android:layout_width="50dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
                     android:src="@drawable/icon_ellipse_red"
-                    android:scaleType="center"
-                    android:paddingTop="13sp" />
+                    android:scaleType="center" />
 
                 <TextView
                     android:id="@+id/ll_service.address_title1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toEndOf="@+id/ll_service.omg_red_circle"
                     android:text="Максима Горького, 23"
-                    android:textSize="17sp"
                     android:textColor="#424242"
-                    android:paddingTop="15dp" />
+                    android:textSize="17sp" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/ll_service.img_blue_circle"
                     android:layout_width="50dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
                     android:src="@drawable/icon_circle"
-                    android:scaleType="center"
-                    android:paddingTop="13sp" />
+                    android:scaleType="center" />
 
                 <TextView
                     android:id="@+id/ll_service.address_title2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ll_service.img_blue_circle"
                     android:text="Коста Хетагурова, 123"
-                    android:textSize="17sp"
                     android:textColor="#424242"
-                    android:paddingTop="15dp" />
+                    android:textSize="17sp" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -256,22 +259,23 @@
         android:foreground="?android:selectableItemBackground"
         android:background="@drawable/grey_line"
         android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/ll_service.another_trip"
+            android:id="@+id/rl_service.another_trip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Другая поездка"
             android:paddingLeft="22dp"
             android:gravity="center_vertical"
-            android:paddingBottom="15dp"
+            android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:textSize="17sp"
             android:textColor="#424242"/>
 
         <ImageButton
-            android:id="@+id/ll_service.img_arrow1"
+            android:id="@+id/rl_service.img_arrow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
@@ -291,22 +295,23 @@
         android:foreground="?android:selectableItemBackground"
         android:background="@drawable/grey_line"
         android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/ll_service_ad_ride"
+            android:id="@+id/rl_service_ad_ride"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Неаккуратное вождение"
             android:paddingLeft="22dp"
-            android:paddingBottom="15dp"
+            android:layout_centerInParent="true"
             android:layout_alignParentLeft="true"
             android:gravity="center_vertical"
             android:textSize="17sp"
             android:textColor="#424242"/>
 
         <ImageButton
-            android:id="@+id/ll_service.img_arrow2"
+            android:id="@+id/rl_service.img_arrow2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"
@@ -329,19 +334,19 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/ll_service_program_error"
+            android:id="@+id/rl_service_program_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ошибка программы"
             android:layout_alignParentLeft="true"
             android:gravity="center_vertical"
             android:paddingLeft="22dp"
-            android:paddingBottom="15dp"
+            android:layout_centerInParent="true"
             android:textSize="17sp"
             android:textColor="#424242"/>
 
         <ImageButton
-            android:id="@+id/ll_service_img_arrow3"
+            android:id="@+id/rl_service_img_arrow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="15dp"

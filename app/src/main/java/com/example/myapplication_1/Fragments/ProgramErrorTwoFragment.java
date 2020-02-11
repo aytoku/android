@@ -37,11 +37,11 @@ public class ProgramErrorTwoFragment extends Fragment {
         View view = inflater.inflate(R.layout.programm_error_2,
                 container, false);
 
-        title = view.findViewById(R.id.ll_program_error1_title);
+        title = view.findViewById(R.id.rl_program_error1_title);
         Bundle _args = new Bundle();
         final Fragment menu162Fragment = Menu162Fragment.getInstance(_args);
 
-        imageButton = view.findViewById(R.id.ll_program_error1_img);
+        imageButton = view.findViewById(R.id.rl_program_error1_img);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

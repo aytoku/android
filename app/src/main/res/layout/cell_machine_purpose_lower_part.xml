@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#FFFFFF">
 
     <RelativeLayout
@@ -19,6 +19,8 @@
             android:layout_width="40dp"
             android:paddingRight="5dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
             android:layout_weight="0"
             android:background="@null"
             android:src="@mipmap/icon_credit_card"/>
@@ -26,7 +28,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
             android:layout_toEndOf="@+id/rl_cell_machine_purpose_lower_part.img1"
             android:background="@drawable/grey_line">
 
@@ -34,9 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/rl_cell_machine_purpose_lower_part.title1"
@@ -59,18 +59,18 @@
 
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/rl_cell_machine_purpose_lower_part_button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:background="@null"
-                android:foreground="?android:selectableItemBackground"
-                android:padding="15dp"
-                android:src="@drawable/icon_arrow_right" />
-
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/rl_cell_machine_purpose_lower_part_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:foreground="?android:selectableItemBackground"
+            android:paddingRight="15dp"
+            android:src="@drawable/icon_arrow_right" />
 
     </RelativeLayout>
 
@@ -91,43 +91,31 @@
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_navigation"/>
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/rl_cell_machine_purpose_lower_part.title2"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/grey_line"
+            android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/rl_cell_machine_purpose_lower_part.img2"
-            android:orientation="horizontal">
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:text="Показать водителю где я"
+            android:textColor="#424242"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/rl_cell_machine_purpose_lower_part.title2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_alignParentLeft="true"
-                android:gravity="center_vertical"
-                android:paddingBottom="5dp"
-                android:text="Показать водителю где я"
-                android:textColor="#424242"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
-            <Switch
-                android:id="@+id/rl_cell_machine_purpose_lower_part.switch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:paddingRight="10dp"
-                android:paddingBottom="5dp"
-                android:layout_centerInParent="true"
-                android:checked="false"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:switchMinWidth="30dp"
-                android:thumb="@drawable/switch_thumb"
-                android:track="@drawable/switch_track_custom" />
-
-        </RelativeLayout>
+        <Switch
+            android:id="@+id/rl_cell_machine_purpose_lower_part.switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:layout_centerInParent="true"
+            android:checked="false"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:switchMinWidth="30dp"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track_custom" />
 
     </RelativeLayout>
 
@@ -159,6 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/rl_cell_machine_purpose_lower_part.img3"
+            android:layout_centerInParent="true"
             android:layout_weight="1"
             android:orientation="vertical"
             android:paddingTop="5dp">
@@ -189,7 +178,8 @@
             android:layout_height="wrap_content"
             android:foreground="?android:selectableItemBackground"
             android:background="@null"
-            android:padding="15dp"
+            android:paddingRight="15dp"
+            android:layout_centerInParent="true"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_arrow_right"/>
 

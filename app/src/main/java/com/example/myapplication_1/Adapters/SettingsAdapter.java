@@ -59,7 +59,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.ll_settings_rl_settings_title);
+            title = itemView.findViewById(R.id.rl_settings_rl_settings_title);
         }
     }
 }

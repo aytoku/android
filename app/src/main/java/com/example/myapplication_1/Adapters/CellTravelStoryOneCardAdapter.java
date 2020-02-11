@@ -94,8 +94,8 @@ public class CellTravelStoryOneCardAdapter extends RecyclerView.Adapter<CellTrav
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             date = itemView.findViewById(R.id.ll_travel_story_1_date);
-            img = itemView.findViewById(R.id.ll_travel_story_1_img_red_circle);
-            address = itemView.findViewById(R.id.ll_travel_story_1_address_title);
+            img = itemView.findViewById(R.id.rl_travel_story_1_img_red_circle);
+            address = itemView.findViewById(R.id.rl_travel_story_1_address_title);
         }
     }
 }

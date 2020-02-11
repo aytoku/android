@@ -40,7 +40,7 @@ public class ServiceFragment extends Fragment {
         RelativeLayout relativeLayout1 = view.findViewById(R.id.rl_service1);
         RelativeLayout relativeLayout2 = view.findViewById(R.id.rl_service2);
         RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_service3);
-        final TextView textView = view.findViewById(R.id.ll_service_ad_ride);
+        final TextView textView = view.findViewById(R.id.rl_service_ad_ride);
 
         Bundle bundle = new Bundle();
         final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);

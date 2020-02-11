@@ -24,7 +24,6 @@ public class adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private Drawable card_draw;
     private Drawable card;
-    private ImageView imageView;
 
     private List<ItemsMenu> itemsMenuList;
 

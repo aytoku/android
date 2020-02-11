@@ -32,7 +32,7 @@ public class InformationFragment extends Fragment {
         View view = inflater.inflate(R.layout.info,
                 container, false);
 
-        ImageButton imageButton = view.findViewById(R.id.ll_info_button);
+        ImageButton imageButton = view.findViewById(R.id.rl_info_button);
         RelativeLayout relativeLayout1 = view.findViewById(R.id.rl_info3);
         RelativeLayout relativeLayout2 = view.findViewById(R.id.rl_info2);
         RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_info1);

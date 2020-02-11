@@ -34,7 +34,6 @@
         android:layout_height="3dp"
         android:background="#EDEDED"/>
 
-
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
