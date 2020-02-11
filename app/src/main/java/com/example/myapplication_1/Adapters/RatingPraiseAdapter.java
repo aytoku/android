@@ -67,6 +67,7 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
                 notifyItemChanged(i);
             }
         });
+
     }
 
     @Override
@@ -102,5 +103,10 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
             title = itemView.findViewById(R.id.ll_cell_rating_praise_desc);
             linearLayout = itemView.findViewById(R.id.ll_cell_rating_praise);
         }
+    }
+
+    public RatingPraiseItems getSelectItem(){
+        ratingPraiseItemsList.get(selectItem);
+        return ratingPraiseItemsList.get(selectItem);
     }
 }

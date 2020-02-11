@@ -45,6 +45,7 @@ public class RatingFragment extends Fragment{
     private static final int REQUEST_CODE_TOKEN = 101;
     private static final String ACCESS_TOKEN = "pk.eyJ1IjoiZmFlbXRheGkiLCJhIjoiY2pyYXNqZ3RhMHQxNTQ5bjBxMWlvcWF6eSJ9.ISSgNBMdG7idL3ljb2ILTg";
     private RecyclerView.Adapter ratingTipsAdapter;
+    private RecyclerView.Adapter ratingPraiseAdapter;
     private ImageView star1;
     private ImageView star2;
     private ImageView star3;
@@ -91,8 +92,8 @@ public class RatingFragment extends Fragment{
         try {
             RatingPraiseAdapter.RatingPraiseItems[] ratingPraiseItems = getRatingPraiseItems();
             List<RatingPraiseAdapter.RatingPraiseItems> ratingPraiseItemsList = new ArrayList<>(Arrays.asList(ratingPraiseItems));
-            RecyclerView.Adapter menu11Adapter = new RatingPraiseAdapter(ratingPraiseItemsList, getActivity().getBaseContext());
-            praiseRecyclerView.setAdapter(menu11Adapter);
+            ratingPraiseAdapter = new RatingPraiseAdapter(ratingPraiseItemsList, getActivity().getBaseContext());
+            praiseRecyclerView.setAdapter(ratingPraiseAdapter);
             praiseRecyclerView.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
             praiseRecyclerView.setItemAnimator( new DefaultItemAnimator() );
@@ -110,6 +111,16 @@ public class RatingFragment extends Fragment{
         } catch ( NullPointerException e) {
             Log.e(TAG, "onCreateView" +e.getMessage());
         }
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((RatingTipsAdapter)ratingTipsAdapter).getSelectItem();
+                ((RatingPraiseAdapter)ratingPraiseAdapter).getSelectItem();
+                Log.d(TAG, "onCreateView");
+            }
+        });
+
         star1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,6 +128,8 @@ public class RatingFragment extends Fragment{
                 if(view.getId()==R.id.ll_rating_star_image1){
                     star1.setImageDrawable(imgStarRed);
                 }
+                System.out.println(starArr[0]);
+
             }
         });
         star2.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +140,7 @@ public class RatingFragment extends Fragment{
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                 }
+                System.out.println(starArr[1]);
             }
         });
         star3.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +152,7 @@ public class RatingFragment extends Fragment{
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
                 }
+                System.out.println(starArr[2]);
             }
         });
         star4.setOnClickListener(new View.OnClickListener() {
@@ -150,6 +165,7 @@ public class RatingFragment extends Fragment{
                     star3.setImageDrawable(imgStarRed);
                     star4.setImageDrawable(imgStarRed);
                 }
+                System.out.println(starArr[3]);
             }
         });
         star5.setOnClickListener(new View.OnClickListener() {
@@ -163,15 +179,16 @@ public class RatingFragment extends Fragment{
                     star4.setImageDrawable(imgStarRed);
                     star5.setImageDrawable(imgStarRed);
                 }
+                System.out.println(starArr[4]);
             }
         });
 
-       button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                postData();
-            }
-        });
+//       button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                postData();
+//            }
+//        });
        getTips();
        return view;
     }

@@ -74,4 +74,9 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
             price = itemView.findViewById(R.id.cv_rating_price);
         }
     }
+
+    public int getSelectItem(){
+        tipsList.get(selectItem);
+        return tipsList.get(selectItem);
+    }
 }
