@@ -36,7 +36,6 @@ import java.util.List;
 import java.util.Map;
 
 import ru.osety.amironlibrary.Query.QueryGet;
-import ru.osety.amironlibrary.Query.QueryPost;
 import ru.osety.amironlibrary.Query.QueryTemplate;
 
 public class RatingFragment extends Fragment{
@@ -234,44 +233,6 @@ public class RatingFragment extends Fragment{
         }).addRequestPropertyHead(_mapHead)
             .setAsyncThreadPool(true)
                 .query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
-    }
-
-    private void postData(){
-        final JsonObject jo = new JsonObject();
-        jo.addProperty("order_uuid", "585f892b-dfa5-4d07-9bc7-546cc000fa34");
-        jo.addProperty("value", String.valueOf(starList.get(1)));
-        jo.addProperty("tip", list.get(4));
-        Map<String, String> _mapHead = new ArrayMap<>();
-        _mapHead.put("Accept-Charset", "UTF-8");
-        _mapHead.put("Content-Type", "application/json;charset=" + "UTF-8");
-        _mapHead.put("Authorization", "Bearer " + ACCESS_TOKEN);
-
-        new QueryPost<JsonObject>(new QueryTemplate.CallBack<Integer, JsonObject, String>(){
-            @Override
-            public void asyncBefore() throws InterruptedException{}
-
-            @Override
-            public JsonObject async(String result) throws ClassCastException{
-                try{
-                    JsonParser jsonParser = new JsonParser();
-                    return  jsonParser.parse(result).getAsJsonObject();
-                }catch ( NullPointerException | JsonParseException e){
-                    Log.e(TAG, "async: " +e.getMessage());
-                }
-                return null;
-            }
-
-            @Override
-            public void sync(JsonObject result) {}
-
-            @Override
-            public void progress(Integer... status) {}
-
-            @Override
-            public void cancel(JsonObject result, Throwable throwable) {}
-        }).addRequestPropertyHead(_mapHead)
-                .setAsyncThreadPool(true)
-                    .query("https://client.apis.stage.faem.pro/api/v2/order/rating", jo.toString());
     }
 
     private RatingPraiseAdapter.RatingPraiseItems[] getRatingPraiseItems() {
