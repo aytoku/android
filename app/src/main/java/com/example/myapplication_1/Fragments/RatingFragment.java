@@ -57,6 +57,7 @@ public class RatingFragment extends Fragment{
     private int tip_index;
     private static final String TOKEN = "Token";
     private List<ImageView> starList;
+    int selectItem = 0;
 
     public static RatingFragment getInstance(Bundle args) {
 
@@ -116,8 +117,8 @@ public class RatingFragment extends Fragment{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((RatingTipsAdapter)ratingTipsAdapter).getSelectItem();
-                ((RatingPraiseAdapter)ratingPraiseAdapter).getSelectItem();
+                ((RatingTipsAdapter)ratingTipsAdapter).getSelectedItem();
+                ((RatingPraiseAdapter)ratingPraiseAdapter).getSelectedItem();
 //                for (int i=0;i<starList.size();i++){
 //                    final int finalI = i;
 //                    starList.get(i).setOnClickListener(new View.OnClickListener() {
@@ -137,6 +138,7 @@ public class RatingFragment extends Fragment{
                 allStarsGrey();
                 if(view.getId()==R.id.ll_rating_star_image1){
                     star1.setImageDrawable(imgStarRed);
+                    selectItem = 0;
                 }
             }
         });
@@ -188,6 +190,13 @@ public class RatingFragment extends Fragment{
         });
        getTips();
        return view;
+    }
+
+    public  int getSelectedItem(){
+        for (int i =0; i <= starList.size(); i++) {
+            
+        }
+        return 1;
     }
 
     private void allStarsGrey(){

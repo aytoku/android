@@ -104,7 +104,7 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
         }
     }
 
-    public RatingPraiseItems getSelectItem(){
+    public RatingPraiseItems getSelectedItem(){
         ratingPraiseItemsList.get(selectItem);
         return ratingPraiseItemsList.get(selectItem);
     }

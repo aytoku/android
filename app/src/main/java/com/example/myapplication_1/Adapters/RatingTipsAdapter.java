@@ -75,7 +75,7 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
         }
     }
 
-    public int getSelectItem(){
+    public int getSelectedItem(){
         tipsList.get(selectItem);
         return tipsList.get(selectItem);
     }
