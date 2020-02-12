@@ -26,7 +26,7 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
     private final LayoutInflater layoutInflater;
     private final Context context;
     private List<RatingPraiseAdapter.RatingPraiseItems> ratingPraiseItemsList;
-    private int selectItem = -1;
+    private int selectedItem = -1;
     private Drawable drawable;
 
     public RatingPraiseAdapter(List<RatingPraiseAdapter.RatingPraiseItems> ratingPraiseItemsList, Context context) {
@@ -53,8 +53,8 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
         viewHolder.imageView.setImageBitmap( _bitmap );
         viewHolder.imageView.setScaleType(ImageView.ScaleType.CENTER);
-        viewHolder.title.setText(ratingPraiseItems.getStr());
-        if(selectItem == i){
+        viewHolder.desc.setText(ratingPraiseItems.getStr());
+        if(selectedItem == i){
             viewHolder.linearLayout.setBackground(drawable);
         } else{
             viewHolder.linearLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
@@ -62,8 +62,8 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
         viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                notifyItemChanged(selectItem);
-                selectItem = i;
+                notifyItemChanged(selectedItem);
+                selectedItem = i;
                 notifyItemChanged(i);
             }
         });
@@ -93,19 +93,19 @@ public  class RatingPraiseAdapter extends RecyclerView.Adapter<RatingPraiseAdapt
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private final ImageView imageView;
-        private final TextView title;
+        private final TextView desc;
         private final LinearLayout linearLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.ll_cell_rating_praise_img);
-            title = itemView.findViewById(R.id.ll_cell_rating_praise_desc);
+            desc = itemView.findViewById(R.id.ll_cell_rating_praise_desc);
             linearLayout = itemView.findViewById(R.id.ll_cell_rating_praise);
         }
     }
 
     public RatingPraiseItems getSelectedItem(){
-        ratingPraiseItemsList.get(selectItem);
-        return ratingPraiseItemsList.get(selectItem);
+        ratingPraiseItemsList.get(selectedItem);
+        return ratingPraiseItemsList.get(selectedItem);
     }
 }

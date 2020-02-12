@@ -45,7 +45,7 @@ public class RatingFragment extends Fragment{
     private ImageView star5;
     private Drawable imgStarGrey;
     private Drawable imgStarRed;
-    List<Integer> tips_list = new ArrayList<>();
+    private List<Integer> tips_list = new ArrayList<>();
     private int tip_index;
     private List<ImageView> starList;
     private int selectItem = 0;
@@ -106,9 +106,9 @@ public class RatingFragment extends Fragment{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println(selectItem);
                 ((RatingTipsAdapter)ratingTipsAdapter).getSelectedItem();
                 ((RatingPraiseAdapter)ratingPraiseAdapter).getSelectedItem();
-                System.out.println(selectItem);
                 Log.d(TAG, "onCreateView");
             }
         });
@@ -173,7 +173,9 @@ public class RatingFragment extends Fragment{
                 }
             }
         });
+
        getTips();
+
        return view;
     }
 

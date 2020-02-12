@@ -21,7 +21,7 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
     private final LayoutInflater layoutInflater;
     private Context context;
     private List<Integer> tipsList;
-    private int selectItem = -1;
+    private int selectedItem = -1;
 
     public RatingTipsAdapter(List<Integer> tipsList, Context context){
         this.tipsList = tipsList;
@@ -41,7 +41,7 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i){
         viewHolder.price.setText(String.valueOf(tipsList.get(i)));
         tipsList.get(i);
-        if(selectItem == i){
+        if(selectedItem == i){
             viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#FC5C58"));
             viewHolder.price.setTextColor(Color.WHITE);
         }else{
@@ -51,8 +51,8 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
         viewHolder.cardView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                notifyItemChanged(selectItem);
-                selectItem = i;
+                notifyItemChanged(selectedItem);
+                selectedItem = i;
                 notifyItemChanged(i);
             }
         });
@@ -76,7 +76,7 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
     }
 
     public int getSelectedItem(){
-        tipsList.get(selectItem);
-        return tipsList.get(selectItem);
+        tipsList.get(selectedItem);
+        return tipsList.get(selectedItem);
     }
 }
