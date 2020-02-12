@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:paddingBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"
         android:foreground="?android:selectableItemBackground"
         android:background="@drawable/grey_line"
         android:orientation="horizontal">

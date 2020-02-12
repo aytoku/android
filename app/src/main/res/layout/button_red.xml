@@ -19,6 +19,8 @@
             android:paddingLeft="90dp"
             android:paddingRight="90dp"
             android:paddingTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
             android:textSize="17sp"
             android:paddingBottom="20dp"
             android:textColor="#ffffff"

@@ -62,6 +62,8 @@
                         android:background="@drawable/for_button"
                         android:textSize="17sp"
                         android:textStyle="bold"
+                        android:focusable="true"
+                        android:clickable="true"
                         android:textAllCaps="false"/>
 
                     <Button
@@ -72,6 +74,8 @@
                         android:textColor="#FFFFFF"
                         android:textSize="17sp"
                         android:layout_weight="1"
+                        android:focusable="true"
+                        android:clickable="true"
                         android:background="@drawable/for_button_red"
                         android:textStyle="bold"
                         android:textAllCaps="false"/>

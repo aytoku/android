@@ -25,6 +25,8 @@
             android:id="@+id/ll_cell_country_code_selection_ll_cell_country_code_selection1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
             android:paddingTop="15dp"
             android:orientation="horizontal">
 

@@ -18,6 +18,8 @@
             android:layout_height="30dp"
             android:background="@null"
             android:layout_centerInParent="true"
+            android:clickable="true"
+            android:focusable="true"
             android:foreground="?android:selectableItemBackground"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_strelka"/>
@@ -42,6 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:foreground="?android:selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_centerInParent="true"
             android:text="Готово"
             android:textSize="17sp"

@@ -110,6 +110,9 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center_horizontal"
+        android:foreground="?android:selectableItemBackground"
+        android:focusable="true"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">

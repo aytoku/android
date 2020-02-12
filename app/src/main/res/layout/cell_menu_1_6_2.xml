@@ -9,6 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="15dp"
+        android:clickable="true"
+        android:focusable="true"
         android:foreground="?android:selectableItemBackground"
         android:paddingBottom="15dp"
         android:background="@drawable/grey_line">

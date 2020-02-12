@@ -49,6 +49,8 @@
         android:layout_height="60dp"
         android:paddingRight="15dp"
         android:paddingLeft="15dp"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_gravity="center_horizontal|bottom"
         android:background="@drawable/earning_page"
         android:text="Перейти на карту"

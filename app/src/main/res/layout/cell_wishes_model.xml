@@ -42,6 +42,8 @@
                     android:thumb="@drawable/switch_thumb"
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_width="wrap_content"
                     android:switchMinWidth="30dp"
                     android:checked="false"

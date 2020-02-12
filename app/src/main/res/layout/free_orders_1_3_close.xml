@@ -54,6 +54,8 @@
                 android:text="Закрыть"
                 android:layout_weight="1"
                 android:textColor="#424242"
+                android:clickable="true"
+                android:focusable="true"
                 android:background="@drawable/free_orders_close_button"
                 android:textSize="17sp"
                 android:textStyle="bold"

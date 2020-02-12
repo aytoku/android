@@ -18,6 +18,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@null"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:foreground="?android:selectableItemBackground"
@@ -325,6 +327,8 @@
         android:layout_width="match_parent"
         android:layout_height="74dp"
         android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center_horizontal"
         tools:ignore="Orientation">
 
