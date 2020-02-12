@@ -41,7 +41,7 @@ public class RatingTipsAdapter extends RecyclerView.Adapter<RatingTipsAdapter.Vi
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i){
         viewHolder.price.setText(String.valueOf(tipsList.get(i)));
         tipsList.get(i);
-        
+
         if(selectedItem == i){
             viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#FC5C58"));
             viewHolder.price.setTextColor(Color.WHITE);
