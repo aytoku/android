@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
-        android:paddingTop="20dp"
+        android:paddingTop="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:orientation="horizontal">
@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:background="#FFF"
             android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
             android:src="@drawable/icon_strelka"/>
 
         <TextView
@@ -30,6 +31,7 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
             android:textColor="#424242"/>
 
     </RelativeLayout>

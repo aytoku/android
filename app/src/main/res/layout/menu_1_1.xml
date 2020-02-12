@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
+        android:layout_alignParentLeft="true"
         android:foreground="?android:selectableItemBackground"
         android:paddingLeft="20dp"
         android:clickable="true"

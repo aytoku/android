@@ -62,7 +62,7 @@
             android:background="@drawable/background_with_shadow"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -72,6 +72,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Сегодня 10:10"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
                     android:paddingTop="15dp"
                     android:paddingLeft="15dp"
                     android:paddingBottom="15dp"
@@ -85,12 +87,13 @@
                     android:layout_height="wrap_content"
                     android:text="66 ₽"
                     android:paddingRight="15dp"
-                    android:paddingLeft="160dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentRight="true"
                     android:textStyle="bold"
                     android:textColor="#424242"
                     android:textSize="17sp"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"

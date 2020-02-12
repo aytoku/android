@@ -5,7 +5,7 @@
     android:background="#FFFFFF">
 
     <RelativeLayout
-        android:id="@+id/ll_cell_address"
+        android:id="@+id/rl_cell_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"

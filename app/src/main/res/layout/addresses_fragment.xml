@@ -36,12 +36,6 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_address.rl_address.ll_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
         <TextView
             android:id="@+id/ll_address.rl_address.ll_address.title"
             android:layout_width="match_parent"
@@ -58,7 +52,5 @@
             android:layout_width="match_parent"
             android:overScrollMode="never"
             android:layout_height="wrap_content"/>
-
-    </LinearLayout>
 
 </LinearLayout>

@@ -13,15 +13,6 @@
         android:paddingBottom="14dp"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/rl_cell_country_code_selection_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/icon_cross_black"/>
-
         <TextView
             android:id="@+id/rl_cell_country_code_selection.title"
             android:layout_width="wrap_content"
@@ -32,6 +23,15 @@
             android:textColor="#424242"
             android:textSize="19sp"
             android:textStyle="bold"/>
+
+        <ImageButton
+            android:id="@+id/rl_cell_country_code_selection_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_cross_black"/>
 
     </RelativeLayout>
 

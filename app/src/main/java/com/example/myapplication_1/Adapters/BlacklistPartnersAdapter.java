@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -56,7 +56,7 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
         viewHolder.img.setImageBitmap(_bitmap);
         viewHolder.desc.setText(_item.getStr());
-        viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
+        viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 _item.check =! _item.check;
@@ -106,13 +106,13 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
 
         private final ImageView img;
         private final TextView desc;
-        private final LinearLayout linearLayout;
+        private final RelativeLayout relativeLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.ll_cell_blacklist_partner_checkbox);
             desc = itemView.findViewById(R.id.ll_cell_blacklist_partner_desc);
-            linearLayout = itemView.findViewById(R.id.ll_cell_blacklist_partner);
+            relativeLayout = itemView.findViewById(R.id.ll_cell_blacklist_partner);
         }
     }
 }

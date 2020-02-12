@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,7 +7,6 @@
         android:id="@+id/rl_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
         android:paddingTop="10dp">
 
         <ImageButton
@@ -39,61 +38,69 @@
         android:id="@+id/rl_about_app.img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:paddingLeft="5dp"
-        android:scaleY="2"
-        android:scaleX="2"
+        android:layout_below="@+id/rl_about_app"
+        android:paddingTop="50dp"
+        android:paddingBottom="40dp"
+        android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
-        android:src="@mipmap/about_app"/>
+        android:layout_weight="0.5"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:src="@mipmap/about_app" />
 
     <TextView
         android:id="@+id/rl_about_app.version"
-        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_about_app.img"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerInParent="true"
         android:gravity="center_horizontal"
-        android:layout_weight="0"
         android:paddingBottom="20dp"
         android:text="Версия 4.95 от 25 авг.2019г.\nсборка 34234"
-        android:textSize="15dp"
-        android:textColor="#979797"/>
+        android:textColor="#979797"
+        android:textSize="15dp" />
 
     <View
+        android:id="@+id/rl_view"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:background="#EDEDED"/>
+        android:layout_below="@+id/rl_about_app.version"
+        android:background="#EDEDED" />
 
     <RelativeLayout
         android:id="@+id/rl_about_app_rl_about_app1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rl_view"
+        android:background="@drawable/grey_line"
         android:foreground="?android:selectableItemBackground"
-        android:orientation="horizontal"
-        android:background="@drawable/grey_line">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/rl_about_app.rl_about_app1.licence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
             android:layout_alignParentStart="true"
-            android:text="Лицензеонное соглашение"
             android:layout_centerInParent="true"
-            android:textColor="#424242"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:textSize="17sp"
-            android:paddingLeft="15dp"/>
+            android:text="Лицензеонное соглашение"
+            android:textColor="#424242"
+            android:textSize="17sp" />
 
         <ImageButton
             android:id="@+id/rl_about_app.rl_about_app1.img_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:layout_centerInParent="true"
-            android:paddingRight="10dp"
             android:layout_alignParentRight="true"
-            android:src="@drawable/ic_vector_grey"/>
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_vector_grey" />
 
     </RelativeLayout>
 
@@ -101,18 +108,20 @@
         android:id="@+id/rl_about_app_ll_about_app_rl_about_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_below="@+id/rl_about_app_rl_about_app1"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/grey_line"
         android:foreground="?android:selectableItemBackground"
-        android:orientation="horizontal"
-        android:background="@drawable/grey_line">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/rl_about_app_policy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
-            android:layout_alignParentStart="true"
             android:paddingBottom="15dp"
             android:text="Политика конфиденцальности"
             android:textColor="#424242"
@@ -122,11 +131,11 @@
             android:id="@+id/rl_about_app_img_arrow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:background="@null"
             android:paddingTop="15dp"
             android:paddingRight="10dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_vector_grey"/>
+            android:src="@drawable/ic_vector_grey" />
 
     </RelativeLayout>
 
@@ -134,22 +143,24 @@
         android:id="@+id/rl_about_app.desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:paddingTop="10dp"
+        android:layout_above="@+id/rl_about_app.desc1"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
         android:paddingLeft="15dp"
         android:text="Таким образом новая модель организационной\nдеятельности представляет собой интересный\nэксперимент проверки"
-        android:textSize="15dp"
-        android:textColor="#979797"/>
+        android:textColor="#979797"
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/rl_about_app.desc1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:layout_weight="0.1"
+        android:layout_alignParentBottom="true"
         android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:text="2011-2019 ООО Faem Taxi"
-        android:textSize="15dp"
-        android:textColor="#979797"/>
+        android:textColor="#979797"
+        android:textSize="15dp" />
 
-</LinearLayout>
+</RelativeLayout>

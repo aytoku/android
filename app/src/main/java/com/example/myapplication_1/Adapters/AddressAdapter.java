@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -52,7 +52,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
         Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
         viewHolder.title.setText(_item.getStr());
-        viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
+        viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
@@ -102,13 +102,13 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
 
         private final ImageView img;
         private final TextView title;
-        private final LinearLayout linearLayout;
+        private final RelativeLayout relativeLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.ll_cell_address_button_plus1);
             title = itemView.findViewById(R.id.ll_cell_address_add_address_home);
-            linearLayout = itemView.findViewById(R.id.ll_cell_address);
+            relativeLayout = itemView.findViewById(R.id.rl_cell_address);
         }
     }
 }

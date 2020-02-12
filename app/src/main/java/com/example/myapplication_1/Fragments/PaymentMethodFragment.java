@@ -173,7 +173,7 @@ public class PaymentMethodFragment extends Fragment {
     private PaymentMethodAdapter.PaymentMethodItems[] getPaymentMethodItems() {
         PaymentMethodAdapter.PaymentMethodItems[] arr = new PaymentMethodAdapter.PaymentMethodItems[]{
                 new PaymentMethodAdapter.PaymentMethodItems(
-                            R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
+                            R.mipmap.icon_sber,"VISA","","", R.drawable.togle_uncheked,
                                 new PaymentMethodAdapter.PaymentMethodItems.CallBack(){
                                     @Override
                                     public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){
@@ -197,7 +197,7 @@ public class PaymentMethodFragment extends Fragment {
                 }),
 
                 new PaymentMethodAdapter.PaymentMethodItems(
-                      R.mipmap.icon_sber,"Sberbank","","", R.drawable.togle_uncheked,
+                      R.mipmap.icon_sber,"Наличными","","", R.drawable.togle_uncheked,
                          new PaymentMethodAdapter.PaymentMethodItems.CallBack(){
                             @Override
                             public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){

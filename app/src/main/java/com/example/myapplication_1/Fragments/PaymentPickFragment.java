@@ -72,7 +72,7 @@ public class PaymentPickFragment extends Fragment {
     private PaymentPickAdapter.PaymentPickItems[] getMenuItems() {
         PaymentPickAdapter.PaymentPickItems[] arr = new PaymentPickAdapter.PaymentPickItems[]{
                 new PaymentPickAdapter.PaymentPickItems(
-                        R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                        R.mipmap.icon_sber,"VISA", R.drawable.togle_uncheked,
                         new PaymentPickAdapter.PaymentPickItems.CallBack(){
                             @Override
                             public void call(PaymentPickAdapter.PaymentPickItems paymentPickItems){
@@ -96,7 +96,7 @@ public class PaymentPickFragment extends Fragment {
                         }),
 
                 new PaymentPickAdapter.PaymentPickItems(
-                        R.mipmap.icon_sber,"Sberbank", R.drawable.togle_uncheked,
+                        R.mipmap.icon_sber,"Наличными", R.drawable.togle_uncheked,
                         new PaymentPickAdapter.PaymentPickItems.CallBack(){
                             @Override
                             public void call(PaymentPickAdapter.PaymentPickItems paymentPickItems){
