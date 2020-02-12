@@ -119,15 +119,7 @@ public class RatingFragment extends Fragment{
             public void onClick(View view) {
                 ((RatingTipsAdapter)ratingTipsAdapter).getSelectedItem();
                 ((RatingPraiseAdapter)ratingPraiseAdapter).getSelectedItem();
-//                for (int i=0;i<starList.size();i++){
-//                    final int finalI = i;
-//                    starList.get(i).setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            starList.get(finalI);
-//                        }
-//                    });
-//                }
+                System.out.println(selectItem);
                 Log.d(TAG, "onCreateView");
             }
         });
@@ -149,6 +141,7 @@ public class RatingFragment extends Fragment{
                 if(view.getId()==R.id.ll_rating_star_image2){
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
+                    selectItem = 1;
                 }
             }
         });
@@ -160,6 +153,7 @@ public class RatingFragment extends Fragment{
                     star1.setImageDrawable(imgStarRed);
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
+                    selectItem = 2;
                 }
             }
         });
@@ -172,6 +166,7 @@ public class RatingFragment extends Fragment{
                     star2.setImageDrawable(imgStarRed);
                     star3.setImageDrawable(imgStarRed);
                     star4.setImageDrawable(imgStarRed);
+                    selectItem = 3;
                 }
             }
         });
@@ -185,18 +180,12 @@ public class RatingFragment extends Fragment{
                     star3.setImageDrawable(imgStarRed);
                     star4.setImageDrawable(imgStarRed);
                     star5.setImageDrawable(imgStarRed);
+                    selectItem = 4;
                 }
             }
         });
        getTips();
        return view;
-    }
-
-    public  int getSelectedItem(){
-        for (int i =0; i <= starList.size(); i++) {
-            
-        }
-        return 1;
     }
 
     private void allStarsGrey(){
