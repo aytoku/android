@@ -1,12 +1,7 @@
 package com.example.myapplication_1.Fragments;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,8 +36,6 @@ import ru.osety.amironlibrary.Query.QueryTemplate;
 public class RatingFragment extends Fragment{
 
     public static final String TAG = "RatingFragment";
-    private static final int REQUEST_CODE_TOKEN = 101;
-    private static final String ACCESS_TOKEN = "pk.eyJ1IjoiZmFlbXRheGkiLCJhIjoiY2pyYXNqZ3RhMHQxNTQ5bjBxMWlvcWF6eSJ9.ISSgNBMdG7idL3ljb2ILTg";
     private RecyclerView.Adapter ratingTipsAdapter;
     private RecyclerView.Adapter ratingPraiseAdapter;
     private ImageView star1;
@@ -52,11 +45,10 @@ public class RatingFragment extends Fragment{
     private ImageView star5;
     private Drawable imgStarGrey;
     private Drawable imgStarRed;
-    List<Integer> list = new ArrayList<>();
+    List<Integer> tips_list = new ArrayList<>();
     private int tip_index;
-    private static final String TOKEN = "Token";
     private List<ImageView> starList;
-    int selectItem = 0;
+    private int selectItem = 0;
 
     public static RatingFragment getInstance(Bundle args) {
 
@@ -89,26 +81,24 @@ public class RatingFragment extends Fragment{
 
         address.setVisibility(View.GONE);
 
-        final RecyclerView praiseRecyclerView = praise_rv;
         try {
             RatingPraiseAdapter.RatingPraiseItems[] ratingPraiseItems = getRatingPraiseItems();
             List<RatingPraiseAdapter.RatingPraiseItems> ratingPraiseItemsList = new ArrayList<>(Arrays.asList(ratingPraiseItems));
             ratingPraiseAdapter = new RatingPraiseAdapter(ratingPraiseItemsList, getActivity().getBaseContext());
-            praiseRecyclerView.setAdapter(ratingPraiseAdapter);
-            praiseRecyclerView.setLayoutManager(
+            praise_rv.setAdapter(ratingPraiseAdapter);
+            praise_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
-            praiseRecyclerView.setItemAnimator( new DefaultItemAnimator() );
+            praise_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
 
-        final RecyclerView tipsRecyclerView = tips_rv;
         try {
-            ratingTipsAdapter = new RatingTipsAdapter(list, getActivity().getBaseContext());
-            tipsRecyclerView.setAdapter(ratingTipsAdapter);
-            tipsRecyclerView.setLayoutManager(
+            ratingTipsAdapter = new RatingTipsAdapter(tips_list, getActivity().getBaseContext());
+            tips_rv.setAdapter(ratingTipsAdapter);
+            tips_rv.setLayoutManager(
                     new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false));
-            tipsRecyclerView.setItemAnimator(new DefaultItemAnimator());
+            tips_rv.setItemAnimator(new DefaultItemAnimator());
         } catch ( NullPointerException e) {
             Log.e(TAG, "onCreateView" +e.getMessage());
         }
@@ -187,8 +177,8 @@ public class RatingFragment extends Fragment{
        return view;
     }
 
-    private void allStarsGrey(){
-        for (int i = 0; i <= starList.size()-1; i++){
+    private void allStarsGrey() {
+        for (int i = 0; i <= starList.size()-1; i++) {
             starList.get(i).setImageDrawable(imgStarGrey);
         }
     }
@@ -220,7 +210,7 @@ public class RatingFragment extends Fragment{
                 JsonArray tip_percent = result.getAsJsonArray("tip_percent");
                 for (JsonElement i : tip_percent){
                     tip_index = i.getAsInt();
-                    list.add(tip_index);
+                    tips_list.add(tip_index);
                     ratingTipsAdapter.notifyDataSetChanged();
                 }
             }
@@ -250,23 +240,5 @@ public class RatingFragment extends Fragment{
                         R.mipmap.handshake,"Вежливость")
         };
         return arr;
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(resultCode != Activity.RESULT_OK){
-            return;
-        }
-        if(requestCode == REQUEST_CODE_TOKEN){
-            String new_token = data.getStringExtra("token");
-            Context context = getActivity().getApplicationContext();
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-            sharedPreferences.getString(TOKEN, new_token);
-        }
-    }
-
-    static Intent newIntent(String new_token){
-        Intent intent = new Intent();
-        intent.putExtra("token", new_token);
-        return intent;
     }
 }
