@@ -66,10 +66,10 @@ public class ServiceFragment extends Fragment {
         relativeLayout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                String message = textView.getText().toString();
-//                Bundle _args = new Bundle();
-//                _args.putString("message", message);
-//                programErrorTwoFragment.setArguments(_args);
+                String message = textView.getText().toString();
+                Bundle _args = new Bundle();
+                _args.putString("message", message);
+                programErrorTwoFragment.setArguments(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                 fragmentTransaction.commit();
