@@ -1,6 +1,5 @@
 package com.example.myapplication_1.Fragments;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -229,12 +228,9 @@ public class Auth111Fragment extends Fragment {
             }
         }
     }
-
-    private void sendResult(String phone_number){
-        if(getTargetFragment()== null){
-            return;
-        }
-        Intent intent = Menu11Fragment.newIntent(phone_number);
-        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
+    static Intent newIntent(String phone_number){
+        Intent intent = new Intent();
+        intent.putExtra("phone_number", phone_number);
+        return intent;
     }
 }

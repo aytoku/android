@@ -186,9 +186,11 @@ public class Menu11Fragment extends Fragment {
         }
     }
 
-    static Intent newIntent(String phone_number){
-        Intent intent = new Intent();
-        intent.putExtra("phone_number", phone_number);
-        return intent;
+    private void sendResult(String phone_number){
+        if(getTargetFragment()== null){
+            return;
+        }
+        Intent intent = Auth111Fragment.newIntent(phone_number);
+        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 }
