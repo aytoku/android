@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -42,20 +43,30 @@ public class PaymentPickFragment extends Fragment {
 
         TextView textView = view.findViewById(R.id.rl_payment_pick_ready);
         RecyclerView paymentPick_rv = view.findViewById(R.id.rl_payment_pick_recycler);
-        final RecyclerView recyclerView = paymentPick_rv;
+        ImageButton button = view.findViewById(R.id.rl_payment_pick_button);
 
         try {
             PaymentPickAdapter.PaymentPickItems[] paymentPickItems = getMenuItems();
             List<PaymentPickAdapter.PaymentPickItems> itemsMenuList = new ArrayList<>(Arrays.asList(paymentPickItems));
             RecyclerView.Adapter paymentMethodAdapter = new PaymentPickAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerView.setAdapter(paymentMethodAdapter);
-            recyclerView.setLayoutManager(
+            paymentPick_rv.setAdapter(paymentMethodAdapter);
+            paymentPick_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            paymentPick_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }
         textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(bundle);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
+                fragmentTransaction.commit();
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();

@@ -53,15 +53,14 @@ public class CreateOrder115Fragment extends Fragment {
                 onAddButtonClicked(view);
             }
         });
-        final RecyclerView recyclerView = create_order_rv;
         try {
             AdapterCreateOrder115.CreateOrderItems[] createOrderItems = getCreateOrderItems();
             createOrderItemsList = new ArrayList<>(Arrays.asList(createOrderItems));
             createOrder115Adapter = new AdapterCreateOrder115(createOrderItemsList, getActivity().getBaseContext());
-            recyclerView.setAdapter(createOrder115Adapter);
-            recyclerView.setLayoutManager(
+            create_order_rv.setAdapter(createOrder115Adapter);
+            create_order_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            create_order_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

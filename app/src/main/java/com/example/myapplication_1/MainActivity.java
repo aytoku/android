@@ -32,6 +32,7 @@ import com.example.myapplication_1.Fragments.ErrorTwoFragment;
 import com.example.myapplication_1.Fragments.FreeOrders13ExpListFragment;
 import com.example.myapplication_1.Fragments.HowToWorkFragment;
 import com.example.myapplication_1.Fragments.InformationFragment;
+import com.example.myapplication_1.Fragments.InformationPartnersFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeLowerPartFragment;
 import com.example.myapplication_1.Fragments.MachinePurposeOneFragment;
@@ -112,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
         HowToWorkFragment howToWorkFragment = HowToWorkFragment.getInstance(null);
 
         IsMoonTime isMoonTime = IsMoonTime.getInstance(null);
-
         InformationFragment informationFragment = InformationFragment.getInstance(null);
+        InformationPartnersFragment informationPartnersFragment = InformationPartnersFragment.getInstance(null);
 
         MachinePurposeFragment machinePurposeFragment = MachinePurposeFragment.getInstance(null);
         MachinePurposeOneFragment machinePurposeOneFragment = MachinePurposeOneFragment.getInstance(null);
@@ -162,6 +163,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, ratingFragment, RatingFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, menu11Fragment, Menu11Fragment.TAG).commit();
     }
 }

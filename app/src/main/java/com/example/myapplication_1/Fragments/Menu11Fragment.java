@@ -55,15 +55,14 @@ public class Menu11Fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        final RecyclerView recyclerView = menu11_rv;
         try {
             AdapterMenu11.MenuList[] menuLists = getMenuListItems();
             List<AdapterMenu11.MenuList> itemsMenuList = new ArrayList<>(Arrays.asList(menuLists));
             RecyclerView.Adapter menu11Adapter = new AdapterMenu11(itemsMenuList, getActivity().getBaseContext());
-            recyclerView.setAdapter(menu11Adapter);
-            recyclerView.setLayoutManager(
+            menu11_rv.setAdapter(menu11Adapter);
+            menu11_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            menu11_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

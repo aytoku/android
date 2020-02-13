@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication_1.Adapters.AssistantAdapter;
 import com.example.myapplication_1.R;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,22 +44,21 @@ public class AssistantFragment extends Fragment {
 
         RecyclerView assistant_rv = view.findViewById(R.id.assistant_recycler);
 
-        final RecyclerView recyclerView = assistant_rv;
         try{
             AssistantAdapter.AssistantItems[] assistantItems = getAssistantItems();
             assistantItemsList = new ArrayList<>(Arrays.asList(assistantItems));
             assistantAdapter = new AssistantAdapter(assistantItemsList, getActivity().getBaseContext());
-            recyclerView.setAdapter(assistantAdapter);
-            recyclerView.setLayoutManager(
+            assistant_rv.setAdapter(assistantAdapter);
+            assistant_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            assistant_rv.setItemAnimator( new DefaultItemAnimator() );
         }catch( NullPointerException e){
             e.printStackTrace();
         }
 
         ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+            public boolean onMove(@NotNull RecyclerView recyclerView, @NotNull RecyclerView.ViewHolder viewHolder, @NotNull RecyclerView.ViewHolder target) {
                 return false;
             }
 

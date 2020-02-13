@@ -39,15 +39,14 @@ public class MachinePurposeFragment extends Fragment {
 
         RecyclerView rv = view.findViewById(R.id.ll_machine_purpose_recycler_rv);
 
-        final RecyclerView recyclerViewMenu = rv;
         try {
             MachinePurposeAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<MachinePurposeAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             RecyclerView.Adapter adapterGridViewMenu = new MachinePurposeAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(adapterGridViewMenu);
-            recyclerViewMenu.setLayoutManager(
+            rv.setAdapter(adapterGridViewMenu);
+            rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

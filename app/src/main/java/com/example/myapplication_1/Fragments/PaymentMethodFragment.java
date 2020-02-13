@@ -59,15 +59,14 @@ public class PaymentMethodFragment extends Fragment {
         TextView edit = view.findViewById(R.id.rl_payment_method_edit);
         ImageButton imageButton = view.findViewById(R.id.rl_payment_method_button_strelka);
         RecyclerView paymentMethod_rv = view.findViewById(R.id.ll_payment_method_recycler);
-        final RecyclerView recyclerViewMenu = paymentMethod_rv;
         try {
             PaymentMethodAdapter.PaymentMethodItems[] paymentMethodItems = getPaymentMethodItems();
             itemsMenuList = new ArrayList<>(Arrays.asList(paymentMethodItems));
             paymentMethodAdapter = new PaymentMethodAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerViewMenu.setAdapter(paymentMethodAdapter);
-            recyclerViewMenu.setLayoutManager(
+            paymentMethod_rv.setAdapter(paymentMethodAdapter);
+            paymentMethod_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerViewMenu.setItemAnimator( new DefaultItemAnimator() );
+            paymentMethod_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

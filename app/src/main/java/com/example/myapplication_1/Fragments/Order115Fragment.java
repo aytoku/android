@@ -38,15 +38,14 @@ public class Order115Fragment extends Fragment {
                 container, false);
 
         RecyclerView order115_rv = view.findViewById(R.id.rl_create_order_1_1_5_recycler);
-        final RecyclerView recyclerView = order115_rv;
         try {
             Order115Adapter.Order115Items[] order115Items = getOrder115Items();
             List<Order115Adapter.Order115Items> order115ItemsList = new ArrayList<>(Arrays.asList(order115Items));
             RecyclerView.Adapter order115Adapter = new Order115Adapter(order115ItemsList, getActivity().getBaseContext());
-            recyclerView.setAdapter(order115Adapter);
-            recyclerView.setLayoutManager(
+            order115_rv.setAdapter(order115Adapter);
+            order115_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            order115_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

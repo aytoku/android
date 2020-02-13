@@ -64,15 +64,14 @@ public class AddressFragment extends Fragment {
             }
         });
 
-        final RecyclerView recyclerView = address_rv;
         try{
             AddressAdapter.AddressItems[] addressItems = getAddressItems();
             addressItemsList = new ArrayList<>(Arrays.asList(addressItems));
             addressAdapter = new AddressAdapter(addressItemsList, getActivity().getBaseContext());
-            recyclerView.setAdapter(addressAdapter);
-            recyclerView.setLayoutManager(
+            address_rv.setAdapter(addressAdapter);
+            address_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            address_rv.setItemAnimator( new DefaultItemAnimator() );
         }catch(NullPointerException e){
             e.printStackTrace();
         }

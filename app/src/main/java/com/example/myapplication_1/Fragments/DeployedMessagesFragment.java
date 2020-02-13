@@ -62,15 +62,14 @@ public class DeployedMessagesFragment extends Fragment {
 
         RecyclerView deployedMessages_rv = view.findViewById(R.id.deployed_messages_recycler);
 
-        final RecyclerView recyclerView = deployedMessages_rv;
         try {
             DeployedMessagesAdapter.DeployedMessagesItems[] deployedMessagesItems = getDeployedMessagesItems();
             deployedMessagesItemsList = new ArrayList<>(Arrays.asList(deployedMessagesItems));
             deployedMessagesAdapter = new DeployedMessagesAdapter(deployedMessagesItemsList, getActivity().getBaseContext());
-            recyclerView.setAdapter(deployedMessagesAdapter);
-            recyclerView.setLayoutManager(
+            deployedMessages_rv.setAdapter(deployedMessagesAdapter);
+            deployedMessages_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            deployedMessages_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

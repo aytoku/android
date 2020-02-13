@@ -88,7 +88,7 @@
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="Лицензеонное соглашение"
+            android:text="Пользовательское соглашение"
             android:textColor="#424242"
             android:textSize="17sp" />
 

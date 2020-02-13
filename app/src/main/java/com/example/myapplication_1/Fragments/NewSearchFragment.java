@@ -42,26 +42,24 @@ public class NewSearchFragment extends Fragment {
         RecyclerView new_search_rv = view.findViewById(R.id.search_new_recyclerView);
         RecyclerView new_search_addresses_rv = view.findViewById(R.id.search_new_recyclerView1);
 
-        final RecyclerView recyclerView = new_search_rv;
         try {
             NewSearchAdapter.NewSearchItems[] newSearchItems = getNewSearchItems();
             List<NewSearchAdapter.NewSearchItems> newSearchAdapterList = new ArrayList<>(Arrays.asList(newSearchItems));
             RecyclerView.Adapter newSearchAdapter = new NewSearchAdapter(newSearchAdapterList, getActivity().getBaseContext());
-            recyclerView.setAdapter(newSearchAdapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
+            new_search_rv.setAdapter(newSearchAdapter);
+            new_search_rv.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
+            new_search_rv.setItemAnimator(new DefaultItemAnimator());
         }catch (NullPointerException e){
             e.printStackTrace();
         }
 
-        RecyclerView recyclerView_addresses = new_search_addresses_rv;
         try {
             NewSearchAddressesAdapter.NewSearchAddressesItems[] newSearchAddressesItems = getNewSearchAddressesItems();
             List<NewSearchAddressesAdapter.NewSearchAddressesItems> newSearchAddressesItemsList = new ArrayList<>(Arrays.asList(newSearchAddressesItems));
             RecyclerView.Adapter newSearchAddressesAdapter = new NewSearchAddressesAdapter(newSearchAddressesItemsList, getActivity().getBaseContext());
-            recyclerView_addresses.setAdapter(newSearchAddressesAdapter);
-            recyclerView_addresses.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
-            recyclerView_addresses.setItemAnimator(new DefaultItemAnimator());
+            new_search_addresses_rv.setAdapter(newSearchAddressesAdapter);
+            new_search_addresses_rv.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
+            new_search_addresses_rv.setItemAnimator(new DefaultItemAnimator());
         }catch (NullPointerException e){
             e.printStackTrace();
         }

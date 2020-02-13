@@ -12,9 +12,16 @@ import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication_1.Adapters.CalculationCostAdapter;
 import com.example.myapplication_1.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class SpinnerFragment extends Fragment {
@@ -134,6 +141,20 @@ public class SpinnerFragment extends Fragment {
             }
         });
 
+        RecyclerView information_partners_rv = view.findViewById(R.id.ll_information_partners_recycler);
+
+        try {
+            CalculationCostAdapter.CalculationCostItems[] calculationCostItems = getCalculationItems();
+            List<CalculationCostAdapter.CalculationCostItems> calculationCostItemsList = new ArrayList<>(Arrays.asList(calculationCostItems));
+            RecyclerView.Adapter calculationCostAdapter = new CalculationCostAdapter(calculationCostItemsList, getActivity().getBaseContext());
+            information_partners_rv.setAdapter(calculationCostAdapter);
+            information_partners_rv.setLayoutManager(
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
+            information_partners_rv.setItemAnimator( new DefaultItemAnimator() );
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
+        }
+
         return view;
     }
 
@@ -141,5 +162,36 @@ public class SpinnerFragment extends Fragment {
         for (int i = 0; i <= starArr.length-1; i++){
             starArr[i].setImageDrawable(imgStarGrey);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    private CalculationCostAdapter.CalculationCostItems[] getCalculationItems() {
+        CalculationCostAdapter.CalculationCostItems[] arr = new CalculationCostAdapter.CalculationCostItems[]{
+                new CalculationCostAdapter.CalculationCostItems(
+                        "",
+                        "39 руб"
+                ),
+                new CalculationCostAdapter.CalculationCostItems(
+                        "Бесплатное ожидание",
+                        "3 мин"
+                ),
+                new CalculationCostAdapter.CalculationCostItems(
+                        "Платное ожидание",
+                        "4 руб/мин"
+                ),
+                new CalculationCostAdapter.CalculationCostItems(
+                        "Стоимость по городу",
+                        "4 руб/мин"
+                ),
+                new CalculationCostAdapter.CalculationCostItems(
+                        "Стоимость загород",
+                        "4 руб/мин"
+                )
+        };
+        return arr;
     }
 }

@@ -39,15 +39,14 @@ public class MenuOneFragment extends Fragment {
                 container, false);
 
         RecyclerView menuOne_rv = view.findViewById(R.id.ll_menu_1_recycler);
-        final RecyclerView recyclerView = menuOne_rv;
         try {
             MenuOneAdapter.ItemsMenu[] itemsMenu = getMenuItems();
             List<MenuOneAdapter.ItemsMenu> itemsMenuList = new ArrayList<>(Arrays.asList(itemsMenu));
             RecyclerView.Adapter menuOneAdapter = new MenuOneAdapter(itemsMenuList, getActivity().getBaseContext());
-            recyclerView.setAdapter(menuOneAdapter);
-            recyclerView.setLayoutManager(
+            menuOne_rv.setAdapter(menuOneAdapter);
+            menuOne_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            menuOne_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

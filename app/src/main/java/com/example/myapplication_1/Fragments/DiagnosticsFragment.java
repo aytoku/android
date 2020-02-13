@@ -40,14 +40,13 @@ public class DiagnosticsFragment extends Fragment {
 
         RecyclerView diagnostics_rv = view.findViewById(R.id.ll_diagnostics_recycler);
 
-        final RecyclerView recyclerView = diagnostics_rv;
         try {
             DiagnosticsAdapter.DiagnosticsItems[] diagnosticsItems = getDiagnosticsItems();
             List<DiagnosticsAdapter.DiagnosticsItems> diagnosticsItemsList = new ArrayList<>(Arrays.asList(diagnosticsItems));
             RecyclerView.Adapter diagnosticsAdapter = new DiagnosticsAdapter(diagnosticsItemsList, getActivity().getBaseContext());
-            recyclerView.setAdapter(diagnosticsAdapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
+            diagnostics_rv.setAdapter(diagnosticsAdapter);
+            diagnostics_rv.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext(), RecyclerView.VERTICAL, false));
+            diagnostics_rv.setItemAnimator(new DefaultItemAnimator());
         }catch (NullPointerException e){
             e.printStackTrace();
         }

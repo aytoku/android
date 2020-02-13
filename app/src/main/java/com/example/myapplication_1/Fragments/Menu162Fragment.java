@@ -56,15 +56,14 @@ public class Menu162Fragment extends Fragment {
             }
         });
 
-        final RecyclerView recyclerView = menu162_rv;
         try {
             AdapterMenu162.Menu162List[] menu162Lists = getMenu162ListItems();
             List<AdapterMenu162.Menu162List> itemsMenuList = new ArrayList<>(Arrays.asList(menu162Lists));
             RecyclerView.Adapter menu162Adapter = new AdapterMenu162(itemsMenuList, getActivity().getBaseContext());
-            recyclerView.setAdapter(menu162Adapter);
-            recyclerView.setLayoutManager(
+            menu162_rv.setAdapter(menu162Adapter);
+            menu162_rv.setLayoutManager(
                     new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.VERTICAL, false ));
-            recyclerView.setItemAnimator( new DefaultItemAnimator() );
+            menu162_rv.setItemAnimator( new DefaultItemAnimator() );
         } catch ( NullPointerException e) {
             e.printStackTrace();
         }

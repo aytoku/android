@@ -42,7 +42,7 @@ public class ServiceFragment extends Fragment {
         RelativeLayout relativeLayout3 = view.findViewById(R.id.rl_service3);
         final TextView textView = view.findViewById(R.id.rl_service_ad_ride);
 
-        Bundle bundle = new Bundle();
+        final Bundle bundle = new Bundle();
         final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
         final Menu162Fragment menu161Fragment = Menu162Fragment.getInstance(bundle);
         final TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(bundle);
@@ -67,10 +67,12 @@ public class ServiceFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String message = textView.getText().toString();
-                sendResult(message);
+                Bundle _args = new Bundle();
+                _args.putString("message", message);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                 fragmentTransaction.commit();
+                programErrorTwoFragment.setArguments(_args);
             }
         });
         relativeLayout3.setOnClickListener(new View.OnClickListener() {
