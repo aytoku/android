@@ -83,6 +83,8 @@ public class CountryCodeSelectionFragment extends Fragment {
                                 try{
                                     Bundle bundle = new Bundle();
                                     Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(bundle);
+                                    String message = "Грузия +995";
+                                    bundle.putString("message", message);
                                     auth111Fragment.setArguments(bundle);
                                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                     FragmentTransaction transaction = fragmentManager.beginTransaction();

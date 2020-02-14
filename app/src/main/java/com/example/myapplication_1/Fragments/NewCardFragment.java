@@ -46,7 +46,18 @@ public class NewCardFragment extends Fragment {
         ImageButton imageButton = view.findViewById(R.id.rl_new_card_button);
         editText = view.findViewById(R.id.ll_new_card_card_number_field);
         editText1 = view.findViewById(R.id.ll_new_card_term_field);
+        CardView accept_button = view.findViewById(R.id.ll_new_card_cardButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(bundle);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
+                fragmentTransaction.commit();
+            }
+        });
+        accept_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
@@ -129,19 +140,19 @@ public class NewCardFragment extends Fragment {
             }
         });
 
-        CardView cardView = view.findViewById(R.id.ll_new_card_cardButton);
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
-                bundle.putString(NewCardFragment.KEY_CARD_NUMBER, "card_number");
-                bundle.putString(NewCardFragment.KEY_DATE, "date");
-                bundle.putString(NewCardFragment.KEY_CVV, "cvv");
-                paymentMethodFragment.setArguments(bundle);
-                sendResult(bundle);
-            }
-        });
+//        CardView cardView = view.findViewById(R.id.ll_new_card_cardButton);
+//        cardView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Bundle bundle = new Bundle();
+//                PaymentMethodFragment paymentMethodFragment = new PaymentMethodFragment();
+//                bundle.putString(NewCardFragment.KEY_CARD_NUMBER, "card_number");
+//                bundle.putString(NewCardFragment.KEY_DATE, "date");
+//                bundle.putString(NewCardFragment.KEY_CVV, "cvv");
+//                paymentMethodFragment.setArguments(bundle);
+//                sendResult(bundle);
+//            }
+//        });
 
         return view;
     }

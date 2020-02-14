@@ -26,6 +26,7 @@ public class AddressFragment extends Fragment {
     private RecyclerView.Adapter addressAdapter;
     private List<AddressAdapter.AddressItems> addressItemsList;
 
+
     public static AddressFragment getInstance(Bundle args) {
 
         AddressFragment addressFragment = new AddressFragment();
@@ -88,10 +89,12 @@ public class AddressFragment extends Fragment {
                         public void call(AddressAdapter.AddressItems itemsMenu){
                             try{
                                 Bundle bundle = new Bundle();
-                                EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(bundle);
+                                SearchFragment searchFragment = SearchFragment.getInstance(bundle);
                                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
+                                fragmentTransaction.replace(R.id.rl_main, searchFragment);
                                 fragmentTransaction.commit();
+                                String message = bundle.getString("message");
+                                getActivity().getIntent().getExtras().get(message);
                             }catch (NullPointerException e) {
                                 e.printStackTrace();
                             }
@@ -115,10 +118,12 @@ public class AddressFragment extends Fragment {
                             public void call(AddressAdapter.AddressItems addressItems){
                                 try {
                                     Bundle bundle = new Bundle();
-                                    EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(bundle);
+                                    SearchFragment searchFragment = SearchFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, searchFragment);
                                     fragmentTransaction.commit();
+                                    String message = bundle.getString("message");
+                                    getActivity().getIntent().getExtras().get(message);
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
@@ -132,11 +137,13 @@ public class AddressFragment extends Fragment {
                             @Override
                             public void call(AddressAdapter.AddressItems addressItems){
                                 try {
-                                    Bundle bundle = new Bundle();
-                                    EditMyAddressFragment editMyAddressFragment = EditMyAddressFragment.getInstance(bundle);
+                                    Bundle bundle = getArguments();
+                                    SearchFragment searchFragment = SearchFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.rl_main, editMyAddressFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, searchFragment);
                                     fragmentTransaction.commit();
+                                    String message = bundle.getString("message");
+                                    getActivity().getIntent().getExtras().get(message);
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }

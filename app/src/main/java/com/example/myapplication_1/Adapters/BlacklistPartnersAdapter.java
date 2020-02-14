@@ -50,7 +50,7 @@ public class BlacklistPartnersAdapter extends RecyclerView.Adapter<BlacklistPart
         final BlackListItems _item = blackListItems[i];
 
         float _dens = context.getResources().getDisplayMetrics().density;
-        int _size = Math.round(_dens * 30);
+        int _size = Math.round(_dens * 25);
         Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
         Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
         viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);

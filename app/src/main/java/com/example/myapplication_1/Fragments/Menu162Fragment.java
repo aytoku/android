@@ -86,6 +86,9 @@ public class Menu162Fragment extends Fragment {
                                 try {
                                     Bundle bundle = new Bundle();
                                     ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
+                                    String message = "Большая стоимость";
+                                    bundle.putString("message", message);
+                                    programErrorTwoFragment.setArguments(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();
@@ -104,6 +107,9 @@ public class Menu162Fragment extends Fragment {
                                 try {
                                     Bundle bundle = new Bundle();
                                     ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
+                                    String message = "Не дали сдачи";
+                                    bundle.putString("message", message);
+                                    programErrorTwoFragment.setArguments(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();
@@ -122,6 +128,9 @@ public class Menu162Fragment extends Fragment {
                                 try {
                                     Bundle bundle = new Bundle();
                                     ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
+                                    String message = "Ошибка программы";
+                                    bundle.putString("message", message);
+                                    programErrorTwoFragment.setArguments(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
                                     fragmentTransaction.commit();

@@ -38,13 +38,16 @@ public class ProgramErrorTwoFragment extends Fragment {
                 container, false);
 
         title = view.findViewById(R.id.rl_program_error1_title);
-        Bundle _args = new Bundle();
-        final Fragment menu162Fragment = Menu162Fragment.getInstance(_args);
+        Bundle bundle = getArguments();
+        String message = bundle.getString("message");
+        title.setText(message);
 
         imageButton = view.findViewById(R.id.rl_program_error1_img);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle _args = new Bundle();
+                final Fragment menu162Fragment = Menu162Fragment.getInstance(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, menu162Fragment);
                 fragmentTransaction.commit();

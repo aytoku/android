@@ -1,7 +1,5 @@
 package com.example.myapplication_1.Fragments;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -84,12 +82,5 @@ public class ServiceFragment extends Fragment {
             }
         });
         return view;
-    }
-    private void sendResult(String message){
-        if(getTargetFragment() == null){
-            return;
-        }
-        Intent intent = ProgramErrorTwoFragment.newIntent(message);
-        getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
     }
 }

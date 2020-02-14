@@ -93,6 +93,11 @@ public class PartnersFragment extends Fragment {
                                 try {
                                     Bundle bundle = new Bundle();
                                     Fragment spinnerFragment = SpinnerFragment.getInstance(bundle);
+                                    String message_title = "Партнер 1";
+                                    String message_desc = "ООО Партнер 1, 362040, Северная\nОсетия-Алания Респ., г. Владикавказ\nпросп.Мира, д. 31, ORGN:111111939";
+                                    bundle.putString("message_title", message_title);
+                                    bundle.putString("message_desc", message_desc);
+                                    spinnerFragment.setArguments(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                                     fragmentTransaction.replace(R.id.rl_main, spinnerFragment);
                                     fragmentTransaction.commit();
@@ -111,6 +116,11 @@ public class PartnersFragment extends Fragment {
                         try {
                             Bundle bundle = new Bundle();
                             Fragment spinnerFragment = SpinnerFragment.getInstance(bundle);
+                            String message_title = "Партнер 2";
+                            String message_desc = "ООО Партнер 2, 362040, Северная\nОсетия-Алания Респ., г. Владикавказ\nпросп.Мира, д. 31, ORGN:111111939";
+                            bundle.putString("message_title", message_title);
+                            bundle.putString("message_desc", message_desc);
+                            spinnerFragment.setArguments(bundle);
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                             fragmentTransaction.replace(R.id.rl_main, spinnerFragment);
                             fragmentTransaction.commit();

@@ -70,14 +70,14 @@ public class PaymentPickAdapter extends RecyclerView.Adapter<PaymentPickAdapter.
                 _item.callBack.call(_item);
             }
         });
-        viewHolder.toggle_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                itemsMenuList.remove(i);
-                notifyItemRemoved(i);
-                notifyItemRangeChanged(i, 1);
-            }
-        });
+//        viewHolder.toggle_img.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                itemsMenuList.remove(i);
+//                notifyItemRemoved(i);
+//                notifyItemRangeChanged(i, 1);
+//            }
+//        });
     }
 
     @Override

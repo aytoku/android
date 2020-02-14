@@ -109,7 +109,7 @@ public class TravelStoryOneFragment extends Fragment {
                                     e.printStackTrace();
                                 }
                             }
-                        }, "Максима Горького, 23")
+                        }, "Максима Горького, 23"),
         };
         return _arr;
     }

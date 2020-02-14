@@ -92,9 +92,6 @@ public class NewSearchFragment extends Fragment {
                 ),
                 new NewSearchAddressesAdapter.NewSearchAddressesItems(
                         "Мамсурова, 3","г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
-                ),
-                new NewSearchAddressesAdapter.NewSearchAddressesItems(
-                        "Леваневского, 3","г. Владикавказ, республика Северная Осетия-Алания,\n Россия"
                 )
         };
         return _arr;

@@ -68,6 +68,7 @@ import com.example.myapplication_1.Fragments.UserAgreementFragment;
 import com.example.myapplication_1.Fragments.WishFragment;
 import com.example.myapplication_1.Fragments.WriteFragment;
 import com.example.myapplication_1.Other.PageMainFragment;
+import com.example.myapplication_1.Other.SloppyDrivingExample;
 
 //import com.example.myapplication_1.Fragments.ChatWithDriverFragment;
 
@@ -150,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         SliderFragment sliderFragment = SliderFragment.getInstance(null);
         SendTestFragment sendTestFragment = SendTestFragment.getInstance();
         SpinnerTariffsFragment spinnerTariffsFragment = SpinnerTariffsFragment.getInstance(null);
+        SloppyDrivingExample sloppyDrivingExample = SloppyDrivingExample.getInstance(null);
 
         TariffsFragment tariffsFragment = TariffsFragment.getInstance(null);
         TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(null);
@@ -163,6 +165,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, ratingFragment, RatingFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, menu11Fragment, Menu11Fragment.TAG).commit();
     }
 }

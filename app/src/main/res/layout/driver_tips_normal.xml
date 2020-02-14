@@ -17,14 +17,13 @@
             android:id="@+id/ll_drivers_tips"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/ll_drivers_tips_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F5F5F5"
+                android:background="@drawable/driver_tips_alert_title_background"
                 android:gravity="center_horizontal"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
@@ -39,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="#FFFFFF"
         android:paddingLeft="10dp">
 
         <LinearLayout
@@ -178,6 +178,7 @@
         android:layout_gravity="center_horizontal"
         android:paddingLeft="20dp"
         android:paddingBottom="10dp"
+        android:background="#FFFFFF"
         android:text="Чаевые будут списаны при оплате\nбанковской картой, если поездка вам\nпонравится. В конце поездки вы всегда\nможете изменить размер чаевых."
         android:textColor="#AAAAAA"
         android:textSize="15sp" />

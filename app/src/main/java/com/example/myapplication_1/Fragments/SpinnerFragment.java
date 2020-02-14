@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -63,6 +64,15 @@ public class SpinnerFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner1.setAdapter(adapter1);
+
+        TextView title = view.findViewById(R.id.rl_information_partners_title);
+        TextView desc = view.findViewById(R.id.rl_information_partners_desc);
+
+        Bundle _args = getArguments();
+        String message_title = _args.getString("message_title");
+        String message_desc = _args.getString("message_desc");
+        title.setText(message_title);
+        desc.setText(message_desc);
 
         imageButton = view.findViewById(R.id.rl_information_partners_button);
         imgStarGrey = getResources().getDrawable(R.drawable.icon_little_grey_star);

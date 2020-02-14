@@ -58,11 +58,11 @@ public class Auth111Fragment extends Fragment {
                 container, false);
 
         button = view.findViewById(R.id.cl_auth_1_1_1_button1);
-        TextView textView = view.findViewById(R.id.cl_auth_1_1_1_button);
         TextView agreement = view.findViewById(R.id.cl_auth_1_1_1_desc);
         agreement.setText(Html.fromHtml("Нажимая кнопку 'Далее', вы принимаете условия\n<u>пользовательского соглашения</u> и <u>политики\nконфиденцальности</u>"));
         editText = view.findViewById(R.id.cl_auth_1_1_1_editTextNumber);
         ImageButton imageButton = view.findViewById(R.id.cl_auth_1_1_1_image_button);
+        final TextView country_code = view.findViewById(R.id.cl_auth_1_1_1_button);
 
         final int[] len = {0};
         final int[] len1 = {0};
@@ -126,17 +126,23 @@ public class Auth111Fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        Bundle bundle = new Bundle();
-        final CountryCodeSelectionFragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(bundle);
-        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
-        textView.setOnClickListener(new View.OnClickListener() {
+        Bundle bundle1 = new Bundle();
+        final CountryCodeSelectionFragment countryCodeSelectionFragment = CountryCodeSelectionFragment.getInstance(bundle1);
+        final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle1);
+        country_code.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.rl_main, countryCodeSelectionFragment);
                 fragmentTransaction.commit();
+
+                Bundle bundle = getArguments();
+                String message = bundle.getString("message");
+                country_code.setText(message);
             }
         });
+
+
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,9 +196,12 @@ public class Auth111Fragment extends Fragment {
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            final Menu11Fragment codeScreenFragment = new Menu11Fragment();
+                            Bundle bundle = new Bundle();
+                            final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
+                            String message = editText.getText().toString();
+                            bundle.putString("message", message);
                             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.replace(R.id.rl_main, codeScreenFragment);
+                            fragmentTransaction.replace(R.id.rl_main, menu11Fragment);
                             fragmentTransaction.commit();
                         }
                     });
