@@ -28,7 +28,7 @@ public class NewCardFragment extends Fragment {
     static final String KEY_CARD_NUMBER = "Key_card_number";
     static final String KEY_DATE = "Key_date";
     static final String KEY_CVV = "Key_cvv";
-    
+
     private EditText editText;
     private EditText editText1;
     private EditText editText2;
