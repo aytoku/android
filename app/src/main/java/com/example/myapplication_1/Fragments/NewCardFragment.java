@@ -28,8 +28,7 @@ public class NewCardFragment extends Fragment {
     static final String KEY_CARD_NUMBER = "Key_card_number";
     static final String KEY_DATE = "Key_date";
     static final String KEY_CVV = "Key_cvv";
-
-    private EditText editText;
+    private EditText card_number;
     private EditText editText1;
     private EditText editText2;
     private TextView zero;
@@ -73,7 +72,7 @@ public class NewCardFragment extends Fragment {
         seven = view.findViewById(R.id.seven);
         eight = view.findViewById(R.id.eight);
         nine = view.findViewById(R.id.nine);
-        editText = view.findViewById(R.id.ll_new_card_card_number_field);
+        card_number = view.findViewById(R.id.ll_new_card_card_number_field);
         editText1 = view.findViewById(R.id.ll_new_card_term_field);
         editText2 = view.findViewById(R.id.ll_new_card_cvv_field);
         ImageView delete = view.findViewById(R.id.delete);
@@ -111,11 +110,11 @@ public class NewCardFragment extends Fragment {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.setText(null);
+                card_number.setText(null);
             }
         });
 
-        editText.addTextChangedListener(new TextWatcher() {
+        card_number.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
@@ -124,7 +123,7 @@ public class NewCardFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                int i = editText.getText().toString().length();
+                int i = card_number.getText().toString().length();
                 if (i < 5)
                     len[0] = 0;
                     if (i == 5 && len[0] < 6) {
@@ -132,8 +131,8 @@ public class NewCardFragment extends Fragment {
                         String ss = s.toString();
                         String first = ss.substring(0, ss.length() - 1);
                         String last = ss.substring(ss.length() - 1);
-                        editText.setText(first + " " + last);
-                        editText.setSelection(editText.getText().length());
+                        card_number.setText(first + " " + last);
+                        card_number.setSelection(card_number.getText().length());
                 }
 
                 if (i < 10)
@@ -143,8 +142,8 @@ public class NewCardFragment extends Fragment {
                         String ss = s.toString();
                         String first = ss.substring(0, ss.length() - 1);
                         String last = ss.substring(ss.length() - 1);
-                        editText.setText(first + " " + last);
-                        editText.setSelection(editText.getText().length());
+                        card_number.setText(first + " " + last);
+                        card_number.setSelection(card_number.getText().length());
                 }
 
                 if (i < 15)
@@ -154,8 +153,8 @@ public class NewCardFragment extends Fragment {
                         String ss = s.toString();
                         String first = ss.substring(0, ss.length() - 1);
                         String last = ss.substring(ss.length() - 1);
-                        editText.setText(first + " " + last);
-                        editText.setSelection(editText.getText().length());
+                        card_number.setText(first + " " + last);
+                        card_number.setSelection(card_number.getText().length());
                 }
             }
         });
@@ -191,75 +190,75 @@ public class NewCardFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if(editText.getId() == R.id.ll_new_card_card_number_field){
-                    editText.getText().insert(editText.getSelectionEnd(),"0");
+                if(card_number.getId() == R.id.ll_new_card_card_number_field){
+                    card_number.getText().insert(card_number.getSelectionEnd(),"0");
                 }
-                if(editText1.getId() == R.id.ll_new_card_term_field){
-                    editText1.getText().insert(editText1.getSelectionEnd(),"0");
-                }
+//                if(editText1.getId() == R.id.ll_new_card_term_field){
+//                    editText1.getText().insert(editText1.getSelectionEnd(),"0");
+//                }
             }
         });
 
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"1");
+                card_number.getText().insert(card_number.getSelectionEnd(),"1");
             }
         });
 
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"2");
+                card_number.getText().insert(card_number.getSelectionEnd(),"2");
             }
         });
 
         three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"3");
+                card_number.getText().insert(card_number.getSelectionEnd(),"3");
             }
         });
 
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"4");
+                card_number.getText().insert(card_number.getSelectionEnd(),"4");
             }
         });
 
         five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"5");
+                card_number.getText().insert(card_number.getSelectionEnd(),"5");
             }
         });
 
         six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"6");
+                card_number.getText().insert(card_number.getSelectionEnd(),"6");
             }
         });
 
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"7");
+                card_number.getText().insert(card_number.getSelectionEnd(),"7");
             }
         });
 
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"8");
+                card_number.getText().insert(card_number.getSelectionEnd(),"8");
             }
         });
 
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText.getText().insert(editText.getSelectionEnd(),"9");
+                card_number.getText().insert(card_number.getSelectionEnd(),"9");
             }
         });
     }

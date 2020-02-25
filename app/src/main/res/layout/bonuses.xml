@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/rl_bonuses_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:selectableItemBackground"
+        android:padding="15dp"
+        android:src="@drawable/ic_arrow_left"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_bonuses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/rl_bonuses_img">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Бонусы"
+            android:textColor="#424242"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:paddingLeft="30dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/rl_bonuses_bonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Б"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:textColor="#C0BFC6"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:paddingRight="15dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_enter_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:selectableItemBackground"
+        android:clickable="true"
+        android:paddingLeft="15dp"
+        android:focusable="true"
+        android:layout_below="@+id/rl_bonuses">
+
+        <ImageView
+            android:id="@+id/rl_cash_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:src="@drawable/ic_bonuses" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/grey_line"
+            android:paddingBottom="10dp"
+            android:layout_toEndOf="@+id/rl_cash_img">
+
+            <TextView
+                android:id="@+id/rl_bonuses_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:text="Ввести промокод"
+                android:textColor="#424242"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_black_right"
+                android:padding="15dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_auto_writing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_enter_code"
+        android:background="@drawable/grey_line"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Автосписание бонусов"
+            android:paddingLeft="30dp"
+            android:textColor="#424242"
+            android:textSize="17sp" />
+
+        <Switch
+            android:id="@+id/rl_bonuses_switch"
+            android:track="@drawable/switch_track_custom"
+            android:thumb="@drawable/switch_thumb"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="wrap_content"
+            android:switchMinWidth="30dp"
+            android:checked="false"
+            android:paddingRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:scaleX="1.2"
+            android:scaleY="1.2"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/rl_bonuses_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_auto_writing"
+        android:text="При автосписании, стоимость поездки\nотображается с вычетом бонусов."
+        android:layout_centerInParent="true"
+        android:paddingLeft="30dp"
+        android:paddingTop="15dp"
+        android:textColor="#979797"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_bonuses_desc"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="15dp"
+        android:paddingLeft="30dp"
+        android:text="Вы можете оплатить бонусами 50% от\nстоимости поездки (1 бонус = 1  рубль)."
+        android:textColor="#979797"
+        android:textSize="15sp" />
+
+</RelativeLayout>

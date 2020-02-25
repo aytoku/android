@@ -92,6 +92,23 @@ public class Menu11Fragment extends Fragment {
                         }),
 
                 new AdapterMenu11.MenuList(
+                        "Бонусы",
+                        new AdapterMenu11.MenuList.CallBack(){
+                            @Override
+                            public void call(AdapterMenu11.MenuList menuList){
+                                try {
+                                    Bundle bundle = new Bundle();
+                                    BonusesFragment bonusesFragment = BonusesFragment.getInstance(bundle);
+                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                    fragmentTransaction.replace(R.id.rl_main, bonusesFragment);
+                                    fragmentTransaction.commit();
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }),
+
+                new AdapterMenu11.MenuList(
                         "История поездок",
                         new AdapterMenu11.MenuList.CallBack(){
                             @Override
