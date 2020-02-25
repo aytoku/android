@@ -76,6 +76,7 @@ public class AddressFragment extends Fragment {
         }catch(NullPointerException e){
             e.printStackTrace();
         }
+
         return view;
     }
 

@@ -82,9 +82,9 @@ public class TravelStoryFragment extends Fragment {
                                     Bundle bundle = new Bundle();
                                     String cv_id =  travelStoryCardItems.getUuid();
                                     bundle.putString("uuid", cv_id);
-                                    TravelStoryOneFragment travelStoryFragment = TravelStoryOneFragment.getInstance(bundle);
+                                    TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.rl_main, travelStoryFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, travelStoryOneFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

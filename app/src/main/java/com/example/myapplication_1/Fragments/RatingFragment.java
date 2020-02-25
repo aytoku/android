@@ -1,13 +1,11 @@
 package com.example.myapplication_1.Fragments;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.cardview.widget.CardView;
@@ -17,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.Adapters.RatingPraiseAdapter;
+import com.example.myapplication_1.Adapters.RatingStarAdapter;
 import com.example.myapplication_1.Adapters.RatingTipsAdapter;
 import com.example.myapplication_1.R;
 import com.google.gson.JsonArray;
@@ -38,17 +37,9 @@ public class RatingFragment extends Fragment{
     public static final String TAG = "RatingFragment";
     private RecyclerView.Adapter ratingTipsAdapter;
     private RecyclerView.Adapter ratingPraiseAdapter;
-    private ImageView star1;
-    private ImageView star2;
-    private ImageView star3;
-    private ImageView star4;
-    private ImageView star5;
-    private Drawable imgStarGrey;
-    private Drawable imgStarRed;
+    private RecyclerView.Adapter ratingStarAdapter;
     private List<Integer> tips_list = new ArrayList<>();
     private int tip_index;
-    private List<ImageView> starList;
-    private int selectItem = 0;
 
     public static RatingFragment getInstance(Bundle args) {
 
@@ -65,21 +56,25 @@ public class RatingFragment extends Fragment{
         View view = inflater.inflate(R.layout.rating,
                 container, false);
 
-        imgStarGrey = getResources().getDrawable(R.drawable.icon_star_grey);
-        imgStarRed = getResources().getDrawable(R.drawable.red_star_shadow);
         RecyclerView tips_rv = view.findViewById(R.id.rl_rating_tips_recycler);
         RecyclerView praise_rv = view.findViewById(R.id.rl_rating_praise_recycler);
+        RecyclerView star_rv = view.findViewById(R.id.rl_rating_star_recycler);
         CardView button = view.findViewById(R.id.ll_rating_cardButton);
         LinearLayout address = view.findViewById(R.id.rl_rating_ll_rating_address);
 
-        starList = new ArrayList<>();
-        starList.add(star1 = view.findViewById(R.id.ll_rating_star_image1));
-        starList.add(star2 = view.findViewById(R.id.ll_rating_star_image2));
-        starList.add(star3 = view.findViewById(R.id.ll_rating_star_image3));
-        starList.add(star4 = view.findViewById(R.id.ll_rating_star_image4));
-        starList.add(star5 = view.findViewById(R.id.ll_rating_star_image5));
-
         address.setVisibility(View.GONE);
+
+        try {
+            RatingStarAdapter.RatingStarItems[] ratingStarItems = getRatingStarItems();
+            List<RatingStarAdapter.RatingStarItems> ratingStarItemsList = new ArrayList<>(Arrays.asList(ratingStarItems));
+            ratingStarAdapter = new RatingStarAdapter(ratingStarItemsList, getActivity().getBaseContext());
+            star_rv.setAdapter(ratingStarAdapter);
+            star_rv.setLayoutManager(
+                    new LinearLayoutManager( getActivity().getBaseContext(), RecyclerView.HORIZONTAL, false ));
+            star_rv.setItemAnimator( new DefaultItemAnimator() );
+        } catch ( NullPointerException e) {
+            e.printStackTrace();
+        }
 
         try {
             RatingPraiseAdapter.RatingPraiseItems[] ratingPraiseItems = getRatingPraiseItems();
@@ -106,83 +101,36 @@ public class RatingFragment extends Fragment{
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println(selectItem);
+                ((RatingStarAdapter)ratingStarAdapter).getSelectedItem();
                 ((RatingTipsAdapter)ratingTipsAdapter).getSelectedItem();
                 ((RatingPraiseAdapter)ratingPraiseAdapter).getSelectedItem();
                 Log.d(TAG, "onCreateView");
             }
         });
 
-        star1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                allStarsGrey();
-                if(view.getId()==R.id.ll_rating_star_image1){
-                    star1.setImageDrawable(imgStarRed);
-                    selectItem = 0;
-                }
-            }
-        });
-        star2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                allStarsGrey();
-                if(view.getId()==R.id.ll_rating_star_image2){
-                    star1.setImageDrawable(imgStarRed);
-                    star2.setImageDrawable(imgStarRed);
-                    selectItem = 1;
-                }
-            }
-        });
-        star3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                allStarsGrey();
-                if(view.getId()==R.id.ll_rating_star_image3){
-                    star1.setImageDrawable(imgStarRed);
-                    star2.setImageDrawable(imgStarRed);
-                    star3.setImageDrawable(imgStarRed);
-                    selectItem = 2;
-                }
-            }
-        });
-        star4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                allStarsGrey();
-                if(view.getId()==R.id.ll_rating_star_image4){
-                    star1.setImageDrawable(imgStarRed);
-                    star2.setImageDrawable(imgStarRed);
-                    star3.setImageDrawable(imgStarRed);
-                    star4.setImageDrawable(imgStarRed);
-                    selectItem = 3;
-                }
-            }
-        });
-        star5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                allStarsGrey();
-                if(view.getId()==R.id.ll_rating_star_image5){
-                    star1.setImageDrawable(imgStarRed);
-                    star2.setImageDrawable(imgStarRed);
-                    star3.setImageDrawable(imgStarRed);
-                    star4.setImageDrawable(imgStarRed);
-                    star5.setImageDrawable(imgStarRed);
-                    selectItem = 4;
-                }
-            }
-        });
+        getTips();
 
-       getTips();
-
-       return view;
+        return view;
     }
 
-    private void allStarsGrey() {
-        for (int i = 0; i <= starList.size()-1; i++) {
-            starList.get(i).setImageDrawable(imgStarGrey);
-        }
+    private RatingStarAdapter.RatingStarItems[] getRatingStarItems() {
+        RatingStarAdapter.RatingStarItems[] arr = new RatingStarAdapter.RatingStarItems[]{
+                new RatingStarAdapter.RatingStarItems(
+                        R.drawable.icon_star_grey),
+
+                new RatingStarAdapter.RatingStarItems(
+                        R.drawable.icon_star_grey),
+
+                new RatingStarAdapter.RatingStarItems(
+                        R.drawable.icon_star_grey),
+
+                new RatingStarAdapter.RatingStarItems(
+                        R.drawable.icon_star_grey),
+
+                new RatingStarAdapter.RatingStarItems(
+                        R.drawable.icon_star_grey)
+        };
+        return arr;
     }
 
     private void getTips(){
@@ -223,7 +171,7 @@ public class RatingFragment extends Fragment{
             @Override
             public void cancel(JsonObject result, Throwable throwable){}
         }).addRequestPropertyHead(_mapHead)
-            .setAsyncThreadPool(true)
+                .setAsyncThreadPool(true)
                 .query("https://client.apis.stage.faem.pro/api/v2/options", jsonObject.toString());
     }
 
