@@ -15,8 +15,6 @@ import com.example.myapplication_1.R;
 public class BonusesFragment extends Fragment {
 
     public static final String TAG = "BonusesFragment";
-    private ImageView imageView;
-    private RelativeLayout relativeLayout;
 
     public static BonusesFragment getInstance(Bundle args) {
 
@@ -35,8 +33,8 @@ public class BonusesFragment extends Fragment {
         View view = inflater.inflate(R.layout.bonuses,
                 container, false);
 
-        imageView = view.findViewById(R.id.rl_bonuses_img);
-        relativeLayout = view.findViewById(R.id.rl_enter_code);
+        ImageView imageView = view.findViewById(R.id.rl_bonuses_img);
+        RelativeLayout relativeLayout = view.findViewById(R.id.rl_enter_code);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
