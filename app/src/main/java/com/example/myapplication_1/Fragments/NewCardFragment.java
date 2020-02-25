@@ -29,8 +29,8 @@ public class NewCardFragment extends Fragment {
     static final String KEY_DATE = "Key_date";
     static final String KEY_CVV = "Key_cvv";
     private EditText card_number;
-    private EditText editText1;
-    private EditText editText2;
+    private EditText validity;
+    private EditText cvv;
     private TextView zero;
     private TextView one;
     private TextView two;
@@ -73,8 +73,8 @@ public class NewCardFragment extends Fragment {
         eight = view.findViewById(R.id.eight);
         nine = view.findViewById(R.id.nine);
         card_number = view.findViewById(R.id.ll_new_card_card_number_field);
-        editText1 = view.findViewById(R.id.ll_new_card_term_field);
-        editText2 = view.findViewById(R.id.ll_new_card_cvv_field);
+        validity = view.findViewById(R.id.ll_new_card_term_field);
+        cvv = view.findViewById(R.id.ll_new_card_cvv_field);
         ImageView delete = view.findViewById(R.id.delete);
         CardView accept_button = view.findViewById(R.id.ll_new_card_cardButton);
 
@@ -159,7 +159,7 @@ public class NewCardFragment extends Fragment {
             }
         });
 
-        editText1.addTextChangedListener(new TextWatcher() {
+        validity.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
@@ -168,7 +168,7 @@ public class NewCardFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                int i = editText1.getText().toString().length();
+                int i = validity.getText().toString().length();
                 if (i < 3)
                     len[0] = 0;
                     if (i == 3 && len[0] < 3) {
@@ -176,8 +176,8 @@ public class NewCardFragment extends Fragment {
                         String ss = s.toString();
                         String first = ss.substring(0, ss.length() - 1);
                         String last = ss.substring(ss.length() - 1);
-                        editText1.setText(first + "/" + last);
-                        editText1.setSelection(editText1.getText().length());
+                        validity.setText(first + "/" + last);
+                        validity.setSelection(validity.getText().length());
                 }
             }
         });
@@ -267,70 +267,70 @@ public class NewCardFragment extends Fragment {
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"0");
+                validity.getText().insert(validity.getSelectionEnd(),"0");
             }
         });
 
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"1");
+                validity.getText().insert(validity.getSelectionEnd(),"1");
             }
         });
 
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"2");
+                validity.getText().insert(validity.getSelectionEnd(),"2");
             }
         });
 
         three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"3");
+                validity.getText().insert(validity.getSelectionEnd(),"3");
             }
         });
 
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"4");
+                validity.getText().insert(validity.getSelectionEnd(),"4");
             }
         });
 
         five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"5");
+                validity.getText().insert(validity.getSelectionEnd(),"5");
             }
         });
 
         six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"6");
+                validity.getText().insert(validity.getSelectionEnd(),"6");
             }
         });
 
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"7");
+                validity.getText().insert(validity.getSelectionEnd(),"7");
             }
         });
 
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"8");
+                validity.getText().insert(validity.getSelectionEnd(),"8");
             }
         });
 
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText1.getText().insert(editText1.getSelectionEnd(),"9");
+                validity.getText().insert(validity.getSelectionEnd(),"9");
             }
         });
     }
@@ -339,70 +339,70 @@ public class NewCardFragment extends Fragment {
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"0");
+                cvv.getText().insert(cvv.getSelectionEnd(),"0");
             }
         });
 
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"1");
+                cvv.getText().insert(cvv.getSelectionEnd(),"1");
             }
         });
 
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"2");
+                cvv.getText().insert(cvv.getSelectionEnd(),"2");
             }
         });
 
         three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"3");
+                cvv.getText().insert(cvv.getSelectionEnd(),"3");
             }
         });
 
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"4");
+                cvv.getText().insert(cvv.getSelectionEnd(),"4");
             }
         });
 
         five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"5");
+                cvv.getText().insert(cvv.getSelectionEnd(),"5");
             }
         });
 
         six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"6");
+                cvv.getText().insert(cvv.getSelectionEnd(),"6");
             }
         });
 
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"7");
+                cvv.getText().insert(cvv.getSelectionEnd(),"7");
             }
         });
 
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"8");
+                cvv.getText().insert(cvv.getSelectionEnd(),"8");
             }
         });
 
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editText2.getText().insert(editText2.getSelectionEnd(),"9");
+                cvv.getText().insert(cvv.getSelectionEnd(),"9");
             }
         });
     }
