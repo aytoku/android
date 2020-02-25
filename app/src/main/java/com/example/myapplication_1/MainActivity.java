@@ -167,6 +167,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, newCardFragment, NewCardFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, menu11Fragment, Menu11Fragment.TAG).commit();
     }
 }

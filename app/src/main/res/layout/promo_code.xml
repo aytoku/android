@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/promo_code_alert">
+
+        <RelativeLayout
+            android:id="@+id/rl_promo_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grey_line"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/rl_promo_code_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Промокод"
+                android:textColor="#424242"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/rl_promo_code_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:paddingRight="15dp"
+                android:src="@drawable/ic_promo_code_close" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/rl_promo_code_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_promo_code"
+            android:backgroundTint="#FD6F6D"
+            android:hint="Введите промокод"
+            android:inputType="number"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:textColorHint="#C6C6C6" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_promo_code_edit_text"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:layout_centerInParent="true">
+
+            <Button
+                android:id="@+id/rl_promo_code_button"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:background="@drawable/promo_code_button"
+                android:layout_centerInParent="true"
+                android:textAllCaps="false"
+                android:text="Активировать"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
