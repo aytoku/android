@@ -21,7 +21,6 @@ public class PromoCodeAlert extends DialogFragment{
     public static final String TAG = "PromoCodeAlert";
 
     private EditText editText;
-    private Button button;
 
     public static PromoCodeAlert getInstance(Bundle args) {
 
@@ -58,7 +57,7 @@ public class PromoCodeAlert extends DialogFragment{
         });
 
         editText = view.findViewById(R.id.rl_promo_code_edit_text);
-        button = view.findViewById(R.id.rl_promo_code_button);
+        Button button = view.findViewById(R.id.rl_promo_code_button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
