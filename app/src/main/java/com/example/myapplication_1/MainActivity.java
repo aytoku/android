@@ -11,6 +11,7 @@ import com.example.myapplication_1.Alerts.TariffsPickAlert;
 import com.example.myapplication_1.Fragments.AddPointFragment;
 import com.example.myapplication_1.Fragments.AddressFragment;
 import com.example.myapplication_1.Fragments.AssistantFragment;
+import com.example.myapplication_1.Fragments.AssistantNotificationFragment;
 import com.example.myapplication_1.Fragments.Auth111Fragment;
 import com.example.myapplication_1.Fragments.BlacklistPartnersFragment;
 import com.example.myapplication_1.Fragments.BonusesFragment;
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         AlertFragment alertFragment = AlertFragment.getInstance(null);
         AssistantFragment assistantFragment = AssistantFragment.getInstance(null);
         Auth111Fragment auth111Fragment = Auth111Fragment.getInstance(null);
+        AssistantNotificationFragment assistantNotificationFragment = AssistantNotificationFragment.getInstance(null);
 
         BlacklistPartnersFragment blacklistPartnersFragment = BlacklistPartnersFragment.getInstance(null);
         BonusesFragment bonusesFragment = BonusesFragment.getInstance(null);
@@ -167,6 +169,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, menu11Fragment, Menu11Fragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, assistantNotificationFragment, AssistantNotificationFragment.TAG).commit();
     }
 }

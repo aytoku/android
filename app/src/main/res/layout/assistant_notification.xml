@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_assistant_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/rl_assistant_notification_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_left"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:layout_alignParentLeft="true"
+            android:padding="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Уведомления помощника"
+            android:textColor="#424242"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rl_assistant_notification_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_assistant_notification"
+        android:overScrollMode="never"
+        android:paddingTop="10dp" />
+
+    <TextView
+        android:id="@+id/rl_assistant_notification_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="9 уведомлений"
+        android:paddingTop="20dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/rl_assistant_notification_recycler"
+        android:textColor="#515151"
+        android:textSize="15sp" />
+
+</RelativeLayout>
