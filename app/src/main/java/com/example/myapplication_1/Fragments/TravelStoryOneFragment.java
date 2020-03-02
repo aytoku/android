@@ -100,7 +100,7 @@ public class TravelStoryOneFragment extends Fragment {
         CellTravelStoryOneCardAdapter.TravelStoryRow []_arr = new CellTravelStoryOneCardAdapter.TravelStoryRow[]{
                 new CellTravelStoryOneCardAdapter.TravelStoryRow(
                         "Сегодня 10:10",
-                        R.drawable.icon_ellipse_red,
+                        R.drawable.ic_mini_ellipse,
                         new CellTravelStoryOneCardAdapter.TravelStoryRow.CallBack() {
                             @Override
                             public void call(CellTravelStoryOneCardAdapter.TravelStoryRow travelStoryRowItems) {

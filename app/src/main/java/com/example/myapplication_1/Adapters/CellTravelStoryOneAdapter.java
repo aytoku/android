@@ -13,12 +13,12 @@ import com.example.myapplication_1.R;
 
     public class CellTravelStoryOneAdapter extends RecyclerView.Adapter<CellTravelStoryOneAdapter.ViewHolder> {
 
-        private final PaymentDesc[] paymentDescs;
+        private final PaymentDesc[] paymentDesc;
         private final LayoutInflater layoutInflater;
         private final Context context;
 
-        public CellTravelStoryOneAdapter(CellTravelStoryOneAdapter.PaymentDesc[] paymentDescs, Context context) {
-            this.paymentDescs = paymentDescs;
+        public CellTravelStoryOneAdapter(CellTravelStoryOneAdapter.PaymentDesc[] paymentDesc, Context context) {
+            this.paymentDesc = paymentDesc;
             this.context = context;
 
             layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -33,7 +33,7 @@ import com.example.myapplication_1.R;
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-            final PaymentDesc _item = paymentDescs[i];
+            final PaymentDesc _item = paymentDesc[i];
             viewHolder.title.setText( _item.getTitle() );
             viewHolder.desc.setText( _item.getDesc() );
             viewHolder.cost.setText( _item.getCost() );
@@ -41,7 +41,7 @@ import com.example.myapplication_1.R;
 
         @Override
         public int getItemCount() {
-            return paymentDescs.length;
+            return paymentDesc.length;
         }
 
         public static class PaymentDesc {

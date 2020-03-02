@@ -44,7 +44,7 @@ public class ServiceFragment extends Fragment {
         final Menu11Fragment menu11Fragment = Menu11Fragment.getInstance(bundle);
         final Menu162Fragment menu161Fragment = Menu162Fragment.getInstance(bundle);
         final TravelStoryFragment travelStoryFragment = TravelStoryFragment.getInstance(bundle);
-        final ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
+        final ProgramErrorFragment programErrorFragment = ProgramErrorFragment.getInstance(bundle);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,9 +67,9 @@ public class ServiceFragment extends Fragment {
                 String message = textView.getText().toString();
                 Bundle _args = new Bundle();
                 _args.putString("message", message);
-                programErrorTwoFragment.setArguments(_args);
+                programErrorFragment.setArguments(_args);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
+                fragmentTransaction.replace(R.id.rl_main, programErrorFragment);
                 fragmentTransaction.commit();
             }
         });

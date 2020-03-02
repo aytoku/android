@@ -1,7 +1,5 @@
 package com.example.myapplication_1.Fragments;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,19 +12,16 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication_1.R;
 
-public class ProgramErrorTwoFragment extends Fragment {
+public class ProgramErrorFragment extends Fragment {
 
     public static final String TAG = "ProgramErrorTwoFragment";
-    private static final int REQUEST_CODE = 101;
-    private TextView title;
-    ImageButton imageButton;
 
-    public static ProgramErrorTwoFragment getInstance(Bundle args) {
+    public static ProgramErrorFragment getInstance(Bundle args) {
 
-        ProgramErrorTwoFragment programErrorTwoFragment = new ProgramErrorTwoFragment();
-        programErrorTwoFragment.setArguments(args);
+        ProgramErrorFragment programErrorFragment = new ProgramErrorFragment();
+        programErrorFragment.setArguments(args);
 
-        return programErrorTwoFragment;
+        return programErrorFragment;
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,12 +32,12 @@ public class ProgramErrorTwoFragment extends Fragment {
         View view = inflater.inflate(R.layout.programm_error_2,
                 container, false);
 
-        title = view.findViewById(R.id.rl_program_error1_title);
+        TextView title = view.findViewById(R.id.rl_program_error1_title);
         Bundle bundle = getArguments();
         String message = bundle.getString("message");
         title.setText(message);
 
-        imageButton = view.findViewById(R.id.rl_program_error1_img);
+        ImageButton imageButton = view.findViewById(R.id.rl_program_error1_img);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,21 +50,5 @@ public class ProgramErrorTwoFragment extends Fragment {
         });
 
         return view;
-    }
-
-    public void onActivityResult(int resultCode, int requestCode, Intent intent){
-        if(resultCode!= Activity.RESULT_OK){
-            return;
-        }
-        if(requestCode == REQUEST_CODE){
-            String message = intent.getStringExtra("message");
-            title.setText(message);
-        }
-    }
-
-    public static Intent newIntent(String message){
-        Intent intent = new Intent();
-        intent.putExtra("message", message);
-        return intent;
     }
 }

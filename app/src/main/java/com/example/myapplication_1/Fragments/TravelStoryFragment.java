@@ -18,7 +18,7 @@ import com.example.myapplication_1.R;
 public class TravelStoryFragment extends Fragment {
 
     public static final String TAG = "TravelStoryFragment";
-    private RecyclerView travelStory_rv;
+    private RecyclerView travel_story_rv;
 
     public static TravelStoryFragment getInstance(Bundle args) {
 
@@ -36,7 +36,7 @@ public class TravelStoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.travel_story,
                 container, false);
 
-        travelStory_rv = view.findViewById(R.id.recycler_travel_story);
+        travel_story_rv = view.findViewById(R.id.recycler_travel_story);
         ImageView imageView = view.findViewById(R.id.ll_travel_story_img);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +55,7 @@ public class TravelStoryFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        RecyclerView recyclerView = travelStory_rv;
+        RecyclerView recyclerView = travel_story_rv;
         try {
             TravelStoryAdapter.TravelStoryCard[] travelStoryCardItems = getTravelStoryCardItems();
             TravelStoryAdapter travelStoryAdapter = new TravelStoryAdapter(travelStoryCardItems, getActivity().getBaseContext());
@@ -73,24 +73,17 @@ public class TravelStoryFragment extends Fragment {
         TravelStoryAdapter.TravelStoryCard []_arr = new TravelStoryAdapter.TravelStoryCard[]{
 
                 new TravelStoryAdapter.TravelStoryCard(
-                        R.drawable.icon_ellipse_red,
+                        R.drawable.ic_mini_ellipse,
                         "Сегодня 10:10",
                         new TravelStoryAdapter.TravelStoryCard.CallBack() {
                             @Override
                             public void call(TravelStoryAdapter.TravelStoryCard travelStoryCardItems) {
                                 try {
-                                    Bundle bundle = new Bundle();
-                                    String cv_id =  travelStoryCardItems.getUuid();
-                                    bundle.putString("uuid", cv_id);
-                                    TravelStoryOneFragment travelStoryOneFragment = TravelStoryOneFragment.getInstance(bundle);
-                                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.rl_main, travelStoryOneFragment);
-                                    fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
                                 }
                             }
-                        }, "66 \u20BD")
+                        }, "66 \u20BD",new String[]{"Максима Горького, 23", "Максима Горького, 23"})
         };
         return _arr;
     }

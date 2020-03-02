@@ -85,12 +85,12 @@ public class Menu162Fragment extends Fragment {
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle bundle = new Bundle();
-                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
+                                    ProgramErrorFragment programErrorFragment = ProgramErrorFragment.getInstance(bundle);
                                     String message = "Большая стоимость";
                                     bundle.putString("message", message);
-                                    programErrorTwoFragment.setArguments(bundle);
+                                    programErrorFragment.setArguments(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, programErrorFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -106,12 +106,12 @@ public class Menu162Fragment extends Fragment {
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle bundle = new Bundle();
-                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
+                                    ProgramErrorFragment programErrorFragment = ProgramErrorFragment.getInstance(bundle);
                                     String message = "Не дали сдачи";
                                     bundle.putString("message", message);
-                                    programErrorTwoFragment.setArguments(bundle);
+                                    programErrorFragment.setArguments(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, programErrorFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();
@@ -127,12 +127,12 @@ public class Menu162Fragment extends Fragment {
                             public void call(AdapterMenu162.Menu162List menu162Lists){
                                 try {
                                     Bundle bundle = new Bundle();
-                                    ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(bundle);
+                                    ProgramErrorFragment programErrorFragment = ProgramErrorFragment.getInstance(bundle);
                                     String message = "Ошибка программы";
                                     bundle.putString("message", message);
-                                    programErrorTwoFragment.setArguments(bundle);
+                                    programErrorFragment.setArguments(bundle);
                                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                    fragmentTransaction.replace(R.id.rl_main, programErrorTwoFragment);
+                                    fragmentTransaction.replace(R.id.rl_main, programErrorFragment);
                                     fragmentTransaction.commit();
                                 }catch (NullPointerException e) {
                                     e.printStackTrace();

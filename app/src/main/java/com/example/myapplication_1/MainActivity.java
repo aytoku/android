@@ -49,7 +49,7 @@ import com.example.myapplication_1.Fragments.OrderAcceptFragment;
 import com.example.myapplication_1.Fragments.PartnersFragment;
 import com.example.myapplication_1.Fragments.PaymentMethodFragment;
 import com.example.myapplication_1.Fragments.PaymentPickFragment;
-import com.example.myapplication_1.Fragments.ProgramErrorTwoFragment;
+import com.example.myapplication_1.Fragments.ProgramErrorFragment;
 import com.example.myapplication_1.Fragments.RatingFragment;
 import com.example.myapplication_1.Fragments.ReasonForRejectionFragment;
 import com.example.myapplication_1.Fragments.RefusePaymentFragment;
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         PaymentChangeAlert paymentChangeAlert = PaymentChangeAlert.getInstance(null);
         PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(null);
         PaymentPickFragment paymentPickFragment = PaymentPickFragment.getInstance(null);
-        ProgramErrorTwoFragment programErrorTwoFragment = ProgramErrorTwoFragment.getInstance(null);
+        ProgramErrorFragment programErrorFragment = ProgramErrorFragment.getInstance(null);
 
         RatingFragment ratingFragment = RatingFragment.getInstance(null);
         ReasonForRejectionFragment reasonForRejectionFragment = ReasonForRejectionFragment.getInstance(null);
@@ -169,6 +169,6 @@ public class MainActivity extends AppCompatActivity {
         WriteFragment writeFragment = WriteFragment.getInstance(null);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, assistantNotificationFragment, AssistantNotificationFragment.TAG).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.rl_main, menu11Fragment, Menu11Fragment.TAG).commit();
     }
 }

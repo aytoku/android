@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication_1.R;
@@ -40,11 +42,17 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final TravelStoryCard _item = travelStoryCards[i];
-        float _dens = context.getResources().getDisplayMetrics().density;
-        int _size = Math.round(_dens * 40);
-        Drawable _def_draw = context.getResources().getDrawable(_item.getImg());
-        Bitmap _bitmap = DrawableUtils.convertToBitmap(_def_draw, _size, _size);
-        viewHolder.img.setScaleType(ImageView.ScaleType.CENTER);
+
+        try{
+            TravelStoryAddressTitleAdapter travelStoryAddressTitleAdapter = new TravelStoryAddressTitleAdapter(_item.str_features, context);
+            viewHolder.travel_story_rv.setAdapter(travelStoryAddressTitleAdapter);
+            viewHolder.travel_story_rv.setLayoutManager(
+                    new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
+            viewHolder.travel_story_rv.setItemAnimator(new DefaultItemAnimator());
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        }
+
         viewHolder.date.setText( _item.getDate() );
         viewHolder.cost.setText( _item.getCost() );
         viewHolder.cv_item.setOnClickListener( new View.OnClickListener() {
@@ -74,15 +82,15 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
         private String date;
         private CallBack callBack;
         private String cost;
-        private String uuid;
+        private String[] str_features;
 
-        public TravelStoryCard(int img, String date, CallBack callBack,String cost) {
+        public TravelStoryCard(int img, String date, CallBack callBack,String cost, String[] str_features) {
             this.img = img;
             this.date = date;
             this.callBack = callBack;
             this.cost = cost;
+            this.str_features = str_features;
         }
-        public String getUuid(){ return uuid ;}
         public CallBack getCallBack() {
             return callBack;
         }
@@ -99,17 +107,17 @@ public class TravelStoryAdapter extends RecyclerView.Adapter<TravelStoryAdapter.
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final ImageView img;
         private final TextView date;
         private final CardView cv_item;
         private final TextView cost;
+        private final RecyclerView travel_story_rv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            cv_item = itemView.findViewById(R.id.cv_item);
-            img = itemView.findViewById(R.id.ellipse_red);
-            date = itemView.findViewById(R.id.date);
-            cost = itemView.findViewById(R.id.cost);
+            cv_item = itemView.findViewById(R.id.ll_cell_travel_story_cv);
+            travel_story_rv = itemView.findViewById(R.id.ll_cell_travel_story_recycler);
+            date = itemView.findViewById(R.id.ll_cell_travel_story_date);
+            cost = itemView.findViewById(R.id.ll_cell_travel_story_cost);
         }
     }
 }

@@ -7,18 +7,17 @@
     <RelativeLayout
         android:id="@+id/rl_travel_story"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="10dp"
-        android:paddingLeft="5dp"
-        android:paddingBottom="5dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/ll_travel_story_img"
-            android:layout_width="20dp"
-            android:layout_height="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleX="1"
             android:scaleY="1"
             android:foreground="?android:selectableItemBackground"
