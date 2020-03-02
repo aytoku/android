@@ -83,7 +83,20 @@ public class TravelStoryFragment extends Fragment {
                                     e.printStackTrace();
                                 }
                             }
-                        }, "66 \u20BD",new String[]{"Максима Горького, 23", "Максима Горького, 23"})
+                        }, "66 \u20BD",new String[]{"Максима Горького, 23", "Максима Горького, 23"}),
+
+                new TravelStoryAdapter.TravelStoryCard(
+                        R.drawable.ic_mini_ellipse,
+                        "Сегодня 10:10",
+                        new TravelStoryAdapter.TravelStoryCard.CallBack() {
+                            @Override
+                            public void call(TravelStoryAdapter.TravelStoryCard travelStoryCardItems) {
+                                try {
+                                }catch (NullPointerException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }, "66 \u20BD",new String[]{"Максима Горького, 23", "Максима Горького, 23", "Максима Горького, 23"})
         };
         return _arr;
     }
