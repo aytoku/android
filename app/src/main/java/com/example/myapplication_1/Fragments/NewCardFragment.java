@@ -30,19 +30,6 @@ public class NewCardFragment extends Fragment {
     static final String KEY_CVV = "Key_cvv";
     private EditText card_number;
     private EditText validity;
-    private EditText cvv;
-    private TextView zero;
-    private TextView one;
-    private TextView two;
-    private TextView three;
-    private TextView four;
-    private TextView five;
-    private TextView six;
-    private TextView seven;
-    private TextView eight;
-    private TextView nine;
-    private RecyclerView.Adapter paymentMethodAdapter;
-    private List<PaymentMethodAdapter.PaymentMethodItems> itemsMenuList;
 
     public static NewCardFragment getInstance(Bundle args) {
 
@@ -61,22 +48,9 @@ public class NewCardFragment extends Fragment {
         View view = inflater.inflate(R.layout.new_card,
                 container, false);
 
-        ImageButton imageButton = view.findViewById(R.id.rl_new_card_button);
-        zero = view.findViewById(R.id.zero);
-        one = view.findViewById(R.id.one);
-        two = view.findViewById(R.id.two);
-        three = view.findViewById(R.id.three);
-        four = view.findViewById(R.id.four);
-        five = view.findViewById(R.id.five);
-        six = view.findViewById(R.id.six);
-        seven = view.findViewById(R.id.seven);
-        eight = view.findViewById(R.id.eight);
-        nine = view.findViewById(R.id.nine);
+        ImageButton imageButton = view.findViewById(R.id.rl_new_card_img);
         card_number = view.findViewById(R.id.ll_new_card_card_number_field);
         validity = view.findViewById(R.id.ll_new_card_term_field);
-        cvv = view.findViewById(R.id.ll_new_card_cvv_field);
-        ImageView delete = view.findViewById(R.id.delete);
-        CardView accept_button = view.findViewById(R.id.ll_new_card_cardButton);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,30 +63,9 @@ public class NewCardFragment extends Fragment {
             }
         });
 
-        accept_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onAddButtonClicked();
-                Bundle bundle = new Bundle();
-                PaymentMethodFragment paymentMethodFragment = PaymentMethodFragment.getInstance(bundle);
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.rl_main, paymentMethodFragment);
-                fragmentTransaction.commit();
-            }
-        });
-
-        cardNumber();
-
-        final int[] len = {0};
-        final int[] len1 = {0};
-        final int[] len2 = {0};
-
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.setText(null);
-            }
-        });
+        final int[] n = {0};
+        final int[] n1 = {0};
+        final int[] n2 = {0};
 
         card_number.addTextChangedListener(new TextWatcher() {
             @Override
@@ -125,9 +78,9 @@ public class NewCardFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 int i = card_number.getText().toString().length();
                 if (i < 5)
-                    len[0] = 0;
-                    if (i == 5 && len[0] < 6) {
-                        len[0] = 6;
+                    n[0] = 0;
+                    if (i == 5 && n[0] < 6) {
+                        n[0] = 6;
                         String ss = s.toString();
                         String first = ss.substring(0, ss.length() - 1);
                         String last = ss.substring(ss.length() - 1);
@@ -136,9 +89,9 @@ public class NewCardFragment extends Fragment {
                 }
 
                 if (i < 10)
-                    len1[0] = 0;
-                    if (i == 10 && len1[0] < 10) {
-                        len1[0] = 11;
+                    n1[0] = 0;
+                    if (i == 10 && n1[0] < 10) {
+                        n1[0] = 11;
                         String ss = s.toString();
                         String first = ss.substring(0, ss.length() - 1);
                         String last = ss.substring(ss.length() - 1);
@@ -147,9 +100,9 @@ public class NewCardFragment extends Fragment {
                 }
 
                 if (i < 15)
-                    len2[0] = 0;
-                    if (i == 15 && len2[0] < 15) {
-                        len2[0] = 16;
+                    n2[0] = 0;
+                    if (i == 15 && n2[0] < 15) {
+                        n2[0] = 16;
                         String ss = s.toString();
                         String first = ss.substring(0, ss.length() - 1);
                         String last = ss.substring(ss.length() - 1);
@@ -170,9 +123,9 @@ public class NewCardFragment extends Fragment {
             public void afterTextChanged(Editable s) {
                 int i = validity.getText().toString().length();
                 if (i < 3)
-                    len[0] = 0;
-                    if (i == 3 && len[0] < 3) {
-                        len[0] = 4;
+                    n[0] = 0;
+                    if (i == 3 && n[0] < 3) {
+                        n[0] = 4;
                         String ss = s.toString();
                         String first = ss.substring(0, ss.length() - 1);
                         String last = ss.substring(ss.length() - 1);
@@ -181,251 +134,6 @@ public class NewCardFragment extends Fragment {
                 }
             }
         });
-
         return view;
-    }
-
-    private void cardNumber(){
-        zero.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(card_number.getId() == R.id.ll_new_card_card_number_field){
-                    card_number.getText().insert(card_number.getSelectionEnd(),"0");
-                }
-//                if(editText1.getId() == R.id.ll_new_card_term_field){
-//                    editText1.getText().insert(editText1.getSelectionEnd(),"0");
-//                }
-            }
-        });
-
-        one.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"1");
-            }
-        });
-
-        two.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"2");
-            }
-        });
-
-        three.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"3");
-            }
-        });
-
-        four.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"4");
-            }
-        });
-
-        five.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"5");
-            }
-        });
-
-        six.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"6");
-            }
-        });
-
-        seven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"7");
-            }
-        });
-
-        eight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"8");
-            }
-        });
-
-        nine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                card_number.getText().insert(card_number.getSelectionEnd(),"9");
-            }
-        });
-    }
-
-    private void validityNumber(){
-        zero.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"0");
-            }
-        });
-
-        one.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"1");
-            }
-        });
-
-        two.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"2");
-            }
-        });
-
-        three.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"3");
-            }
-        });
-
-        four.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"4");
-            }
-        });
-
-        five.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"5");
-            }
-        });
-
-        six.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"6");
-            }
-        });
-
-        seven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"7");
-            }
-        });
-
-        eight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"8");
-            }
-        });
-
-        nine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validity.getText().insert(validity.getSelectionEnd(),"9");
-            }
-        });
-    }
-
-    private void cvv(){
-        zero.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"0");
-            }
-        });
-
-        one.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"1");
-            }
-        });
-
-        two.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"2");
-            }
-        });
-
-        three.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"3");
-            }
-        });
-
-        four.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"4");
-            }
-        });
-
-        five.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"5");
-            }
-        });
-
-        six.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"6");
-            }
-        });
-
-        seven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"7");
-            }
-        });
-
-        eight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"8");
-            }
-        });
-
-        nine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cvv.getText().insert(cvv.getSelectionEnd(),"9");
-            }
-        });
-    }
-
-    private void onAddButtonClicked() {
-        try {
-            itemsMenuList.add(itemsMenuList.size(), new PaymentMethodAdapter.PaymentMethodItems(
-                    R.mipmap.icon_sber,"VISA","","", R.drawable.togle_uncheked,
-                    new PaymentMethodAdapter.PaymentMethodItems.CallBack(){
-                        @Override
-                        public void call(PaymentMethodAdapter.PaymentMethodItems paymentMethodItems){
-                            try {
-                            }catch (NullPointerException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    })
-            );
-            paymentMethodAdapter.notifyItemInserted(itemsMenuList.size()-1);
-            paymentMethodAdapter.notifyDataSetChanged();
-        } catch(NumberFormatException e) {
-            Toast.makeText(getActivity().getApplicationContext(), "The field is empty",
-                    Toast.LENGTH_SHORT).show();
-        }
     }
 }
