@@ -50,7 +50,7 @@ public class NewCardFragment extends Fragment {
 
         ImageButton imageButton = view.findViewById(R.id.rl_new_card_img);
         card_number = view.findViewById(R.id.ll_new_card_card_number_field);
-        validity = view.findViewById(R.id.ll_new_card_term_field);
+        validity = view.findViewById(R.id.ll_new_card_validity_field);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
